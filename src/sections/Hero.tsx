@@ -101,10 +101,12 @@ export function Hero({ isReady }: { isReady: boolean }) {
 
       {/* Background 3D Spline Integration */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-black flex justify-center items-center">
-        <div className="w-full h-full scale-[0.35] md:scale-100 animate-heartbeat-scale flex items-center justify-center">
-          <Suspense fallback={<div className="absolute inset-0 flex items-center justify-center text-white/50 text-sm">Loading 3D...</div>}>
-            <Spline scene="https://prod.spline.design/LtzKN5G7iNd46w9T/scene.splinecode" />
-          </Suspense>
+        <div className="w-full h-full scale-[0.35] md:scale-100 flex items-center justify-center">
+          <div className="w-full h-full animate-heartbeat-scale flex items-center justify-center">
+            <Suspense fallback={<div className="absolute inset-0 flex items-center justify-center text-white/50 text-sm">Loading 3D...</div>}>
+              <Spline scene="https://prod.spline.design/LtzKN5G7iNd46w9T/scene.splinecode" />
+            </Suspense>
+          </div>
         </div>
         {/* Subtle overlay to ensure text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-blue-900/5 to-black/80 pointer-events-none z-10" />
