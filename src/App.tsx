@@ -1,7 +1,9 @@
 import { useState, useCallback, useEffect } from 'react';
 import { Navigation } from './sections/Navigation';
 import { Hero } from './sections/Hero';
+import { FeatureShowcase } from './sections/FeatureShowcase';
 import { AlbumCube } from './sections/AlbumCube';
+import { VideoPromo } from './sections/VideoPromo';
 import { WineShowcase } from './sections/WineShowcase';
 import { Pricing } from './sections/Pricing';
 import { Footer } from './sections/Footer';
@@ -67,7 +69,9 @@ function App() {
 
         <main>
           <Hero isReady={!isLoading} />
+          <FeatureShowcase />
           <AlbumCube />
+          <VideoPromo />
           <WineShowcase />
           <Pricing />
         </main>
