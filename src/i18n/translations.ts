@@ -851,7 +851,7 @@ export const translations = {
       step2: {
         subtitle: "Recepción IA",
         title: "No pierda nunca más a un cliente",
-        description: "Cada llamada perdida es un cliente perdido. Lumina toma la llamada, entiende la solicitud y recopila la información útil.",
+        description: "Cada llamada perdida es un cliente perdido. Nalyra toma la llamada, entiende la solicitud y recopila la información útil.",
         cta: "Descubrir Recepción IA",
       },
       step3: {
@@ -871,7 +871,7 @@ export const translations = {
     // Album Cube
     albumCube: {
       scrollHint: "Desplácese para explorar",
-      backgroundTitle: "LUMINA",
+      backgroundTitle: "NALYRA",
       features: [
         { title: "VOZ IA", subtitle: "LLAMADAS INTELIGENTES" },
         { title: "CHATBOT", subtitle: "MENSAJERÍA INTELIGENTE" },

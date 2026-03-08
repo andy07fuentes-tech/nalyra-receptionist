@@ -49,7 +49,7 @@ export function FeatureShowcase() {
             id: 'capture',
             subtitle: t('featureShowcase.step2.subtitle') || 'RÉCEPTION IA',
             title: t('featureShowcase.step2.title') || 'Ne ratez plus un seul client',
-            description: t('featureShowcase.step2.description') || "Chaque appel manqué, c'est un client perdu. Lumina prend l'appel, comprend la demande et collecte les infos utiles.",
+            description: t('featureShowcase.step2.description') || "Chaque appel manqué, c'est un client perdu. Nalyra prend l'appel, comprend la demande et collecte les infos utiles.",
             cta: t('featureShowcase.step2.cta') || 'DÉCOUVRIR LA RÉCEPTION IA',
             image: '/images/features/phone-reception.jpg',
             number: '02',
