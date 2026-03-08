@@ -9,7 +9,7 @@ export function Pricing() {
     const pricingTiers = Array.isArray(tiers) && tiers.length === 3 ? tiers : [];
 
     return (
-        <section id="pricing" className="py-24 md:py-32 bg-[#0a0a0a] relative overflow-hidden">
+        <section id="pricing" className="py-16 md:py-32 bg-[#0a0a0a] relative overflow-hidden">
             {/* Background elements */}
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent" />
             <div className="absolute -top-40 -right-40 w-96 h-96 bg-blue-500/5 rounded-full blur-[100px] pointer-events-none" />
@@ -23,7 +23,7 @@ export function Pricing() {
                     <h2 className="text-xs tracking-[0.2em] text-white/40 uppercase mb-4">
                         {t('pricing.subtitle') !== 'pricing.subtitle' ? t('pricing.subtitle') : 'OUR PRICING'}
                     </h2>
-                    <h3 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white mb-6">
+                    <h3 className="font-serif text-3xl md:text-5xl lg:text-6xl text-white mb-6">
                         {t('pricing.mainTitle') !== 'pricing.mainTitle' ? t('pricing.mainTitle') : 'Plans tailored to your needs'}
                     </h3>
 

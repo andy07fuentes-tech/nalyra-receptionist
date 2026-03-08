@@ -85,9 +85,9 @@ export function FeatureShowcase() {
         <section
             id="feature-showcase"
             ref={sectionRef}
-            className="bg-[#0a0a0a] py-32 relative overflow-hidden"
+            className="bg-[#0a0a0a] py-16 md:py-32 relative overflow-hidden"
         >
-            <div className="container-custom relative space-y-40">
+            <div className="container-custom relative space-y-24 md:space-y-40">
                 {features.map((feature, index) => {
                     // For section 1 (index 0), standard 5/7 split
                     // For sections 2, 3, 4 (index 1+), make image columns wider (e.g. 4/8 split)
@@ -107,10 +107,10 @@ export function FeatureShowcase() {
                                     <span className="text-blue-500 font-medium text-xs uppercase tracking-[0.2em] mb-4 block">
                                         {feature.subtitle}
                                     </span>
-                                    <h2 className="font-serif text-h2 text-white leading-tight mb-6">
+                                    <h2 className="font-serif text-3xl md:text-h2 text-white leading-tight mb-6">
                                         {feature.title}
                                     </h2>
-                                    <p className="text-white/70 text-lg leading-relaxed max-w-xl">
+                                    <p className="text-white/70 text-base md:text-lg leading-relaxed max-w-xl">
                                         {feature.description}
                                     </p>
                                 </div>
@@ -128,7 +128,7 @@ export function FeatureShowcase() {
 
                                 {/* Background Accent Number */}
                                 <div className={`absolute top-1/2 -translate-y-1/2 opacity-5 pointer-events-none select-none overflow-hidden ${feature.reversed ? '-left-8 lg:-left-24' : '-right-8 lg:-right-32'}`}>
-                                    <span className="font-serif text-[280px] text-white leading-none">{feature.number}</span>
+                                    <span className="font-serif text-[180px] md:text-[280px] text-white leading-none">{feature.number}</span>
                                 </div>
                             </div>
 

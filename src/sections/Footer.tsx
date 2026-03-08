@@ -1,15 +1,15 @@
 import { useState } from 'react';
-import { Wine, MapPin, Phone, Mail, Instagram, Facebook, Twitter, Linkedin, ArrowUp, CheckCircle } from 'lucide-react';
+import { Zap, MapPin, Phone, Mail, Instagram, Facebook, Twitter, Linkedin, ArrowUp, CheckCircle } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 // Icon lookup map for dynamic icon resolution from config strings
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  Wine, MapPin, Phone, Mail, Instagram, Facebook, Twitter, Linkedin, ArrowUp,
+  Zap, MapPin, Phone, Mail, Instagram, Facebook, Twitter, Linkedin, ArrowUp,
 };
 
 export function Footer() {
   const { t } = useLanguage();
-  
+
   // Define social links
   const socialLinks = [
     { icon: 'Twitter', label: 'Twitter', href: 'https://twitter.com' },
@@ -17,27 +17,27 @@ export function Footer() {
     { icon: 'Facebook', label: 'Facebook', href: 'https://facebook.com' },
     { icon: 'Instagram', label: 'Instagram', href: 'https://instagram.com' },
   ];
-  
+
   // Define link groups with hardcoded link names for each language
   const getLinkGroups = () => {
-    const lang = t('language.title') === 'Langue' ? 'fr' : 
-                 t('language.title') === 'Language' ? 'en' :
-                 t('language.title') === 'Idioma' ? 'es' : 'it';
-    
+    const lang = t('language.title') === 'Langue' ? 'fr' :
+      t('language.title') === 'Language' ? 'en' :
+        t('language.title') === 'Idioma' ? 'es' : 'it';
+
     const productLinks = {
       fr: ['Fonctionnalités', 'Tarification', 'Intégrations', 'API'],
       en: ['Features', 'Pricing', 'Integrations', 'API'],
       es: ['Funciones', 'Precios', 'Integraciones', 'API'],
       it: ['Funzionalità', 'Prezzi', 'Integrazioni', 'API'],
     };
-    
+
     const companyLinks = {
       fr: ['À Propos', 'Carrières', 'Blog', 'Presse'],
       en: ['About Us', 'Careers', 'Blog', 'Press'],
       es: ['Sobre Nosotros', 'Carreras', 'Blog', 'Prensa'],
       it: ['Chi Siamo', 'Carriere', 'Blog', 'Stampa'],
     };
-    
+
     return [
       {
         title: t('footer.linkGroups.product.title'),
@@ -55,29 +55,29 @@ export function Footer() {
       },
     ];
   };
-  
+
   const linkGroups = getLinkGroups();
-  
+
   // Define contact items
   const contactItems = [
     { icon: 'MapPin', text: 'San Francisco, CA' },
     { icon: 'Phone', text: '+1 (888) 555-AI-RX' },
     { icon: 'Mail', text: 'hello@aireceptionist.com' },
   ];
-  
+
   // Legal links
   const getLegalLinks = () => {
-    const lang = t('language.title') === 'Langue' ? 'fr' : 
-                 t('language.title') === 'Language' ? 'en' :
-                 t('language.title') === 'Idioma' ? 'es' : 'it';
-    
+    const lang = t('language.title') === 'Langue' ? 'fr' :
+      t('language.title') === 'Language' ? 'en' :
+        t('language.title') === 'Idioma' ? 'es' : 'it';
+
     const links = {
       fr: ['Politique de Confidentialité', 'Conditions de Service', 'Politique de Cookies'],
       en: ['Privacy Policy', 'Terms of Service', 'Cookie Policy'],
       es: ['Política de Privacidad', 'Términos de Servicio', 'Política de Cookies'],
       it: ['Informativa Privacy', 'Termini di Servizio', 'Politica Cookie'],
     };
-    
+
     return links[lang as keyof typeof links];
   };
 
@@ -119,7 +119,7 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <Wine className="w-8 h-8 text-blue-500" aria-hidden="true" />
+              <Zap className="w-8 h-8 text-blue-500" aria-hidden="true" />
               <div>
                 <span className="font-serif text-xl text-white block">{t('footer.brandName')}</span>
                 <span className="text-[10px] text-blue-400 tracking-widest uppercase">{t('footer.tagline')}</span>

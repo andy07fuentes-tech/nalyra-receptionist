@@ -134,7 +134,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
       <div ref={contentRef} className="relative z-20 flex flex-col items-center justify-center h-full pb-16 md:pb-20 px-4 w-full text-center">
         {/* Script accent */}
         <div className={`transition-all duration-1000 ease-out ${phase >= 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <span className="font-script text-4xl md:text-5xl lg:text-6xl text-blue-400">
+          <span className="font-script text-3xl md:text-5xl lg:text-6xl text-blue-400">
             {t('hero.scriptText')}
           </span>
         </div>
@@ -143,7 +143,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
         <div className={`my-6 h-px bg-blue-500/50 transition-all duration-1000 ease-out ${phase >= 2 ? 'w-24 opacity-100' : 'w-0 opacity-0'}`} style={{ transitionDelay: '0.2s' }} />
 
         {/* Main Title */}
-        <h1 className={`font-serif text-4xl md:text-5xl lg:text-7xl xl:text-8xl text-white leading-[1.05] tracking-wide transition-all duration-1000 ease-out ${phase >= 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.3s' }}>
+        <h1 className={`font-serif text-3xl md:text-5xl lg:text-7xl xl:text-8xl text-white leading-tight md:leading-[1.05] tracking-wide transition-all duration-1000 ease-out ${phase >= 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.3s' }}>
           {titleLines.map((line, i) => (
             <span key={i} className="block">{line}</span>
           ))}
@@ -160,8 +160,8 @@ export function Hero({ isReady }: { isReady: boolean }) {
             <div className="absolute inset-0 bg-blue-600 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
 
             <div className="relative z-10 flex flex-col items-start gap-0.5">
-              <span className="text-[8px] tracking-[0.4em] text-blue-400 group-hover:text-white/60 transition-colors uppercase font-sans">01 // DEMO</span>
-              <span className="font-serif text-xl md:text-2xl text-white flex items-center gap-3">
+              <span className="text-[7px] md:text-[8px] tracking-[0.4em] text-blue-400 group-hover:text-white/60 transition-colors uppercase font-sans">01 // DEMO</span>
+              <span className="font-serif text-lg md:text-2xl text-white flex items-center gap-3">
                 {t('hero.videoDemo')}
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </span>
@@ -180,8 +180,8 @@ export function Hero({ isReady }: { isReady: boolean }) {
             <div className="absolute inset-0 bg-cyan-600 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
 
             <div className="relative z-10 flex flex-col items-start gap-0.5">
-              <span className="text-[8px] tracking-[0.4em] text-cyan-400 group-hover:text-white/60 transition-colors uppercase font-sans">02 // PLANS</span>
-              <span className="font-serif text-xl md:text-2xl text-white flex items-center gap-3">
+              <span className="text-[7px] md:text-[8px] tracking-[0.4em] text-cyan-400 group-hover:text-white/60 transition-colors uppercase font-sans">02 // PLANS</span>
+              <span className="font-serif text-lg md:text-2xl text-white flex items-center gap-3">
                 {t('hero.prices')}
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </span>
@@ -194,13 +194,13 @@ export function Hero({ isReady }: { isReady: boolean }) {
 
         {/* Stats */}
         <div className={`mt-12 transition-all duration-1000 ease-out ${phase >= 4 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <div className="flex flex-wrap justify-center gap-8 md:gap-16">
+          <div className="flex flex-wrap justify-center gap-6 md:gap-16">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="font-serif text-3xl md:text-5xl text-blue-500 mb-1 tabular-nums">
+                <div className="font-serif text-2xl md:text-5xl text-blue-500 mb-1 tabular-nums">
                   {counts[index]}{stat.suffix}
                 </div>
-                <div className="text-xs text-white/70 uppercase tracking-wider">{stat.label}</div>
+                <div className="text-[10px] md:text-xs text-white/70 uppercase tracking-wider">{stat.label}</div>
               </div>
             ))}
           </div>

@@ -23,7 +23,7 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
     >
       {/* Brand Name - Using the original 'preloader-text' animation from index.css */}
       <div className="preloader-text text-center px-6" style={{ animationDelay: '0.2s' }}>
-        <h1 className="font-serif text-4xl md:text-5xl text-white tracking-[0.1em] mb-2 uppercase">
+        <h1 className="font-serif text-3xl md:text-5xl text-white tracking-[0.1em] mb-2 uppercase">
           {t('preloader.brandName')}
         </h1>
         <p className="font-script text-3xl text-blue-400 italic">

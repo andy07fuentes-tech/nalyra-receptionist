@@ -33,28 +33,28 @@ export function Navigation() {
     >
       <div className="container-custom flex items-center justify-between px-4 md:px-8">
 
-        {/* Left: Lumina Brand */}
+        {/* Left: Brand Name (Nalyra) */}
         <div className="flex-1 flex justify-start">
           <button
             onClick={() => scrollToSection('#hero')}
             className="group"
-            aria-label="Lumina"
+            aria-label="Nalyra"
           >
-            <span className="font-script text-3xl md:text-4xl lg:text-5xl text-blue-400">
-              Lumina
+            <span className="font-script text-2xl md:text-4xl lg:text-5xl text-blue-400">
+              Nalyra
             </span>
           </button>
         </div>
 
-        {/* Center: Main Titles */}
-        <div className="flex-[2] flex flex-col items-center justify-center text-center">
+        {/* Center: Main Titles (Hidden on mobile) */}
+        <div className="hidden md:flex flex-[2] flex-col items-center justify-center text-center">
           <button
             onClick={() => scrollToSection('#hero')}
             className="group"
             aria-label={t('nav.brandName') as string}
           >
             <span className="font-serif text-lg md:text-xl lg:text-2xl text-white tracking-wide">
-              {t('nav.brandName')} {/* Assuming this is 'AI RECEPTIONIST' */}
+              {t('nav.brandName')}
             </span>
           </button>
 

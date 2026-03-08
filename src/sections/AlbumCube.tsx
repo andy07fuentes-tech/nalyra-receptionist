@@ -164,7 +164,7 @@ export function AlbumCube() {
 
             {/* Elegant Header Branding */}
             <div className="absolute top-[10%] md:top-[12%] inset-x-0 flex flex-col items-center pointer-events-none z-20">
-                <h2 className="font-script text-6xl md:text-8xl text-white/90 drop-shadow-2xl">
+                <h2 className="font-script text-5xl md:text-8xl text-white/90 drop-shadow-2xl">
                     {t('nav.brandName') || 'Nalyra'}
                 </h2>
                 <div className="h-px w-32 bg-gradient-to-r from-transparent via-white/30 to-transparent mt-2" />
@@ -200,7 +200,7 @@ export function AlbumCube() {
                     </div>
 
                     <div className="flex-grow text-center md:text-left">
-                        <h3 className="font-serif text-3xl md:text-5xl text-white mb-1 md:mb-2 tracking-tight drop-shadow-md">
+                        <h3 className="font-serif text-2xl md:text-5xl text-white mb-1 md:mb-2 tracking-tight drop-shadow-md">
                             {currentAlbum?.title}
                         </h3>
                         <p className="font-sans text-[10px] md:text-sm text-white/40 tracking-[0.3em] uppercase drop-shadow-sm">

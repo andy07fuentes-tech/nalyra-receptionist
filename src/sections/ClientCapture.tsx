@@ -50,11 +50,11 @@ export function ClientCapture() {
                             <span className="text-blue-500 font-medium text-xs uppercase tracking-[0.2em] mb-4 block">
                                 {t('clientCapture.subtitle') || 'RÉCEPTION IA'}
                             </span>
-                            <h2 className="font-serif text-h2 text-slate-900 leading-tight mb-6">
+                            <h2 className="font-serif text-3xl md:text-h2 text-slate-900 leading-tight mb-6">
                                 {t('clientCapture.title') || 'Ne ratez plus un seul client'}
                             </h2>
-                            <p className="text-slate-600 text-lg leading-relaxed max-w-xl">
-                                {t('clientCapture.description') || "Chaque appel manqué, c'est un client perdu. EchoDesk répond en moins d'une seconde, comprend la demande et collecte les infos utiles."}
+                            <p className="text-slate-600 text-base md:text-lg leading-relaxed max-w-xl">
+                                {t('clientCapture.description') || "Chaque appel manqué, c'est un client perdu. Nalyra répond en moins d'une seconde, comprend la demande et collecte les infos utiles."}
                             </p>
                         </div>
 
