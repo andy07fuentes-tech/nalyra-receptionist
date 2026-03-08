@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Sparkles, Zap, Play } from 'lucide-react';
 import gsap from 'gsap';
@@ -11,7 +11,6 @@ export function VideoPromo() {
     const { t } = useLanguage();
     const sectionRef = useRef<HTMLElement>(null);
     const videoRef = useRef<HTMLVideoElement>(null);
-    const containerRef = useRef<HTMLDivElement>(null);
     const textSectionsRef = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
@@ -133,6 +132,7 @@ export function VideoPromo() {
                                 <h4 className="text-white font-serif text-xl">{t('videoPromo.feat1.title') || 'Synaptic Speed'}</h4>
                                 <p className="text-xs text-white/30 uppercase tracking-widest mt-1">{t('videoPromo.feat1.desc') || 'Instant Response'}</p>
                             </div>
+
                         </div>
 
                         <div className="flex items-start gap-4 group">
