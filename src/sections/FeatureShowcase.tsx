@@ -102,7 +102,7 @@ export function FeatureShowcase() {
                         <div key={feature.id} className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
                             {/* Text Content */}
-                            <div className={`${textColSpan} ${feature.reversed ? 'lg:order-2 slide-in-right lg:pl-16' : 'order-2 lg:order-1 slide-in-left'} space-y-8 relative z-10`}>
+                            <div className={`${textColSpan} ${feature.reversed ? 'lg:order-2 slide-in-right lg:pl-16' : 'lg:order-1 slide-in-left'} space-y-8 relative z-10`}>
                                 <div>
                                     <span className="text-blue-500 font-medium text-xs uppercase tracking-[0.2em] mb-4 block">
                                         {feature.subtitle}
@@ -133,7 +133,7 @@ export function FeatureShowcase() {
                             </div>
 
                             {/* Image/Video Content */}
-                            <div className={`${imgColSpan} ${feature.reversed ? 'lg:order-1 slide-in-left' : 'order-1 lg:order-2 slide-in-right'} relative`}>
+                            <div className={`${imgColSpan} ${feature.reversed ? 'lg:order-1 slide-in-left' : 'lg:order-2 slide-in-right'} relative`}>
                                 <div className={`relative rounded-2xl overflow-hidden shadow-2xl border border-white/5 group z-10 aspect-[4/3] ${bleedClass} ${bleedReverseClass}`}>
                                     <img
                                         src={feature.image}
