@@ -4,13 +4,13 @@ export const translations = {
   fr: {
     // Site
     site: {
-      title: "AI Receptionist - Communication Commerciale Intelligente",
+      title: "Nalyra - Communication Commerciale Intelligente",
       description: "Transformez votre entreprise avec des services de réceptionniste alimentés par l'IA. Gestion d'appels intelligente 24/7, planification de rendez-vous et support client.",
     },
 
     // Navigation
     nav: {
-      brandName: "Lumina",
+      brandName: "Nalyra",
       brandSubname: "Communication Intelligente",
       tagline: "Votre Réception Numérique 24/7",
       home: "Accueil",
@@ -24,7 +24,7 @@ export const translations = {
 
     // Preloader
     preloader: {
-      brandName: "Vigilox",
+      brandName: "Nalyra",
       brandSubname: "Communication Intelligente",
       yearText: "Nouvelle Génération",
     },
@@ -55,7 +55,7 @@ export const translations = {
       step2: {
         subtitle: "Réception IA",
         title: "Ne ratez plus un seul client",
-        description: "Chaque appel manqué, c'est un client perdu. Lumina prend l'appel, comprend la demande et collecte les infos utiles.",
+        description: "Chaque appel manqué, c'est un client perdu. Nalyra prend l'appel, comprend la demande et collecte les infos utiles.",
         cta: "Découvrir la Réception IA",
       },
       step3: {
@@ -75,7 +75,7 @@ export const translations = {
     // Album Cube
     albumCube: {
       scrollHint: "Faites défiler pour explorer",
-      backgroundTitle: "LUMINA",
+      backgroundTitle: "NALYRA",
       features: [
         { title: "VOIX IA", subtitle: "APPELS INTELLIGENTS" },
         { title: "CHATBOT", subtitle: "MESSAGERIE INTELLIGENTE" },
@@ -87,10 +87,10 @@ export const translations = {
     // Video Promo
     videoPromo: {
       scriptText: "Vivez le Changement",
-      subtitle: "VIGILOX EN ACTION",
+      subtitle: "NALYRA EN ACTION",
       titleMain: "Du Chaos de l'Accueil",
       titleAccent: "à l'Excellence",
-      description: "Découvrez comment Vigilox transforme un accueil débordé en un centre d'efficacité sereine. Ne ratez plus aucun appel, ne perdez plus aucun prospect, et laissez votre équipe se concentrer sur l'essentiel.",
+      description: "Découvrez comment Nalyra transforme un accueil débordé en un centre d'efficacité sereine. Ne ratez plus aucun appel, ne perdez plus aucun prospect, et laissez votre équipe se concentrer sur l'essentiel.",
       feat1: { title: "Précision IA", desc: "Gère instantanément les demandes" },
       feat2: { title: "Installation Flash", desc: "Intégration sans friction" }
     },
@@ -367,7 +367,7 @@ export const translations = {
 
     // Footer
     footer: {
-      brandName: "Lumina",
+      brandName: "Nalyra",
       tagline: "Communication Intelligente",
       description: "Transformez votre entreprise avec des services de réceptionniste alimentés par l'IA. Disponible 24/7, toujours professionnel, incroyablement efficace.",
       newsletterLabel: "Abonnez-vous à notre newsletter",
@@ -375,7 +375,7 @@ export const translations = {
       newsletterButtonText: "S'abonner",
       newsletterSuccessText: "Merci pour votre abonnement !",
       newsletterErrorText: "Veuillez réessayer.",
-      copyrightText: "© AI Receptionist. Tous droits réservés.",
+      copyrightText: "© Nalyra AI. Tous droits réservés.",
       backToTopText: "Retour en haut",
       linkGroups: {
         product: {
@@ -409,7 +409,7 @@ export const translations = {
 
     // Navigation
     nav: {
-      brandName: "Lumina",
+      brandName: "Nalyra",
       brandSubname: "Intelligent Communication",
       tagline: "Your 24/7 Digital Front Desk",
       home: "Home",
@@ -423,7 +423,7 @@ export const translations = {
 
     // Preloader
     preloader: {
-      brandName: "Vigilox",
+      brandName: "Nalyra",
       brandSubname: "Intelligent Communication",
       yearText: "Next Gen",
     },
@@ -454,7 +454,7 @@ export const translations = {
       step2: {
         subtitle: "AI Reception",
         title: "Never miss a single client again",
-        description: "Every missed call is a lost client. Lumina takes the call, understands the request, and collects the useful info.",
+        description: "Every missed call is a lost client. Nalyra takes the call, understands the request, and collects the useful info.",
         cta: "Discover AI Reception",
       },
       step3: {
@@ -474,7 +474,7 @@ export const translations = {
     // Album Cube
     albumCube: {
       scrollHint: "Scroll to explore",
-      backgroundTitle: "LUMINA",
+      backgroundTitle: "NALYRA",
       features: [
         { title: "VOICE AI", subtitle: "INTELLIGENT CALLS" },
         { title: "CHATBOT", subtitle: "SMART MESSAGING" },
@@ -486,10 +486,10 @@ export const translations = {
     // Video Promo
     videoPromo: {
       scriptText: "Experience the Change",
-      subtitle: "VIGILOX IN ACTION",
+      subtitle: "NALYRA EN ACTION",
       titleMain: "From Overwhelmed",
       titleAccent: "To Unstoppable",
-      description: "Watch how Vigilox transforms a chaotic front desk into a hub of calm efficiency. Never miss a call, never lose a lead, and let your team focus on what truly matters.",
+      description: "Watch how Nalyra transforms a chaotic front desk into a hub of calm efficiency. Never miss a call, never lose a lead, and let your team focus on what truly matters.",
       feat1: { title: "AI Precision", desc: "Handles complex inquiries instantly" },
       feat2: { title: "Instant Setup", desc: "Zero friction integration" }
     },
@@ -766,7 +766,7 @@ export const translations = {
 
     // Footer
     footer: {
-      brandName: "Lumina",
+      brandName: "Nalyra",
       tagline: "Intelligent Communication",
       description: "Transform your business with AI-powered receptionist services. Available 24/7, always professional, incredibly efficient.",
       newsletterLabel: "Subscribe to our newsletter",
@@ -774,7 +774,7 @@ export const translations = {
       newsletterButtonText: "Subscribe",
       newsletterSuccessText: "Thanks for subscribing!",
       newsletterErrorText: "Please try again.",
-      copyrightText: "© AI Receptionist. All rights reserved.",
+      copyrightText: "© Nalyra AI. All rights reserved.",
       backToTopText: "Back to top",
       linkGroups: {
         product: {

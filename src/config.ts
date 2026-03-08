@@ -15,12 +15,12 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  title: "Lumina - Smart Business Communication",
+  title: "Nalyra - Smart Business Communication",
   description: "Transform your business with AI-powered receptionist services. 24/7 intelligent call handling, appointment scheduling, and customer support.",
   language: "en",
-  keywords: "Lumina, AI receptionist, virtual assistant, business automation, call handling, appointment scheduling",
+  keywords: "Nalyra, AI receptionist, virtual assistant, business automation, call handling, appointment scheduling",
   ogImage: "/images/og-image.jpg",
-  canonical: "https://lumina.ai",
+  canonical: "https://nalyra.ca",
 };
 
 // -----------------------------------------------------------------------------
@@ -47,7 +47,7 @@ export interface NavigationConfig {
 }
 
 export const navigationConfig: NavigationConfig = {
-  brandName: "Lumina",
+  brandName: "Nalyra",
   brandSubname: "Intelligent Communication",
   tagline: "Your 24/7 Digital Front Desk",
   navLinks: [
@@ -71,7 +71,7 @@ export interface PreloaderConfig {
 }
 
 export const preloaderConfig: PreloaderConfig = {
-  brandName: "Vigilox",
+  brandName: "Nalyra",
   brandSubname: "Intelligent Communication",
   yearText: "Next Gen",
 };
@@ -620,7 +620,7 @@ export interface FooterConfig {
 }
 
 export const footerConfig: FooterConfig = {
-  brandName: "Lumina",
+  brandName: "Nalyra",
   tagline: "Intelligent Communication",
   description: "Transform your business with AI-powered receptionist services. Available 24/7, always professional, incredibly efficient.",
   socialLinks: [
@@ -660,7 +660,7 @@ export const footerConfig: FooterConfig = {
   newsletterSuccessText: "Thanks for subscribing!",
   newsletterErrorText: "Please try again.",
   newsletterEndpoint: "https://formspree.io/f/YOUR_NEWSLETTER_ID",
-  copyrightText: "© AI Receptionist. All rights reserved.",
+  copyrightText: "© Nalyra AI. All rights reserved.",
   legalLinks: ["Privacy Policy", "Terms of Service", "Cookie Policy"],
   icpText: "",
   backToTopText: "Back to top",

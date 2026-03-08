@@ -112,7 +112,7 @@ export function VideoPromo() {
                             {t('videoPromo.scriptText') || 'Experience the Change'}
                         </span>
                         <h2 className="text-[10px] tracking-[0.4em] text-white/40 uppercase mb-4 font-sans">
-                            {t('videoPromo.subtitle') || 'VIGILOX CORE ENGINE'}
+                            {t('videoPromo.subtitle') || 'NALYRA CORE ENGINE'}
                         </h2>
                         <h3 className="font-serif text-4xl md:text-6xl text-white leading-tight">
                             {t('videoPromo.titleMain') || 'From Chaos'}<br />
@@ -121,7 +121,7 @@ export function VideoPromo() {
                     </div>
 
                     <p className="scrub-element text-base md:text-lg text-white/50 leading-relaxed font-sans font-light">
-                        {t('videoPromo.description') || "Witness the precision of our AI engine. As you scroll, watch how Vigilox materializes chaotic data into seamless client interactions."}
+                        {t('videoPromo.description') || "Witness the precision of our AI engine. As you scroll, watch how Nalyra materializes chaotic data into seamless client interactions."}
                     </p>
 
                     <div className="scrub-element grid gap-8">

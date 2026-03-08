@@ -165,7 +165,7 @@ export function AlbumCube() {
             {/* Elegant Header Branding */}
             <div className="absolute top-[10%] md:top-[12%] inset-x-0 flex flex-col items-center pointer-events-none z-20">
                 <h2 className="font-script text-6xl md:text-8xl text-white/90 drop-shadow-2xl">
-                    {t('nav.brandName') || 'Lumina'}
+                    {t('nav.brandName') || 'Nalyra'}
                 </h2>
                 <div className="h-px w-32 bg-gradient-to-r from-transparent via-white/30 to-transparent mt-2" />
             </div>
