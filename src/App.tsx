@@ -71,8 +71,8 @@ function App() {
           <Hero isReady={!isLoading} />
           <FeatureShowcase />
           <AlbumCube />
-          <VideoPromo />
           <WineShowcase />
+          <VideoPromo />
           <Pricing />
         </main>
 
