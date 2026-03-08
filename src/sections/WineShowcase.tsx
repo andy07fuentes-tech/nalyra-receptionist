@@ -9,7 +9,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 
 export function WineShowcase() {
   const { t } = useLanguage();
-  
+
   // Define features with icons
   const features = [
     { icon: 'Sparkles', title: t('features.featureCards.aiPowered.title'), description: t('features.featureCards.aiPowered.description') },
@@ -17,7 +17,7 @@ export function WineShowcase() {
     { icon: 'Clock', title: t('features.featureCards.instant.title'), description: t('features.featureCards.instant.description') },
     { icon: 'Wine', title: t('features.featureCards.customizable.title'), description: t('features.featureCards.customizable.description') },
   ];
-  
+
   // Define wines/features data
   const wines = [
     {
@@ -114,17 +114,16 @@ export function WineShowcase() {
           <h2 className="font-serif text-h1 text-white">{t('features.mainTitle')}</h2>
         </div>
 
-        {/* Wine Tabs */}
-        <div className="fade-up flex justify-center gap-2 mb-16" style={{ transitionDelay: '0.1s' }}>
+        {/* Tabs */}
+        <div className="fade-up flex flex-wrap justify-center gap-3 md:gap-4 mb-12 md:mb-16" style={{ transitionDelay: '0.1s' }}>
           {wines.map((w, i) => (
             <button
               key={w.id}
               onClick={() => setActiveWine(i)}
-              className={`px-6 py-3 rounded-sm text-sm transition-all duration-300 ${
-                i === activeWine
+              className={`px-4 md:px-6 py-2 md:py-3 rounded-sm text-xs md:text-sm transition-all duration-300 ${i === activeWine
                   ? 'bg-blue-500 text-white'
                   : 'bg-white/5 text-white/70 hover:bg-white/10 border border-white/10'
-              }`}
+                }`}
             >
               {w.name}
             </button>
@@ -183,9 +182,9 @@ export function WineShowcase() {
             </button>
           </div>
 
-          {/* Center: Wine Bottle */}
-          <div className="lg:col-span-1 order-1 lg:order-2 flex justify-center">
-            <div className="relative" style={{ width: '220px', height: '520px' }}>
+          {/* Center: Interactive Image */}
+          <div className="lg:col-span-1 order-1 lg:order-2 flex justify-center mb-20 md:mb-0">
+            <div className="relative" style={{ width: '220px', height: '480px' }}>
               {/* Glow */}
               <div className={`absolute inset-0 flex items-center justify-center pointer-events-none`}>
                 <div className={`w-48 h-48 ${wine.glowColor} rounded-full blur-3xl transition-colors duration-700`} />
@@ -199,34 +198,33 @@ export function WineShowcase() {
                   alt={`${w.name} - ${w.subtitle} ${w.year}`}
                   loading={i === 0 ? undefined : 'lazy'}
                   style={w.filter ? { filter: w.filter } : undefined}
-                  className={`absolute inset-0 w-full h-full object-contain z-10 drop-shadow-2xl transition-all duration-700 ${
-                    i === activeWine
+                  className={`absolute inset-0 w-full h-full object-contain z-10 drop-shadow-2xl transition-all duration-700 ${i === activeWine
                       ? 'opacity-100 scale-100 translate-y-0'
                       : i < activeWine
                         ? 'opacity-0 scale-90 -translate-y-6 pointer-events-none'
                         : 'opacity-0 scale-90 translate-y-6 pointer-events-none'
-                  }`}
+                    }`}
                 />
               ))}
 
               {/* Switcher Arrows */}
-              <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-4 z-20">
+              <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 flex items-center gap-8 z-20">
                 <button
                   onClick={prevWine}
-                  className="w-9 h-9 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-blue-500 hover:border-blue-500 transition-all duration-300"
+                  className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-blue-500 hover:border-blue-500 transition-all duration-300"
                   aria-label="Previous feature"
                 >
-                  <ChevronLeft className="w-4 h-4" />
+                  <ChevronLeft className="w-5 h-5" />
                 </button>
-                <span className="text-sm text-white/50 font-serif tabular-nums whitespace-nowrap">
+                <span className="text-sm font-serif text-white/80 tabular-nums whitespace-nowrap min-w-[40px] text-center">
                   {activeWine + 1} / {wines.length}
                 </span>
                 <button
                   onClick={nextWine}
-                  className="w-9 h-9 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-blue-500 hover:border-blue-500 transition-all duration-300"
+                  className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-blue-500 hover:border-blue-500 transition-all duration-300"
                   aria-label="Next feature"
                 >
-                  <ChevronRight className="w-4 h-4" />
+                  <ChevronRight className="w-5 h-5" />
                 </button>
               </div>
             </div>
