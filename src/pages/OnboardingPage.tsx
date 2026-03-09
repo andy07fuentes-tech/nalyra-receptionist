@@ -2,40 +2,46 @@ import { useState, useEffect } from 'react';
 import { Search, MapPin, Clock, ArrowRight, CheckCircle2, Building2, Globe2, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
+import usePlacesAutocomplete, {
+    getGeocode,
+    getLatLng,
+} from "use-places-autocomplete";
 
 export default function OnboardingPage() {
     const [step, setStep] = useState(1);
-    const [searchQuery, setSearchQuery] = useState('');
-    const [isSearching, setIsSearching] = useState(false);
     const [selectedBusiness, setSelectedBusiness] = useState<any>(null);
 
-    // Mock Business Search Results
+    // GOOGLE PLACES LOGIC
+    const {
+        ready,
+        value,
+        suggestions: { status, data },
+        setValue,
+        clearSuggestions,
+    } = usePlacesAutocomplete({
+        requestOptions: {
+            /* Define search scope here if needed, e.g., location: new google.maps.LatLng(45.5017, -73.5673), radius: 200 * 1000 */
+        },
+        debounce: 300,
+    });
+
+    // Mock Business Search Results - FALLBACK when no API key is active
     const mockBusinesses = [
         {
-            id: 1,
+            id: 'm1',
             name: "Nalyra Tech Solutions",
             address: "123 Innovation Dr, Montreal, QC",
             hours: "9:00 AM - 5:00 PM",
-            phone: "+1 (514) 555-0199",
-            website: "www.nalyratech.com"
+            phone: "+1 (514) 555-0199"
         },
         {
-            id: 2,
+            id: 'm2',
             name: "The Digital Creative Agency",
             address: "456 Creative Way, Toronto, ON",
             hours: "10:00 AM - 6:00 PM",
-            phone: "+1 (416) 555-0288",
-            website: "www.digitalcreative.io"
-        },
-        {
-            id: 3,
-            name: "Modern Wellness Center",
-            address: "789 Health St, Vancouver, BC",
-            hours: "8:00 AM - 8:00 PM",
-            phone: "+1 (604) 555-0377",
-            website: "www.modernwellness.ca"
+            phone: "+1 (416) 555-0288"
         }
-    ].filter(b => b.name.toLowerCase().includes(searchQuery.toLowerCase()));
+    ].filter(b => b.name.toLowerCase().includes(value.toLowerCase()));
 
     useEffect(() => {
         // Animation for step enter
@@ -46,16 +52,37 @@ export default function OnboardingPage() {
     }, [step]);
 
     const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setSearchQuery(e.target.value);
-        if (e.target.value.length > 2) {
-            setIsSearching(true);
-            setTimeout(() => setIsSearching(false), 500);
-        }
+        setValue(e.target.value);
     };
 
-    const handleBusinessSelect = (business: any) => {
-        setSelectedBusiness(business);
-        setSearchQuery(business.name);
+    const handleBusinessSelect = async (place: any) => {
+        // If it's a mock business
+        if (place.id && place.id.toString().startsWith('m')) {
+            setSelectedBusiness(place);
+            setValue(place.name, false);
+            clearSuggestions();
+            return;
+        }
+
+        // Real Google Places Logic
+        setValue(place.description, false);
+        clearSuggestions();
+
+        try {
+            const results = await getGeocode({ address: place.description });
+            const { lat, lng } = getLatLng(results[0]);
+
+            setSelectedBusiness({
+                name: place.structured_formatting.main_text,
+                address: place.structured_formatting.secondary_text,
+                hours: "Auto-synced from Google",
+                phone: "Syncing...",
+                lat,
+                lng
+            });
+        } catch (error) {
+            console.error("Error fetching geocode:", error);
+        }
     };
 
     const handleNext = () => {
@@ -163,21 +190,40 @@ export default function OnboardingPage() {
                                 <input
                                     type="text"
                                     placeholder="Enter your business name..."
-                                    value={searchQuery}
+                                    value={value}
                                     onChange={handleSearchChange}
+                                    disabled={!ready && status !== "OK"}
                                     className="w-full h-14 pl-12 pr-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-blue-500/50 transition-all placeholder:text-white/20 text-white"
                                 />
-                                {isSearching && (
+                                {(status === "OK" || value.length > 2) && !selectedBusiness && (
                                     <div className="absolute right-4 top-1/2 -translate-y-1/2">
                                         <div className="w-4 h-4 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
                                     </div>
                                 )}
                             </div>
 
-                            {/* Results Dropdown (Mock-up) */}
-                            {searchQuery.length > 2 && !selectedBusiness && (
+                            {/* Results Dropdown (Real Google Data + Mocks) */}
+                            {value.length > 2 && !selectedBusiness && (
                                 <div className="absolute left-8 right-8 top-full mt-2 bg-[#121212] border border-white/10 rounded-2xl shadow-2xl z-20 overflow-hidden divide-y divide-white/5">
-                                    {mockBusinesses.map((b) => (
+                                    {/* Real Google Results */}
+                                    {status === "OK" && data.map((suggestion) => (
+                                        <button
+                                            key={suggestion.place_id}
+                                            onClick={() => handleBusinessSelect(suggestion)}
+                                            className="w-full p-4 flex items-start gap-4 hover:bg-white/5 transition-colors text-left"
+                                        >
+                                            <div className="w-8 h-8 rounded-lg bg-blue-600/10 flex items-center justify-center flex-shrink-0">
+                                                <MapPin className="w-4 h-4 text-blue-500" />
+                                            </div>
+                                            <div>
+                                                <div className="text-sm font-medium text-white">{suggestion.structured_formatting.main_text}</div>
+                                                <div className="text-[10px] text-white/40 mt-0.5 uppercase tracking-wider">{suggestion.structured_formatting.secondary_text}</div>
+                                            </div>
+                                        </button>
+                                    ))}
+
+                                    {/* Mock Fallbacks (Only if Google status is not OK, e.g. no key) */}
+                                    {status !== "OK" && mockBusinesses.map((b) => (
                                         <button
                                             key={b.id}
                                             onClick={() => handleBusinessSelect(b)}
@@ -192,7 +238,8 @@ export default function OnboardingPage() {
                                             </div>
                                         </button>
                                     ))}
-                                    {mockBusinesses.length === 0 && (
+
+                                    {status !== "OK" && mockBusinesses.length === 0 && (
                                         <div className="p-8 text-center text-white/30 text-xs">
                                             No businesses found. Try a different name?
                                         </div>
