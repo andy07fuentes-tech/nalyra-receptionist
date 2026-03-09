@@ -22,9 +22,10 @@ export default function OnboardingPage() {
         requestOptions: {
             // STRICT BIAS: Only search within Canada
             componentRestrictions: { country: "ca" },
-            types: ['establishment'], // This ensures we find businesses, not just cities
+            types: ['establishment', 'geocode'], // Search for businesses and addresses
         },
         debounce: 300,
+        cache: 0, // Disable internal cache for testing
     });
 
     // Mock Business Search Results - FALLBACK
@@ -75,8 +76,8 @@ export default function OnboardingPage() {
             const { lat, lng } = getLatLng(results[0]);
 
             setSelectedBusiness({
-                name: place.structured_formatting.main_text,
-                address: place.structured_formatting.secondary_text,
+                name: place.structured_formatting?.main_text || place.description,
+                address: place.structured_formatting?.secondary_text || "",
                 hours: "Auto-synced from Google",
                 phone: "Syncing...",
                 lat,
@@ -84,6 +85,13 @@ export default function OnboardingPage() {
             });
         } catch (error) {
             console.error("Error fetching geocode:", error);
+            // Fallback for simple address selection
+            setSelectedBusiness({
+                name: place.description,
+                address: "",
+                hours: "Details pending",
+                phone: "Syncing..."
+            });
         }
     };
 
@@ -93,6 +101,9 @@ export default function OnboardingPage() {
 
     return (
         <div className="min-h-screen bg-[#0a0a0a] text-white font-sans selection:bg-blue-500/30">
+            {/* Version Flag for Cache Verification */}
+            <div className="hidden">v1.0.4-CANADA-ONLY</div>
+
             {/* Navigation / Progress Bar */}
             <nav className="fixed top-0 inset-x-0 p-6 z-50 flex items-center justify-between border-b border-white/5 bg-[#0a0a0a]/80 backdrop-blur-md">
                 <Link to="/" className="flex items-center gap-2 group">
@@ -128,7 +139,7 @@ export default function OnboardingPage() {
                 <div className="lg:col-span-5 space-y-8 step-content">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-600/10 border border-blue-500/20 text-blue-400 text-xs font-medium animate-pulse">
                         <Sparkles className="w-3 h-3" />
-                        AI Setup in Progress
+                        AI Setup in Progress (Canada Mode)
                     </div>
 
                     <div>
@@ -196,7 +207,7 @@ export default function OnboardingPage() {
                                     onChange={handleSearchChange}
                                     className="w-full h-14 pl-12 pr-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-blue-500/50 transition-all placeholder:text-white/20 text-white"
                                 />
-                                {(loading || (status === "OK" && data.length > 0)) && !selectedBusiness && (
+                                {loading && !selectedBusiness && (
                                     <div className="absolute right-4 top-1/2 -translate-y-1/2">
                                         <Loader2 className="w-4 h-4 text-blue-500 animate-spin" />
                                     </div>
@@ -217,14 +228,14 @@ export default function OnboardingPage() {
                                                 <MapPin className="w-4 h-4 text-blue-500" />
                                             </div>
                                             <div>
-                                                <div className="text-sm font-medium text-white">{suggestion.structured_formatting.main_text}</div>
-                                                <div className="text-[10px] text-white/40 mt-0.5 uppercase tracking-wider">{suggestion.structured_formatting.secondary_text}</div>
+                                                <div className="text-sm font-medium text-white">{suggestion.structured_formatting?.main_text || suggestion.description}</div>
+                                                <div className="text-[10px] text-white/40 mt-0.5 uppercase tracking-wider">{suggestion.structured_formatting?.secondary_text || ""}</div>
                                             </div>
                                         </button>
                                     ))}
 
                                     {/* Fallback to Mocks only if value matches and no real results yet */}
-                                    {(status !== "OK" || data.length === 0) && mockBusinesses.map((b) => (
+                                    {(status !== "OK" || data.length === 0) && value.length > 2 && mockBusinesses.map((b) => (
                                         <button
                                             key={b.id}
                                             onClick={() => handleBusinessSelect(b)}
@@ -293,7 +304,7 @@ export default function OnboardingPage() {
                                 disabled={!selectedBusiness}
                                 onClick={handleNext}
                                 className={`w-full h-14 rounded-xl flex items-center justify-center gap-3 font-medium transition-all duration-500 ${selectedBusiness
-                                    ? 'bg-blue-600 hover:bg-blue-500 text-white shadow-[0_4px_20px_rgba(37,99,235,0.4)] translate-y-0'
+                                    ? 'bg-blue-600 hover:bg-blue-500 text-white shadow-[0_4px_20_4px_rgba(37,99,235,0.4)] translate-y-0'
                                     : 'bg-white/5 text-white/20 border border-white/10 cursor-not-allowed opacity-50'
                                     }`}
                             >
