@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { LanguageToggle } from '../components/LanguageToggle';
+import { Link } from 'react-router-dom';
 
 export function Navigation() {
   const { t } = useLanguage();
@@ -63,8 +64,14 @@ export function Navigation() {
           </span>
         </div>
 
-        {/* Right: Language Toggle */}
-        <div className="flex-1 flex justify-end">
+        {/* Right: Actions & Toggle */}
+        <div className="flex-1 flex items-center justify-end gap-6">
+          <Link
+            to="/onboarding"
+            className="hidden sm:block text-[11px] font-bold uppercase tracking-widest text-blue-500 hover:text-blue-400 transition-colors border border-blue-500/30 px-4 py-2 rounded-full hover:bg-blue-500/5"
+          >
+            Free Trial
+          </Link>
           <LanguageToggle />
         </div>
 

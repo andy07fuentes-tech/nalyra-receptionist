@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 import gsap from 'gsap';
 
@@ -149,46 +150,44 @@ export function Hero({ isReady }: { isReady: boolean }) {
           ))}
         </h1>
 
-        {/* CTA */}
-        <div className={`mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-700 ease-out ${phase >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+        {/* Main CTA: Start Onboarding */}
+        <div className={`mt-12 transition-all duration-1000 ease-out ${phase >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: '0.4s' }}>
+          <Link
+            to="/onboarding"
+            className="group relative inline-flex items-center gap-4 bg-blue-600 px-10 py-5 rounded-2xl overflow-hidden shadow-[0_0_30px_rgba(37,99,235,0.3)] transition-all duration-500 hover:bg-blue-500 hover:scale-105 active:scale-95"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+            <div className="flex flex-col items-start leading-none">
+              <span className="text-[10px] tracking-[0.3em] text-white/60 mb-1 uppercase font-bold">Start 14-Day Trial</span>
+              <span className="font-serif text-2xl text-white">Get Started with Nalyra</span>
+            </div>
+            <div className="p-2 bg-white/10 rounded-lg group-hover:bg-white/20 transition-colors">
+              <ArrowRight className="w-6 h-6 text-white transition-transform duration-300 group-hover:translate-x-1" />
+            </div>
+          </Link>
+          <p className="text-white/30 text-[10px] uppercase tracking-widest mt-4">No credit card required • Setup in 60 seconds</p>
+        </div>
+
+        {/* Secondary CTAs */}
+        <div className={`mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-700 ease-out ${phase >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: '0.6s' }}>
           <button
             onClick={() => scrollToSection('#video-promo')}
-            className="group relative py-3 px-8 overflow-hidden border border-white/10 transition-all duration-500 hover:border-blue-400/50 min-w-[200px]"
+            className="group relative py-3 px-8 overflow-hidden border border-white/10 transition-all duration-500 hover:border-blue-400/50 min-w-[180px] bg-white/5"
             aria-label={t('hero.videoDemo') as string}
           >
-            {/* Background Fill on Hover */}
-            <div className="absolute inset-0 bg-blue-600 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-
-            <div className="relative z-10 flex flex-col items-start gap-0.5">
-              <span className="text-[7px] md:text-[8px] tracking-[0.4em] text-blue-400 group-hover:text-white/60 transition-colors uppercase font-sans">01 // DEMO</span>
-              <span className="font-serif text-lg md:text-2xl text-white flex items-center gap-3">
-                {t('hero.videoDemo')}
-                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </span>
-            </div>
-
-            {/* Corner Accent */}
-            <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-white/20 group-hover:border-white transition-colors" />
+            <span className="font-serif text-lg text-white flex items-center justify-center gap-2">
+              {t('hero.videoDemo')}
+            </span>
           </button>
 
           <button
             onClick={() => scrollToSection('#pricing')}
-            className="group relative py-3 px-8 overflow-hidden border border-white/10 transition-all duration-500 hover:border-cyan-400/50 min-w-[200px]"
+            className="group relative py-3 px-8 overflow-hidden border border-white/10 transition-all duration-500 hover:border-cyan-400/50 min-w-[180px] bg-white/5"
             aria-label={t('hero.prices') as string}
           >
-            {/* Background Fill on Hover - Different Color */}
-            <div className="absolute inset-0 bg-cyan-600 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-
-            <div className="relative z-10 flex flex-col items-start gap-0.5">
-              <span className="text-[7px] md:text-[8px] tracking-[0.4em] text-cyan-400 group-hover:text-white/60 transition-colors uppercase font-sans">02 // PLANS</span>
-              <span className="font-serif text-lg md:text-2xl text-white flex items-center gap-3">
-                {t('hero.prices')}
-                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </span>
-            </div>
-
-            {/* Corner Accent */}
-            <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-white/20 group-hover:border-white transition-colors" />
+            <span className="font-serif text-lg text-white flex items-center justify-center gap-2">
+              {t('hero.prices')}
+            </span>
           </button>
         </div>
 
