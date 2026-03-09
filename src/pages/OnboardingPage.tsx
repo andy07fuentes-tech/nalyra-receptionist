@@ -20,13 +20,21 @@ export default function OnboardingPage() {
         clearSuggestions,
     } = usePlacesAutocomplete({
         requestOptions: {
-            // STRICT BIAS: Only search within Canada
+            // Hardware lock to Canada
             componentRestrictions: { country: "ca" },
-            types: ['establishment', 'geocode'], // Search for businesses and addresses
+            types: ['establishment'],
         },
         debounce: 300,
-        cache: 0, // Disable internal cache for testing
     });
+
+    // FILTER: Only show results that are actually in Canada (extra safety)
+    const filteredData = data.filter(item =>
+        item.description.toLowerCase().includes('canada') ||
+        item.description.toLowerCase().includes(', ca') ||
+        item.description.toLowerCase().includes('montreal') ||
+        item.description.toLowerCase().includes('quebec') ||
+        item.description.toLowerCase().includes(', qc')
+    );
 
     // Mock Business Search Results - FALLBACK
     const mockBusinesses = [
@@ -36,18 +44,10 @@ export default function OnboardingPage() {
             address: "123 Innovation Dr, Montreal, QC",
             hours: "9:00 AM - 5:00 PM",
             phone: "+1 (514) 555-0199"
-        },
-        {
-            id: 'm2',
-            name: "The Digital Creative Agency",
-            address: "456 Creative Way, Toronto, ON",
-            hours: "10:00 AM - 6:00 PM",
-            phone: "+1 (416) 555-0288"
         }
     ].filter(b => b.name.toLowerCase().includes(value.toLowerCase()));
 
     useEffect(() => {
-        // Animation for step enter
         gsap.fromTo('.step-content',
             { opacity: 0, x: 20 },
             { opacity: 1, x: 0, duration: 0.6, ease: 'power2.out' }
@@ -59,7 +59,6 @@ export default function OnboardingPage() {
     };
 
     const handleBusinessSelect = async (place: any) => {
-        // If it's a mock business
         if (place.id && place.id.toString().startsWith('m')) {
             setSelectedBusiness(place);
             setValue(place.name, false);
@@ -67,7 +66,6 @@ export default function OnboardingPage() {
             return;
         }
 
-        // Real Google Places Logic
         setValue(place.description, false);
         clearSuggestions();
 
@@ -85,13 +83,6 @@ export default function OnboardingPage() {
             });
         } catch (error) {
             console.error("Error fetching geocode:", error);
-            // Fallback for simple address selection
-            setSelectedBusiness({
-                name: place.description,
-                address: "",
-                hours: "Details pending",
-                phone: "Syncing..."
-            });
         }
     };
 
@@ -101,10 +92,7 @@ export default function OnboardingPage() {
 
     return (
         <div className="min-h-screen bg-[#0a0a0a] text-white font-sans selection:bg-blue-500/30">
-            {/* Version Flag for Cache Verification */}
-            <div className="hidden">v1.0.4-CANADA-ONLY</div>
-
-            {/* Navigation / Progress Bar */}
+            {/* Navigation */}
             <nav className="fixed top-0 inset-x-0 p-6 z-50 flex items-center justify-between border-b border-white/5 bg-[#0a0a0a]/80 backdrop-blur-md">
                 <Link to="/" className="flex items-center gap-2 group">
                     <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center group-hover:bg-blue-500 transition-colors">
@@ -116,30 +104,24 @@ export default function OnboardingPage() {
                 <div className="flex flex-col items-center gap-2">
                     <div className="flex items-center gap-2">
                         {[1, 2, 3, 4, 5].map((s) => (
-                            <div
-                                key={s}
-                                className={`h-1.5 w-12 rounded-full transition-all duration-500 ${s <= step ? 'bg-blue-600 shadow-[0_0_10px_rgba(37,99,235,0.4)]' : 'bg-white/10'
-                                    }`}
-                            />
+                            <div key={s} className={`h-1.5 w-12 rounded-full transition-all duration-500 ${s <= step ? 'bg-blue-600 shadow-[0_0_10px_rgba(37,99,235,0.4)]' : 'bg-white/10'}`} />
                         ))}
                     </div>
                     <span className="text-[10px] text-white/40 uppercase tracking-[0.3em] font-medium">Step {step} of 5</span>
                 </div>
 
                 <div className="w-24 flex justify-end">
-                    <button className="text-white/40 hover:text-white transition-colors text-xs font-medium underline underline-offset-4">
-                        Save & Exit
-                    </button>
+                    <button className="text-white/40 hover:text-white transition-colors text-xs font-medium underline underline-offset-4">Save & Exit</button>
                 </div>
             </nav>
 
             <main className="pt-32 pb-20 px-6 max-w-7xl mx-auto grid lg:grid-cols-12 gap-16 min-h-[calc(100vh-80px)] items-center">
 
-                {/* Left Side: Value Proposition */}
+                {/* Left Side */}
                 <div className="lg:col-span-5 space-y-8 step-content">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-600/10 border border-blue-500/20 text-blue-400 text-xs font-medium animate-pulse">
                         <Sparkles className="w-3 h-3" />
-                        AI Setup in Progress (Canada Mode)
+                        v1.5 (Local Lock Active)
                     </div>
 
                     <div>
@@ -158,56 +140,38 @@ export default function OnboardingPage() {
                                 <Search className="w-4 h-4" />
                             </div>
                             <p className="text-sm text-white/70 leading-relaxed font-light">
-                                <strong className="text-white font-medium block mb-0.5">Automated Sync</strong>
-                                Pulling your business data from Google ensures 100% accuracy in AI responses.
+                                <strong className="text-white font-medium block mb-0.5">Montreal Priority</strong>
+                                Search is strictly locked to Canadian businesses for 100% accuracy.
                             </p>
-                        </div>
-                        <div className="flex items-start gap-4 text-white/70">
-                            <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0 text-blue-500">
-                                <Clock className="w-4 h-4" />
-                            </div>
-                            <p className="text-sm text-white/70 leading-relaxed font-light">
-                                <strong className="text-white font-medium block mb-0.5">30-Second Setup</strong>
-                                The faster we find you, the sooner Nalyra starts answering your calls.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className="pt-6">
-                        <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/5 border border-white/10 rounded-xl">
-                            <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                            <span className="text-xs text-white/50">Free 14-day trial included. No card required.</span>
                         </div>
                     </div>
                 </div>
 
                 {/* Right Side: Interactive Search Card */}
-                <div className="lg:col-span-1" /> {/* Spacer */}
+                <div className="lg:col-span-1" />
 
                 <div className="lg:col-span-6 relative step-content">
-                    {/* Background Glow */}
                     <div className="absolute -inset-20 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
 
                     <div className="relative p-8 md:p-12 rounded-3xl bg-white/[0.03] border border-white/10 backdrop-blur-2xl shadow-2xl">
-                        <h2 className="text-xl font-medium mb-8 flex items-center gap-3">
-                            <Building2 className="w-5 h-5 text-blue-500" />
-                            Find Your Business
+                        <h2 className="text-xl font-medium mb-8 flex items-center gap-3 text-blue-400">
+                            <Building2 className="w-5 h-5" />
+                            Canada Business Search
                         </h2>
 
                         <div className="space-y-6">
-                            {/* Search Input */}
                             <div className="relative group">
                                 <div className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30 group-focus-within:text-blue-500 transition-colors">
                                     <Search className="w-5 h-5" />
                                 </div>
                                 <input
                                     type="text"
-                                    placeholder="Enter your business name..."
+                                    placeholder="Enter Montreal business name..."
                                     value={value}
                                     onChange={handleSearchChange}
-                                    className="w-full h-14 pl-12 pr-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-blue-500/50 transition-all placeholder:text-white/20 text-white"
+                                    className="w-full h-14 pl-12 pr-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-blue-500 transition-all placeholder:text-white/20 text-white"
                                 />
-                                {loading && !selectedBusiness && (
+                                {loading && (
                                     <div className="absolute right-4 top-1/2 -translate-y-1/2">
                                         <Loader2 className="w-4 h-4 text-blue-500 animate-spin" />
                                     </div>
@@ -217,25 +181,23 @@ export default function OnboardingPage() {
                             {/* Results Dropdown */}
                             {value.length > 0 && !selectedBusiness && (
                                 <div className="absolute left-8 right-8 top-full mt-2 bg-[#121212] border border-white/10 rounded-2xl shadow-2xl z-20 overflow-hidden divide-y divide-white/5">
-                                    {/* Real Google Results */}
-                                    {status === "OK" && data.map((suggestion) => (
+                                    {status === "OK" && filteredData.map((suggestion) => (
                                         <button
                                             key={suggestion.place_id}
                                             onClick={() => handleBusinessSelect(suggestion)}
-                                            className="w-full p-4 flex items-start gap-4 hover:bg-white/5 transition-colors text-left"
+                                            className="w-full p-4 flex items-start gap-4 hover:bg-blue-600/10 transition-colors text-left"
                                         >
                                             <div className="w-8 h-8 rounded-lg bg-blue-600/10 flex items-center justify-center flex-shrink-0">
                                                 <MapPin className="w-4 h-4 text-blue-500" />
                                             </div>
                                             <div>
                                                 <div className="text-sm font-medium text-white">{suggestion.structured_formatting?.main_text || suggestion.description}</div>
-                                                <div className="text-[10px] text-white/40 mt-0.5 uppercase tracking-wider">{suggestion.structured_formatting?.secondary_text || ""}</div>
+                                                <div className="text-[10px] text-white/40 mt-0.5 uppercase tracking-wider">{suggestion.structured_formatting?.secondary_text || "Canada"}</div>
                                             </div>
                                         </button>
                                     ))}
 
-                                    {/* Fallback to Mocks only if value matches and no real results yet */}
-                                    {(status !== "OK" || data.length === 0) && value.length > 2 && mockBusinesses.map((b) => (
+                                    {(status !== "OK" || filteredData.length === 0) && value.length > 2 && mockBusinesses.map((b) => (
                                         <button
                                             key={b.id}
                                             onClick={() => handleBusinessSelect(b)}
@@ -245,21 +207,14 @@ export default function OnboardingPage() {
                                                 <MapPin className="w-4 h-4 text-blue-500" />
                                             </div>
                                             <div>
-                                                <div className="text-sm font-medium text-white">{b.name}</div>
+                                                <div className="text-sm font-medium text-white">{b.name} (Montreal)</div>
                                                 <div className="text-[10px] text-white/40 mt-0.5 uppercase tracking-wider">{b.address}</div>
                                             </div>
                                         </button>
                                     ))}
-
-                                    {status === "ZERO_RESULTS" && mockBusinesses.length === 0 && (
-                                        <div className="p-8 text-center text-white/30 text-xs">
-                                            No local businesses found matching "{value}"
-                                        </div>
-                                    )}
                                 </div>
                             )}
 
-                            {/* Selected Business Card */}
                             {selectedBusiness && (
                                 <div className="p-6 rounded-2xl bg-blue-600/5 border border-blue-500/20 space-y-4 animate-in fade-in slide-in-from-bottom-2 duration-500">
                                     <div className="flex justify-between items-start">
@@ -269,63 +224,23 @@ export default function OnboardingPage() {
                                             </div>
                                             <div>
                                                 <h3 className="text-lg font-medium">{selectedBusiness.name}</h3>
-                                                <p className="text-xs text-white/40 flex items-center gap-1">
-                                                    <MapPin className="w-3 h-3" /> {selectedBusiness.address}
-                                                </p>
+                                                <p className="text-xs text-white/40 flex items-center gap-1"><MapPin className="w-3 h-3" /> {selectedBusiness.address}</p>
                                             </div>
                                         </div>
-                                        <button
-                                            onClick={() => setSelectedBusiness(null)}
-                                            className="text-[10px] text-blue-400 hover:underline uppercase tracking-widest font-bold"
-                                        >
-                                            Change
-                                        </button>
-                                    </div>
-
-                                    <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/5">
-                                        <div className="space-y-1">
-                                            <span className="text-[10px] text-white/20 uppercase tracking-widest">Business Hours</span>
-                                            <p className="text-xs text-white/70 flex items-center gap-2">
-                                                <Clock className="w-3 h-3 text-blue-500" /> {selectedBusiness.hours}
-                                            </p>
-                                        </div>
-                                        <div className="space-y-1">
-                                            <span className="text-[10px] text-white/20 uppercase tracking-widest">Global Reach</span>
-                                            <p className="text-xs text-white/70 flex items-center gap-2">
-                                                <Globe2 className="w-3 h-3 text-blue-500" /> Worldwide
-                                            </p>
-                                        </div>
+                                        <button onClick={() => setSelectedBusiness(null)} className="text-[10px] text-blue-400 hover:underline uppercase tracking-widest font-bold">Change</button>
                                     </div>
                                 </div>
                             )}
 
-                            {/* Next Button */}
                             <button
                                 disabled={!selectedBusiness}
                                 onClick={handleNext}
-                                className={`w-full h-14 rounded-xl flex items-center justify-center gap-3 font-medium transition-all duration-500 ${selectedBusiness
-                                    ? 'bg-blue-600 hover:bg-blue-500 text-white shadow-[0_4px_20_4px_rgba(37,99,235,0.4)] translate-y-0'
-                                    : 'bg-white/5 text-white/20 border border-white/10 cursor-not-allowed opacity-50'
-                                    }`}
+                                className={`w-full h-14 rounded-xl flex items-center justify-center gap-3 font-medium transition-all duration-500 ${selectedBusiness ? 'bg-blue-600 hover:bg-blue-500 text-white shadow-lg' : 'bg-white/5 text-white/20 border border-white/10 cursor-not-allowed'}`}
                             >
                                 Continue to AI Model Setup
-                                <ArrowRight className={`w-5 h-5 transition-transform duration-300 ${selectedBusiness ? 'translate-x-0 group-hover:translate-x-1' : ''}`} />
+                                <ArrowRight className="w-5 h-5" />
                             </button>
-
-                            <p className="text-center text-[10px] text-white/20 uppercase tracking-wider font-medium">
-                                Can't find your business? <button className="text-blue-500 hover:underline">Manual Setup</button>
-                            </p>
                         </div>
-                    </div>
-
-                    {/* Footer HUD info */}
-                    <div className="mt-8 flex items-center justify-between px-4">
-                        <div className="flex items-center gap-4 text-[9px] text-white/20 uppercase tracking-[0.2em] font-medium">
-                            <span>Secured AES-256</span>
-                            <div className="w-1 h-1 rounded-full bg-white/20" />
-                            <span>Privacy Compliant</span>
-                        </div>
-                        <span className="text-[9px] text-white/20 uppercase tracking-[0.2em] font-medium">Auto-Save Enabled</span>
                     </div>
                 </div>
             </main>
