@@ -192,7 +192,6 @@ export default function OnboardingPage() {
                                     placeholder="Enter your business name..."
                                     value={value}
                                     onChange={handleSearchChange}
-                                    disabled={!ready && status !== "OK"}
                                     className="w-full h-14 pl-12 pr-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-blue-500/50 transition-all placeholder:text-white/20 text-white"
                                 />
                                 {(status === "OK" || value.length > 2) && !selectedBusiness && (
