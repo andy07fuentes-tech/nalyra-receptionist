@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Search, MapPin, Clock, ArrowRight, CheckCircle2, Building2, Globe2, Sparkles } from 'lucide-react';
+import { Search, MapPin, Clock, ArrowRight, CheckCircle2, Building2, Globe2, Sparkles, Loader2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import usePlacesAutocomplete, {
@@ -15,25 +15,19 @@ export default function OnboardingPage() {
     const {
         ready,
         value,
-        suggestions: { status, data },
+        suggestions: { status, data, loading },
         setValue,
         clearSuggestions,
     } = usePlacesAutocomplete({
         requestOptions: {
-            // STRICT BIAS: Tell Google to look at Montreal first
-            // Bounds: SW (45.38, -73.95) to NE (45.70, -73.35)
-            locationRestriction: {
-                north: 45.70,
-                south: 45.38,
-                east: -73.35,
-                west: -73.95,
-            },
+            // STRICT BIAS: Only search within Canada
             componentRestrictions: { country: "ca" },
+            types: ['establishment'], // This ensures we find businesses, not just cities
         },
         debounce: 300,
     });
 
-    // Mock Business Search Results - FALLBACK when no API key is active
+    // Mock Business Search Results - FALLBACK
     const mockBusinesses = [
         {
             id: 'm1',
@@ -202,15 +196,15 @@ export default function OnboardingPage() {
                                     onChange={handleSearchChange}
                                     className="w-full h-14 pl-12 pr-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-blue-500/50 transition-all placeholder:text-white/20 text-white"
                                 />
-                                {(status === "OK" || value.length > 2) && !selectedBusiness && (
+                                {(loading || (status === "OK" && data.length > 0)) && !selectedBusiness && (
                                     <div className="absolute right-4 top-1/2 -translate-y-1/2">
-                                        <div className="w-4 h-4 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
+                                        <Loader2 className="w-4 h-4 text-blue-500 animate-spin" />
                                     </div>
                                 )}
                             </div>
 
-                            {/* Results Dropdown (Real Google Data + Mocks) */}
-                            {value.length > 2 && !selectedBusiness && (
+                            {/* Results Dropdown */}
+                            {value.length > 0 && !selectedBusiness && (
                                 <div className="absolute left-8 right-8 top-full mt-2 bg-[#121212] border border-white/10 rounded-2xl shadow-2xl z-20 overflow-hidden divide-y divide-white/5">
                                     {/* Real Google Results */}
                                     {status === "OK" && data.map((suggestion) => (
@@ -229,8 +223,8 @@ export default function OnboardingPage() {
                                         </button>
                                     ))}
 
-                                    {/* Mock Fallbacks (Only if Google status is not OK, e.g. no key) */}
-                                    {status !== "OK" && mockBusinesses.map((b) => (
+                                    {/* Fallback to Mocks only if value matches and no real results yet */}
+                                    {(status !== "OK" || data.length === 0) && mockBusinesses.map((b) => (
                                         <button
                                             key={b.id}
                                             onClick={() => handleBusinessSelect(b)}
@@ -246,9 +240,9 @@ export default function OnboardingPage() {
                                         </button>
                                     ))}
 
-                                    {status !== "OK" && mockBusinesses.length === 0 && (
+                                    {status === "ZERO_RESULTS" && mockBusinesses.length === 0 && (
                                         <div className="p-8 text-center text-white/30 text-xs">
-                                            No businesses found. Try a different name?
+                                            No local businesses found matching "{value}"
                                         </div>
                                     )}
                                 </div>
