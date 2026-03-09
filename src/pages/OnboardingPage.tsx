@@ -20,9 +20,15 @@ export default function OnboardingPage() {
         clearSuggestions,
     } = usePlacesAutocomplete({
         requestOptions: {
-            // Bias results toward Canada/Montreal area
-            componentRestrictions: { country: ["ca", "us"] },
-            locationBias: 'IP_BIAS', // This tells Google to look at where the user is sitting right now
+            // STRICT BIAS: Tell Google to look at Montreal first
+            // Bounds: SW (45.38, -73.95) to NE (45.70, -73.35)
+            locationRestriction: {
+                north: 45.70,
+                south: 45.38,
+                east: -73.35,
+                west: -73.95,
+            },
+            componentRestrictions: { country: "ca" },
         },
         debounce: 300,
     });
