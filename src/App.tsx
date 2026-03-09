@@ -1,9 +1,10 @@
 import { useState, useCallback, useEffect } from 'react';
 import { Navigation } from './sections/Navigation';
 import { Hero } from './sections/Hero';
+import { PainPoints } from './sections/PainPoints';
 import { FeatureShowcase } from './sections/FeatureShowcase';
 import { AlbumCube } from './sections/AlbumCube';
-import { WineShowcase } from './sections/WineShowcase';
+import { SolutionShowcase } from './sections/SolutionShowcase';
 import { Footer } from './sections/Footer';
 import { Preloader } from './components/Preloader';
 import { ScrollToTop } from './components/ScrollToTop';
@@ -67,9 +68,10 @@ function App() {
 
         <main>
           <Hero isReady={!isLoading} />
+          <PainPoints />
           <FeatureShowcase />
           <AlbumCube />
-          <WineShowcase />
+          <SolutionShowcase />
         </main>
 
         <Footer />

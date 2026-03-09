@@ -72,6 +72,46 @@ export const translations = {
       }
     },
 
+    // Pain Points
+    painPoints: {
+      scriptText: "Le Coût du Statu Quo",
+      subtitle: "POINTS DE FRICTION",
+      mainTitle: "Pourquoi la Réception Traditionnelle Échoue",
+      description: "Les entreprises perdent des revenus chaque jour à cause de limitations humaines évitables. Nalyra élimine ces obstacles.",
+      items: [
+        {
+          title: "Fuite de Revenus",
+          description: "85% des appelants ne rappellent pas s'ils tombent sur une messagerie. Chaque appel manqué est un client perdu.",
+          icon: "PhoneMissed"
+        },
+        {
+          title: "Coûts Fixes Élevés",
+          description: "Le recrutement, la formation et les avantages sociaux pour un personnel 24/7 sont un gouffre financier imprévisible.",
+          icon: "TrendingUp"
+        },
+        {
+          title: "Lacunes de Couverture",
+          description: "Les humains ont besoin de pauses et de sommeil. Nalyra offre une disponibilité absolue 24/7/365, sans exception.",
+          icon: "Clock"
+        },
+        {
+          title: "Service Inconstant",
+          description: "La performance du personnel fluctue. Nalyra offre une expérience premium et parfaitement polie à chaque interaction.",
+          icon: "Zap"
+        },
+        {
+          title: "Rotation du Personnel",
+          description: "Les rôles de support ont un turn-over de 75%, entraînant une perte constante de savoir-faire et des coûts de re-formation.",
+          icon: "RefreshCw"
+        },
+        {
+          title: "Friction Administrative",
+          description: "La saisie manuelle entraîne des erreurs, des doubles réservations et la perte d'informations cruciales sur les prospects.",
+          icon: "ClipboardList"
+        }
+      ]
+    },
+
     // Album Cube
     albumCube: {
       scrollHint: "Faites défiler pour explorer",
@@ -147,43 +187,43 @@ export const translations = {
       scriptText: "Capacités Puissantes",
       subtitle: "FONCTIONNALITÉS IA",
       mainTitle: "Tout ce dont Votre Entreprise a Besoin",
-      wines: {
+      solutions: {
         callHandling: {
-          name: "Gestion d'Appels Intelligente",
+          name: "Gestion d'Appels",
           subtitle: "Routage Intelligent",
-          description: "Notre réceptionniste IA répond aux appels avec des conversations naturelles, comprend l'intention de l'appelant et les achemine vers le bon service ou prend des messages détaillés.",
+          description: "Nalyra répond aux appels avec des conversations naturelles, comprend l'intention et achemine vers le bon service.",
           tastingNotes: "Traitement du langage naturel avec analyse de sentiment",
-          alcohol: "Multi-langue",
-          temperature: "Instantané",
-          aging: "99.9% de disponibilité",
+          accuracy: "99%",
+          speed: "Instantané",
+          uptime: "24/7",
         },
         scheduling: {
-          name: "Planification de Rendez-vous",
-          subtitle: "Intégration Calendrier",
-          description: "Réservez des rendez-vous de manière transparente, envoyez des rappels et gérez votre calendrier. S'intègre avec Google Calendar, Outlook et les plateformes de planification populaires.",
+          name: "Planification",
+          subtitle: "Calendrier Auto",
+          description: "Réservez des rendez-vous, envoyez des rappels et gérez votre calendrier sans aucune intervention humaine.",
           tastingNotes: "Disponibilité en temps réel avec détection de conflits",
-          alcohol: "Multi-plateforme",
-          temperature: "Automatisé",
-          aging: "Réservation 24/7",
+          accuracy: "100%",
+          speed: "Automatisé",
+          uptime: "Illimité",
         },
         support: {
           name: "Support Client",
           subtitle: "Réponses Instantanées",
-          description: "Fournissez des réponses instantanées aux questions courantes, résolvez les problèmes et escaladez les demandes complexes vers des agents humains si nécessaire.",
-          tastingNotes: "Intégration de base de connaissances avec capacités d'apprentissage",
-          alcohol: "Multi-canal",
-          temperature: "Immédiat",
-          aging: "Apprentissage Continu",
+          description: "Fournissez des réponses instantanées aux questions courantes et résolvez les problèmes complexes en un clin d'œil.",
+          tastingNotes: "Base de connaissances avec capacités d'auto-apprentissage",
+          accuracy: "95%",
+          speed: "Immédiat",
+          uptime: "Continu",
         },
       },
       featureCards: {
         aiPowered: { title: "Propulsé par IA", description: "NLP avancé pour des conversations naturelles" },
         alwaysOn: { title: "Toujours Actif", description: "Disponibilité 24/7 sans interruption" },
         instant: { title: "Réponse Instantanée", description: "Temps de réponse inférieurs à la seconde" },
-        customizable: { title: "Personnalisable", description: "Adapté à votre voix de marque" },
+        customizable: { title: "Personnalisable", description: "Adapté à votre image de marque" },
       },
       quote: {
-        text: "Le réceptionniste IA a transformé notre façon de gérer les demandes clients. Notre équipe peut se concentrer sur l'essentiel.",
+        text: "Nalyra a transformé notre façon de gérer les demandes clients. Notre équipe peut se concentrer sur l'essentiel.",
         attribution: "Sarah Mitchell, PDG",
         prefix: "Histoire de Succès",
       },
@@ -471,6 +511,46 @@ export const translations = {
       }
     },
 
+    // Pain Points
+    painPoints: {
+      scriptText: "The Cost of Inaction",
+      subtitle: "FRICTION POINTS",
+      mainTitle: "Why Traditional Reception Fails",
+      description: "Businesses lose revenue every day due to avoidable human limitations. Nalyra eliminates these barriers for good.",
+      items: [
+        {
+          title: "Revenue Leakage",
+          description: "85% of callers won't call back if they hit voicemail. Every missed call is a lost opportunity.",
+          icon: "PhoneMissed"
+        },
+        {
+          title: "High Fixed Costs",
+          description: "Hiring, training, and 24/7 benefits for staff is a massive and unpredictable capital drain.",
+          icon: "TrendingUp"
+        },
+        {
+          title: "Coverage Gaps",
+          description: "Humans need breaks, sleep, and time off. Nalyra provides absolute 24/7/365 availability, no exceptions.",
+          icon: "Clock"
+        },
+        {
+          title: "Inconsistent Quality",
+          description: "Staff performance fluctuates. Nalyra delivers a perfectly polite, premium experience 100% of the time.",
+          icon: "Zap"
+        },
+        {
+          title: "The Turnover Cycle",
+          description: "Support roles have 75% annual turnover, leading to constant brain drain and retraining costs.",
+          icon: "RefreshCw"
+        },
+        {
+          title: "Operational Friction",
+          description: "Manual data entry leads to human errors, double bookings, and lost lead information.",
+          icon: "ClipboardList"
+        }
+      ]
+    },
+
     // Album Cube
     albumCube: {
       scrollHint: "Scroll to explore",
@@ -546,43 +626,43 @@ export const translations = {
       scriptText: "Powerful Capabilities",
       subtitle: "AI-POWERED FEATURES",
       mainTitle: "Everything Your Business Needs",
-      wines: {
+      solutions: {
         callHandling: {
-          name: "Smart Call Handling",
-          subtitle: "Intelligent Routing",
-          description: "Our AI receptionist answers calls with natural conversation, understands caller intent, and routes them to the right department or takes detailed messages.",
+          name: "Call Handling",
+          subtitle: "Smart Routing",
+          description: "Nalyra answers calls with natural conversation, understands intent, and routes to the right person.",
           tastingNotes: "Natural language processing with sentiment analysis",
-          alcohol: "Multi-language",
-          temperature: "Instant",
-          aging: "99.9% Uptime",
+          accuracy: "99%",
+          speed: "Instant",
+          uptime: "24/7",
         },
         scheduling: {
-          name: "Appointment Scheduling",
-          subtitle: "Calendar Integration",
-          description: "Seamlessly book appointments, send reminders, and manage your calendar. Integrates with Google Calendar, Outlook, and popular scheduling platforms.",
+          name: "Scheduling",
+          subtitle: "Auto Calendar",
+          description: "Seamlessly book appointments, send reminders, and manage your schedule without human intervention.",
           tastingNotes: "Real-time availability with conflict detection",
-          alcohol: "Multi-platform",
-          temperature: "Automated",
-          aging: "24/7 Booking",
+          accuracy: "100%",
+          speed: "Automated",
+          uptime: "Unlimited",
         },
         support: {
           name: "Customer Support",
-          subtitle: "Instant Responses",
-          description: "Provide instant answers to common questions, troubleshoot issues, and escalate complex inquiries to human agents when needed.",
-          tastingNotes: "Knowledge base integration with learning capabilities",
-          alcohol: "Multi-channel",
-          temperature: "Immediate",
-          aging: "Continuous Learning",
+          subtitle: "Instant Answers",
+          description: "Provide immediate responses to common questions and handle complex inquiries with ease.",
+          tastingNotes: "Knowledge base integration with self-learning capabilities",
+          accuracy: "95%",
+          speed: "Immediate",
+          uptime: "Continuous",
         },
       },
       featureCards: {
         aiPowered: { title: "AI-Powered", description: "Advanced NLP for natural conversations" },
         alwaysOn: { title: "Always On", description: "24/7 availability without breaks" },
         instant: { title: "Instant Response", description: "Sub-second response times" },
-        customizable: { title: "Customizable", description: "Tailored to your brand voice" },
+        customizable: { title: "Customizable", description: "Tailored to your brand identity" },
       },
       quote: {
-        text: "The AI receptionist has transformed how we handle customer inquiries. Our team can focus on what matters most.",
+        text: "Nalyra has transformed how we handle customer inquiries. Our team can now focus on what matters most.",
         attribution: "Sarah Mitchell, CEO",
         prefix: "Success Story",
       },
@@ -868,6 +948,46 @@ export const translations = {
       }
     },
 
+    // Pain Points
+    painPoints: {
+      scriptText: "El Costo de la Inacción",
+      subtitle: "PUNTOS DE FRICCIÓN",
+      mainTitle: "Por Qué la Recepción Tradicional Falla",
+      description: "Las empresas pierden ingresos cada día debido a limitaciones humanas evitables. Nalyra elimina estas barreras para siempre.",
+      items: [
+        {
+          title: "Fuga de Ingresos",
+          description: "El 85% de las personas no vuelven a llamar si caen al buzón de voz. Cada llamada perdida es un cliente perdido.",
+          icon: "PhoneMissed"
+        },
+        {
+          title: "Costos Fijos Elevados",
+          description: "La contratación, formación y beneficios de personal 24/7 es un drenaje de capital masivo e impredecible.",
+          icon: "TrendingUp"
+        },
+        {
+          title: "Brechas de Cobertura",
+          description: "Los humanos necesitan descansos y sueño. Nalyra ofrece disponibilidad absoluta 24/7/365, sin excepciones.",
+          icon: "Clock"
+        },
+        {
+          title: "Servicio Inconsistente",
+          description: "El rendimiento del personal fluctúa. Nalyra ofrece una experiencia premium y perfectamente amable en cada interacción.",
+          icon: "Zap"
+        },
+        {
+          title: "El Ciclo de Rotación",
+          description: "Los roles de soporte tienen una rotación anual del 75%, lo que genera una pérdida constante de conocimientos.",
+          icon: "RefreshCw"
+        },
+        {
+          title: "Fricción Operativa",
+          description: "La entrada manual de datos genera errores humanos, duplicidad de citas y pérdida de información de prospectos.",
+          icon: "ClipboardList"
+        }
+      ]
+    },
+
     // Album Cube
     albumCube: {
       scrollHint: "Desplácese para explorar",
@@ -932,43 +1052,43 @@ export const translations = {
       scriptText: "Capacidades Potentes",
       subtitle: "FUNCIONES IA",
       mainTitle: "Todo lo que su Negocio Necesita",
-      wines: {
+      solutions: {
         callHandling: {
-          name: "Gestión Inteligente de Llamadas",
+          name: "Gestión de Llamadas",
           subtitle: "Enrutamiento Inteligente",
-          description: "Nuestro recepcionista IA responde llamadas con conversación natural, comprende la intención del llamante y lo dirige al departamento correcto o toma mensajes detallados.",
+          description: "Nalyra responde llamadas con conversación natural, comprende la intención y las dirige al departamento correcto.",
           tastingNotes: "Procesamiento de lenguaje natural con análisis de sentimiento",
-          alcohol: "Multi-idioma",
-          temperature: "Instantáneo",
-          aging: "99.9% de Disponibilidad",
+          accuracy: "99%",
+          speed: "Instantáneo",
+          uptime: "24/7",
         },
         scheduling: {
-          name: "Programación de Citas",
-          subtitle: "Integración de Calendario",
-          description: "Reserve citas sin problemas, envíe recordatorios y gestione su calendario. Se integra con Google Calendar, Outlook y plataformas de programación populares.",
+          name: "Programación",
+          subtitle: "Agenda Automática",
+          description: "Reserve citas sin problemas, envíe recordatorios y gestione su calendario sin intervención humana.",
           tastingNotes: "Disponibilidad en tiempo real con detección de conflictos",
-          alcohol: "Multi-plataforma",
-          temperature: "Automatizado",
-          aging: "Reserva 24/7",
+          accuracy: "100%",
+          speed: "Automatizado",
+          uptime: "Ilimitado",
         },
         support: {
           name: "Soporte al Cliente",
           subtitle: "Respuestas Instantáneas",
-          description: "Proporcione respuestas instantáneas a preguntas comunes, resuelva problemas y escale consultas complejas a agentes humanos cuando sea necesario.",
-          tastingNotes: "Integración de base de conocimientos con capacidades de aprendizaje",
-          alcohol: "Multi-canal",
-          temperature: "Inmediato",
-          aging: "Aprendizaje Continuo",
+          description: "Proporcione respuestas inmediatas a preguntas comunes y resuelva consultas complejas con facilidad.",
+          tastingNotes: "Integración de base de conocimientos con capacidad de autoaprendizaje",
+          accuracy: "95%",
+          speed: "Inmediato",
+          uptime: "Continuo",
         },
       },
       featureCards: {
         aiPowered: { title: "Impulsado por IA", description: "NLP avanzado para conversaciones naturales" },
         alwaysOn: { title: "Siempre Activo", description: "Disponibilidad 24/7 sin interrupciones" },
         instant: { title: "Respuesta Instantánea", description: "Tiempos de respuesta inferiores al segundo" },
-        customizable: { title: "Personalizable", description: "Adaptado a la voz de su marca" },
+        customizable: { title: "Personalizable", description: "Adaptado a la identidad de su marca" },
       },
       quote: {
-        text: "El recepcionista IA ha transformado cómo manejamos las consultas de clientes. Nuestro equipo puede enfocarse en lo más importante.",
+        text: "Nalyra ha transformado cómo manejamos las consultas de clientes. Nuestro equipo ahora puede enfocarse en lo más importante.",
         attribution: "Sarah Mitchell, CEO",
         prefix: "Historia de Éxito",
       },
@@ -1226,6 +1346,46 @@ export const translations = {
       },
     },
 
+    // Pain Points
+    painPoints: {
+      scriptText: "Il Costo dell'Inazione",
+      subtitle: "PUNTI DI ATTRITO",
+      mainTitle: "Perché la Reception Tradizionale Fallisce",
+      description: "Le aziende perdono ricavi ogni giorno a causa di limitazioni umane evitabili. Nalyra elimina queste barriere per sempre.",
+      items: [
+        {
+          title: "Perdita di Ricavi",
+          description: "L'85% delle persone non richiama se finisce in segreteria. Ogni chiamata persa è un cliente perso.",
+          icon: "PhoneMissed"
+        },
+        {
+          title: "Costi Fissi Elevati",
+          description: "Assunzione, formazione e benefit per il personale 24/7 sono un drenaggio di capitale massiccio e imprevedibile.",
+          icon: "TrendingUp"
+        },
+        {
+          title: "Lacune di Copertura",
+          description: "Gli esseri umani hanno bisogno di pause e sonno. Nalyra offre disponibilità assoluta 24/7/365, senza eccezioni.",
+          icon: "Clock"
+        },
+        {
+          title: "Qualità Incoerente",
+          description: "Le prestazioni del personale fluttuano. Nalyra offre un'esperienza premium e perfettamente cortese ogni volta.",
+          icon: "Zap"
+        },
+        {
+          title: "Ciclo di Rotazione",
+          description: "I ruoli di supporto hanno un turn-over annuo del 75%, portando a una costante perdita di know-how.",
+          icon: "RefreshCw"
+        },
+        {
+          title: "Attrito Operativo",
+          description: "L'inserimento manuale dei dati porta a errori umani, doppie prenotazioni e perdita di informazioni sui lead.",
+          icon: "ClipboardList"
+        }
+      ]
+    },
+
     // Pricing
     pricing: {
       scriptText: "Un Investimento Redditizio",
@@ -1278,43 +1438,43 @@ export const translations = {
       scriptText: "Capacità Potenti",
       subtitle: "FUNZIONALITÀ IA",
       mainTitle: "Tutto ciò che la Tua Azienda Necessita",
-      wines: {
+      solutions: {
         callHandling: {
-          name: "Gestione Intelligente Chiamate",
+          name: "Gestione Chiamate",
           subtitle: "Instradamento Intelligente",
-          description: "Il nostro receptionist IA risponde alle chiamate con conversazioni naturali, comprende l'intento del chiamante e lo indirizza al reparto corretto o prende messaggi dettagliati.",
+          description: "Nalyra risponde alle chiamate con conversazione naturale, comprende l'intento e le indirizza al reparto corretto.",
           tastingNotes: "Elaborazione del linguaggio naturale con analisi del sentimento",
-          alcohol: "Multi-lingua",
-          temperature: "Istantaneo",
-          aging: "99.9% di Disponibilità",
+          accuracy: "99%",
+          speed: "Istantaneo",
+          uptime: "24/7",
         },
         scheduling: {
-          name: "Pianificazione Appuntamenti",
-          subtitle: "Integrazione Calendario",
-          description: "Prenota appuntamenti senza problemi, invia promemoria e gestisci il tuo calendario. Si integra con Google Calendar, Outlook e piattaforme di pianificazione popolari.",
+          name: "Pianificazione",
+          subtitle: "Agenda Automatica",
+          description: "Prenota appuntamenti, invia promemoria e gestisci il tuo calendario senza alcun intervento umano.",
           tastingNotes: "Disponibilità in tempo reale con rilevamento conflitti",
-          alcohol: "Multi-piattaforma",
-          temperature: "Automatizzato",
-          aging: "Prenotazione 24/7",
+          accuracy: "100%",
+          speed: "Automatizzato",
+          uptime: "Illimitato",
         },
         support: {
           name: "Supporto Clienti",
           subtitle: "Risposte Istantanee",
-          description: "Fornisci risposte istantanee alle domande comuni, risolvi problemi e scala richieste complesse ad agenti umani quando necessario.",
-          tastingNotes: "Integrazione base di conoscenza con capacità di apprendimento",
-          alcohol: "Multi-canale",
-          temperature: "Immediato",
-          aging: "Apprendimento Continuo",
+          description: "Fornisci risposte immediate alle domande comuni e gestisci le richieste complesse con facilità.",
+          tastingNotes: "Integrazione base di conoscenza con capacità di auto-apprendimento",
+          accuracy: "95%",
+          speed: "Immediato",
+          uptime: "Continuo",
         },
       },
       featureCards: {
         aiPowered: { title: "Alimentato da IA", description: "NLP avanzato per conversazioni naturali" },
         alwaysOn: { title: "Sempre Attivo", description: "Disponibilità 24/7 senza interruzioni" },
         instant: { title: "Risposta Istantanea", description: "Tempi di risposta inferiori al secondo" },
-        customizable: { title: "Personalizzabile", description: "Adattato alla voce del tuo brand" },
+        customizable: { title: "Personalizzabile", description: "Adattato all'identità del tuo brand" },
       },
       quote: {
-        text: "Il receptionist IA ha trasformato il modo in cui gestiamo le richieste dei clienti. Il nostro team può concentrarsi su ciò che conta di più.",
+        text: "Nalyra ha trasformato il modo in cui gestiamo le richieste dei clienti. Il nostro team può ora concentrarsi su ciò che conta di più.",
         attribution: "Sarah Mitchell, CEO",
         prefix: "Storia di Successo",
       },
