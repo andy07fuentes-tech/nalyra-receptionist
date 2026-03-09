@@ -20,7 +20,9 @@ export default function OnboardingPage() {
         clearSuggestions,
     } = usePlacesAutocomplete({
         requestOptions: {
-            /* Define search scope here if needed, e.g., location: new google.maps.LatLng(45.5017, -73.5673), radius: 200 * 1000 */
+            // Bias results toward Canada/Montreal area
+            componentRestrictions: { country: ["ca", "us"] },
+            locationBias: 'IP_BIAS', // This tells Google to look at where the user is sitting right now
         },
         debounce: 300,
     });
