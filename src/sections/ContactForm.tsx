@@ -79,12 +79,12 @@ export function ContactForm() {
     <section
       id="contact"
       ref={sectionRef}
-      className="section-padding relative overflow-hidden"
+      className="section-padding relative overflow-hidden bg-slate-50"
     >
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.02]">
+      <div className="absolute inset-0 opacity-[0.05]">
         <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, #d2a855 1px, transparent 0)`,
+          backgroundImage: `radial-gradient(circle at 1px 1px, #3b82f6 1px, transparent 0)`,
           backgroundSize: '32px 32px'
         }} />
       </div>
@@ -92,14 +92,14 @@ export function ContactForm() {
       <div className="container-custom relative">
         {/* Section Header */}
         <div className="fade-up text-center mb-16">
-          <span className="font-script text-3xl text-blue-400 block mb-2">{t('contact.scriptText')}</span>
+          <span className="font-script text-3xl text-blue-600 block mb-2">{t('contact.scriptText')}</span>
           <span className="text-blue-500 text-xs uppercase tracking-[0.2em] mb-4 block">
             {t('contact.subtitle')}
           </span>
-          <h2 className="font-serif text-h1 text-white mb-4">
+          <h2 className="font-serif text-h1 text-dark-theme mb-4">
             {t('contact.mainTitle')}
           </h2>
-          <p className="text-white/70 max-w-2xl mx-auto">
+          <p className="text-slate-600 max-w-2xl mx-auto">
             {t('contact.introText')}
           </p>
         </div>
@@ -108,23 +108,23 @@ export function ContactForm() {
           {/* Contact Info */}
           <div className="lg:col-span-2 space-y-6">
             <div className="slide-in-left" style={{ transitionDelay: '0.1s' }}>
-              <h3 className="font-serif text-h5 text-white mb-6">{t('contact.contactInfoTitle')}</h3>
+              <h3 className="font-serif text-h5 text-dark-theme mb-6">{t('contact.contactInfoTitle')}</h3>
               <div className="space-y-4" role="list" aria-label="Contact information">
                 {contactInfo.map((item) => {
                   const IconComponent = iconMap[item.icon];
                   return (
                     <div
                       key={item.label}
-                      className="flex items-start gap-4 p-4 bg-white/5 rounded-lg border border-white/10 hover:border-blue-500/30 transition-colors"
+                      className="flex items-start gap-4 p-4 bg-white rounded-lg border border-slate-200 shadow-sm hover:border-blue-500/30 transition-colors"
                       role="listitem"
                     >
-                      <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center flex-shrink-0">
-                        {IconComponent && <IconComponent className="w-5 h-5 text-blue-500" />}
+                      <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center flex-shrink-0">
+                        {IconComponent && <IconComponent className="w-5 h-5 text-blue-600" />}
                       </div>
                       <div>
-                        <p className="text-xs text-white/60 uppercase tracking-wider mb-1">{item.label}</p>
-                        <p className="text-white font-medium">{item.value}</p>
-                        <p className="text-sm text-white/60">{item.subtext}</p>
+                        <p className="text-xs text-slate-400 uppercase tracking-wider mb-1">{item.label}</p>
+                        <p className="text-dark-theme font-medium">{item.value}</p>
+                        <p className="text-sm text-slate-500">{item.subtext}</p>
                       </div>
                     </div>
                   );
@@ -135,18 +135,18 @@ export function ContactForm() {
 
           {/* Form */}
           <div className="lg:col-span-3">
-            <div className="slide-in-right bg-white/5 rounded-lg border border-white/10 p-8" style={{ transitionDelay: '0.15s' }}>
+            <div className="slide-in-right bg-white rounded-xl border border-slate-200 p-8 shadow-xl" style={{ transitionDelay: '0.15s' }}>
               {status === 'success' ? (
                 <div className="text-center py-12" role="alert">
                   <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                  <h3 className="font-serif text-h5 text-white mb-2">
+                  <h3 className="font-serif text-h5 text-dark-theme mb-2">
                     {t('contact.form.successMessage')}
                   </h3>
                 </div>
               ) : status === 'error' ? (
                 <div className="text-center py-12" role="alert">
                   <AlertCircle className="w-16 h-16 text-red-500 mx-auto mb-4" />
-                  <h3 className="font-serif text-h5 text-white mb-2">
+                  <h3 className="font-serif text-h5 text-dark-theme mb-2">
                     {t('contact.form.errorMessage')}
                   </h3>
                 </div>
@@ -155,7 +155,7 @@ export function ContactForm() {
                   <div className="grid md:grid-cols-2 gap-6">
                     {/* Name */}
                     <div>
-                      <label htmlFor="contact-name" className="block text-sm text-white/80 mb-2">
+                      <label htmlFor="contact-name" className="block text-sm text-slate-700 font-medium mb-2">
                         {t('contact.form.nameLabel')} <span className="text-blue-500">*</span>
                       </label>
                       <input
@@ -167,13 +167,13 @@ export function ContactForm() {
                         required
                         placeholder={t('contact.form.namePlaceholder')}
                         autoComplete="name"
-                        className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-sm text-white placeholder-white/40 focus:outline-none focus:border-blue-500 transition-colors"
+                        className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-dark-theme placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
                       />
                     </div>
 
                     {/* Phone */}
                     <div>
-                      <label htmlFor="contact-phone" className="block text-sm text-white/80 mb-2">
+                      <label htmlFor="contact-phone" className="block text-sm text-slate-700 font-medium mb-2">
                         {t('contact.form.phoneLabel')} <span className="text-blue-500">*</span>
                       </label>
                       <input
@@ -185,13 +185,13 @@ export function ContactForm() {
                         required
                         placeholder={t('contact.form.phonePlaceholder')}
                         autoComplete="tel"
-                        className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-sm text-white placeholder-white/40 focus:outline-none focus:border-blue-500 transition-colors"
+                        className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-dark-theme placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
                       />
                     </div>
 
                     {/* Email */}
                     <div>
-                      <label htmlFor="contact-email" className="block text-sm text-white/80 mb-2">
+                      <label htmlFor="contact-email" className="block text-sm text-slate-700 font-medium mb-2">
                         {t('contact.form.emailLabel')} <span className="text-blue-500">*</span>
                       </label>
                       <input
@@ -203,13 +203,13 @@ export function ContactForm() {
                         required
                         placeholder={t('contact.form.emailPlaceholder')}
                         autoComplete="email"
-                        className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-sm text-white placeholder-white/40 focus:outline-none focus:border-blue-500 transition-colors"
+                        className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-dark-theme placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
                       />
                     </div>
 
                     {/* Visit Date */}
                     <div>
-                      <label htmlFor="contact-date" className="block text-sm text-white/80 mb-2">
+                      <label htmlFor="contact-date" className="block text-sm text-slate-700 font-medium mb-2">
                         {t('contact.form.visitDateLabel')} <span className="text-blue-500">*</span>
                       </label>
                       <input
@@ -219,14 +219,14 @@ export function ContactForm() {
                         value={formData.visitDate}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-sm text-white focus:outline-none focus:border-blue-500 transition-colors"
+                        className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-dark-theme focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
                       />
                     </div>
                   </div>
 
                   {/* Number of Visitors */}
                   <div>
-                    <label htmlFor="contact-visitors" className="block text-sm text-white/80 mb-2">
+                    <label htmlFor="contact-visitors" className="block text-sm text-slate-700 font-medium mb-2">
                       {t('contact.form.visitorsLabel')}
                     </label>
                     <select
@@ -234,17 +234,17 @@ export function ContactForm() {
                       name="visitors"
                       value={formData.visitors}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-sm text-white focus:outline-none focus:border-blue-500 transition-colors"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-dark-theme focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
                     >
                       {visitorsOptions.map((option) => (
-                        <option key={option} value={option} className="bg-[#1a1a1a]">{option}</option>
+                        <option key={option} value={option}>{option}</option>
                       ))}
                     </select>
                   </div>
 
                   {/* Message */}
                   <div>
-                    <label htmlFor="contact-message" className="block text-sm text-white/80 mb-2">
+                    <label htmlFor="contact-message" className="block text-sm text-slate-700 font-medium mb-2">
                       {t('contact.form.messageLabel')}
                     </label>
                     <textarea
@@ -254,7 +254,7 @@ export function ContactForm() {
                       onChange={handleChange}
                       rows={4}
                       placeholder={t('contact.form.messagePlaceholder')}
-                      className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-sm text-white placeholder-white/40 focus:outline-none focus:border-blue-500 transition-colors resize-none"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-dark-theme placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all resize-none"
                     />
                   </div>
 
@@ -262,7 +262,7 @@ export function ContactForm() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full btn-primary rounded-sm flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full py-4 bg-blue-600 text-white rounded-lg font-bold uppercase tracking-wider shadow-lg hover:bg-blue-700 hover:shadow-blue-500/25 active:scale-95 transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? (
                       <>
@@ -277,7 +277,7 @@ export function ContactForm() {
                     )}
                   </button>
 
-                  <p className="text-xs text-white/50 text-center">
+                  <p className="text-xs text-slate-400 text-center font-medium">
                     {t('contact.privacyNotice')}
                   </p>
                 </form>

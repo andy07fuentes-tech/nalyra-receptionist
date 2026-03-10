@@ -85,7 +85,7 @@ export function FeatureShowcase() {
         <section
             id="feature-showcase"
             ref={sectionRef}
-            className="bg-[#0a0a0a] py-16 md:py-32 relative overflow-hidden"
+            className="bg-slate-50 py-16 md:py-32 relative overflow-hidden"
         >
             <div className="container-custom relative space-y-24 md:space-y-40">
                 {features.map((feature, index) => {
@@ -104,13 +104,13 @@ export function FeatureShowcase() {
                             {/* Text Content */}
                             <div className={`${textColSpan} ${feature.reversed ? 'lg:order-2 slide-in-right lg:pl-16' : 'lg:order-1 slide-in-left'} space-y-8 relative z-10`}>
                                 <div>
-                                    <span className="text-blue-500 font-medium text-xs uppercase tracking-[0.2em] mb-4 block">
+                                    <span className="text-blue-600 font-bold text-xs uppercase tracking-[0.2em] mb-4 block">
                                         {feature.subtitle}
                                     </span>
-                                    <h2 className="font-serif text-3xl md:text-h2 text-white leading-tight mb-6">
+                                    <h2 className="font-serif text-3xl md:text-h2 text-dark-theme leading-tight mb-6">
                                         {feature.title}
                                     </h2>
-                                    <p className="text-white/70 text-base md:text-lg leading-relaxed max-w-xl">
+                                    <p className="text-slate-600 text-base md:text-lg leading-relaxed max-w-xl">
                                         {feature.description}
                                     </p>
                                 </div>
@@ -120,21 +120,21 @@ export function FeatureShowcase() {
                                         const element = document.querySelector('#contact');
                                         if (element) element.scrollIntoView({ behavior: 'smooth' });
                                     }}
-                                    className="text-blue-500 hover:text-blue-400 font-medium transition-colors uppercase tracking-widest text-sm flex items-center gap-2 group"
+                                    className="text-blue-600 hover:text-blue-500 font-bold transition-colors uppercase tracking-widest text-sm flex items-center gap-2 group"
                                 >
                                     {feature.cta}
                                     <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                                 </button>
 
                                 {/* Background Accent Number */}
-                                <div className={`absolute top-1/2 -translate-y-1/2 opacity-5 pointer-events-none select-none overflow-hidden ${feature.reversed ? '-left-8 lg:-left-24' : '-right-8 lg:-right-32'}`}>
-                                    <span className="font-serif text-[180px] md:text-[280px] text-white leading-none">{feature.number}</span>
+                                <div className={`absolute top-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none select-none overflow-hidden ${feature.reversed ? '-left-8 lg:-left-24' : '-right-8 lg:-right-32'}`}>
+                                    <span className="font-serif text-[180px] md:text-[280px] text-dark-theme leading-none">{feature.number}</span>
                                 </div>
                             </div>
 
                             {/* Image/Video Content */}
                             <div className={`${imgColSpan} ${feature.reversed ? 'lg:order-1 slide-in-left' : 'lg:order-2 slide-in-right'} relative`}>
-                                <div className={`relative rounded-2xl overflow-hidden shadow-2xl border border-white/5 group z-10 aspect-[4/3] ${bleedClass} ${bleedReverseClass}`}>
+                                <div className={`relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200 group z-10 aspect-[4/3] ${bleedClass} ${bleedReverseClass}`}>
                                     <img
                                         src={feature.image}
                                         alt={feature.title}
@@ -143,10 +143,10 @@ export function FeatureShowcase() {
 
                                     {feature.isVideo && (
                                         <>
-                                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                                             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                                                <div className="w-20 h-20 rounded-full bg-blue-500/20 backdrop-blur-sm border border-blue-500/50 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                                                    <Play className="w-8 h-8 text-blue-400 fill-current translate-x-0.5" />
+                                                <div className="w-20 h-20 rounded-full bg-blue-600/20 backdrop-blur-sm border border-white/30 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                                                    <Play className="w-8 h-8 text-white fill-current translate-x-0.5" />
                                                 </div>
                                             </div>
                                         </>

@@ -112,20 +112,20 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative border-t border-white/10" role="contentinfo">
+    <footer className="relative border-t border-slate-200 bg-white" role="contentinfo">
       {/* Main Footer */}
       <div className="container-custom py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <Zap className="w-8 h-8 text-blue-500" aria-hidden="true" />
+              <Zap className="w-8 h-8 text-blue-600" aria-hidden="true" />
               <div>
-                <span className="font-serif text-xl text-white block">{t('footer.brandName')}</span>
-                <span className="text-[10px] text-blue-400 tracking-widest uppercase">{t('footer.tagline')}</span>
+                <span className="font-serif text-xl text-dark-theme block">{t('footer.brandName')}</span>
+                <span className="text-[10px] text-blue-600 tracking-widest uppercase">{t('footer.tagline')}</span>
               </div>
             </div>
-            <p className="text-white/70 text-sm leading-relaxed mb-6">
+            <p className="text-slate-500 text-sm leading-relaxed mb-6">
               {t('footer.description')}
             </p>
             {/* Social Links */}
@@ -138,7 +138,7 @@ export function Footer() {
                       key={social.label}
                       href={social.href}
                       aria-label={social.label}
-                      className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:bg-blue-500 hover:border-blue-500 hover:text-white transition-all duration-300"
+                      className="w-10 h-10 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:border-blue-600 hover:text-white transition-all duration-300 shadow-sm"
                     >
                       {IconComponent && <IconComponent className="w-4 h-4" />}
                     </a>
@@ -151,13 +151,13 @@ export function Footer() {
           {/* Link Groups */}
           {linkGroups.map((group, index) => (
             <nav key={index} aria-label={group.title}>
-              <h3 className="font-serif text-lg text-white mb-5">{group.title}</h3>
+              <h3 className="font-serif text-lg text-dark-theme mb-5">{group.title}</h3>
               <ul className="space-y-3">
                 {group.links.map((link) => (
                   <li key={link.name}>
                     <button
                       onClick={() => scrollToSection(link.href)}
-                      className="text-white/70 text-sm hover:text-blue-400 transition-colors"
+                      className="text-slate-500 text-sm hover:text-blue-600 transition-colors"
                     >
                       {link.name}
                     </button>
@@ -169,24 +169,24 @@ export function Footer() {
 
           {/* Contact Info + Newsletter */}
           <div>
-            <h3 className="font-serif text-lg text-white mb-5">{t('footer.linkGroups.company.title')}</h3>
+            <h3 className="font-serif text-lg text-dark-theme mb-5">{t('footer.linkGroups.company.title')}</h3>
             <ul className="space-y-4">
               {contactItems.map((item, index) => {
                 const IconComponent = iconMap[item.icon];
                 return (
                   <li key={index} className="flex items-start gap-3">
-                    {IconComponent && <IconComponent className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" aria-hidden="true" />}
-                    <span className="text-white/70 text-sm">{item.text}</span>
+                    {IconComponent && <IconComponent className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" aria-hidden="true" />}
+                    <span className="text-slate-500 text-sm">{item.text}</span>
                   </li>
                 );
               })}
             </ul>
 
             {/* Newsletter */}
-            <div className="mt-6 pt-6 border-t border-white/10">
-              <p className="text-white/70 text-sm mb-3">{t('footer.newsletterLabel')}</p>
+            <div className="mt-6 pt-6 border-t border-slate-100">
+              <p className="text-slate-500 text-sm mb-3">{t('footer.newsletterLabel')}</p>
               {newsletterStatus === 'success' ? (
-                <div className="flex items-center gap-2 text-green-400 text-sm">
+                <div className="flex items-center gap-2 text-green-600 text-sm">
                   <CheckCircle className="w-4 h-4" />
                   <span>{t('footer.newsletterSuccessText')}</span>
                 </div>
@@ -201,18 +201,18 @@ export function Footer() {
                     placeholder={t('footer.newsletterPlaceholder')}
                     required
                     autoComplete="email"
-                    className="flex-1 px-3 py-2 bg-white/5 border border-white/20 rounded-sm text-white text-sm placeholder-white/40 focus:outline-none focus:border-blue-500 transition-colors"
+                    className="flex-1 px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-dark-theme text-sm placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:bg-white transition-all"
                   />
                   <button
                     type="submit"
-                    className="px-4 py-2 bg-blue-500 text-white text-sm rounded-sm hover:bg-blue-600 transition-colors"
+                    className="px-4 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition-colors shadow-blue-500/20 shadow-lg"
                   >
                     {t('footer.newsletterButtonText')}
                   </button>
                 </form>
               )}
               {newsletterStatus === 'error' && (
-                <p className="text-red-400 text-xs mt-2">{t('footer.newsletterErrorText')}</p>
+                <p className="text-red-600 text-xs mt-2">{t('footer.newsletterErrorText')}</p>
               )}
             </div>
           </div>
@@ -220,14 +220,14 @@ export function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/10">
+      <div className="border-t border-slate-100">
         <div className="container-custom py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex flex-wrap items-center justify-center gap-4 text-white/50 text-xs">
+          <div className="flex flex-wrap items-center justify-center gap-4 text-slate-400 text-xs">
             <span>{t('footer.copyrightText')}</span>
             {getLegalLinks().map((link, index) => (
               <span key={index}>
                 <span className="hidden md:inline">|</span>
-                <button className="hover:text-blue-400 transition-colors ml-2 md:ml-0">{link}</button>
+                <button className="hover:text-blue-600 transition-colors ml-2 md:ml-0">{link}</button>
               </span>
             ))}
           </div>
@@ -235,11 +235,11 @@ export function Footer() {
           {/* Back to Top */}
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-2 text-white/70 text-sm hover:text-blue-400 transition-colors group"
+            className="flex items-center gap-2 text-slate-500 text-sm hover:text-blue-600 transition-colors group"
             aria-label={t('footer.backToTopText')}
           >
             <span>{t('footer.backToTopText')}</span>
-            <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center group-hover:border-blue-500 group-hover:bg-blue-500 transition-all duration-300">
+            <div className="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center group-hover:border-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
               <ArrowUp className="w-4 h-4" />
             </div>
           </button>

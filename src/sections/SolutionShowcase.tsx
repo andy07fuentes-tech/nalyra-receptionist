@@ -75,10 +75,10 @@ export function SolutionShowcase() {
     <section
       id="solutions"
       ref={sectionRef}
-      className="py-24 md:py-32 relative overflow-hidden bg-[#0d0d0d]"
+      className="py-24 md:py-32 relative overflow-hidden bg-light-section"
     >
       {/* Dynamic Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+      <div className="absolute inset-0 opacity-[0.05] pointer-events-none">
         <div className="absolute inset-0" style={{
           backgroundImage: `linear-gradient(#4f46e5 1px, transparent 1px), linear-gradient(90deg, #4f46e5 1px, transparent 1px)`,
           backgroundSize: '100px 100px'
@@ -88,11 +88,11 @@ export function SolutionShowcase() {
       <div className="container-custom relative">
         {/* Header */}
         <div className="text-center mb-16 md:mb-20">
-          <span className="font-script text-3xl text-blue-400 block mb-2">{t('features.scriptText')}</span>
+          <span className="font-script text-3xl text-blue-600 block mb-2">{t('features.scriptText')}</span>
           <span className="text-blue-500 text-xs uppercase tracking-[0.2em] mb-4 block">
             {t('features.subtitle')}
           </span>
-          <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-white">{t('features.mainTitle')}</h2>
+          <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-dark-theme">{t('features.mainTitle')}</h2>
         </div>
 
         {/* Tabs */}
@@ -103,7 +103,7 @@ export function SolutionShowcase() {
               onClick={() => setActiveIndex(i)}
               className={`px-6 py-3 rounded-full text-xs md:text-sm font-medium transition-all duration-500 border ${i === activeIndex
                 ? 'bg-blue-600 border-blue-500 text-white shadow-[0_0_20px_rgba(37,99,235,0.4)]'
-                : 'bg-white/5 text-white/50 border-white/10 hover:bg-white/10 hover:text-white'
+                : 'bg-white text-slate-500 border-slate-200 hover:bg-slate-50 hover:text-blue-600'
                 }`}
             >
               {s.name}
@@ -115,26 +115,26 @@ export function SolutionShowcase() {
           {/* Info Side */}
           <div className="lg:col-span-5 order-2 lg:order-1">
             <div className="mb-10">
-              <span className="text-blue-400 font-script text-2xl mb-2 block">{solution.subtitle}</span>
-              <h3 className="font-serif text-4xl md:text-5xl text-white mb-6 leading-tight">{solution.name}</h3>
+              <span className="text-blue-500 font-script text-2xl mb-2 block">{solution.subtitle}</span>
+              <h3 className="font-serif text-4xl md:text-5xl text-dark-theme mb-6 leading-tight">{solution.name}</h3>
               <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-transparent mb-8" />
-              <p className="text-white/80 text-lg leading-relaxed mb-6">{solution.description}</p>
-              <p className="text-white/50 text-sm italic">{solution.techNotes}</p>
+              <p className="text-slate-600 text-lg leading-relaxed mb-6">{solution.description}</p>
+              <p className="text-slate-400 text-sm italic">{solution.techNotes}</p>
             </div>
 
             {/* Metrics */}
-            <div className="grid grid-cols-3 gap-8 mb-12 py-8 border-y border-white/10">
+            <div className="grid grid-cols-3 gap-8 mb-12 py-8 border-y border-slate-200">
               <div>
-                <div className="font-serif text-2xl text-blue-500">{solution.accuracy}</div>
-                <div className="text-[10px] text-white/40 uppercase tracking-widest mt-1">Accuracy</div>
+                <div className="font-serif text-2xl text-blue-600">{solution.accuracy}</div>
+                <div className="text-[10px] text-slate-400 uppercase tracking-widest mt-1">Accuracy</div>
               </div>
               <div>
-                <div className="font-serif text-2xl text-blue-500">{solution.speed}</div>
-                <div className="text-[10px] text-white/40 uppercase tracking-widest mt-1">Speed</div>
+                <div className="font-serif text-2xl text-blue-600">{solution.speed}</div>
+                <div className="text-[10px] text-slate-400 uppercase tracking-widest mt-1">Speed</div>
               </div>
               <div>
-                <div className="font-serif text-2xl text-blue-500">{solution.uptime}</div>
-                <div className="text-[10px] text-white/40 uppercase tracking-widest mt-1">Uptime</div>
+                <div className="font-serif text-2xl text-blue-600">{solution.uptime}</div>
+                <div className="text-[10px] text-slate-400 uppercase tracking-widest mt-1">Uptime</div>
               </div>
             </div>
 
@@ -143,11 +143,11 @@ export function SolutionShowcase() {
                 const element = document.querySelector('#contact');
                 if (element) element.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="group flex items-center gap-3 text-white font-medium tracking-wide uppercase text-sm hover:text-blue-400 transition-colors"
+              className="group flex items-center gap-3 text-dark-theme font-medium tracking-wide uppercase text-sm hover:text-blue-600 transition-colors"
             >
               {t('features.mainTitle')}
               <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center transition-all duration-500 group-hover:w-12 group-hover:bg-blue-500">
-                <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+                <ArrowRight className="w-5 h-5 text-white transition-transform duration-300 group-hover:translate-x-1" />
               </div>
             </button>
           </div>
@@ -201,14 +201,14 @@ export function SolutionShowcase() {
                 return (
                   <div
                     key={i}
-                    className="flex flex-col p-6 rounded-2xl bg-white/[0.03] border border-white/10 hover:bg-white/[0.05] hover:border-blue-500/30 transition-all duration-500 group"
+                    className="flex flex-col p-6 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-500 group"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-blue-600/10 flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 mb-4 shadow-[0_0_15px_rgba(37,99,235,0.1)]">
+                    <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 mb-4">
                       <IconComponent className="w-6 h-6" />
                     </div>
                     <div>
-                      <h4 className="text-white font-serif text-lg mb-2 group-hover:text-blue-400 transition-colors uppercase tracking-wider">{feature.title}</h4>
-                      <p className="text-white/50 text-sm leading-relaxed">{feature.description}</p>
+                      <h4 className="text-dark-theme font-serif text-lg mb-2 group-hover:text-blue-600 transition-colors uppercase tracking-wider">{feature.title}</h4>
+                      <p className="text-slate-500 text-sm leading-relaxed">{feature.description}</p>
                     </div>
                   </div>
                 );

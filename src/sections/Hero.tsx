@@ -2,54 +2,14 @@ import { useEffect, useRef, useState, Suspense } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Link } from 'react-router-dom';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { MeshDistortMaterial, Float, Sphere, Environment } from '@react-three/drei';
-import * as THREE from 'three';
+import Spline from '@splinetool/react-spline';
 import gsap from 'gsap';
 import { useInView } from '../hooks/useInView';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// High-performance custom energy sphere (NO particles, just glow)
-const EnergySphere = () => {
-  const meshRef = useRef<THREE.Mesh>(null);
 
-  useFrame((state) => {
-    if (meshRef.current) {
-      const time = state.clock.getElapsedTime();
-      const pulse = 1 + Math.sin(time * 1.5) * 0.03;
-      meshRef.current.scale.set(pulse, pulse, pulse);
-    }
-  });
-
-  return (
-    <Float speed={2} rotationIntensity={1} floatIntensity={1}>
-      <Sphere ref={meshRef} args={[1, 64, 64]}>
-        <MeshDistortMaterial
-          color="#1e40af"
-          speed={3}
-          distort={0.4}
-          radius={1}
-          metalness={0.8}
-          roughness={0.1}
-          emissive="#00f2ff"
-          emissiveIntensity={1.2}
-        />
-      </Sphere>
-
-      {/* Outer Glow Layer */}
-      <Sphere args={[1.2, 32, 32]}>
-        <meshBasicMaterial
-          color="#ffffff"
-          transparent
-          opacity={0.08}
-          side={THREE.BackSide}
-        />
-      </Sphere>
-    </Float>
-  );
-};
 
 function useCountUp(target: number, duration = 2000, start = false) {
   const [count, setCount] = useState(0);
@@ -149,26 +109,23 @@ export function Hero({ isReady }: { isReady: boolean }) {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(6,182,212,0.15)_0%,_transparent_50%)]" />
       </div>
 
-      {/* Background: Electric EnergySphere (NO particles, high performance) */}
-      <div className="absolute inset-0 z-0 overflow-hidden bg-black flex justify-center items-center pointer-events-none">
+      {/* Background: Spline 3D Scene (Original Pulsing Sphere) */}
+      <div className="absolute inset-0 z-0 overflow-hidden bg-black flex justify-center items-center">
         {inView && (
-          <Canvas
-            camera={{ position: [0, 0, 4.5], fov: 45 }}
-            gl={{ antialias: true, powerPreference: 'high-performance' }}
-          >
-            <Suspense fallback={null}>
-              <ambientLight intensity={1} />
-              <pointLight position={[10, 10, 10]} intensity={2} color="#60a5fa" />
-              <spotLight position={[-10, 5, 5]} intensity={1.5} angle={0.3} color="#ffffff" />
-              <EnergySphere />
-              <Environment preset="night" />
-            </Suspense>
-          </Canvas>
+          <Suspense fallback={
+            <div className="absolute inset-0 flex items-center justify-center bg-black text-white/20 text-xs font-mono uppercase tracking-widest">
+              Initialising 3D Engine...
+            </div>
+          }>
+            <Spline
+              scene="https://prod.spline.design/LtzKN5G7iNd46w9T/scene.splinecode"
+              style={{ width: '100%', height: '100%' }}
+            />
+          </Suspense>
         )}
 
         {/* Cinematic Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-blue-900/5 to-black/80 pointer-events-none z-10" />
-        <div className="absolute inset-0 bg-blue-500/5 mix-blend-color pointer-events-none z-10 animate-heartbeat-glow" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80 pointer-events-none z-10" />
       </div>
 
       {/* Content */}
