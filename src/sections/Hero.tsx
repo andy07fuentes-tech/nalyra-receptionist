@@ -162,29 +162,14 @@ export function Hero({ isReady }: { isReady: boolean }) {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(6,182,212,0.15)_0%,_transparent_50%)]" />
       </div>
 
-      {/* Adaptive Background: New Spline on Mobile/Tablet, EnergySphere on Desktop */}
+      {/* Adaptive Background: Spline forced for testing with new Electric Blue theme */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-black flex justify-center items-center pointer-events-none">
         {inView && (
-          isMobile ? (
-            <div className="w-full h-full animate-heartbeat-scale flex items-center justify-center" style={{ filter: 'drop-shadow(0 0 30px #00f2ff) brightness(1.2)' }}>
-              <Suspense fallback={null}>
-                <Spline scene="https://prod.spline.design/wdNxe8e0kiiEIC3T/scene.splinecode" />
-              </Suspense>
-            </div>
-          ) : (
-            <Canvas
-              camera={{ position: [0, 0, 4.5], fov: 45 }}
-              gl={{ antialias: true, powerPreference: 'high-performance' }}
-            >
-              <Suspense fallback={null}>
-                <ambientLight intensity={1} />
-                <pointLight position={[10, 10, 10]} intensity={2} color="#60a5fa" />
-                <spotLight position={[-10, 5, 5]} intensity={1.5} angle={0.3} color="#ffffff" />
-                <EnergySphere />
-                <Environment preset="night" />
-              </Suspense>
-            </Canvas>
-          )
+          <div className="w-full h-full animate-heartbeat-scale flex items-center justify-center" style={{ filter: 'drop-shadow(0 0 30px #00f2ff) brightness(1.2)' }}>
+            <Suspense fallback={null}>
+              <Spline scene="https://prod.spline.design/wdNxe8e0kiiEIC3T/scene.splinecode" />
+            </Suspense>
+          </div>
         )}
 
         {/* Cinematic Overlays */}
