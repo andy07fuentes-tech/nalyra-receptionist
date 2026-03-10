@@ -30,23 +30,23 @@ const EnergySphere = () => {
     <Float speed={2} rotationIntensity={1} floatIntensity={1}>
       <Sphere ref={meshRef} args={[1, 64, 64]}>
         <MeshDistortMaterial
-          color="#2563eb"
+          color="#1e40af"
           speed={3}
           distort={0.4}
           radius={1}
-          metalness={0.6}
-          roughness={0.2}
-          emissive="#06b6d4"
-          emissiveIntensity={0.5}
+          metalness={0.8}
+          roughness={0.1}
+          emissive="#00f2ff"
+          emissiveIntensity={1.2}
         />
       </Sphere>
 
       {/* Outer Glow Layer */}
       <Sphere args={[1.2, 32, 32]}>
         <meshBasicMaterial
-          color="#3b82f6"
+          color="#ffffff"
           transparent
-          opacity={0.05}
+          opacity={0.08}
           side={THREE.BackSide}
         />
       </Sphere>
@@ -166,7 +166,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
       <div className="absolute inset-0 z-0 overflow-hidden bg-black flex justify-center items-center pointer-events-none">
         {inView && (
           isMobile ? (
-            <div className="w-full h-full animate-heartbeat-scale flex items-center justify-center">
+            <div className="w-full h-full animate-heartbeat-scale flex items-center justify-center" style={{ filter: 'drop-shadow(0 0 30px #00f2ff) brightness(1.2)' }}>
               <Suspense fallback={null}>
                 <Spline scene="https://prod.spline.design/wdNxe8e0kiiEIC3T/scene.splinecode" />
               </Suspense>
