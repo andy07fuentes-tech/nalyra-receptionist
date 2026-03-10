@@ -184,6 +184,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
           <span className="font-script text-3xl md:text-4xl lg:text-5xl text-blue-400">
             {t('hero.scriptText')}
           </span>
+          <div className="text-[10px] text-blue-500/50 tracking-[0.3em] font-bold mt-2 uppercase">v1.5 (Electric Update Live)</div>
         </div>
 
         {/* Divider line */}
