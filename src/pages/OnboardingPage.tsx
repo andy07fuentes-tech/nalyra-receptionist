@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Search, MapPin, Clock, ArrowRight, CheckCircle2, Building2, Globe2, Sparkles, Loader2 } from 'lucide-react';
+import { Search, MapPin, ArrowRight, CheckCircle2, Building2, Sparkles, Loader2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import usePlacesAutocomplete, {
@@ -13,35 +13,41 @@ export default function OnboardingPage() {
 
     // GOOGLE PLACES LOGIC
     const {
-        ready,
         value,
         suggestions: { status, data, loading },
         setValue,
         clearSuggestions,
     } = usePlacesAutocomplete({
         requestOptions: {
-            // Hardware lock to Canada
+            // HARDWARE LOCK TO CANADA - Ensure results are in CA
             componentRestrictions: { country: "ca" },
+            // PRIORITIZE MONTREAL - Weight results within 100km of city center
+            locationBias: { radius: 100000, center: { lat: 45.5017, lng: -73.5673 } },
             types: ['establishment'],
         },
         debounce: 300,
+        // We initialize when the component mounts to catch the script if it was late
+        initOnMount: true,
     });
 
-    // FILTER: Only show results that are actually in Canada (extra safety)
-    const filteredData = data.filter(item =>
-        item.description.toLowerCase().includes('canada') ||
-        item.description.toLowerCase().includes(', ca') ||
-        item.description.toLowerCase().includes('montreal') ||
-        item.description.toLowerCase().includes('quebec') ||
-        item.description.toLowerCase().includes(', qc')
-    );
+    // FILTER: Final gatekeeper - only show results that are definitely in our target region
+    const filteredData = data.filter(item => {
+        const desc = item.description.toLowerCase();
+        // Strict safety check for Canada/Local identifiers
+        return desc.includes('canada') ||
+            desc.includes(', ca') ||
+            desc.includes('montreal') ||
+            desc.includes('québec') || // Handle both accent and non-accent
+            desc.includes('quebec') ||
+            desc.includes(', qc');
+    });
 
-    // Mock Business Search Results - FALLBACK
+    // Mock Business Search Results - Only as fallback for offline or zero results
     const mockBusinesses = [
         {
             id: 'm1',
             name: "Nalyra Tech Solutions",
-            address: "123 Innovation Dr, Montreal, QC",
+            address: "123 Innovation Dr, Montreal, QC (HQ)",
             hours: "9:00 AM - 5:00 PM",
             phone: "+1 (514) 555-0199"
         }
@@ -166,7 +172,7 @@ export default function OnboardingPage() {
                                 </div>
                                 <input
                                     type="text"
-                                    placeholder="Enter Montreal business name..."
+                                    placeholder="Search Montreal businesses..."
                                     value={value}
                                     onChange={handleSearchChange}
                                     className="w-full h-14 pl-12 pr-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-blue-500 transition-all placeholder:text-white/20 text-white"
@@ -192,7 +198,7 @@ export default function OnboardingPage() {
                                             </div>
                                             <div>
                                                 <div className="text-sm font-medium text-white">{suggestion.structured_formatting?.main_text || suggestion.description}</div>
-                                                <div className="text-[10px] text-white/40 mt-0.5 uppercase tracking-wider">{suggestion.structured_formatting?.secondary_text || "Canada"}</div>
+                                                <div className="text-[10px] text-white/40 mt-0.5 uppercase tracking-wider">{suggestion.structured_formatting?.secondary_text || "Montreal, QC"}</div>
                                             </div>
                                         </button>
                                     ))}

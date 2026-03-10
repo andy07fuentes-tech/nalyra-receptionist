@@ -5,6 +5,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import * as THREE from 'three';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useInView } from '../hooks/useInView';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -108,6 +109,7 @@ export function AlbumCube() {
     const { t } = useLanguage();
 
     const sectionRef = useRef<HTMLDivElement>(null);
+    const [inViewRef, inView] = useInView({ threshold: 0.01 });
     const [rotationProgress, setRotationProgress] = useState(0);
     const [currentAlbumIndex, setCurrentAlbumIndex] = useState(0);
 
@@ -152,7 +154,12 @@ export function AlbumCube() {
     return (
         <section
             id="album-cube"
-            ref={sectionRef}
+            ref={(el) => {
+                //@ts-ignore
+                sectionRef.current = el;
+                //@ts-ignore
+                inViewRef.current = el;
+            }}
             className="relative w-full h-screen bg-[#0a0a0c] overflow-hidden"
         >
             {/* Dynamic Mesh Gradient Background */}
@@ -172,22 +179,24 @@ export function AlbumCube() {
 
             {/* 3D Canvas */}
             <div className="absolute inset-0 z-10">
-                <Canvas
-                    camera={{ position: [0, 0, 7.5], fov: 45 }}
-                    gl={{ antialias: true }}
-                >
-                    <Suspense fallback={null}>
-                        <ambientLight intensity={0.8} />
-                        <pointLight position={[0, 0, 5]} intensity={2.5} color="#ffffff" />
-                        <spotLight position={[10, 10, 10]} intensity={2} angle={0.2} penumbra={1} color="#ffffff" />
-                        <spotLight position={[-10, 5, 5]} intensity={2} angle={0.2} penumbra={1} color="#60a5fa" />
+                {inView && (
+                    <Canvas
+                        camera={{ position: [0, 0, 7.5], fov: 45 }}
+                        gl={{ antialias: true, powerPreference: 'high-performance' }}
+                    >
+                        <Suspense fallback={null}>
+                            <ambientLight intensity={0.8} />
+                            <pointLight position={[0, 0, 5]} intensity={2.5} color="#ffffff" />
+                            <spotLight position={[10, 10, 10]} intensity={2} angle={0.2} penumbra={1} color="#ffffff" />
+                            <spotLight position={[-10, 5, 5]} intensity={2} angle={0.2} penumbra={1} color="#60a5fa" />
 
-                        <Cube rotationProgress={rotationProgress} />
-                        <GlassPlanes />
+                            <Cube rotationProgress={rotationProgress} />
+                            <GlassPlanes />
 
-                        <Environment preset="studio" />
-                    </Suspense>
-                </Canvas>
+                            <Environment preset="studio" />
+                        </Suspense>
+                    </Canvas>
+                )}
             </div>
 
             {/* Glassmorphic UI Info */}
