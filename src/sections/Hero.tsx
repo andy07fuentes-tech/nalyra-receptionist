@@ -162,13 +162,13 @@ export function Hero({ isReady }: { isReady: boolean }) {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(6,182,212,0.15)_0%,_transparent_50%)]" />
       </div>
 
-      {/* Adaptive Background: Spline on Mobile/Tablet, EnergySphere on Desktop */}
+      {/* Adaptive Background: New Spline on Mobile/Tablet, EnergySphere on Desktop */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-black flex justify-center items-center pointer-events-none">
         {inView && (
           isMobile ? (
             <div className="w-full h-full animate-heartbeat-scale flex items-center justify-center">
               <Suspense fallback={null}>
-                <Spline scene="https://prod.spline.design/LtzKN5G7iNd46w9T/scene.splinecode" />
+                <Spline scene="https://prod.spline.design/wdNxe8e0kiiEIC3T/scene.splinecode" />
               </Suspense>
             </div>
           ) : (
