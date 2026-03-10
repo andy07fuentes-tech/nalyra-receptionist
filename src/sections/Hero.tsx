@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, Suspense, lazy } from 'react';
+import { useEffect, useRef, useState, Suspense } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Link } from 'react-router-dom';
@@ -9,18 +9,15 @@ import gsap from 'gsap';
 import { useInView } from '../hooks/useInView';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-const Spline = lazy(() => import('@splinetool/react-spline'));
-
 gsap.registerPlugin(ScrollTrigger);
 
-// High-performance custom energy sphere for PC/Desktop
+// High-performance custom energy sphere (NO particles, just glow)
 const EnergySphere = () => {
   const meshRef = useRef<THREE.Mesh>(null);
 
   useFrame((state) => {
     if (meshRef.current) {
       const time = state.clock.getElapsedTime();
-      // Subtle organic pulsing
       const pulse = 1 + Math.sin(time * 1.5) * 0.03;
       meshRef.current.scale.set(pulse, pulse, pulse);
     }
@@ -82,18 +79,6 @@ export function Hero({ isReady }: { isReady: boolean }) {
   const [inViewRef, inView] = useInView({ threshold: 0.05 });
   const contentRef = useRef<HTMLDivElement>(null);
   const [phase, setPhase] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
-
-  // Detect device for adaptive background
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 1024); // Tablets and Phones get Spline
-    };
-
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   // Build count-up hooks from stats config
   const stats = [
@@ -148,10 +133,12 @@ export function Hero({ isReady }: { isReady: boolean }) {
     <section
       id="hero"
       ref={(el) => {
-        //@ts-ignore
-        sectionRef.current = el;
-        //@ts-ignore
-        inViewRef.current = el;
+        if (sectionRef.current !== el) {
+          (sectionRef as any).current = el;
+        }
+        if (inViewRef.current !== el) {
+          (inViewRef as any).current = el;
+        }
       }}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
@@ -162,14 +149,21 @@ export function Hero({ isReady }: { isReady: boolean }) {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(6,182,212,0.15)_0%,_transparent_50%)]" />
       </div>
 
-      {/* Adaptive Background: Spline forced for testing with new Electric Blue theme */}
+      {/* Background: Electric EnergySphere (NO particles, high performance) */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-black flex justify-center items-center pointer-events-none">
         {inView && (
-          <div className="w-full h-full animate-heartbeat-scale flex items-center justify-center" style={{ filter: 'drop-shadow(0 0 30px #00f2ff) brightness(1.2)' }}>
+          <Canvas
+            camera={{ position: [0, 0, 4.5], fov: 45 }}
+            gl={{ antialias: true, powerPreference: 'high-performance' }}
+          >
             <Suspense fallback={null}>
-              <Spline scene="https://prod.spline.design/wdNxe8e0kiiEIC3T/scene.splinecode" />
+              <ambientLight intensity={1} />
+              <pointLight position={[10, 10, 10]} intensity={2} color="#60a5fa" />
+              <spotLight position={[-10, 5, 5]} intensity={1.5} angle={0.3} color="#ffffff" />
+              <EnergySphere />
+              <Environment preset="night" />
             </Suspense>
-          </div>
+          </Canvas>
         )}
 
         {/* Cinematic Overlays */}
@@ -184,7 +178,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
           <span className="font-script text-3xl md:text-4xl lg:text-5xl text-blue-400">
             {t('hero.scriptText')}
           </span>
-          <div className="text-[10px] text-blue-500/50 tracking-[0.3em] font-bold mt-2 uppercase">v1.5 (Electric Update Live)</div>
+          <div className="text-[10px] text-blue-500/30 tracking-[0.3em] font-bold mt-2 uppercase">v1.5 Verified Build</div>
         </div>
 
         {/* Divider line */}
