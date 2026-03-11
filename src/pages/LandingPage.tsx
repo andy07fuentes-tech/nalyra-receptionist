@@ -63,10 +63,10 @@ export default function LandingPage() {
         <>
             {isLoading && <Preloader onComplete={handlePreloaderComplete} />}
 
-            <div className={`min-h-screen bg-[#141414] ${isLoading ? 'overflow-hidden max-h-screen' : ''}`}>
+            <div className={`min-h-screen bg-slate-50 ${isLoading ? 'overflow-hidden max-h-screen' : ''}`}>
                 <Navigation />
 
-                <main>
+                <main className="bg-slate-50">
                     <Hero isReady={!isLoading} />
                     <PainPoints />
                     <FeatureShowcase />

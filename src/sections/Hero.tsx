@@ -204,8 +204,8 @@ export function Hero({ isReady }: { isReady: boolean }) {
         </div>
       </div>
 
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#141414] via-[#141414]/80 to-transparent z-30 pointer-events-none" />
+      {/* Bottom fade - changed to white to match the next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-white via-white/80 to-transparent z-30 pointer-events-none" />
 
       {/* Side decorative */}
       <div className={`absolute left-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-4 transition-opacity duration-1000 z-30 ${phase >= 3 ? 'opacity-100' : 'opacity-0'}`}>
