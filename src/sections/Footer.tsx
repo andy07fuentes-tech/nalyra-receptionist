@@ -25,10 +25,10 @@ export function Footer() {
         t('language.title') === 'Idioma' ? 'es' : 'it';
 
     const productLinks = {
-      fr: ['Fonctionnalités', 'Tarification', 'Intégrations', 'API'],
-      en: ['Features', 'Pricing', 'Integrations', 'API'],
-      es: ['Funciones', 'Precios', 'Integraciones', 'API'],
-      it: ['Funzionalità', 'Prezzi', 'Integrazioni', 'API'],
+      fr: ['Fonctionnalités', 'Tarification', 'FAQ', 'Contact'],
+      en: ['Features', 'Pricing', 'FAQ', 'Contact'],
+      es: ['Funciones', 'Precios', 'FAQ', 'Contacto'],
+      it: ['Funzionalità', 'Prezzi', 'FAQ', 'Contatto'],
     };
 
     const companyLinks = {
@@ -43,7 +43,7 @@ export function Footer() {
         title: t('footer.linkGroups.product.title'),
         links: productLinks[lang as keyof typeof productLinks].map((name, i) => ({
           name,
-          href: ['#features', '#pricing', '#integrations', '#api'][i]
+          href: ['#feature-showcase', '#pricing', '#faq', '#contact'][i]
         })),
       },
       {

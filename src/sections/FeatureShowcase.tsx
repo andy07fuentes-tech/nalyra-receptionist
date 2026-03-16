@@ -1,6 +1,11 @@
 import { useEffect, useRef } from 'react';
-import { Play, ArrowRight } from 'lucide-react';
+import { ShieldCheck, Calendar, Zap } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
+
+gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
 export function FeatureShowcase() {
     const { t } = useLanguage();
@@ -12,150 +17,188 @@ export function FeatureShowcase() {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
-                        // Consider unobserving after it becomes visible so it stays visible
                         observer.unobserve(entry.target);
                     }
                 });
             },
-            { threshold: 0.05, rootMargin: '50px 0px -50px 0px' }
+            { threshold: 0.1 }
         );
 
-        const elements = sectionRef.current?.querySelectorAll('.fade-up, .slide-in-left, .slide-in-right');
-        elements?.forEach((el) => {
-            observer.observe(el);
-            // Fallback: If it's already high up on the page, just make it visible
-            const rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight) {
-                el.classList.add('visible');
-            }
-        });
+        const elements = sectionRef.current?.querySelectorAll('.fade-up');
+        elements?.forEach((el) => observer.observe(el));
 
-        return () => observer.disconnect();
+        // GSAP Animations
+        const ctx = gsap.context(() => {
+            // Data Packets Flowing
+            const paths = [".path-1", ".path-2", ".path-3"];
+            paths.forEach((pathSelector, i) => {
+                // Create multiple packets per path
+                [0, 1].forEach((delay) => {
+                    const packet = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                    packet.setAttribute("r", "3");
+                    packet.setAttribute("fill", "#60a5fa");
+                    packet.classList.add("filter", "blur-[1px]");
+                    
+                    const svg = sectionRef.current?.querySelector("svg");
+                    if (svg) {
+                        svg.appendChild(packet);
+                        gsap.to(packet, {
+                            motionPath: {
+                                path: pathSelector,
+                                align: pathSelector,
+                                alignOrigin: [0.5, 0.5]
+                            },
+                            duration: 4,
+                            repeat: -1,
+                            delay: i * 0.5 + delay * 2,
+                            ease: "none"
+                        });
+                    }
+                });
+            });
+
+            // Pulsing Nodes
+            gsap.to(".node-pulse", {
+                scale: 2,
+                opacity: 0,
+                duration: 2.5,
+                repeat: -1,
+                stagger: {
+                    each: 0.8,
+                    from: "random"
+                },
+                ease: "power1.out"
+            });
+        }, sectionRef);
+
+        return () => {
+            observer.disconnect();
+            ctx.revert();
+        };
     }, []);
 
     const features = [
         {
-            id: 'video-demo',
-            subtitle: t('featureShowcase.step1.subtitle') || 'DÉMONSTRATION',
-            title: t('featureShowcase.step1.title') || "Découvrez l'IA en action",
-            description: t('featureShowcase.step1.description') || 'Visionnez notre démonstration pour comprendre comment notre réceptionniste virtuelle peut transformer votre entreprise.',
-            cta: t('featureShowcase.step1.cta') || 'LANCER LA VIDÉO',
-            image: '', // Will add video thumbnail later
-            number: '01',
-            isVideo: true,
-            reversed: false,
-        },
-        {
             id: 'capture',
-            subtitle: t('featureShowcase.step2.subtitle') || 'RÉCEPTION IA',
-            title: t('featureShowcase.step2.title') || 'Ne ratez plus un seul client',
-            description: t('featureShowcase.step2.description') || "Chaque appel manqué, c'est un client perdu. Lumina prend l'appel, comprend la demande et collecte les infos utiles.",
-            cta: t('featureShowcase.step2.cta') || 'DÉCOUVRIR LA RÉCEPTION IA',
+            title: t('featureShowcase.step2.title') || 'AI Reception',
+            description: t('featureShowcase.step2.description') || "Never miss a lead. Anvela answers, understands, and collects key info.",
             image: '/images/features/phone-reception.jpg',
-            number: '02',
-            isVideo: false,
-            reversed: true,
+            icon: <ShieldCheck className="w-5 h-5 text-blue-500" />,
+            color: "blue"
         },
         {
             id: 'scheduling',
-            subtitle: t('featureShowcase.step3.subtitle') || 'RENDEZ-VOUS & AGENDA',
-            title: t('featureShowcase.step3.title') || 'Planification instantanée, sans friction',
-            description: t('featureShowcase.step3.description') || 'Vérifie les disponibilités, propose des créneaux, confirme par SMS/email, et réduit les no-shows.',
-            cta: t('featureShowcase.step3.cta') || 'VOIR COMMENT ÇA MARCHE',
+            title: t('featureShowcase.step3.title') || 'Smart Scheduling',
+            description: t('featureShowcase.step3.description') || 'Syncs calendars and books meetings instantly, reducing no-shows.',
             image: '/images/features/tablet-booking.jpg',
-            number: '03',
-            isVideo: false,
-            reversed: false,
-            bleedOut: true, // Custom flag to make the image bleed off the right side
+            icon: <Calendar className="w-5 h-5 text-blue-500" />,
+            color: "indigo"
         },
         {
             id: 'automation',
-            subtitle: t('featureShowcase.step4.subtitle') || 'AUTOMATISATION & SUIVI',
-            title: t('featureShowcase.step4.title') || 'Du contact à la conversion',
-            description: t('featureShowcase.step4.description') || 'Crée automatiquement une fiche client, envoie un suivi, et alimente votre CRM/Google Sheets. Tout est traçable.',
-            cta: t('featureShowcase.step4.cta') || 'EXPLORER L\'AUTOMATISATION',
+            title: t('featureShowcase.step4.title') || 'Follow-up Automation',
+            description: t('featureShowcase.step4.description') || 'Automates CRM entries and sending follow-up messages.',
             image: '/images/features/automation-icons.jpg',
-            number: '04',
-            isVideo: false,
-            reversed: true,
+            icon: <Zap className="w-5 h-5 text-blue-500" />,
+            color: "cyan"
         }
     ];
 
     return (
         <section
-            id="feature-showcase"
+            id="capabilities"
             ref={sectionRef}
-            className="bg-slate-50 py-16 md:py-32 relative overflow-hidden"
+            className="bg-slate-50 py-24 md:py-32 relative overflow-hidden"
         >
-            <div className="container-custom relative space-y-24 md:space-y-40">
-                {features.map((feature, index) => {
-                    // For section 1 (index 0), standard 5/7 split
-                    // For sections 2, 3, 4 (index 1+), make image columns wider (e.g. 4/8 split)
-                    const textColSpan = index === 0 ? "lg:col-span-5" : "lg:col-span-4";
-                    const imgColSpan = index === 0 ? "lg:col-span-7" : "lg:col-span-8";
+            {/* Background Animated SVG Connections */}
+            <svg 
+                className="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-40"
+                viewBox="0 0 1200 600"
+                preserveAspectRatio="none"
+            >
+                {/* Connection Paths - Horizontal flow between 3 columns */}
+                <path 
+                    d="M 100,300 Q 300,250 500,300" 
+                    className="path-1 stroke-blue-400/30 stroke-2 fill-none" 
+                    strokeDasharray="8 12"
+                    style={{ animation: 'flow 2s linear infinite' }}
+                />
+                <path 
+                    d="M 500,300 Q 700,350 900,300" 
+                    className="path-2 stroke-blue-400/30 stroke-2 fill-none" 
+                    strokeDasharray="8 12"
+                    style={{ animation: 'flow 2.5s linear infinite' }}
+                />
+                <path 
+                    d="M 200,450 Q 600,550 1000,450" 
+                    className="path-3 stroke-blue-400/30 stroke-2 fill-none" 
+                    strokeDasharray="8 12"
+                    style={{ animation: 'flow 3s linear infinite' }}
+                />
 
-                    // Increased scale sizes via width overflow for 2-4 to make them pop huge
-                    const bleedClass = index > 0 && !feature.reversed ? "lg:w-[115%] lg:max-w-none" : "";
-                    const bleedReverseClass = index > 0 && feature.reversed ? "lg:w-[115%] lg:max-w-none lg:-ml-[15%]" : "";
+                <style>{`
+                    @keyframes flow {
+                        from { stroke-dashoffset: 20; }
+                        to { stroke-dashoffset: 0; }
+                    }
+                    .fade-up {
+                        opacity: 0;
+                        transform: translateY(30px);
+                        transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+                    }
+                    .fade-up.visible {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                `}</style>
+            </svg>
 
-                    return (
-                        <div key={feature.id} className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <div className="container-custom relative z-10">
+                {/* Section Header */}
+                <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24 fade-up">
+                    <span className="text-blue-600 font-bold text-xs uppercase tracking-[0.2em] mb-4 block">
+                        {t('featureShowcase.processSubtitle') || "Our Process"}
+                    </span>
+                    <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-dark-theme mb-6">
+                        {t('featureShowcase.mainTitle') || "How Anvela Powers Your Growth"}
+                    </h2>
+                </div>
 
-                            {/* Text Content */}
-                            <div className={`${textColSpan} ${feature.reversed ? 'lg:order-2 slide-in-right lg:pl-16' : 'lg:order-1 slide-in-left'} space-y-8 relative z-10`}>
-                                <div>
-                                    <span className="text-blue-600 font-bold text-xs uppercase tracking-[0.2em] mb-4 block">
-                                        {feature.subtitle}
-                                    </span>
-                                    <h2 className="font-serif text-3xl md:text-h2 text-dark-theme leading-tight mb-6">
-                                        {feature.title}
-                                    </h2>
-                                    <p className="text-slate-600 text-base md:text-lg leading-relaxed max-w-xl">
-                                        {feature.description}
-                                    </p>
-                                </div>
-
-                                <button
-                                    onClick={() => {
-                                        const element = document.querySelector('#contact');
-                                        if (element) element.scrollIntoView({ behavior: 'smooth' });
-                                    }}
-                                    className="text-blue-600 hover:text-blue-500 font-bold transition-colors uppercase tracking-widest text-sm flex items-center gap-2 group"
-                                >
-                                    {feature.cta}
-                                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                                </button>
-
-                                {/* Background Accent Number */}
-                                <div className={`absolute top-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none select-none overflow-hidden ${feature.reversed ? '-left-8 lg:-left-24' : '-right-8 lg:-right-32'}`}>
-                                    <span className="font-serif text-[180px] md:text-[280px] text-dark-theme leading-none">{feature.number}</span>
-                                </div>
-                            </div>
-
-                            {/* Image/Video Content */}
-                            <div className={`${imgColSpan} ${feature.reversed ? 'lg:order-1 slide-in-left' : 'lg:order-2 slide-in-right'} relative`}>
-                                <div className={`relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200 group z-10 aspect-[4/3] ${bleedClass} ${bleedReverseClass}`}>
-                                    <img
-                                        src={feature.image}
-                                        alt={feature.title}
-                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                    />
-
-                                    {feature.isVideo && (
-                                        <>
-                                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                                            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                                                <div className="w-20 h-20 rounded-full bg-blue-600/20 backdrop-blur-sm border border-white/30 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                                                    <Play className="w-8 h-8 text-white fill-current translate-x-0.5" />
-                                                </div>
-                                            </div>
-                                        </>
+                {/* Grid Layout - 3 Equal Columns */}
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    {features.map((feature, idx) => (
+                        <div
+                            key={feature.id}
+                            className="group relative bg-white rounded-[32px] p-10 flex flex-col items-center text-center shadow-xl shadow-slate-200/50 border border-slate-100 transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl fade-up"
+                            style={{ transitionDelay: `${idx * 0.1}s` }}
+                        >
+                            <div className="relative w-20 h-20 mb-10 flex items-center justify-center">
+                                {/* Enhanced Pulse Ring */}
+                                <div className="node-pulse absolute inset-0 bg-blue-500/20 rounded-full scale-150" />
+                                <div className="node-pulse absolute inset-0 bg-blue-500/10 rounded-full scale-[2]" />
+                                
+                                <div className="relative w-20 h-20 rounded-[28px] bg-blue-50 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
+                                    {/* Responsive Icon sizing */}
+                                    {window.innerWidth > 768 ? (
+                                        <div className="transform scale-150">{feature.icon}</div>
+                                    ) : (
+                                        feature.icon
                                     )}
                                 </div>
                             </div>
+
+                            <h3 className="text-2xl md:text-3xl font-serif text-dark-theme mb-6">{feature.title}</h3>
+                            <p className="text-slate-500 text-lg leading-relaxed">
+                                {feature.description}
+                            </p>
+
+                            {/* Number Indicator */}
+                            <div className="absolute top-8 left-10 text-7xl font-serif text-slate-100 font-bold opacity-50 pointer-events-none -z-10 group-hover:text-blue-50 transition-colors">
+                                0{idx + 1}
+                            </div>
                         </div>
-                    );
-                })}
+                    ))}
+                </div>
             </div>
         </section>
     );

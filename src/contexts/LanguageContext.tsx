@@ -28,8 +28,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       if (value && typeof value === 'object' && k in value) {
         value = (value as Record<string, any>)[k];
       } else {
-        // Fallback to English if translation not found
-        let fallbackValue: any = translations['en'];
+        // Fallback to French if translation not found
+        let fallbackValue: any = translations['fr'];
         for (const fk of keys) {
           if (fallbackValue && typeof fallbackValue === 'object' && fk in fallbackValue) {
             fallbackValue = (fallbackValue as Record<string, any>)[fk];

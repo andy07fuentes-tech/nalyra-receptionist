@@ -6,6 +6,7 @@ import Spline from '@splinetool/react-spline';
 import gsap from 'gsap';
 import { useInView } from '../hooks/useInView';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { GradientButton } from '../components/ui/gradient-button';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -135,7 +136,6 @@ export function Hero({ isReady }: { isReady: boolean }) {
           <span className="font-script text-3xl md:text-4xl lg:text-5xl text-blue-400">
             {t('hero.scriptText')}
           </span>
-          <div className="text-[10px] text-blue-500/30 tracking-[0.3em] font-bold mt-2 uppercase">v1.5 Verified Build</div>
         </div>
 
         {/* Divider line */}
@@ -150,43 +150,46 @@ export function Hero({ isReady }: { isReady: boolean }) {
 
         {/* Main CTA: Start Onboarding */}
         <div className={`mt-10 transition-all duration-1000 ease-out ${phase >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: '0.4s' }}>
-          <Link
-            to="/onboarding"
-            className="group relative inline-flex items-center gap-4 bg-blue-600 px-10 py-5 rounded-2xl overflow-hidden shadow-[0_0_30px_rgba(37,99,235,0.3)] transition-all duration-500 hover:bg-blue-500 hover:scale-105 active:scale-95"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-            <div className="flex flex-col items-start leading-none">
-              <span className="text-[10px] tracking-[0.3em] text-white/60 mb-1 uppercase font-bold">Start 14-Day Trial</span>
-              <span className="font-serif text-xl md:text-2xl text-white">Get Started with Nalyra</span>
-            </div>
-            <div className="p-2 bg-white/10 rounded-lg group-hover:bg-white/20 transition-colors">
-              <ArrowRight className="w-6 h-6 text-white transition-transform duration-300 group-hover:translate-x-1" />
-            </div>
-          </Link>
-          <p className="text-white/30 text-[10px] uppercase tracking-widest mt-4">No credit card required • Setup in 60 seconds</p>
+          <GradientButton variant="variant" asChild className="group h-auto rounded-2xl shadow-[0_0_30px_rgba(201,98,135,0.3)] hover:scale-105 active:scale-95 border-0">
+            <Link
+              to="/onboarding"
+              className="inline-flex items-center gap-4 px-10 py-5 w-full h-full"
+            >
+              <div className="flex flex-col items-start leading-none relative z-10 w-full text-left">
+                <span className="text-[10px] tracking-[0.3em] text-white/60 mb-1 uppercase font-[Poppins]">{t('hero.ctaSubtitle')}</span>
+                <span className="font-serif text-xl md:text-2xl text-white font-normal">{t('hero.ctaMain')}</span>
+              </div>
+              <div className="p-2 bg-white/10 rounded-lg transition-colors z-10 relative ml-auto">
+                <ArrowRight className="w-6 h-6 text-white transition-transform duration-300 group-hover:translate-x-1" />
+              </div>
+            </Link>
+          </GradientButton>
+          <p className="text-white text-[10px] uppercase tracking-widest mt-4 font-bold">{t('hero.noCreditCard')}</p>
         </div>
 
         {/* Secondary CTAs */}
         <div className={`mt-6 flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-700 ease-out ${phase >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: '0.6s' }}>
-          <button
+          <GradientButton
+            variant="variant"
             onClick={() => scrollToSection('#video-promo')}
-            className="group relative py-3 px-8 overflow-hidden border border-white/10 transition-all duration-500 hover:border-blue-400/50 min-w-[180px] bg-white/5"
+            className="min-w-[180px] border-0 !rounded-full py-3"
             aria-label={t('hero.videoDemo') as string}
           >
-            <span className="font-serif text-lg text-white flex items-center justify-center gap-2">
+            <span className="font-serif text-lg text-white flex items-center justify-center gap-2 font-normal hover:scale-105 transition-transform">
               {t('hero.videoDemo')}
             </span>
-          </button>
+          </GradientButton>
 
-          <button
+          <GradientButton
+            variant="variant"
             onClick={() => scrollToSection('#pricing')}
-            className="group relative py-3 px-8 overflow-hidden border border-white/10 transition-all duration-500 hover:border-cyan-400/50 min-w-[180px] bg-white/5"
+            className="min-w-[180px] border-0 !rounded-full py-3"
             aria-label={t('hero.prices') as string}
           >
-            <span className="font-serif text-lg text-white flex items-center justify-center gap-2">
+            <span className="font-serif text-lg text-white flex items-center justify-center gap-2 font-normal hover:scale-105 transition-transform">
               {t('hero.prices')}
             </span>
-          </button>
+          </GradientButton>
         </div>
 
         {/* Stats */}

@@ -54,7 +54,7 @@ export function ClientCapture() {
                                 {t('clientCapture.title') || 'Ne ratez plus un seul client'}
                             </h2>
                             <p className="text-slate-600 text-base md:text-lg leading-relaxed max-w-xl">
-                                {t('clientCapture.description') || "Chaque appel manqué, c'est un client perdu. Nalyra répond en moins d'une seconde, comprend la demande et collecte les infos utiles."}
+                                {t('clientCapture.description') || "Chaque appel manqué, c'est un client perdu. Anvela répond en moins d'une seconde, comprend la demande et collecte les infos utiles."}
                             </p>
                         </div>
 

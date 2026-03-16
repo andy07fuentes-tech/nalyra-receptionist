@@ -4,13 +4,13 @@ export const translations = {
   fr: {
     // Site
     site: {
-      title: "Nalyra - Communication Commerciale Intelligente",
+      title: "Anvela - Communication Commerciale Intelligente",
       description: "Transformez votre entreprise avec des services de réceptionniste alimentés par l'IA. Gestion d'appels intelligente 24/7, planification de rendez-vous et support client.",
     },
 
     // Navigation
     nav: {
-      brandName: "Nalyra",
+      brandName: "Anvela",
       brandSubname: "Communication Intelligente",
       tagline: "Votre Réception Numérique 24/7",
       home: "Accueil",
@@ -24,7 +24,7 @@ export const translations = {
 
     // Preloader
     preloader: {
-      brandName: "Nalyra",
+      brandName: "Anvela",
       brandSubname: "Communication Intelligente",
       yearText: "Nouvelle Génération",
     },
@@ -37,6 +37,9 @@ export const translations = {
       videoDemo: "Démo Vidéo",
       prices: "Tarifs",
       decorativeText: "INTELLIGENT • EFFICACE • FIABLE",
+      ctaSubtitle: "Essai de 14 Jours",
+      ctaMain: "Commencer avec Anvela",
+      noCreditCard: "Aucune carte requise • Configuration en 60s",
       stats: {
         calls: { value: "100", suffix: "%", label: "Taux de Réponse" },
         availability: { value: "24", suffix: "/7", label: "Toujours Disponible" },
@@ -55,7 +58,7 @@ export const translations = {
       step2: {
         subtitle: "Réception IA",
         title: "Ne ratez plus un seul client",
-        description: "Chaque appel manqué, c'est un client perdu. Nalyra prend l'appel, comprend la demande et collecte les infos utiles.",
+        description: "Chaque appel manqué, c'est un client perdu. Anvela prend l'appel, comprend la demande et collecte les infos utiles.",
         cta: "Découvrir la Réception IA",
       },
       step3: {
@@ -69,7 +72,9 @@ export const translations = {
         title: "Du contact à la conversion",
         description: "Crée automatiquement une fiche client, envoie un suivi, et alimente votre CRM/Google Sheets. Tout est traçable.",
         cta: "Explorer L'Automatisation",
-      }
+      },
+      mainTitle: "Comment Anvela propulse votre croissance",
+      processSubtitle: "NOTRE PROCESSUS"
     },
 
     // Pain Points
@@ -77,7 +82,7 @@ export const translations = {
       scriptText: "Le Coût du Statu Quo",
       subtitle: "POINTS DE FRICTION",
       mainTitle: "Pourquoi la Réception Traditionnelle Échoue",
-      description: "Les entreprises perdent des revenus chaque jour à cause de limitations humaines évitables. Nalyra élimine ces obstacles.",
+      description: "Les entreprises perdent des revenus chaque jour à cause de limitations humaines évitables. Anvela élimine ces obstacles.",
       items: [
         {
           title: "Fuite de Revenus",
@@ -91,12 +96,12 @@ export const translations = {
         },
         {
           title: "Lacunes de Couverture",
-          description: "Les humains ont besoin de pauses et de sommeil. Nalyra offre une disponibilité absolue 24/7/365, sans exception.",
+          description: "Les humains ont besoin de pauses et de sommeil. Anvela offre une disponibilité absolue 24/7/365, sans exception.",
           icon: "Clock"
         },
         {
           title: "Service Inconstant",
-          description: "La performance du personnel fluctue. Nalyra offre une expérience premium et parfaitement polie à chaque interaction.",
+          description: "La performance du personnel fluctue. Anvela offre une expérience premium et parfaitement polie à chaque interaction.",
           icon: "Zap"
         },
         {
@@ -115,7 +120,7 @@ export const translations = {
     // Album Cube
     albumCube: {
       scrollHint: "Faites défiler pour explorer",
-      backgroundTitle: "NALYRA",
+      backgroundTitle: "ANVELA",
       features: [
         { title: "VOIX IA", subtitle: "APPELS INTELLIGENTS" },
         { title: "CHATBOT", subtitle: "MESSAGERIE INTELLIGENTE" },
@@ -127,10 +132,10 @@ export const translations = {
     // Video Promo
     videoPromo: {
       scriptText: "Vivez le Changement",
-      subtitle: "NALYRA EN ACTION",
+      subtitle: "ANVELA EN ACTION",
       titleMain: "Du Chaos de l'Accueil",
       titleAccent: "à l'Excellence",
-      description: "Découvrez comment Nalyra transforme un accueil débordé en un centre d'efficacité sereine. Ne ratez plus aucun appel, ne perdez plus aucun prospect, et laissez votre équipe se concentrer sur l'essentiel.",
+      description: "Découvrez comment Anvela transforme un accueil débordé en un centre d'efficacité sereine. Ne ratez plus aucun appel, ne perdez plus aucun prospect, et laissez votre équipe se concentrer sur l'essentiel.",
       feat1: { title: "Précision IA", desc: "Gère instantanément les demandes" },
       feat2: { title: "Installation Flash", desc: "Intégration sans friction" }
     },
@@ -140,44 +145,93 @@ export const translations = {
       scriptText: "Un Investissement Rentable",
       subtitle: "NOS TARIFS",
       mainTitle: "Des forfaits adaptés à vos besoins",
-      promoText: "Bénéficiez de 14 jours d'essai gratuit sur tous nos forfaits, avec un accès complet à la plateforme.",
+      promoText: "2 mois gratuits avec paiement annuel. Premiers appels capturés en 14 jours ou vos frais de mise en service sont remboursés.",
       ctaButton: "Démarrer l'essai",
+      setupFeeLabel: "Frais de mise en service",
+      popularLabel: "Le plus populaire",
       tiers: [
         {
-          name: "Standard",
-          price: "250",
-          description: "Pour les petits cabinets qui cherchent à automatiser leur réception.",
+          name: "The Night Shift",
+          price: "197",
+          weeklyNote: "Moins de 50$ / semaine",
+          setupFee: "0",
+          setupFeeNote: "Contrat 3 mois minimum",
+          description: "Votre équipe se repose. Vos leads, eux, ne dorment pas. On capture chaque appel manqué pendant que vous êtes fermé — et votre calendrier se remplit tout seul.",
           features: [
-            "Réceptionniste IA 24/7",
-            "Prise de rendez-vous automatique",
-            "Jusqu'à 500 appels / mois",
-            "Support par email"
+            "Disponibilité : Lun–Ven (18h00 – 8h00) + Week-ends 24h",
+            "Appels : Illimités — chaque appel répondu, sans exception",
+            "IA : Réponse aux FAQ + capture de leads qualifiés",
+            "Réservation : Prise de rendez-vous automatique (Google Calendar)",
+            "Notification : SMS instantané dès qu'un lead est capturé",
+            "Rapport : 'Night Shift Report' quotidien à 8h00",
+            "Suivi : Appels non résolus loggés avec transcription complète",
+            "Langue : Français — spécialisé pour les marchés locaux"
           ]
         },
         {
-          name: "Professionnel",
-          price: "450",
+          name: "The Co-Pilot",
+          price: "299",
+          weeklyNote: "Moins de 75$ / semaine",
           isPopular: true,
-          description: "La solution idéale pour les entreprises en pleine croissance.",
+          setupFee: "197",
+          setupFeeNote: "Contrat 3 mois minimum",
+          description: "Couverture complète 24/7. Votre téléphone ne sonne plus dans le vide — il génère des revenus, même en plein milieu d'une intervention.",
           features: [
-            "Toutes les fonctionnalités Standard",
-            "Jusqu'à 1500 appels / mois",
-            "Routage d'appels intelligent",
-            "Intégration CRM avancée",
-            "Support prioritaire"
+            "Inclut TOUT le forfait 'The Night Shift'",
+            "Disponibilité : 24/7 (Débordement jour + Nuit complète)",
+            "Routage : Humain d'abord (3 sonneries), l'IA prend le relai",
+            "Réservation : Prise de RDV + rappels SMS (24h et 2h avant)",
+            "Gestion : Modifications et annulations gérées par l'IA",
+            "Interactions : Bilingue (Français / Anglais)",
+            "Appels : Illimités",
+            "Garantie : 14 jours ou frais de mise en service remboursés"
           ]
         },
         {
-          name: "Entreprise",
-          price: "600",
-          description: "Pour les structures exigeant un volume élevé et une personnalisation totale.",
+          name: "The Elite",
+          price: "597",
+          weeklyNote: "Moins de 150$ / semaine",
+          setupFee: "497",
+          setupFeeNote: "Contrat 6 mois minimum",
+          description: "Votre système de croissance complet. L'IA répond, relance, réserve et suit chaque lead — pendant que vous, vous travaillez.",
           features: [
-            "Toutes les fonctionnalités Pro",
-            "Appels illimités",
-            "Personnalisation totale de la voix",
-            "Gestion multi-agences",
-            "Un gestionnaire de account dédié"
+            "Inclut TOUT de 'The Night Shift' et 'The Co-Pilot'",
+            "Logique : Intégration CRM Native avec tableau de bord",
+            "Relances : SMS automatique dans les 15 min pour chaque lead",
+            "Triage : Arborescence multi-étapes (urgence, devis, RDV)",
+            "Support : Support VIP Prioritaire (réponse < 2h)",
+            "BONUS : Site web d'une page gratuit inclus",
+            "Appels : Illimités",
+            "Efficacité : Optimisation continue du pipeline de vente"
           ]
+        }
+      ]
+    },
+
+    // FAQ
+    faq: {
+      subtitle: "FAQ",
+      mainTitle: "Questions Fréquentes",
+      items: [
+        {
+          question: "Comment se passe l'intégration avec mon système actuel ?",
+          answer: "C'est très simple. Nous configurons un transfert d'appel conditionnel (si occupé ou non-réponse) vers votre numéro Anvela dédié. Vous gardez votre numéro actuel et vos clients ne voient aucun changement."
+        },
+        {
+          question: "Est-ce que l'IA peut vraiment prendre des rendez-vous ?",
+          answer: "Oui, absolument. Anvela se connecte directement à votre calendrier (Google, Outlook, Calendly, etc.). Elle vérifie vos disponibilités en temps réel, réserve le créneau et vous envoie une confirmation instantanée."
+        },
+        {
+          question: "Que se passe-t-il si l'IA ne connaît pas la réponse ?",
+          answer: "Si une demande est trop complexe, Anvela peut soit transférer l'appel vers un membre de votre équipe en direct (Routage Intelligent), soit prendre un message détaillé avec les coordonnées du client pour un rappel."
+        },
+        {
+          question: "Puis-je personnaliser la voix et le script ?",
+          answer: "Oui. Nous travaillons avec vous pour définir le ton, le vocabulaire et les scénarios de réponse. Votre réceptionniste peut être formelle, amicale ou spécialisée selon votre secteur d'activité."
+        },
+        {
+          question: "Y a-t-il un engagement à long terme ?",
+          answer: "Nos forfaits 'The Night Shift' et 'The Co-Pilot' ont un engagement minimal de 3 mois. Le forfait 'The Elite' requiert 6 mois en raison de la complexité de l'intégration CRM personnalisée."
         }
       ]
     },
@@ -191,7 +245,7 @@ export const translations = {
         callHandling: {
           name: "Gestion d'Appels",
           subtitle: "Routage Intelligent",
-          description: "Nalyra répond aux appels avec des conversations naturelles, comprend l'intention et achemine vers le bon service.",
+          description: "Anvela répond aux appels avec des conversations naturelles, comprend l'intention et achemine vers le bon service.",
           tastingNotes: "Traitement du langage naturel avec analyse de sentiment",
           accuracy: "99%",
           speed: "Instantané",
@@ -223,7 +277,7 @@ export const translations = {
         customizable: { title: "Personnalisable", description: "Adapté à votre image de marque" },
       },
       quote: {
-        text: "Nalyra a transformé notre façon de gérer les demandes clients. Notre équipe peut se concentrer sur l'essentiel.",
+        text: "Anvela a transformé notre façon de gérer les demandes clients. Notre équipe peut se concentrer sur l'essentiel.",
         attribution: "Sarah Mitchell, PDG",
         prefix: "Histoire de Succès",
       },
@@ -407,7 +461,7 @@ export const translations = {
 
     // Footer
     footer: {
-      brandName: "Nalyra",
+      brandName: "Anvela",
       tagline: "Communication Intelligente",
       description: "Transformez votre entreprise avec des services de réceptionniste alimentés par l'IA. Disponible 24/7, toujours professionnel, incroyablement efficace.",
       newsletterLabel: "Abonnez-vous à notre newsletter",
@@ -415,7 +469,7 @@ export const translations = {
       newsletterButtonText: "S'abonner",
       newsletterSuccessText: "Merci pour votre abonnement !",
       newsletterErrorText: "Veuillez réessayer.",
-      copyrightText: "© Nalyra AI. Tous droits réservés.",
+      copyrightText: "© Anvela AI. Tous droits réservés.",
       backToTopText: "Retour en haut",
       linkGroups: {
         product: {
@@ -449,7 +503,7 @@ export const translations = {
 
     // Navigation
     nav: {
-      brandName: "Nalyra",
+      brandName: "Anvela",
       brandSubname: "Intelligent Communication",
       tagline: "Your 24/7 Digital Front Desk",
       home: "Home",
@@ -463,7 +517,7 @@ export const translations = {
 
     // Preloader
     preloader: {
-      brandName: "Nalyra",
+      brandName: "Anvela",
       brandSubname: "Intelligent Communication",
       yearText: "Next Gen",
     },
@@ -476,6 +530,9 @@ export const translations = {
       videoDemo: "Video Demo",
       prices: "Prices",
       decorativeText: "INTELLIGENT • EFFICIENT • RELIABLE",
+      ctaSubtitle: "Start 14-Day Trial",
+      ctaMain: "Get Started with Anvela",
+      noCreditCard: "No credit card required • Setup in 60 seconds",
       stats: {
         calls: { value: "100", suffix: "%", label: "Call Answer Rate" },
         availability: { value: "24", suffix: "/7", label: "Always Available" },
@@ -494,7 +551,7 @@ export const translations = {
       step2: {
         subtitle: "AI Reception",
         title: "Never miss a single client again",
-        description: "Every missed call is a lost client. Nalyra takes the call, understands the request, and collects the useful info.",
+        description: "Every missed call is a lost client. Anvela takes the call, understands the request, and collects the useful info.",
         cta: "Discover AI Reception",
       },
       step3: {
@@ -508,7 +565,9 @@ export const translations = {
         title: "From contact to conversion",
         description: "Automatically creates a client file, sends follow-ups, and feeds your CRM/Google Sheets. Everything is traceable.",
         cta: "Explore Automation",
-      }
+      },
+      mainTitle: "How Anvela Powers Your Growth",
+      processSubtitle: "OUR PROCESS"
     },
 
     // Pain Points
@@ -516,7 +575,7 @@ export const translations = {
       scriptText: "The Cost of Inaction",
       subtitle: "FRICTION POINTS",
       mainTitle: "Why Traditional Reception Fails",
-      description: "Businesses lose revenue every day due to avoidable human limitations. Nalyra eliminates these barriers for good.",
+      description: "Businesses lose revenue every day due to avoidable human limitations. Anvela eliminates these barriers for good.",
       items: [
         {
           title: "Revenue Leakage",
@@ -530,12 +589,12 @@ export const translations = {
         },
         {
           title: "Coverage Gaps",
-          description: "Humans need breaks, sleep, and time off. Nalyra provides absolute 24/7/365 availability, no exceptions.",
+          description: "Humans need breaks, sleep, and time off. Anvela provides absolute 24/7/365 availability, no exceptions.",
           icon: "Clock"
         },
         {
           title: "Inconsistent Quality",
-          description: "Staff performance fluctuates. Nalyra delivers a perfectly polite, premium experience 100% of the time.",
+          description: "Staff performance fluctuates. Anvela delivers a perfectly polite, premium experience 100% of the time.",
           icon: "Zap"
         },
         {
@@ -554,7 +613,7 @@ export const translations = {
     // Album Cube
     albumCube: {
       scrollHint: "Scroll to explore",
-      backgroundTitle: "NALYRA",
+      backgroundTitle: "ANVELA",
       features: [
         { title: "VOICE AI", subtitle: "INTELLIGENT CALLS" },
         { title: "CHATBOT", subtitle: "SMART MESSAGING" },
@@ -566,10 +625,10 @@ export const translations = {
     // Video Promo
     videoPromo: {
       scriptText: "Experience the Change",
-      subtitle: "NALYRA EN ACTION",
+      subtitle: "ANVELA EN ACTION",
       titleMain: "From Overwhelmed",
       titleAccent: "To Unstoppable",
-      description: "Watch how Nalyra transforms a chaotic front desk into a hub of calm efficiency. Never miss a call, never lose a lead, and let your team focus on what truly matters.",
+      description: "Watch how Anvela transforms a chaotic front desk into a hub of calm efficiency. Never miss a call, never lose a lead, and let your team focus on what truly matters.",
       feat1: { title: "AI Precision", desc: "Handles complex inquiries instantly" },
       feat2: { title: "Instant Setup", desc: "Zero friction integration" }
     },
@@ -579,43 +638,64 @@ export const translations = {
       scriptText: "A Profitable Investment",
       subtitle: "OUR PRICING",
       mainTitle: "Plans tailored to your needs",
-      promoText: "Enjoy a 14-day free trial on all our plans, with full access to the platform.",
+      promoText: "2 months free with annual payment. First calls captured within 14 days or your setup fees are refunded.",
       ctaButton: "Start Trial",
+      setupFeeLabel: "Setup Fee",
+      popularLabel: "Most Popular",
       tiers: [
         {
-          name: "Standard",
-          price: "250",
-          description: "For small practices looking to automate their reception.",
+          name: "The Night Shift",
+          price: "197",
+          weeklyNote: "Less than $50 / week",
+          setupFee: "0",
+          setupFeeNote: "3-month minimum contract",
+          description: "Your team rests. Your leads don't. We capture every missed call while you're closed — and your calendar fills up on its own.",
           features: [
-            "24/7 AI Receptionist",
-            "Automated appointment booking",
-            "Up to 500 calls / month",
-            "Email support"
+            "Availability: Mon–Fri (6 PM – 8 AM) + Weekends 24h",
+            "Calls: Unlimited — every call answered, no exception",
+            "AI: FAQ Answering + Qualified Lead Capture",
+            "Booking: Automatic Appointment Booking (Google Calendar)",
+            "Notification: Instant SMS as soon as a lead is captured",
+            "Report: Daily 8 AM 'Night Shift Report'",
+            "Follow-up: Unresolved calls logged with full transcription",
+            "Language: Optimized for local markets"
           ]
         },
         {
-          name: "Professional",
-          price: "450",
+          name: "The Co-Pilot",
+          price: "299",
+          weeklyNote: "Less than $75 / week",
           isPopular: true,
-          description: "The ideal solution for growing businesses.",
+          setupFee: "197",
+          setupFeeNote: "3-month minimum contract",
+          description: "Full 24/7 coverage. Your phone stops ringing in a vacuum — it generates revenue, even during busy hours.",
           features: [
-            "All Standard features",
-            "Up to 1500 calls / month",
-            "Smart call routing",
-            "Advanced CRM integration",
-            "Priority support"
+            "Includes EVERYTHING in 'The Night Shift'",
+            "Availability: 24/7 (Day overflow + Full after-hours)",
+            "Routing: Human first (3 rings), AI takes over if needed",
+            "Booking: Appointment Booking + SMS reminders (24h/2h)",
+            "Management: Cancellations & Rescheduling handled by AI",
+            "Interactions: Bilingual (English / French)",
+            "Calls: Unlimited",
+            "Guarantee: 14 days or setup fees refunded"
           ]
         },
         {
-          name: "Enterprise",
-          price: "600",
-          description: "For organizations demanding high volume and total customization.",
+          name: "The Elite",
+          price: "597",
+          weeklyNote: "Less than $150 / week",
+          setupFee: "497",
+          setupFeeNote: "6-month minimum contract",
+          description: "Your complete growth system. AI answers, follows up, books, and tracks every lead — while you work.",
           features: [
-            "All Pro features",
-            "Unlimited calls",
-            "Total voice customization",
-            "Multi-agency management",
-            "Dedicated account manager"
+            "Includes EVERYTHING in 'The Night Shift' and 'The Co-Pilot'",
+            "Logic: Native CRM Integration with dashboard",
+            "Follow-ups: Auto SMS within 15 min for every lead",
+            "Triage: Multi-step branching logic (urgency, quote, RDV)",
+            "Support: Priority VIP Support (response < 2h)",
+            "BONUS: Free one-page website included",
+            "Calls: Unlimited",
+            "Growth: Continuous sales pipeline optimization"
           ]
         }
       ]
@@ -630,7 +710,7 @@ export const translations = {
         callHandling: {
           name: "Call Handling",
           subtitle: "Smart Routing",
-          description: "Nalyra answers calls with natural conversation, understands intent, and routes to the right person.",
+          description: "Anvela answers calls with natural conversation, understands intent, and routes to the right person.",
           tastingNotes: "Natural language processing with sentiment analysis",
           accuracy: "99%",
           speed: "Instant",
@@ -662,7 +742,7 @@ export const translations = {
         customizable: { title: "Customizable", description: "Tailored to your brand identity" },
       },
       quote: {
-        text: "Nalyra has transformed how we handle customer inquiries. Our team can now focus on what matters most.",
+        text: "Anvela has transformed how we handle customer inquiries. Our team can now focus on what matters most.",
         attribution: "Sarah Mitchell, CEO",
         prefix: "Success Story",
       },
@@ -846,7 +926,7 @@ export const translations = {
 
     // Footer
     footer: {
-      brandName: "Nalyra",
+      brandName: "Anvela",
       tagline: "Intelligent Communication",
       description: "Transform your business with AI-powered receptionist services. Available 24/7, always professional, incredibly efficient.",
       newsletterLabel: "Subscribe to our newsletter",
@@ -854,7 +934,7 @@ export const translations = {
       newsletterButtonText: "Subscribe",
       newsletterSuccessText: "Thanks for subscribing!",
       newsletterErrorText: "Please try again.",
-      copyrightText: "© Nalyra AI. All rights reserved.",
+      copyrightText: "© Anvela AI. All rights reserved.",
       backToTopText: "Back to top",
       linkGroups: {
         product: {
@@ -912,7 +992,12 @@ export const translations = {
       scriptText: "El Futuro de la Comunicación Empresarial",
       mainTitle: "Su Recepcionista\nIA Inteligente",
       ctaButton: "Prueba Gratuita",
+      videoDemo: "Demo en Video",
+      prices: "Precios",
       decorativeText: "INTELIGENTE • EFICIENTE • CONFIABLE",
+      ctaSubtitle: "Prueba de 14 Días",
+      ctaMain: "Comenzar con Anvela",
+      noCreditCard: "Sin tarjeta de crédito • Configuración en 60s",
       stats: {
         calls: { value: "100", suffix: "%", label: "Tasa de Respuesta" },
         availability: { value: "24", suffix: "/7", label: "Siempre Disponible" },
@@ -931,7 +1016,7 @@ export const translations = {
       step2: {
         subtitle: "Recepción IA",
         title: "No pierda nunca más a un cliente",
-        description: "Cada llamada perdida es un cliente perdido. Nalyra toma la llamada, entiende la solicitud y recopila la información útil.",
+        description: "Cada llamada perdida es un cliente perdido. Anvela toma la llamada, entiende la solicitud y recopila la información útil.",
         cta: "Descubrir Recepción IA",
       },
       step3: {
@@ -953,7 +1038,7 @@ export const translations = {
       scriptText: "El Costo de la Inacción",
       subtitle: "PUNTOS DE FRICCIÓN",
       mainTitle: "Por Qué la Recepción Tradicional Falla",
-      description: "Las empresas pierden ingresos cada día debido a limitaciones humanas evitables. Nalyra elimina estas barreras para siempre.",
+      description: "Las empresas pierden ingresos cada día debido a limitaciones humanas evitables. Anvela elimina estas barreras para siempre.",
       items: [
         {
           title: "Fuga de Ingresos",
@@ -967,12 +1052,12 @@ export const translations = {
         },
         {
           title: "Brechas de Cobertura",
-          description: "Los humanos necesitan descansos y sueño. Nalyra ofrece disponibilidad absoluta 24/7/365, sin excepciones.",
+          description: "Los humanos necesitan descansos y sueño. Anvela ofrece disponibilidad absoluta 24/7/365, sin excepciones.",
           icon: "Clock"
         },
         {
           title: "Servicio Inconsistente",
-          description: "El rendimiento del personal fluctúa. Nalyra ofrece una experiencia premium y perfectamente amable en cada interacción.",
+          description: "El rendimiento del personal fluctúa. Anvela ofrece una experiencia premium y perfectamente amable en cada interacción.",
           icon: "Zap"
         },
         {
@@ -991,7 +1076,7 @@ export const translations = {
     // Album Cube
     albumCube: {
       scrollHint: "Desplácese para explorar",
-      backgroundTitle: "NALYRA",
+      backgroundTitle: "ANVELA",
       features: [
         { title: "VOZ IA", subtitle: "LLAMADAS INTELIGENTES" },
         { title: "CHATBOT", subtitle: "MENSAJERÍA INTELIGENTE" },
@@ -1005,43 +1090,64 @@ export const translations = {
       scriptText: "Una Inversión Rentable",
       subtitle: "NUESTROS PRECIOS",
       mainTitle: "Planes adaptados a tus necesidades",
-      promoText: "Disfrute de una prueba gratuita de 14 días en todos nuestros planes, con acceso completo a la plataforma.",
+      promoText: "2 meses gratis con pago anual. Primeras llamadas capturadas en 14 días o le devolvemos los gastos de puesta en servicio.",
       ctaButton: "Iniciar Prueba",
+      setupFeeLabel: "Gasto de puesta en servicio",
+      popularLabel: "El más popular",
       tiers: [
         {
-          name: "Estándar",
-          price: "250",
-          description: "Para pequeños consultorios que buscan automatizar su recepción.",
+          name: "The Night Shift",
+          price: "197",
+          weeklyNote: "Menos de $50 / semana",
+          setupFee: "0",
+          setupFeeNote: "Contrato mínimo de 3 meses",
+          description: "Su equipo descansa. Sus leads no. Capturamos cada llamada perdida mientras está cerrado, y su calendario se llena solo.",
           features: [
-            "Recepcionista IA 24/7",
-            "Reserva automática de citas",
-            "Hasta 500 llamadas / mes",
-            "Soporte por correo electrónico"
+            "Disponibilidad: Lun-Vie (18:00 - 8:00) + Fines de semana 24h",
+            "Llamadas: Ilimitadas - cada llamada atendida, sin excepción",
+            "IA: Respuesta a FAQ + captura de leads calificados",
+            "Reserva: Citas automáticas (Google Calendar)",
+            "Notificación: SMS instantáneo al capturar un lead",
+            "Informe: 'Night Shift Report' diario a las 8:00",
+            "Seguimiento: Llamadas no resueltas con transcripción completa",
+            "Idioma: Optimizado para mercados locales"
           ]
         },
         {
-          name: "Profesional",
-          price: "450",
+          name: "The Co-Pilot",
+          price: "299",
+          weeklyNote: "Menos de $75 / semana",
           isPopular: true,
-          description: "La solución ideal para empresas en crecimiento.",
+          setupFee: "197",
+          setupFeeNote: "Contrato mínimo de 3 meses",
+          description: "Cobertura completa 24/7. Su teléfono deja de sonar en el vacío: genera ingresos, incluso durante las horas de trabajo.",
           features: [
-            "Todas las funciones Estándar",
-            "Hasta 1500 llamadas / mes",
-            "Enrutamiento inteligente de llamadas",
-            "Integración avanzada de CRM",
-            "Soporte prioritario"
+            "Incluye TODO del plan 'The Night Shift'",
+            "Disponibilidad: 24/7 (Desbordamiento día + Noche completa)",
+            "Enrutamiento: Humano primero (3 tonos), IA toma el relevo",
+            "Reserva: Citas + recordatorios SMS (24h/2h)",
+            "Gestión: Modificaciones y cancelaciones por IA",
+            "Interacciones: Bilingüe (Inglés / Francés)",
+            "Llamadas: Ilimitadas",
+            "Garantía: 14 días o devolución de gastos de inicio"
           ]
         },
         {
-          name: "Empresa",
-          price: "600",
-          description: "Para organizaciones que exigen un alto volumen y personalización total.",
+          name: "The Elite",
+          price: "597",
+          weeklyNote: "Menos de $150 / semana",
+          setupFee: "497",
+          setupFeeNote: "Contrato mínimo de 6 meses",
+          description: "Su sistema completo de crecimiento. La IA responde, relanza, reserva y sigue a cada lead, mientras usted trabaja.",
           features: [
-            "Todas las funciones Pro",
-            "Llamadas ilimitadas",
-            "Personalización total de voz",
-            "Gestión multi-agencia",
-            "Gerente de cuenta dedicado"
+            "Incluye TODO de 'The Night Shift' y 'The Co-Pilot'",
+            "Lógica: Integración CRM nativa con tablero",
+            "Seguimiento: SMS automático en 15 min para cada lead",
+            "Triaje: Lógica multi-pasos (urgencia, presupuesto, cita)",
+            "Soporte: Soporte VIP prioritario (respuesta < 2h)",
+            "BONUS: Sitio web de una página gratuito incluido",
+            "Llamadas: Ilimitadas",
+            "Crecimiento: Optimización continua del pipeline de ventas"
           ]
         }
       ]
@@ -1056,7 +1162,7 @@ export const translations = {
         callHandling: {
           name: "Gestión de Llamadas",
           subtitle: "Enrutamiento Inteligente",
-          description: "Nalyra responde llamadas con conversación natural, comprende la intención y las dirige al departamento correcto.",
+          description: "Anvela responde llamadas con conversación natural, comprende la intención y las dirige al departamento correcto.",
           tastingNotes: "Procesamiento de lenguaje natural con análisis de sentimiento",
           accuracy: "99%",
           speed: "Instantáneo",
@@ -1088,7 +1194,7 @@ export const translations = {
         customizable: { title: "Personalizable", description: "Adaptado a la identidad de su marca" },
       },
       quote: {
-        text: "Nalyra ha transformado cómo manejamos las consultas de clientes. Nuestro equipo ahora puede enfocarse en lo más importante.",
+        text: "Anvela ha transformado cómo manejamos las consultas de clientes. Nuestro equipo ahora puede enfocarse en lo más importante.",
         attribution: "Sarah Mitchell, CEO",
         prefix: "Historia de Éxito",
       },
@@ -1338,7 +1444,12 @@ export const translations = {
       scriptText: "Il Futuro della Comunicazione Aziendale",
       mainTitle: "Il Tuo Receptionist\nIA Intelligente",
       ctaButton: "Prova Gratuita",
+      videoDemo: "Video Demo",
+      prices: "Prezzi",
       decorativeText: "INTELLIGENTE • EFFICIENTE • AFFIDABILE",
+      ctaSubtitle: "Prova di 14 Giorni",
+      ctaMain: "Inizia con Anvela",
+      noCreditCard: "Nessuna carta richiesta • Configurazione in 60s",
       stats: {
         calls: { value: "100", suffix: "%", label: "Tasso di Risposta" },
         availability: { value: "24", suffix: "/7", label: "Sempre Disponibile" },
@@ -1351,7 +1462,7 @@ export const translations = {
       scriptText: "Il Costo dell'Inazione",
       subtitle: "PUNTI DI ATTRITO",
       mainTitle: "Perché la Reception Tradizionale Fallisce",
-      description: "Le aziende perdono ricavi ogni giorno a causa di limitazioni umane evitabili. Nalyra elimina queste barriere per sempre.",
+      description: "Le aziende perdono ricavi ogni giorno a causa di limitazioni umane evitabili. Anvela elimina queste barriere per sempre.",
       items: [
         {
           title: "Perdita di Ricavi",
@@ -1365,12 +1476,12 @@ export const translations = {
         },
         {
           title: "Lacune di Copertura",
-          description: "Gli esseri umani hanno bisogno di pause e sonno. Nalyra offre disponibilità assoluta 24/7/365, senza eccezioni.",
+          description: "Gli esseri umani hanno bisogno di pause e sonno. Anvela offre disponibilità assoluta 24/7/365, senza eccezioni.",
           icon: "Clock"
         },
         {
           title: "Qualità Incoerente",
-          description: "Le prestazioni del personale fluttuano. Nalyra offre un'esperienza premium e perfettamente cortese ogni volta.",
+          description: "Le prestazioni del personale fluttuano. Anvela offre un'esperienza premium e perfettamente cortese ogni volta.",
           icon: "Zap"
         },
         {
@@ -1391,43 +1502,64 @@ export const translations = {
       scriptText: "Un Investimento Redditizio",
       subtitle: "I NOSTRI PREZZI",
       mainTitle: "Piani su misura per le tue esigenze",
-      promoText: "Goditi una prova gratuita di 14 giorni su tutti i nostri piani, con accesso completo alla piattaforma.",
+      promoText: "2 mesi gratuiti con pagamento annuale. Prime chiamate catturate entro 14 giorni o spese di attivazione rimborsate.",
       ctaButton: "Inizia Prova",
+      setupFeeLabel: "Spese di attivazione",
+      popularLabel: "Il più popolare",
       tiers: [
         {
-          name: "Standard",
-          price: "250",
-          description: "Per piccoli studi che cercano di automatizzare la loro reception.",
+          name: "The Night Shift",
+          price: "197",
+          weeklyNote: "Meno di 50$ / settimana",
+          setupFee: "0",
+          setupFeeNote: "Contratto minimo 3 mesi",
+          description: "Il tuo team riposa. I tuoi lead no. Catturiamo ogni chiamata persa mentre sei chiuso — e il tuo calendario si riempie da solo.",
           features: [
-            "Receptionist IA 24/7",
-            "Prenotazione appuntamenti automatizzata",
-            "Fino a 500 chiamate / mese",
-            "Supporto via email"
+            "Disponibilità: Lun–Ven (18:00 – 8:00) + Weekend 24h",
+            "Chiamate: Illimitate — ogni chiamata risposta, senza eccezioni",
+            "IA: Risposte FAQ + cattura lead qualificati",
+            "Prenotazione: Appuntamenti automatici (Google Calendar)",
+            "Notifica: SMS istantaneo alla cattura di un lead",
+            "Rapporto: 'Night Shift Report' quotidiano alle 8:00",
+            "Seguimento: Chiamate non risolte con trascrizione completa",
+            "Lingua: Ottimizzato per i mercati locali"
           ]
         },
         {
-          name: "Professionale",
-          price: "450",
+          name: "The Co-Pilot",
+          price: "299",
+          weeklyNote: "Meno di 75$ / settimana",
           isPopular: true,
-          description: "La soluzione ideale per le aziende in crescita.",
+          setupFee: "197",
+          setupFeeNote: "Contratto minimo 3 mesi",
+          description: "Copertura completa 24/7. Il tuo telefono smette di squillare a vuoto — genera entrate, anche durante il lavoro.",
           features: [
-            "Tutte le funzioni Standard",
-            "Fino a 1500 chiamate / mese",
-            "Instradamento intelligente delle chiamate",
-            "Integrazione CRM avanzata",
-            "Supporto prioritario"
+            "Include TUTTO del pacchetto 'The Night Shift'",
+            "Disponibilità: 24/7 (Overflow giorno + Notte intera)",
+            "Routing: Umano prima (3 squilli), IA subentra se necessario",
+            "Prenotazione: Appuntamenti + promemoria SMS (24h/2h)",
+            "Gestione: Modifiche e cancelazioni gestite dall'IA",
+            "Interactions: Bilingue (Inglese / Francese)",
+            "Chiamate: Illimitate",
+            "Garanzia: 14 giorni o rimborso spese attivazione"
           ]
         },
         {
-          name: "Eccellenza",
-          price: "600",
-          description: "Per organizzazioni che richiedono volumi elevati e personalizzazione totale.",
+          name: "The Elite",
+          price: "597",
+          weeklyNote: "Meno di 150$ / settimana",
+          setupFee: "497",
+          setupFeeNote: "Contratto minimo 6 mesi",
+          description: "Il tuo sistema di crescita completo. L'IA risponde, rilancia, prenota e segue ogni lead — mentre tu lavori.",
           features: [
-            "Tutte le funzioni Pro",
-            "Chiamate illimitate",
-            "Personalizzazione totale della voce",
-            "Gestione multi-agenzia",
-            "Account manager dedicato"
+            "Include TUTTO di 'The Night Shift' e 'The Co-Pilot'",
+            "Logica: Integrazione CRM nativa con dashboard",
+            "Follow-up: SMS auto entro 15 min per ogni lead",
+            "Triage: Logica a più fasi (urgenza, preventivo, appuntamento)",
+            "Supporto: Supporto VIP prioritario (risposta < 2h)",
+            "BONUS: Sito web di una pagina gratuito incluso",
+            "Chiamate: Illimitate",
+            "Crescita: Ottimizzazione continua della pipeline di vendita"
           ]
         }
       ]
@@ -1442,7 +1574,7 @@ export const translations = {
         callHandling: {
           name: "Gestione Chiamate",
           subtitle: "Instradamento Intelligente",
-          description: "Nalyra risponde alle chiamate con conversazione naturale, comprende l'intento e le indirizza al reparto corretto.",
+          description: "Anvela risponde alle chiamate con conversazione naturale, comprende l'intento e le indirizza al reparto corretto.",
           tastingNotes: "Elaborazione del linguaggio naturale con analisi del sentimento",
           accuracy: "99%",
           speed: "Istantaneo",
@@ -1474,7 +1606,7 @@ export const translations = {
         customizable: { title: "Personalizzabile", description: "Adattato all'identità del tuo brand" },
       },
       quote: {
-        text: "Nalyra ha trasformato il modo in cui gestiamo le richieste dei clienti. Il nostro team può ora concentrarsi su ciò che conta di più.",
+        text: "Anvela ha trasformato il modo in cui gestiamo le richieste dei clienti. Il nostro team può ora concentrarsi su ciò che conta di più.",
         attribution: "Sarah Mitchell, CEO",
         prefix: "Storia di Successo",
       },

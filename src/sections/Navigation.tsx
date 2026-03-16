@@ -34,15 +34,15 @@ export function Navigation() {
     >
       <div className="container-custom flex items-center justify-between px-4 md:px-8">
 
-        {/* Left: Brand Name (Nalyra) */}
+        {/* Left: Brand Name (Anvela) */}
         <div className="flex-1 flex justify-start">
           <button
             onClick={() => scrollToSection('#hero')}
             className="group"
-            aria-label="Nalyra"
+            aria-label="Anvela"
           >
             <span className={`font-script text-2xl md:text-4xl lg:text-5xl transition-colors duration-300 ${isScrolled ? 'text-blue-600' : 'text-blue-400'}`}>
-              Nalyra
+              Anvela
             </span>
           </button>
         </div>

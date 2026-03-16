@@ -61,6 +61,14 @@ module.exports = {
           200: '#a7a7a7',
           100: '#d3d3d3',
         },
+        gold: {
+          700: '#7e6533',
+          600: '#a88644',
+          500: '#d2a855',
+          400: '#dbb977',
+          300: '#e4cb99',
+          200: '#fff3d6',
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

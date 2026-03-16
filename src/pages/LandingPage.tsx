@@ -2,9 +2,13 @@ import { useState, useCallback, useEffect } from 'react';
 import { Navigation } from '../sections/Navigation';
 import { Hero } from '../sections/Hero';
 import { PainPoints } from '../sections/PainPoints';
+import { VideoDemo } from '../sections/VideoDemo';
 import { FeatureShowcase } from '../sections/FeatureShowcase';
 import { AlbumCube } from '../sections/AlbumCube';
 import { SolutionShowcase } from '../sections/SolutionShowcase';
+import { Pricing } from '../sections/Pricing';
+import { FAQ } from '../sections/FAQ';
+import { ContactForm } from '../sections/ContactForm';
 import { Footer } from '../sections/Footer';
 import { Preloader } from '../components/Preloader';
 import { ScrollToTop } from '../components/ScrollToTop';
@@ -69,9 +73,13 @@ export default function LandingPage() {
                 <main className="bg-slate-50">
                     <Hero isReady={!isLoading} />
                     <PainPoints />
+                    <VideoDemo />
                     <FeatureShowcase />
                     <AlbumCube />
                     <SolutionShowcase />
+                    <Pricing />
+                    <FAQ />
+                    <ContactForm />
                 </main>
 
                 <Footer />
