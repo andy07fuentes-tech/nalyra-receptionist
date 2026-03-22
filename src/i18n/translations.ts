@@ -261,57 +261,62 @@ export const translations = {
       tiers: [
         {
           name: "The Night Shift",
-          price: "197",
-          weeklyNote: "Moins de 50$ / semaine",
+          price: "199",
+          weeklyNote: "moins de 50$/semaine",
           setupFee: "0",
           setupFeeNote: "Contrat 3 mois minimum",
-          description: "Votre équipe se repose. Vos leads, eux, ne dorment pas. On capture chaque appel manqué pendant que vous êtes fermé — et votre calendrier se remplit tout seul.",
+          description: "Votre équipe se repose. Vos leads, eux, ne dorment pas. On capture chaque appel manqué pendant que vous êtes fermé – et votre calendrier se remplit tout seul.",
           features: [
-            "Disponibilité : Lun–Ven (18h00 – 8h00) + Week-ends 24h",
-            "Appels : Illimités — chaque appel répondu, sans exception",
+            "Disponibilité : Lun-Ven (18h00 – 8h00) + Week-ends 24h",
+            "Appels : Illimités (sans frais par minute)",
             "IA : Réponse aux FAQ + capture de leads qualifiés",
             "Réservation : Prise de rendez-vous automatique (Google Calendar)",
-            "Notification : SMS instantané dès qu'un lead est capturé",
+            "Notification : SMS instantané dès qu’un lead est capturé",
+            "Transcription complète + résumé IA des appels",
             "Rapport : 'Night Shift Report' quotidien à 8h00",
             "Suivi : Appels non résolus loggés avec transcription complète",
-            "Langue : Français — spécialisé pour les marchés locaux"
+            "Langue : Français – spécialisé pour les marchés locaux (Québec)",
+            "Réduction des no-shows : jusqu'à 30–50% grâce aux rappels intelligents"
           ]
         },
         {
           name: "The Co-Pilot",
           price: "299",
-          weeklyNote: "Moins de 75$ / semaine",
+          weeklyNote: "moins de 75$/semaine",
           isPopular: true,
           setupFee: "197",
           setupFeeNote: "Contrat 3 mois minimum",
-          description: "Couverture complète 24/7. Votre téléphone ne sonne plus dans le vide — il génère des revenus, même en plein milieu d'une intervention.",
+          description: "Couverture complète 24/7. Votre téléphone ne sonne plus dans le vide – il génère des revenus, même en plein milieu d’une intervention.",
           features: [
-            "Inclut TOUT le forfait 'The Night Shift'",
-            "Disponibilité : 24/7 (Débordement jour + Nuit complète)",
-            "Routage : Humain d'abord (3 sonneries), l'IA prend le relai",
+            "Inclut TOUT le forfait The Night Shift",
+            "Disponibilité : 24/7 (débordement jour + nuit complète)",
+            "Routage : Humain d’abord (3 sonneries), l’IA prend le relais",
             "Réservation : Prise de RDV + rappels SMS (24h et 2h avant)",
-            "Gestion : Modifications et annulations gérées par l'IA",
+            "Gestion : Modifications et annulations gérées par l’IA",
             "Interactions : Bilingue (Français / Anglais)",
             "Appels : Illimités",
+            "Rappels auto pour no-shows (rappel IA pour rebooker)",
+            "Routage intelligent : Analyse le contexte pour prioriser et router",
             "Garantie : 14 jours ou frais de mise en service remboursés"
           ]
         },
         {
           name: "The Elite",
           price: "597",
-          weeklyNote: "Moins de 150$ / semaine",
+          weeklyNote: "moins de 150$/semaine",
           setupFee: "497",
           setupFeeNote: "Contrat 6 mois minimum",
-          description: "Votre système de croissance complet. L'IA répond, relance, réserve et suit chaque lead — pendant que vous, vous travaillez.",
+          description: "Votre système de croissance complet. L’IA répond, relance, réserve et suit chaque lead – pendant que vous, vous travaillez.",
           features: [
-            "Inclut TOUT de 'The Night Shift' et 'The Co-Pilot'",
-            "Logique : Intégration CRM Native avec tableau de bord",
+            "Inclut TOUT de The Night Shift et The Co-Pilot",
+            "Logique : Intégration CRM native avec tableau de bord",
             "Relances : SMS automatique dans les 15 min pour chaque lead",
-            "Triage : Arborescence multi-étapes (urgence, devis, RDV)",
+            "Triage : Arborescence multi-étapes intelligente",
             "Support : Support VIP Prioritaire (réponse < 2h)",
-            "BONUS : Site web d'une page gratuit inclus",
+            "BONUS : Site web one-page gratuit inclus",
             "Appels : Illimités",
-            "Efficacité : Optimisation continue du pipeline de vente"
+            "Rapports mensuels personnalisés + optimisation IA",
+            "Augmentation RDV : +30–40%"
           ]
         }
       ]
@@ -851,26 +856,28 @@ export const translations = {
       tiers: [
         {
           name: "The Night Shift",
-          price: "197",
-          weeklyNote: "Less than $50 / week",
+          price: "199",
+          weeklyNote: "less than $50 / week",
           setupFee: "0",
           setupFeeNote: "3-month minimum contract",
           description: "Your team rests. Your leads don't. We capture every missed call while you're closed — and your calendar fills up on its own.",
           features: [
             "Availability: Mon–Fri (6 PM – 8 AM) + Weekends 24h",
-            "Calls: Unlimited — every call answered, no exception",
+            "Calls: Unlimited (no per-minute fees)",
             "AI: FAQ Answering + Qualified Lead Capture",
             "Booking: Automatic Appointment Booking (Google Calendar)",
             "Notification: Instant SMS as soon as a lead is captured",
+            "Full transcription + AI call summary",
             "Report: Daily 8 AM 'Night Shift Report'",
             "Follow-up: Unresolved calls logged with full transcription",
-            "Language: Optimized for local markets"
+            "Language: Optimized for local markets",
+            "No-show reduction: up to 30–50% thanks to smart reminders"
           ]
         },
         {
           name: "The Co-Pilot",
           price: "299",
-          weeklyNote: "Less than $75 / week",
+          weeklyNote: "less than $75 / week",
           isPopular: true,
           setupFee: "197",
           setupFeeNote: "3-month minimum contract",
@@ -878,18 +885,20 @@ export const translations = {
           features: [
             "Includes EVERYTHING in 'The Night Shift'",
             "Availability: 24/7 (Day overflow + Full after-hours)",
-            "Routing: Human first (3 rings), AI takes over if needed",
+            "Routing: Human first (3 rings), AI takes over",
             "Booking: Appointment Booking + SMS reminders (24h/2h)",
             "Management: Cancellations & Rescheduling handled by AI",
             "Interactions: Bilingual (English / French)",
             "Calls: Unlimited",
+            "Auto-callbacks for no-shows (AI call to rebook)",
+            "Smart Routing: Context-aware prioritization & routing",
             "Guarantee: 14 days or setup fees refunded"
           ]
         },
         {
           name: "The Elite",
           price: "597",
-          weeklyNote: "Less than $150 / week",
+          weeklyNote: "less than $150 / week",
           setupFee: "497",
           setupFeeNote: "6-month minimum contract",
           description: "Your complete growth system. AI answers, follows up, books, and tracks every lead — while you work.",
@@ -897,11 +906,12 @@ export const translations = {
             "Includes EVERYTHING in 'The Night Shift' and 'The Co-Pilot'",
             "Logic: Native CRM Integration with dashboard",
             "Follow-ups: Auto SMS within 15 min for every lead",
-            "Triage: Multi-step branching logic (urgency, quote, RDV)",
+            "Triage: Intelligent multi-step branching logic",
             "Support: Priority VIP Support (response < 2h)",
             "BONUS: Free one-page website included",
             "Calls: Unlimited",
-            "Growth: Continuous sales pipeline optimization"
+            "Monthly personalized reports + AI optimization",
+            "Appointment increase: +30–40%"
           ]
         }
       ]
@@ -1441,26 +1451,28 @@ export const translations = {
       tiers: [
         {
           name: "The Night Shift",
-          price: "197",
-          weeklyNote: "Menos de $50 / semana",
+          price: "199",
+          weeklyNote: "menos de $50 / semana",
           setupFee: "0",
           setupFeeNote: "Contrato mínimo de 3 meses",
           description: "Su equipo descansa. Sus leads no. Capturamos cada llamada perdida mientras está cerrado, y su calendario se llena solo.",
           features: [
             "Disponibilidad: Lun-Vie (18:00 - 8:00) + Fines de semana 24h",
-            "Llamadas: Ilimitadas - cada llamada atendida, sin excepción",
+            "Llamadas: Ilimitadas (sin cargos por minuto)",
             "IA: Respuesta a FAQ + captura de leads calificados",
             "Reserva: Citas automáticas (Google Calendar)",
             "Notificación: SMS instantáneo al capturar un lead",
+            "Transcripción completa + resumen IA de llamadas",
             "Informe: 'Night Shift Report' diario a las 8:00",
-            "Seguimiento: Llamadas no resueltas con transcripción completa",
-            "Idioma: Optimizado para mercados locales"
+            "Seguimiento: Llamadas no resueltas con transcripción",
+            "Idioma: Optimizado para mercados locales",
+            "Reducción de no-shows: hasta 30–50% con recordatorios"
           ]
         },
         {
           name: "The Co-Pilot",
           price: "299",
-          weeklyNote: "Menos de $75 / semana",
+          weeklyNote: "menos de $75 / semana",
           isPopular: true,
           setupFee: "197",
           setupFeeNote: "Contrato mínimo de 3 meses",
@@ -1468,18 +1480,20 @@ export const translations = {
           features: [
             "Incluye TODO del plan 'The Night Shift'",
             "Disponibilidad: 24/7 (Desbordamiento día + Noche completa)",
-            "Enrutamiento: Humano primero (3 tonos), IA toma el relevo",
+            "Enrutamiento: Humano primero (3 tonos), la IA toma el relevo",
             "Reserva: Citas + recordatorios SMS (24h/2h)",
             "Gestión: Modificaciones y cancelaciones por IA",
             "Interacciones: Bilingüe (Inglés / Español)",
             "Llamadas: Ilimitadas",
+            "Auto-callbacks para no-shows (IA vuelve a llamar)",
+            "Enrutamiento inteligente: Análisis de contexto y prioridad",
             "Garantía: 14 días o devolución de gastos de inicio"
           ]
         },
         {
           name: "The Elite",
           price: "597",
-          weeklyNote: "Menos de $150 / semana",
+          weeklyNote: "menos de $150 / semana",
           setupFee: "497",
           setupFeeNote: "Contrato mínimo de 6 meses",
           description: "Su sistema completo de crecimiento. La IA responde, relanza, reserva y sigue a cada lead, mientras usted trabaja.",
@@ -1487,11 +1501,12 @@ export const translations = {
             "Incluye TODO de 'The Night Shift' y 'The Co-Pilot'",
             "Lógica: Integración CRM nativa con tablero",
             "Seguimiento: SMS automático en 15 min para cada lead",
-            "Triaje: Lógica multi-pasos (urgencia, presupuesto, cita)",
-            "Soporte: Soporte VIP prioritario (respuesta < 2h)",
-            "BONUS: Sitio web de una página gratuito incluido",
+            "Triaje: Lógica inteligente de múltiples pasos",
+            "Soporte: Soporte VIP Prioritario (respuesta < 2h)",
+            "BONUS: Sitio web de una página gratis incluido",
             "Llamadas: Ilimitadas",
-            "Crecimiento: Optimización continua del pipeline de ventas"
+            "Informes mensuales personalizados + optimización IA",
+            "Aumento de citas: +30–40%"
           ]
         }
       ]
@@ -2033,26 +2048,28 @@ export const translations = {
       tiers: [
         {
           name: "The Night Shift",
-          price: "197",
-          weeklyNote: "Meno di 50$ / settimana",
+          price: "199",
+          weeklyNote: "meno di 50$ / settimana",
           setupFee: "0",
           setupFeeNote: "Contratto minimo 3 mesi",
           description: "Il tuo team riposa. I tuoi lead no. Catturiamo ogni chiamata persa mentre sei chiuso — e il tuo calendario si riempie da solo.",
           features: [
             "Disponibilità: Lun–Ven (18:00 – 8:00) + Weekend 24h",
-            "Chiamate: Illimitate — ogni chiamata risposta, senza eccezioni",
+            "Chiamate: Illimitate (senza costi al minuto)",
             "IA: Risposte FAQ + cattura lead qualificati",
             "Prenotazione: Appuntamenti automatici (Google Calendar)",
             "Notifica: SMS istantaneo alla cattura di un lead",
+            "Trascrizione completa + riepilogo IA chiamate",
             "Rapporto: 'Night Shift Report' quotidiano alle 8:00",
-            "Seguimento: Chiamate non risolte con trascrizione completa",
-            "Lingua: Ottimizzato per i mercati locali"
+            "Seguimento: Chiamate non risolte con trascrizione",
+            "Lingua: Ottimizzato per i mercati locali",
+            "Riduzione no-shows: fino al 30–50% con promemoria"
           ]
         },
         {
           name: "The Co-Pilot",
           price: "299",
-          weeklyNote: "Meno di 75$ / settimana",
+          weeklyNote: "meno di 75$ / settimana",
           isPopular: true,
           setupFee: "197",
           setupFeeNote: "Contratto minimo 3 mesi",
@@ -2060,18 +2077,20 @@ export const translations = {
           features: [
             "Include TUTTO del pacchetto 'The Night Shift'",
             "Disponibilità: 24/7 (Overflow giorno + Notte intera)",
-            "Routing: Umano prima (3 squilli), IA subentra se necessario",
+            "Routing: Umano prima (3 squilli), l'IA prende il sopravvento",
             "Prenotazione: Appuntamenti + promemoria SMS (24h/2h)",
-            "Gestione: Modifiche e cancelazioni gestite dall'IA",
+            "Gestione: Modifiche e cancellazioni gestite dall'IA",
             "Interazioni: Bilingue (Inglese / Italiano)",
             "Chiamate: Illimitate",
+            "Auto-callbacks per no-shows (l'IA richiama)",
+            "Routing intelligente: Analisi del contesto e priorità",
             "Garanzia: 14 giorni o rimborso spese attivazione"
           ]
         },
         {
           name: "The Elite",
           price: "597",
-          weeklyNote: "Meno di 150$ / settimana",
+          weeklyNote: "meno di 150$ / settimana",
           setupFee: "497",
           setupFeeNote: "Contratto minimo 6 mesi",
           description: "Il tuo sistema di crescita completo. L'IA risponde, rilancia, prenota e segue ogni lead — mentre tu lavori.",
@@ -2079,25 +2098,15 @@ export const translations = {
             "Include TUTTO di 'The Night Shift' e 'The Co-Pilot'",
             "Logica: Integrazione CRM nativa con dashboard",
             "Follow-up: SMS auto entro 15 min per ogni lead",
-            "Triage: Logica a più fasi (urgenza, preventivo, appuntamento)",
+            "Triage: Logica intelligente a più fasi",
             "Supporto: Supporto VIP prioritario (risposta < 2h)",
             "BONUS: Sito web di una pagina gratuito incluso",
             "Chiamate: Illimitate",
-            "Crescita: Ottimizzazione continua della pipeline di vendita"
+            "Rapporti mensili personalizzati + ottimizzazione IA",
+            "Aumento appuntamenti: +30–40%"
           ]
         }
       ]
-    },
-
-    // Features
-    videoDemo: {
-      title: "Avvio Rapido - Meno di 10 minuti",
-      description: "Segui questi semplici passaggi per attivare il tuo assistente IA",
-      step1: { text: "Configurazione IA", helper: "Definisci nome, tono e conoscenze aziendali." },
-      step2: { text: "Sincronizzazione Agenda", helper: "Collega Google, Outlook o Calendly." },
-      step3: { text: "Trasferimento Linea", helper: "Configurazione semplice in 60 secondi." },
-      step4: { text: "Connessione CRM", helper: "Sincronizzazione opzionale con HubSpot, Pipedrive, etc." },
-      step5: { text: "Test di Ricezione", helper: "Effettua una chiamata di validazione dal vivo." },
     },
 
     faq: {
