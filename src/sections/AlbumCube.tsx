@@ -204,7 +204,7 @@ export function AlbumCube() {
             {/* Minimal Indicators */}
             <div className="absolute top-12 left-12 z-20 flex items-center gap-4">
                 <div className="w-2 h-2 rounded-full bg-blue-500 animate-ping" />
-                <span className="text-[10px] text-slate-400 uppercase tracking-[0.4em]">Internal System Live</span>
+                <span className="text-[10px] text-slate-400 uppercase tracking-[0.4em]">{t('albumCube.scrollHint')}</span>
             </div>
         </section>
     );

@@ -20,6 +20,7 @@ export const translations = {
       testimonials: "Témoignages",
       contact: "Contact",
       ctaButton: "Commencer",
+      freeTrial: "Essai Gratuit",
     },
 
     // Preloader
@@ -114,7 +115,72 @@ export const translations = {
           description: "La saisie manuelle entraîne des erreurs, des doubles réservations et la perte d'informations cruciales sur les prospects.",
           icon: "ClipboardList"
         }
-      ]
+      ],
+      gallery: {
+        back: "Retour",
+        ctaTitle: "Vos clients détestent attendre au téléphone. Ne laissez plus aucun appel sans réponse.",
+        ctaButton: "Découvrir les points de friction",
+        photos: {
+          photo1: {
+            title: "Filet de Sécurité 'Zéro Opportunité'",
+            logic: "L'IA agit comme un relais intelligent. Elle ne décroche que si la ligne principale est occupée ou après trois sonneries sans réponse.",
+            benefit: "Chaque prospect est capturé et réservé sans que votre équipe ne se sente pressée par le téléphone alors qu'un patient est devant elle.",
+            alt: "Réception IA - Bureau noir avec téléphone"
+          },
+          photo2: {
+            title: "Relais 'Prospects Chauds' Après-Heures",
+            logic: "Pendant que votre équipe se repose, Anvela prend l'appel, planifie le rendez-vous dans votre agenda et enregistre le résumé complet.",
+            benefit: "À 8h00, pas de piles de messages vocaux vagues. Juste une liste de clients déjà réservés à confirmer et à accueillir.",
+            alt: "Planification intelligente sur tablette"
+          },
+          photo3: {
+            title: "Élimination de la 'Corvée Administrative'",
+            logic: "L'IA gère les appels FAQ à haut volume et faible valeur (horaires, adresse, assurances, tarifs de base).",
+            benefit: "Votre personnel peut se concentrer sur des tâches à haute valeur ajoutée, comme rassurer un patient anxieux.",
+            alt: "Support client et interaction"
+          },
+          photo4: {
+            title: "Synchronisation CRM Directe",
+            logic: "Chaque interaction est synchronisée avec votre CRM ou Google Sheets, déclenchant des suivis automatiques.",
+            benefit: "Plus de saisie manuelle erronée. Toutes les infos sont traçables, propres et prêtes pour la conversion finale.",
+            alt: "Automatisation et flux CRM"
+          },
+          photo5: {
+            title: "Configuration Éclair",
+            logic: "Mise en place de votre profil IA en moins de 10 minutes avec vos préférences métier.",
+            benefit: "Gagnez du temps dès la première heure.",
+            alt: "Configuration rapide Anvela"
+          },
+          photo6: {
+            title: "Intégration Transparente",
+            logic: "Compatible avec 99% des systèmes téléphoniques et calendriers actuels.",
+            benefit: "Aucun changement d'infrastructure requis.",
+            alt: "Intégration transparente"
+          },
+          photo7: {
+            title: "Voix Ultra-Réaliste",
+            logic: "Une technologie de synthèse vocale qui imite parfaitement le ton et l'empathie humaine.",
+            benefit: "Vos clients ne devinent jamais qu'ils parlent à une IA.",
+            alt: "Technologie NLP Avancée"
+          },
+          photo8: {
+            title: "Apprentissage Continu",
+            logic: "L'IA apprend de chaque interaction pour devenir plus précise chaque jour.",
+            benefit: "Un employé qui ne cesse de s'améliorer.",
+            alt: "Apprentissage automatique"
+          },
+          photo9: {
+            title: "Vision Anvela",
+            logic: "Redéfinir le futur du service client par l'intelligence conversationnelle.",
+            benefit: "Positionnez votre entreprise comme leader technologique.",
+            alt: "Anvela Vision"
+          }
+        },
+        labels: {
+          logic: "Logique",
+          benefit: "Bénéfice"
+        }
+      }
     },
 
     // Album Cube
@@ -137,7 +203,23 @@ export const translations = {
       titleAccent: "à l'Excellence",
       description: "Découvrez comment Anvela transforme un accueil débordé en un centre d'efficacité sereine. Ne ratez plus aucun appel, ne perdez plus aucun prospect, et laissez votre équipe se concentrer sur l'essentiel.",
       feat1: { title: "Précision IA", desc: "Gère instantanément les demandes" },
-      feat2: { title: "Installation Flash", desc: "Intégration sans friction" }
+      feat2: { title: "Installation Flash", desc: "Intégration sans friction" },
+      steps: [
+        { title: "Configuration de Votre IA", description: "Nous formons votre réceptionniste sur vos services, vos tarifs et vos disponibilités." },
+        { title: "Test de Réception", description: "Phase de test interne pour garantir une fluidité et une précision absolue." },
+        { title: "Mise en Ligne Directe", description: "Activation du transfert d'appels. Votre IA commence à travailler instantanément." },
+        { title: "Optimisation Continue", description: "Suivi des performances et ajustements basés sur les interactions réelles." }
+      ]
+    },
+
+    videoDemo: {
+      title: "Démarrage Rapide - Moins de 10 minutes",
+      description: "Suivez ces étapes simples pour activer votre réceptionniste IA",
+      step1: { text: "Configuration de Votre IA", helper: "Définissez le nom, le ton et les connaissances métier." },
+      step2: { text: "Synchronisation d'Agenda", helper: "Connectez Google, Outlook ou Calendly." },
+      step3: { text: "Transfert de Ligne", helper: "Configuration simple en 60 secondes." },
+      step4: { text: "Connexion CRM", helper: "Sync optionnelle HubSpot, Pipedrive, etc." },
+      step5: { text: "Test de Réception", helper: "Passez un appel de validation en direct." },
     },
 
     // Pricing
@@ -147,6 +229,14 @@ export const translations = {
       mainTitle: "Des forfaits adaptés à vos besoins",
       promoText: "2 mois gratuits avec paiement annuel. Premiers appels capturés en 14 jours ou vos frais de mise en service sont remboursés.",
       ctaButton: "Démarrer l'essai",
+      monthly: "Mensuel",
+      yearly: "Annuel",
+      yearlyBonus: "2 mois offerts & -10%",
+      essentiel: "ESSENTIEL",
+      bestValue: "MEILLEURE VALEUR",
+      completeSolution: "SOLUTION COMPLÈTE",
+      cadMonth: "CAD / mois",
+      annualBillingNotice: "(facturé {{price}}$ annuellement)",
       setupFeeLabel: "Frais de mise en service",
       popularLabel: "Le plus populaire",
       tiers: [
@@ -269,6 +359,11 @@ export const translations = {
           speed: "Immédiat",
           uptime: "Continu",
         },
+      },
+      metrics: {
+        accuracy: "Précision",
+        speed: "Vitesse",
+        uptime: "Disponibilité"
       },
       featureCards: {
         aiPowered: { title: "Propulsé par IA", description: "NLP avancé pour des conversations naturelles" },
@@ -513,6 +608,7 @@ export const translations = {
       testimonials: "Testimonials",
       contact: "Contact",
       ctaButton: "Get Started",
+      freeTrial: "Free Trial",
     },
 
     // Preloader
@@ -542,6 +638,10 @@ export const translations = {
 
     // Feature Showcase
     featureShowcase: {
+      processSubtitle: "NUESTRO PROCESO",
+      mainTitle: "Cómo Anvela impulsa su crecimiento",
+      processSubtitle: "OUR PROCESS",
+      mainTitle: "How Anvela Powers Your Growth",
       step1: {
         subtitle: "DEMONSTRATION",
         title: "See AI in action",
@@ -607,7 +707,72 @@ export const translations = {
           description: "Manual data entry leads to human errors, double bookings, and lost lead information.",
           icon: "ClipboardList"
         }
-      ]
+      ],
+      gallery: {
+        back: "Back",
+        ctaTitle: "Your clients hate waiting on the phone. Don't leave any more calls unanswered.",
+        ctaButton: "Discover friction points",
+        photos: {
+          photo1: {
+            title: "Zero-Opportunity Safety Net",
+            logic: "The AI acts as an intelligent relay. It only answers if the main line is busy or after three unanswered rings.",
+            benefit: "Every prospect is captured and booked without your team feeling rushed by the phone while a patient is in front of them.",
+            alt: "AI Reception - Black desk with phone"
+          },
+          photo2: {
+            title: "After-Hours Hot Lead Relay",
+            logic: "While your team rests, Anvela takes the call, schedules the appointment in your agenda, and saves a full summary.",
+            benefit: "At 8:00 AM, no piles of vague voicemails. Just a list of already booked clients ready to be confirmed and welcomed.",
+            alt: "Smart planning on tablet"
+          },
+          photo3: {
+            title: "Elimination of 'Administrative Drudgery'",
+            logic: "The AI handles high-volume, low-value FAQ calls (hours, address, insurance, basic rates).",
+            benefit: "Your staff can focus on high-value tasks, like reassuring an anxious patient.",
+            alt: "Customer support and interaction"
+          },
+          photo4: {
+            title: "Direct CRM Synchronization",
+            logic: "Every interaction is synchronized with your CRM or Google Sheets, triggering automatic follow-ups.",
+            benefit: "No more manual entry errors. All info is traceable, clean, and ready for final conversion.",
+            alt: "Automation and CRM flow"
+          },
+          photo5: {
+            title: "Lightning-Fast Setup",
+            logic: "Set up your AI profile in less than 10 minutes with your business preferences.",
+            benefit: "Save time from the very first hour.",
+            alt: "Quick Anvela setup"
+          },
+          photo6: {
+            title: "Seamless Integration",
+            logic: "Compatible with 99% of current phone systems and calendars.",
+            benefit: "No infrastructure changes required.",
+            alt: "Seamless integration"
+          },
+          photo7: {
+            title: "Ultra-Realistic Voice",
+            logic: "Speech synthesis technology that perfectly mimics human tone and empathy.",
+            benefit: "Your clients never guess they're talking to an AI.",
+            alt: "Advanced NLP Technology"
+          },
+          photo8: {
+            title: "Continuous Learning",
+            logic: "The AI learns from every interaction to become more accurate every day.",
+            benefit: "An employee who never stops improving.",
+            alt: "Machine learning"
+          },
+          photo9: {
+            title: "Anvela Vision",
+            logic: "Redefining the future of customer service through conversational intelligence.",
+            benefit: "Position your business as a technology leader.",
+            alt: "Anvela Vision"
+          }
+        },
+        labels: {
+          logic: "Logic",
+          benefit: "Benefit"
+        }
+      }
     },
 
     // Album Cube
@@ -640,6 +805,14 @@ export const translations = {
       mainTitle: "Plans tailored to your needs",
       promoText: "2 months free with annual payment. First calls captured within 14 days or your setup fees are refunded.",
       ctaButton: "Start Trial",
+      monthly: "Monthly",
+      yearly: "Yearly",
+      yearlyBonus: "2 months free & -10%",
+      essentiel: "ESSENTIAL",
+      bestValue: "BEST VALUE",
+      completeSolution: "COMPLETE SOLUTION",
+      cadMonth: "USD / month",
+      annualBillingNotice: "(billed ${{price}} annually)",
       setupFeeLabel: "Setup Fee",
       popularLabel: "Most Popular",
       tiers: [
@@ -702,6 +875,36 @@ export const translations = {
     },
 
     // Features
+    videoDemo: {
+      title: "Quick Start - Less than 10 minutes",
+      description: "Follow these simple steps to activate your AI receptionist",
+      step1: { text: "AI Configuration", helper: "Set the name, tone, and business knowledge." },
+      step2: { text: "Calendar Sync", helper: "Connect Google, Outlook, or Calendly." },
+      step3: { text: "Line Transfer", helper: "Simple setup in 60 seconds." },
+      step4: { text: "CRM Connection", helper: "Optional sync with HubSpot, Pipedrive, etc." },
+      step5: { text: "Reception Test", helper: "Place a live validation call." },
+    },
+
+    // FAQ
+    faq: {
+      subtitle: "SUPPORT",
+      mainTitle: "Frequently Asked Questions",
+      description: "Have questions about Anvela? We have the answers. If you can't find what you're looking for, don't hesitate to contact us.",
+      moreInfoTitle: "Want to know more?",
+      moreInfoText: "Our team is available for a personalized 15-minute demonstration.",
+      moreInfoButton: "Speak with an expert",
+      items: [
+        {
+          question: "How does integration with my current system work?",
+          answer: "It's very simple. We set up a conditional call forwarding (if busy or no answer) to your dedicated Anvela number. You keep your current number and your customers see no change."
+        },
+        {
+          question: "Can the AI really take appointments?",
+          answer: "Yes, absolutely. Anvela connects directly to your calendar (Google, Outlook, Calendly, etc.). It checks your availability in real-time, reserves the slot, and sends you an instant confirmation."
+        }
+      ]
+    },
+
     features: {
       scriptText: "Powerful Capabilities",
       subtitle: "AI-POWERED FEATURES",
@@ -734,6 +937,11 @@ export const translations = {
           speed: "Immediate",
           uptime: "Continuous",
         },
+      },
+      metrics: {
+        accuracy: "Accuracy",
+        speed: "Speed",
+        uptime: "Uptime"
       },
       featureCards: {
         aiPowered: { title: "AI-Powered", description: "Advanced NLP for natural conversations" },
@@ -978,6 +1186,7 @@ export const translations = {
       testimonials: "Testimonios",
       contact: "Contacto",
       ctaButton: "Empezar",
+      freeTrial: "Prueba Gratuita",
     },
 
     // Preloader
@@ -1070,7 +1279,72 @@ export const translations = {
           description: "La entrada manual de datos genera errores humanos, duplicidad de citas y pérdida de información de prospectos.",
           icon: "ClipboardList"
         }
-      ]
+      ],
+      gallery: {
+        back: "Volver",
+        ctaTitle: "Tus clientes odian esperar al teléfono. No dejes más llamadas sin respuesta.",
+        ctaButton: "Descubrir puntos de fricción",
+        photos: {
+          photo1: {
+            title: "Red de Seguridad 'Cero Oportunidad'",
+            logic: "La IA actúa como un relé inteligente. Solo responde si la línea principal está ocupada o después de tres timbres sin respuesta.",
+            benefit: "Cada prospecto es capturado y reservado sin que su equipo se sienta presionado por el teléfono mientras hay un paciente delante.",
+            alt: "Recepción IA - Escritorio negro con teléfono"
+          },
+          photo2: {
+            title: "Relé de leads calientes fuera de horario",
+            logic: "Mientras su equipo descansa, Anvela toma la llamada, programa la cita en su agenda y guarda un resumen completo.",
+            benefit: "A las 8:00 AM, sin montones de mensajes de voz vagos. Solo una lista de clientes ya reservados listos para ser confirmados.",
+            alt: "Planificación inteligente en tableta"
+          },
+          photo3: {
+            title: "Eliminación de la 'Tarea Administrativa'",
+            logic: "La IA maneja llamadas de preguntas frecuentes de alto volumen y bajo valor (horarios, dirección, seguros, tarifas básicas).",
+            benefit: "Su personal puede enfocarse en tareas de alto valor, como tranquilizar a un paciente ansioso.",
+            alt: "Soporte al cliente e interacción"
+          },
+          photo4: {
+            title: "Sincronización Directa con CRM",
+            logic: "Cada interacción se sincroniza con su CRM o Google Sheets, activando seguimientos automáticos.",
+            benefit: "No más errores de entrada manual. Toda la info es rastreable, limpia y lista para la conversión final.",
+            alt: "Automatización y flujo de CRM"
+          },
+          photo5: {
+            title: "Configuración Relámpago",
+            logic: "Configure su perfil de IA en menos de 10 minutos con sus preferencias comerciales.",
+            benefit: "Ahorre tiempo desde la primera hora.",
+            alt: "Configuración rápida de Anvela"
+          },
+          photo6: {
+            title: "Integración Sin Fisuras",
+            logic: "Compatible con el 99% de los sistemas telefónicos y calendarios actuales.",
+            benefit: "No se requieren cambios de infraestructura.",
+            alt: "Integración perfecta"
+          },
+          photo7: {
+            title: "Voz Ultra Realista",
+            logic: "Tecnología de síntesis de voz que imita perfectamente el tono y la empatía humanos.",
+            benefit: "Sus clientes nunca adivinan que están hablando con una IA.",
+            alt: "Tecnología NLP avanzada"
+          },
+          photo8: {
+            title: "Aprendizaje Continuo",
+            logic: "La IA aprende de cada interacción para ser más precisa cada día.",
+            benefit: "Un empleado que nunca deja de mejorar.",
+            alt: "Aprendizaje automático"
+          },
+          photo9: {
+            title: "Visión Anvela",
+            logic: "Redefiniendo el futuro del servicio al cliente a través de la inteligencia conversacional.",
+            benefit: "Posicione su negocio como líder tecnológico.",
+            alt: "Visión Anvela"
+          }
+        },
+        labels: {
+          logic: "Lógica",
+          benefit: "Beneficio"
+        }
+      }
     },
 
     // Album Cube
@@ -1085,6 +1359,17 @@ export const translations = {
       ]
     },
 
+    // Video Promo
+    videoPromo: {
+      scriptText: "Viva el Cambio",
+      subtitle: "ANVELA EN ACCIÓN",
+      titleMain: "Del Caos de la Recepción",
+      titleAccent: "a la Excelencia",
+      description: "Descubra cómo Anvela transforma una recepción desbordada en un centro de eficiencia serena. No pierda más llamadas, no pierda más leads y deje que su equipo se concentre en lo esencial.",
+      feat1: { title: "Precisión IA", desc: "Gestione instantáneamente las solicitudes" },
+      feat2: { title: "Instalación Relámpago", desc: "Integración sin fricciones" }
+    },
+
     // Pricing
     pricing: {
       scriptText: "Una Inversión Rentable",
@@ -1092,6 +1377,14 @@ export const translations = {
       mainTitle: "Planes adaptados a tus necesidades",
       promoText: "2 meses gratis con pago anual. Primeras llamadas capturadas en 14 días o le devolvemos los gastos de puesta en servicio.",
       ctaButton: "Iniciar Prueba",
+      monthly: "Mensual",
+      yearly: "Anual",
+      yearlyBonus: "2 meses gratis y -10%",
+      essentiel: "ESENCIAL",
+      bestValue: "MEJOR VALOR",
+      completeSolution: "SOLUCIÓN COMPLETA",
+      cadMonth: "USD / mes",
+      annualBillingNotice: "(facturado ${{price}} anualmente)",
       setupFeeLabel: "Gasto de puesta en servicio",
       popularLabel: "El más popular",
       tiers: [
@@ -1127,7 +1420,7 @@ export const translations = {
             "Enrutamiento: Humano primero (3 tonos), IA toma el relevo",
             "Reserva: Citas + recordatorios SMS (24h/2h)",
             "Gestión: Modificaciones y cancelaciones por IA",
-            "Interacciones: Bilingüe (Inglés / Francés)",
+            "Interacciones: Bilingüe (Inglés / Español)",
             "Llamadas: Ilimitadas",
             "Garantía: 14 días o devolución de gastos de inicio"
           ]
@@ -1154,6 +1447,36 @@ export const translations = {
     },
 
     // Features
+    videoDemo: {
+      title: "Inicio Rápido - Menos de 10 minutos",
+      description: "Siga estos sencillos pasos para activar su recepcionista IA",
+      step1: { text: "Configuración de su IA", helper: "Defina el nombre, el tono y los conocimientos del negocio." },
+      step2: { text: "Sincronización de Calendario", helper: "Conecte Google, Outlook o Calendly." },
+      step3: { text: "Transferencia de Línea", helper: "Configuración sencilla en 60 segundos." },
+      step4: { text: "Conexión CRM", helper: "Sincronización opcional con HubSpot, Pipedrive, etc." },
+      step5: { text: "Prueba de Recepción", helper: "Realice una llamada de validación en vivo." },
+    },
+
+    // FAQ
+    faq: {
+      subtitle: "ASISTENCIA",
+      mainTitle: "Preguntas Frecuentes",
+      description: "¿Tiene preguntas sobre Anvela? Tenemos las respuestas. Si no encuentra lo que busca, no dude en contactarnos.",
+      moreInfoTitle: "¿Quiere saber más?",
+      moreInfoText: "Nuestro equipo está disponible para una demostración personalizada de 15 minutos.",
+      moreInfoButton: "Hablar con un experto",
+      items: [
+        {
+          question: "¿Cómo funciona la integración con mi sistema actual?",
+          answer: "Es muy sencillo. Configuramos un desvío de llamadas condicional (si está ocupado o no responde) a su número dedicado de Anvela. Mantiene su número actual y sus clientes no ven ningún cambio."
+        },
+        {
+          question: "¿Puede la IA realmente concertar citas?",
+          answer: "Sí, absolutamente. Anvela se conecta directamente a su calendario (Google, Outlook, Calendly, etc.). Comprueba su disponibilidad en tiempo real, reserva el espacio y le envía una confirmación instantánea."
+        }
+      ]
+    },
+
     features: {
       scriptText: "Capacidades Potentes",
       subtitle: "FUNCIONES IA",
@@ -1186,6 +1509,11 @@ export const translations = {
           speed: "Inmediato",
           uptime: "Continuo",
         },
+      },
+      metrics: {
+        accuracy: "Precisión",
+        speed: "Velocidad",
+        uptime: "Disponibilidad"
       },
       featureCards: {
         aiPowered: { title: "Impulsado por IA", description: "NLP avanzado para conversaciones naturales" },
@@ -1430,6 +1758,7 @@ export const translations = {
       testimonials: "Testimonianze",
       contact: "Contatto",
       ctaButton: "Inizia",
+      freeTrial: "Prova Gratuita",
     },
 
     // Preloader
@@ -1455,6 +1784,38 @@ export const translations = {
         availability: { value: "24", suffix: "/7", label: "Sempre Disponibile" },
         savings: { value: "50", suffix: "%", label: "Riduzione Costi" },
       },
+    },
+
+    // Feature Showcase
+    featureShowcase: {
+      processSubtitle: "IL NOSTRO PROCESSO",
+      mainTitle: "Come Anvela spinge la tua crescita",
+      step1: {
+        subtitle: "DIMOSTRAZIONE",
+        title: "Scopri l'IA in azione",
+        description: "Guarda la nostra dimostrazione per capire come la nostra receptionist virtuale può trasformare la tua azienda.",
+        cta: "Avvia Video",
+      },
+      step2: {
+        subtitle: "Reception IA",
+        title: "Non perdere mai più un singolo cliente",
+        description: "Ogni chiamata persa è un cliente perso. Anvela risponde, comprende la richiesta e raccoglie le informazioni utili.",
+        cta: "Scopri la Reception IA",
+      },
+      step3: {
+        subtitle: "Appuntamenti & Agenda",
+        title: "Pianificazione istantanea, senza attriti",
+        description: "Verifica la disponibilità, propone fasce orarie, conferma via SMS/email e riduce drasticamente i no-show.",
+        cta: "Vedi Come Funziona",
+      },
+      step4: {
+        subtitle: "Automazione & Seguimento",
+        title: "Dal contatto alla conversione",
+        description: "Crea automaticamente una scheda cliente, invia follow-up e alimenta il tuo CRM/Google Sheets. Tutto è tracciabile.",
+        cta: "Esplora l'Automazione",
+      },
+      mainTitle: "Come Anvela sposta la tua crescita",
+      processSubtitle: "IL NOSTRO PROCESSO"
     },
 
     // Pain Points
@@ -1494,7 +1855,95 @@ export const translations = {
           description: "L'inserimento manuale dei dati porta a errori umani, doppie prenotazioni e perdita di informazioni sui lead.",
           icon: "ClipboardList"
         }
+      ],
+      gallery: {
+        back: "Indietro",
+        ctaTitle: "I tuoi clienti odiano aspettare al telefono. Non lasciare più chiamate senza risposta.",
+        ctaButton: "Scopri i punti di attrito",
+        photos: {
+          photo1: {
+            title: "Rete di Sicurezza 'Zero Opportunità'",
+            logic: "L'IA agisce come un relè intelligente. Risponde solo se la linea principale è occupata o dopo tre squilli senza risposta.",
+            benefit: "Ogni potenziale cliente viene catturato e prenotato senza che il tuo team si senta pressato dal telefono mentre ha un paziente davanti.",
+            alt: "Reception IA - Scrivania nera con telefono"
+          },
+          photo2: {
+            title: "Relè Lead Caldi Fuori Orario",
+            logic: "Mentre il tuo team riposa, Anvela risponde alla chiamata, pianifica l'appuntamento nella tua agenda e salva un riepilogo completo.",
+            benefit: "Alle 8:00, niente pile di messaggi vocali vaghi. Solo un elenco di clienti già prenotati pronti per essere confermati.",
+            alt: "Pianificazione intelligente su tablet"
+          },
+          photo3: {
+            title: "Eliminazione del 'Lavoro Amministrativo'",
+            logic: "L'IA gestisce le chiamate FAQ ad alto volume e basso valore (orari, indirizzo, assicurazioni, tariffe base).",
+            benefit: "Il tuo personale può concentrarsi su attività ad alto valore, come rassicurare un paziente ansioso.",
+            alt: "Supporto clienti e interazione"
+          },
+          photo4: {
+            title: "Sincronizzazione CRM Diretta",
+            logic: "Ogni interazione è sincronizzata con il tuo CRM o Google Sheets, attivando follow-up automatici.",
+            benefit: "Niente più errori di inserimento manuale. Tutte le info sono tracciabili, pulite e pronte per la conversione finale.",
+            alt: "Automazione e flusso CRM"
+          },
+          photo5: {
+            title: "Configurazione Lampo",
+            logic: "Configura il tuo profilo IA in meno di 10 minuti con le tue preferenze aziendali.",
+            benefit: "Risparmia tempo fin dalla prima ora.",
+            alt: "Configurazione rapida Anvela"
+          },
+          photo6: {
+            title: "Integrazione Senza Soluzioni di Continuità",
+            logic: "Compatibile con il 99% degli attuali sistemi telefonici e calendari.",
+            benefit: "Nessun cambiamento di infrastruttura richiesto.",
+            alt: "Integrazione perfetta"
+          },
+          photo7: {
+            title: "Voce Ultra-Realistica",
+            logic: "Tecnologia di sintesi vocale che imita perfettamente il tono e l'empatia umani.",
+            benefit: "I tuoi clienti non indovinano mai che stanno parlando con un'IA.",
+            alt: "Tecnologia NLP avanzata"
+          },
+          photo8: {
+            title: "Apprendimento Continuo",
+            logic: "L'IA impara da ogni interazione per diventare più precisa ogni giorno.",
+            benefit: "Un dipendente che non smette mai di migliorare.",
+            alt: "Apprendimento automatico"
+          },
+          photo9: {
+            title: "Visione Anvela",
+            logic: "Ridefinire il futuro del servizio clienti attraverso l'intelligenza conversazionale.",
+            benefit: "Posiziona la tua attività come leader tecnologico.",
+            alt: "Visione Anvela"
+          }
+        },
+        labels: {
+          logic: "Logica",
+          benefit: "Beneficio"
+        }
+      }
+    },
+
+    // Album Cube
+    albumCube: {
+      scrollHint: "Scorri per esplorare",
+      backgroundTitle: "ANVELA",
+      features: [
+        { title: "VOCE IA", subtitle: "CHIAMATE INTELLIGENTI" },
+        { title: "CHATBOT", subtitle: "MESSAGGISTICA SMART" },
+        { title: "AGENDA", subtitle: "PIANIFICAZIONE AUTO" },
+        { title: "GLOBALE", subtitle: "MULTILINGUA" },
       ]
+    },
+
+    // Video Promo
+    videoPromo: {
+      scriptText: "Vivi il Cambiamento",
+      subtitle: "ANVELA IN AZIONE",
+      titleMain: "Dal Caos della Reception",
+      titleAccent: "all'Eccellenza",
+      description: "Scopri come Anvela trasforma una reception sovraccarica in un centro di efficienza sereno. Non perdere più chiamate, non perdere più lead e lascia che il tuo team si concentri sull'essenziale.",
+      feat1: { title: "Precisione IA", desc: "Gestisce istantaneamente le richieste" },
+      feat2: { title: "Installazione Lampo", desc: "Integrazione senza attriti" }
     },
 
     // Pricing
@@ -1504,6 +1953,14 @@ export const translations = {
       mainTitle: "Piani su misura per le tue esigenze",
       promoText: "2 mesi gratuiti con pagamento annuale. Prime chiamate catturate entro 14 giorni o spese di attivazione rimborsate.",
       ctaButton: "Inizia Prova",
+      monthly: "Mensile",
+      yearly: "Annuale",
+      yearlyBonus: "2 mesi gratuiti e -10%",
+      essentiel: "ESSENZIALE",
+      bestValue: "MIGLIOR VALORE",
+      completeSolution: "SOLUZIONE COMPLETA",
+      cadMonth: "USD / mese",
+      annualBillingNotice: "(fatturato ${{price}} annualmente)",
       setupFeeLabel: "Spese di attivazione",
       popularLabel: "Il più popolare",
       tiers: [
@@ -1539,7 +1996,7 @@ export const translations = {
             "Routing: Umano prima (3 squilli), IA subentra se necessario",
             "Prenotazione: Appuntamenti + promemoria SMS (24h/2h)",
             "Gestione: Modifiche e cancelazioni gestite dall'IA",
-            "Interactions: Bilingue (Inglese / Francese)",
+            "Interazioni: Bilingue (Inglese / Italiano)",
             "Chiamate: Illimitate",
             "Garanzia: 14 giorni o rimborso spese attivazione"
           ]
@@ -1566,6 +2023,35 @@ export const translations = {
     },
 
     // Features
+    videoDemo: {
+      title: "Avvio Rapido - Meno di 10 minuti",
+      description: "Segui questi semplici passaggi per attivare il tuo assistente IA",
+      step1: { text: "Configurazione IA", helper: "Definisci nome, tono e conoscenze aziendali." },
+      step2: { text: "Sincronizzazione Agenda", helper: "Collega Google, Outlook o Calendly." },
+      step3: { text: "Trasferimento Linea", helper: "Configurazione semplice in 60 secondi." },
+      step4: { text: "Connessione CRM", helper: "Sincronizzazione opzionale con HubSpot, Pipedrive, etc." },
+      step5: { text: "Test di Ricezione", helper: "Effettua una chiamata di validazione dal vivo." },
+    },
+
+    faq: {
+      subtitle: "ASSISTENZA",
+      mainTitle: "Domande Frequenti",
+      description: "Hai domande su Anvela? Abbiamo le risposte. Se non trovi quello che cerchi, non esitare a contattarci.",
+      moreInfoTitle: "Vuoi saperne di più?",
+      moreInfoText: "Il nostro team è disponibile per una dimostrazione personalizzata di 15 minuti.",
+      moreInfoButton: "Parla con un esperto",
+      items: [
+        {
+          question: "Come funziona l'integrazione con il mio sistema attuale?",
+          answer: "È semplicissimo. Configuriamo un trasferimento di chiamata condizionale (se occupato o mancata risposta) verso il tuo numero Anvela dedicato. Mantieni il tuo numero attuale e i tuoi clienti non vedranno alcun cambiamento."
+        },
+        {
+          question: "L'IA può davvero prendere appuntamenti?",
+          answer: "Sì, assolutamente. Anvela si connette direttamente al tuo calendario (Google, Outlook, Calendly, etc.). Verifica la tua disponibilità in tempo reale, prenota lo slot e ti invia una conferma istantanea."
+        }
+      ]
+    },
+
     features: {
       scriptText: "Capacità Potenti",
       subtitle: "FUNZIONALITÀ IA",
@@ -1598,6 +2084,11 @@ export const translations = {
           speed: "Immediato",
           uptime: "Continuo",
         },
+      },
+      metrics: {
+        accuracy: "Precisione",
+        speed: "Velocità",
+        uptime: "Disponibilità"
       },
       featureCards: {
         aiPowered: { title: "Alimentato da IA", description: "NLP avanzato per conversazioni naturali" },

@@ -5,7 +5,7 @@ export type Language = 'fr' | 'en' | 'es' | 'it';
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: (key: string) => string;
+  t: (key: string, params?: Record<string, any>) => any;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -20,28 +20,37 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     document.documentElement.lang = lang;
   }, []);
 
-  const t = useCallback((key: string): any => {
+  const t = useCallback((key: string, params?: Record<string, any>): any => {
     const keys = key.split('.');
     let value: any = translations[language];
 
-    for (const k of keys) {
-      if (value && typeof value === 'object' && k in value) {
-        value = (value as Record<string, any>)[k];
-      } else {
-        // Fallback to French if translation not found
-        let fallbackValue: any = translations['fr'];
-        for (const fk of keys) {
-          if (fallbackValue && typeof fallbackValue === 'object' && fk in fallbackValue) {
-            fallbackValue = (fallbackValue as Record<string, any>)[fk];
-          } else {
-            return key;
-          }
+    const findValue = (obj: any, ks: string[]) => {
+      let current = obj;
+      for (const k of ks) {
+        if (current && typeof current === 'object' && k in current) {
+          current = current[k];
+        } else {
+          return undefined;
         }
-        return fallbackValue ?? key;
       }
+      return current;
+    };
+
+    value = findValue(translations[language], keys);
+    
+    if (value === undefined) {
+      value = findValue(translations['fr'], keys);
     }
 
-    return value ?? key;
+    if (value === undefined) return key;
+
+    if (typeof value === 'string' && params) {
+      return Object.entries(params).reduce((acc, [k, v]) => {
+        return acc.replace(new RegExp(`{{${k}}}`, 'g'), String(v));
+      }, value);
+    }
+
+    return value;
   }, [language]);
 
   return (

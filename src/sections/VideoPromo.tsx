@@ -108,19 +108,19 @@ export function VideoPromo() {
                 <div ref={textSectionsRef} className="max-w-md mx-auto md:mx-0 space-y-10">
                     <div className="scrub-element">
                         <span className="font-script text-3xl md:text-5xl text-blue-400 block mb-3">
-                            {t('videoPromo.scriptText') || 'Experience the Change'}
+                            {t('videoPromo.scriptText')}
                         </span>
                         <h2 className="text-[10px] tracking-[0.4em] text-white/40 uppercase mb-4 font-sans">
-                            {t('videoPromo.subtitle') || 'ANVELA CORE ENGINE'}
+                            {t('videoPromo.subtitle')}
                         </h2>
                         <h3 className="font-serif text-3xl md:text-6xl text-white leading-tight">
-                            {t('videoPromo.titleMain') || 'From Chaos'}<br />
-                            <span className="text-blue-500 italic">{t('videoPromo.titleAccent') || 'To Clarity'}</span>
+                            {t('videoPromo.titleMain')}<br />
+                            <span className="text-blue-500 italic">{t('videoPromo.titleAccent')}</span>
                         </h3>
                     </div>
 
                     <p className="scrub-element text-sm md:text-lg text-white/50 leading-relaxed font-sans font-light">
-                        {t('videoPromo.description') || "Witness the precision of our AI engine. As you scroll, watch how Anvela materializes chaotic data into seamless client interactions."}
+                        {t('videoPromo.description')}
                     </p>
 
                     <div className="scrub-element grid gap-8">
@@ -129,8 +129,8 @@ export function VideoPromo() {
                                 <Sparkles className="w-5 h-5" />
                             </div>
                             <div>
-                                <h4 className="text-white font-serif text-xl">{t('videoPromo.feat1.title') || 'Synaptic Speed'}</h4>
-                                <p className="text-xs text-white/30 uppercase tracking-widest mt-1">{t('videoPromo.feat1.desc') || 'Instant Response'}</p>
+                                <h4 className="text-white font-serif text-xl">{t('videoPromo.feat1.title')}</h4>
+                                <p className="text-xs text-white/30 uppercase tracking-widest mt-1">{t('videoPromo.feat1.desc')}</p>
                             </div>
 
                         </div>
@@ -140,8 +140,8 @@ export function VideoPromo() {
                                 <Zap className="w-5 h-5" />
                             </div>
                             <div>
-                                <h4 className="text-white font-serif text-xl">{t('videoPromo.feat2.title') || 'Perfect Continuity'}</h4>
-                                <p className="text-xs text-white/30 uppercase tracking-widest mt-1">{t('videoPromo.feat2.desc') || 'Never miss a detail'}</p>
+                                <h4 className="text-white font-serif text-xl">{t('videoPromo.feat2.title')}</h4>
+                                <p className="text-xs text-white/30 uppercase tracking-widest mt-1">{t('videoPromo.feat2.desc')}</p>
                             </div>
                         </div>
                     </div>

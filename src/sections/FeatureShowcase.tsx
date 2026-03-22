@@ -82,24 +82,24 @@ export function FeatureShowcase() {
     const features = [
         {
             id: 'capture',
-            title: t('featureShowcase.step2.title') || 'AI Reception',
-            description: t('featureShowcase.step2.description') || "Never miss a lead. Anvela answers, understands, and collects key info.",
+            title: t('featureShowcase.step2.title'),
+            description: t('featureShowcase.step2.description'),
             image: '/images/features/phone-reception.jpg',
             icon: <ShieldCheck className="w-5 h-5 text-blue-500" />,
             color: "blue"
         },
         {
             id: 'scheduling',
-            title: t('featureShowcase.step3.title') || 'Smart Scheduling',
-            description: t('featureShowcase.step3.description') || 'Syncs calendars and books meetings instantly, reducing no-shows.',
+            title: t('featureShowcase.step3.title'),
+            description: t('featureShowcase.step3.description'),
             image: '/images/features/tablet-booking.jpg',
             icon: <Calendar className="w-5 h-5 text-blue-500" />,
             color: "indigo"
         },
         {
             id: 'automation',
-            title: t('featureShowcase.step4.title') || 'Follow-up Automation',
-            description: t('featureShowcase.step4.description') || 'Automates CRM entries and sending follow-up messages.',
+            title: t('featureShowcase.step4.title'),
+            description: t('featureShowcase.step4.description'),
             image: '/images/features/automation-icons.jpg',
             icon: <Zap className="w-5 h-5 text-blue-500" />,
             color: "cyan"
@@ -168,7 +168,7 @@ export function FeatureShowcase() {
                 {/* Section Header */}
                 <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24 fade-up">
                     <span className="text-blue-600 font-bold text-xs uppercase tracking-[0.2em] mb-4 block">
-                        {t('featureShowcase.processSubtitle') || "Our Process"}
+                        {t('featureShowcase.processSubtitle')}
                     </span>
                     <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-dark-theme mb-6">
                         {t('featureShowcase.mainTitle') || "How Anvela Powers Your Growth"}

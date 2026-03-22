@@ -50,14 +50,14 @@ export function VideoDemo() {
     }, []);
 
     const checklistData = {
-        title: "Démarrage Rapide - Moins de 10 minutes",
-        description: "Suivez ces étapes simples pour activer votre réceptionniste IA",
+        title: t('videoDemo.title'),
+        description: t('videoDemo.description'),
         items: [
-            { id: 1, text: "Configuration de Votre IA", helperText: "Définissez le nom, le ton et les connaissances métier." },
-            { id: 2, text: "Synchronisation d'Agenda", helperText: "Connectez Google, Outlook ou Calendly." },
-            { id: 3, text: "Transfert de Ligne", helperText: "Configuration simple en 60 secondes." },
-            { id: 4, text: "Connexion CRM", helperText: "Sync optionnelle HubSpot, Pipedrive, etc." },
-            { id: 5, text: "Test de Réception", helperText: "Passez un appel de validation en direct." },
+            { id: 1, text: t('videoDemo.step1.text'), helperText: t('videoDemo.step1.helper') },
+            { id: 2, text: t('videoDemo.step2.text'), helperText: t('videoDemo.step2.helper') },
+            { id: 3, text: t('videoDemo.step3.text'), helperText: t('videoDemo.step3.helper') },
+            { id: 4, text: t('videoDemo.step4.text'), helperText: t('videoDemo.step4.helper') },
+            { id: 5, text: t('videoDemo.step5.text'), helperText: t('videoDemo.step5.helper') },
         ],
         videoThumbnailUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop",
         videoUrl: "https://www.youtube.com/embed/3yBgLxgwS1U?si=_MZFE2nm9fevcj76&t=30",

@@ -127,15 +127,15 @@ export function SolutionShowcase() {
             <div className="grid grid-cols-3 gap-8 mb-12 py-8 border-y border-slate-200">
               <div>
                 <div className="font-serif text-2xl text-blue-600">{solution.accuracy}</div>
-                <div className="text-[10px] text-slate-400 uppercase tracking-widest mt-1">Accuracy</div>
+                <div className="text-[10px] text-slate-400 uppercase tracking-widest mt-1">{t('features.metrics.accuracy')}</div>
               </div>
               <div>
                 <div className="font-serif text-2xl text-blue-600">{solution.speed}</div>
-                <div className="text-[10px] text-slate-400 uppercase tracking-widest mt-1">Speed</div>
+                <div className="text-[10px] text-slate-400 uppercase tracking-widest mt-1">{t('features.metrics.speed')}</div>
               </div>
               <div>
                 <div className="font-serif text-2xl text-blue-600">{solution.uptime}</div>
-                <div className="text-[10px] text-slate-400 uppercase tracking-widest mt-1">Uptime</div>
+                <div className="text-[10px] text-slate-400 uppercase tracking-widest mt-1">{t('features.metrics.uptime')}</div>
               </div>
             </div>
 
@@ -146,7 +146,7 @@ export function SolutionShowcase() {
               }}
               className="group flex items-center gap-3 text-dark-theme font-medium tracking-wide uppercase text-sm hover:text-blue-600 transition-colors"
             >
-              {t('features.mainTitle')}
+              {t('nav.ctaButton')}
               <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center transition-all duration-500 group-hover:w-12 group-hover:bg-blue-500">
                 <ArrowRight className="w-5 h-5 text-white transition-transform duration-300 group-hover:translate-x-1" />
               </div>

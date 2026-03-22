@@ -8,7 +8,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 export function Footer() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   // Define social links
   const socialLinks = [
@@ -20,9 +20,7 @@ export function Footer() {
 
   // Define link groups with hardcoded link names for each language
   const getLinkGroups = () => {
-    const lang = t('language.title') === 'Langue' ? 'fr' :
-      t('language.title') === 'Language' ? 'en' :
-        t('language.title') === 'Idioma' ? 'es' : 'it';
+    const lang = language;
 
     const productLinks = {
       fr: ['Fonctionnalités', 'Tarification', 'FAQ', 'Contact'],
@@ -60,16 +58,14 @@ export function Footer() {
 
   // Define contact items
   const contactItems = [
-    { icon: 'MapPin', text: 'San Francisco, CA' },
-    { icon: 'Phone', text: '+1 (888) 555-AI-RX' },
-    { icon: 'Mail', text: 'hello@aireceptionist.com' },
+    { icon: 'MapPin', text: t('contact.contactItems.address.value') },
+    { icon: 'Phone', text: t('contact.contactItems.phone.value') },
+    { icon: 'Mail', text: t('contact.contactItems.email.value') },
   ];
 
   // Legal links
   const getLegalLinks = () => {
-    const lang = t('language.title') === 'Langue' ? 'fr' :
-      t('language.title') === 'Language' ? 'en' :
-        t('language.title') === 'Idioma' ? 'es' : 'it';
+    const lang = language;
 
     const links = {
       fr: ['Politique de Confidentialité', 'Conditions de Service', 'Politique de Cookies'],

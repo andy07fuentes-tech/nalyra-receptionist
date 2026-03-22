@@ -65,17 +65,17 @@ export function Pricing() {
                             </div>
                             <button
                                 onClick={() => setIsYearly(false)}
-                                className={`relative z-10 px-6 sm:px-8 py-2.5 text-sm md:text-base font-bold tracking-wide transition-colors ${!isYearly ? 'text-blue-600' : 'text-slate-500 hover:text-slate-700'}`}
+                                className={`relative z-10 flex-1 px-6 sm:px-8 py-2.5 text-sm md:text-base font-bold tracking-wide transition-colors ${!isYearly ? 'text-blue-600' : 'text-slate-500 hover:text-slate-700'}`}
                             >
-                                {t('pricing.monthly') !== 'pricing.monthly' ? t('pricing.monthly') : 'Mensuel'}
+                                {t('pricing.monthly')}
                             </button>
                             <button
                                 onClick={() => setIsYearly(true)}
-                                className={`relative z-10 px-6 sm:px-8 py-2.5 text-sm md:text-base font-bold tracking-wide transition-colors flex items-center ${isYearly ? 'text-blue-600' : 'text-slate-500 hover:text-slate-700'}`}
+                                className={`relative z-10 flex-1 px-6 sm:px-8 py-2.5 text-sm md:text-base font-bold tracking-wide transition-colors flex items-center justify-center ${isYearly ? 'text-blue-600' : 'text-slate-500 hover:text-slate-700'}`}
                             >
-                                {t('pricing.yearly') !== 'pricing.yearly' ? t('pricing.yearly') : 'Annuel'}
-                                <span className={`ml-2 inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold ${isYearly ? 'bg-green-100 text-green-700 border border-green-200' : 'bg-slate-200 text-slate-500'} transition-colors`}>
-                                    -2 mois & -10%
+                                {t('pricing.yearly')}
+                                <span className={`ml-2.5 inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-widest border transition-all duration-300 ${isYearly ? 'bg-amber-50 text-amber-700 border-amber-200 shadow-sm' : 'bg-slate-50 text-slate-400 border-slate-100'}`}>
+                                    {t('pricing.yearlyBonus')}
                                 </span>
                             </button>
                         </div>
@@ -128,7 +128,7 @@ export function Pricing() {
                                 {isStandard && (
                                     <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30">
                                         <div className="bg-slate-700 text-white text-[10px] font-bold uppercase tracking-widest py-2.5 px-8 rounded-full shadow-[0_4px_25px_rgba(71,85,105,0.4)] whitespace-nowrap border border-slate-500/30">
-                                            ESSENTIEL
+                                            {t('pricing.essentiel')}
                                         </div>
                                     </div>
                                 )}
@@ -136,7 +136,7 @@ export function Pricing() {
                                 {isPopular && !isElite && (
                                     <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30">
                                         <div className="bg-blue-600 text-white text-[10px] font-bold uppercase tracking-widest py-2.5 px-10 rounded-full shadow-[0_4px_25px_rgba(0,210,255,0.6)] whitespace-nowrap border border-blue-400/30">
-                                            MEILLEURE VALEUR
+                                            {t('pricing.bestValue')}
                                         </div>
                                     </div>
                                 )}
@@ -144,7 +144,7 @@ export function Pricing() {
                                 {isElite && (
                                     <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30">
                                         <div className="bg-slate-900 text-gold-200 text-[10px] font-bold uppercase tracking-widest py-2.5 px-10 rounded-full shadow-[0_4px_25px_rgba(210,168,85,0.4)] whitespace-nowrap border border-gold-500/40">
-                                            SOLUTION COMPLÈTE
+                                            {t('pricing.completeSolution')}
                                         </div>
                                     </div>
                                 )}
@@ -169,11 +169,11 @@ export function Pricing() {
                                         <h4 className={`text-2xl font-bold mb-2 ${isElite ? 'text-gradient-gold' : 'text-slate-900'}`}>{tier.name}</h4>
                                         <div className="flex items-baseline mb-1">
                                             <span className={`text-5xl font-serif transition-colors duration-300 ${isElite ? 'text-gradient-gold' : 'text-slate-900'}`}>${isYearly && tier.price ? discountedMonthly : tier.price}</span>
-                                            <span className="text-slate-900 ml-2 font-bold italic">CAD / mois</span>
+                                            <span className="text-slate-900 ml-2 font-bold italic">{t('pricing.cadMonth')}</span>
                                         </div>
                                         {isYearly && tier.price ? (
                                             <div className={`text-[12px] font-bold mb-4 italic pl-1 lowercase ${isElite ? 'text-gold-600' : 'text-slate-600'}`}>
-                                                (facturé {annualTotal}$ annuellement)
+                                                {t('pricing.annualBillingNotice', { price: annualTotal })}
                                             </div>
                                         ) : tier.weeklyNote ? (
                                             <div className={`text-[12px] font-bold mb-4 italic pl-1 lowercase ${isElite ? 'text-gold-600' : 'text-slate-600'}`}>

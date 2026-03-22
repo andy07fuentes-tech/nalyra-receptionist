@@ -73,7 +73,7 @@ export function Navigation() {
                 ? 'text-blue-600 border-blue-600 hover:bg-blue-600 hover:text-white'
                 : 'text-blue-500 border-blue-500/30 hover:bg-blue-500/5 hover:text-white'}`}
           >
-            Free Trial
+            {t('nav.freeTrial')}
           </Link>
           <LanguageToggle isScrolled={isScrolled} />
         </div>

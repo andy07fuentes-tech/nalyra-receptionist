@@ -34,17 +34,8 @@ export function FAQ() {
 
     // Get FAQ items from translations
     const translatedFaqItems = t('faq.items');
-    // Fallback if translations are missing or completely undefined
-    const faqData: FAQItem[] = Array.isArray(translatedFaqItems) ? translatedFaqItems : [
-        {
-            question: "Comment se passe l'intégration avec mon système actuel ?",
-            answer: "C'est très simple. Nous configurons un transfert d'appel conditionnel (si occupé ou non-réponse) vers votre numéro Anvela dédié. Vous gardez votre numéro actuel et vos clients ne voient aucun changement."
-        },
-        {
-            question: "Est-ce que l'IA peut vraiment prendre des rendez-vous ?",
-            answer: "Oui, absolument. Anvela se connecte directement à votre calendrier (Google, Outlook, Calendly, etc.). Elle vérifie vos disponibilités en temps réel, réserve le créneau et vous envoie une confirmation instantanée."
-        }
-    ];
+    // Fallback should be an empty array if not found, allowing the map to handle it gracefully
+    const faqData: FAQItem[] = Array.isArray(translatedFaqItems) ? translatedFaqItems : [];
 
     return (
         <section
@@ -64,10 +55,10 @@ export function FAQ() {
                                 {t('faq.subtitle') || 'ASSISTANCE'}
                             </span>
                             <h2 className="font-serif text-3xl md:text-5xl text-dark-theme leading-tight mb-6">
-                                {t('faq.mainTitle') || 'Questions Fréquentes'}
+                                {t('faq.mainTitle')}
                             </h2>
                             <p className="text-slate-600 text-lg leading-relaxed max-w-md">
-                                Vous avez des questions sur Anvela ? Nous avons les réponses. Si vous ne trouvez pas ce que vous cherchez, n'hésitez pas à nous contacter.
+                                {t('faq.description')}
                             </p>
                         </div>
 
@@ -77,13 +68,13 @@ export function FAQ() {
                                     <HelpCircle className="w-6 h-6 text-blue-600" />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-dark-theme mb-2">Besoin d'en savoir plus ?</h4>
-                                    <p className="text-slate-500 text-sm mb-4">Notre équipe est disponible pour une démonstration personnalisée de 15 minutes.</p>
+                                    <h4 className="font-bold text-dark-theme mb-2">{t('faq.moreInfoTitle')}</h4>
+                                    <p className="text-slate-500 text-sm mb-4">{t('faq.moreInfoText')}</p>
                                     <button 
                                         onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                                         className="text-blue-600 font-bold text-sm hover:underline flex items-center gap-1"
                                     >
-                                        Parler à un expert →
+                                        {t('faq.moreInfoButton')} →
                                     </button>
                                 </div>
                             </div>
