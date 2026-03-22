@@ -5,6 +5,7 @@ import { PainPoints } from '../sections/PainPoints';
 import { VideoDemo } from '../sections/VideoDemo';
 import { FeatureShowcase } from '../sections/FeatureShowcase';
 import { HorizontalGallery } from '../sections/HorizontalGallery';
+import { AnvelaAdvantage } from '../sections/AnvelaAdvantage';
 import { AlbumCube } from '../sections/AlbumCube';
 import { SolutionShowcase } from '../sections/SolutionShowcase';
 import { Pricing } from '../sections/Pricing';
@@ -77,6 +78,7 @@ export default function LandingPage() {
                     <VideoDemo />
                     <FeatureShowcase />
                     <HorizontalGallery />
+                    <AnvelaAdvantage />
                     <AlbumCube />
                     <SolutionShowcase />
                     <Pricing />

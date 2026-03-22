@@ -60,14 +60,9 @@ export function HorizontalGallery() {
   // Duplicate items for seamless loop
   const duplicatedItems = [...galleryItems, ...galleryItems];
 
-  // Split advantages text to bold the first sentence
-  const advantagesText = t('gallery.clientsList');
-  const firstPeriodIndex = advantagesText.indexOf('.');
-  const firstSentence = firstPeriodIndex !== -1 ? advantagesText.substring(0, firstPeriodIndex + 1) : '';
-  const restOfText = firstPeriodIndex !== -1 ? advantagesText.substring(firstPeriodIndex + 1) : advantagesText;
 
   return (
-    <div ref={component} className="overflow-hidden bg-white py-16 md:py-24 border-y border-neutral-100">
+    <div ref={component} className="overflow-hidden bg-white py-16 md:pt-24 md:pb-32 border-y border-neutral-100">
       <div className="container-custom mb-12 px-4 text-center md:text-left">
         <span className="font-script text-2xl md:text-3xl text-blue-600 block mb-2 opacity-80 decoration-blue-200 decoration-wavy underline underline-offset-8">
           {t('gallery.scriptText')}
@@ -117,18 +112,6 @@ export function HorizontalGallery() {
         ))}
       </div>
 
-      {/* Anvela Advantage Section */}
-      <div className="container-custom mt-24 md:mt-32 px-4">
-        <div className="max-w-5xl">
-          <p className="text-neutral-900 font-serif text-2xl md:text-4xl lg:text-5xl leading-[1.15] tracking-tight">
-            <span className="font-bold italic mr-4 block mb-4 text-xl md:text-2xl uppercase tracking-widest text-blue-600 font-sans not-italic">
-              {t('gallery.selectClients')}
-            </span>
-            {firstSentence && <span className="font-bold">{firstSentence}</span>}
-            <span className="text-neutral-800 opacity-90"> {restOfText}</span>
-          </p>
-        </div>
-      </div>
     </div>
   );
 }
