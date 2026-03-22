@@ -58,7 +58,7 @@ export function VideoPromo() {
                                 {t('videoPromo.scriptText') || 'Experience the Change'}
                             </span>
                             <h2 className="text-xs tracking-[0.2em] text-white/40 uppercase mb-4">
-                                {t('videoPromo.subtitle') || 'Vigilox In Action'}
+                                {t('videoPromo.subtitle') || 'Anvela In Action'}
                             </h2>
                             <h3 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white leading-tight">
                                 {t('videoPromo.titleMain') || 'From Overwhelmed'}<br />
@@ -67,7 +67,7 @@ export function VideoPromo() {
                         </div>
 
                         <p className="promo-text-child text-lg text-white/60 max-w-xl leading-relaxed">
-                            {t('videoPromo.description') || "Watch how Vigilox transforms a chaotic front desk into a hub of calm efficiency. Never miss a call, never lose a lead, and let your team focus on what truly matters."}
+                            {t('videoPromo.description') || "Watch how Anvela transforms a chaotic front desk into a hub of calm efficiency. Never miss a call, never lose a lead, and let your team focus on what truly matters."}
                         </p>
 
                         <div className="promo-text-child flex flex-col sm:flex-row gap-6">
@@ -110,7 +110,7 @@ export function VideoPromo() {
                                     className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700"
                                     poster="/images/video-poster.jpg"
                                 >
-                                    <source src="/videos/vigilox-demo.mp4" type="video/mp4" />
+                                    <source src="/videos/anvela-demo.mp4" type="video/mp4" />
                                     {/* Fallback color/message */}
                                     Your browser does not support the video tag.
                                 </video>

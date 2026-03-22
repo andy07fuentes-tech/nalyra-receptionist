@@ -130,16 +130,16 @@ export function Hero({ isReady }: { isReady: boolean }) {
       </div>
 
       {/* Content */}
-      <div ref={contentRef} className="relative z-20 flex flex-col items-center justify-center h-full pb-16 md:pb-20 px-4 w-full text-center">
+      <div ref={contentRef} className="relative z-20 flex flex-col items-center justify-center h-full pt-16 md:pt-10 pb-32 md:pb-20 px-4 w-full text-center">
         {/* Script accent */}
         <div className={`transition-all duration-1000 ease-out ${phase >= 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'} mb-2 mt-4`}>
-          <span className="font-script text-3xl md:text-4xl lg:text-5xl text-blue-400">
+          <span className="font-script text-2xl md:text-3xl lg:text-5xl text-blue-400">
             {t('hero.scriptText')}
           </span>
         </div>
 
         {/* Divider line */}
-        <div className={`my-8 h-px bg-blue-500/50 transition-all duration-1000 ease-out ${phase >= 2 ? 'w-24 opacity-100' : 'w-0 opacity-0'}`} style={{ transitionDelay: '0.2s' }} />
+        <div className={`my-4 md:my-8 h-px bg-blue-500/50 transition-all duration-1000 ease-out ${phase >= 2 ? 'w-24 opacity-100' : 'w-0 opacity-0'}`} style={{ transitionDelay: '0.2s' }} />
 
         {/* Main Title */}
         <h1 className={`font-serif text-[1.6rem] md:text-4xl lg:text-5xl xl:text-6xl text-white leading-[1.1] md:leading-[1.1] tracking-wide transition-all duration-1000 ease-out ${phase >= 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.3s' }}>
@@ -149,7 +149,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
         </h1>
 
         {/* Main CTA: Start Onboarding */}
-        <div className={`mt-10 transition-all duration-1000 ease-out ${phase >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: '0.4s' }}>
+        <div className={`mt-6 md:mt-10 transition-all duration-1000 ease-out ${phase >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: '0.4s' }}>
           <GradientButton variant="variant" asChild className="group h-auto rounded-2xl shadow-[0_0_30px_rgba(201,98,135,0.3)] hover:scale-105 active:scale-95 border-0">
             <Link
               to="/onboarding"
@@ -194,13 +194,13 @@ export function Hero({ isReady }: { isReady: boolean }) {
 
         {/* Stats */}
         <div className={`mt-10 transition-all duration-1000 ease-out ${phase >= 4 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <div className="flex flex-wrap justify-center gap-6 md:gap-16">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="font-serif text-2xl md:text-5xl text-blue-500 mb-1 tabular-nums">
+              <div key={index} className="text-center group">
+                <div className="font-serif text-4xl md:text-5xl text-blue-500 mb-2 tabular-nums">
                   {counts[index]}{stat.suffix}
                 </div>
-                <div className="text-[10px] md:text-xs text-white/70 uppercase tracking-wider">{stat.label}</div>
+                <div className="text-[10px] md:text-xs text-white/50 uppercase tracking-[0.2em] font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -208,7 +208,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
       </div>
 
       {/* Bottom fade - changed to white to match the next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-white via-white/80 to-transparent z-30 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 md:h-48 bg-gradient-to-t from-white via-white/80 to-transparent z-30 pointer-events-none" />
 
       {/* Side decorative */}
       <div className={`absolute left-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-4 transition-opacity duration-1000 z-30 ${phase >= 3 ? 'opacity-100' : 'opacity-0'}`}>

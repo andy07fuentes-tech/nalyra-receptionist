@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Smartphone, Sparkles, Zap, Clock, ArrowRight, ChevronLeft, ChevronRight, CheckCircle } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { motion } from 'framer-motion';
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Smartphone, Sparkles, Zap, Clock, CheckCircle
@@ -199,18 +200,24 @@ export function SolutionShowcase() {
               {features.map((feature, i) => {
                 const IconComponent = iconMap[feature.icon] || Sparkles;
                 return (
-                  <div
+                  <motion.div
                     key={i}
-                    className="flex flex-col p-6 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-500 group"
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1, duration: 0.5 }}
+                    className="flex flex-col p-6 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-blue-200 transition-all duration-500 group relative overflow-hidden"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 mb-4">
+                    <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/5 rounded-full -mr-12 -mt-12 transition-transform group-hover:scale-150 duration-700" />
+                    
+                    <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 mb-4 relative z-10">
                       <IconComponent className="w-6 h-6" />
                     </div>
-                    <div>
+                    <div className="relative z-10">
                       <h4 className="text-dark-theme font-serif text-lg mb-2 group-hover:text-blue-600 transition-colors uppercase tracking-wider">{feature.title}</h4>
                       <p className="text-slate-500 text-sm leading-relaxed">{feature.description}</p>
                     </div>
-                  </div>
+                  </motion.div>
                 );
               })}
             </div>

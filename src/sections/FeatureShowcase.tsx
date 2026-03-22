@@ -57,7 +57,8 @@ export function FeatureShowcase() {
                 });
             });
 
-            // Pulsing Nodes
+            // CSS pulses handled via classes for smoothness on mobile
+            /* 
             gsap.to(".node-pulse", {
                 scale: 2,
                 opacity: 0,
@@ -69,6 +70,7 @@ export function FeatureShowcase() {
                 },
                 ease: "power1.out"
             });
+            */
         }, sectionRef);
 
         return () => {
@@ -137,6 +139,15 @@ export function FeatureShowcase() {
                 />
 
                 <style>{`
+                    @keyframes pulse-ping {
+                        0% { transform: scale(1); opacity: 0.6; }
+                        50% { transform: scale(1.8); opacity: 0; }
+                        100% { transform: scale(1.8); opacity: 0; }
+                    }
+                    .animate-pulse-ping {
+                        animation: pulse-ping 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+                        will-change: transform, opacity;
+                    }
                     @keyframes flow {
                         from { stroke-dashoffset: 20; }
                         to { stroke-dashoffset: 0; }
@@ -173,9 +184,8 @@ export function FeatureShowcase() {
                             style={{ transitionDelay: `${idx * 0.1}s` }}
                         >
                             <div className="relative w-20 h-20 mb-10 flex items-center justify-center">
-                                {/* Enhanced Pulse Ring */}
-                                <div className="node-pulse absolute inset-0 bg-blue-500/20 rounded-full scale-150" />
-                                <div className="node-pulse absolute inset-0 bg-blue-500/10 rounded-full scale-[2]" />
+                                <div className="animate-pulse-ping absolute inset-0 bg-blue-500/20 rounded-full" />
+                                <div className="animate-pulse-ping absolute inset-0 bg-blue-500/10 rounded-full" style={{ animationDelay: '1.5s' }} />
                                 
                                 <div className="relative w-20 h-20 rounded-[28px] bg-blue-50 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
                                     {/* Responsive Icon sizing */}

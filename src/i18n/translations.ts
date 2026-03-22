@@ -39,7 +39,7 @@ export const translations = {
       decorativeText: "INTELLIGENT • EFFICACE • FIABLE",
       ctaSubtitle: "Essai de 14 Jours",
       ctaMain: "Commencer avec Anvela",
-      noCreditCard: "Aucune carte requise • Configuration en 60s",
+      noCreditCard: "Aucune carte requise",
       stats: {
         calls: { value: "100", suffix: "%", label: "Taux de Réponse" },
         availability: { value: "24", suffix: "/7", label: "Toujours Disponible" },
@@ -532,7 +532,7 @@ export const translations = {
       decorativeText: "INTELLIGENT • EFFICIENT • RELIABLE",
       ctaSubtitle: "Start 14-Day Trial",
       ctaMain: "Get Started with Anvela",
-      noCreditCard: "No credit card required • Setup in 60 seconds",
+      noCreditCard: "No credit card required",
       stats: {
         calls: { value: "100", suffix: "%", label: "Call Answer Rate" },
         availability: { value: "24", suffix: "/7", label: "Always Available" },

@@ -191,7 +191,7 @@ export function Footer() {
                   <span>{t('footer.newsletterSuccessText')}</span>
                 </div>
               ) : (
-                <form onSubmit={handleNewsletter} className="flex gap-2">
+                <form onSubmit={handleNewsletter} className="flex flex-col sm:flex-row gap-2">
                   <label htmlFor="newsletter-email" className="sr-only">{t('footer.newsletterLabel')}</label>
                   <input
                     id="newsletter-email"
@@ -201,11 +201,11 @@ export function Footer() {
                     placeholder={t('footer.newsletterPlaceholder')}
                     required
                     autoComplete="email"
-                    className="flex-1 px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-dark-theme text-sm placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:bg-white transition-all"
+                    className="w-full sm:flex-1 px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-dark-theme text-sm placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:bg-white transition-all"
                   />
                   <button
                     type="submit"
-                    className="px-4 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition-colors shadow-blue-500/20 shadow-lg"
+                    className="w-full sm:w-auto px-4 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition-colors shadow-blue-500/20 shadow-lg whitespace-nowrap"
                   >
                     {t('footer.newsletterButtonText')}
                   </button>
@@ -222,14 +222,16 @@ export function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-slate-100">
         <div className="container-custom py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex flex-wrap items-center justify-center gap-4 text-slate-400 text-xs">
+          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-2 sm:gap-4 text-slate-400 text-[10px] md:text-xs">
             <span>{t('footer.copyrightText')}</span>
-            {getLegalLinks().map((link, index) => (
-              <span key={index}>
-                <span className="hidden md:inline">|</span>
-                <button className="hover:text-blue-600 transition-colors ml-2 md:ml-0">{link}</button>
-              </span>
-            ))}
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              {getLegalLinks().map((link, index) => (
+                <div key={index} className="flex items-center">
+                  <span className="hidden md:inline mr-3 text-slate-300">|</span>
+                  <button className="hover:text-blue-600 transition-colors font-medium">{link}</button>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Back to Top */}

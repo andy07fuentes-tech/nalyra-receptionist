@@ -50,24 +50,14 @@ export function VideoDemo() {
     }, []);
 
     const checklistData = {
-        title: "Get Started - It only takes 10 minutes",
-        description: "Please keep these documents and details ready for a smooth sign-up",
+        title: "Démarrage Rapide - Moins de 10 minutes",
+        description: "Suivez ces étapes simples pour activer votre réceptionniste IA",
         items: [
-            { id: 1, text: "PAN card" },
-            { id: 2, text: "GST number, if applicable" },
-            {
-                id: 3,
-                text: "FSSAI license",
-                helperText: "Don't have a FSSAI license?",
-                helperLink: { href: "#", text: "Apply here" },
-            },
-            {
-                id: 4,
-                text: "Menu & profile food image",
-                helperText: "What is profile food image?",
-                helperLink: { href: "#", text: "Refer here" },
-            },
-            { id: 5, text: "Bank account details" },
+            { id: 1, text: "Configuration de Votre IA", helperText: "Définissez le nom, le ton et les connaissances métier." },
+            { id: 2, text: "Synchronisation d'Agenda", helperText: "Connectez Google, Outlook ou Calendly." },
+            { id: 3, text: "Transfert de Ligne", helperText: "Configuration simple en 60 secondes." },
+            { id: 4, text: "Connexion CRM", helperText: "Sync optionnelle HubSpot, Pipedrive, etc." },
+            { id: 5, text: "Test de Réception", helperText: "Passez un appel de validation en direct." },
         ],
         videoThumbnailUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop",
         videoUrl: "https://www.youtube.com/embed/3yBgLxgwS1U?si=_MZFE2nm9fevcj76&t=30",
@@ -77,8 +67,11 @@ export function VideoDemo() {
         <section
             id="video-promo"
             ref={sectionRef}
-            className="relative min-h-[90vh] flex items-center bg-[#0a0a0a] py-24 md:py-32 overflow-hidden"
+            className="relative min-h-screen flex items-center bg-[#0a0a0a] py-32 md:py-48 overflow-hidden"
         >
+            {/* Smooth Top Transition */}
+            <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-white to-transparent pointer-events-none z-20" />
+
             {/* Cinematic Background */}
             <div className={`absolute inset-0 transition-opacity duration-1000 ease-out ${phase >= 1 ? 'opacity-100' : 'opacity-0'}`}>
                 <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#111111] to-[#1a1a2e]" />
@@ -87,27 +80,27 @@ export function VideoDemo() {
             </div>
 
             <div className="container-custom relative z-10 w-full flex justify-center">
-                <div ref={contentRef} className="w-full max-w-7xl">
-                    <div className="inline-flex items-center gap-2 mb-12 justify-center w-full">
-                        <span className="w-8 h-px bg-blue-500" />
+                <div ref={contentRef} className="w-full max-w-screen-2xl">
+                    <div className="inline-flex items-center gap-2 mb-16 justify-center w-full">
+                        <span className="w-12 h-px bg-blue-500" />
                         <span className="text-blue-400 font-bold text-sm uppercase tracking-[0.4em]">
                             {t('videoPromo.subtitle') || "DEMO"}
                         </span>
-                        <span className="w-8 h-px bg-blue-500" />
+                        <span className="w-12 h-px bg-blue-500" />
                     </div>
                     <OnboardingChecklist
-                        title={t('featureShowcase.step1.title') || "Discover IA in Action"}
-                        description={t('featureShowcase.step1.description') || "Watch our demonstration to understand how our virtual receptionist can transform your business."}
+                        title={t('featureShowcase.step1.title') || "Découvrez l'IA en Action"}
+                        description={t('featureShowcase.step1.description') || "Regardez notre démonstration pour comprendre comment notre réceptionniste virtuelle transforme votre accueil client."}
                         items={checklistData.items}
                         videoThumbnailUrl={checklistData.videoThumbnailUrl}
                         videoUrl={checklistData.videoUrl}
-                        className="bg-[#121212]/90 backdrop-blur-3xl border-white/10 text-white shadow-2xl mx-auto w-full p-10 md:p-14 lg:p-16 mb-10 rounded-3xl"
+                        className="bg-[#121212]/95 backdrop-blur-3xl border border-white/10 text-white shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] mx-auto w-full p-12 md:p-16 lg:p-20 mb-10 rounded-3xl"
                     />
                 </div>
             </div>
 
             {/* Cinematic Gradient Divider */}
-            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-50 to-transparent pointer-events-none z-20" />
+            <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-slate-50 to-transparent pointer-events-none z-20" />
         </section>
     );
 }

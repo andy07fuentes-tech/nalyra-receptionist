@@ -1,64 +1,40 @@
 import { useEffect, useRef } from 'react';
-import {
-    PhoneMissed,
-    TrendingUp,
-    Clock,
-    Zap,
-    RefreshCw,
-    ClipboardList,
-    AlertCircle
-} from 'lucide-react';
+import { AlertCircle } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ExpandableGallery } from '../components/ui/expandable-gallery';
 
 gsap.registerPlugin(ScrollTrigger);
-
-const iconMap: Record<string, any> = {
-    PhoneMissed,
-    TrendingUp,
-    Clock,
-    Zap,
-    RefreshCw,
-    ClipboardList
-};
 
 export function PainPoints() {
     const { t } = useLanguage();
     const sectionRef = useRef<HTMLElement>(null);
-    const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+    const containerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         if (!sectionRef.current) return;
 
         const ctx = gsap.context(() => {
-            // Animate cards on scroll
-            cardsRef.current.forEach((card, index) => {
-                if (!card) return;
-
-                gsap.fromTo(
-                    card,
-                    { opacity: 0, y: 50 },
-                    {
-                        opacity: 1,
-                        y: 0,
-                        duration: 0.8,
-                        delay: index * 0.1,
-                        ease: 'power3.out',
-                        scrollTrigger: {
-                            trigger: card,
-                            start: 'top 85%',
-                            toggleActions: 'play none none reverse',
-                        },
-                    }
-                );
-            });
+            gsap.fromTo(
+                containerRef.current,
+                { opacity: 0, y: 50 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: 'top 85%',
+                        toggleActions: 'play none none reverse',
+                    },
+                }
+            );
         }, sectionRef);
 
         return () => ctx.revert();
     }, []);
-
-    const items = (t('painPoints.items') as unknown as any[]) || [];
 
     return (
         <section
@@ -70,7 +46,7 @@ export function PainPoints() {
             <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-[100px] pointer-events-none" />
             <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-500/5 rounded-full blur-[100px] pointer-events-none" />
 
-            <div className="container-custom relative z-10">
+            <div className="container-custom relative z-10" ref={containerRef}>
                 <div className="text-center max-w-3xl mx-auto mb-20">
                     <div className="inline-flex items-center gap-2 mb-4 px-3 py-1 rounded-full bg-blue-50 border border-blue-100">
                         <AlertCircle className="w-4 h-4 text-blue-600" />
@@ -87,42 +63,8 @@ export function PainPoints() {
                         {t('painPoints.description')}
                     </p>
                 </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {items.map((item, index) => {
-                        const Icon = iconMap[item.icon] || Zap;
-                        return (
-                            <div
-                                key={index}
-                                ref={(el) => { cardsRef.current[index] = el; }}
-                                className="group relative p-8 rounded-2xl bg-slate-50 border border-slate-100 backdrop-blur-sm transition-all duration-500 hover:bg-white hover:border-blue-200 hover:shadow-xl overflow-hidden"
-                            >
-                                {/* Background Glow */}
-                                <div className="absolute -right-8 -top-8 w-24 h-24 bg-blue-100/50 rounded-full blur-2xl group-hover:bg-blue-200 transition-all duration-500" />
-
-                                <div className="mb-6 relative">
-                                    <div className="w-12 h-12 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-sm">
-                                        <Icon className="w-6 h-6" />
-                                    </div>
-                                </div>
-
-                                <h3 className="text-xl md:text-2xl font-serif text-dark-theme mb-4 transition-colors group-hover:text-blue-600">
-                                    {item.title}
-                                </h3>
-
-                                <p className="text-slate-500 leading-relaxed group-hover:text-slate-700 transition-colors">
-                                    {item.description}
-                                </p>
-
-                                {/* Animated Corner accent */}
-                                <div className="absolute bottom-0 right-0 w-8 h-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                    <div className="absolute bottom-4 right-4 w-4 h-px bg-blue-600" />
-                                    <div className="absolute bottom-4 right-4 h-4 w-px bg-blue-600" />
-                                </div>
-                            </div>
-                        );
-                    })}
-                </div>
+                {/* Changed the bottom layout mapping of the items to use the ExpandableGallery instead*/}
+                <ExpandableGallery />
             </div>
         </section>
     );

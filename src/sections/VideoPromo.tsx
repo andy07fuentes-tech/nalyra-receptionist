@@ -87,7 +87,7 @@ export function VideoPromo() {
                         muted
                         playsInline
                         preload="auto"
-                        src="/videos/vigilox-demo.mp4"
+                        src="/videos/anvela-demo.mp4"
                     />
 
                     {/* Cinematic letterbox look */}
@@ -104,8 +104,8 @@ export function VideoPromo() {
             </div>
 
             {/* Content Layer */}
-            <div className="relative z-20 w-full md:w-[40%] px-8 md:px-16 py-12 flex flex-col justify-center">
-                <div ref={textSectionsRef} className="max-w-md space-y-10">
+            <div className="relative z-20 w-full md:w-[40%] px-8 md:px-16 py-12 flex flex-col justify-center items-center md:items-start text-center md:text-left">
+                <div ref={textSectionsRef} className="max-w-md mx-auto md:mx-0 space-y-10">
                     <div className="scrub-element">
                         <span className="font-script text-3xl md:text-5xl text-blue-400 block mb-3">
                             {t('videoPromo.scriptText') || 'Experience the Change'}
