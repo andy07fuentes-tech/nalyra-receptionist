@@ -4,6 +4,7 @@ import { Hero } from '../sections/Hero';
 import { PainPoints } from '../sections/PainPoints';
 import { VideoDemo } from '../sections/VideoDemo';
 import { FeatureShowcase } from '../sections/FeatureShowcase';
+import { HorizontalGallery } from '../sections/HorizontalGallery';
 import { AlbumCube } from '../sections/AlbumCube';
 import { SolutionShowcase } from '../sections/SolutionShowcase';
 import { Pricing } from '../sections/Pricing';
@@ -75,6 +76,7 @@ export default function LandingPage() {
                     <PainPoints />
                     <VideoDemo />
                     <FeatureShowcase />
+                    <HorizontalGallery />
                     <AlbumCube />
                     <SolutionShowcase />
                     <Pricing />

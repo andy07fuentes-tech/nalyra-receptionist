@@ -48,6 +48,25 @@ export const translations = {
       },
     },
 
+    // Gallery
+    gallery: {
+      scriptText: "Capacités de l'IA",
+      mainTitle: "Conçu pour Tous les Secteurs",
+      selectClients: "L'Avantage Anvela",
+      clientsList: "Chaque appel manqué est un client perdu et une opportunité financière gâchée. Notre IA intelligente gère vos réservations, répond aux questions complexes et qualifie vos leads 24h/24 et 7j/7, avec une précision humaine et une efficacité robotique.",
+      item1: { title: "Prise de RDV", subtitle: "SANTÉ & BIEN-ÊTRE" },
+      item2: { title: "Support Client", subtitle: "RESTAURATION" },
+      item3: { title: "Gestion Leads", subtitle: "IMMOBILIER" },
+      item4: { title: "Flux Automatisé", subtitle: "SERVICES PRO" },
+      item5: { title: "E-commerce", subtitle: "VENTE EN LIGNE" },
+      item6: { title: "Soutien Scolaire", subtitle: "ÉDUCATION" },
+      item7: { title: "Réservation Hôtel", subtitle: "HÔTELLERIE" },
+      item8: { title: "Assistance Juridique", subtitle: "DROIT" },
+      item9: { title: "Coach Sportif", subtitle: "FITNESS" },
+      item10: { title: "Agence Voyage", subtitle: "TOURISME" },
+      item11: { title: "Clinique Vétérinaire", subtitle: "ANIMAUX" },
+    },
+
     // Feature Showcase
     featureShowcase: {
       step1: {
@@ -632,14 +651,30 @@ export const translations = {
       stats: {
         calls: { value: "100", suffix: "%", label: "Call Answer Rate" },
         availability: { value: "24", suffix: "/7", label: "Always Available" },
-        savings: { value: "50", suffix: "%", label: "Cost Reduction" },
       },
+    },
+
+    // Gallery
+    gallery: {
+      scriptText: "AI Capabilities",
+      mainTitle: "Built for Every Industry",
+      selectClients: "The Anvela Advantage",
+      clientsList: "Every missed call is a missed client and missed revenue. Our intelligent AI handles your bookings, answers complex questions, and qualifies your leads 24/7, with human-like precision and robotic efficiency.",
+      item1: { title: "Appointment Booking", subtitle: "HEALTH & WELLNESS" },
+      item2: { title: "Customer Support", subtitle: "RESTAURANTS" },
+      item3: { title: "Lead Management", subtitle: "REAL ESTATE" },
+      item4: { title: "Automated Flow", subtitle: "PRO SERVICES" },
+      item5: { title: "E-commerce", subtitle: "ONLINE RETAIL" },
+      item6: { title: "Tutoring", subtitle: "EDUCATION" },
+      item7: { title: "Hotel Booking", subtitle: "HOSPITALITY" },
+      item8: { title: "Legal Assistance", subtitle: "LAW FIRM" },
+      item9: { title: "Personal Trainer", subtitle: "FITNESS" },
+      item10: { title: "Travel Agency", subtitle: "TOURISM" },
+      item11: { title: "Vet Clinic", subtitle: "PET CARE" },
     },
 
     // Feature Showcase
     featureShowcase: {
-      processSubtitle: "NUESTRO PROCESO",
-      mainTitle: "Cómo Anvela impulsa su crecimiento",
       processSubtitle: "OUR PROCESS",
       mainTitle: "How Anvela Powers Your Growth",
       step1: {
@@ -666,8 +701,6 @@ export const translations = {
         description: "Automatically creates a client file, sends follow-ups, and feeds your CRM/Google Sheets. Everything is traceable.",
         cta: "Explore Automation",
       },
-      mainTitle: "How Anvela Powers Your Growth",
-      processSubtitle: "OUR PROCESS"
     },
 
     // Pain Points
@@ -1210,8 +1243,26 @@ export const translations = {
       stats: {
         calls: { value: "100", suffix: "%", label: "Tasa de Respuesta" },
         availability: { value: "24", suffix: "/7", label: "Siempre Disponible" },
-        savings: { value: "50", suffix: "%", label: "Reducción de Costos" },
       },
+    },
+
+    // Gallery
+    gallery: {
+      scriptText: "Capacidades de IA",
+      mainTitle: "Diseñado para Todos los Sectores",
+      selectClients: "La Ventaja Anvela",
+      clientsList: "Cada llamada perdida es un cliente perdido y dinero que dejas de ganar. Nuestra IA inteligente gestiona tus reservas, responde preguntas complejas y califica tus leads 24/7, con precisión humana y eficiencia robótica.",
+      item1: { title: "Reserva de Citas", subtitle: "SALUD Y BIENESTAR" },
+      item2: { title: "Atención al Cliente", subtitle: "RESTAURACIÓN" },
+      item3: { title: "Gestión de Leads", subtitle: "INMOBILIARIA" },
+      item4: { title: "Flujo Automatizado", subtitle: "SERVICIOS PRO" },
+      item5: { title: "E-commerce", subtitle: "VENTA ONLINE" },
+      item6: { title: "Tutoría", subtitle: "EDUCACIÓN" },
+      item7: { title: "Reserva Hotel", subtitle: "HOSPITALIDAD" },
+      item8: { title: "Asistencia Legal", subtitle: "ABOGADOS" },
+      item9: { title: "Entrenador Personal", subtitle: "FITNESS" },
+      item10: { title: "Agencia Viajes", subtitle: "TURISMO" },
+      item11: { title: "Clínica Veterinaria", subtitle: "MASCOTAS" },
     },
 
     // Feature Showcase
@@ -1786,6 +1837,24 @@ export const translations = {
       },
     },
 
+    // Gallery
+    gallery: {
+      scriptText: "Capacità dell'IA",
+      mainTitle: "Progettato per Ogni Settore",
+      selectClients: "Il Vantaggio Anvela",
+      clientsList: "Ogni chiamata persa è un cliente perso e un mancato guadagno. La nostra IA intelligente gestisce le tue prenotazioni, risponde a domande complesse e qualifica i tuoi lead 24/7, con precisione umana ed efficienza robotica.",
+      item1: { title: "Prenotazione Appuntamenti", subtitle: "SALUTE E BENESSERE" },
+      item2: { title: "Supporto Clienti", subtitle: "RISTORAZIONE" },
+      item3: { title: "Gestione Lead", subtitle: "IMMOBILIARE" },
+      item4: { title: "Flusso Automatizzato", subtitle: "SERVICI PRO" },
+      item5: { title: "E-commerce", subtitle: "VENDITA ONLINE" },
+      item7: { title: "Prenotazione Hotel", subtitle: "OSPITALITÀ" },
+      item8: { title: "Assistenza Legale", subtitle: "STUDIO LEGALE" },
+      item9: { title: "Personal Trainer", subtitle: "FITNESS" },
+      item10: { title: "Agenzia Viaggi", subtitle: "TURISMO" },
+      item11: { title: "Clinica Veterinaria", subtitle: "ANIMALI" },
+    },
+
     // Feature Showcase
     featureShowcase: {
       processSubtitle: "IL NOSTRO PROCESSO",
@@ -1814,8 +1883,6 @@ export const translations = {
         description: "Crea automaticamente una scheda cliente, invia follow-up e alimenta il tuo CRM/Google Sheets. Tutto è tracciabile.",
         cta: "Esplora l'Automazione",
       },
-      mainTitle: "Come Anvela sposta la tua crescita",
-      processSubtitle: "IL NOSTRO PROCESSO"
     },
 
     // Pain Points
