@@ -58,7 +58,7 @@ export const translations = {
       scriptText: "Capacités de l'IA",
       mainTitle: "Conçu pour Tous les Secteurs",
       selectClients: "L'Avantage Anvela",
-      clientsList: "Chaque appel manqué est un client perdu et une opportunité financière gâchée. Notre IA intelligente gère vos réservations, répond aux questions complexes et qualifie vos leads 24h/24 et 7j/7, avec une précision humaine et une efficacité robotique.",
+      clientsList: "Chaque appel manqué est un client perdu et une opportunité financière gâchée. Notre IA intelligente gère vos réservations, répond aux questions complexes et qualifie vos leads 24h/24 et 7/7, avec une précision humaine et une efficacité robotique.",
       item1: { title: "RÉSERVATION SMART", subtitle: "GESTION AGENDAS" },
       item2: { title: "CAPTURE DE LEADS", subtitle: "QUALIFICATION IA" },
       item3: { title: "RÉCEPTION 24/7", subtitle: " DISPONIBILITÉ TOTALE" },
