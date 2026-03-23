@@ -70,6 +70,10 @@ export const translations = {
       item9: { title: "Coach Sportif", subtitle: "FITNESS" },
       item10: { title: "Agence Voyage", subtitle: "TOURISME" },
       item11: { title: "Clinique Vétérinaire", subtitle: "ANIMAUX" },
+      special: {
+        anvelaTitle: "Anvela AI",
+        anvelaSubtitle: "- voici anvela - notre ai -"
+      }
     },
 
     // Feature Showcase
@@ -686,6 +690,10 @@ export const translations = {
       item9: { title: "Personal Trainer", subtitle: "FITNESS" },
       item10: { title: "Travel Agency", subtitle: "TOURISM" },
       item11: { title: "Vet Clinic", subtitle: "PET CARE" },
+      special: {
+        anvelaTitle: "Anvela AI",
+        anvelaSubtitle: "- voici anvela - our ai -"
+      }
     },
 
     // Feature Showcase
@@ -1288,6 +1296,10 @@ export const translations = {
       item9: { title: "Entrenador Personal", subtitle: "FITNESS" },
       item10: { title: "Agencia Viajes", subtitle: "TURISMO" },
       item11: { title: "Clínica Veterinaria", subtitle: "MASCOTAS" },
+      special: {
+        anvelaTitle: "Anvela AI",
+        anvelaSubtitle: "- aquí está anvela - nuestra ia -"
+      }
     },
 
     // Feature Showcase
@@ -1889,6 +1901,10 @@ export const translations = {
       item9: { title: "Personal Trainer", subtitle: "FITNESS" },
       item10: { title: "Agenzia Viaggi", subtitle: "TURISMO" },
       item11: { title: "Clinica Veterinaria", subtitle: "ANIMALI" },
+      special: {
+        anvelaTitle: "Anvela AI",
+        anvelaSubtitle: "- ecco anvela - la nostra ia -"
+      }
     },
 
     // Feature Showcase

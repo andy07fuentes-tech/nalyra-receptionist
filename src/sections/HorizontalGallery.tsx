@@ -15,6 +15,14 @@ interface GalleryItem {
 }
 
 const galleryItems: GalleryItem[] = [
+  {
+    id: 0,
+    video: '/videos/anvela-showcase.mp4',
+    titleKey: 'gallery.special.anvelaTitle',
+    subtitleKey: 'gallery.special.anvelaSubtitle',
+    size: 'large',
+    offset: 'mt-0'
+  },
   ...[1, 2, 3, 4, 5, 7, 8, 9, 10, 11].map(i => ({
     id: i,
     video: `/videos/showcase-${i}.mp4`,
@@ -101,7 +109,9 @@ export function HorizontalGallery() {
 
             {/* Labels Below Frame */}
             <div className="mt-4 transform transition-transform duration-500 group-hover:translate-x-1">
-              <p className="text-neutral-400 text-[10px] md:text-xs font-mono tracking-widest uppercase mb-1">
+              <p className={`text-[10px] md:text-xs font-mono tracking-widest uppercase mb-1 ${
+                item.id === 0 ? 'text-blue-600 font-bold' : 'text-neutral-400'
+              }`}>
                 {t(item.subtitleKey)}
               </p>
               <h3 className="text-neutral-900 font-serif text-lg md:text-xl leading-tight">
