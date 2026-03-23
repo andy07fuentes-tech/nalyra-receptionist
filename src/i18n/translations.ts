@@ -1219,7 +1219,7 @@ export const translations = {
 
     // Navigation
     nav: {
-      brandName: "Recepcionista IA",
+      brandName: "Anvela",
       brandSubname: "Comunicación Inteligente",
       tagline: "Tu Recepción Digital 24/7",
       home: "Inicio",
@@ -1772,15 +1772,16 @@ export const translations = {
 
     // Footer
     footer: {
-      brandName: "AI Receptionist",
-      tagline: "Comunicación Inteligente",
+      brandName: "Anvela",
+      brandSubname: "Comunicación Inteligente",
+      tagline: "Tu Recepción Digital 24/7",
       description: "Transforme su negocio con servicios de recepcionista impulsados por IA. Disponible 24/7, siempre profesional, increíblemente eficiente.",
       newsletterLabel: "Suscríbase a nuestro boletín",
       newsletterPlaceholder: "Ingrese su email",
       newsletterButtonText: "Suscribirse",
       newsletterSuccessText: "¡Gracias por suscribirse!",
       newsletterErrorText: "Por favor intente de nuevo.",
-      copyrightText: "© AI Receptionist. Todos los derechos reservados.",
+      copyrightText: "© Anvela AI. All rights reserved.",
       backToTopText: "Volver arriba",
       linkGroups: {
         product: {
@@ -1814,7 +1815,7 @@ export const translations = {
 
     // Navigation
     nav: {
-      brandName: "Receptionist IA",
+      brandName: "Anvela",
       brandSubname: "Comunicazione Intelligente",
       tagline: "La Tua Reception Digitale 24/7",
       home: "Home",
@@ -2357,15 +2358,16 @@ export const translations = {
 
     // Footer
     footer: {
-      brandName: "AI Receptionist",
-      tagline: "Comunicazione Intelligente",
+      brandName: "Anvela",
+      brandSubname: "Comunicazione Intelligente",
+      tagline: "La Tua Reception Digitale 24/7",
       description: "Trasforma la tua azienda con servizi di receptionist alimentati dall'IA. Disponibile 24/7, sempre professionale, incredibilmente efficiente.",
       newsletterLabel: "Iscriviti alla nostra newsletter",
       newsletterPlaceholder: "Inserisci la tua email",
       newsletterButtonText: "Iscriviti",
       newsletterSuccessText: "Grazie per l'iscrizione!",
       newsletterErrorText: "Per favore riprova.",
-      copyrightText: "© AI Receptionist. Tutti i diritti riservati.",
+      copyrightText: "© Anvela AI. All rights reserved.",
       backToTopText: "Torna su",
       linkGroups: {
         product: {

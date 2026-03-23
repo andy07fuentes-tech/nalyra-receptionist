@@ -29,7 +29,14 @@ export default function LandingPage() {
 
     // Initialize smooth scroll transitions
     useEffect(() => {
+        if ('scrollRestoration' in window.history) {
+            window.history.scrollRestoration = 'manual';
+        }
+
         if (isLoading) return;
+
+        // Force scroll to top on load completion
+        window.scrollTo(0, 0);
 
         // Wait for DOM to be ready
         const timer = setTimeout(() => {
@@ -62,6 +69,9 @@ export default function LandingPage() {
         return () => {
             clearTimeout(timer);
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+            if ('scrollRestoration' in window.history) {
+                window.history.scrollRestoration = 'auto';
+            }
         };
     }, [isLoading]);
 

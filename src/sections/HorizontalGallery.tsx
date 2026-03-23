@@ -74,7 +74,7 @@ export function HorizontalGallery() {
 
       <div 
         ref={slider} 
-        className="flex gap-2 md:gap-3 px-4 w-fit items-start will-change-transform"
+        className="flex gap-1 md:gap-2 px-4 w-fit items-start will-change-transform"
       >
         {duplicatedItems.map((item, index) => (
           <div 
@@ -82,9 +82,9 @@ export function HorizontalGallery() {
             className={`gallery-item flex-shrink-0 relative group transition-all duration-500 hover:z-20 ${
               item.offset
             } ${
-              item.size === 'small' ? 'w-[135px] md:w-[189px]' : 
-              item.size === 'medium' ? 'w-[162px] md:w-[216px]' : 
-              'w-[189px] md:w-[256px]'
+              item.size === 'small' ? 'w-[108px] md:w-[151px]' : 
+              item.size === 'medium' ? 'w-[130px] md:w-[173px]' : 
+              'w-[151px] md:w-[205px]'
             }`}
           >
             {/* Video Frame */}

@@ -8,7 +8,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 export function Footer() {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
 
   // Define social links
   const socialLinks = [
@@ -18,35 +18,22 @@ export function Footer() {
     { icon: 'Instagram', label: 'Instagram', href: 'https://instagram.com' },
   ];
 
-  // Define link groups with hardcoded link names for each language
+  // Define link groups from translations
   const getLinkGroups = () => {
-    const lang = language;
-
-    const productLinks = {
-      fr: ['Fonctionnalités', 'Tarification', 'FAQ', 'Contact'],
-      en: ['Features', 'Pricing', 'FAQ', 'Contact'],
-      es: ['Funciones', 'Precios', 'FAQ', 'Contacto'],
-      it: ['Funzionalità', 'Prezzi', 'FAQ', 'Contatto'],
-    };
-
-    const companyLinks = {
-      fr: ['À Propos', 'Carrières', 'Blog', 'Presse'],
-      en: ['About Us', 'Careers', 'Blog', 'Press'],
-      es: ['Sobre Nosotros', 'Carreras', 'Blog', 'Prensa'],
-      it: ['Chi Siamo', 'Carriere', 'Blog', 'Stampa'],
-    };
+    const footerTranslations = t('footer') as any;
+    const linkGroupsData = footerTranslations.linkGroups;
 
     return [
       {
-        title: t('footer.linkGroups.product.title'),
-        links: productLinks[lang as keyof typeof productLinks].map((name, i) => ({
+        title: linkGroupsData.product.title,
+        links: linkGroupsData.product.links.map((name: string, i: number) => ({
           name,
           href: ['#feature-showcase', '#pricing', '#faq', '#contact'][i]
         })),
       },
       {
-        title: t('footer.linkGroups.company.title'),
-        links: companyLinks[lang as keyof typeof companyLinks].map((name, i) => ({
+        title: linkGroupsData.company.title,
+        links: linkGroupsData.company.links.map((name: string, i: number) => ({
           name,
           href: ['#about', '#careers', '#blog', '#press'][i]
         })),
@@ -63,18 +50,9 @@ export function Footer() {
     { icon: 'Mail', text: t('contact.contactItems.email.value') },
   ];
 
-  // Legal links
+  // Legal links from translations
   const getLegalLinks = () => {
-    const lang = language;
-
-    const links = {
-      fr: ['Politique de Confidentialité', 'Conditions de Service', 'Politique de Cookies'],
-      en: ['Privacy Policy', 'Terms of Service', 'Cookie Policy'],
-      es: ['Política de Privacidad', 'Términos de Servicio', 'Política de Cookies'],
-      it: ['Informativa Privacy', 'Termini di Servizio', 'Politica Cookie'],
-    };
-
-    return links[lang as keyof typeof links];
+    return t('footer.legalLinks') as string[];
   };
 
   const [newsletterEmail, setNewsletterEmail] = useState('');
@@ -127,7 +105,7 @@ export function Footer() {
             {/* Social Links */}
             <nav aria-label="Social media links">
               <div className="flex gap-3">
-                {socialLinks.map((social) => {
+                {socialLinks.map((social: { icon: string; label: string; href: string }) => {
                   const IconComponent = iconMap[social.icon];
                   return (
                     <a
@@ -145,11 +123,11 @@ export function Footer() {
           </div>
 
           {/* Link Groups */}
-          {linkGroups.map((group, index) => (
+          {linkGroups.map((group: { title: string; links: { name: string; href: string }[] }, index: number) => (
             <nav key={index} aria-label={group.title}>
               <h3 className="font-serif text-lg text-dark-theme mb-5">{group.title}</h3>
               <ul className="space-y-3">
-                {group.links.map((link) => (
+                {group.links.map((link: { name: string; href: string }) => (
                   <li key={link.name}>
                     <button
                       onClick={() => scrollToSection(link.href)}
@@ -167,7 +145,7 @@ export function Footer() {
           <div>
             <h3 className="font-serif text-lg text-dark-theme mb-5">{t('footer.linkGroups.company.title')}</h3>
             <ul className="space-y-4">
-              {contactItems.map((item, index) => {
+              {contactItems.map((item: { icon: string; text: string }, index: number) => {
                 const IconComponent = iconMap[item.icon];
                 return (
                   <li key={index} className="flex items-start gap-3">
@@ -221,7 +199,7 @@ export function Footer() {
           <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-2 sm:gap-4 text-slate-400 text-[10px] md:text-xs">
             <span>{t('footer.copyrightText')}</span>
             <div className="flex flex-wrap items-center justify-center gap-3">
-              {getLegalLinks().map((link, index) => (
+              {getLegalLinks().map((link: string, index: number) => (
                 <div key={index} className="flex items-center">
                   <span className="hidden md:inline mr-3 text-slate-300">|</span>
                   <button className="hover:text-blue-600 transition-colors font-medium">{link}</button>
