@@ -274,7 +274,6 @@ export const translations = {
             "Notification : SMS instantané dès qu’un lead est capturé",
             "Transcription complète + résumé IA des appels",
             "Rapport : 'Night Shift Report' quotidien à 8h00",
-            "Suivi : Appels non résolus loggés avec transcription complète",
             "Langue : Français – spécialisé pour les marchés locaux (Québec)",
             "Réduction des no-shows : jusqu'à 30–50% grâce aux rappels intelligents"
           ]
@@ -289,6 +288,7 @@ export const translations = {
           description: "Couverture complète 24/7. Votre téléphone ne sonne plus dans le vide – il génère des revenus, même en plein milieu d’une intervention.",
           features: [
             "Inclut TOUT le forfait The Night Shift",
+            "Suivi : Appels non résolus loggés avec transcription complète",
             "Disponibilité : 24/7 (débordement jour + nuit complète)",
             "Routage : Humain d’abord (3 sonneries), l’IA prend le relais",
             "Réservation : Prise de RDV + rappels SMS (24h et 2h avant)",
@@ -869,7 +869,6 @@ export const translations = {
             "Notification: Instant SMS as soon as a lead is captured",
             "Full transcription + AI call summary",
             "Report: Daily 8 AM 'Night Shift Report'",
-            "Follow-up: Unresolved calls logged with full transcription",
             "Language: Optimized for local markets",
             "No-show reduction: up to 30–50% thanks to smart reminders"
           ]
@@ -884,6 +883,7 @@ export const translations = {
           description: "Full 24/7 coverage. Your phone stops ringing in a vacuum — it generates revenue, even during busy hours.",
           features: [
             "Includes EVERYTHING in 'The Night Shift'",
+            "Follow-up: Unresolved calls logged with full transcription",
             "Availability: 24/7 (Day overflow + Full after-hours)",
             "Routing: Human first (3 rings), AI takes over",
             "Booking: Appointment Booking + SMS reminders (24h/2h)",
@@ -1464,7 +1464,6 @@ export const translations = {
             "Notificación: SMS instantáneo al capturar un lead",
             "Transcripción completa + resumen IA de llamadas",
             "Informe: 'Night Shift Report' diario a las 8:00",
-            "Seguimiento: Llamadas no resueltas con transcripción",
             "Idioma: Optimizado para mercados locales",
             "Reducción de no-shows: hasta 30–50% con recordatorios"
           ]
@@ -1479,6 +1478,7 @@ export const translations = {
           description: "Cobertura completa 24/7. Su teléfono deja de sonar en el vacío: genera ingresos, incluso durante las horas de trabajo.",
           features: [
             "Incluye TODO del plan 'The Night Shift'",
+            "Seguimiento: Llamadas no resueltas con transcripción",
             "Disponibilidad: 24/7 (Desbordamiento día + Noche completa)",
             "Enrutamiento: Humano primero (3 tonos), la IA toma el relevo",
             "Reserva: Citas + recordatorios SMS (24h/2h)",
@@ -2061,7 +2061,6 @@ export const translations = {
             "Notifica: SMS istantaneo alla cattura di un lead",
             "Trascrizione completa + riepilogo IA chiamate",
             "Rapporto: 'Night Shift Report' quotidiano alle 8:00",
-            "Seguimento: Chiamate non risolte con trascrizione",
             "Lingua: Ottimizzato per i mercati locali",
             "Riduzione no-shows: fino al 30–50% con promemoria"
           ]
@@ -2076,6 +2075,7 @@ export const translations = {
           description: "Copertura completa 24/7. Il tuo telefono smette di squillare a vuoto — genera entrate, anche durante il lavoro.",
           features: [
             "Include TUTTO del pacchetto 'The Night Shift'",
+            "Seguimento: Chiamate non risolte con trascrizione",
             "Disponibilità: 24/7 (Overflow giorno + Notte intera)",
             "Routing: Umano prima (3 squilli), l'IA prende il sopravvento",
             "Prenotazione: Appuntamenti + promemoria SMS (24h/2h)",
