@@ -106,8 +106,8 @@ export const translations = {
     painPoints: {
       scriptText: "Le Coût du Statu Quo",
       subtitle: "POINTS DE FRICTION",
-      mainTitle: "Pourquoi la Réception Traditionnelle Échoue",
-      description: "Les entreprises perdent des revenus chaque jour à cause de limitations humaines évitables. Anvela élimine ces obstacles.",
+      mainTitle: "Quand la Réception Humaine Ne Peut Pas Tout Gérer",
+      description: "Entre les appels manqués, les heures fermées et les moments de forte affluence, même les meilleures équipes ne peuvent pas répondre à tout, tout le temps. Anvela prend le relais en arrière-plan pour que rien ne soit perdu.",
       items: [
         {
           title: "Fuite de Revenus",
@@ -722,8 +722,8 @@ export const translations = {
     painPoints: {
       scriptText: "The Cost of Inaction",
       subtitle: "FRICTION POINTS",
-      mainTitle: "Why Traditional Reception Fails",
-      description: "Businesses lose revenue every day due to avoidable human limitations. Anvela eliminates these barriers for good.",
+      mainTitle: "When Human Reception Can't Handle Everything",
+      description: "Between missed calls, closed hours, and peak times, even the best teams can't answer everything, all the time. Anvela takes over in the background so nothing is lost.",
       items: [
         {
           title: "Revenue Leakage",
@@ -1322,8 +1322,8 @@ export const translations = {
     painPoints: {
       scriptText: "El Costo de la Inacción",
       subtitle: "PUNTOS DE FRICCIÓN",
-      mainTitle: "Por Qué la Recepción Tradicional Falla",
-      description: "Las empresas pierden ingresos cada día debido a limitaciones humanas evitables. Anvela elimina estas barreras para siempre.",
+      mainTitle: "Cuando la Recepción Humana no Puede Manejarlo Todo",
+      description: "Entre las llamadas perdidas, el horario de cierre y los momentos de mayor afluencia, incluso los mejores equipos no pueden responder a todo, todo el tiempo. Anvela toma el relevo en segundo plano para que no se pierda nada.",
       items: [
         {
           title: "Fuga de Ingresos",
@@ -1925,8 +1925,8 @@ export const translations = {
     painPoints: {
       scriptText: "Il Costo dell'Inazione",
       subtitle: "PUNTI DI ATTRITO",
-      mainTitle: "Perché la Reception Tradizionale Fallisce",
-      description: "Le aziende perdono ricavi ogni giorno a causa di limitazioni umane evitabili. Anvela elimina queste barriere per sempre.",
+      mainTitle: "Quando la Reception Umana Non Può Gestire Tutto",
+      description: "Tra chiamate perse, orari di chiusura e momenti di punta, anche i team migliori non possono rispondere a tutto, tutto il tempo. Anvela subentra in background affinché nulla vada perduto.",
       items: [
         {
           title: "Perdita di Ricavi",
