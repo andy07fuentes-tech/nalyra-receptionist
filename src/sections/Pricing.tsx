@@ -57,24 +57,27 @@ export function Pricing() {
                         </div>
                     </div>
 
-                    {/* Billing Toggle */}
-                    <div className="flex justify-center mt-2 fade-up">
-                        <div className="relative flex items-stretch p-1.5 bg-slate-200/50 rounded-full border border-slate-200 w-auto shadow-inner">
-                            <div className={`absolute left-0 top-0 bottom-0 w-1/2 p-1.5 transition-transform duration-300 ease-in-out ${isYearly ? 'translate-x-full' : 'translate-x-0'}`}>
-                                <div className="w-full h-full bg-white rounded-full shadow-sm border border-slate-100 pb-1"></div>
-                            </div>
+                    {/* Classy Billing Toggle */}
+                    <div className="flex justify-center mt-4 fade-up">
+                        <div className="relative flex items-center p-1 bg-white/40 backdrop-blur-md rounded-2xl border border-slate-200/50 shadow-sm">
+                            {/* Animated Background Indicator */}
+                            <div 
+                                className={`absolute h-[calc(100%-8px)] transition-all duration-500 ease-out bg-slate-900 rounded-xl shadow-lg ${isYearly ? 'left-[calc(50%+4px)] w-[calc(50%-8px)]' : 'left-1 w-[calc(50%-8px)]'}`}
+                            />
+                            
                             <button
                                 onClick={() => setIsYearly(false)}
-                                className={`relative z-10 flex-1 px-6 sm:px-8 py-2.5 text-sm md:text-base font-bold tracking-wide transition-colors ${!isYearly ? 'text-blue-600' : 'text-slate-500 hover:text-slate-700'}`}
+                                className={`relative z-10 px-8 py-2.5 text-sm uppercase tracking-[0.2em] font-sans font-semibold transition-all duration-300 ${!isYearly ? 'text-white' : 'text-slate-500 hover:text-slate-800'}`}
                             >
                                 {t('pricing.monthly')}
                             </button>
+                            
                             <button
                                 onClick={() => setIsYearly(true)}
-                                className={`relative z-10 flex-1 px-6 sm:px-8 py-2.5 text-sm md:text-base font-bold tracking-wide transition-colors flex items-center justify-center ${isYearly ? 'text-blue-600' : 'text-slate-500 hover:text-slate-700'}`}
+                                className={`relative z-10 px-8 py-2.5 text-sm uppercase tracking-[0.2em] font-sans font-semibold transition-all duration-300 flex items-center gap-3 ${isYearly ? 'text-white' : 'text-slate-500 hover:text-slate-800'}`}
                             >
                                 {t('pricing.yearly')}
-                                <span className={`ml-2.5 inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-widest border transition-all duration-300 ${isYearly ? 'bg-amber-50 text-amber-700 border-amber-200 shadow-sm' : 'bg-slate-50 text-slate-400 border-slate-100'}`}>
+                                <span className={`flex items-center px-2 py-0.5 rounded-md text-[9px] border transition-all duration-500 ${isYearly ? 'bg-gold-500/20 text-gold-200 border-gold-500/30' : 'bg-slate-100 text-slate-400 border-slate-200'}`}>
                                     {t('pricing.yearlyBonus')}
                                 </span>
                             </button>
