@@ -47,6 +47,11 @@ export const translations = {
         savings: { value: "50", suffix: "%", label: "Réduction des Coûts" },
       },
     },
+    missedCalls: {
+      subtitle: "IMPACT FINANCIER",
+      title: "Chaque appel manqué est une opportunité perdue.",
+      cta: "Ne perdez plus d'argent",
+    },
 
     // Gallery
     gallery: {
@@ -658,6 +663,11 @@ export const translations = {
         availability: { value: "24", suffix: "/7", label: "Always Available" },
       },
     },
+    missedCalls: {
+      subtitle: "FINANCIAL IMPACT",
+      title: "Every missed call is a lost opportunity.",
+      cta: "Stop losing money",
+    },
 
     // Gallery
     gallery: {
@@ -1255,6 +1265,11 @@ export const translations = {
         availability: { value: "24", suffix: "/7", label: "Siempre Disponible" },
       },
     },
+    missedCalls: {
+      subtitle: "IMPACTO FINANCIERO",
+      title: "Cada llamada perdida es una oportunidad perdida.",
+      cta: "Deja de perder dinero",
+    },
 
     // Gallery
     gallery: {
@@ -1851,6 +1866,11 @@ export const translations = {
         availability: { value: "24", suffix: "/7", label: "Sempre Disponibile" },
         savings: { value: "50", suffix: "%", label: "Riduzione Costi" },
       },
+    },
+    missedCalls: {
+      subtitle: "IMPATTO FINANZIARIO",
+      title: "Ogni chiamata persa è un'opportunità persa.",
+      cta: "Smetti di perdere soldi",
     },
 
     // Gallery

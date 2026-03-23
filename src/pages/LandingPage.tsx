@@ -1,6 +1,7 @@
 import { useState, useCallback, useEffect } from 'react';
 import { Navigation } from '../sections/Navigation';
 import { Hero } from '../sections/Hero';
+import { MissedCalls } from '../sections/MissedCalls';
 import { PainPoints } from '../sections/PainPoints';
 import { VideoDemo } from '../sections/VideoDemo';
 import { FeatureShowcase } from '../sections/FeatureShowcase';
@@ -84,6 +85,7 @@ export default function LandingPage() {
 
                 <main className="bg-slate-50">
                     <Hero isReady={!isLoading} />
+                    <MissedCalls />
                     <PainPoints />
                     <VideoDemo />
                     <FeatureShowcase />
