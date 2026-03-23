@@ -23,7 +23,7 @@ const galleryItems: GalleryItem[] = [
     size: 'large',
     offset: 'mt-0'
   },
-  ...[1, 2, 3, 4, 5, 7, 8, 9, 10, 11].map(i => ({
+  ...[1, 2, 3, 4, 5, 7, 8, 10, 11].map(i => ({
     id: i,
     video: `/videos/showcase-${i}.mp4`,
     titleKey: `gallery.item${i}.title`,
@@ -75,7 +75,7 @@ export function HorizontalGallery() {
         <span className="font-script text-2xl md:text-3xl text-blue-600 block mb-2 opacity-80 decoration-blue-200 decoration-wavy underline underline-offset-8">
           {t('gallery.scriptText')}
         </span>
-        <h2 className="font-serif text-3xl md:text-5xl lg:text-7xl text-neutral-900 max-w-3xl leading-[1.05] tracking-tight mx-auto md:mx-0">
+        <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl text-neutral-900 max-w-3xl leading-[1.05] tracking-tight mx-auto md:mx-0">
           {t('gallery.mainTitle')}
         </h2>
       </div>
@@ -109,12 +109,12 @@ export function HorizontalGallery() {
 
             {/* Labels Below Frame */}
             <div className="mt-4 transform transition-transform duration-500 group-hover:translate-x-1">
-              <p className={`text-[10px] md:text-xs font-mono tracking-widest uppercase mb-1 ${
+              <p className={`text-[9px] md:text-[10px] font-mono tracking-widest uppercase mb-1 ${
                 item.id === 0 ? 'text-blue-600 font-bold' : 'text-neutral-400'
               }`}>
                 {t(item.subtitleKey)}
               </p>
-              <h3 className="text-neutral-900 font-serif text-lg md:text-xl leading-tight">
+              <h3 className="text-neutral-900 font-serif text-sm md:text-base leading-tight">
                 {t(item.titleKey)}
               </h3>
             </div>
