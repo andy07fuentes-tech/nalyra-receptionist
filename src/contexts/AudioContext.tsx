@@ -11,13 +11,13 @@ interface AudioContextType {
 const AudioContext = createContext<AudioContextType | undefined>(undefined);
 
 export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [isMuted, setIsMuted] = useState(true);
+  const [isMuted, setIsMuted] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     // Create audio element
-    const audio = new Audio('https://cdn.pixabay.com/audio/2023/06/12/audio_4e260265ef.mp3');
+    const audio = new Audio('/audio/ambient.mp3');
     audio.loop = true;
     audio.volume = 0.4; // Subtle background volume
     audioRef.current = audio;

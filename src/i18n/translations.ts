@@ -28,6 +28,7 @@ export const translations = {
       brandName: "Anvela",
       brandSubname: "Communication Intelligente",
       yearText: "Nouvelle Génération",
+      enterButton: "Lancer l'Expérience",
     },
 
     // Hero
@@ -649,6 +650,7 @@ export const translations = {
       brandName: "Anvela",
       brandSubname: "Intelligent Communication",
       yearText: "Next Gen",
+      enterButton: "Start Experience",
     },
 
     // Hero
@@ -1255,6 +1257,7 @@ export const translations = {
       brandName: "Recepcionista IA",
       brandSubname: "Comunicación Inteligente",
       yearText: "Next Gen",
+      enterButton: "Iniciar Experiencia",
     },
 
     // Hero
@@ -1860,6 +1863,7 @@ export const translations = {
       brandName: "Receptionist IA",
       brandSubname: "Comunicazione Intelligente",
       yearText: "Nuova Generazione",
+      enterButton: "Inizia Esperienza",
     },
 
     // Hero
