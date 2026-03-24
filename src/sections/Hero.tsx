@@ -177,22 +177,22 @@ export function Hero({ isReady }: { isReady: boolean }) {
         </h1>
 
         {/* Main CTA: Start Onboarding */}
-        <div className={`mt-6 md:mt-10 transition-all duration-1000 ease-out ${phase >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: '0.4s' }}>
-          <GradientButton variant="variant" asChild className="group h-auto rounded-2xl shadow-[0_0_30px_rgba(201,98,135,0.3)] hover:scale-105 active:scale-95 border-0">
+        <div className={`mt-6 md:mt-8 transition-all duration-1000 ease-out ${phase >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: '0.4s' }}>
+          <GradientButton variant="variant" asChild className="group h-auto rounded-xl shadow-[0_0_20px_rgba(201,98,135,0.2)] active:scale-95 border-0">
             <Link
               to="/onboarding"
-              className="inline-flex items-center gap-4 px-10 py-5 w-full h-full"
+              className="inline-flex items-center gap-3 px-8 py-4 w-full h-full"
             >
               <div className="flex flex-col items-start leading-none relative z-10 w-full text-left">
-                <span className="text-[10px] tracking-[0.3em] text-white/60 mb-1 uppercase font-[Poppins]">{t('hero.ctaSubtitle')}</span>
-                <span className="font-serif text-xl md:text-2xl text-white font-normal">{t('hero.ctaMain')}</span>
+                <span className="text-[9px] tracking-[0.2em] text-white/50 mb-1 uppercase font-[Poppins]">{t('hero.ctaSubtitle')}</span>
+                <span className="font-serif text-lg md:text-xl text-white font-normal">{t('hero.ctaMain')}</span>
               </div>
-              <div className="p-2 bg-white/10 rounded-lg transition-colors z-10 relative ml-auto">
-                <ArrowRight className="w-6 h-6 text-white transition-transform duration-300 group-hover:translate-x-1" />
+              <div className="p-1.5 bg-white/10 rounded-lg transition-colors z-10 relative ml-auto">
+                <ArrowRight className="w-5 h-5 text-white transition-transform duration-300 group-hover:translate-x-1" />
               </div>
             </Link>
           </GradientButton>
-          <p className="text-white text-[10px] uppercase tracking-widest mt-4 font-bold">{t('hero.noCreditCard')}</p>
+          <p className="text-white text-[9px] uppercase tracking-widest mt-3 font-bold opacity-60">{t('hero.noCreditCard')}</p>
         </div>
 
         {/* Secondary CTAs */}
