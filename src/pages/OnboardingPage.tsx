@@ -11,6 +11,8 @@ export default function OnboardingPage() {
     const [step, setStep] = useState(1);
     const [selectedBusiness, setSelectedBusiness] = useState<any>(null);
     const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
+    const [phoneNumber, setPhoneNumber] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     // GOOGLE PLACES LOGIC
     const {
@@ -46,6 +48,27 @@ export default function OnboardingPage() {
 
     const handleBack = () => {
         if (step > 1) setStep(step - 1);
+    };
+
+    const handleSubmit = async () => {
+        if (!phoneNumber || isSubmitting) return;
+        setIsSubmitting(true);
+        try {
+            await fetch('https://n8n.srv1401769.hstgr.cloud/webhook/anvela/new-lead', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    businessName: selectedBusiness?.structured_formatting?.main_text || selectedBusiness?.description,
+                    businessAddress: selectedBusiness?.description,
+                    plan: selectedPlan,
+                    phone: phoneNumber,
+                }),
+            });
+        } catch (e) {
+            // fire and forget — still advance to confirmation
+        }
+        setStep(4);
+        setIsSubmitting(false);
     };
 
     const tiers = (t('pricing.tiers') as any) || [];
@@ -307,14 +330,17 @@ export default function OnboardingPage() {
                                 <input
                                     type="tel"
                                     placeholder="+1 (514) 000-0000"
+                                    value={phoneNumber}
+                                    onChange={(e) => setPhoneNumber(e.target.value)}
                                     className="w-full h-14 px-4 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-blue-600 transition-all text-slate-900 text-lg tracking-widest shadow-inner placeholder:text-slate-300"
                                 />
                             </div>
                             <button
-                                onClick={() => setStep(4)}
-                                className="w-full h-16 bg-slate-900 hover:bg-black text-white rounded-xl font-bold uppercase tracking-widest shadow-xl shadow-slate-900/20 transition-all flex items-center justify-center gap-4"
+                                onClick={handleSubmit}
+                                disabled={!phoneNumber || isSubmitting}
+                                className={`w-full h-16 rounded-xl font-bold uppercase tracking-widest shadow-xl transition-all flex items-center justify-center gap-4 ${!phoneNumber || isSubmitting ? 'bg-slate-200 text-slate-500 cursor-not-allowed' : 'bg-slate-900 hover:bg-black text-white shadow-slate-900/20'}`}
                             >
-                                Request Integration Call
+                                {isSubmitting ? 'Calling...' : 'Request Integration Call'}
                                 <ArrowRight className="w-5 h-5" />
                             </button>
                             <div className="flex justify-center">
