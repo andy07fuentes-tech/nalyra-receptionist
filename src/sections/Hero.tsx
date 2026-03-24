@@ -55,21 +55,44 @@ export function Hero({ isReady }: { isReady: boolean }) {
   const count2 = useCountUp(stats[2]?.value ?? 0, 1800, phase >= 4);
   const counts = [count0, count1, count2];
 
-  // GSAP ScrollTrigger animation
+  // GSAP ScrollTrigger animation - Cinematic Fly-Through
   useEffect(() => {
     if (!sectionRef.current || !contentRef.current) return;
 
     const ctx = gsap.context(() => {
+      // The "Fly-Through" effect: Scale up and blur out content
       gsap.to(contentRef.current, {
-        yPercent: 20,
-        ease: 'none',
+        scale: 1.4,
+        filter: 'blur(40px)',
+        opacity: 0,
+        yPercent: -10,
+        ease: 'power1.inOut',
         scrollTrigger: {
           trigger: sectionRef.current,
           start: 'top top',
           end: 'bottom top',
           scrub: true,
+          pin: true, // Pin the section for the cinematic entrance
+          anticipatePin: 1
         },
       });
+
+      // Subtle background scale-up for depth
+      const wrapper = sectionRef.current;
+      if (!wrapper) return;
+      const splineWrapper = wrapper.querySelector('.z-0');
+      if (splineWrapper) {
+        gsap.to(splineWrapper, {
+          scale: 1.1,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: wrapper,
+            start: 'top top',
+            end: 'bottom top',
+            scrub: true
+          }
+        });
+      }
     }, sectionRef);
 
     return () => ctx.revert();
