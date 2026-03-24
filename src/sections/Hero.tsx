@@ -192,7 +192,6 @@ export function Hero({ isReady }: { isReady: boolean }) {
               </div>
             </Link>
           </GradientButton>
-          <p className="text-white text-[9px] uppercase tracking-widest mt-3 font-bold opacity-60">{t('hero.noCreditCard')}</p>
         </div>
 
         {/* Secondary CTAs */}
