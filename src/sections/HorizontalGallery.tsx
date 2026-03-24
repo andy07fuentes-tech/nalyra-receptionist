@@ -72,7 +72,10 @@ export function HorizontalGallery() {
   return (
     <div ref={component} className="overflow-hidden bg-white py-16 md:pt-24 md:pb-32 border-y border-neutral-100">
       <div className="container-custom mb-12 px-4 text-center md:text-left">
-        <span className="font-script text-2xl md:text-3xl text-blue-600 block mb-2 opacity-80 decoration-blue-200 decoration-wavy underline underline-offset-8">
+        <span 
+          className="font-script text-2xl md:text-3xl text-blue-600 block mb-2 opacity-80"
+          style={{ backgroundImage: 'none', textDecoration: 'none' }}
+        >
           {t('gallery.scriptText')}
         </span>
         <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl text-neutral-900 max-w-3xl leading-[1.05] tracking-tight mx-auto md:mx-0">

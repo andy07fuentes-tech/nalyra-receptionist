@@ -59,9 +59,12 @@ export function Navigation() {
             </span>
           </button>
 
-          <span className={`text-[9px] md:text-[10px] transition-colors duration-300 ${isScrolled ? 'text-blue-600' : 'text-blue-400'} tracking-widest uppercase mt-0.5`}>
-            {t('nav.tagline')}
-          </span>
+          <span 
+                className="font-script text-xl text-blue-600"
+                style={{ backgroundImage: 'none', textDecoration: 'none' }}
+              >
+                {t('nav.tagline')}
+              </span>
         </div>
 
         {/* Right: Actions & Toggle */}

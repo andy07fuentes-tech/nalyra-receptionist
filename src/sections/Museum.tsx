@@ -93,7 +93,12 @@ export function Museum() {
           <div>
             {/* Section Header */}
             <div className="slide-in-left mb-10">
-              <span className="font-script text-3xl text-blue-600 block mb-2">{t('technology.scriptText')}</span>
+              <span 
+                className="font-script text-3xl text-blue-600 block mb-2"
+                style={{ backgroundImage: 'none', textDecoration: 'none' }}
+              >
+                {t('technology.scriptText')}
+              </span>
               <span className="text-blue-500 text-xs uppercase tracking-[0.2em] mb-4 block">
                 {t('technology.subtitle')}
               </span>
@@ -177,7 +182,10 @@ export function Museum() {
                 />
               </div>
               <div>
-                <p className="font-script text-2xl text-blue-600 mb-1">
+                <p 
+                  className="font-script text-2xl text-blue-600 mb-1"
+                  style={{ backgroundImage: 'none', textDecoration: 'none' }}
+                >
                   &ldquo;{t('technology.quote.prefix')}&rdquo;
                 </p>
                 <p className="text-slate-500 text-sm italic">

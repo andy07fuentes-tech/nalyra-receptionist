@@ -89,7 +89,12 @@ export function SolutionShowcase() {
       <div className="container-custom relative">
         {/* Header */}
         <div className="text-center mb-16 md:mb-20">
-          <span className="font-script text-3xl text-blue-600 block mb-2">{t('features.scriptText')}</span>
+          <span 
+            className="font-script text-3xl text-blue-600 block mb-2"
+            style={{ backgroundImage: 'none', textDecoration: 'none' }}
+          >
+            {t('features.scriptText')}
+          </span>
           <span className="text-blue-500 text-xs uppercase tracking-[0.2em] mb-4 block">
             {t('features.subtitle')}
           </span>

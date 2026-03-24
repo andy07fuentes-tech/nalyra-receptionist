@@ -96,7 +96,12 @@ export function WineryCarousel() {
       <div className="container-custom relative">
         {/* Section Header */}
         <div className="fade-up text-center mb-12">
-          <span className="font-script text-3xl text-blue-400 block mb-2">{t('howItWorks.scriptText')}</span>
+          <span 
+            className="font-script text-3xl text-blue-400 block mb-2"
+            style={{ backgroundImage: 'none', textDecoration: 'none' }}
+          >
+            {t('howItWorks.scriptText')}
+          </span>
           <span className="text-blue-500 text-xs uppercase tracking-[0.2em] mb-4 block">
             {t('howItWorks.subtitle')}
           </span>
