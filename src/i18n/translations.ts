@@ -964,6 +964,18 @@ export const translations = {
         {
           question: "Can the AI really take appointments?",
           answer: "Yes, absolutely. Anvela connects directly to your calendar (Google, Outlook, Calendly, etc.). It checks your availability in real-time, reserves the slot, and sends you an instant confirmation."
+        },
+        {
+          question: "What happens if the AI doesn't know the answer?",
+          answer: "If a request is too complex, Anvela can either transfer the call to a live member of your team (Smart Routing), or take a detailed message with the client's contact information for a callback."
+        },
+        {
+          question: "Can I customize the voice and script?",
+          answer: "Yes. We work with you to define the tone, vocabulary, and response scenarios. Your receptionist can be formal, friendly, or specialized according to your industry."
+        },
+        {
+          question: "Is there a long-term commitment?",
+          answer: "Our 'The Night Shift' and 'The Co-Pilot' plans have a 3-month minimum commitment. The 'The Elite' plan requires 6 months due to the complexity of the custom CRM integration."
         }
       ]
     },
@@ -1569,6 +1581,18 @@ export const translations = {
         {
           question: "¿Puede la IA realmente concertar citas?",
           answer: "Sí, absolutamente. Anvela se conecta directamente a su calendario (Google, Outlook, Calendly, etc.). Comprueba su disponibilidad en tiempo real, reserva el espacio y le envía una confirmación instantánea."
+        },
+        {
+          question: "¿Qué pasa si la IA no conoce la respuesta?",
+          answer: "Si una solicitud es demasiado compleja, Anvela puede desviar la llamada a un miembro de su equipo en vivo (Enrutamiento Inteligente) o tomar un mensaje detallado con la información de contacto del cliente para una devolución de llamada."
+        },
+        {
+          question: "¿Puedo personalizar la voz y el guion?",
+          answer: "Sí. Trabajamos con usted para definir el tono, el vocabulario y los escenarios de respuesta. Su recepcionista puede ser formal, amable o especializada según su sector de actividad."
+        },
+        {
+          question: "¿Existe un compromiso a largo plazo?",
+          answer: "Nuestros planes 'The Night Shift' y 'The Co-Pilot' tienen un compromiso mínimo de 3 meses. El plan 'The Elite' requiere 6 meses debido a la complejidad de la integración personalizada con CRM."
         }
       ]
     },
@@ -2166,6 +2190,18 @@ export const translations = {
         {
           question: "L'IA può davvero prendere appuntamenti?",
           answer: "Sì, assolutamente. Anvela si connette direttamente al tuo calendario (Google, Outlook, Calendly, etc.). Verifica la tua disponibilità in tempo reale, prenota lo slot e ti invia una conferma istantanea."
+        },
+        {
+          question: "Cosa succede se l'IA non conosce la risposta?",
+          answer: "Se una richiesta è troppo complessa, Anvela può trasferire la chiamata a un membro del tuo team in diretta (Instradamento Intelligente) o prendere un messaggio dettagliato con i recapiti del cliente per essere ricontattato."
+        },
+        {
+          question: "Posso personalizzare la voce e lo script?",
+          answer: "Sì. Lavoriamo con te per definire il tono, il vocabolario e gli scenari di risposta. Il tuo receptionist può essere formale, amichevole o specializzato in base al tuo settore di attività."
+        },
+        {
+          question: "C'è un impegno a lungo termine?",
+          answer: "I nostri piani 'The Night Shift' e 'The Co-Pilot' hanno un impegno minimo di 3 mesi. Il piano 'The Elite' richiede 6 mesi a causa della complessità dell'integrazione CRM personalizzata."
         }
       ]
     },
