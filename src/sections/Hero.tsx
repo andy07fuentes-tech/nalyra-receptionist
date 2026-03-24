@@ -7,6 +7,7 @@ import gsap from 'gsap';
 import { useInView } from '../hooks/useInView';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { GradientButton } from '../components/ui/gradient-button';
+import { useAudio } from '../contexts/AudioContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -35,6 +36,7 @@ function useCountUp(target: number, duration = 2000, start = false) {
 }
 
 export function Hero({ isReady }: { isReady: boolean }) {
+  const { play } = useAudio();
   const { t } = useLanguage();
   const sectionRef = useRef<HTMLElement>(null);
   const [inViewRef, inView] = useInView({ threshold: 0.05 });
@@ -75,6 +77,9 @@ export function Hero({ isReady }: { isReady: boolean }) {
 
   useEffect(() => {
     if (!isReady) return;
+    if (isReady) {
+      play();
+    }
     const t1 = setTimeout(() => setPhase(1), 100);
     const t2 = setTimeout(() => setPhase(2), 600);
     const t3 = setTimeout(() => setPhase(3), 1200);

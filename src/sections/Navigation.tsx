@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { LanguageToggle } from '../components/LanguageToggle';
 import { Link } from 'react-router-dom';
+import { Volume2, VolumeX } from 'lucide-react';
+import { useAudio } from '../contexts/AudioContext';
 
 export function Navigation() {
   const { t } = useLanguage();
@@ -78,10 +80,40 @@ export function Navigation() {
           >
             {t('nav.freeTrial')}
           </Link>
+          
+          <SoundToggle isScrolled={isScrolled} />
+          
           <LanguageToggle isScrolled={isScrolled} />
         </div>
 
       </div>
     </nav>
+  );
+}
+
+function SoundToggle({ isScrolled }: { isScrolled: boolean }) {
+  const { isMuted, setIsMuted, isPlaying, play } = useAudio();
+
+  const handleToggle = () => {
+    if (isMuted) {
+      setIsMuted(false);
+      if (!isPlaying) play();
+    } else {
+      setIsMuted(true);
+    }
+  };
+
+  return (
+    <button
+      onClick={handleToggle}
+      className={`p-2 rounded-full transition-all duration-300 ${isScrolled ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-white/10 text-white'}`}
+      aria-label={isMuted ? "Unmute" : "Mute"}
+    >
+      {isMuted ? (
+        <VolumeX className="w-5 h-5 opacity-60" />
+      ) : (
+        <Volume2 className="w-5 h-5 text-blue-500 animate-pulse" />
+      )}
+    </button>
   );
 }
