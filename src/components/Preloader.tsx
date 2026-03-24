@@ -70,52 +70,53 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
   // Magnetic Button Effect & Cinematic Background
   useGSAP(() => {
     if (phase === 'ready' && containerRef.current && buttonContainerRef.current) {
-      // Cinematic background shift - Atmospheric Blue
+      // Cinematic background shift - Deep Black
       gsap.to(containerRef.current, {
-        backgroundColor: '#eef2ff',
+        backgroundColor: '#000000',
         duration: 3,
         ease: 'power2.out'
       });
 
-      // Ray of Light Reveal for the Button
+      // Ray of Light Reveal for the Button - Brighter for Black Background
       gsap.fromTo(lightRayRef.current,
         { opacity: 0, scaleY: 0, transformOrigin: 'top' },
-        { opacity: 1, scaleY: 1.5, duration: 2, ease: 'power4.out', delay: 0.1 }
+        { opacity: 0.4, scaleY: 1.8, duration: 2.5, ease: 'power4.out', delay: 0.1 }
       );
 
       // Focus Reveal Animation for the Button
       gsap.fromTo(buttonContainerRef.current,
         { 
           opacity: 0, 
-          scale: 0.7,
-          filter: 'blur(20px)',
-          y: 40
+          scale: 0.6,
+          filter: 'blur(25px)',
+          y: 50
         },
         { 
           opacity: 1, 
           scale: 1,
           filter: 'blur(0px)',
           y: 0,
-          duration: 1.5,
-          ease: 'back.out(1.5)',
-          delay: 0.3
+          duration: 1.8,
+          ease: 'back.out(1.4)',
+          delay: 0.4
         }
       );
 
-      // Brand Name floating reveal
+      // Brand Name floating reveal - Invert to White
       if (brandRef.current) {
         gsap.to(brandRef.current, {
-          y: -120,
-          opacity: 0.8,
-          duration: 1.2,
+          y: -140,
+          opacity: 1,
+          color: '#ffffff',
+          duration: 1.5,
           ease: 'power3.out'
         });
 
         gsap.fromTo(brandRef.current, 
-          { filter: 'brightness(1)' },
+          { filter: 'brightness(0.8)' },
           { 
-            filter: 'brightness(1.4)', 
-            duration: 2, 
+            filter: 'brightness(1.5)', 
+            duration: 2.5, 
             repeat: -1, 
             yoyo: true, 
             ease: 'sine.inOut' 
