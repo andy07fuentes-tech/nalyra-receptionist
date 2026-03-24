@@ -6,6 +6,51 @@ import { Play } from 'lucide-react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
+// Fog Layer Component for drifting clouds
+function FogLayer({ phase }: { phase: 'loading' | 'ready' | 'fading' }) {
+  const fogRef1 = useRef<HTMLDivElement>(null);
+  const fogRef2 = useRef<HTMLDivElement>(null);
+  const fogRef3 = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    const refs = [fogRef1, fogRef2, fogRef3];
+    refs.forEach((ref, i) => {
+      if (ref.current) {
+        // Continuous drifting
+        gsap.to(ref.current, {
+          x: '+=100',
+          y: '+=50',
+          duration: 20 + i * 5,
+          repeat: -1,
+          yoyo: true,
+          ease: 'sine.inOut'
+        });
+      }
+    });
+    
+    // Mouse parallax for fog
+    const handleMouseMove = (e: MouseEvent) => {
+      const x = (e.clientX - window.innerWidth / 2) * 0.05;
+      const y = (e.clientY - window.innerHeight / 2) * 0.05;
+      
+      gsap.to(fogRef1.current, { x: x * 0.5, y: y * 0.5, duration: 1 });
+      gsap.to(fogRef2.current, { x: x * 0.8, y: y * 0.8, duration: 1.2 });
+      gsap.to(fogRef3.current, { x: x * 1.2, y: y * 1.2, duration: 1.5 });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  return (
+    <div className={`absolute inset-0 overflow-hidden pointer-events-none transition-opacity duration-2000 ${phase === 'ready' ? 'opacity-100' : 'opacity-40'}`}>
+      <div ref={fogRef1} className="absolute top-[-10%] left-[-10%] w-[120%] h-[120%] bg-[radial-gradient(circle,rgba(255,255,255,0.8)_0%,transparent_60%)] blur-[100px] opacity-30" />
+      <div ref={fogRef2} className="absolute top-[20%] left-[10%] w-[80%] h-[80%] bg-[radial-gradient(circle,rgba(230,240,255,0.6)_0%,transparent_70%)] blur-[120px] opacity-20" />
+      <div ref={fogRef3} className="absolute bottom-[-10%] right-[-10%] w-[100%] h-[100%] bg-[radial-gradient(circle,rgba(255,255,255,0.7)_0%,transparent_50%)] blur-[150px] opacity-40" />
+    </div>
+  );
+}
+
 export function Preloader({ onComplete }: { onComplete: () => void }) {
   const { t } = useLanguage();
   const { play, setIsMuted } = useAudio();
@@ -14,6 +59,7 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const buttonContainerRef = useRef<HTMLDivElement>(null);
   const brandRef = useRef<HTMLDivElement>(null);
+  const lightRayRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Show the "Ready" button after the initial animation
@@ -24,45 +70,52 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
   // Magnetic Button Effect & Cinematic Background
   useGSAP(() => {
     if (phase === 'ready' && containerRef.current && buttonContainerRef.current) {
-      // Cinematic background shift
+      // Cinematic background shift - Atmospheric Blue
       gsap.to(containerRef.current, {
-        backgroundColor: '#f8faff',
-        duration: 2,
+        backgroundColor: '#eef2ff',
+        duration: 3,
         ease: 'power2.out'
       });
+
+      // Ray of Light Reveal for the Button
+      gsap.fromTo(lightRayRef.current,
+        { opacity: 0, scaleY: 0, transformOrigin: 'top' },
+        { opacity: 1, scaleY: 1.5, duration: 2, ease: 'power4.out', delay: 0.1 }
+      );
 
       // Focus Reveal Animation for the Button
       gsap.fromTo(buttonContainerRef.current,
         { 
           opacity: 0, 
-          scale: 0.8,
-          filter: 'blur(15px)',
-          y: 20
+          scale: 0.7,
+          filter: 'blur(20px)',
+          y: 40
         },
         { 
           opacity: 1, 
           scale: 1,
           filter: 'blur(0px)',
           y: 0,
-          duration: 1.2,
-          ease: 'back.out(1.7)',
-          delay: 0.2
+          duration: 1.5,
+          ease: 'back.out(1.5)',
+          delay: 0.3
         }
       );
 
-      // Light sweep on brand name
+      // Brand Name floating reveal
       if (brandRef.current) {
         gsap.to(brandRef.current, {
-          y: -100, // Move up more to make room for centered button
-          duration: 1,
+          y: -120,
+          opacity: 0.8,
+          duration: 1.2,
           ease: 'power3.out'
         });
 
         gsap.fromTo(brandRef.current, 
           { filter: 'brightness(1)' },
           { 
-            filter: 'brightness(1.5)', 
-            duration: 1.5, 
+            filter: 'brightness(1.4)', 
+            duration: 2, 
             repeat: -1, 
             yoyo: true, 
             ease: 'sine.inOut' 
@@ -73,8 +126,9 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
       // Continuous Floating Animation
       const floatTimeline = gsap.timeline({ repeat: -1, yoyo: true });
       floatTimeline.to(buttonContainerRef.current, {
-        y: -10,
-        duration: 2,
+        y: -12,
+        rotation: 1,
+        duration: 2.5,
         ease: 'sine.inOut'
       });
 
@@ -90,18 +144,18 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
         const distanceY = e.clientY - btnY;
         const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
 
-        if (distance < 150) {
+        if (distance < 200) {
           gsap.to(btn, {
-            x: distanceX * 0.15,
-            y: distanceY * 0.15,
-            duration: 0.3,
+            x: distanceX * 0.12,
+            y: distanceY * 0.12,
+            duration: 0.4,
             ease: 'power2.out'
           });
         } else {
           gsap.to(btn, {
             x: 0,
             y: 0,
-            duration: 0.5,
+            duration: 0.6,
             ease: 'power2.out'
           });
         }
@@ -128,6 +182,15 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
       className={`fixed inset-0 z-[9999] bg-white flex flex-col items-center justify-center transition-all duration-1000 ${phase === 'fading' ? 'opacity-0 pointer-events-none' : 'opacity-100'
         }`}
     >
+      {/* 3D Drifting Fog Rendering */}
+      <FogLayer phase={phase} />
+
+      {/* Ray of Light Beam */}
+      <div 
+        ref={lightRayRef}
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-full bg-gradient-to-b from-white/20 to-transparent blur-3xl pointer-events-none"
+      />
+
       {/* Brand Name */}
       <div 
         ref={brandRef}
@@ -150,41 +213,33 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
       {/* Action Button - Centered Container */}
       <div 
         ref={buttonContainerRef}
-        className={`absolute inset-0 flex flex-col items-center justify-center gap-6 transition-opacity duration-500 ${phase === 'ready' ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        className={`absolute inset-0 flex flex-col items-center justify-center gap-8 transition-opacity duration-1000 ${phase === 'ready' ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
       >
         <div className="relative group">
-          {/* Energy Pulse Aura */}
-          <div className="absolute inset-0 bg-blue-400/20 blur-3xl rounded-full animate-pulse scale-150 transition-opacity duration-1000 group-hover:opacity-60" />
+          {/* Energy Pulse Aura - Deep Fog Glow */}
+          <div className="absolute inset-0 bg-blue-300/30 blur-[100px] rounded-full animate-pulse scale-150 transition-opacity duration-1000 group-hover:opacity-80" />
           
           <GradientButton 
             variant="variant" 
             onClick={handleStart}
-            className="group px-12 py-6 rounded-full shadow-2xl hover:scale-110 active:scale-95 border-0 relative overflow-hidden transition-transform duration-300"
+            className="group px-14 py-7 rounded-full shadow-2xl hover:scale-110 active:scale-95 border-0 relative overflow-hidden transition-all duration-500"
           >
-            {/* Inner button sweep effect */}
-            <div className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out" />
+            {/* Inner button focus sweep */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000 ease-in-out" />
             
-            <span className="flex items-center gap-4 text-white font-serif text-2xl tracking-widest relative z-10 uppercase">
-              <Play className="w-6 h-6 fill-current" />
+            <span className="flex items-center gap-5 text-white font-serif text-3xl tracking-[0.15em] relative z-10 uppercase">
+              <Play className="w-7 h-7 fill-current" />
               {t('preloader.enterButton')}
             </span>
           </GradientButton>
         </div>
-        <p className="text-[11px] text-slate-400 uppercase tracking-[0.4em] animate-pulse">
+        <p className="text-[12px] text-slate-500 uppercase tracking-[0.5em] animate-pulse">
           Experience Ambient Audio
         </p>
       </div>
 
-      {/* Footer text */}
-      <p
-        className={`preloader-text mt-6 text-[10px] text-slate-400 uppercase tracking-[0.4em] font-sans transition-all duration-1000 ${phase === 'ready' ? 'opacity-0' : ''}`}
-        style={{ animationDelay: '0.5s' }}
-      >
-        {t('preloader.yearText')}
-      </p>
-
-      {/* Subtle background glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.05)_0%,transparent_70%)] pointer-events-none" />
+      {/* Subtle background glow override */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.08)_0%,transparent_80%)] pointer-events-none" />
     </div>
   );
 }
