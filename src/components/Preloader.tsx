@@ -26,13 +26,38 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
     if (phase === 'ready' && containerRef.current && buttonContainerRef.current) {
       // Cinematic background shift
       gsap.to(containerRef.current, {
-        backgroundColor: '#f8faff', // Subtle blue-ish white tint
+        backgroundColor: '#f8faff',
         duration: 2,
         ease: 'power2.out'
       });
 
+      // Focus Reveal Animation for the Button
+      gsap.fromTo(buttonContainerRef.current,
+        { 
+          opacity: 0, 
+          scale: 0.8,
+          filter: 'blur(15px)',
+          y: 20
+        },
+        { 
+          opacity: 1, 
+          scale: 1,
+          filter: 'blur(0px)',
+          y: 0,
+          duration: 1.2,
+          ease: 'back.out(1.7)',
+          delay: 0.2
+        }
+      );
+
       // Light sweep on brand name
       if (brandRef.current) {
+        gsap.to(brandRef.current, {
+          y: -100, // Move up more to make room for centered button
+          duration: 1,
+          ease: 'power3.out'
+        });
+
         gsap.fromTo(brandRef.current, 
           { filter: 'brightness(1)' },
           { 
@@ -44,6 +69,14 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
           }
         );
       }
+
+      // Continuous Floating Animation
+      const floatTimeline = gsap.timeline({ repeat: -1, yoyo: true });
+      floatTimeline.to(buttonContainerRef.current, {
+        y: -10,
+        duration: 2,
+        ease: 'sine.inOut'
+      });
 
       const handleMouseMove = (e: MouseEvent) => {
         const btn = buttonContainerRef.current;
@@ -57,11 +90,10 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
         const distanceY = e.clientY - btnY;
         const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
 
-        // Magnetic pull within 150px
         if (distance < 150) {
           gsap.to(btn, {
-            x: distanceX * 0.2,
-            y: distanceY * 0.2,
+            x: distanceX * 0.15,
+            y: distanceY * 0.15,
             duration: 0.3,
             ease: 'power2.out'
           });
@@ -76,7 +108,10 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
       };
 
       window.addEventListener('mousemove', handleMouseMove);
-      return () => window.removeEventListener('mousemove', handleMouseMove);
+      return () => {
+        window.removeEventListener('mousemove', handleMouseMove);
+        floatTimeline.kill();
+      };
     }
   }, [phase]);
 
@@ -96,7 +131,7 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
       {/* Brand Name */}
       <div 
         ref={brandRef}
-        className={`preloader-text text-center px-6 transition-all duration-1000 ${phase === 'ready' ? 'translate-y-[-20px]' : ''}`} 
+        className={`preloader-text text-center px-6 transition-all duration-1000 ${phase === 'ready' ? '' : ''}`} 
         style={{ animationDelay: '0.2s' }}
       >
         <h1 className="font-serif text-3xl md:text-5xl text-dark-theme tracking-[0.1em] mb-2 uppercase">
@@ -112,30 +147,30 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
         <div className="preloader-line h-full bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
       </div>
 
-      {/* Action Button - Magnetic Container */}
+      {/* Action Button - Centered Container */}
       <div 
         ref={buttonContainerRef}
-        className={`absolute bottom-[25%] transition-all duration-1000 flex flex-col items-center gap-4 ${phase === 'ready' ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}
+        className={`absolute inset-0 flex flex-col items-center justify-center gap-6 transition-opacity duration-500 ${phase === 'ready' ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
       >
         <div className="relative group">
           {/* Energy Pulse Aura */}
-          <div className="absolute inset-0 bg-blue-400/20 blur-2xl rounded-full animate-pulse scale-150 transition-opacity duration-1000 group-hover:opacity-50" />
+          <div className="absolute inset-0 bg-blue-400/20 blur-3xl rounded-full animate-pulse scale-150 transition-opacity duration-1000 group-hover:opacity-60" />
           
           <GradientButton 
             variant="variant" 
             onClick={handleStart}
-            className="group px-10 py-5 rounded-full shadow-2xl hover:scale-110 active:scale-95 border-0 relative overflow-hidden transition-transform duration-300"
+            className="group px-12 py-6 rounded-full shadow-2xl hover:scale-110 active:scale-95 border-0 relative overflow-hidden transition-transform duration-300"
           >
             {/* Inner button sweep effect */}
-            <div className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
+            <div className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out" />
             
-            <span className="flex items-center gap-4 text-white font-serif text-2xl tracking-wide relative z-10">
+            <span className="flex items-center gap-4 text-white font-serif text-2xl tracking-widest relative z-10 uppercase">
               <Play className="w-6 h-6 fill-current" />
               {t('preloader.enterButton')}
             </span>
           </GradientButton>
         </div>
-        <p className="text-[10px] text-slate-400 uppercase tracking-[0.3em] animate-pulse">
+        <p className="text-[11px] text-slate-400 uppercase tracking-[0.4em] animate-pulse">
           Experience Ambient Audio
         </p>
       </div>
