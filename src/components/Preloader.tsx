@@ -57,8 +57,8 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
   const lightRayRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Show the "Ready" button after the initial animation - Increased delay to 6.2s for maximum impact
-    const readyTimer = setTimeout(() => setPhase('ready'), 6200);
+    // Show the "Ready" button after the initial animation - Setting total delay to exactly 3s
+    const readyTimer = setTimeout(() => setPhase('ready'), 3000);
     return () => clearTimeout(readyTimer);
   }, []);
 
