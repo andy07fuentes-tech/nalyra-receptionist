@@ -173,7 +173,7 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
       {/* Ray of Light Beam */}
       <div 
         ref={lightRayRef}
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-full bg-gradient-to-b from-white/20 via-white/5 to-transparent blur-3xl pointer-events-none z-10"
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-full bg-gradient-to-b from-white/20 via-white/5 to-transparent blur-3xl pointer-events-none z-10"
       />
 
       {/* Brand Name */}
@@ -182,43 +182,43 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
         className={`preloader-text text-center px-6 transition-all duration-1000 z-20 ${phase === 'ready' ? '' : ''}`} 
         style={{ animationDelay: '0.2s' }}
       >
-        <h1 className="font-serif text-3xl md:text-5xl text-dark-theme tracking-[0.1em] mb-1 uppercase">
+        <h1 className="font-serif text-2xl md:text-4xl text-dark-theme tracking-[0.1em] mb-1 uppercase">
           {t('preloader.brandName')}
         </h1>
-        <p className="font-script text-2xl md:text-3xl text-blue-500/80 italic">
+        <p className="font-script text-xl md:text-2xl text-blue-500/80 italic">
           {t('preloader.brandSubname')}
         </p>
       </div>
 
       {/* Loading Line */}
-      <div className={`mt-10 w-48 h-[1px] bg-slate-100/20 overflow-hidden transition-all duration-1000 ${phase === 'ready' ? 'opacity-0 scale-x-0' : 'opacity-100'}`}>
+      <div className={`mt-8 w-32 h-[1px] bg-slate-100/20 overflow-hidden transition-all duration-1000 ${phase === 'ready' ? 'opacity-0 scale-x-0' : 'opacity-100'}`}>
         <div className="preloader-line h-full bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
       </div>
 
       {/* Action Button - Refined & Centered Container */}
       <div 
         ref={buttonContainerRef}
-        className={`absolute inset-0 flex flex-col items-center justify-center gap-6 transition-opacity duration-1000 z-30 ${phase === 'ready' ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        className={`absolute inset-0 flex flex-col items-center justify-center gap-5 transition-opacity duration-1000 z-30 ${phase === 'ready' ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
       >
         <div className="relative group">
           {/* Subtle Energy Aura */}
-          <div className="absolute inset-0 bg-blue-300/20 blur-[100px] rounded-full animate-pulse transition-opacity duration-1000 group-hover:opacity-60" />
+          <div className="absolute inset-0 bg-blue-300/20 blur-[80px] rounded-full animate-pulse transition-opacity duration-1000 group-hover:opacity-60" />
           
           <GradientButton 
             variant="variant" 
             onClick={handleStart}
-            className="group px-10 py-5 rounded-full shadow-2xl active:scale-95 border-0 relative overflow-hidden transition-all duration-700"
+            className="group px-7 py-3.5 rounded-full shadow-2xl active:scale-95 border-0 relative overflow-hidden transition-all duration-700"
           >
             {/* Inner focus highlight */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-150%] group-hover:translate-x-[150%] transition-transform duration-1000 ease-in-out" />
             
-            <span className="flex items-center gap-4 text-white font-serif text-xl md:text-2xl tracking-[0.2em] relative z-10 uppercase">
-              <Play className="w-5 h-5 fill-current" />
+            <span className="flex items-center gap-3.5 text-white font-serif text-base md:text-lg tracking-[0.2em] relative z-10 uppercase">
+              <Play className="w-4 h-4 fill-current" />
               {t('preloader.enterButton')}
             </span>
           </GradientButton>
         </div>
-        <p className="text-[10px] text-slate-500 uppercase tracking-[0.6em] animate-pulse">
+        <p className="text-[9px] text-slate-500 uppercase tracking-[0.6em] animate-pulse">
           Ambient Audio Ready
         </p>
       </div>
