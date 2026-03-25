@@ -58,7 +58,7 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
 
   useEffect(() => {
     // Show the "Ready" button after the initial animation - Setting total delay to exactly 5s
-    const readyTimer = setTimeout(() => setPhase('ready'), 5000);
+    const readyTimer = setTimeout(() => setPhase('ready'), 8000);
     return () => clearTimeout(readyTimer);
   }, []);
 
