@@ -12,28 +12,28 @@ export function CinematicShowcase() {
             subtitle: t('cinematic.step1.subtitle'),
             title: t('cinematic.step1.title'),
             description: t('cinematic.step1.description'),
-            video: '/videos/Happy_Receptionist_Working_Late.mp4'
+            video: '/videos/showcase-1.mp4'
         },
         {
             id: 2,
             subtitle: t('cinematic.step2.subtitle'),
             title: t('cinematic.step2.title'),
             description: t('cinematic.step2.description'),
-            video: '/videos/grok-video-8fc70472-35f5-43b1-9bb5-08f13a925240.mp4'
+            video: '/videos/showcase-2.mp4'
         },
         {
             id: 3,
             subtitle: t('cinematic.step3.subtitle'),
             title: t('cinematic.step3.title'),
             description: t('cinematic.step3.description'),
-            video: '/videos/grok-video-d83d8f4f-54b9-4ce1-bd54-45d3139fc69c.mp4'
+            video: '/videos/showcase-3.mp4'
         },
         {
             id: 4,
             subtitle: t('cinematic.step4.subtitle'),
             title: t('cinematic.step4.title'),
             description: t('cinematic.step4.description'),
-            video: '/videos/grok-video-ffaf98bf-cac3-4884-891d-7a5a4d05776a.mp4'
+            video: '/videos/showcase-4.mp4'
         }
     ];
 
@@ -181,18 +181,18 @@ function CinematicCard({ step, index, progress, entranceProgress }: { step: any,
 
 function MediaLayer({ src, index, total, progress, entranceProgress, style = {} }: { src: string, index: number, total: number, progress: any, entranceProgress: any, style?: any }) {
     
-    // Tighten the transition window to prevent ghosting
-    const fadeInStart = index / total;
-    const fadeOutEnd = (index + 1) / total;
+    // Broaden the transition window to prevent black gaps and ensure overlapping cross-fades
+    const fadeInStart = (index / total) - 0.1;
+    const fadeOutEnd = ((index + 1) / total) + 0.1;
     
-    // Quick fade in-out at the boundaries
+    // Smooth cross-fade logic
     const opacity = useTransform(progress, 
-        [fadeInStart - 0.05, fadeInStart, fadeOutEnd - 0.05, fadeOutEnd], 
+        [fadeInStart, (index / total), ((index + 1) / total) - 0.1, fadeOutEnd], 
         [0, 1, 1, 0]
     );
 
     const baseScale = useTransform(progress, 
-        [fadeInStart - 0.05, fadeInStart, fadeOutEnd - 0.05, fadeOutEnd], 
+        [fadeInStart, (index / total), ((index + 1) / total) - 0.1, fadeOutEnd], 
         [1.05, 1, 1, 1.05]
     );
 
