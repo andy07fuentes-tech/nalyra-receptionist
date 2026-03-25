@@ -136,7 +136,7 @@ function CinematicCard({ step, index, progress }: { step: any, index: number, pr
                     {step.title}
                 </h3>
                 <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-transparent mb-8" />
-                <p className="text-slate-400 text-xl leading-relaxed max-w-md relative z-10">
+                <p className="text-slate-400 text-xl leading-relaxed max-w-sm relative z-10">
                     {step.description}
                 </p>
             </div>
@@ -146,21 +146,25 @@ function CinematicCard({ step, index, progress }: { step: any, index: number, pr
 
 function MediaLayer({ src, index, total, progress }: { src: string, index: number, total: number, progress: any }) {
     
-    // Visibility mapping
+    // Tighten the transition window to prevent ghosting
+    const fadeInStart = index / total;
+    const fadeOutEnd = (index + 1) / total;
+    
+    // Quick fade in-out at the boundaries
     const opacity = useTransform(progress, 
-        [index / total - 0.1, index / total, (index + 1) / total - 0.1, (index + 1) / total], 
+        [fadeInStart - 0.05, fadeInStart, fadeOutEnd - 0.05, fadeOutEnd], 
         [0, 1, 1, 0]
     );
 
     const scale = useTransform(progress, 
-        [index / total - 0.1, index / total, (index + 1) / total - 0.1, (index + 1) / total], 
-        [1.1, 1, 1, 0.95]
+        [fadeInStart - 0.05, fadeInStart, fadeOutEnd - 0.05, fadeOutEnd], 
+        [1.05, 1, 1, 1.05]
     );
 
     return (
         <motion.div
             style={{ opacity, scale }}
-            className="absolute inset-0 w-full h-full"
+            className="absolute inset-0 w-full h-full flex items-center justify-center bg-black"
         >
             <video 
                 src={src}
@@ -168,7 +172,7 @@ function MediaLayer({ src, index, total, progress }: { src: string, index: numbe
                 muted
                 loop
                 playsInline
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-center"
             />
         </motion.div>
     );
