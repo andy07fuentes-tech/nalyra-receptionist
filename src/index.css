@@ -495,10 +495,6 @@
     transition: all 400ms ease-out;
   }
 
-  /* Preloader animation */
-  @keyframes preloader-fade {
-
-
 
   /* Floating animation for particles */
   @keyframes float {
