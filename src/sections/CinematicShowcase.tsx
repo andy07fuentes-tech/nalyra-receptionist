@@ -1,10 +1,7 @@
-import { useRef } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 
 export function CinematicShowcase() {
     const { t } = useLanguage();
-    const containerRef = useRef<HTMLDivElement>(null);
 
     const steps = [
         {
@@ -12,215 +9,68 @@ export function CinematicShowcase() {
             subtitle: t('cinematic.step1.subtitle'),
             title: t('cinematic.step1.title'),
             description: t('cinematic.step1.description'),
-            video: '/videos/showcase-1.mp4'
+            video: '/videos/Happy_Receptionist_Working_Late.mp4'
         },
         {
             id: 2,
             subtitle: t('cinematic.step2.subtitle'),
             title: t('cinematic.step2.title'),
             description: t('cinematic.step2.description'),
-            video: '/videos/showcase-2.mp4'
+            video: '/videos/grok-video-8fc70472-35f5-43b1-9bb5-08f13a925240.mp4'
         },
         {
             id: 3,
             subtitle: t('cinematic.step3.subtitle'),
             title: t('cinematic.step3.title'),
             description: t('cinematic.step3.description'),
-            video: '/videos/showcase-3.mp4'
+            video: '/videos/grok-video-d83d8f4f-54b9-4ce1-bd54-45d3139fc69c.mp4'
         },
         {
             id: 4,
             subtitle: t('cinematic.step4.subtitle'),
             title: t('cinematic.step4.title'),
             description: t('cinematic.step4.description'),
-            video: '/videos/showcase-4.mp4'
+            video: '/videos/grok-video-ffaf98bf-cac3-4884-891d-7a5a4d05776a.mp4'
         }
     ];
 
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start start", "end end"]
-    });
-
-    // Entrance Animation (Dimming the background as we approach)
-    const { scrollYProgress: entranceProgress } = useScroll({
-        target: containerRef,
-        offset: ["start end", "start start"]
-    });
-
-    const backdropOpacity = useTransform(entranceProgress, [0.1, 0.6], [0, 1]);
-    const lensFocusScale = useTransform(entranceProgress, [0.4, 0.9], [1.2, 1]);
-    const lensFocusBlur = useTransform(entranceProgress, [0.4, 0.9], ["15px", "0px"]);
-
-    const smoothProgress = useSpring(scrollYProgress, {
-        stiffness: 100,
-        damping: 30,
-        restDelta: 0.001
-    });
-
     return (
-        <section 
-            ref={containerRef} 
-            className="relative bg-white text-white overflow-hidden"
-            data-custom-reveal
-        >
-            {/* Cinema Dimming Overlay - Smoothly transitions from the previous section */}
-            <motion.div 
-                style={{ opacity: backdropOpacity }}
-                className="absolute inset-0 bg-[#020202] pointer-events-none z-0"
-            />
-            {/* Desktop Scrollytelling (hidden on small screens initially, or simplified) */}
-            <div className="hidden lg:block">
-                <div className="flex min-h-screen">
-                    {/* Left Column - Scrollable Content */}
-                    <div className="w-1/2 flex flex-col items-center">
-                        {steps.map((step, index) => (
-                            <CinematicCard 
-                                key={step.id} 
-                                step={step} 
-                                index={index} 
-                                progress={smoothProgress}
-                                entranceProgress={entranceProgress}
-                            />
-                        ))}
-                    </div>
-
-                    {/* Right Column - Sticky Media Container */}
-                    <div className="w-1/2 sticky top-0 h-screen flex items-center justify-center p-12 overflow-hidden">
-                        <div className="relative w-full h-[70vh] rounded-[40px] overflow-hidden border border-white/5 shadow-2xl bg-black">
-                            {steps.map((step, index) => (
-                                <MediaLayer 
-                                    key={step.id} 
-                                    src={step.video} 
-                                    index={index} 
-                                    total={steps.length} 
-                                    progress={smoothProgress}
-                                    entranceProgress={entranceProgress}
-                                    style={index === 0 ? { scale: lensFocusScale, filter: `blur(${lensFocusBlur})` } : {}}
-                                />
-                            ))}
-                            {/* Subtle Glass Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none" />
+        <section className="bg-[#020202] text-white py-24 md:py-32">
+            <div className="container-custom max-w-6xl">
+                <div className="space-y-32">
+                    {steps.map((step) => (
+                        <div key={step.id} className="grid md:grid-cols-2 gap-12 md:gap-24 items-center">
+                            <div className={`${step.id % 2 === 0 ? 'md:order-2' : ''} space-y-6`}>
+                                <div className="inline-block px-4 py-1 rounded-full bg-blue-500/10 border border-blue-500/20">
+                                    <span className="text-blue-500 font-script text-2xl">{step.subtitle}</span>
+                                </div>
+                                <h3 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-tight">
+                                    <span className="text-blue-500/50 mr-4">0{step.id}</span>
+                                    {step.title}
+                                </h3>
+                                <p className="text-slate-400 text-lg md:text-xl leading-relaxed max-w-lg">
+                                    {step.description}
+                                </p>
+                            </div>
+                            
+                            <div className={`${step.id % 2 === 0 ? 'md:order-1' : ''} relative group`}>
+                                <div className="absolute -inset-4 bg-blue-500/10 rounded-[40px] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                                <div className="relative aspect-video rounded-[32px] overflow-hidden border border-white/10 shadow-2xl bg-black">
+                                    <video 
+                                        src={step.video} 
+                                        autoPlay 
+                                        muted 
+                                        loop 
+                                        playsInline 
+                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    ))}
                 </div>
-            </div>
-
-            {/* Mobile/Tablet Alternative */}
-            <div className="lg:hidden py-20 px-6 space-y-20">
-                {steps.map((step) => (
-                    <div key={step.id} className="space-y-8">
-                        <div className="aspect-[4/5] rounded-[32px] overflow-hidden border border-white/10 shadow-xl bg-black">
-                            <video 
-                                src={step.video} 
-                                autoPlay 
-                                muted 
-                                loop 
-                                playsInline 
-                                className="w-full h-full object-cover" 
-                            />
-                        </div>
-                        <div className="space-y-4">
-                            <span className="text-blue-500 font-script text-3xl">{step.subtitle}</span>
-                            <h3 className="font-serif text-4xl">{step.title}</h3>
-                            <p className="text-slate-400 text-lg leading-relaxed">{step.description}</p>
-                        </div>
-                    </div>
-                ))}
             </div>
         </section>
-    );
-}
-
-function CinematicCard({ step, index, progress, entranceProgress }: { step: any, index: number, progress: any, entranceProgress: any }) {
-    const start = index / 4;
-    const end = (index + 1) / 4;
-    
-    // Scale and opacity based on scroll
-    const opacity = useTransform(progress, [start - 0.1, start, end - 0.05, end], [0.3, 1, 1, 0.3]);
-    const scale = useTransform(progress, [start - 0.1, start, end - 0.05, end], [0.9, 1, 1, 0.9]);
-
-    // Entrance reveal for the first card
-    const yOffset = useTransform(entranceProgress, [0.6, 0.9], [40, 0]);
-    const entranceOpacity = useTransform(entranceProgress, [0.6, 0.9], [0, 1]);
-    
-    // Combine entrance reveal and scroll fade-out for the first card
-    const finalOpacity = index === 0 
-        ? useTransform([entranceOpacity, opacity], ([ent, op]) => (ent as number) * (op as number))
-        : opacity;
-
-    return (
-        <motion.div 
-            style={{ 
-                opacity: finalOpacity, 
-                scale: index === 0 ? 1 : scale,
-                y: index === 0 ? yOffset : 0
-            }}
-            className="min-h-screen flex flex-col justify-center px-16 max-w-xl self-center"
-        >
-            <div className="relative">
-                {/* Step Number Background */}
-                <div className="absolute -left-12 -top-12 text-9xl font-serif text-white/5 font-bold pointer-events-none select-none">
-                    0{step.id}
-                </div>
-                
-                <span className="text-blue-500 font-script text-4xl mb-4 block relative z-10">
-                    {step.subtitle}
-                </span>
-                <h3 className="font-serif text-5xl xl:text-6xl mb-8 leading-tight relative z-10">
-                    {step.title}
-                </h3>
-                <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-transparent mb-8" />
-                <p className="text-slate-400 text-xl leading-relaxed max-w-sm relative z-10">
-                    {step.description}
-                </p>
-            </div>
-        </motion.div>
-    );
-}
-
-function MediaLayer({ src, index, total, progress, entranceProgress, style = {} }: { src: string, index: number, total: number, progress: any, entranceProgress: any, style?: any }) {
-    
-    // Broaden the transition window to prevent black gaps and ensure overlapping cross-fades
-    const fadeInStart = (index / total) - 0.1;
-    const fadeOutEnd = ((index + 1) / total) + 0.1;
-    
-    // Smooth cross-fade logic
-    const opacity = useTransform(progress, 
-        [fadeInStart, (index / total), ((index + 1) / total) - 0.1, fadeOutEnd], 
-        [0, 1, 1, 0]
-    );
-
-    const baseScale = useTransform(progress, 
-        [fadeInStart, (index / total), ((index + 1) / total) - 0.1, fadeOutEnd], 
-        [1.05, 1, 1, 1.05]
-    );
-
-    // For index 0, we combine the entrance Lens Focus with the regular sticky scroll lifecycle
-    const finalOpacity = index === 0 
-        ? useTransform([entranceProgress, opacity], ([ep, op]) => {
-            if ((ep as number) < 1) return (ep as number); // simplified linear fade for entrance
-            return (op as number);
-        }) 
-        : opacity;
-
-    return (
-        <motion.div
-            style={{ 
-                opacity: finalOpacity, 
-                scale: index === 0 ? style.scale || baseScale : baseScale,
-                filter: style.filter || "none"
-            }}
-            className="absolute inset-0 w-full h-full flex items-center justify-center bg-black"
-        >
-            <video 
-                src={src}
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full h-full object-cover object-center"
-            />
-        </motion.div>
     );
 }
