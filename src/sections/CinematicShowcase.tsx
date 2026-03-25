@@ -95,6 +95,7 @@ export function CinematicShowcase() {
                                     index={index} 
                                     total={steps.length} 
                                     progress={smoothProgress}
+                                    entranceProgress={entranceProgress}
                                     style={index === 0 ? { scale: lensFocusScale, filter: `blur(${lensFocusBlur})` } : {}}
                                 />
                             ))}
@@ -142,11 +143,16 @@ function CinematicCard({ step, index, progress, entranceProgress }: { step: any,
     // Entrance reveal for the first card
     const yOffset = useTransform(entranceProgress, [0.6, 0.9], [40, 0]);
     const entranceOpacity = useTransform(entranceProgress, [0.6, 0.9], [0, 1]);
+    
+    // Combine entrance reveal and scroll fade-out for the first card
+    const finalOpacity = index === 0 
+        ? useTransform([entranceOpacity, opacity], ([ent, op]) => (ent as number) * (op as number))
+        : opacity;
 
     return (
         <motion.div 
             style={{ 
-                opacity: index === 0 ? entranceOpacity : opacity, 
+                opacity: finalOpacity, 
                 scale: index === 0 ? 1 : scale,
                 y: index === 0 ? yOffset : 0
             }}
@@ -173,7 +179,7 @@ function CinematicCard({ step, index, progress, entranceProgress }: { step: any,
     );
 }
 
-function MediaLayer({ src, index, total, progress, style = {} }: { src: string, index: number, total: number, progress: any, style?: any }) {
+function MediaLayer({ src, index, total, progress, entranceProgress, style = {} }: { src: string, index: number, total: number, progress: any, entranceProgress: any, style?: any }) {
     
     // Tighten the transition window to prevent ghosting
     const fadeInStart = index / total;
@@ -190,11 +196,19 @@ function MediaLayer({ src, index, total, progress, style = {} }: { src: string, 
         [1.05, 1, 1, 1.05]
     );
 
+    // For index 0, we combine the entrance Lens Focus with the regular sticky scroll lifecycle
+    const finalOpacity = index === 0 
+        ? useTransform([entranceProgress, opacity], ([ep, op]) => {
+            if ((ep as number) < 1) return (ep as number); // simplified linear fade for entrance
+            return (op as number);
+        }) 
+        : opacity;
+
     return (
         <motion.div
             style={{ 
-                opacity, 
-                scale: index === 0 ? (style.scale || baseScale) : baseScale,
+                opacity: finalOpacity, 
+                scale: index === 0 ? style.scale || baseScale : baseScale,
                 filter: style.filter || "none"
             }}
             className="absolute inset-0 w-full h-full flex items-center justify-center bg-black"
