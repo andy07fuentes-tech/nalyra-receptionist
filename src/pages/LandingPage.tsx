@@ -9,6 +9,7 @@ import { HorizontalGallery } from '../sections/HorizontalGallery';
 import { AnvelaAdvantage } from '../sections/AnvelaAdvantage';
 import { AlbumCube } from '../sections/AlbumCube';
 import { SolutionShowcase } from '../sections/SolutionShowcase';
+import { CinematicShowcase } from '../sections/CinematicShowcase';
 import { Pricing } from '../sections/Pricing';
 import { FAQ } from '../sections/FAQ';
 import { ContactForm } from '../sections/ContactForm';
@@ -93,6 +94,7 @@ export default function LandingPage() {
                     <AnvelaAdvantage />
                     <AlbumCube />
                     <SolutionShowcase />
+                    <CinematicShowcase />
                     <Pricing />
                     <FAQ />
                     <ContactForm />

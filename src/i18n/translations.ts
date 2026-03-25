@@ -23,12 +23,35 @@ export const translations = {
       freeTrial: "Essai Gratuit",
     },
 
-    // Preloader
     preloader: {
       brandName: "Anvela",
       brandSubname: "Communication Intelligente",
       yearText: "Nouvelle Génération",
       enterButton: "Lancer l'Expérience",
+    },
+
+    // Cinematic Showcase
+    cinematic: {
+      step1: {
+        subtitle: "Expérience Client",
+        title: "Disponibilité Radieuse",
+        description: "Votre réceptionniste numérique ne connaît jamais de mauvaise journée. Chaque client est accueilli avec une chaleur constante et un professionnalisme bienveillant, 24h/24."
+      },
+      step2: {
+        subtitle: "Fiabilité Totale",
+        title: "Zéro Absence, Zéro Interruption",
+        description: "La fiabilité redéfinie. Pas de congés maladie, pas d'absences imprévues, et aucun trou de couverture. Anvela est toujours au poste pour que votre entreprise ne rate aucun appel."
+      },
+      step3: {
+        subtitle: "Éthique & Image",
+        title: "Courtoisie Inébranlable",
+        description: "Un protocole parfait, à chaque fois. Notre IA conserve un ton poli, calme et respectueux, même face aux situations complexes, protégeant ainsi l'image de votre marque."
+      },
+      step4: {
+        subtitle: "Productivité Maximale",
+        title: "Performance sans Pause",
+        description: "Une productivité continue sans temps mort. Pas de pause café, pas d'heures de déjeuner, ni de demandes de vacances. Un service ininterrompu qui optimise votre efficacité."
+      }
     },
 
     // Hero
@@ -645,12 +668,35 @@ export const translations = {
       freeTrial: "Free Trial",
     },
 
-    // Preloader
     preloader: {
       brandName: "Anvela",
       brandSubname: "Intelligent Communication",
       yearText: "Next Gen",
       enterButton: "Start Experience",
+    },
+
+    // Cinematic Showcase
+    cinematic: {
+      step1: {
+        subtitle: "Customer Experience",
+        title: "Radiant Availability",
+        description: "Your digital receptionist never has a bad day. Every client is greeted with constant warmth and benevolent professionalism, 24/7."
+      },
+      step2: {
+        subtitle: "Total Reliability",
+        title: "Zero Absence, Zero Interruption",
+        description: "Reliability redefined. No sick days, no unexpected absences, and no coverage gaps. Anvela is always on duty so your business never misses a call."
+      },
+      step3: {
+        subtitle: "Ethics & Image",
+        title: "Unwavering Courtesy",
+        description: "A perfect protocol, every time. Our AI maintains a polite, calm, and respectful tone even in complex situations, protecting your brand image."
+      },
+      step4: {
+        subtitle: "Max Productivity",
+        title: "Non-Stop Performance",
+        description: "Continuous productivity without downtime. No coffee breaks, no lunch hours, or vacation requests. Uninterrupted service that optimizes your efficiency."
+      }
     },
 
     // Hero
