@@ -48,9 +48,9 @@ export function CinematicShowcase() {
         offset: ["start end", "start start"]
     });
 
-    const backdropOpacity = useTransform(entranceProgress, [0.3, 0.8], [0, 1]);
-    const lensFocusScale = useTransform(entranceProgress, [0.5, 1], [1.1, 1]);
-    const lensFocusBlur = useTransform(entranceProgress, [0.5, 1], ["8px", "0px"]);
+    const backdropOpacity = useTransform(entranceProgress, [0.1, 0.6], [0, 1]);
+    const lensFocusScale = useTransform(entranceProgress, [0.4, 0.9], [1.2, 1]);
+    const lensFocusBlur = useTransform(entranceProgress, [0.4, 0.9], ["15px", "0px"]);
 
     const smoothProgress = useSpring(scrollYProgress, {
         stiffness: 100,
@@ -61,7 +61,7 @@ export function CinematicShowcase() {
     return (
         <section 
             ref={containerRef} 
-            className="relative bg-[#020202] text-white overflow-hidden"
+            className="relative bg-white text-white overflow-hidden"
             data-custom-reveal
         >
             {/* Cinema Dimming Overlay - Smoothly transitions from the previous section */}
@@ -140,8 +140,8 @@ function CinematicCard({ step, index, progress, entranceProgress }: { step: any,
     const scale = useTransform(progress, [start - 0.1, start, end - 0.05, end], [0.9, 1, 1, 0.9]);
 
     // Entrance reveal for the first card
-    const yOffset = useTransform(entranceProgress, [0.7, 1], [40, 0]);
-    const entranceOpacity = useTransform(entranceProgress, [0.7, 1], [0, 1]);
+    const yOffset = useTransform(entranceProgress, [0.6, 0.9], [40, 0]);
+    const entranceOpacity = useTransform(entranceProgress, [0.6, 0.9], [0, 1]);
 
     return (
         <motion.div 
