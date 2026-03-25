@@ -70,11 +70,11 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
         { opacity: 1, y: 0, duration: 1.5, ease: 'power2.out' }
       );
 
-      // Phase 1: Animate Line Width (synchronous with the 8s total duration)
+      // Phase 1: Animate Line Width (synchronous with the 6s total duration)
       // We want the line to finish just as the whole thing starts fading out
       tl.fromTo(lineRef.current,
         { width: '0%' },
-        { width: '100%', duration: 6, ease: 'none' },
+        { width: '100%', duration: 4.5, ease: 'none' },
         0.5 // Start slightly after text appears
       );
 
@@ -86,7 +86,7 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
           duration: 1, 
           ease: 'power2.in' 
         },
-        7 // Fade out at the 7s mark of the 8s total
+        5 // Fade out at the 5s mark of the 6s total
       );
     }
   }, [phase]);
