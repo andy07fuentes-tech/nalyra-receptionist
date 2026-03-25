@@ -87,6 +87,7 @@ export default function LandingPage() {
                 <main className="bg-slate-50">
                     <Hero isReady={!isLoading} />
                     <MissedCalls />
+                    <CinematicShowcase />
                     <PainPoints />
                     <VideoDemo />
                     <FeatureShowcase />
@@ -94,7 +95,6 @@ export default function LandingPage() {
                     <AnvelaAdvantage />
                     <AlbumCube />
                     <SolutionShowcase />
-                    <CinematicShowcase />
                     <Pricing />
                     <FAQ />
                     <ContactForm />
