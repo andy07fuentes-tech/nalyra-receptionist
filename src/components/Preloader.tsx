@@ -66,27 +66,26 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
 
       // Phase 1: Reveal Text and Line Container
       tl.fromTo([brandRef.current, lineContainerRef.current],
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 1.5, ease: 'power2.out' }
+        { opacity: 0, y: 10 },
+        { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }
       );
 
-      // Phase 1: Animate Line Width (synchronous with the 6s total duration)
-      // We want the line to finish just as the whole thing starts fading out
+      // Phase 1: Animate Line Width (synchronous with the 3s total duration)
       tl.fromTo(lineRef.current,
         { width: '0%' },
-        { width: '100%', duration: 4.5, ease: 'none' },
-        0.5 // Start slightly after text appears
+        { width: '100%', duration: 1.8, ease: 'none' },
+        0.2 // Start earlier
       );
 
       // Phase 1: Fade out both
       tl.to([brandRef.current, lineContainerRef.current],
         { 
           opacity: 0, 
-          y: -20, 
-          duration: 1, 
+          y: -10, 
+          duration: 0.6, 
           ease: 'power2.in' 
         },
-        5 // Fade out at the 5s mark of the 6s total
+        2.4 // Fade out at the 2.4s mark of the 3s total
       );
     }
   }, [phase]);
