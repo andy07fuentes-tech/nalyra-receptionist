@@ -54,13 +54,42 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const buttonContainerRef = useRef<HTMLDivElement>(null);
   const brandRef = useRef<HTMLDivElement>(null);
+  const lineContainerRef = useRef<HTMLDivElement>(null);
+  const lineRef = useRef<HTMLDivElement>(null);
   const lightRayRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    // Show the "Ready" button after the initial animation - Setting total delay to exactly 5s
-    const readyTimer = setTimeout(() => setPhase('ready'), 8000);
-    return () => clearTimeout(readyTimer);
-  }, []);
+  useGSAP(() => {
+    if (phase === 'loading') {
+      const tl = gsap.timeline({
+        onComplete: () => setPhase('ready')
+      });
+
+      // Phase 1: Reveal Text and Line Container
+      tl.fromTo([brandRef.current, lineContainerRef.current],
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 1.5, ease: 'power2.out' }
+      );
+
+      // Phase 1: Animate Line Width (synchronous with the 8s total duration)
+      // We want the line to finish just as the whole thing starts fading out
+      tl.fromTo(lineRef.current,
+        { width: '0%' },
+        { width: '100%', duration: 6, ease: 'none' },
+        0.5 // Start slightly after text appears
+      );
+
+      // Phase 1: Fade out both
+      tl.to([brandRef.current, lineContainerRef.current],
+        { 
+          opacity: 0, 
+          y: -20, 
+          duration: 1, 
+          ease: 'power2.in' 
+        },
+        7 // Fade out at the 7s mark of the 8s total
+      );
+    }
+  }, [phase]);
 
   // Breathing Motion & Cinematic Background
   useGSAP(() => {
@@ -179,8 +208,7 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
       {/* Brand Name */}
       <div 
         ref={brandRef}
-        className={`preloader-text text-center px-6 transition-all duration-1000 z-20 ${phase === 'ready' ? 'opacity-0' : ''}`} 
-        style={{ animationDelay: '0s' }}
+        className="text-center px-6 z-20 opacity-0" 
       >
         <h1 className="font-serif text-2xl md:text-4xl text-dark-theme tracking-[0.1em] mb-1 uppercase">
           {t('preloader.brandName')}
@@ -191,8 +219,14 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
       </div>
 
       {/* Loading Line */}
-      <div className={`mt-8 w-32 h-[1px] bg-slate-100/20 overflow-hidden transition-all duration-1000 preloader-line-container ${phase === 'ready' ? 'opacity-0 scale-x-0' : 'opacity-100'}`}>
-        <div className="preloader-line h-full bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
+      <div 
+        ref={lineContainerRef}
+        className={`mt-8 w-32 h-[1px] bg-slate-100/20 overflow-hidden opacity-0 ${phase === 'ready' ? 'hidden' : ''}`}
+      >
+        <div 
+          ref={lineRef}
+          className="h-full bg-gradient-to-r from-transparent via-blue-500 to-transparent" 
+        />
       </div>
 
       {/* Action Button - Refined & Centered Container */}
