@@ -529,11 +529,11 @@
   }
 
   .preloader-text {
-    animation: preloader-fade 5s ease-in-out forwards;
+    animation: preloader-fade 8s ease-in-out forwards;
   }
 
   .preloader-line {
-    animation: preloader-line 5s ease-in-out forwards;
+    animation: preloader-line 8s ease-in-out forwards;
   }
 
   /* Floating animation for particles */
