@@ -528,7 +528,7 @@
     }
   }
 
-  .preloader-text {
+  .preloader-text, .preloader-line-container {
     animation: preloader-fade 8s ease-in-out forwards;
   }
 

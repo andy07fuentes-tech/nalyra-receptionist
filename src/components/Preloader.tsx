@@ -179,8 +179,8 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
       {/* Brand Name */}
       <div 
         ref={brandRef}
-        className={`preloader-text text-center px-6 transition-all duration-1000 z-20 ${phase === 'ready' ? '' : ''}`} 
-        style={{ animationDelay: '0.2s' }}
+        className={`preloader-text text-center px-6 transition-all duration-1000 z-20 ${phase === 'ready' ? 'opacity-0' : ''}`} 
+        style={{ animationDelay: '0s' }}
       >
         <h1 className="font-serif text-2xl md:text-4xl text-dark-theme tracking-[0.1em] mb-1 uppercase">
           {t('preloader.brandName')}
@@ -191,7 +191,7 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
       </div>
 
       {/* Loading Line */}
-      <div className={`mt-8 w-32 h-[1px] bg-slate-100/20 overflow-hidden transition-all duration-1000 ${phase === 'ready' ? 'opacity-0 scale-x-0' : 'opacity-100'}`}>
+      <div className={`mt-8 w-32 h-[1px] bg-slate-100/20 overflow-hidden transition-all duration-1000 preloader-line-container ${phase === 'ready' ? 'opacity-0 scale-x-0' : 'opacity-100'}`}>
         <div className="preloader-line h-full bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
       </div>
 
