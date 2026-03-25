@@ -1,29 +1,26 @@
 ---
-description: how to deploy the Anvela website to Vercel
+description: How to deploy the Anvela website to Vercel via Git
 ---
 
-# Deploying to Vercel
+# Deploying the Anvela Website
 
-The Anvela website is configured for **Automatic Deployment**. Every time you push changes to the `master` branch on GitHub, Vercel will automatically build and deploy the new version.
+To push your local changes to the live site at [kimireceptionist.vercel.app](https://kimireceptionist.vercel.app/):
 
-### Steps to Deploy:
-
-1. **Stage your changes:**
-   ```bash
+1. **Stage all changes** (ensure the videos in `public/videos/` are included):
+   ```zsh
    git add .
    ```
 
-2. **Commit with a clear message:**
-   ```bash
-   git commit -m "feat: your descriptive message here"
+2. **Commit with a clear message**:
+   ```zsh
+   git commit -m "feat: [describe your changes here]"
    ```
 
-3. **Push to GitHub:**
-   ```bash
-   git push origin master
+3. **Push to GitHub**:
+   ```zsh
+   git push
    ```
 
-### Important Notes:
-- **Build Logs**: You can monitor the progress on the [Vercel Dashboard](https://vercel.com).
-- **Branch**: Ensure you are on the `master` branch before pushing.
-- **Caching**: If changes don't appear immediately, try opening the site in an **Incognito Window** or clear your browser cache.
+// turbo
+4. **Trigger Vercel Build**:
+   As soon as the push is finished, Vercel will automatically start building the new version. You can track the progress on your Vercel Dashboard.

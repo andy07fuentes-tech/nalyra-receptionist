@@ -46,6 +46,9 @@ export default function LandingPage() {
             const sections = document.querySelectorAll('section');
 
             sections.forEach((section) => {
+                // Skip sections with custom reveal logic
+                if (section.hasAttribute('data-custom-reveal')) return;
+
                 gsap.fromTo(
                     section,
                     { opacity: 0.9, y: 30 },

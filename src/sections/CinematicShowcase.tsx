@@ -42,6 +42,16 @@ export function CinematicShowcase() {
         offset: ["start start", "end end"]
     });
 
+    // Entrance Animation (Dimming the background as we approach)
+    const { scrollYProgress: entranceProgress } = useScroll({
+        target: containerRef,
+        offset: ["start end", "start start"]
+    });
+
+    const backdropOpacity = useTransform(entranceProgress, [0.3, 0.8], [0, 1]);
+    const lensFocusScale = useTransform(entranceProgress, [0.5, 1], [1.1, 1]);
+    const lensFocusBlur = useTransform(entranceProgress, [0.5, 1], ["8px", "0px"]);
+
     const smoothProgress = useSpring(scrollYProgress, {
         stiffness: 100,
         damping: 30,
@@ -49,7 +59,16 @@ export function CinematicShowcase() {
     });
 
     return (
-        <section ref={containerRef} className="relative bg-[#020202] text-white">
+        <section 
+            ref={containerRef} 
+            className="relative bg-[#020202] text-white overflow-hidden"
+            data-custom-reveal
+        >
+            {/* Cinema Dimming Overlay - Smoothly transitions from the previous section */}
+            <motion.div 
+                style={{ opacity: backdropOpacity }}
+                className="absolute inset-0 bg-[#020202] pointer-events-none z-0"
+            />
             {/* Desktop Scrollytelling (hidden on small screens initially, or simplified) */}
             <div className="hidden lg:block">
                 <div className="flex min-h-screen">
@@ -60,7 +79,8 @@ export function CinematicShowcase() {
                                 key={step.id} 
                                 step={step} 
                                 index={index} 
-                                progress={smoothProgress} 
+                                progress={smoothProgress}
+                                entranceProgress={entranceProgress}
                             />
                         ))}
                     </div>
@@ -74,7 +94,8 @@ export function CinematicShowcase() {
                                     src={step.video} 
                                     index={index} 
                                     total={steps.length} 
-                                    progress={smoothProgress} 
+                                    progress={smoothProgress}
+                                    style={index === 0 ? { scale: lensFocusScale, filter: `blur(${lensFocusBlur})` } : {}}
                                 />
                             ))}
                             {/* Subtle Glass Overlay */}
@@ -110,7 +131,7 @@ export function CinematicShowcase() {
     );
 }
 
-function CinematicCard({ step, index, progress }: { step: any, index: number, progress: any }) {
+function CinematicCard({ step, index, progress, entranceProgress }: { step: any, index: number, progress: any, entranceProgress: any }) {
     const start = index / 4;
     const end = (index + 1) / 4;
     
@@ -118,9 +139,17 @@ function CinematicCard({ step, index, progress }: { step: any, index: number, pr
     const opacity = useTransform(progress, [start - 0.1, start, end - 0.05, end], [0.3, 1, 1, 0.3]);
     const scale = useTransform(progress, [start - 0.1, start, end - 0.05, end], [0.9, 1, 1, 0.9]);
 
+    // Entrance reveal for the first card
+    const yOffset = useTransform(entranceProgress, [0.7, 1], [40, 0]);
+    const entranceOpacity = useTransform(entranceProgress, [0.7, 1], [0, 1]);
+
     return (
         <motion.div 
-            style={{ opacity, scale }}
+            style={{ 
+                opacity: index === 0 ? entranceOpacity : opacity, 
+                scale: index === 0 ? 1 : scale,
+                y: index === 0 ? yOffset : 0
+            }}
             className="min-h-screen flex flex-col justify-center px-16 max-w-xl self-center"
         >
             <div className="relative">
@@ -144,7 +173,7 @@ function CinematicCard({ step, index, progress }: { step: any, index: number, pr
     );
 }
 
-function MediaLayer({ src, index, total, progress }: { src: string, index: number, total: number, progress: any }) {
+function MediaLayer({ src, index, total, progress, style = {} }: { src: string, index: number, total: number, progress: any, style?: any }) {
     
     // Tighten the transition window to prevent ghosting
     const fadeInStart = index / total;
@@ -156,14 +185,18 @@ function MediaLayer({ src, index, total, progress }: { src: string, index: numbe
         [0, 1, 1, 0]
     );
 
-    const scale = useTransform(progress, 
+    const baseScale = useTransform(progress, 
         [fadeInStart - 0.05, fadeInStart, fadeOutEnd - 0.05, fadeOutEnd], 
         [1.05, 1, 1, 1.05]
     );
 
     return (
         <motion.div
-            style={{ opacity, scale }}
+            style={{ 
+                opacity, 
+                scale: index === 0 ? (style.scale || baseScale) : baseScale,
+                filter: style.filter || "none"
+            }}
             className="absolute inset-0 w-full h-full flex items-center justify-center bg-black"
         >
             <video 
