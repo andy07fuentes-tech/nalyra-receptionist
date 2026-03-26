@@ -85,29 +85,34 @@ const retellClient = new RetellWebClient();
 
 function DemoCallButton({ isScrolled }: { isScrolled: boolean }) {
   const { t } = useLanguage();
+  const { setIsMuted } = useAudio();
   const [status, setStatus] = useState<'idle' | 'connecting' | 'active'>('idle');
 
   const startCall = async () => {
     setStatus('connecting');
+    setIsMuted(true);
     try {
       const res = await fetch('https://n8n.srv1401769.hstgr.cloud/webhook/anvela/create-web-call', { method: 'POST' });
       const { access_token, sample_rate } = await res.json();
       await retellClient.startCall({ accessToken: access_token, sampleRate: sample_rate });
       setStatus('active');
     } catch {
+      setIsMuted(false);
       setStatus('idle');
     }
   };
 
   const endCall = () => {
     retellClient.stopCall();
+    setIsMuted(false);
     setStatus('idle');
   };
 
   useEffect(() => {
-    retellClient.on('call_ended', () => setStatus('idle'));
-    return () => { retellClient.off('call_ended', () => setStatus('idle')); };
-  }, []);
+    const onEnded = () => { setIsMuted(false); setStatus('idle'); };
+    retellClient.on('call_ended', onEnded);
+    return () => { retellClient.off('call_ended', onEnded); };
+  }, [setIsMuted]);
 
   if (status === 'active') {
     return (
