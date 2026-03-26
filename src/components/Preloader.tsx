@@ -212,7 +212,7 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
         <h1 className="font-serif text-2xl md:text-4xl text-dark-theme tracking-[0.1em] mb-1 uppercase">
           {t('preloader.brandName')}
         </h1>
-        <p className="font-script text-xl md:text-2xl text-blue-500/80 italic">
+        <p className="font-script text-3xl md:text-4xl text-blue-500/80 italic">
           {t('preloader.brandSubname')}
         </p>
       </div>
