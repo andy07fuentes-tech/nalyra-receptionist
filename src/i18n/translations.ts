@@ -392,7 +392,7 @@ export const translations = {
         },
         {
           question: "Anvela est-elle bilingue ?",
-          answer: "Oui. Anvela comprend et répond en français et en anglais, et peut détecter automatiquement la langue du client dès les premiers mots de la conversation. Idéal pour le marché montréalais et québécois."
+          answer: "Oui. Anvela s'adapte automatiquement à la langue de votre client dès les premiers mots de la conversation — français, anglais, espagnol, et bien d'autres. Peu importe d'où vient votre client, Anvela lui répond dans sa langue."
         },
         {
           question: "Combien de temps faut-il pour être opérationnel ?",
@@ -1106,7 +1106,7 @@ export const translations = {
         },
         {
           question: "Is Anvela bilingual?",
-          answer: "Yes. Anvela understands and responds in both French and English, and can automatically detect the client's language from the first words of the conversation. Perfect for the Montreal and Quebec market."
+          answer: "Yes. Anvela automatically adapts to your client's language from the very first words of the conversation — French, English, Spanish, and more. No matter where your client is from, Anvela responds in their language."
         },
         {
           question: "How long does it take to get up and running?",
@@ -1794,7 +1794,7 @@ export const translations = {
         },
         {
           question: "¿Es Anvela bilingüe?",
-          answer: "Sí. Anvela comprende y responde en francés e inglés, y puede detectar automáticamente el idioma del cliente desde las primeras palabras de la conversación. Ideal para el mercado de Montreal y Quebec."
+          answer: "Sí. Anvela se adapta automáticamente al idioma de su cliente desde las primeras palabras de la conversación — francés, inglés, español y más. Sin importar de dónde venga su cliente, Anvela le responde en su idioma."
         },
         {
           question: "¿Cuánto tiempo se tarda en estar operativo?",
@@ -2474,7 +2474,7 @@ export const translations = {
         },
         {
           question: "Anvela è bilingue?",
-          answer: "Sì. Anvela comprende e risponde in francese e inglese, e può rilevare automaticamente la lingua del cliente dalle prime parole della conversazione. Ideale per il mercato di Montreal e del Quebec."
+          answer: "Sì. Anvela si adatta automaticamente alla lingua del cliente dalle prime parole della conversazione — francese, inglese, spagnolo e altro ancora. Indipendentemente da dove viene il tuo cliente, Anvela gli risponde nella sua lingua."
         },
         {
           question: "Quanto tempo ci vuole per essere operativi?",
