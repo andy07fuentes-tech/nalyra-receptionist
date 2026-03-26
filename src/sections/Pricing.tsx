@@ -232,7 +232,7 @@ export function Pricing() {
                                         <div className={`text-[10px] lg:text-[11px] font-bold uppercase tracking-widest mb-3 inline-block px-4 py-1.5 rounded-full ${isElite ? 'bg-gold-50/50 text-gold-700 border border-gold-500/30' : 'bg-blue-50 text-blue-600 border border-blue-500/10'}`}>
                                             {t('pricing.setupFeeLabel')}: ${tier.setupFee}
                                         </div>
-                                        {tier.setupFeeNote && (
+                                        {tier.setupFeeNote && !isYearly && (
                                             <div className={`text-[11px] font-medium italic pl-2 leading-none block ${isElite ? 'text-gold-700' : 'text-slate-500'}`}>
                                                 *{tier.setupFeeNote}
                                             </div>
