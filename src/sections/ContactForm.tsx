@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
-import { Send, CheckCircle, AlertCircle, MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { Send, CheckCircle, AlertCircle, Phone, Mail, Clock } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 // Icon lookup map for dynamic icon resolution from config strings
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  MapPin, Phone, Mail, Clock,
+  Phone, Mail, Clock,
 };
 
 export function ContactForm() {
@@ -12,7 +12,6 @@ export function ContactForm() {
 
   // Define contact info
   const contactInfo = [
-    { icon: 'MapPin', label: t('contact.contactItems.address.label'), value: t('contact.contactItems.address.value'), subtext: t('contact.contactItems.address.subtext') },
     { icon: 'Phone', label: t('contact.contactItems.phone.label'), value: t('contact.contactItems.phone.value'), subtext: t('contact.contactItems.phone.subtext') },
     { icon: 'Mail', label: t('contact.contactItems.email.label'), value: t('contact.contactItems.email.value'), subtext: t('contact.contactItems.email.subtext') },
     { icon: 'Clock', label: t('contact.contactItems.hours.label'), value: t('contact.contactItems.hours.value'), subtext: t('contact.contactItems.hours.subtext') },

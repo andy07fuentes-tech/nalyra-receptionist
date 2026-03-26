@@ -592,9 +592,8 @@ export const translations = {
       introText: "Prêt à transformer votre communication commerciale ? Commencez avec un essai gratuit de 14 jours. Aucune carte de crédit requise.",
       contactInfoTitle: "Informations de Contact",
       contactItems: {
-        address: { label: "Adresse", value: "350 Market Street, Suite 200", subtext: "San Francisco, CA 94105" },
-        phone: { label: "Téléphone", value: "+1 (888) 555-AI-RX", subtext: "Ligne de Support 24/7" },
-        email: { label: "Email", value: "hello@aireceptionist.com", subtext: "Nous répondons sous 2 heures" },
+        phone: { label: "Téléphone", value: "(438) 814-7578", subtext: "Ligne directe Anvela 24/7" },
+        email: { label: "Email", value: "Pablo@anvela.ca", subtext: "support@anvela.ca" },
         hours: { label: "Heures", value: "Toujours Disponible", subtext: "24/7/365 Support" },
       },
       form: {
@@ -1240,9 +1239,8 @@ export const translations = {
       introText: "Ready to transform your business communication? Get started with a 14-day free trial. No credit card required.",
       contactInfoTitle: "Contact Information",
       contactItems: {
-        address: { label: "Address", value: "350 Market Street, Suite 200", subtext: "San Francisco, CA 94105" },
-        phone: { label: "Phone", value: "+1 (888) 555-AI-RX", subtext: "24/7 Support Line" },
-        email: { label: "Email", value: "hello@aireceptionist.com", subtext: "We reply within 2 hours" },
+        phone: { label: "Phone", value: "(438) 814-7578", subtext: "Anvela direct line 24/7" },
+        email: { label: "Email", value: "Pablo@anvela.ca", subtext: "support@anvela.ca" },
         hours: { label: "Hours", value: "Always Available", subtext: "24/7/365 Support" },
       },
       form: {
@@ -1863,9 +1861,8 @@ export const translations = {
       introText: "¿Listo para transformar su comunicación empresarial? Comience con una prueba gratuita de 14 días. No se requiere tarjeta de crédito.",
       contactInfoTitle: "Información de Contacto",
       contactItems: {
-        address: { label: "Dirección", value: "350 Market Street, Suite 200", subtext: "San Francisco, CA 94105" },
-        phone: { label: "Teléfono", value: "+1 (888) 555-AI-RX", subtext: "Línea de Soporte 24/7" },
-        email: { label: "Email", value: "hello@aireceptionist.com", subtext: "Respondemos en 2 horas" },
+        phone: { label: "Teléfono", value: "(438) 814-7578", subtext: "Línea directa Anvela 24/7" },
+        email: { label: "Email", value: "Pablo@anvela.ca", subtext: "support@anvela.ca" },
         hours: { label: "Horas", value: "Siempre Disponible", subtext: "Soporte 24/7/365" },
       },
       form: {
@@ -2478,9 +2475,8 @@ export const translations = {
       introText: "Pronto a trasformare la tua comunicazione aziendale? Inizia con una prova gratuita di 14 giorni. Nessuna carta di credito richiesta.",
       contactInfoTitle: "Informazioni di Contatto",
       contactItems: {
-        address: { label: "Indirizzo", value: "350 Market Street, Suite 200", subtext: "San Francisco, CA 94105" },
-        phone: { label: "Telefono", value: "+1 (888) 555-AI-RX", subtext: "Linea di Supporto 24/7" },
-        email: { label: "Email", value: "hello@aireceptionist.com", subtext: "Rispondiamo entro 2 ore" },
+        phone: { label: "Telefono", value: "(438) 814-7578", subtext: "Linea diretta Anvela 24/7" },
+        email: { label: "Email", value: "Pablo@anvela.ca", subtext: "support@anvela.ca" },
         hours: { label: "Orari", value: "Sempre Disponibile", subtext: "Supporto 24/7/365" },
       },
       form: {
