@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { LanguageToggle } from '../components/LanguageToggle';
-import { Volume2, VolumeX, PhoneOff, Loader2 } from 'lucide-react';
+import { Volume2, VolumeX, Phone, PhoneOff, Loader2 } from 'lucide-react';
 import { useAudio } from '../contexts/AudioContext';
 import { RetellWebClient } from 'retell-client-js-sdk';
 
@@ -84,6 +84,7 @@ export function Navigation() {
 const retellClient = new RetellWebClient();
 
 function DemoCallButton({ isScrolled }: { isScrolled: boolean }) {
+  const { t } = useLanguage();
   const [status, setStatus] = useState<'idle' | 'connecting' | 'active'>('idle');
 
   const startCall = async () => {
@@ -132,12 +133,13 @@ function DemoCallButton({ isScrolled }: { isScrolled: boolean }) {
   return (
     <button
       onClick={startCall}
-      className={`hidden sm:block text-[11px] font-bold uppercase tracking-widest transition-all px-4 py-2 rounded-full border
+      className={`hidden sm:flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest transition-all px-4 py-2 rounded-full border
         ${isScrolled
           ? 'text-blue-600 border-blue-600 hover:bg-blue-600 hover:text-white'
           : 'text-blue-500 border-blue-500/30 hover:bg-blue-500/5 hover:text-white'}`}
     >
-      Essayer la démo
+      <Phone className="w-3 h-3" />
+      {t('nav.freeTrial')}
     </button>
   );
 }

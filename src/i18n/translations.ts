@@ -20,7 +20,7 @@ export const translations = {
       testimonials: "Témoignages",
       contact: "Contact",
       ctaButton: "Commencer",
-      freeTrial: "Essai Gratuit",
+      freeTrial: "Parler à Anvela",
     },
 
     preloader: {
@@ -665,7 +665,7 @@ export const translations = {
       testimonials: "Testimonials",
       contact: "Contact",
       ctaButton: "Get Started",
-      freeTrial: "Free Trial",
+      freeTrial: "Speak to Anvela",
     },
 
     preloader: {
@@ -1307,7 +1307,7 @@ export const translations = {
       testimonials: "Testimonios",
       contact: "Contacto",
       ctaButton: "Empezar",
-      freeTrial: "Prueba Gratuita",
+      freeTrial: "Hablar con Anvela",
     },
 
     // Preloader
@@ -1925,7 +1925,7 @@ export const translations = {
       testimonials: "Testimonianze",
       contact: "Contatto",
       ctaButton: "Inizia",
-      freeTrial: "Prova Gratuita",
+      freeTrial: "Parla con Anvela",
     },
 
     // Preloader
