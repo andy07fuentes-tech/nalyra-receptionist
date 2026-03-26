@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { ChevronDown, HelpCircle } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import * as Accordion from '@radix-ui/react-accordion';
 
 interface FAQItem {
@@ -62,23 +62,6 @@ export function FAQ() {
                             </p>
                         </div>
 
-                        <div className="pt-8 fade-up">
-                            <div className="p-6 bg-slate-50 border border-slate-100 rounded-2xl flex items-start gap-4">
-                                <div className="w-12 h-12 rounded-full bg-blue-600/10 flex items-center justify-center flex-shrink-0">
-                                    <HelpCircle className="w-6 h-6 text-blue-600" />
-                                </div>
-                                <div>
-                                    <h4 className="font-bold text-dark-theme mb-2">{t('faq.moreInfoTitle')}</h4>
-                                    <p className="text-slate-500 text-sm mb-4">{t('faq.moreInfoText')}</p>
-                                    <button 
-                                        onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                                        className="text-blue-600 font-bold text-sm hover:underline flex items-center gap-1"
-                                    >
-                                        {t('faq.moreInfoButton')} →
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
                     {/* Right side: Accordion */}
