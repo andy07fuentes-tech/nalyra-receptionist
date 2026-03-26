@@ -57,9 +57,6 @@ export function FAQ() {
                             <h2 className="font-serif text-3xl md:text-5xl text-dark-theme leading-tight mb-6">
                                 {t('faq.mainTitle')}
                             </h2>
-                            <p className="text-slate-600 text-lg leading-relaxed max-w-md">
-                                {t('faq.description')}
-                            </p>
                         </div>
 
                     </div>
