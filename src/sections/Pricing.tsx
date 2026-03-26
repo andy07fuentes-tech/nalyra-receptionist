@@ -137,14 +137,9 @@ export function Pricing() {
                         const hasGlow = true;
 
                         const baseMonthlyPrice = parseInt(tier.price) || 0;
-                        let discountedMonthly = Math.round(baseMonthlyPrice * 0.9);
-                        
-                        // User-requested specific rounding for yearly display
-                        if (baseMonthlyPrice === 199) discountedMonthly = 179;
-                        if (baseMonthlyPrice === 299) discountedMonthly = 269;
-                        if (baseMonthlyPrice === 597) discountedMonthly = 538;
-
-                        const annualTotal = discountedMonthly * 12;
+                        // 2 months free = pay 10 months, get 12
+                        const annualTotal = baseMonthlyPrice * 10;
+                        const discountedMonthly = Math.round(annualTotal / 12);
 
                         const glowColors = isElite 
                             ? { border: 'var(--gold-500)', glow: 'var(--gold-300)', shadow: 'rgba(210, 168, 85, 0.4)' }
