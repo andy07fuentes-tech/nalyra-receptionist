@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { LanguageToggle } from '../components/LanguageToggle';
 import { Volume2, VolumeX, Phone, PhoneOff, Loader2 } from 'lucide-react';
@@ -70,8 +71,16 @@ export function Navigation() {
         </div>
 
         {/* Right: Actions & Toggle */}
-        <div className="flex-1 flex items-center justify-end gap-6">
+        <div className="flex-1 flex items-center justify-end gap-3 md:gap-4">
           <DemoCallButton isScrolled={isScrolled} />
+          <Link
+            to="/onboarding"
+            className={`hidden md:inline-flex items-center text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 ${
+              isScrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-1 pointer-events-none'
+            }`}
+          >
+            {t('nav.ctaButton') as string}
+          </Link>
           <SoundToggle isScrolled={isScrolled} />
           <LanguageToggle isScrolled={isScrolled} />
         </div>
