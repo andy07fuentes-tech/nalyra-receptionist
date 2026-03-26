@@ -294,8 +294,8 @@ export const translations = {
       vsLabel: "L'AVANTAGE ANVELA",
       vsEmployee: "Réceptionniste à temps partiel",
       vsEmployeePrice: "~2 500$ / mois",
-      vsAnvela: "Anvela — disponible 24h/7j",
-      vsAnvelaPrice: "à partir de 199$ / mois",
+      vsAnvela: "Anvela — disponible 24/7",
+      vsAnvelaPrice: "à partir de 199$ / mois · ~50$ / sem.",
       vsTagline: "Pas pour remplacer votre équipe — pour lui donner du renfort, sans les coûts.",
       tiers: [
         {
@@ -929,7 +929,7 @@ export const translations = {
       vsEmployee: "Part-time receptionist",
       vsEmployeePrice: "~$2,500 / month",
       vsAnvela: "Anvela — available 24/7",
-      vsAnvelaPrice: "from $199 / month",
+      vsAnvelaPrice: "from $199 / month · ~$50 / week",
       vsTagline: "Not a replacement for your team — extra support, without the extra payroll.",
       tiers: [
         {
@@ -1551,8 +1551,8 @@ export const translations = {
       vsLabel: "LA VENTAJA ANVELA",
       vsEmployee: "Recepcionista a tiempo parcial",
       vsEmployeePrice: "~$2 500 / mes",
-      vsAnvela: "Anvela — disponible 24h/7d",
-      vsAnvelaPrice: "desde $199 / mes",
+      vsAnvela: "Anvela — disponible 24/7",
+      vsAnvelaPrice: "desde $199 / mes · ~$50 / sem.",
       vsTagline: "No para reemplazar a tu equipo — para darle refuerzo, sin el costo extra.",
       tiers: [
         {
@@ -2178,8 +2178,8 @@ export const translations = {
       vsLabel: "IL VANTAGGIO ANVELA",
       vsEmployee: "Receptionist part-time",
       vsEmployeePrice: "~2 500$ / mese",
-      vsAnvela: "Anvela — disponibile 24h/7g",
-      vsAnvelaPrice: "da $199 / mese",
+      vsAnvela: "Anvela — disponibile 24/7",
+      vsAnvelaPrice: "da $199 / mese · ~$50 / sett.",
       vsTagline: "Non per sostituire il tuo team — per dargli supporto, senza i costi aggiuntivi.",
       tiers: [
         {
