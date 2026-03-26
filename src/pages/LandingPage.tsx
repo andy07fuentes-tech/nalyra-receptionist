@@ -12,6 +12,7 @@ import { SolutionShowcase } from '../sections/SolutionShowcase';
 import { CinematicShowcase } from '../sections/CinematicShowcase';
 import { Pricing } from '../sections/Pricing';
 import { FAQ } from '../sections/FAQ';
+import { Founder } from '../sections/Founder';
 import { ContactForm } from '../sections/ContactForm';
 import { Footer } from '../sections/Footer';
 import { Preloader } from '../components/Preloader';
@@ -97,6 +98,7 @@ export default function LandingPage() {
                     <SolutionShowcase />
                     <Pricing />
                     <FAQ />
+                    <Founder />
                     <ContactForm />
                 </main>
 

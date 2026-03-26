@@ -672,6 +672,16 @@ export const translations = {
       },
     },
 
+    // Founder
+    founder: {
+      scriptText: "La personne derrière Anvela",
+      mainTitle: "Construit par quelqu'un qui comprend les défis des petites entreprises.",
+      quote: "J'ai créé Anvela parce que chaque appel manqué est un client perdu. Votre entreprise mérite mieux.",
+      title: "Fondateur & PDG",
+      bio: "Pablo Fuentes a lancé Anvela après avoir vu trop d'entreprises montréalaises perdre des clients à cause d'appels sans réponse — non pas par manque de service, mais par manque de temps. Entrepreneur technologique basé à Montréal, il a combiné l'IA vocale avec une connaissance du marché local pour créer une réceptionniste qui ne dort jamais, ne prend jamais de pause, et parle couramment le français et l'anglais. Anvela est sa réponse à une question simple : et si chaque entreprise pouvait se permettre de ne jamais manquer un appel ?",
+      location: "Montréal, Québec",
+    },
+
     // Footer
     footer: {
       brandName: "Anvela",
@@ -1375,6 +1385,16 @@ export const translations = {
       },
     },
 
+    // Founder
+    founder: {
+      scriptText: "The person behind Anvela",
+      mainTitle: "Built by someone who understands the challenges small businesses face.",
+      quote: "I built Anvela because every missed call is a lost client. Your business deserves better.",
+      title: "Founder & CEO",
+      bio: "Pablo Fuentes launched Anvela after watching too many Montreal businesses lose clients to missed calls — not from bad service, but from being stretched too thin. A tech entrepreneur based in Montreal, he combined AI voice technology with deep local market knowledge to build a receptionist that never sleeps, never takes breaks, and speaks both French and English fluently. Anvela is his answer to one simple question: what if every business could afford to never miss a call again?",
+      location: "Montreal, Quebec",
+    },
+
     // Footer
     footer: {
       brandName: "Anvela",
@@ -2053,6 +2073,16 @@ export const translations = {
       },
     },
 
+    // Founder
+    founder: {
+      scriptText: "La persona detrás de Anvela",
+      mainTitle: "Construido por alguien que entiende los desafíos de las pequeñas empresas.",
+      quote: "Creé Anvela porque cada llamada perdida es un cliente perdido. Su negocio merece más.",
+      title: "Fundador & CEO",
+      bio: "Pablo Fuentes lanzó Anvela después de ver demasiadas empresas en Montreal perder clientes por llamadas sin respuesta — no por falta de servicio, sino por falta de tiempo. Emprendedor tecnológico con base en Montreal, combinó la IA de voz con un profundo conocimiento del mercado local para crear una recepcionista que nunca duerme, nunca descansa y habla fluidamente francés e inglés. Anvela es su respuesta a una pregunta sencilla: ¿y si cada empresa pudiera permitirse no perder nunca una llamada?",
+      location: "Montreal, Quebec",
+    },
+
     // Footer
     footer: {
       brandName: "Anvela",
@@ -2721,6 +2751,16 @@ export const translations = {
         nextStepsText: "Un esperto Anvela ti chiamerà entro 24 ore per finalizzare la configurazione.",
         returnLink: "Torna alla home",
       },
+    },
+
+    // Founder
+    founder: {
+      scriptText: "La persona dietro Anvela",
+      mainTitle: "Costruito da qualcuno che capisce le sfide delle piccole imprese.",
+      quote: "Ho creato Anvela perché ogni chiamata persa è un cliente perso. La tua azienda merita di meglio.",
+      title: "Fondatore & CEO",
+      bio: "Pablo Fuentes ha lanciato Anvela dopo aver visto troppe aziende di Montreal perdere clienti per chiamate senza risposta — non per mancanza di servizio, ma per mancanza di tempo. Imprenditore tecnologico con sede a Montreal, ha combinato l'IA vocale con una profonda conoscenza del mercato locale per creare una receptionist che non dorme mai, non si prende mai pause e parla correntemente francese e inglese. Anvela è la sua risposta a una semplice domanda: e se ogni azienda potesse permettersi di non perdere mai una chiamata?",
+      location: "Montreal, Quebec",
     },
 
     // Footer
