@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Zap, MapPin, Phone, Mail, Instagram, Facebook, Twitter, Linkedin, ArrowUp, CheckCircle } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -202,7 +203,7 @@ export function Footer() {
               {getLegalLinks().map((link: string, index: number) => (
                 <div key={index} className="flex items-center">
                   <span className="hidden md:inline mr-3 text-slate-300">|</span>
-                  <button className="hover:text-blue-600 transition-colors font-medium">{link}</button>
+                  <Link to="/privacy" className="hover:text-blue-600 transition-colors font-medium">{link}</Link>
                 </div>
               ))}
             </div>
