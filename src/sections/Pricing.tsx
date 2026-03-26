@@ -1,12 +1,23 @@
 import { useRef, useEffect, useState } from 'react';
 import { Check, Star } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useNavigate } from 'react-router-dom';
 
 export function Pricing() {
     const { t } = useLanguage();
+    const navigate = useNavigate();
 
     const sectionRef = useRef<HTMLDivElement>(null);
     const [isYearly, setIsYearly] = useState(false);
+
+    const handleSubscribe = (planName: string) => {
+        navigate('/onboarding', { 
+            state: { 
+                plan: planName, 
+                billing: isYearly ? 'yearly' : 'monthly' 
+            } 
+        });
+    };
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -216,6 +227,7 @@ export function Pricing() {
                                         </div>
 
                                         <button
+                                            onClick={() => handleSubscribe(tier.name)}
                                             className={`w-full py-4 rounded-xl font-bold uppercase tracking-widest transition-all duration-300 shadow-md hover:shadow-lg mt-auto
                                    ${isElite
                                                     ? 'bg-gradient-to-r from-gold-600 via-gold-500 to-gold-600 text-white hover:brightness-110 shadow-gold-500/30'

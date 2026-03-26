@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Search, MapPin, ArrowRight, CheckCircle2, Building2, Sparkles, Check } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import gsap from 'gsap';
 import usePlacesAutocomplete from "use-places-autocomplete";
 import { useLanguage } from '../contexts/LanguageContext';
@@ -8,9 +8,10 @@ import { LanguageToggle } from '../components/LanguageToggle';
 
 export default function OnboardingPage() {
     const { t, language } = useLanguage();
+    const location = useLocation();
     const [step, setStep] = useState(1);
     const [selectedBusiness, setSelectedBusiness] = useState<any>(null);
-    const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
+    const [selectedPlan, setSelectedPlan] = useState<string | null>(location.state?.plan || null);
     const [phoneNumber, setPhoneNumber] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
 
