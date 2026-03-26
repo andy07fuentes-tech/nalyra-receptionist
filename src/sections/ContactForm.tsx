@@ -21,8 +21,8 @@ export function ContactForm() {
     name: '',
     email: '',
     phone: '',
-    visitDate: '',
-    visitors: '2',
+    businessName: '',
+    businessType: '',
     message: ''
   });
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -51,11 +51,15 @@ export function ContactForm() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission (replace with actual endpoint)
     try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      const res = await fetch('https://n8n.srv1401769.hstgr.cloud/webhook/anvela/contact-form', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error('Failed');
       setStatus('success');
-      setFormData({ name: '', email: '', phone: '', visitDate: '', visitors: '2', message: '' });
+      setFormData({ name: '', email: '', phone: '', businessName: '', businessType: '', message: '' });
     } catch {
       setStatus('error');
     }
@@ -70,9 +74,6 @@ export function ContactForm() {
       [e.target.name]: e.target.value
     }));
   };
-
-  // Get visitors options
-  const visitorsOptions = ['1-10', '11-50', '51-200', '201-500', '500+'];
 
   return (
     <section
@@ -206,36 +207,38 @@ export function ContactForm() {
                       />
                     </div>
 
-                    {/* Visit Date */}
+                    {/* Business Name */}
                     <div>
-                      <label htmlFor="contact-date" className="block text-sm text-slate-700 font-medium mb-2">
-                        {t('contact.form.visitDateLabel')} <span className="text-blue-500">*</span>
+                      <label htmlFor="contact-business-name" className="block text-sm text-slate-700 font-medium mb-2">
+                        {t('contact.form.businessNameLabel')} <span className="text-blue-500">*</span>
                       </label>
                       <input
-                        id="contact-date"
-                        type="date"
-                        name="visitDate"
-                        value={formData.visitDate}
+                        id="contact-business-name"
+                        type="text"
+                        name="businessName"
+                        value={formData.businessName}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-dark-theme focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
+                        placeholder={t('contact.form.businessNamePlaceholder')}
+                        className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-dark-theme placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
                       />
                     </div>
                   </div>
 
-                  {/* Number of Visitors */}
+                  {/* Business Type */}
                   <div>
-                    <label htmlFor="contact-visitors" className="block text-sm text-slate-700 font-medium mb-2">
-                      {t('contact.form.visitorsLabel')}
+                    <label htmlFor="contact-business-type" className="block text-sm text-slate-700 font-medium mb-2">
+                      {t('contact.form.businessTypeLabel')}
                     </label>
                     <select
-                      id="contact-visitors"
-                      name="visitors"
-                      value={formData.visitors}
+                      id="contact-business-type"
+                      name="businessType"
+                      value={formData.businessType}
                       onChange={handleChange}
                       className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-dark-theme focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
                     >
-                      {visitorsOptions.map((option) => (
+                      <option value="">—</option>
+                      {(t('contact.form.businessTypeOptions') as unknown as string[]).map((option: string) => (
                         <option key={option} value={option}>{option}</option>
                       ))}
                     </select>
