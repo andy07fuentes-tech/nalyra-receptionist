@@ -2,6 +2,7 @@ import { useRef, useLayoutEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLanguage } from '../contexts/LanguageContext';
+import { OptimizedVideo } from '../components/OptimizedVideo';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -100,12 +101,9 @@ export function HorizontalGallery() {
           >
             {/* Video Frame */}
             <div className={`relative aspect-[4/5] overflow-hidden rounded-xl md:rounded-2xl border border-neutral-100 bg-neutral-50 shadow-sm transition-all duration-500 group-hover:shadow-xl group-hover:-translate-y-2`}>
-              <video
+              <OptimizedVideo
                 src={item.video}
-                autoPlay
-                muted
-                loop
-                playsInline
+                preload="metadata"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </div>

@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { OptimizedVideo } from '../components/OptimizedVideo';
 import { ArrowRight } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -109,15 +110,11 @@ export function MissedCalls() {
                             <div className="ringing-pulse absolute inset-0 rounded-full border-2 border-blue-400/20 z-0" />
                             
                             <div className="relative z-10 w-full h-full rounded-full overflow-hidden border-[8px] border-slate-50 shadow-2xl">
-                                <video 
+                                <OptimizedVideo 
+                                    src="/videos/phone-ringing.mp4"
+                                    preload="auto"
                                     className="w-full h-full object-cover"
-                                    autoPlay 
-                                    muted 
-                                    loop 
-                                    playsInline
-                                >
-                                    <source src="/videos/phone-ringing.mp4" type="video/mp4" />
-                                </video>
+                                />
                                 
                                 {/* Overlay gradient */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent pointer-events-none" />
