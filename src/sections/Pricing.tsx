@@ -96,6 +96,38 @@ export function Pricing() {
                     </div>
                 </div>
 
+                {/* Employee vs Anvela Comparison */}
+                <div className="max-w-2xl mx-auto mb-12 fade-up">
+                    <div className="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden">
+                        <div className="px-6 py-3 bg-slate-50 border-b border-slate-100 text-center">
+                            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">
+                                {t('pricing.vsLabel') as string}
+                            </span>
+                        </div>
+                        <div className="divide-y divide-slate-100">
+                            {/* Employee row */}
+                            <div className="flex items-center justify-between px-6 py-4">
+                                <div className="flex items-center gap-3">
+                                    <span className="text-xl">👤</span>
+                                    <span className="text-sm text-slate-500">{t('pricing.vsEmployee') as string}</span>
+                                </div>
+                                <span className="text-sm font-semibold text-slate-400 line-through">{t('pricing.vsEmployeePrice') as string}</span>
+                            </div>
+                            {/* Anvela row */}
+                            <div className="flex items-center justify-between px-6 py-4 bg-blue-50/40">
+                                <div className="flex items-center gap-3">
+                                    <span className="text-xl">⚡</span>
+                                    <span className="text-sm font-semibold text-slate-800">{t('pricing.vsAnvela') as string}</span>
+                                </div>
+                                <span className="text-sm font-bold text-blue-600">{t('pricing.vsAnvelaPrice') as string}</span>
+                            </div>
+                        </div>
+                        <div className="px-6 py-3 bg-slate-50 border-t border-slate-100 text-center">
+                            <span className="text-[11px] text-slate-500 italic">{t('pricing.vsTagline') as string}</span>
+                        </div>
+                    </div>
+                </div>
+
                 {/* Pricing Cards */}
                 <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto pt-16 items-stretch">
                     {pricingTiers.map((tier: any, i: number) => {

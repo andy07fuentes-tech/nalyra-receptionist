@@ -291,6 +291,12 @@ export const translations = {
       annualBillingNotice: "(facturé {{price}}$ annuellement)",
       setupFeeLabel: "Frais de mise en service",
       popularLabel: "Le plus populaire",
+      vsLabel: "L'AVANTAGE ANVELA",
+      vsEmployee: "Réceptionniste à temps partiel",
+      vsEmployeePrice: "~2 500$ / mois",
+      vsAnvela: "Anvela — disponible 24h/7j",
+      vsAnvelaPrice: "à partir de 199$ / mois",
+      vsTagline: "Pas pour remplacer votre équipe — pour lui donner du renfort, sans les coûts.",
       tiers: [
         {
           name: "The Night Shift",
@@ -919,6 +925,12 @@ export const translations = {
       annualBillingNotice: "(billed ${{price}} annually)",
       setupFeeLabel: "Setup Fee",
       popularLabel: "Most Popular",
+      vsLabel: "THE ANVELA ADVANTAGE",
+      vsEmployee: "Part-time receptionist",
+      vsEmployeePrice: "~$2,500 / month",
+      vsAnvela: "Anvela — available 24/7",
+      vsAnvelaPrice: "from $199 / month",
+      vsTagline: "Not a replacement for your team — extra support, without the extra payroll.",
       tiers: [
         {
           name: "The Night Shift",
@@ -1536,6 +1548,12 @@ export const translations = {
       annualBillingNotice: "(facturado ${{price}} anualmente)",
       setupFeeLabel: "Gasto de puesta en servicio",
       popularLabel: "El más popular",
+      vsLabel: "LA VENTAJA ANVELA",
+      vsEmployee: "Recepcionista a tiempo parcial",
+      vsEmployeePrice: "~$2 500 / mes",
+      vsAnvela: "Anvela — disponible 24h/7d",
+      vsAnvelaPrice: "desde $199 / mes",
+      vsTagline: "No para reemplazar a tu equipo — para darle refuerzo, sin el costo extra.",
       tiers: [
         {
           name: "The Night Shift",
@@ -2157,6 +2175,12 @@ export const translations = {
       annualBillingNotice: "(fatturato ${{price}} annualmente)",
       setupFeeLabel: "Spese di attivazione",
       popularLabel: "Il più popolare",
+      vsLabel: "IL VANTAGGIO ANVELA",
+      vsEmployee: "Receptionist part-time",
+      vsEmployeePrice: "~2 500$ / mese",
+      vsAnvela: "Anvela — disponibile 24h/7g",
+      vsAnvelaPrice: "da $199 / mese",
+      vsTagline: "Non per sostituire il tuo team — per dargli supporto, senza i costi aggiuntivi.",
       tiers: [
         {
           name: "The Night Shift",
