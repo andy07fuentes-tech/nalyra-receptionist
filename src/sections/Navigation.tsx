@@ -138,12 +138,12 @@ function DemoCallButton({ isScrolled }: { isScrolled: boolean }) {
   return (
     <button
       onClick={startCall}
-      className={`flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest transition-all px-4 py-2 rounded-full border
+      className={`flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-widest transition-all px-3 py-1.5 rounded-full border
         ${isScrolled
           ? 'text-blue-600 border-blue-600 hover:bg-blue-600 hover:text-white'
           : 'text-blue-500 border-blue-500/30 hover:bg-blue-500/5 hover:text-white'}`}
     >
-      <Phone className="w-3 h-3" />
+      <Phone className="w-2.5 h-2.5" />
       {t('nav.freeTrial')}
     </button>
   );
