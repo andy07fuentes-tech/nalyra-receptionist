@@ -384,7 +384,19 @@ export const translations = {
         },
         {
           question: "Y a-t-il un engagement à long terme ?",
-          answer: "Nos forfaits 'The Night Shift' et 'The Co-Pilot' ont un engagement minimal de 3 mois. Le forfait 'The Elite' requiert 6 mois en raison de la complexité de l'intégration CRM personnalisée."
+          answer: "Les forfaits 'Night Shift' et 'Co-Pilot' ont un engagement minimal de 3 mois. Le forfait 'Elite' requiert 6 mois en raison de la complexité de l'intégration CRM personnalisée."
+        },
+        {
+          question: "Pour quels types d'entreprises Anvela est-elle faite ?",
+          answer: "Anvela fonctionne pour toute entreprise qui reçoit des appels : garages, cliniques, cabinets juridiques, immobilier, restaurants, commerces et plus encore. Si vos clients vous appellent, Anvela peut répondre à leur place."
+        },
+        {
+          question: "Anvela est-elle bilingue ?",
+          answer: "Oui. Anvela comprend et répond en français et en anglais, et peut détecter automatiquement la langue du client dès les premiers mots de la conversation. Idéal pour le marché montréalais et québécois."
+        },
+        {
+          question: "Combien de temps faut-il pour être opérationnel ?",
+          answer: "En général, moins de 48 heures. Une fois votre forfait confirmé, notre équipe configure votre réceptionniste IA, l'intègre à votre numéro existant et effectue les tests. Vous êtes opérationnel rapidement, sans perturbation."
         }
       ]
     },
@@ -1076,7 +1088,19 @@ export const translations = {
         },
         {
           question: "Is there a long-term commitment?",
-          answer: "Our 'The Night Shift' and 'The Co-Pilot' plans have a 3-month minimum commitment. The 'The Elite' plan requires 6 months due to the complexity of the custom CRM integration."
+          answer: "The 'Night Shift' and 'Co-Pilot' plans have a 3-month minimum commitment. The 'Elite' plan requires 6 months due to the complexity of the custom CRM integration."
+        },
+        {
+          question: "What types of businesses is Anvela for?",
+          answer: "Anvela works for any business that receives calls: auto shops, clinics, law offices, real estate agencies, restaurants, retail stores, and more. If your clients call you, Anvela can answer for you."
+        },
+        {
+          question: "Is Anvela bilingual?",
+          answer: "Yes. Anvela understands and responds in both French and English, and can automatically detect the client's language from the first words of the conversation. Perfect for the Montreal and Quebec market."
+        },
+        {
+          question: "How long does it take to get up and running?",
+          answer: "Generally less than 48 hours. Once your plan is confirmed, our team configures your AI receptionist, integrates it with your existing number, and runs tests. You're live quickly with zero disruption."
         }
       ]
     },
@@ -1742,7 +1766,19 @@ export const translations = {
         },
         {
           question: "¿Existe un compromiso a largo plazo?",
-          answer: "Nuestros planes 'The Night Shift' y 'The Co-Pilot' tienen un compromiso mínimo de 3 meses. El plan 'The Elite' requiere 6 meses debido a la complejidad de la integración personalizada con CRM."
+          answer: "Los planes 'Night Shift' y 'Co-Pilot' tienen un compromiso mínimo de 3 meses. El plan 'Elite' requiere 6 meses debido a la complejidad de la integración personalizada con CRM."
+        },
+        {
+          question: "¿Para qué tipos de empresas es Anvela?",
+          answer: "Anvela funciona para cualquier negocio que reciba llamadas: talleres, clínicas, bufetes de abogados, inmobiliarias, restaurantes, tiendas y más. Si sus clientes le llaman, Anvela puede responder por usted."
+        },
+        {
+          question: "¿Es Anvela bilingüe?",
+          answer: "Sí. Anvela comprende y responde en francés e inglés, y puede detectar automáticamente el idioma del cliente desde las primeras palabras de la conversación. Ideal para el mercado de Montreal y Quebec."
+        },
+        {
+          question: "¿Cuánto tiempo se tarda en estar operativo?",
+          answer: "Generalmente menos de 48 horas. Una vez confirmado su plan, nuestro equipo configura su recepcionista de IA, la integra con su número existente y realiza las pruebas. Estará en funcionamiento rápidamente sin ninguna interrupción."
         }
       ]
     },
@@ -2400,7 +2436,19 @@ export const translations = {
         },
         {
           question: "C'è un impegno a lungo termine?",
-          answer: "I nostri piani 'The Night Shift' e 'The Co-Pilot' hanno un impegno minimo di 3 mesi. Il piano 'The Elite' richiede 6 mesi a causa della complessità dell'integrazione CRM personalizzata."
+          answer: "I piani 'Night Shift' e 'Co-Pilot' hanno un impegno minimo di 3 mesi. Il piano 'Elite' richiede 6 mesi a causa della complessità dell'integrazione CRM personalizzata."
+        },
+        {
+          question: "Per che tipo di aziende è pensata Anvela?",
+          answer: "Anvela funziona per qualsiasi azienda che riceve chiamate: officine, cliniche, studi legali, agenzie immobiliari, ristoranti, negozi e altro ancora. Se i tuoi clienti ti chiamano, Anvela può rispondere al posto tuo."
+        },
+        {
+          question: "Anvela è bilingue?",
+          answer: "Sì. Anvela comprende e risponde in francese e inglese, e può rilevare automaticamente la lingua del cliente dalle prime parole della conversazione. Ideale per il mercato di Montreal e del Quebec."
+        },
+        {
+          question: "Quanto tempo ci vuole per essere operativi?",
+          answer: "Generalmente meno di 48 ore. Una volta confermato il piano, il nostro team configura il tuo receptionist IA, lo integra con il tuo numero esistente ed esegue i test. Sei operativo rapidamente, senza alcuna interruzione."
         }
       ]
     },
