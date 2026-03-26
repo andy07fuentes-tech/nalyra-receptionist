@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { LanguageToggle } from '../components/LanguageToggle';
-import { Link } from 'react-router-dom';
-import { Volume2, VolumeX } from 'lucide-react';
+import { Volume2, VolumeX, PhoneOff, Loader2 } from 'lucide-react';
 import { useAudio } from '../contexts/AudioContext';
+import { RetellWebClient } from 'retell-client-js-sdk';
 
 export function Navigation() {
   const { t } = useLanguage();
@@ -71,23 +71,74 @@ export function Navigation() {
 
         {/* Right: Actions & Toggle */}
         <div className="flex-1 flex items-center justify-end gap-6">
-          <Link
-            to="/onboarding"
-            className={`hidden sm:block text-[11px] font-bold uppercase tracking-widest transition-all px-4 py-2 rounded-full border
-              ${isScrolled
-                ? 'text-blue-600 border-blue-600 hover:bg-blue-600 hover:text-white'
-                : 'text-blue-500 border-blue-500/30 hover:bg-blue-500/5 hover:text-white'}`}
-          >
-            {t('nav.freeTrial')}
-          </Link>
-          
+          <DemoCallButton isScrolled={isScrolled} />
           <SoundToggle isScrolled={isScrolled} />
-          
           <LanguageToggle isScrolled={isScrolled} />
         </div>
 
       </div>
     </nav>
+  );
+}
+
+const retellClient = new RetellWebClient();
+
+function DemoCallButton({ isScrolled }: { isScrolled: boolean }) {
+  const [status, setStatus] = useState<'idle' | 'connecting' | 'active'>('idle');
+
+  const startCall = async () => {
+    setStatus('connecting');
+    try {
+      const res = await fetch('https://n8n.srv1401769.hstgr.cloud/webhook/anvela/create-web-call', { method: 'POST' });
+      const { access_token, sample_rate } = await res.json();
+      await retellClient.startCall({ accessToken: access_token, sampleRate: sample_rate });
+      setStatus('active');
+    } catch {
+      setStatus('idle');
+    }
+  };
+
+  const endCall = () => {
+    retellClient.stopCall();
+    setStatus('idle');
+  };
+
+  useEffect(() => {
+    retellClient.on('call_ended', () => setStatus('idle'));
+    return () => { retellClient.off('call_ended', () => setStatus('idle')); };
+  }, []);
+
+  if (status === 'active') {
+    return (
+      <button
+        onClick={endCall}
+        className="hidden sm:flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-red-500 text-red-500 hover:bg-red-500 hover:text-white transition-all animate-pulse"
+      >
+        <PhoneOff className="w-3 h-3" />
+        Terminer
+      </button>
+    );
+  }
+
+  if (status === 'connecting') {
+    return (
+      <button disabled className="hidden sm:flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-blue-400 text-blue-400 opacity-70">
+        <Loader2 className="w-3 h-3 animate-spin" />
+        Connexion...
+      </button>
+    );
+  }
+
+  return (
+    <button
+      onClick={startCall}
+      className={`hidden sm:block text-[11px] font-bold uppercase tracking-widest transition-all px-4 py-2 rounded-full border
+        ${isScrolled
+          ? 'text-blue-600 border-blue-600 hover:bg-blue-600 hover:text-white'
+          : 'text-blue-500 border-blue-500/30 hover:bg-blue-500/5 hover:text-white'}`}
+    >
+      Essayer la démo
+    </button>
   );
 }
 
