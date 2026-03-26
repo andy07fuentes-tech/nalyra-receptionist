@@ -616,6 +616,49 @@ export const translations = {
       privacyNotice: "En soumettant ce formulaire, vous acceptez notre Politique de Confidentialité et nos Conditions de Service.",
     },
 
+    // Onboarding
+    onboarding: {
+      stepCounter: "Étape {{step}} sur 3",
+      saveExit: "Sauvegarder & Quitter",
+      step1: {
+        badge: "Identifier votre entreprise",
+        title: "Connectons votre",
+        titleHighlight: "Identité commerciale.",
+        description: "Trouvez votre garage à Montréal. Nous récupérerons votre localisation et vos horaires pour créer votre profil IA personnalisé.",
+        searchPlaceholder: "Rechercher des entreprises à Montréal...",
+        continueButton: "Continuer vers les forfaits",
+        changeButton: "Changer",
+      },
+      step2: {
+        title: "Choisissez votre",
+        titleHighlight: "Forfait Anvela.",
+        description: "Sélectionnez le niveau qui correspond à votre volume d'activité. Les tarifs incluent la gestion automatisée des appels, la prise de rendez-vous et le support bilingue.",
+        backButton: "Retour",
+        continueButton: "Continuer vers la confirmation",
+        selectedLabel: "SÉLECTIONNÉ",
+        selectLabel: "CHOISIR CE FORFAIT",
+        cadMonth: "CAD / mois",
+      },
+      step3: {
+        title: "Dernière étape :",
+        titleHighlight: "Vérification par appel.",
+        description: "Nous avons enregistré le profil de {{business}} et votre intérêt pour le forfait {{plan}}.",
+        inputDescription: "Pour finaliser votre abonnement et planifier votre appel de configuration, veuillez entrer votre numéro de téléphone direct ci-dessous.",
+        phonePlaceholder: "+1 (514) 000-0000",
+        backButton: "Retour",
+        submittingButton: "Appel en cours...",
+        submitButton: "Demander un appel d'intégration",
+      },
+      step4: {
+        title: "Demande",
+        titleHighlight: "Confirmée.",
+        description: "Excellent choix. Nous avons reçu votre demande pour le forfait {{plan}}.",
+        nextStepsTitle: "Quelle est la prochaine étape ?",
+        nextStepsText: "Un expert Anvela vous appellera dans les 24 heures pour finaliser votre configuration.",
+        returnLink: "Retourner à l'accueil",
+      },
+    },
+
     // Footer
     footer: {
       brandName: "Anvela",
@@ -1263,6 +1306,49 @@ export const translations = {
       privacyNotice: "By submitting this form, you agree to our Privacy Policy and Terms of Service.",
     },
 
+    // Onboarding
+    onboarding: {
+      stepCounter: "Step {{step}} of 3",
+      saveExit: "Save & Exit",
+      step1: {
+        badge: "Identify Your Business",
+        title: "Let's connect your",
+        titleHighlight: "Business Identity.",
+        description: "Find your garage in Montreal. We'll pull your location and hours to start building your custom AI profile.",
+        searchPlaceholder: "Search Montreal businesses...",
+        continueButton: "Continue to Plans",
+        changeButton: "Change",
+      },
+      step2: {
+        title: "Choose Your",
+        titleHighlight: "Anvela Plan.",
+        description: "Select the tier that best fits your business volume. Pricing includes automated call handling, scheduling, and bilingual support.",
+        backButton: "Back",
+        continueButton: "Continue to Confirmation",
+        selectedLabel: "SELECTED",
+        selectLabel: "SELECT PLAN",
+        cadMonth: "CAD / month",
+      },
+      step3: {
+        title: "Final Step:",
+        titleHighlight: "Call Verification.",
+        description: "We've captured your business profile for {{business}} and your interest in the {{plan}} tier.",
+        inputDescription: "To finalize your subscription and schedule your configuration call, please enter your direct phone number below.",
+        phonePlaceholder: "+1 (514) 000-0000",
+        backButton: "Back",
+        submittingButton: "Calling...",
+        submitButton: "Request Integration Call",
+      },
+      step4: {
+        title: "Request",
+        titleHighlight: "Confirmed.",
+        description: "Excellent choice. We've received your request for the {{plan}} plan.",
+        nextStepsTitle: "What happens next?",
+        nextStepsText: "An Anvela expert will call you within 24 hours to finalize your setup.",
+        returnLink: "Return to Home",
+      },
+    },
+
     // Footer
     footer: {
       brandName: "Anvela",
@@ -1885,6 +1971,49 @@ export const translations = {
       privacyNotice: "Al enviar este formulario, acepta nuestra Política de Privacidad y Términos de Servicio.",
     },
 
+    // Onboarding
+    onboarding: {
+      stepCounter: "Paso {{step}} de 3",
+      saveExit: "Guardar y Salir",
+      step1: {
+        badge: "Identificar su empresa",
+        title: "Conectemos su",
+        titleHighlight: "Identidad Comercial.",
+        description: "Encuentre su garaje en Montreal. Obtendremos su ubicación y horarios para crear su perfil IA personalizado.",
+        searchPlaceholder: "Buscar empresas en Montreal...",
+        continueButton: "Continuar a los Planes",
+        changeButton: "Cambiar",
+      },
+      step2: {
+        title: "Elija su",
+        titleHighlight: "Plan Anvela.",
+        description: "Seleccione el nivel que mejor se adapte a su volumen de negocio. El precio incluye gestión automática de llamadas, citas y soporte bilingüe.",
+        backButton: "Atrás",
+        continueButton: "Continuar a la Confirmación",
+        selectedLabel: "SELECCIONADO",
+        selectLabel: "ELEGIR ESTE PLAN",
+        cadMonth: "CAD / mes",
+      },
+      step3: {
+        title: "Último paso:",
+        titleHighlight: "Verificación por llamada.",
+        description: "Hemos registrado el perfil de {{business}} y su interés en el plan {{plan}}.",
+        inputDescription: "Para finalizar su suscripción y programar su llamada de configuración, ingrese su número de teléfono directo a continuación.",
+        phonePlaceholder: "+1 (514) 000-0000",
+        backButton: "Atrás",
+        submittingButton: "Llamando...",
+        submitButton: "Solicitar llamada de integración",
+      },
+      step4: {
+        title: "Solicitud",
+        titleHighlight: "Confirmada.",
+        description: "Excelente elección. Hemos recibido su solicitud para el plan {{plan}}.",
+        nextStepsTitle: "¿Qué sigue?",
+        nextStepsText: "Un experto de Anvela le llamará en 24 horas para finalizar su configuración.",
+        returnLink: "Volver al inicio",
+      },
+    },
+
     // Footer
     footer: {
       brandName: "Anvela",
@@ -2497,6 +2626,49 @@ export const translations = {
         errorMessage: "Qualcosa è andato storto. Per favore riprova.",
       },
       privacyNotice: "Inviando questo modulo, accetti la nostra Informativa sulla Privacy e i Termini di Servizio.",
+    },
+
+    // Onboarding
+    onboarding: {
+      stepCounter: "Passo {{step}} di 3",
+      saveExit: "Salva ed Esci",
+      step1: {
+        badge: "Identifica la tua azienda",
+        title: "Colleghiamo la tua",
+        titleHighlight: "Identità Aziendale.",
+        description: "Trova il tuo garage a Montreal. Recupereremo la tua posizione e gli orari per creare il tuo profilo IA personalizzato.",
+        searchPlaceholder: "Cerca aziende a Montreal...",
+        continueButton: "Continua ai Piani",
+        changeButton: "Cambia",
+      },
+      step2: {
+        title: "Scegli il tuo",
+        titleHighlight: "Piano Anvela.",
+        description: "Seleziona il livello più adatto al tuo volume di attività. Il prezzo include la gestione automatica delle chiamate, appuntamenti e supporto bilingue.",
+        backButton: "Indietro",
+        continueButton: "Continua alla Conferma",
+        selectedLabel: "SELEZIONATO",
+        selectLabel: "SCEGLI QUESTO PIANO",
+        cadMonth: "CAD / mese",
+      },
+      step3: {
+        title: "Ultimo passo:",
+        titleHighlight: "Verifica tramite chiamata.",
+        description: "Abbiamo registrato il profilo di {{business}} e il tuo interesse per il piano {{plan}}.",
+        inputDescription: "Per finalizzare il tuo abbonamento e programmare la chiamata di configurazione, inserisci il tuo numero di telefono diretto qui sotto.",
+        phonePlaceholder: "+1 (514) 000-0000",
+        backButton: "Indietro",
+        submittingButton: "Chiamando...",
+        submitButton: "Richiedi chiamata di integrazione",
+      },
+      step4: {
+        title: "Richiesta",
+        titleHighlight: "Confermata.",
+        description: "Ottima scelta. Abbiamo ricevuto la tua richiesta per il piano {{plan}}.",
+        nextStepsTitle: "Cosa succede dopo?",
+        nextStepsText: "Un esperto Anvela ti chiamerà entro 24 ore per finalizzare la configurazione.",
+        returnLink: "Torna alla home",
+      },
     },
 
     // Footer

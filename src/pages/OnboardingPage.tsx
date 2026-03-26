@@ -7,7 +7,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { LanguageToggle } from '../components/LanguageToggle';
 
 export default function OnboardingPage() {
-    const { t, language } = useLanguage();
+    const { t } = useLanguage();
     const location = useLocation();
     const [step, setStep] = useState(1);
     const [selectedBusiness, setSelectedBusiness] = useState<any>(null);
@@ -74,6 +74,13 @@ export default function OnboardingPage() {
 
     const tiers = (t('pricing.tiers') as any) || [];
 
+    // Helper to interpolate {{variable}} in translation strings
+    const ti = (key: string, vars: Record<string, string> = {}) => {
+        let str = t(key) as string;
+        Object.entries(vars).forEach(([k, v]) => { str = str.replace(`{{${k}}}`, v); });
+        return str;
+    };
+
     return (
         <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-blue-500/30">
             {/* Navigation */}
@@ -91,12 +98,16 @@ export default function OnboardingPage() {
                             <div key={s} className={`h-1.5 w-16 rounded-full transition-all duration-500 ${s <= step ? 'bg-blue-600 shadow-[0_0_15px_rgba(37,99,235,0.2)]' : 'bg-slate-200'}`} />
                         ))}
                     </div>
-                    <span className="text-[10px] text-slate-400 uppercase tracking-[0.3em] font-medium">Step {step} of 3</span>
+                    <span className="text-[10px] text-slate-400 uppercase tracking-[0.3em] font-medium">
+                        {ti('onboarding.stepCounter', { step: String(step) })}
+                    </span>
                 </div>
 
                 <div className="flex items-center gap-6">
                     <LanguageToggle isScrolled={true} />
-                    <button className="text-slate-400 hover:text-slate-900 transition-colors text-xs font-medium underline underline-offset-4">Save & Exit</button>
+                    <button className="text-slate-400 hover:text-slate-900 transition-colors text-xs font-medium underline underline-offset-4">
+                        {t('onboarding.saveExit') as string}
+                    </button>
                 </div>
             </nav>
 
@@ -107,15 +118,15 @@ export default function OnboardingPage() {
                         <div className="lg:col-span-5 space-y-8">
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-600/10 border border-blue-500/20 text-blue-600 text-xs font-medium">
                                 <Search className="w-3 h-3" />
-                                Identify Your Business
+                                {t('onboarding.step1.badge') as string}
                             </div>
                             <div>
                                 <h1 className="font-serif text-4xl md:text-5xl leading-tight mb-4 text-slate-900">
-                                    Let's connect your <br />
-                                    <span className="text-blue-600 italic">Business Identity.</span>
+                                    {t('onboarding.step1.title') as string} <br />
+                                    <span className="text-blue-600 italic">{t('onboarding.step1.titleHighlight') as string}</span>
                                 </h1>
                                 <p className="text-slate-500 text-base leading-relaxed max-w-md">
-                                    Locate your office in Montreal. We'll pull your location and hours to start building your custom AI profile.
+                                    {t('onboarding.step1.description') as string}
                                 </p>
                             </div>
                         </div>
@@ -126,7 +137,7 @@ export default function OnboardingPage() {
                                         <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
                                         <input
                                             type="text"
-                                            placeholder="Search Montreal businesses..."
+                                            placeholder={t('onboarding.step1.searchPlaceholder') as string}
                                             value={value}
                                             onChange={(e) => setValue(e.target.value)}
                                             className="w-full h-14 pl-12 pr-4 bg-white border border-slate-300 rounded-xl focus:outline-none focus:border-slate-900 transition-all text-slate-900 placeholder:text-slate-500 font-medium"
@@ -154,7 +165,9 @@ export default function OnboardingPage() {
                                                 </div>
                                                 <span className="font-medium text-slate-900">{selectedBusiness.structured_formatting?.main_text || selectedBusiness.description}</span>
                                             </div>
-                                            <button onClick={() => setSelectedBusiness(null)} className="text-xs text-blue-600 font-bold uppercase tracking-widest">Change</button>
+                                            <button onClick={() => setSelectedBusiness(null)} className="text-xs text-blue-600 font-bold uppercase tracking-widest">
+                                                {t('onboarding.step1.changeButton') as string}
+                                            </button>
                                         </div>
                                     )}
                                     <button
@@ -162,7 +175,7 @@ export default function OnboardingPage() {
                                         onClick={handleNext}
                                         className={`w-full h-14 rounded-xl flex items-center justify-center gap-3 font-bold uppercase tracking-widest transition-all ${selectedBusiness ? 'bg-slate-900 hover:bg-black text-white shadow-xl shadow-slate-900/10' : 'bg-slate-200 text-slate-500 cursor-not-allowed'}`}
                                     >
-                                        Continue to Plans
+                                        {t('onboarding.step1.continueButton') as string}
                                         <ArrowRight className="w-5 h-5" />
                                     </button>
                                 </div>
@@ -174,8 +187,10 @@ export default function OnboardingPage() {
                 {step === 2 && (
                     <div className="w-full step-content space-y-12">
                         <div className="text-center max-w-2xl mx-auto">
-                            <h2 className="font-serif text-4xl md:text-5xl mb-4 text-slate-900">Choose Your <span className="text-blue-600 italic">Anvela Plan.</span></h2>
-                            <p className="text-slate-500">Select the tier that best fits your business volume. Pricing includes automated call handling, scheduling, and bilingual support.</p>
+                            <h2 className="font-serif text-4xl md:text-5xl mb-4 text-slate-900">
+                                {t('onboarding.step2.title') as string} <span className="text-blue-600 italic">{t('onboarding.step2.titleHighlight') as string}</span>
+                            </h2>
+                            <p className="text-slate-500">{t('onboarding.step2.description') as string}</p>
                         </div>
                         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
                             {tiers.map((tier: any, i: number) => {
@@ -184,7 +199,7 @@ export default function OnboardingPage() {
                                 const isElite = i === 2;
                                 const isStandard = i === 0;
 
-                                const glowColors = isElite 
+                                const glowColors = isElite
                                     ? { border: 'var(--gold-500)', glow: 'var(--gold-300)', shadow: 'rgba(210, 168, 85, 0.4)' }
                                     : isPopular
                                         ? { border: '#00d2ff', glow: '#33dbff', shadow: 'rgba(0, 210, 255, 0.4)' }
@@ -195,10 +210,7 @@ export default function OnboardingPage() {
                                         key={i}
                                         onClick={() => setSelectedPlan(tier.name)}
                                         className={`relative rounded-3xl overflow-hidden border transition-all duration-500 text-left flex flex-col group h-full
-                                            ${isSelected 
-                                                ? 'ring-2 ring-blue-600 ring-offset-4' 
-                                                : ''
-                                            }
+                                            ${isSelected ? 'ring-2 ring-blue-600 ring-offset-4' : ''}
                                             solar-aura-glow
                                             ${isPopular ? 'md:-translate-y-2 scale-[1.03] z-10' : ''}
                                             ${isElite ? 'scale-[1.03] z-10' : ''}`}
@@ -214,7 +226,7 @@ export default function OnboardingPage() {
                                             <div className="premium-border-animate" />
                                         </div>
 
-                                        <div className={`relative z-10 flex flex-col flex-grow m-[2px] bg-white rounded-[22px] overflow-hidden h-full`}>
+                                        <div className="relative z-10 flex flex-col flex-grow m-[2px] bg-white rounded-[22px] overflow-hidden h-full">
                                             <div className={`p-8 pb-4 relative overflow-hidden ${isElite ? 'bg-white/40 backdrop-blur-xl' : 'bg-white'}`}>
                                                 {isPopular && (
                                                     <div className="absolute inset-0 bg-gradient-to-b from-blue-500/10 to-transparent pointer-events-none" />
@@ -228,23 +240,22 @@ export default function OnboardingPage() {
                                                     </div>
                                                 )}
 
-                                                {/* Unique Badges */}
                                                 {isStandard && (
                                                     <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-slate-700 text-white text-[8px] font-bold uppercase tracking-widest py-1.5 px-4 rounded-b-xl shadow-[0_4px_15px_rgba(71,85,105,0.4)]">
-                                                        ESSENTIEL
+                                                        {t('pricing.essentiel') as string}
                                                     </div>
                                                 )}
                                                 {isPopular && !isElite && (
                                                     <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[8px] font-bold uppercase tracking-widest py-1.5 px-4 rounded-b-xl shadow-[0_4px_15px_rgba(0,210,255,0.4)]">
-                                                        MEILLEURE VALEUR
+                                                        {t('pricing.bestValue') as string}
                                                     </div>
                                                 )}
                                                 {isElite && (
                                                     <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-slate-900 text-gold-200 text-[8px] font-bold uppercase tracking-widest py-1.5 px-4 rounded-b-xl shadow-[0_4px_15px_rgba(210,168,85,0.4)] border-x border-b border-gold-500/30">
-                                                        SOLUTION COMPLÈTE
+                                                        {t('pricing.completeSolution') as string}
                                                     </div>
                                                 )}
-                                                
+
                                                 {isSelected && (
                                                     <div className="absolute top-4 right-4 w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center shadow-lg animate-in zoom-in duration-300">
                                                         <Check className="w-4 h-4 text-white" strokeWidth={3} />
@@ -254,7 +265,7 @@ export default function OnboardingPage() {
                                                 <h3 className={`text-xl font-bold mb-2 ${isElite ? 'text-gradient-gold' : 'text-slate-900'}`}>{tier.name}</h3>
                                                 <div className="flex items-baseline gap-1 mb-1">
                                                     <span className={`text-4xl font-serif ${isElite ? 'text-gradient-gold' : 'text-slate-900'}`}>${tier.price}</span>
-                                                    <span className="text-slate-900 text-[10px] font-bold uppercase tracking-tight">CAD / mois</span>
+                                                    <span className="text-slate-900 text-[10px] font-bold uppercase tracking-tight">{t('onboarding.step2.cadMonth') as string}</span>
                                                 </div>
                                                 {tier.weeklyNote && (
                                                     <div className={`text-[10px] font-bold mb-2 italic lowercase mb-4 ${isElite ? 'text-gold-600' : 'text-slate-600'}`}>
@@ -284,12 +295,12 @@ export default function OnboardingPage() {
                                                     ))}
                                                 </div>
                                                 <div className={`w-full py-4 rounded-xl text-center text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-md mt-auto
-                                                    ${isSelected 
-                                                        ? (isElite ? 'bg-gradient-to-r from-gold-600 via-gold-500 to-gold-600 text-white shadow-gold-500/20' : 'bg-blue-600 text-white shadow-blue-500/20') 
+                                                    ${isSelected
+                                                        ? (isElite ? 'bg-gradient-to-r from-gold-600 via-gold-500 to-gold-600 text-white shadow-gold-500/20' : 'bg-blue-600 text-white shadow-blue-500/20')
                                                         : 'bg-white/10 text-white border border-white/10 group-hover:bg-white group-hover:text-slate-900 group-hover:shadow-lg'
                                                     }`}
                                                 >
-                                                    {isSelected ? (language === 'fr' ? 'SÉLECTIONNÉ' : 'SELECTED') : (language === 'fr' ? 'CHOISIR CE FORFAIT' : 'SELECT PLAN')}
+                                                    {isSelected ? t('onboarding.step2.selectedLabel') as string : t('onboarding.step2.selectLabel') as string}
                                                 </div>
                                             </div>
                                         </div>
@@ -298,18 +309,15 @@ export default function OnboardingPage() {
                             })}
                         </div>
                         <div className="flex justify-center gap-6 mt-12">
-                            <button
-                                onClick={handleBack}
-                                className="px-8 py-3 text-slate-500 hover:text-slate-900 transition-colors uppercase text-xs font-bold tracking-widest"
-                            >
-                                Back
+                            <button onClick={handleBack} className="px-8 py-3 text-slate-500 hover:text-slate-900 transition-colors uppercase text-xs font-bold tracking-widest">
+                                {t('onboarding.step2.backButton') as string}
                             </button>
                             <button
                                 disabled={!selectedPlan}
                                 onClick={handleNext}
                                 className={`px-12 py-3 rounded-xl flex items-center gap-3 font-bold uppercase tracking-widest transition-all ${selectedPlan ? 'bg-slate-900 hover:bg-black text-white shadow-xl shadow-slate-900/10' : 'bg-slate-200 text-slate-500 cursor-not-allowed'}`}
                             >
-                                Continue to Confirmation
+                                {t('onboarding.step2.continueButton') as string}
                                 <ArrowRight className="w-5 h-5" />
                             </button>
                         </div>
@@ -322,15 +330,20 @@ export default function OnboardingPage() {
                             <div className="w-20 h-20 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center mx-auto mb-4 shadow-sm">
                                 <Sparkles className="w-10 h-10 text-blue-600" />
                             </div>
-                            <h2 className="font-serif text-4xl text-slate-900">Final Step: <span className="text-blue-600 italic">Call Verification.</span></h2>
+                            <h2 className="font-serif text-4xl text-slate-900">
+                                {t('onboarding.step3.title') as string} <span className="text-blue-600 italic">{t('onboarding.step3.titleHighlight') as string}</span>
+                            </h2>
                             <p className="text-slate-500 leading-relaxed text-lg">
-                                We've captured your business profile for <span className="text-slate-900 font-medium">{selectedBusiness?.description}</span> and your interest in the <span className="text-blue-600 font-medium">{selectedPlan}</span> tier.
+                                {ti('onboarding.step3.description', {
+                                    business: selectedBusiness?.description || '',
+                                    plan: selectedPlan || '',
+                                })}
                             </p>
                             <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-left space-y-4">
-                                <p className="text-sm text-slate-600">To finalize your subscription and schedule your configuration call, please enter your direct phone number below.</p>
+                                <p className="text-sm text-slate-600">{t('onboarding.step3.inputDescription') as string}</p>
                                 <input
                                     type="tel"
-                                    placeholder="+1 (514) 000-0000"
+                                    placeholder={t('onboarding.step3.phonePlaceholder') as string}
                                     value={phoneNumber}
                                     onChange={(e) => setPhoneNumber(e.target.value)}
                                     className="w-full h-14 px-4 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-blue-600 transition-all text-slate-900 text-lg tracking-widest shadow-inner placeholder:text-slate-300"
@@ -341,11 +354,13 @@ export default function OnboardingPage() {
                                 disabled={!phoneNumber || isSubmitting}
                                 className={`w-full h-16 rounded-xl font-bold uppercase tracking-widest shadow-xl transition-all flex items-center justify-center gap-4 ${!phoneNumber || isSubmitting ? 'bg-slate-200 text-slate-500 cursor-not-allowed' : 'bg-slate-900 hover:bg-black text-white shadow-slate-900/20'}`}
                             >
-                                {isSubmitting ? 'Calling...' : 'Request Integration Call'}
+                                {isSubmitting ? t('onboarding.step3.submittingButton') as string : t('onboarding.step3.submitButton') as string}
                                 <ArrowRight className="w-5 h-5" />
                             </button>
                             <div className="flex justify-center">
-                                <button onClick={handleBack} className="text-slate-400 hover:text-slate-900 transition-colors text-xs font-bold uppercase tracking-widest">Back</button>
+                                <button onClick={handleBack} className="text-slate-400 hover:text-slate-900 transition-colors text-xs font-bold uppercase tracking-widest">
+                                    {t('onboarding.step3.backButton') as string}
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -356,16 +371,18 @@ export default function OnboardingPage() {
                         <div className="w-24 h-24 rounded-full bg-green-50 border border-green-100 flex items-center justify-center mx-auto mb-8 animate-bounce shadow-sm">
                             <CheckCircle2 className="w-12 h-12 text-green-600" />
                         </div>
-                        <h2 className="font-serif text-5xl text-slate-900 mb-6">Request <span className="text-green-600 italic">Confirmed.</span></h2>
+                        <h2 className="font-serif text-5xl text-slate-900 mb-6">
+                            {t('onboarding.step4.title') as string} <span className="text-green-600 italic">{t('onboarding.step4.titleHighlight') as string}</span>
+                        </h2>
                         <p className="text-slate-500 text-xl leading-relaxed mb-10">
-                            Excellent choice. We've received your request for the <span className="text-slate-900 font-medium">{selectedPlan}</span> plan.
+                            {ti('onboarding.step4.description', { plan: selectedPlan || '' })}
                         </p>
                         <div className="p-8 rounded-3xl bg-blue-50 border border-blue-100 text-center space-y-4 shadow-sm">
-                            <h3 className="text-blue-600 font-bold uppercase tracking-[0.2em] text-xs">What happens next?</h3>
-                            <p className="text-slate-800 font-serif text-2xl">A Anvela expert will call you within <br /> <span className="text-blue-600 italic">24 hours</span> to finalize your setup.</p>
+                            <h3 className="text-blue-600 font-bold uppercase tracking-[0.2em] text-xs">{t('onboarding.step4.nextStepsTitle') as string}</h3>
+                            <p className="text-slate-800 font-serif text-2xl">{t('onboarding.step4.nextStepsText') as string}</p>
                         </div>
                         <Link to="/" className="inline-flex items-center gap-3 mt-12 text-slate-400 hover:text-slate-900 transition-colors font-medium">
-                            Return to Dashboard
+                            {t('onboarding.step4.returnLink') as string}
                         </Link>
                     </div>
                 )}
