@@ -33,8 +33,7 @@ export function OptimizedVideo({
                 setIsIntersecting(entry.isIntersecting);
             },
             {
-                // Start loading/playing slightly before it enters the viewport
-                rootMargin: '200px',
+                rootMargin: '0px',
                 threshold: 0.01
             }
         );

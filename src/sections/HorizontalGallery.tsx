@@ -91,7 +91,7 @@ export function HorizontalGallery() {
         {duplicatedItems.map((item, index) => (
           <div 
             key={`${item.id}-${index}`}
-            className={`gallery-item flex-shrink-0 relative group transition-all duration-500 hover:z-20 ${
+            className={`gallery-item flex-shrink-0 relative group hover:z-20 ${
               item.offset
             } ${
               item.size === 'small' ? 'w-[108px] md:w-[151px]' : 
@@ -100,7 +100,7 @@ export function HorizontalGallery() {
             }`}
           >
             {/* Video Frame */}
-            <div className={`relative aspect-[4/5] overflow-hidden rounded-xl md:rounded-2xl border border-neutral-100 bg-neutral-50 shadow-sm transition-all duration-500 group-hover:shadow-xl group-hover:-translate-y-2`}>
+            <div className={`relative aspect-[4/5] overflow-hidden rounded-xl md:rounded-2xl border border-neutral-100 bg-neutral-50 shadow-sm transition-[transform,box-shadow] duration-500 group-hover:shadow-xl group-hover:-translate-y-2`}>
               <OptimizedVideo
                 src={item.video}
                 preload="metadata"
