@@ -143,7 +143,7 @@ function DemoCallButton({ isScrolled }: { isScrolled: boolean }) {
           ? 'text-blue-600 border-blue-600 hover:bg-blue-600 hover:text-white'
           : 'text-blue-500 border-blue-500/30 hover:bg-blue-500/5 hover:text-white'}`}
     >
-      <Phone className="w-2.5 h-2.5" />
+      <Phone className="w-3.5 h-3.5" />
       {t('nav.freeTrial')}
     </button>
   );
