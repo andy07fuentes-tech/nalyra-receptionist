@@ -137,9 +137,9 @@ export function Pricing() {
                         const hasGlow = true;
 
                         const baseMonthlyPrice = parseInt(tier.price) || 0;
-                        // 2 months free = pay 10 months, get 12
-                        const annualTotal = baseMonthlyPrice * 10;
-                        const discountedMonthly = Math.round(annualTotal / 12);
+                        // -10% off monthly rate, pay only 10 months (2 months free)
+                        const discountedMonthly = Math.round(baseMonthlyPrice * 0.9);
+                        const annualTotal = discountedMonthly * 10;
 
                         const glowColors = isElite 
                             ? { border: 'var(--gold-500)', glow: 'var(--gold-300)', shadow: 'rgba(210, 168, 85, 0.4)' }
