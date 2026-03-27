@@ -99,6 +99,7 @@ export function VideoDemo() {
                         videoThumbnailUrl={checklistData.videoThumbnailUrl}
                         videoUrl={checklistData.videoUrl}
                         isTransparent={true}
+                        isVertical={true}
                         className="text-white mx-auto w-full mb-10"
                     />
                 </div>

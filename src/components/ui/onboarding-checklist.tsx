@@ -26,6 +26,7 @@ export interface OnboardingChecklistProps {
   videoUrl: string;
   className?: string;
   isTransparent?: boolean;
+  isVertical?: boolean;
 }
 
 /**
@@ -37,6 +38,7 @@ export interface OnboardingChecklistProps {
  * @param videoUrl - The URL for the video to be played in a modal.
  * @param className - Optional additional class names for the container.
  * @param isTransparent - If true, removes the background, border, and shadow for blending.
+ * @param isVertical - If true, uses a centered vertical layout for larger media display.
  */
 export const OnboardingChecklist = ({
   title,
@@ -46,6 +48,7 @@ export const OnboardingChecklist = ({
   videoUrl,
   className,
   isTransparent = false,
+  isVertical = false,
 }: OnboardingChecklistProps) => {
   const containerVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
@@ -73,6 +76,33 @@ export const OnboardingChecklist = ({
     },
   };
 
+  const checklistContent = (
+    <ul className={cn(
+      "mt-6 grid gap-x-8 gap-y-4",
+      isVertical ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" : "grid-cols-1 sm:grid-cols-2"
+    )}>
+      {items.map((item) => (
+        <motion.li key={item.id} variants={itemVariants} className="flex flex-col">
+          <div className="flex items-start">
+            <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+            <span className="ml-3 text-sm font-medium">{item.text}</span>
+          </div>
+          {item.helperText && item.helperLink && (
+            <div className="ml-8 mt-1 text-xs text-muted-foreground">
+              {item.helperText}{" "}
+              <a
+                href={item.helperLink.href}
+                className="text-primary underline-offset-4 hover:underline focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-sm"
+              >
+                {item.helperLink.text}
+              </a>
+            </div>
+          )}
+        </motion.li>
+      ))}
+    </ul>
+  );
+
   return (
     <motion.div
       initial="hidden"
@@ -81,41 +111,28 @@ export const OnboardingChecklist = ({
       className={cn(
         "w-full max-w-4xl mx-auto overflow-hidden",
         !isTransparent && "bg-card text-card-foreground border rounded-2xl shadow-sm p-8",
+        isVertical && "max-w-6xl px-4 md:px-8",
         className
       )}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        {/* Left Side: Title and Checklist */}
-        <div className="flex flex-col">
-          <h2 className="text-2xl font-bold tracking-tight">{title}</h2>
-          <p className="mt-2 text-muted-foreground">{description}</p>
-          <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
-            {items.map((item) => (
-              <motion.li key={item.id} variants={itemVariants} className="flex flex-col">
-                <div className="flex items-start">
-                  <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span className="ml-3 text-sm font-medium">{item.text}</span>
-                </div>
-                {item.helperText && item.helperLink && (
-                  <div className="ml-8 mt-1 text-xs text-muted-foreground">
-                    {item.helperText}{" "}
-                    <a
-                      href={item.helperLink.href}
-                      className="text-primary underline-offset-4 hover:underline focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-sm"
-                    >
-                      {item.helperLink.text}
-                    </a>
-                  </div>
-                )}
-              </motion.li>
-            ))}
-          </ul>
+      <div className={cn(
+        "grid gap-12 items-center",
+        isVertical ? "grid-cols-1" : "md:grid-cols-2"
+      )}>
+        {/* Title and Description */}
+        <div className={cn("flex flex-col", isVertical && "text-center items-center")}>
+          <h2 className={cn("text-2xl font-bold tracking-tight md:text-3xl", isVertical && "md:text-4xl")}>{title}</h2>
+          <p className={cn("mt-4 text-muted-foreground", isVertical && "text-lg max-w-2xl mx-auto")}>{description}</p>
+          {!isVertical && checklistContent}
         </div>
 
-        {/* Right Side: Video Thumbnail */}
+        {/* Video Thumbnail */}
         <motion.div
-          variants={itemVariants} // Re-using item variant for a nice slide-in effect
-          className="relative group rounded-lg overflow-hidden cursor-pointer w-full aspect-video"
+          variants={itemVariants} 
+          className={cn(
+            "relative group rounded-3xl overflow-hidden cursor-pointer w-full transition-all duration-500 shadow-2xl hover:shadow-blue-500/10 mx-auto",
+            isVertical ? "max-w-2xl" : "aspect-video"
+          )}
         >
           <Dialog>
             <DialogTrigger asChild>
@@ -123,15 +140,15 @@ export const OnboardingChecklist = ({
                 <img
                   src={videoThumbnailUrl}
                   alt="Video guide thumbnail"
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-                  <PlayCircle className="h-16 w-16 text-white/80 transform transition-all duration-300 group-hover:scale-110 group-hover:text-white" />
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500 flex items-center justify-center">
+                  <PlayCircle className="h-20 w-20 text-white/80 transform transition-all duration-500 group-hover:scale-110 group-hover:text-white filter drop-shadow-2xl" />
                 </div>
               </div>
             </DialogTrigger>
-            <DialogContent className="max-w-4xl p-0 border-0 bg-transparent shadow-none overflow-hidden rounded-2xl">
-              <div className="aspect-video w-full bg-black">
+            <DialogContent className="max-w-5xl p-0 border-0 bg-transparent shadow-none overflow-hidden rounded-2xl sm:rounded-3xl">
+              <div className="aspect-[9/16] md:aspect-video w-full bg-black/90 backdrop-blur-xl">
                 {videoUrl.toLowerCase().endsWith('.mp4') ? (
                   <video
                     src={videoUrl}
@@ -155,6 +172,13 @@ export const OnboardingChecklist = ({
             </DialogContent>
           </Dialog>
         </motion.div>
+
+        {/* Checklist below if vertical */}
+        {isVertical && (
+          <div className="w-full mt-8 border-t border-white/5 pt-12">
+            {checklistContent}
+          </div>
+        )}
       </div>
     </motion.div>
   );
