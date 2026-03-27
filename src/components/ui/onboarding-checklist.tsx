@@ -25,6 +25,7 @@ export interface OnboardingChecklistProps {
   videoThumbnailUrl: string;
   videoUrl: string;
   className?: string;
+  isTransparent?: boolean;
 }
 
 /**
@@ -35,6 +36,7 @@ export interface OnboardingChecklistProps {
  * @param videoThumbnailUrl - The URL for the video thumbnail image.
  * @param videoUrl - The URL for the video to be played in a modal.
  * @param className - Optional additional class names for the container.
+ * @param isTransparent - If true, removes the background, border, and shadow for blending.
  */
 export const OnboardingChecklist = ({
   title,
@@ -43,6 +45,7 @@ export const OnboardingChecklist = ({
   videoThumbnailUrl,
   videoUrl,
   className,
+  isTransparent = false,
 }: OnboardingChecklistProps) => {
   const containerVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
@@ -76,7 +79,8 @@ export const OnboardingChecklist = ({
       animate="visible"
       variants={containerVariants}
       className={cn(
-        "w-full max-w-4xl mx-auto bg-card text-card-foreground border rounded-2xl shadow-sm p-8 overflow-hidden",
+        "w-full max-w-4xl mx-auto overflow-hidden",
+        !isTransparent && "bg-card text-card-foreground border rounded-2xl shadow-sm p-8",
         className
       )}
     >

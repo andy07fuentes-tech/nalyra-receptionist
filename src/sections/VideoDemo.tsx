@@ -59,7 +59,7 @@ export function VideoDemo() {
             { id: 4, text: t('videoDemo.step4.text'), helperText: t('videoDemo.step4.helper') },
             { id: 5, text: t('videoDemo.step5.text'), helperText: t('videoDemo.step5.helper') },
         ],
-        videoThumbnailUrl: "https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?q=80&w=1600&auto=format&fit=crop",
+        videoThumbnailUrl: "/images/ai-receptionist-woman.jpg",
         videoUrl: "/videos/anvela-demo.mp4",
     };
 
@@ -98,7 +98,8 @@ export function VideoDemo() {
                         items={checklistData.items}
                         videoThumbnailUrl={checklistData.videoThumbnailUrl}
                         videoUrl={checklistData.videoUrl}
-                        className="bg-[#121212]/80 backdrop-blur-3xl border border-white/10 text-white shadow-[0_50px_100px_-20px_rgba(0,0,0,0.7)] mx-auto w-full p-12 md:p-16 lg:p-20 mb-10 rounded-[2.5rem]"
+                        isTransparent={true}
+                        className="text-white mx-auto w-full mb-10"
                     />
                 </div>
             </div>

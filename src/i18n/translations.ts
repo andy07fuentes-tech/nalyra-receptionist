@@ -267,7 +267,7 @@ export const translations = {
     videoDemo: {
       title: "Anvela en Action",
       description: "Découvrez comment notre réceptionniste IA transforme votre accueil client, gère vos rendez-vous et qualifie vos prospects 24h/24.",
-      step1: { text: "Démo Marketing", helper: "Regardez l'IA en situation réelle." },
+      step1: { text: "Démo Anvela", helper: "Regardez l'IA en situation réelle." },
       step2: { text: "Efficacité Absolue", helper: "Zéro appel manqué, 100% de satisfaction." },
       step3: { text: "Intégration Simple", helper: "Prêt en moins de 10 minutes." },
       step4: { text: "Multilingue", helper: "Parle la langue de vos clients." },
@@ -1064,7 +1064,7 @@ export const translations = {
     videoDemo: {
       title: "Anvela in Action",
       description: "Discover how our AI receptionist transforms your customer service, handles your appointments, and qualifies your leads 24/7.",
-      step1: { text: "Marketing Demo", helper: "Watch the AI in real-life scenarios." },
+      step1: { text: "Anvela Demo", helper: "Watch the AI in real-life scenarios." },
       step2: { text: "Absolute Efficiency", helper: "Zero missed calls, 100% satisfaction." },
       step3: { text: "Simple Integration", helper: "Ready in less than 10 minutes." },
       step4: { text: "Multilingual", helper: "Speaks your customers' language." },
@@ -1752,7 +1752,7 @@ export const translations = {
     videoDemo: {
       title: "Anvela en Acción",
       description: "Descubra cómo nuestra recepcionista IA transforma su atención al cliente, gestiona sus citas y califica a sus prospectos las 24 horas.",
-      step1: { text: "Demo de Marketing", helper: "Vea la IA en situaciones reales." },
+      step1: { text: "Demo Anvela", helper: "Vea la IA en situaciones reales." },
       step2: { text: "Eficiencia Absoluta", helper: "Cero llamadas perdidas, 100% de satisfacción." },
       step3: { text: "Integración Simple", helper: "Listo en menos de 10 minutos." },
       step4: { text: "Multilingüe", helper: "Habla el idioma de sus clientes." },
@@ -2443,7 +2443,7 @@ export const translations = {
     videoDemo: {
       title: "Anvela in Azione",
       description: "Scopri come la nostra receptionist IA trasforma il tuo servizio clienti, gestisce i tuoi appuntamenti e qualifica i tuoi lead 24 ore su 24.",
-      step1: { text: "Demo Marketing", helper: "Guarda l'IA in situazioni reali." },
+      step1: { text: "Demo Anvela", helper: "Guarda l'IA in situazioni reali." },
       step2: { text: "Efficienza Assoluta", helper: "Zero chiamate perse, 100% di soddisfazione." },
       step3: { text: "Integrazione Semplice", helper: "Pronto in meno di 10 minuti." },
       step4: { text: "Multilingue", helper: "Parle la lingua dei tuoi clienti." },
