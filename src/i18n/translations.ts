@@ -58,13 +58,13 @@ export const translations = {
     hero: {
       scriptText: "L'Avenir de la Communication Commerciale",
       mainTitle: "Votre Réceptionniste\nIA Intelligent",
-      ctaButton: "Essai Gratuit",
+      ctaButton: "Offre de Lancement",
       videoDemo: "Démo Vidéo",
       prices: "Tarifs",
       decorativeText: "INTELLIGENT • EFFICACE • FIABLE",
-      ctaSubtitle: "Essai de 14 Jours",
+      ctaSubtitle: "1er mois à -50%",
       ctaMain: "Commencer avec Anvela",
-      noCreditCard: "Aucune carte requise",
+      noCreditCard: "Offre limitée • Opérationnel en 48h",
       stats: {
         calls: { value: "100", suffix: "%", label: "Taux de Réponse" },
         availability: { value: "24", suffix: "/7", label: "Toujours Disponible" },
@@ -290,8 +290,8 @@ export const translations = {
       scriptText: "Un Investissement Rentable",
       subtitle: "NOS TARIFS",
       mainTitle: "Des forfaits adaptés à vos besoins",
-      promoText: "2 mois gratuits avec paiement annuel. Opérationnel en moins de 48h.",
-      ctaButton: "Démarrer l'essai",
+      promoText: "Offre de lancement : premier mois à 50% du tarif normal. Opérationnel en moins de 48h.",
+      ctaButton: "Profiter de l'offre",
       monthly: "Mensuel",
       yearly: "Annuel",
       yearlyBonus: "2 mois offerts & -10%",
@@ -347,7 +347,7 @@ export const translations = {
             "Appels : Illimités",
             "Rappels auto pour no-shows (rappel IA pour rebooker)",
             "Routage intelligent : Analyse le contexte pour prioriser et router",
-            "Garantie : 14 jours ou frais de mise en service remboursés"
+            "Offre lancement : premier mois à 50% du tarif normal"
           ]
         },
         {
@@ -605,13 +605,13 @@ export const translations = {
     contact: {
       scriptText: "Contactez-nous",
       subtitle: "CONTACT",
-      mainTitle: "Commencez Votre Essai Gratuit",
-      introText: "Prêt à transformer votre communication commerciale ? Commencez avec un essai gratuit de 14 jours. Aucune carte de crédit requise.",
+      mainTitle: "Réservez votre démo gratuite",
+      introText: "Prêt à transformer votre communication ? Soumettez votre demande — notre équipe vous contacte dans les minutes qui suivent pour une démo en direct. Premier mois à 50%.",
       contactInfoTitle: "Informations de Contact",
       contactItems: {
         address: { label: "Adresse", value: "Montréal, Québec, Canada" },
         phone: { label: "Téléphone", value: "(438) 814-7578 · (514) 679-2107", subtext: "Ligne directe Anvela 24/7" },
-        email: { label: "Email", value: "Pablo@anvela.ca", subtext: "support@anvela.ca" },
+        email: { label: "Email", value: "pablo@anvela.ca · support@anvela.ca", subtext: "Réponse sous 24h" },
         hours: { label: "Heures", value: "Toujours Disponible", subtext: "24/7/365 Support" },
       },
       form: {
@@ -780,13 +780,13 @@ export const translations = {
     hero: {
       scriptText: "The Future of Business Communication",
       mainTitle: "Your Intelligent\nAI Receptionist",
-      ctaButton: "Start Free Trial",
+      ctaButton: "Launch Offer",
       videoDemo: "Video Demo",
       prices: "Prices",
       decorativeText: "INTELLIGENT • EFFICIENT • RELIABLE",
-      ctaSubtitle: "Start 14-Day Trial",
+      ctaSubtitle: "1st month -50%",
       ctaMain: "Get Started with Anvela",
-      noCreditCard: "No credit card required",
+      noCreditCard: "Limited offer • Live in 48h",
       stats: {
         calls: { value: "100", suffix: "%", label: "Call Answer Rate" },
         availability: { value: "24", suffix: "/7", label: "Always Available" },
@@ -984,8 +984,8 @@ export const translations = {
       scriptText: "A Profitable Investment",
       subtitle: "OUR PRICING",
       mainTitle: "Plans tailored to your needs",
-      promoText: "2 months free with annual payment. Up and running in under 48 hours.",
-      ctaButton: "Start Trial",
+      promoText: "Launch offer: first month at 50% off normal price. Up and running in under 48 hours.",
+      ctaButton: "Claim offer",
       monthly: "Monthly",
       yearly: "Yearly",
       yearlyBonus: "2 months free & -10%",
@@ -1041,7 +1041,7 @@ export const translations = {
             "Calls: Unlimited",
             "Auto-callbacks for no-shows (AI call to rebook)",
             "Smart Routing: Context-aware prioritization & routing",
-            "Guarantee: 14 days or setup fees refunded"
+            "Launch offer: first month at 50% off normal price"
           ]
         },
         {
@@ -1324,13 +1324,13 @@ export const translations = {
     contact: {
       scriptText: "Get in Touch",
       subtitle: "CONTACT US",
-      mainTitle: "Start Your Free Trial",
-      introText: "Ready to transform your business communication? Get started with a 14-day free trial. No credit card required.",
+      mainTitle: "Book your free demo",
+      introText: "Ready to transform how your business handles calls? Submit your info — our team reaches out within minutes for a live demo. First month 50% off.",
       contactInfoTitle: "Contact Information",
       contactItems: {
         address: { label: "Address", value: "Montreal, Quebec, Canada" },
         phone: { label: "Phone", value: "(438) 814-7578 · (514) 679-2107", subtext: "Anvela direct line 24/7" },
-        email: { label: "Email", value: "Pablo@anvela.ca", subtext: "support@anvela.ca" },
+        email: { label: "Email", value: "pablo@anvela.ca · support@anvela.ca", subtext: "Reply within 24h" },
         hours: { label: "Hours", value: "Always Available", subtext: "24/7/365 Support" },
       },
       form: {
@@ -1476,13 +1476,13 @@ export const translations = {
     hero: {
       scriptText: "El Futuro de la Comunicación Empresarial",
       mainTitle: "Su Recepcionista\nIA Inteligente",
-      ctaButton: "Prueba Gratuita",
+      ctaButton: "Oferta de Lanzamiento",
       videoDemo: "Demo en Video",
       prices: "Precios",
       decorativeText: "INTELIGENTE • EFICIENTE • CONFIABLE",
-      ctaSubtitle: "Prueba de 14 Días",
+      ctaSubtitle: "1er mes al -50%",
       ctaMain: "Comenzar con Anvela",
-      noCreditCard: "Sin tarjeta de crédito • Configuración en 60s",
+      noCreditCard: "Oferta limitada • Operativo en 48h",
       stats: {
         calls: { value: "100", suffix: "%", label: "Tasa de Respuesta" },
         availability: { value: "24", suffix: "/7", label: "Siempre Disponible" },
@@ -1678,8 +1678,8 @@ export const translations = {
       scriptText: "Una Inversión Rentable",
       subtitle: "NUESTROS PRECIOS",
       mainTitle: "Planes adaptados a tus necesidades",
-      promoText: "2 meses gratis con pago anual. Operativo en menos de 48 horas.",
-      ctaButton: "Iniciar Prueba",
+      promoText: "Oferta de lanzamiento: primer mes al 50% del precio normal. Operativo en menos de 48 horas.",
+      ctaButton: "Aprovechar la oferta",
       monthly: "Mensual",
       yearly: "Anual",
       yearlyBonus: "2 meses gratis & -10%",
@@ -1735,7 +1735,7 @@ export const translations = {
             "Llamadas: Ilimitadas",
             "Auto-callbacks para no-shows (IA vuelve a llamar)",
             "Enrutamiento inteligente: Análisis de contexto y prioridad",
-            "Garantía: 14 días o devolución de gastos de inicio"
+            "Oferta lanzamiento: primer mes al 50% del precio normal"
           ]
         },
         {
@@ -2018,13 +2018,13 @@ export const translations = {
     contact: {
       scriptText: "Póngase en Contacto",
       subtitle: "CONTÁCTENOS",
-      mainTitle: "Comience su Prueba Gratuita",
-      introText: "¿Listo para transformar su comunicación empresarial? Comience con una prueba gratuita de 14 días. No se requiere tarjeta de crédito.",
+      mainTitle: "Reserve su demo gratuita",
+      introText: "¿Listo para transformar cómo su negocio maneja las llamadas? Envíe su información — nuestro equipo le contacta en minutos para una demo en vivo. Primer mes al 50%.",
       contactInfoTitle: "Información de Contacto",
       contactItems: {
         address: { label: "Dirección", value: "Montreal, Quebec, Canadá" },
         phone: { label: "Teléfono", value: "(438) 814-7578 · (514) 679-2107", subtext: "Línea directa Anvela 24/7" },
-        email: { label: "Email", value: "Pablo@anvela.ca", subtext: "support@anvela.ca" },
+        email: { label: "Email", value: "pablo@anvela.ca · support@anvela.ca", subtext: "Respuesta en 24h" },
         hours: { label: "Horas", value: "Siempre Disponible", subtext: "Soporte 24/7/365" },
       },
       form: {
@@ -2171,13 +2171,13 @@ export const translations = {
     hero: {
       scriptText: "Il Futuro della Comunicazione Aziendale",
       mainTitle: "Il Tuo Receptionist\nIA Intelligente",
-      ctaButton: "Prova Gratuita",
+      ctaButton: "Offerta di Lancio",
       videoDemo: "Video Demo",
       prices: "Prezzi",
       decorativeText: "INTELLIGENTE • EFFICIENTE • AFFIDABILE",
-      ctaSubtitle: "Prova di 14 Giorni",
+      ctaSubtitle: "1° mese al -50%",
       ctaMain: "Inizia con Anvela",
-      noCreditCard: "Nessuna carta richiesta • Configurazione in 60s",
+      noCreditCard: "Offerta limitata • Operativo in 48h",
       stats: {
         calls: { value: "100", suffix: "%", label: "Tasso di Risposta" },
         availability: { value: "24", suffix: "/7", label: "Sempre Disponibile" },
@@ -2376,8 +2376,8 @@ export const translations = {
       scriptText: "Un Investimento Redditizio",
       subtitle: "I NOSTRI PREZZI",
       mainTitle: "Piani su misura per le tue esigenze",
-      promoText: "2 mesi gratuiti con pagamento annuale. Operativo in meno di 48 ore.",
-      ctaButton: "Inizia Prova",
+      promoText: "Offerta di lancio: primo mese al 50% del prezzo normale. Operativo in meno di 48 ore.",
+      ctaButton: "Approfitta dell'offerta",
       monthly: "Mensile",
       yearly: "Annuale",
       yearlyBonus: "2 mesi gratuiti & -10%",
@@ -2433,7 +2433,7 @@ export const translations = {
             "Chiamate: Illimitate",
             "Auto-callbacks per no-shows (l'IA richiama)",
             "Routing intelligente: Analisi del contesto e priorità",
-            "Garanzia: 14 giorni o rimborso spese attivazione"
+            "Offerta lancio: primo mese al 50% del prezzo normale"
           ]
         },
         {
@@ -2714,13 +2714,13 @@ export const translations = {
     contact: {
       scriptText: "Mettiti in Contatto",
       subtitle: "CONTATTACI",
-      mainTitle: "Inizia la Tua Prova Gratuita",
-      introText: "Pronto a trasformare la tua comunicazione aziendale? Inizia con una prova gratuita di 14 giorni. Nessuna carta di credito richiesta.",
+      mainTitle: "Prenota la tua demo gratuita",
+      introText: "Pronto a trasformare come la tua azienda gestisce le chiamate? Invia le tue informazioni — il nostro team ti contatta entro pochi minuti per una demo dal vivo. Primo mese al 50%.",
       contactInfoTitle: "Informazioni di Contatto",
       contactItems: {
         address: { label: "Indirizzo", value: "Montreal, Quebec, Canada" },
         phone: { label: "Telefono", value: "(438) 814-7578 · (514) 679-2107", subtext: "Linea diretta Anvela 24/7" },
-        email: { label: "Email", value: "Pablo@anvela.ca", subtext: "support@anvela.ca" },
+        email: { label: "Email", value: "pablo@anvela.ca · support@anvela.ca", subtext: "Risposta entro 24h" },
         hours: { label: "Orari", value: "Sempre Disponibile", subtext: "Supporto 24/7/365" },
       },
       form: {
