@@ -59,7 +59,7 @@ export function VideoDemo() {
             { id: 4, text: t('videoDemo.step4.text'), helperText: t('videoDemo.step4.helper') },
             { id: 5, text: t('videoDemo.step5.text'), helperText: t('videoDemo.step5.helper') },
         ],
-        videoThumbnailUrl: "/images/ai-receptionist-woman.jpg",
+        videoThumbnailUrl: "/images/anvela-video-thumbnail.jpg",
         videoUrl: "/videos/anvela-demo.mp4",
     };
 
