@@ -265,13 +265,13 @@ export const translations = {
     },
 
     videoDemo: {
-      title: "Démarrage Rapide - Moins de 10 minutes",
-      description: "Suivez ces étapes simples pour activer votre réceptionniste IA",
-      step1: { text: "Configuration de Votre IA", helper: "Définissez le nom, le ton et les connaissances métier." },
-      step2: { text: "Synchronisation d'Agenda", helper: "Connectez Google, Outlook ou Calendly." },
-      step3: { text: "Transfert de Ligne", helper: "Configuration simple en 60 secondes." },
-      step4: { text: "Connexion CRM", helper: "Sync optionnelle HubSpot, Pipedrive, etc." },
-      step5: { text: "Test de Réception", helper: "Passez un appel de validation en direct." },
+      title: "Anvela en Action",
+      description: "Découvrez comment notre réceptionniste IA transforme votre accueil client, gère vos rendez-vous et qualifie vos prospects 24h/24.",
+      step1: { text: "Démo Marketing", helper: "Regardez l'IA en situation réelle." },
+      step2: { text: "Efficacité Absolue", helper: "Zéro appel manqué, 100% de satisfaction." },
+      step3: { text: "Intégration Simple", helper: "Prêt en moins de 10 minutes." },
+      step4: { text: "Multilingue", helper: "Parle la langue de vos clients." },
+      step5: { text: "Sécurité & Fiabilité", helper: "Vos données sont protégées." },
     },
 
     // Pricing
@@ -1062,13 +1062,13 @@ export const translations = {
 
     // Features
     videoDemo: {
-      title: "Quick Start - Less than 10 minutes",
-      description: "Follow these simple steps to activate your AI receptionist",
-      step1: { text: "AI Configuration", helper: "Set the name, tone, and business knowledge." },
-      step2: { text: "Calendar Sync", helper: "Connect Google, Outlook, or Calendly." },
-      step3: { text: "Line Transfer", helper: "Simple setup in 60 seconds." },
-      step4: { text: "CRM Connection", helper: "Optional sync with HubSpot, Pipedrive, etc." },
-      step5: { text: "Reception Test", helper: "Place a live validation call." },
+      title: "Anvela in Action",
+      description: "Discover how our AI receptionist transforms your customer service, handles your appointments, and qualifies your leads 24/7.",
+      step1: { text: "Marketing Demo", helper: "Watch the AI in real-life scenarios." },
+      step2: { text: "Absolute Efficiency", helper: "Zero missed calls, 100% satisfaction." },
+      step3: { text: "Simple Integration", helper: "Ready in less than 10 minutes." },
+      step4: { text: "Multilingual", helper: "Speaks your customers' language." },
+      step5: { text: "Security & Reliability", helper: "Your data is protected." },
     },
 
     // FAQ
@@ -1750,13 +1750,13 @@ export const translations = {
 
     // Features
     videoDemo: {
-      title: "Inicio Rápido - Menos de 10 minutos",
-      description: "Siga estos sencillos pasos para activar su recepcionista IA",
-      step1: { text: "Configuración de su IA", helper: "Defina el nombre, el tono y los conocimientos del negocio." },
-      step2: { text: "Sincronización de Calendario", helper: "Conecte Google, Outlook o Calendly." },
-      step3: { text: "Transferencia de Línea", helper: "Configuración sencilla en 60 segundos." },
-      step4: { text: "Conexión CRM", helper: "Sincronización opcional con HubSpot, Pipedrive, etc." },
-      step5: { text: "Prueba de Recepción", helper: "Realice una llamada de validación en vivo." },
+      title: "Anvela en Acción",
+      description: "Descubra cómo nuestra recepcionista IA transforma su atención al cliente, gestiona sus citas y califica a sus prospectos las 24 horas.",
+      step1: { text: "Demo de Marketing", helper: "Vea la IA en situaciones reales." },
+      step2: { text: "Eficiencia Absoluta", helper: "Cero llamadas perdidas, 100% de satisfacción." },
+      step3: { text: "Integración Simple", helper: "Listo en menos de 10 minutos." },
+      step4: { text: "Multilingüe", helper: "Habla el idioma de sus clientes." },
+      step5: { text: "Seguridad y Fiabilidad", helper: "Sus datos están protegidos." },
     },
 
     // FAQ
@@ -2438,6 +2438,16 @@ export const translations = {
           ]
         }
       ]
+    },
+
+    videoDemo: {
+      title: "Anvela in Azione",
+      description: "Scopri come la nostra receptionist IA trasforma il tuo servizio clienti, gestisce i tuoi appuntamenti e qualifica i tuoi lead 24 ore su 24.",
+      step1: { text: "Demo Marketing", helper: "Guarda l'IA in situazioni reali." },
+      step2: { text: "Efficienza Assoluta", helper: "Zero chiamate perse, 100% di soddisfazione." },
+      step3: { text: "Integrazione Semplice", helper: "Pronto in meno di 10 minuti." },
+      step4: { text: "Multilingue", helper: "Parle la lingua dei tuoi clienti." },
+      step5: { text: "Sicurezza e Affidabilità", helper: "I tuoi dati sono protetti." },
     },
 
     faq: {

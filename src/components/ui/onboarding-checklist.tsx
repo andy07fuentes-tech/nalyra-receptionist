@@ -126,16 +126,27 @@ export const OnboardingChecklist = ({
                 </div>
               </div>
             </DialogTrigger>
-            <DialogContent className="max-w-3xl p-0 border-0 bg-transparent shadow-none">
-              <div className="aspect-video w-full">
-                <iframe
-                  src={videoUrl}
-                  title="Onboarding Video Guide"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full rounded-lg bg-black"
-                ></iframe>
+            <DialogContent className="max-w-4xl p-0 border-0 bg-transparent shadow-none overflow-hidden rounded-2xl">
+              <div className="aspect-video w-full bg-black">
+                {videoUrl.toLowerCase().endsWith('.mp4') ? (
+                  <video
+                    src={videoUrl}
+                    controls
+                    autoPlay
+                    className="w-full h-full object-contain"
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  <iframe
+                    src={videoUrl}
+                    title="Anvela Video Guide"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                  ></iframe>
+                )}
               </div>
             </DialogContent>
           </Dialog>
