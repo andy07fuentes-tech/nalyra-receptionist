@@ -203,9 +203,9 @@ export const wineShowcaseConfig: WineShowcaseConfig = {
     { icon: "Wine", title: "Customizable", description: "Tailored to your brand voice" },
   ],
   quote: {
-    text: "The AI receptionist has transformed how we handle customer inquiries. Our team can focus on what matters most.",
-    attribution: "Sarah Mitchell, CEO",
-    prefix: "Success Story",
+    text: "Anvela handles every call, books appointments and sends confirmations — no human needed. Exactly what an independent garage needs.",
+    attribution: "Pablo Fuentes, Founding Client",
+    prefix: "Founding Client",
   },
 };
 

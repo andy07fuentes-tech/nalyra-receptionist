@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { ArrowRight, Calendar, Star, Quote } from 'lucide-react';
+import { ArrowRight, Calendar, Quote } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export function News() {
@@ -41,27 +41,6 @@ export function News() {
     },
   ];
   
-  // Define testimonials
-  const testimonials = [
-    {
-      name: t('news.testimonials.1.name'),
-      role: t('news.testimonials.1.role'),
-      text: t('news.testimonials.1.text'),
-      rating: 5,
-    },
-    {
-      name: t('news.testimonials.2.name'),
-      role: t('news.testimonials.2.role'),
-      text: t('news.testimonials.2.text'),
-      rating: 5,
-    },
-    {
-      name: t('news.testimonials.3.name'),
-      role: t('news.testimonials.3.role'),
-      text: t('news.testimonials.3.text'),
-      rating: 5,
-    },
-  ];
 
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -172,7 +151,7 @@ export function News() {
           ))}
         </div>
 
-        {/* Testimonials Section */}
+        {/* Founding Client Section */}
         <div className="mt-24">
           <div className="fade-up text-center mb-12">
             <span className="font-script text-3xl text-blue-400 block mb-2">{t('news.testimonialsScriptText')}</span>
@@ -184,29 +163,36 @@ export function News() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={testimonial.name}
-                className="scale-in p-8 bg-white/5 rounded-lg border border-white/10 relative"
-                style={{ transitionDelay: `${0.1 + index * 0.1}s` }}
-              >
-                <Quote className="w-8 h-8 text-blue-500/30 absolute top-6 right-6" />
-                {/* Stars */}
-                <div className="flex gap-1 mb-4">
-                  {Array.from({ length: testimonial.rating }).map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-blue-500 fill-blue-500" />
-                  ))}
+          <div className="max-w-3xl mx-auto grid md:grid-cols-2 gap-6">
+            {/* Real founding client */}
+            <div className="scale-in p-8 bg-white/5 rounded-lg border border-blue-500/30 relative">
+              <Quote className="w-8 h-8 text-blue-500/30 absolute top-6 right-6" />
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                  <span className="text-blue-400 font-bold text-sm">GP</span>
                 </div>
-                <p className="text-white/80 leading-relaxed mb-6 italic">
-                  "{testimonial.text}"
-                </p>
                 <div>
-                  <p className="text-white font-medium text-sm">{testimonial.name}</p>
-                  <p className="text-white/50 text-xs">{testimonial.role}</p>
+                  <p className="text-white font-medium text-sm">{t('news.foundingClient.name')}</p>
+                  <p className="text-white/50 text-xs">{t('news.foundingClient.role')}</p>
                 </div>
               </div>
-            ))}
+              <p className="text-white/80 leading-relaxed italic">
+                "{t('news.foundingClient.text')}"
+              </p>
+            </div>
+
+            {/* Open spot CTA */}
+            <div className="scale-in p-8 bg-white/3 rounded-lg border border-white/10 flex flex-col justify-between" style={{ transitionDelay: '0.1s' }}>
+              <div>
+                <p className="text-blue-400 text-xs uppercase tracking-[0.2em] mb-3">{t('news.foundingSpots.label')}</p>
+                <p className="text-white font-serif text-xl mb-3">{t('news.foundingSpots.title')}</p>
+                <p className="text-white/60 text-sm leading-relaxed">{t('news.foundingSpots.text')}</p>
+              </div>
+              <a href="/onboarding" className="btn-primary rounded-sm inline-flex items-center gap-2 text-sm mt-6 w-fit">
+                {t('news.foundingSpots.cta')}
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
           </div>
         </div>
 
