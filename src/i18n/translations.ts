@@ -598,7 +598,8 @@ export const translations = {
       introText: "Prêt à transformer votre communication commerciale ? Commencez avec un essai gratuit de 14 jours. Aucune carte de crédit requise.",
       contactInfoTitle: "Informations de Contact",
       contactItems: {
-        phone: { label: "Téléphone", value: "(438) 814-7578", subtext: "Ligne directe Anvela 24/7" },
+        address: { label: "Adresse", value: "Montréal, Québec, Canada" },
+        phone: { label: "Téléphone", value: "(438) 814-7578 · (514) 679-2107", subtext: "Ligne directe Anvela 24/7" },
         email: { label: "Email", value: "Pablo@anvela.ca", subtext: "support@anvela.ca" },
         hours: { label: "Heures", value: "Toujours Disponible", subtext: "24/7/365 Support" },
       },
@@ -1305,7 +1306,8 @@ export const translations = {
       introText: "Ready to transform your business communication? Get started with a 14-day free trial. No credit card required.",
       contactInfoTitle: "Contact Information",
       contactItems: {
-        phone: { label: "Phone", value: "(438) 814-7578", subtext: "Anvela direct line 24/7" },
+        address: { label: "Address", value: "Montreal, Quebec, Canada" },
+        phone: { label: "Phone", value: "(438) 814-7578 · (514) 679-2107", subtext: "Anvela direct line 24/7" },
         email: { label: "Email", value: "Pablo@anvela.ca", subtext: "support@anvela.ca" },
         hours: { label: "Hours", value: "Always Available", subtext: "24/7/365 Support" },
       },
@@ -1987,7 +1989,8 @@ export const translations = {
       introText: "¿Listo para transformar su comunicación empresarial? Comience con una prueba gratuita de 14 días. No se requiere tarjeta de crédito.",
       contactInfoTitle: "Información de Contacto",
       contactItems: {
-        phone: { label: "Teléfono", value: "(438) 814-7578", subtext: "Línea directa Anvela 24/7" },
+        address: { label: "Dirección", value: "Montreal, Quebec, Canadá" },
+        phone: { label: "Teléfono", value: "(438) 814-7578 · (514) 679-2107", subtext: "Línea directa Anvela 24/7" },
         email: { label: "Email", value: "Pablo@anvela.ca", subtext: "support@anvela.ca" },
         hours: { label: "Horas", value: "Siempre Disponible", subtext: "Soporte 24/7/365" },
       },
@@ -2671,7 +2674,8 @@ export const translations = {
       introText: "Pronto a trasformare la tua comunicazione aziendale? Inizia con una prova gratuita di 14 giorni. Nessuna carta di credito richiesta.",
       contactInfoTitle: "Informazioni di Contatto",
       contactItems: {
-        phone: { label: "Telefono", value: "(438) 814-7578", subtext: "Linea diretta Anvela 24/7" },
+        address: { label: "Indirizzo", value: "Montreal, Quebec, Canada" },
+        phone: { label: "Telefono", value: "(438) 814-7578 · (514) 679-2107", subtext: "Linea diretta Anvela 24/7" },
         email: { label: "Email", value: "Pablo@anvela.ca", subtext: "support@anvela.ca" },
         hours: { label: "Orari", value: "Sempre Disponibile", subtext: "Supporto 24/7/365" },
       },
