@@ -267,6 +267,17 @@ export const translations = {
     videoDemo: {
       title: "Anvela en Action",
       description: "Découvrez comment notre réceptionniste IA transforme votre accueil client, gère vos rendez-vous et qualifie vos prospects 24h/24.",
+      tabs: {
+        overview: "Présentation",
+        realCall: "Appel Réel"
+      },
+      realCall: {
+        step1: "Flux de conversation naturel",
+        step2: "Prise de rendez-vous en direct",
+        step3: "Changement de langue instantané",
+        step4: "Transcription en temps réel",
+        step5: "Interaction humaine fluide"
+      },
       step1: { text: "Démo Anvela", helper: "Regardez l'IA en situation réelle." },
       step2: { text: "Efficacité Absolue", helper: "Zéro appel manqué, 100% de satisfaction." },
       step3: { text: "Intégration Simple", helper: "Prêt en moins de 10 minutes." },
@@ -1059,6 +1070,17 @@ export const translations = {
     videoDemo: {
       title: "Anvela in Action",
       description: "Discover how our AI receptionist transforms your customer service, handles your appointments, and qualifies your leads 24/7.",
+      tabs: {
+        overview: "Overview",
+        realCall: "Real Call"
+      },
+      realCall: {
+        step1: "Natural conversational flow",
+        step2: "Live appointment booking",
+        step3: "Instant language switching",
+        step4: "Real-time transcription",
+        step5: "Fluid human interaction"
+      },
       step1: { text: "Anvela Demo", helper: "Watch the AI in real-life scenarios." },
       step2: { text: "Absolute Efficiency", helper: "Zero missed calls, 100% satisfaction." },
       step3: { text: "Simple Integration", helper: "Ready in less than 10 minutes." },
@@ -1742,6 +1764,17 @@ export const translations = {
     videoDemo: {
       title: "Anvela en Acción",
       description: "Descubra cómo nuestra recepcionista IA transforma su atención al cliente, gestiona sus citas y califica a sus prospectos las 24 horas.",
+      tabs: {
+        overview: "Resumen",
+        realCall: "Llamada Real"
+      },
+      realCall: {
+        step1: "Flujo de conversación natural",
+        step2: "Reserva de citas en vivo",
+        step3: "Cambio de idioma instantáneo",
+        step4: "Transcripción en tiempo real",
+        step5: "Interacción humana fluida"
+      },
       step1: { text: "Demo Anvela", helper: "Vea la IA en situaciones reales." },
       step2: { text: "Eficiencia Absoluta", helper: "Cero llamadas perdidas, 100% de satisfacción." },
       step3: { text: "Integración Simple", helper: "Listo en menos de 10 minutos." },
@@ -2428,6 +2461,17 @@ export const translations = {
     videoDemo: {
       title: "Anvela in Azione",
       description: "Scopri come la nostra receptionist IA trasforma il tuo servizio clienti, gestisce i tuoi appuntamenti e qualifica i tuoi lead 24 ore su 24.",
+      tabs: {
+        overview: "Panoramica",
+        realCall: "Chiamata Reale"
+      },
+      realCall: {
+        step1: "Flusso di conversazione naturale",
+        step2: "Prenotazione appuntamenti dal vivo",
+        step3: "Cambio lingua istantaneo",
+        step4: "Trascrizione in tempo reale",
+        step5: "Interazione umana fluida"
+      },
       step1: { text: "Demo Anvela", helper: "Guarda l'IA in situazioni reali." },
       step2: { text: "Efficienza Assoluta", helper: "Zero chiamate perse, 100% di soddisfazione." },
       step3: { text: "Integrazione Semplice", helper: "Pronto in meno di 10 minuti." },

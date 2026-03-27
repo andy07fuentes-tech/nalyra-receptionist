@@ -49,19 +49,32 @@ export function VideoDemo() {
         return () => ob.disconnect();
     }, []);
 
-    const checklistData = {
-        title: t('videoDemo.title'),
-        description: t('videoDemo.description'),
-        items: [
-            { id: 1, text: t('videoDemo.step1.text'), helperText: t('videoDemo.step1.helper') },
-            { id: 2, text: t('videoDemo.step2.text'), helperText: t('videoDemo.step2.helper') },
-            { id: 3, text: t('videoDemo.step3.text'), helperText: t('videoDemo.step3.helper') },
-            { id: 4, text: t('videoDemo.step4.text'), helperText: t('videoDemo.step4.helper') },
-            { id: 5, text: t('videoDemo.step5.text'), helperText: t('videoDemo.step5.helper') },
-        ],
-        videoThumbnailUrl: "/images/anvela-video-thumbnail.jpg",
-        videoUrl: "/videos/anvela-demo.mp4",
-    };
+    const demos = [
+        {
+            label: t('videoDemo.tabs.overview'),
+            videoThumbnailUrl: "/images/anvela-video-thumbnail.jpg",
+            videoUrl: "/videos/anvela-demo.mp4",
+            items: [
+                { id: 1, text: t('videoDemo.step1.text') },
+                { id: 2, text: t('videoDemo.step2.text') },
+                { id: 3, text: t('videoDemo.step3.text') },
+                { id: 4, text: t('videoDemo.step4.text') },
+                { id: 5, text: t('videoDemo.step5.text') },
+            ]
+        },
+        {
+            label: t('videoDemo.tabs.realCall'),
+            videoThumbnailUrl: "/images/anvela-video-thumbnail.jpg",
+            videoUrl: "/videos/real-call-demo.mp4",
+            items: [
+                { id: 1, text: t('videoDemo.realCall.step1') },
+                { id: 2, text: t('videoDemo.realCall.step2') },
+                { id: 3, text: t('videoDemo.realCall.step3') },
+                { id: 4, text: t('videoDemo.realCall.step4') },
+                { id: 5, text: t('videoDemo.realCall.step5') },
+            ]
+        }
+    ];
 
     return (
         <section
@@ -95,9 +108,8 @@ export function VideoDemo() {
                     <OnboardingChecklist
                         title={t('videoDemo.title')}
                         description={t('videoDemo.description')}
-                        items={checklistData.items}
-                        videoThumbnailUrl={checklistData.videoThumbnailUrl}
-                        videoUrl={checklistData.videoUrl}
+                        items={demos[0].items}
+                        demos={demos}
                         isTransparent={true}
                         isVertical={true}
                         className="text-white mx-auto w-full mb-10"
