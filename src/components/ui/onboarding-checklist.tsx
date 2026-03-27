@@ -2,9 +2,9 @@
 
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
-import { CheckCircle2, PlayCircle } from "lucide-react";
+import { CheckCircle2, PlayCircle, X as XIcon } from "lucide-react";
 import { cn } from "@/lib/utils"; // Assuming you have a `cn` utility from shadcn
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger, DialogClose } from "@/components/ui/dialog";
 
 // Define the type for a single checklist item
 interface ChecklistItem {
@@ -148,7 +148,14 @@ export const OnboardingChecklist = ({
               </div>
             </DialogTrigger>
             <DialogContent className="max-w-5xl p-0 border-0 bg-transparent shadow-none overflow-hidden rounded-2xl sm:rounded-3xl">
-              <div className="aspect-[9/16] md:aspect-video w-full bg-black/90 backdrop-blur-xl">
+              <div className="relative aspect-[9/16] md:aspect-video w-full bg-black/90 backdrop-blur-xl">
+                {/* Custom High-Visibility Close Button for Mobile */}
+                <div className="absolute top-4 right-4 z-[60]">
+                  <DialogClose className="p-2 bg-black/50 hover:bg-black/70 backdrop-blur-md rounded-full border border-white/20 text-white transition-all duration-300">
+                    <XIcon className="h-6 w-6" />
+                  </DialogClose>
+                </div>
+
                 {videoUrl.toLowerCase().endsWith('.mp4') ? (
                   <video
                     src={videoUrl}
