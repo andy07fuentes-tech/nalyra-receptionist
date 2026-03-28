@@ -212,7 +212,7 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
         <h1 className="font-serif text-2xl md:text-4xl text-dark-theme tracking-[0.1em] mb-1 uppercase">
           {t('preloader.brandName')}
         </h1>
-        <p className="font-script text-3xl md:text-4xl text-blue-500/80 italic">
+        <p className="font-script text-3xl md:text-4xl bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent italic">
           {t('preloader.brandSubname')}
         </p>
       </div>
@@ -224,7 +224,7 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
       >
         <div 
           ref={lineRef}
-          className="h-full bg-gradient-to-r from-transparent via-blue-500 to-transparent" 
+          className="h-full bg-gradient-to-r from-blue-600 to-indigo-600" 
         />
       </div>
 
@@ -235,7 +235,7 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
       >
         <div className="relative group">
           {/* Subtle Energy Aura */}
-          <div className="absolute inset-0 bg-blue-300/20 blur-[80px] rounded-full animate-pulse transition-opacity duration-1000 group-hover:opacity-60" />
+          <div className="absolute inset-0 bg-indigo-500/20 blur-[80px] rounded-full animate-pulse transition-opacity duration-1000 group-hover:opacity-60" />
           
           <GradientButton 
             variant="variant" 
@@ -252,7 +252,7 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
           </GradientButton>
         </div>
         <p className="text-[9px] text-slate-500 uppercase tracking-[0.6em] animate-pulse">
-          Ambient Audio Ready
+          Expérience Initialisée
         </p>
       </div>
 
