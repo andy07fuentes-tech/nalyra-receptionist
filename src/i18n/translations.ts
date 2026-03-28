@@ -341,6 +341,7 @@ export const translations = {
             "Suivi : Appels non résolus loggés avec transcription complète",
             "Disponibilité : 24/7 (débordement jour + nuit complète)",
             "Routage : Humain d’abord (3 sonneries), l’IA prend le relais",
+            "Transfert : Redirection vers votre accueil (1 numéro configuré)",
             "Réservation : Prise de RDV + rappels SMS (24h et 2h avant)",
             "Gestion : Modifications et annulations gérées par l’IA",
             "Interactions : Bilingue (Français / Anglais)",
@@ -359,6 +360,7 @@ export const translations = {
           description: "Votre système de croissance complet. L’IA répond, relance, réserve et suit chaque lead – pendant que vous, vous travaillez.",
           features: [
             "Inclut TOUT de The Night Shift et The Co-Pilot",
+            "Transfert : Destinations illimitées (réception, gérant, service...)",
             "Logique : Intégration CRM native avec tableau de bord",
             "Relances : SMS automatique dans les 15 min pour chaque lead",
             "Triage : Arborescence multi-étapes intelligente",
@@ -1035,6 +1037,7 @@ export const translations = {
             "Follow-up: Unresolved calls logged with full transcription",
             "Availability: 24/7 (Day overflow + Full after-hours)",
             "Routing: Human first (3 rings), AI takes over",
+            "Transfer: Live call redirect to your front desk (1 number)",
             "Booking: Appointment Booking + SMS reminders (24h/2h)",
             "Management: Cancellations & Rescheduling handled by AI",
             "Interactions: Bilingual (English / French)",
@@ -1053,6 +1056,7 @@ export const translations = {
           description: "Your complete growth system. AI answers, follows up, books, and tracks every lead — while you work.",
           features: [
             "Includes EVERYTHING in 'The Night Shift' and 'The Co-Pilot'",
+            "Transfer: Unlimited destinations (front desk, manager, service...)",
             "Logic: Native CRM Integration with dashboard",
             "Follow-ups: Auto SMS within 15 min for every lead",
             "Triage: Intelligent multi-step branching logic",
@@ -1729,6 +1733,7 @@ export const translations = {
             "Seguimiento: Llamadas no resueltas con transcripción",
             "Disponibilidad: 24/7 (Desbordamiento día + Noche completa)",
             "Enrutamiento: Humano primero (3 tonos), la IA toma el relevo",
+            "Transferencia: Redirección en vivo a su recepción (1 número)",
             "Reserva: Citas + recordatorios SMS (24h/2h)",
             "Gestión: Modificaciones y cancelaciones por IA",
             "Interacciones: Bilingüe (Inglés / Español)",
@@ -1747,6 +1752,7 @@ export const translations = {
           description: "Su sistema completo de crecimiento. La IA responde, relanza, reserva y sigue a cada lead, mientras usted trabaja.",
           features: [
             "Incluye TODO de 'The Night Shift' y 'The Co-Pilot'",
+            "Transferencia: Destinos ilimitados (recepción, gerente, servicio...)",
             "Lógica: Integración CRM nativa con tablero",
             "Seguimiento: SMS automático en 15 min para cada lead",
             "Triaje: Lógica inteligente de múltiples pasos",
@@ -2427,6 +2433,7 @@ export const translations = {
             "Seguimento: Chiamate non risolte con trascrizione",
             "Disponibilità: 24/7 (Overflow giorno + Notte intera)",
             "Routing: Umano prima (3 squilli), l'IA prende il sopravvento",
+            "Trasferimento: Reindirizzamento live alla tua reception (1 numero)",
             "Prenotazione: Appuntamenti + promemoria SMS (24h/2h)",
             "Gestione: Modifiche e cancellazioni gestite dall'IA",
             "Interazioni: Bilingue (Inglese / Italiano)",
@@ -2445,6 +2452,7 @@ export const translations = {
           description: "Il tuo sistema di crescita completo. L'IA risponde, rilancia, prenota e segue ogni lead — mentre tu lavori.",
           features: [
             "Include TUTTO di 'The Night Shift' e 'The Co-Pilot'",
+            "Trasferimento: Destinazioni illimitate (reception, manager, servizio...)",
             "Logica: Integrazione CRM nativa con dashboard",
             "Follow-up: SMS auto entro 15 min per ogni lead",
             "Triage: Logica intelligente a più fasi",
