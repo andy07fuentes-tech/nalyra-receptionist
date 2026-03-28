@@ -115,7 +115,7 @@ export function HorizontalGallery() {
               }`}>
                 {t(item.subtitleKey)}
               </p>
-              <h3 className="text-[#FF5C00] font-serif text-sm md:text-base leading-tight">
+              <h3 className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent font-serif text-sm md:text-base leading-tight">
                 {t(item.titleKey)}
               </h3>
             </div>
