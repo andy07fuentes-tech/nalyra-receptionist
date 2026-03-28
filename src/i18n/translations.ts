@@ -74,6 +74,7 @@ export const translations = {
     missedCalls: {
       subtitle: "IMPACT FINANCIER",
       title: "Chaque appel manqué est une opportunité perdue.",
+      vision: "Et si chaque entreprise pouvait se permettre de ne jamais manquer un appel ?",
       cta: "Ne perdez plus d'argent",
     },
 
@@ -797,6 +798,7 @@ export const translations = {
     missedCalls: {
       subtitle: "FINANCIAL IMPACT",
       title: "Every missed call is a lost opportunity.",
+      vision: "What if every business could afford to never miss a call again?",
       cta: "Stop losing money",
     },
 
@@ -1495,6 +1497,7 @@ export const translations = {
     missedCalls: {
       subtitle: "IMPACTO FINANCIERO",
       title: "Cada llamada perdida es una oportunidad perdida.",
+      vision: "¿Y si cada empresa pudiera permitirse no volver a perder una llamada?",
       cta: "Deja de perder dinero",
     },
 
@@ -2193,6 +2196,7 @@ export const translations = {
     missedCalls: {
       subtitle: "IMPATTO FINANZIARIO",
       title: "Ogni chiamata persa è un'opportunità persa.",
+      vision: "E se ogni azienda potesse permettersi di non perdere mai più una chiamata?",
       cta: "Smetti di perdere soldi",
     },
 

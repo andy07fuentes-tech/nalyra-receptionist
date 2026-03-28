@@ -89,9 +89,13 @@ export function MissedCalls() {
                         <span className="inline-block text-blue-600 font-bold tracking-[0.3em] uppercase text-xs mb-6">
                             {t('missedCalls.subtitle')}
                         </span>
-                        <h2 className="font-serif text-4xl md:text-6xl lg:text-7xl text-slate-900 mb-10 leading-[1.1] tracking-tight">
+                        <h2 className="font-serif text-4xl md:text-6xl lg:text-7xl text-slate-900 mb-8 leading-[1.1] tracking-tight">
                             {t('missedCalls.title')}
                         </h2>
+                        
+                        <p className="text-xl md:text-2xl font-medium mb-12 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent max-w-lg">
+                            {t('missedCalls.vision')}
+                        </p>
                         
                         <a 
                             href="#pricing"
