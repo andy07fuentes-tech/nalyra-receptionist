@@ -251,8 +251,8 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
             </span>
           </GradientButton>
         </div>
-        <p className="text-[9px] text-slate-500 uppercase tracking-[0.6em] animate-pulse">
-          Ambient Audio Ready
+        <p className="text-[9px] bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent uppercase tracking-[0.6em] animate-pulse font-bold">
+          Expérience Initialisée
         </p>
       </div>
 
