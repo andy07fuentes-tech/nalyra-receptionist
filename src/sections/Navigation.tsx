@@ -35,8 +35,8 @@ export function Navigation() {
       role="navigation"
       aria-label="Main navigation"
     >
-      <div className="container-custom flex items-center justify-between px-4 md:px-8">
-
+      <div className="container-custom relative flex items-center justify-between px-4 md:px-8">
+        
         {/* Left: Brand Name (Anvela) */}
         <div className="flex-1 flex justify-start">
           <button
@@ -51,7 +51,7 @@ export function Navigation() {
         </div>
 
         {/* Center: Main Titles (Hidden on mobile) */}
-        <div className="hidden md:flex flex-[2] flex-col items-center justify-center text-center">
+        <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 flex-col items-center justify-center text-center">
           <button
             onClick={() => scrollToSection('#hero')}
             className="group"
