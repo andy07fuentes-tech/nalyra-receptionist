@@ -21,6 +21,8 @@ export const translations = {
       contact: "Contact",
       ctaButton: "Commencer",
       freeTrial: "Parler à Anvela",
+      endCall: "Terminer",
+      connecting: "Connexion...",
     },
 
     preloader: {
@@ -748,6 +750,8 @@ export const translations = {
       contact: "Contact",
       ctaButton: "Get Started",
       freeTrial: "Speak to Anvela",
+      endCall: "End Call",
+      connecting: "Connecting...",
     },
 
     preloader: {
@@ -1472,6 +1476,8 @@ export const translations = {
       contact: "Contacto",
       ctaButton: "Empezar",
       freeTrial: "Hablar con Anvela",
+      endCall: "Colgar",
+      connecting: "Conectando...",
     },
 
     // Preloader
@@ -2172,6 +2178,8 @@ export const translations = {
       contact: "Contatto",
       ctaButton: "Inizia",
       freeTrial: "Parla con Anvela",
+      endCall: "Termina",
+      connecting: "Connessione...",
     },
 
     // Preloader

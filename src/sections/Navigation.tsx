@@ -130,7 +130,7 @@ function DemoCallButton({ isScrolled }: { isScrolled: boolean }) {
         className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-red-500 text-red-500 hover:bg-red-500 hover:text-white transition-all animate-pulse"
       >
         <PhoneOff className="w-3 h-3" />
-        Terminer
+        {t('nav.endCall') as string}
       </button>
     );
   }
@@ -139,7 +139,7 @@ function DemoCallButton({ isScrolled }: { isScrolled: boolean }) {
     return (
       <button disabled className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-blue-400 text-blue-400 opacity-70">
         <Loader2 className="w-3 h-3 animate-spin" />
-        Connexion...
+        {t('nav.connecting') as string}
       </button>
     );
   }
