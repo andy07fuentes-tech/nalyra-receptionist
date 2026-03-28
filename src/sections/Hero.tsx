@@ -183,11 +183,11 @@ export function Hero({ isReady }: { isReady: boolean }) {
               to="/onboarding"
               className="inline-flex items-center gap-3 px-8 py-4 w-full h-full"
             >
-              <div className="flex flex-col items-start leading-none relative z-10 w-full text-left">
+              <div className="flex flex-col items-center leading-none relative z-10 w-full text-center">
                 <span className="text-[9px] tracking-[0.2em] text-white/50 mb-1 uppercase font-[Poppins]">{t('hero.ctaSubtitle')}</span>
                 <span className="font-serif text-lg md:text-xl text-white font-normal">{t('hero.ctaMain')}</span>
               </div>
-              <div className="p-1.5 bg-white/10 rounded-lg transition-colors z-10 relative ml-auto">
+              <div className="p-1.5 bg-white/10 rounded-lg transition-colors z-10 relative">
                 <ArrowRight className="w-5 h-5 text-white transition-transform duration-300 group-hover:translate-x-1" />
               </div>
             </Link>
