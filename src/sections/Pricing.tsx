@@ -64,7 +64,10 @@ export function Pricing() {
                     <div className="inline-flex items-center justify-center p-[1px] rounded-full bg-blue-500/20 mb-8">
                         <div className="px-6 py-2 rounded-full bg-white text-blue-600 text-sm md:text-base font-medium shadow-sm">
                             <Star className="inline-block w-4 h-4 mr-2 mb-1" />
-                            {t('pricing.promoText') !== 'pricing.promoText' ? t('pricing.promoText') : "Enjoy a 14-day free trial on all our plans."}
+                            {isYearly
+                                ? (t('pricing.promoTextYearly') !== 'pricing.promoTextYearly' ? t('pricing.promoTextYearly') : "Annual plan: 2 months free + 10% off.")
+                                : (t('pricing.promoText') !== 'pricing.promoText' ? t('pricing.promoText') : "Launch offer: first month at 50% off.")
+                            }
                         </div>
                     </div>
 
