@@ -4,6 +4,7 @@ import type { Variants } from "framer-motion";
 import { CheckCircle2, PlayCircle, X as XIcon, Activity } from "lucide-react";
 import { cn } from "@/lib/utils"; // Assuming you have a `cn` utility from shadcn
 import { Dialog, DialogContent, DialogTrigger, DialogClose } from "@/components/ui/dialog";
+import { useAudio } from "@/contexts/AudioContext";
 
 // Define the type for a single checklist item
 interface ChecklistItem {
@@ -51,6 +52,7 @@ export const OnboardingChecklist = ({
   isVertical = false,
 }: OnboardingChecklistProps) => {
   const [activeTab, setActiveTab] = useState(0);
+  const { setIsDimmed } = useAudio();
 
   const currentDemo = demos && demos.length > 0 ? demos[activeTab] : {
     videoThumbnailUrl: videoThumbnailUrl || "",
@@ -180,7 +182,7 @@ export const OnboardingChecklist = ({
               isVertical ? "max-w-2xl" : "aspect-video"
             )}
           >
-            <Dialog>
+            <Dialog onOpenChange={(open) => setIsDimmed(open)}>
               <DialogTrigger asChild>
                 <div>
                   <img
