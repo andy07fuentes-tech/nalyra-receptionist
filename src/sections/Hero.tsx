@@ -198,7 +198,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
         <div className={`mt-6 flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-700 ease-out ${phase >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: '0.6s' }}>
           <GradientButton
             variant="variant"
-            onClick={() => scrollToSection('#video-promo')}
+            onClick={() => scrollToSection('#video-demo')}
             className="min-w-[180px] border-0 !rounded-full py-3"
             aria-label={t('hero.videoDemo') as string}
           >
