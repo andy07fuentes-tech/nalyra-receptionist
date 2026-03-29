@@ -612,7 +612,7 @@ export const translations = {
     contact: {
       scriptText: "Contactez-nous",
       subtitle: "CONTACT",
-      mainTitle: "Réservez votre démo gratuite",
+      mainTitle: "Obtenez une consultation gratuite",
       introText: "Prêt à transformer votre communication ? Soumettez votre demande — notre équipe vous contacte dans les minutes qui suivent pour une démo en direct. Premier mois à 50%.",
       contactInfoTitle: "Informations de Contact",
       contactItems: {
@@ -1338,7 +1338,7 @@ export const translations = {
     contact: {
       scriptText: "Get in Touch",
       subtitle: "CONTACT US",
-      mainTitle: "Book your free demo",
+      mainTitle: "Get a free consultation",
       introText: "Ready to transform how your business handles calls? Submit your info — our team reaches out within minutes for a live demo. First month 50% off.",
       contactInfoTitle: "Contact Information",
       contactItems: {
@@ -2039,7 +2039,7 @@ export const translations = {
     contact: {
       scriptText: "Póngase en Contacto",
       subtitle: "CONTÁCTENOS",
-      mainTitle: "Reserve su demo gratuita",
+      mainTitle: "Obtenga una consulta gratuita",
       introText: "¿Listo para transformar cómo su negocio maneja las llamadas? Envíe su información — nuestro equipo le contacta en minutos para una demo en vivo. Primer mes al 50%.",
       contactInfoTitle: "Información de Contacto",
       contactItems: {
@@ -2742,7 +2742,7 @@ export const translations = {
     contact: {
       scriptText: "Mettiti in Contatto",
       subtitle: "CONTATTACI",
-      mainTitle: "Prenota la tua demo gratuita",
+      mainTitle: "Ottieni una consulenza gratuita",
       introText: "Pronto a trasformare come la tua azienda gestisce le chiamate? Invia le tue informazioni — il nostro team ti contatta entro pochi minuti per una demo dal vivo. Primo mese al 50%.",
       contactInfoTitle: "Informazioni di Contatto",
       contactItems: {
