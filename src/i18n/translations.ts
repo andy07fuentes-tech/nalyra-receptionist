@@ -612,8 +612,8 @@ export const translations = {
     contact: {
       scriptText: "Contactez-nous",
       subtitle: "CONTACT",
-      mainTitle: "Obtenez une consultation gratuite",
-      introText: "Prêt à transformer votre communication ? Soumettez votre demande — notre équipe vous contacte dans les minutes qui suivent pour une démo en direct. Premier mois à 50%.",
+      mainTitle: "Parlons-en",
+      introText: "Prêt à transformer votre communication ? Soumettez votre demande — notre équipe vous rappelle dans les minutes qui suivent. Premier mois à 50%.",
       contactInfoTitle: "Informations de Contact",
       contactItems: {
         address: { label: "Adresse", value: "Montréal, Québec, Canada" },
@@ -1338,8 +1338,8 @@ export const translations = {
     contact: {
       scriptText: "Get in Touch",
       subtitle: "CONTACT US",
-      mainTitle: "Get a free consultation",
-      introText: "Ready to transform how your business handles calls? Submit your info — our team reaches out within minutes for a live demo. First month 50% off.",
+      mainTitle: "Let's Talk",
+      introText: "Ready to transform how your business handles calls? Submit your info — our team reaches out within minutes. First month 50% off.",
       contactInfoTitle: "Contact Information",
       contactItems: {
         address: { label: "Address", value: "Montreal, Quebec, Canada" },
@@ -2039,8 +2039,8 @@ export const translations = {
     contact: {
       scriptText: "Póngase en Contacto",
       subtitle: "CONTÁCTENOS",
-      mainTitle: "Obtenga una consulta gratuita",
-      introText: "¿Listo para transformar cómo su negocio maneja las llamadas? Envíe su información — nuestro equipo le contacta en minutos para una demo en vivo. Primer mes al 50%.",
+      mainTitle: "Hablemos",
+      introText: "¿Listo para transformar cómo su negocio maneja las llamadas? Envíe su información — nuestro equipo le contacta en minutos. Primer mes al 50%.",
       contactInfoTitle: "Información de Contacto",
       contactItems: {
         address: { label: "Dirección", value: "Montreal, Quebec, Canadá" },
@@ -2742,8 +2742,8 @@ export const translations = {
     contact: {
       scriptText: "Mettiti in Contatto",
       subtitle: "CONTATTACI",
-      mainTitle: "Ottieni una consulenza gratuita",
-      introText: "Pronto a trasformare come la tua azienda gestisce le chiamate? Invia le tue informazioni — il nostro team ti contatta entro pochi minuti per una demo dal vivo. Primo mese al 50%.",
+      mainTitle: "Parliamo",
+      introText: "Pronto a trasformare come la tua azienda gestisce le chiamate? Invia le tue informazioni — il nostro team ti contatta entro pochi minuti. Primo mese al 50%.",
       contactInfoTitle: "Informazioni di Contatto",
       contactItems: {
         address: { label: "Indirizzo", value: "Montreal, Quebec, Canada" },
