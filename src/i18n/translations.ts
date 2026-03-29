@@ -365,7 +365,7 @@ export const translations = {
           features: [
             "Inclut TOUT de The Night Shift et The Co-Pilot",
             "Transfert : Destinations illimitées (réception, gérant, service...)",
-            "Mémoire client : Mila reconnaît les clients réguliers par nom et véhicule",
+            "Mémoire client : Mila reconnaît vos clients réguliers et personnalise chaque appel",
             "Logique : Intégration CRM native avec tableau de bord",
             "Relances : SMS automatique dans les 15 min pour chaque lead",
             "Triage : Arborescence multi-étapes intelligente",
@@ -1066,7 +1066,7 @@ export const translations = {
           features: [
             "Includes EVERYTHING in 'The Night Shift' and 'The Co-Pilot'",
             "Transfer: Unlimited destinations (front desk, manager, service...)",
-            "Client memory: Mila recognizes returning clients by name and vehicle",
+            "Client memory: Mila recognizes returning clients and personalizes every call",
             "Logic: Native CRM Integration with dashboard",
             "Follow-ups: Auto SMS within 15 min for every lead",
             "Triage: Intelligent multi-step branching logic",
@@ -1767,7 +1767,7 @@ export const translations = {
           features: [
             "Incluye TODO de 'The Night Shift' y 'The Co-Pilot'",
             "Transferencia: Destinos ilimitados (recepción, gerente, servicio...)",
-            "Memoria de clientes: Mila reconoce a los clientes habituales por nombre y vehículo",
+            "Memoria de clientes: Mila reconoce a sus clientes habituales y personaliza cada llamada",
             "Lógica: Integración CRM nativa con tablero",
             "Seguimiento: SMS automático en 15 min para cada lead",
             "Triaje: Lógica inteligente de múltiples pasos",
@@ -2472,7 +2472,7 @@ export const translations = {
           features: [
             "Include TUTTO di 'The Night Shift' e 'The Co-Pilot'",
             "Trasferimento: Destinazioni illimitate (reception, manager, servizio...)",
-            "Memoria clienti: Mila riconosce i clienti abituali per nome e veicolo",
+            "Memoria clienti: Mila riconosce i clienti abituali e personalizza ogni chiamata",
             "Logica: Integrazione CRM nativa con dashboard",
             "Follow-up: SMS auto entro 15 min per ogni lead",
             "Triage: Logica intelligente a più fasi",
