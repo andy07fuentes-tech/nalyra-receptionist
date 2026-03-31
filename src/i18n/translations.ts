@@ -312,7 +312,7 @@ export const translations = {
       vsAnvela: "Anvela — disponible 24/7",
       vsAnvelaPrice: "à partir de 199$ / mois · ~50$ / sem.",
       vsTagline: "Pas pour remplacer votre équipe — pour lui donner du renfort, sans les coûts.",
-      roiTagline: "Un seul rendez-vous suffit à couvrir votre abonnement. Le reste, c'est du profit pur.",
+      roiTagline: "Un seul rendez-vous pourrait suffire à couvrir votre abonnement. Le reste, c'est du profit pur.",
       tiers: [
         {
           name: "The Night Shift",
@@ -1014,7 +1014,7 @@ export const translations = {
       vsAnvela: "Anvela — available 24/7",
       vsAnvelaPrice: "from $199 / month · ~$50 / week",
       vsTagline: "Not a replacement for your team — extra support, without the extra payroll.",
-      roiTagline: "One appointment covers your subscription. Everything else is pure profit.",
+      roiTagline: "One appointment could be enough to cover your subscription. The rest is pure profit.",
       tiers: [
         {
           name: "The Night Shift",
@@ -1716,7 +1716,7 @@ export const translations = {
       vsAnvela: "Anvela — disponible 24/7",
       vsAnvelaPrice: "desde $199 / mes · ~$50 / sem.",
       vsTagline: "No para reemplazar a tu equipo — para darle refuerzo, sin el costo extra.",
-      roiTagline: "Una sola cita cubre tu suscripción. El resto es ganancia pura.",
+      roiTagline: "Una sola cita podría ser suficiente para cubrir tu suscripción. El resto es ganancia pura.",
       tiers: [
         {
           name: "The Night Shift",
@@ -2422,7 +2422,7 @@ export const translations = {
       vsAnvela: "Anvela — disponibile 24/7",
       vsAnvelaPrice: "da $199 / mese · ~$50 / sett.",
       vsTagline: "Non per sostituire il tuo team — per dargli supporto, senza i costi aggiuntivi.",
-      roiTagline: "Un solo appuntamento copre il tuo abbonamento. Il resto è guadagno puro.",
+      roiTagline: "Un solo appuntamento potrebbe bastare a coprire il tuo abbonamento. Il resto è guadagno puro.",
       tiers: [
         {
           name: "The Night Shift",
