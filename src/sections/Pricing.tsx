@@ -131,6 +131,13 @@ export function Pricing() {
                     </div>
                 </div>
 
+                {/* ROI Tagline */}
+                <div className="max-w-2xl mx-auto mb-4 text-center fade-up">
+                    <p className="text-sm md:text-base text-slate-500 italic">
+                        💡 {t('pricing.roiTagline') as string}
+                    </p>
+                </div>
+
                 {/* Pricing Cards */}
                 <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto pt-16 items-stretch">
                     {pricingTiers.map((tier: any, i: number) => {
