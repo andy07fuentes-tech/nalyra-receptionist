@@ -37,16 +37,18 @@ export function Navigation() {
     >
       <div className="container-custom relative flex items-center justify-between px-4 md:px-8">
         
-        {/* Left: Brand Name (Anvela) */}
+        {/* Left: Logo (Anvela) */}
         <div className="flex-1 flex justify-start">
           <button
             onClick={() => scrollToSection('#hero')}
             className="group"
             aria-label="Anvela"
           >
-            <span className={`font-script text-2xl md:text-4xl lg:text-5xl transition-colors duration-300 ${isScrolled ? 'text-blue-600' : 'text-blue-400'}`}>
-              Anvela
-            </span>
+            <img 
+              src="/anvela-logo.jpg" 
+              alt="Anvela" 
+              className={`h-8 md:h-10 lg:h-12 w-auto transition-all duration-300 ${isScrolled ? 'brightness-100' : 'brightness-0 invert'}`} 
+            />
           </button>
         </div>
 
