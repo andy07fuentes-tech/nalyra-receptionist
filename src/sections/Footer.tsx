@@ -3,11 +3,10 @@ import { Instagram, Linkedin, Twitter, ArrowUp, Youtube, MapPin, Phone, Mail } f
 import { useLanguage } from '../contexts/LanguageContext';
 
 const CanadianFlag = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" className="w-8 h-auto inline-block align-middle">
-    <rect width="250" height="500" fill="#D80621"/>
-    <rect width="250" height="500" x="750" fill="#D80621"/>
-    <rect width="500" height="500" x="250" fill="#FFF"/>
-    <path fill="#D80621" d="M500 482l-15-77-50 14 6-40-52 8 36-47-50-8 6-41-31 23-11-29 31-18 10-39 42 16-6-68 48 42L500 68l0 48 48-42-6 68 42-16 10 39 31 18-11 29-31-23 6 41-50 8 36 47-52-8 6 40-50-14-15 77z"/>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" className="w-8 h-auto inline-block align-middle rounded-[2px] shadow-sm">
+    <rect width="640" height="320" fill="#FF0000"/>
+    <rect width="320" height="320" x="160" fill="#FFF"/>
+    <path fill="#FF0000" d="M346.7 215.1l-1.7-8.3-27.6 4.2 1.3-25.1 13.9-10.5-24.9-16.7 4.2-26.6-18.4 12.3L285 125l5.5 35.1 27.6-4.1-1.3 25 21.6 16.3-21.6 4.3 1.3 25-27.6-4.1 5.4 35h-10.8l5.4-35-27.6 4.1 1.3-25-21.6-4.3 21.6-16.3-1.3-25 27.6 4.1 5.5-35.1-8.3 19.4-18.4-12.3 4.2 26.6-24.9 16.7 13.9 10.5 1.3 25.1-27.6-4.2-1.7 8.3 27.6 4.3-1.3 25.1 32.8-12 4.1 11.5-30.8 11.2 28.7 21.5-7.1 9.5-28.7-21.5-3.9 32.9-13.4-1.5 3.9-32.9 32.2 26.6 8.7-10.5-32.2-26.6z"/>
   </svg>
 );
 
