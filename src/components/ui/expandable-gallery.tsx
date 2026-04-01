@@ -29,82 +29,70 @@ export function ExpandableGallery() {
     if (cards.length === 0 || !containerRef.current) return;
 
     const ctx = gsap.context(() => {
-      // Pinning the container
-      ScrollTrigger.create({
-        trigger: containerRef.current,
-        start: "top top",
-        end: `+=${(cards.length - 1) * 100}%`,
-        pin: true,
-        scrub: true,
+      // Create a single master timeline for the entire section
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top",
+          end: `+=${(cards.length - 1) * 100}%`,
+          pin: true,
+          scrub: true,
+          invalidateOnRefresh: true,
+        }
       });
 
+      // Prepare initial states for all cards
       cards.forEach((card, i) => {
-        const content = card.querySelector(".max-w-3xl");
-        
         if (i === 0) {
-          // Initial content animation for first card
-          gsap.fromTo(content, 
-            { y: 30, opacity: 0 },
-            { y: 0, opacity: 1, duration: 1.2, ease: "power4.out", delay: 0.5 }
-          );
-          return;
+          gsap.set(card, { opacity: 1, scale: 1, y: "0%" });
+        } else {
+          gsap.set(card, { opacity: 0, scale: 0.8, y: "100%" });
         }
-
-        // ENTRY: The "Flower Growing" Animation
-        gsap.fromTo(
-          card,
-          { 
-            y: "110%", // Start further down
-            scale: 0.8, // Start smaller (growing feel)
-            opacity: 0,
-            filter: "blur(5px)"
-          },
-          {
-            y: "0%",
-            scale: 1,
-            opacity: 1,
-            filter: "blur(0px)",
-            ease: "none",
-            scrollTrigger: {
-              trigger: containerRef.current,
-              start: `${(i - 1) * (100 / (cards.length - 1))}% top`,
-              end: `${i * (100 / (cards.length - 1))}% top`,
-              scrub: true,
-            },
-          }
-        );
-
-        // STAGGERED CONTENT ENTRY
+        
+        // Staggered content initial state
+        const content = card.querySelector(".max-w-3xl");
         if (content) {
-          gsap.fromTo(content,
-            { y: 60, opacity: 0 },
-            {
-              y: 0,
-              opacity: 1,
-              scrollTrigger: {
-                trigger: containerRef.current,
-                start: `${(i - 0.7) * (100 / (cards.length - 1))}% top`, // Starts slightly after card entry
-                end: `${i * (100 / (cards.length - 1))}% top`,
-                scrub: true,
-              }
-            }
-          );
+          gsap.set(content, { y: 60, opacity: 0 });
         }
+      });
 
-        // EXIT: Deep Blur and Recession
-        if (i > 0) {
-          gsap.to(cards[i - 1], {
-            scale: 0.9, // Shrink more
-            opacity: 0.2, // Fade more
-            filter: "blur(25px)", // Deeper blur
-            ease: "none",
-            scrollTrigger: {
-              trigger: containerRef.current,
-              start: `${(i - 1) * (100 / (cards.length - 1))}% top`,
-              end: `${i * (100 / (cards.length - 1))}% top`,
-              scrub: true,
-            },
-          });
+      // First card content entry (one-time on mount)
+      const firstContent = cards[0].querySelector(".max-w-3xl");
+      if (firstContent) {
+        gsap.to(firstContent, { y: 0, opacity: 1, duration: 1, ease: "power3.out", delay: 0.3 });
+      }
+
+      // Chain all card animations in the timeline
+      cards.forEach((card, i) => {
+        if (i === 0) return; // First card is already visible
+
+        const prevCard = cards[i - 1];
+        const currentContent = card.querySelector(".max-w-3xl");
+        const startTime = i - 1; // Relative time in the timeline
+
+        // 1. Previous Card Recedes & Blurs
+        tl.to(prevCard, {
+          scale: 0.9,
+          opacity: 0.2,
+          filter: "blur(20px)", 
+          ease: "none"
+        }, startTime);
+
+        // 2. Current Card Grows and Slides In
+        tl.to(card, {
+          y: "0%",
+          scale: 1,
+          opacity: 1,
+          ease: "none"
+        }, startTime);
+
+        // 3. Current Card Content Fades Up (staggered)
+        if (currentContent) {
+          tl.to(currentContent, {
+            y: 0,
+            opacity: 1,
+            ease: "power2.out"
+          }, startTime + 0.3); // Staggered by 0.3 units of scroll
         }
       });
     });
