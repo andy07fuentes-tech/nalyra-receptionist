@@ -32,40 +32,57 @@ export function ExpandableGallery() {
       // 1. Initial State Setup
       gsap.set(cards, { 
         opacity: 0, 
-        scale: 0.8, 
-        y: "110%",
-        willChange: "transform, opacity" 
+        scale: 0.85, 
+        y: "100%",
+        willChange: "transform, opacity, filter" 
       });
       
       // First card starts active
       gsap.set(cards[0], { opacity: 1, scale: 1, y: "0%" });
 
-      // Title/Content initial state
+      // Title/Content entries
       const allContent = cards.map(c => c.querySelector(".max-w-3xl"));
-      gsap.set(allContent, { y: 30, opacity: 0 });
-      gsap.to(allContent[0], { y: 0, opacity: 1, duration: 0.8, delay: 0.4 });
+      gsap.set(allContent, { y: 40, opacity: 0 });
+      gsap.to(allContent[0], { y: 0, opacity: 1, duration: 1, delay: 0.4 });
 
-      // 2. Master Timeline (Pinning the container)
+      // 2. Master Timeline
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top top",
           end: `+=${(cards.length - 1) * 100}%`,
           pin: true,
-          scrub: 1.2,
+          scrub: 1.5, // Added slight smoothing for better feel
           invalidateOnRefresh: true,
         }
       });
 
-      // 3. Simple Flower Stacking Sequence
+      // 3. Stacking Sequence
       cards.forEach((card, i) => {
         if (i === 0) return;
 
+        const prevCard = cards[i - 1];
+        const prevContent = allContent[i - 1];
         const currentContent = allContent[i];
+
+        // The transition "beat" (using labels for perfect sync)
         const label = `step-${i}`;
         tl.add(label);
 
-        // ENTRY: The Growing Animation (No blur, just growing and sliding)
+        // PREVIOUS CARD: Recession
+        tl.to(prevCard, {
+          scale: 0.9,
+          opacity: 0.15,
+          filter: "blur(20px)",
+          duration: 1, // Normalized duration
+          ease: "none"
+        }, label);
+
+        if (prevContent) {
+          tl.to(prevContent, { opacity: 0, y: -20, duration: 0.5 }, label);
+        }
+
+        // CURRENT CARD: Flower Growing Entry
         tl.to(card, {
           y: "0%",
           scale: 1,
@@ -78,9 +95,9 @@ export function ExpandableGallery() {
           tl.to(currentContent, {
             y: 0,
             opacity: 1,
-            duration: 0.7,
+            duration: 0.8,
             ease: "power2.out"
-          }, `${label}+=0.3`);
+          }, `${label}+=0.2`); // Staggered slightly
         }
       });
     });
