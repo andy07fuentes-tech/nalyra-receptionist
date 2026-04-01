@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Instagram, Linkedin, Twitter, ArrowUp, Youtube } from 'lucide-react';
+import { Instagram, Linkedin, Twitter, ArrowUp, Youtube, Zap, MapPin, Phone, Mail } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const CanadianFlag = () => (
@@ -37,12 +37,6 @@ export function Footer() {
 
   const linkGroups = getLinkGroups();
 
-  const contactItems = [
-    { label: t('contact.contactItems.address.label'), value: t('contact.contactItems.address.value') },
-    { label: t('contact.contactItems.phone.label'), value: t('contact.contactItems.phone.value') },
-    { label: t('contact.contactItems.email.label'), value: t('contact.contactItems.email.value') },
-  ];
-
   const getLegalLinks = () => t('footer.legalLinks') as string[];
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -57,7 +51,7 @@ export function Footer() {
   return (
     <footer className="relative bg-white font-sans" role="contentinfo">
       {/* 1. Newsletter Section - Cream Background */}
-      <section className="bg-[#E8E3DD] py-20">
+      <div className="bg-[#E8E3DD] py-20">
         <div className="container-custom">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-10">
             <h2 className="text-4xl md:text-5xl font-serif text-blue-900 max-w-md leading-tight">
@@ -81,22 +75,38 @@ export function Footer() {
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* 2. Main Footer Grid */}
-      <section className="bg-white pt-24 pb-12 relative overflow-hidden">
+      <div className="bg-white pt-24 pb-12 relative overflow-hidden">
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-24 relative z-10">
-            {/* Contact Column */}
+            {/* Brand/Contact Column */}
             <div className="space-y-8">
-              <h3 className="text-[10px] uppercase tracking-[0.3em] text-blue-900/50 font-bold italic">
-                {t('contact.subtitle')}
-              </h3>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white">
+                  <Zap className="w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-serif text-blue-900 tracking-wide">{t('footer.brandName')}</h3>
+                  <p className="text-[10px] uppercase tracking-[0.2em] text-blue-600 font-bold leading-none">{t('footer.tagline')}</p>
+                </div>
+              </div>
+              
               <div className="space-y-6">
-                {contactItems.map((item, idx) => (
-                  <div key={idx} className="space-y-1">
-                    <p className="text-[10px] uppercase tracking-widest text-blue-900/40">{item.label}</p>
-                    <p className="text-blue-900 text-sm leading-relaxed">{item.value}</p>
+                {[
+                  { Icon: MapPin, label: t('contact.contactItems.address.label'), value: t('contact.contactItems.address.value') },
+                  { Icon: Phone, label: t('contact.contactItems.phone.label'), value: t('contact.contactItems.phone.value') },
+                  { Icon: Mail, label: t('contact.contactItems.email.label'), value: t('contact.contactItems.email.value') },
+                ].map((item, idx) => (
+                  <div key={idx} className="flex gap-4">
+                    <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 flex-shrink-0">
+                      <item.Icon className="w-4 h-4" />
+                    </div>
+                    <div className="space-y-0.5">
+                      <p className="text-[10px] uppercase tracking-widest text-blue-900/40">{item.label}</p>
+                      <p className="text-blue-900 text-sm leading-relaxed">{item.value}</p>
+                    </div>
                   </div>
                 ))}
                 <div className="pt-4 flex items-center gap-3">
@@ -150,19 +160,17 @@ export function Footer() {
             </div>
           </div>
 
-          {/* 3. Large Branding Logo */}
-          <div className="mt-20 flex justify-center opacity-[0.05] grayscale brightness-0 select-none pointer-events-none">
-            <img 
-              src="/anvela-logo.jpg" 
-              alt="Anvela Logo" 
-              className="max-h-[200px] md:max-h-[300px] lg:max-h-[400px] object-contain"
-            />
+          {/* 3. Large Watermark Branding */}
+          <div className="mt-20 relative pointer-events-none select-none">
+            <h2 className="text-[clamp(4rem,20vw,24rem)] font-black text-blue-900/[0.03] leading-[0.8] tracking-tighter text-center uppercase italic">
+              Anvela
+            </h2>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* 4. Bottom Bar */}
-      <section className="border-t border-slate-100 bg-white py-8">
+      <div className="border-t border-slate-100 bg-white py-8">
         <div className="container-custom">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 md:gap-8 order-2 md:order-1">
@@ -196,7 +204,7 @@ export function Footer() {
             </button>
           </div>
         </div>
-      </section>
+      </div>
     </footer>
   );
 }
