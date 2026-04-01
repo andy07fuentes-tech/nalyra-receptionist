@@ -29,75 +29,70 @@ export function ExpandableGallery() {
     if (cards.length === 0 || !containerRef.current) return;
 
     const ctx = gsap.context(() => {
-      // 1. Initial State Setup
-      gsap.set(cards, { 
-        opacity: 0, 
-        scale: 0.85, 
-        y: "100%",
-        willChange: "transform, opacity, filter" 
-      });
-      
-      // First card starts active
-      gsap.set(cards[0], { opacity: 1, scale: 1, y: "0%" });
-
-      // Title/Content entries
-      const allContent = cards.map(c => c.querySelector(".max-w-3xl"));
-      gsap.set(allContent, { y: 40, opacity: 0 });
-      gsap.to(allContent[0], { y: 0, opacity: 1, duration: 1, delay: 0.4 });
-
-      // 2. Master Timeline
+      // Create a single master timeline for the entire section
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top top",
           end: `+=${(cards.length - 1) * 100}%`,
           pin: true,
-          scrub: 1.5, // Added slight smoothing for better feel
+          scrub: true,
           invalidateOnRefresh: true,
         }
       });
 
-      // 3. Stacking Sequence
+      // Prepare initial states for all cards
       cards.forEach((card, i) => {
-        if (i === 0) return;
+        if (i === 0) {
+          gsap.set(card, { opacity: 1, scale: 1, y: "0%" });
+        } else {
+          gsap.set(card, { opacity: 0, scale: 0.8, y: "100%" });
+        }
+        
+        // Staggered content initial state
+        const content = card.querySelector(".max-w-3xl");
+        if (content) {
+          gsap.set(content, { y: 60, opacity: 0 });
+        }
+      });
+
+      // First card content entry (one-time on mount)
+      const firstContent = cards[0].querySelector(".max-w-3xl");
+      if (firstContent) {
+        gsap.to(firstContent, { y: 0, opacity: 1, duration: 1, ease: "power3.out", delay: 0.3 });
+      }
+
+      // Chain all card animations in the timeline
+      cards.forEach((card, i) => {
+        if (i === 0) return; // First card is already visible
 
         const prevCard = cards[i - 1];
-        const prevContent = allContent[i - 1];
-        const currentContent = allContent[i];
+        const currentContent = card.querySelector(".max-w-3xl");
+        const startTime = i - 1; // Relative time in the timeline
 
-        // The transition "beat" (using labels for perfect sync)
-        const label = `step-${i}`;
-        tl.add(label);
-
-        // PREVIOUS CARD: Recession
+        // 1. Previous Card Recedes & Blurs
         tl.to(prevCard, {
           scale: 0.9,
-          opacity: 0.15,
-          filter: "blur(20px)",
-          duration: 1, // Normalized duration
+          opacity: 0.2,
+          filter: "blur(20px)", 
           ease: "none"
-        }, label);
+        }, startTime);
 
-        if (prevContent) {
-          tl.to(prevContent, { opacity: 0, y: -20, duration: 0.5 }, label);
-        }
-
-        // CURRENT CARD: Flower Growing Entry
+        // 2. Current Card Grows and Slides In
         tl.to(card, {
           y: "0%",
           scale: 1,
           opacity: 1,
-          duration: 1,
           ease: "none"
-        }, label);
+        }, startTime);
 
+        // 3. Current Card Content Fades Up (staggered)
         if (currentContent) {
           tl.to(currentContent, {
             y: 0,
             opacity: 1,
-            duration: 0.8,
             ease: "power2.out"
-          }, `${label}+=0.2`); // Staggered slightly
+          }, startTime + 0.3); // Staggered by 0.3 units of scroll
         }
       });
     });
