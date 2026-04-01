@@ -39,7 +39,7 @@ export function PainPoints() {
     return (
         <section
             ref={sectionRef}
-            className="relative py-24 md:py-32 bg-white overflow-hidden"
+            className="relative py-24 md:py-32 bg-white"
             id="pain-points"
         >
             {/* Subtle Patterns */}
@@ -55,7 +55,7 @@ export function PainPoints() {
                         </span>
                     </div>
 
-                    <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-dark-theme mb-6 leading-tight">
+                    <h2 className="font-serif text-5xl md:text-7xl lg:text-8xl text-dark-theme mb-6 leading-[0.95] tracking-tight">
                         {t('painPoints.mainTitle')}
                     </h2>
 
