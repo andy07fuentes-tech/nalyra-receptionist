@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
-import { Instagram, Linkedin, Twitter, ArrowUp, Youtube, Zap, MapPin, Phone, Mail } from 'lucide-react';
+import { Instagram, Linkedin, Twitter, ArrowUp, Youtube, MapPin, Phone, Mail } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const CanadianFlag = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 10" className="w-6 h-auto inline-block align-middle">
-    <path fill="#F00" d="M0 0h20v10H0z"/>
-    <path fill="#FFF" d="M5 0h10v10H5z"/>
-    <path fill="#F00" d="M10.1 2.3l.2 1.3 1.2-.4-.9 1 1 1.4-1.4-.2.1 1.2-1 .9-1-.9.1-1.2-1.4.2 1-1.4-.9-1 1.2.4.2-1.3z"/>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" className="w-8 h-auto inline-block align-middle">
+    <rect width="250" height="500" fill="#D80621"/>
+    <rect width="250" height="500" x="750" fill="#D80621"/>
+    <rect width="500" height="500" x="250" fill="#FFF"/>
+    <path fill="#D80621" d="M500 482l-15-77-50 14 6-40-52 8 36-47-50-8 6-41-31 23-11-29 31-18 10-39 42 16-6-68 48 42L500 68l0 48 48-42-6 68 42-16 10 39 31 18-11 29-31-23 6 41-50 8 36 47-52-8 6 40-50-14-15 77z"/>
   </svg>
 );
 
@@ -82,15 +83,16 @@ export function Footer() {
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-24 relative z-10">
             {/* Brand/Contact Column */}
-            <div className="space-y-8">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white">
-                  <Zap className="w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-serif text-blue-900 tracking-wide">{t('footer.brandName')}</h3>
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-blue-600 font-bold leading-none">{t('footer.tagline')}</p>
-                </div>
+            <div className="space-y-10">
+              <div className="space-y-4">
+                <img 
+                  src="/anvela-logo.jpg" 
+                  alt="Anvela Logo" 
+                  className="h-16 w-auto object-contain mix-blend-multiply"
+                />
+                <p className="text-[10px] uppercase tracking-[0.2em] text-blue-600 font-bold leading-none ml-1">
+                  {t('footer.tagline')}
+                </p>
               </div>
               
               <div className="space-y-6">
@@ -162,7 +164,7 @@ export function Footer() {
 
           {/* 3. Large Watermark Branding */}
           <div className="mt-20 relative pointer-events-none select-none">
-            <h2 className="text-[clamp(4rem,20vw,24rem)] font-black text-blue-900/[0.03] leading-[0.8] tracking-tighter text-center uppercase italic">
+            <h2 className="text-[clamp(4rem,20vw,24rem)] font-black text-blue-900/[0.08] leading-[0.8] tracking-tighter text-center uppercase italic antialiased">
               Anvela
             </h2>
           </div>
