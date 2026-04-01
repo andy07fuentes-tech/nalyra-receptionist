@@ -12,6 +12,7 @@ const PHOTO_CONFIG = [
   { id: "photo-2", src: "/images/features/tablet-booking.jpg", key: "photo2" },
   { id: "photo-3", src: "/images/feature-support.jpg", key: "photo3" },
   { id: "photo-4", src: "/images/features/automation-icons.jpg", key: "photo4" },
+  { id: "photo-5", src: "/images/step-setup.jpg", key: "photo5" },
   { id: "photo-6", src: "/images/step-integrate.jpg", key: "photo6" },
   { id: "photo-7", src: "/images/tech-nlp.jpg", key: "photo7" },
   { id: "photo-8", src: "/images/tech-ml.jpg", key: "photo8" },
@@ -20,48 +21,58 @@ const PHOTO_CONFIG = [
 
 export function ExpandableGallery() {
   const { t } = useLanguage();
+  const containerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     const cards = cardsRef.current.filter(Boolean) as HTMLDivElement[];
-    if (cards.length === 0) return;
+    if (cards.length === 0 || !containerRef.current) return;
 
     const ctx = gsap.context(() => {
-      cards.forEach((card) => {
-        // Clip-path wipe-up reveal tied directly to scroll position
+      // Pinning the container
+      ScrollTrigger.create({
+        trigger: containerRef.current,
+        start: "top top",
+        end: `+=${(cards.length - 1) * 100}%`,
+        pin: true,
+        scrub: true,
+      });
+
+      cards.forEach((card, i) => {
+        if (i === 0) return; // First card is already visible
+
+        // Each card slides up and covers the previous one
         gsap.fromTo(
           card,
-          { clipPath: "inset(100% 0% 0% 0%)" },
+          { y: "100%", opacity: 0.9 },
           {
-            clipPath: "inset(0% 0% 0% 0%)",
-            ease: "power2.out",
+            y: "0%",
+            opacity: 1,
+            ease: "none",
             scrollTrigger: {
-              trigger: card,
-              start: "top 95%",
-              end: "top 45%",
-              scrub: 1,
+              trigger: containerRef.current,
+              start: `${(i - 1) * (100 / (cards.length - 1))}% top`,
+              end: `${i * (100 / (cards.length - 1))}% top`,
+              scrub: true,
             },
           }
         );
 
-        // Parallax on the inner image
-        const img = card.querySelector("img");
-        if (img) {
-          gsap.fromTo(
-            img,
-            { scale: 1.12, y: "8%" },
-            {
-              scale: 1,
-              y: "0%",
-              ease: "none",
-              scrollTrigger: {
-                trigger: card,
-                start: "top bottom",
-                end: "bottom top",
-                scrub: true,
-              },
-            }
-          );
+        // Dimming/Blurring the previous card
+        if (i > 0) {
+          gsap.to(cards[i - 1], {
+            scale: 0.95,
+            opacity: 0.4,
+            filter: "blur(10px)",
+            backgroundColor: "rgba(0,0,0,0.6)",
+            ease: "none",
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: `${(i - 1) * (100 / (cards.length - 1))}% top`,
+              end: `${i * (100 / (cards.length - 1))}% top`,
+              scrub: true,
+            },
+          });
         }
       });
     });
@@ -70,7 +81,7 @@ export function ExpandableGallery() {
   }, []);
 
   return (
-    <div className="flex flex-col w-full">
+    <div ref={containerRef} className="relative w-full h-screen overflow-hidden bg-white">
       {PHOTO_CONFIG.map((photo, index) => {
         const photoData = {
           title: t(`painPoints.gallery.photos.${photo.key}.title`),
@@ -82,54 +93,75 @@ export function ExpandableGallery() {
           <div
             key={photo.id}
             ref={(el) => { cardsRef.current[index] = el; }}
-            className="relative w-full overflow-hidden rounded-2xl group"
-            style={{
-              height: "55vh",
-              marginTop: index === 0 ? 0 : "-48px",
-              zIndex: index + 1,
+            className="absolute inset-0 w-full h-full overflow-hidden group flex items-center justify-center p-4 md:p-10"
+            style={{ 
+              zIndex: index + 10,
+              // Initial state for JS-based animation to take over
+              transform: index === 0 ? "none" : "translateY(100%)"
             }}
           >
-            {/* Background image with parallax */}
-            <img
-              src={photo.src}
-              alt={photoData.title}
-              className="absolute inset-0 w-full h-full object-cover will-change-transform"
-            />
+            {/* Card Content Wrapper: Rounded and Cinematic */}
+            <div className="relative w-full h-full max-w-7xl rounded-[40px] overflow-hidden shadow-2xl border border-white/10 bg-black">
+              {/* Background image */}
+              <img
+                src={photo.src}
+                alt={photoData.title}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-[3s] group-hover:scale-110"
+              />
 
-            {/* Dark overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-black/10" />
+              {/* Dark overlay with dynamic gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80" />
 
-            {/* Corner crosshairs */}
-            <div className="absolute top-6 left-6 w-5 h-5 border-t-[1.5px] border-l-[1.5px] border-white/35 transition-all duration-500 group-hover:border-white/80 group-hover:-translate-x-1 group-hover:-translate-y-1" />
-            <div className="absolute top-6 right-6 w-5 h-5 border-t-[1.5px] border-r-[1.5px] border-white/35 transition-all duration-500 group-hover:border-white/80 group-hover:translate-x-1 group-hover:-translate-y-1" />
-            <div className="absolute bottom-6 left-6 w-5 h-5 border-b-[1.5px] border-l-[1.5px] border-white/35 transition-all duration-500 group-hover:border-white/80 group-hover:-translate-x-1 group-hover:translate-y-1" />
-            <div className="absolute bottom-6 right-6 w-5 h-5 border-b-[1.5px] border-r-[1.5px] border-white/35 transition-all duration-500 group-hover:border-white/80 group-hover:translate-x-1 group-hover:translate-y-1" />
+              {/* Technical HUD Overlay (Haven-2 Inspired) */}
+              <div className="absolute inset-0 pointer-events-none border-[1.5px] border-white/5 m-6 rounded-[32px] overflow-hidden">
+                <div className="absolute top-0 left-0 w-8 h-[1.5px] bg-white/20" />
+                <div className="absolute top-0 left-0 w-[1.5px] h-8 bg-white/20" />
+                <div className="absolute top-0 right-0 w-8 h-[1.5px] bg-white/20" />
+                <div className="absolute top-0 right-0 w-[1.5px] h-8 bg-white/20" />
+                <div className="absolute bottom-0 left-0 w-8 h-[1.5px] bg-white/20" />
+                <div className="absolute bottom-0 left-0 w-[1.5px] h-8 bg-white/20" />
+                <div className="absolute bottom-0 right-0 w-8 h-[1.5px] bg-white/20" />
+                <div className="absolute bottom-0 right-0 w-[1.5px] h-8 bg-white/20" />
+              </div>
 
-            {/* Card counter */}
-            <div className="absolute top-6 left-1/2 -translate-x-1/2 text-white/25 text-[10px] font-mono tracking-[0.35em]">
-              {String(index + 1).padStart(2, "0")} / {String(PHOTO_CONFIG.length).padStart(2, "0")}
-            </div>
+              {/* Card counter */}
+              <div className="absolute top-10 left-10 text-white/30 text-[10px] md:text-xs font-mono tracking-[0.5em] flex items-center gap-4">
+                <div className="w-8 h-px bg-white/20" />
+                CARD_{String(index + 1).padStart(2, "0")} / {String(PHOTO_CONFIG.length).padStart(2, "0")}
+              </div>
 
-            {/* Bottom content */}
-            <div className="absolute inset-x-0 bottom-0 p-8 md:p-10">
-              <h3 className="font-serif text-2xl md:text-4xl text-white leading-snug mb-2 transition-transform duration-500 ease-[cubic-bezier(0.62,0.05,0.01,0.99)] group-hover:-translate-y-28">
-                {photoData.title}
-              </h3>
+              {/* Bottom content */}
+              <div className="absolute inset-x-0 bottom-0 p-10 md:p-16">
+                <div className="max-w-3xl">
+                  <h3 className="font-serif text-3xl md:text-5xl lg:text-7xl text-white leading-[1.1] mb-6 md:mb-10 tracking-tight">
+                    {photoData.title}
+                  </h3>
 
-              {/* Hover reveal */}
-              <div className="overflow-hidden">
-                <div className="translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.62,0.05,0.01,0.99)] space-y-3">
-                  <div className="flex gap-2 items-start">
-                    <span className="shrink-0 mt-0.5 text-[9px] font-bold text-blue-300 uppercase tracking-widest bg-blue-500/20 px-1.5 py-0.5 rounded border border-blue-500/20">
-                      {t("painPoints.gallery.labels.logic")}
-                    </span>
-                    <p className="text-sm md:text-base text-white/80 leading-relaxed">{photoData.logic}</p>
-                  </div>
-                  <div className="flex gap-2 items-start">
-                    <span className="shrink-0 mt-0.5 text-[9px] font-bold text-emerald-300 uppercase tracking-widest bg-emerald-500/20 px-1.5 py-0.5 rounded border border-emerald-500/20">
-                      {t("painPoints.gallery.labels.benefit")}
-                    </span>
-                    <p className="text-sm md:text-base text-emerald-100/80 leading-relaxed italic">{photoData.benefit}</p>
+                  {/* Feature Grid */}
+                  <div className="grid md:grid-cols-2 gap-8 md:gap-12">
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]" />
+                        <span className="text-[10px] md:text-xs font-bold text-white/40 uppercase tracking-[0.3em]">
+                          {t("painPoints.gallery.labels.logic")}
+                        </span>
+                      </div>
+                      <p className="text-base md:text-xl text-white/70 leading-relaxed font-light">
+                        {photoData.logic}
+                      </p>
+                    </div>
+
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
+                        <span className="text-[10px] md:text-xs font-bold text-white/40 uppercase tracking-[0.3em]">
+                          {t("painPoints.gallery.labels.benefit")}
+                        </span>
+                      </div>
+                      <p className="text-base md:text-xl text-emerald-100/90 leading-relaxed italic font-light">
+                        {photoData.benefit}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -142,3 +174,4 @@ export function ExpandableGallery() {
 }
 
 export default ExpandableGallery;
+
