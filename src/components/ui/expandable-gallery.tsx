@@ -39,31 +39,15 @@ export function ExpandableGallery() {
       });
 
       cards.forEach((card, i) => {
-        const content = card.querySelector(".max-w-3xl");
-        
-        if (i === 0) {
-          // Initial content animation for first card
-          gsap.fromTo(content, 
-            { y: 30, opacity: 0 },
-            { y: 0, opacity: 1, duration: 1.2, ease: "power4.out", delay: 0.5 }
-          );
-          return;
-        }
+        if (i === 0) return; // First card is already visible
 
-        // ENTRY: The "Flower Growing" Animation
+        // Each card slides up and covers the previous one
         gsap.fromTo(
           card,
-          { 
-            y: "110%", // Start further down
-            scale: 0.8, // Start smaller (growing feel)
-            opacity: 0,
-            filter: "blur(5px)"
-          },
+          { y: "100%", opacity: 0.9 },
           {
             y: "0%",
-            scale: 1,
             opacity: 1,
-            filter: "blur(0px)",
             ease: "none",
             scrollTrigger: {
               trigger: containerRef.current,
@@ -74,29 +58,13 @@ export function ExpandableGallery() {
           }
         );
 
-        // STAGGERED CONTENT ENTRY
-        if (content) {
-          gsap.fromTo(content,
-            { y: 60, opacity: 0 },
-            {
-              y: 0,
-              opacity: 1,
-              scrollTrigger: {
-                trigger: containerRef.current,
-                start: `${(i - 0.7) * (100 / (cards.length - 1))}% top`, // Starts slightly after card entry
-                end: `${i * (100 / (cards.length - 1))}% top`,
-                scrub: true,
-              }
-            }
-          );
-        }
-
-        // EXIT: Deep Blur and Recession
+        // Dimming/Blurring the previous card
         if (i > 0) {
           gsap.to(cards[i - 1], {
-            scale: 0.9, // Shrink more
-            opacity: 0.2, // Fade more
-            filter: "blur(25px)", // Deeper blur
+            scale: 0.95,
+            opacity: 0.4,
+            filter: "blur(10px)",
+            backgroundColor: "rgba(0,0,0,0.6)",
             ease: "none",
             scrollTrigger: {
               trigger: containerRef.current,
