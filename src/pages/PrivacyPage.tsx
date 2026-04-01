@@ -79,26 +79,15 @@ export default function PrivacyPage() {
               <p className="mt-3">Nous ne vendons, ne louons et ne partageons pas vos renseignements à des tiers à des fins commerciales.</p>
             </div>
 
-            <div>
-              <h3 className="font-semibold text-slate-900 mb-2">4. Tiers impliqués dans le traitement</h3>
-              <p>Dans le cadre de la prestation de nos services, vos données peuvent transiter par les plateformes suivantes :</p>
-              <ul className="mt-3 space-y-1 list-disc list-inside text-slate-600">
-                <li><strong>Retell AI</strong> — traitement des appels vocaux</li>
-                <li><strong>Twilio</strong> — transmission de messages SMS</li>
-                <li><strong>Airtable</strong> — stockage des données de leads</li>
-                <li><strong>n8n</strong> — automatisation des flux de travail</li>
-                <li><strong>Vercel</strong> — hébergement du site web</li>
-              </ul>
-              <p className="mt-3">Ces tiers sont soumis à leurs propres politiques de confidentialité et sont tenus de traiter vos données de manière sécurisée.</p>
-            </div>
+
 
             <div>
-              <h3 className="font-semibold text-slate-900 mb-2">5. Durée de conservation</h3>
+              <h3 className="font-semibold text-slate-900 mb-2">4. Durée de conservation</h3>
               <p>Vos renseignements sont conservés aussi longtemps que nécessaire pour la prestation des services ou jusqu'à ce que vous demandiez leur suppression. En l'absence de relation commerciale active, les données sont supprimées après 24 mois.</p>
             </div>
 
             <div>
-              <h3 className="font-semibold text-slate-900 mb-2">6. Vos droits</h3>
+              <h3 className="font-semibold text-slate-900 mb-2">5. Vos droits</h3>
               <p>Conformément à la Loi 25, vous disposez des droits suivants :</p>
               <ul className="mt-3 space-y-1 list-disc list-inside text-slate-600">
                 <li>Droit d'accès à vos renseignements personnels</li>
@@ -111,12 +100,12 @@ export default function PrivacyPage() {
             </div>
 
             <div>
-              <h3 className="font-semibold text-slate-900 mb-2">7. Sécurité</h3>
+              <h3 className="font-semibold text-slate-900 mb-2">6. Sécurité</h3>
               <p>Nous mettons en œuvre des mesures de sécurité raisonnables pour protéger vos renseignements contre l'accès non autorisé, la divulgation, l'altération ou la destruction. Toutes les communications sont chiffrées via HTTPS.</p>
             </div>
 
             <div>
-              <h3 className="font-semibold text-slate-900 mb-2">8. Langue</h3>
+              <h3 className="font-semibold text-slate-900 mb-2">7. Langue</h3>
               <p>Cette politique est rédigée en français conformément aux exigences de la Loi 25 du Québec. Une version en anglais est disponible sur demande à pablo@anvela.ca.</p>
             </div>
           </div>
