@@ -625,6 +625,57 @@
   .animate-heartbeat-glow {
     animation: heartbeat-glow 3s ease-in-out infinite;
   }
+
+  /* Premium Fill-Up Button Animation (Uiverse.io inspired) */
+  .btn-premium-fill {
+    @apply relative overflow-hidden transition-all duration-500 ease-in-out;
+    background: transparent;
+    border-bottom: 2px solid rgba(37, 99, 235, 0.2); /* Subtle starting border */
+    color: #2563eb; /* Initial Brand Blue text */
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .btn-premium-fill::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #2563eb; /* Active Brand Blue underline */
+    transition: 0.5s ease;
+    z-index: 2;
+  }
+
+  .btn-premium-fill:hover {
+    color: white;
+    transition-delay: 0.5s;
+  }
+
+  .btn-premium-fill:hover::before {
+    width: 100%;
+  }
+
+  .btn-premium-fill::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    background-color: #2563eb; /* Fill color */
+    transition: 0.4s ease;
+    z-index: -1;
+  }
+
+  .btn-premium-fill:hover::after {
+    height: 100%;
+    transition-delay: 0.4s;
+  }
 }
 
 @layer utilities {

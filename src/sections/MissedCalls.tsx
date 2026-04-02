@@ -99,7 +99,7 @@ export function MissedCalls() {
                         
                         <a 
                             href="#pricing"
-                            className="inline-flex items-center gap-4 bg-blue-600 text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-slate-900 hover:scale-105 transition-all duration-300 group shadow-lg shadow-blue-500/20"
+                            className="btn-premium-fill inline-flex items-center gap-4 px-8 py-4 rounded-full group shadow-lg shadow-blue-500/10"
                         >
                             {t('missedCalls.cta')}
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
