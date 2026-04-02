@@ -162,8 +162,8 @@ export function Footer() {
           </div>
 
           {/* 3. Large Watermark Branding */}
-          <div className="mt-20 relative pointer-events-none select-none">
-            <h2 className="text-[clamp(4rem,20vw,24rem)] font-black text-blue-900/[0.08] leading-[0.8] tracking-tighter text-center uppercase italic antialiased">
+          <div className="mt-20 relative pointer-events-none select-none overflow-hidden">
+            <h2 className="text-[clamp(4rem,18vw,20rem)] font-serif font-medium text-neutral-800/10 leading-none tracking-normal text-center uppercase">
               Anvela
             </h2>
           </div>
