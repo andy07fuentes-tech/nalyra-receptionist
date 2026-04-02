@@ -137,8 +137,8 @@ export const OnboardingChecklist = ({
                 key={idx}
                 onClick={() => setActiveTab(idx)}
                 className={cn(
-                  "relative px-6 py-2.5 text-sm font-semibold transition-all duration-500 rounded-full",
-                  activeTab === idx ? "text-white" : "text-white/40 hover:text-white/70"
+                  "btn-premium-fill relative px-6 py-2.5 text-sm font-semibold transition-all duration-500 rounded-full !border-none",
+                  activeTab === idx ? "text-white" : "text-white/40 hover:text-white"
                 )}
               >
                 {activeTab === idx && (
