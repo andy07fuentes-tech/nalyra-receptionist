@@ -323,7 +323,7 @@ export const translations = {
             "Notification : SMS instantané à la capture d'un lead",
             "Transcription complète + résumé IA des appels",
             "Rapport : 'Night Shift Report' quotidien à 8h00",
-            "Langue : Optimisé pour les marchés locaux",
+            "Langue : Français (Optimisé pour les marchés locaux)",
             "Réduction des no-shows : jusqu'à 30–50% avec rappels"
           ]
         },
@@ -1022,7 +1022,7 @@ export const translations = {
             "Notification: Instant SMS on lead capture",
             "Full transcription + AI call summary",
             "Report: Daily 'Night Shift Report' at 8:00 AM",
-            "Language: Optimized for local markets",
+            "Language: French (Optimized for local markets)",
             "No-show reduction: up to 30–50% with reminders"
           ]
         },
@@ -1721,7 +1721,7 @@ export const translations = {
             "Notificación: SMS instantáneo al capturar un lead",
             "Transcripción completa + resumen IA de llamadas",
             "Informe: 'Night Shift Report' diario a las 8:00",
-            "Idioma: Optimizado para mercados locales",
+            "Idioma: Francés (Optimizado para mercados locales)",
             "Reducción de no-shows: hasta 30–50% con recordatorios"
           ]
         },
@@ -2424,7 +2424,7 @@ export const translations = {
             "Notifica: SMS istantaneo alla cattura di un lead",
             "Trascrizione completa + riepilogo IA chiamate",
             "Rapporto: 'Night Shift Report' quotidiano alle 8:00",
-            "Lingua: Ottimizzato per i mercati locali",
+            "Lingua: Francese (Ottimizzato per i mercati locali)",
             "Riduzione no-shows: fino al 30–50% con promemoria"
           ]
         },
