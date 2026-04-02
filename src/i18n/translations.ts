@@ -708,7 +708,7 @@ export const translations = {
       newsletterSuccessText: "Merci pour votre abonnement !",
       newsletterErrorText: "Veuillez réessayer.",
       socialFollow: "Suivez-nous",
-      madeInCanada: "Fait au Canada",
+      madeInQuebec: "Fait au Québec",
       copyrightText: "© Anvela AI. Tous droits réservés.",
       backToTopText: "Retour en haut",
       linkGroups: {
@@ -1438,7 +1438,7 @@ export const translations = {
       newsletterSuccessText: "Thanks for subscribing!",
       newsletterErrorText: "Please try again.",
       socialFollow: "Follow Us",
-      madeInCanada: "Made in Canada",
+      madeInQuebec: "Made in Quebec",
       copyrightText: "© Anvela AI. All rights reserved.",
       backToTopText: "Back to top",
       linkGroups: {
@@ -2144,7 +2144,7 @@ export const translations = {
       newsletterSuccessText: "¡Gracias por suscribirse!",
       newsletterErrorText: "Por favor intente de nuevo.",
       socialFollow: "Síguenos",
-      madeInCanada: "Hecho en Canadá",
+      madeInQuebec: "Hecho en Quebec",
       copyrightText: "© Anvela AI. Todos los derechos reservados.",
       backToTopText: "Volver arriba",
       linkGroups: {
@@ -2851,7 +2851,7 @@ export const translations = {
       newsletterSuccessText: "Grazie per l'iscrizione!",
       newsletterErrorText: "Per favore riprova.",
       socialFollow: "Seguici",
-      madeInCanada: "Fatto in Canada",
+      madeInQuebec: "Fatto in Quebec",
       copyrightText: "© Anvela AI. All rights reserved.",
       backToTopText: "Torna su",
       linkGroups: {
