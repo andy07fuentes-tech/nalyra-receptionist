@@ -63,11 +63,6 @@ const PHOTO_CONFIG = [
     key: "photo5"
   },
   {
-    id: "photo-6",
-    src: "/images/step-integrate.jpg",
-    key: "photo6"
-  },
-  {
     id: "photo-7",
     src: "/images/tech-nlp.jpg",
     key: "photo7"

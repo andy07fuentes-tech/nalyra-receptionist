@@ -206,12 +206,6 @@ export const translations = {
             benefit: "Gagnez du temps dès la première heure.",
             alt: "Configuration rapide Anvela"
           },
-          photo6: {
-            title: "Intégration Transparente",
-            logic: "Compatible avec 99% des systèmes téléphoniques et calendriers actuels.",
-            benefit: "Aucun changement d'infrastructure requis.",
-            alt: "Intégration transparente"
-          },
           photo7: {
             title: "Voix Ultra-Réaliste",
             logic: "Une technologie de synthèse vocale qui imite parfaitement le ton et l'empathie humaine.",
@@ -938,12 +932,6 @@ export const translations = {
             benefit: "Save time from the very first hour.",
             alt: "Quick Anvela setup"
           },
-          photo6: {
-            title: "Seamless Integration",
-            logic: "Compatible with 99% of current phone systems and calendars.",
-            benefit: "No infrastructure changes required.",
-            alt: "Seamless integration"
-          },
           photo7: {
             title: "Ultra-Realistic Voice",
             logic: "Speech synthesis technology that perfectly mimics human tone and empathy.",
@@ -1642,12 +1630,6 @@ export const translations = {
             logic: "Configure su perfil de IA en menos de 10 minutos con sus preferencias comerciales.",
             benefit: "Ahorre tiempo desde la primera hora.",
             alt: "Configuración rápida de Anvela"
-          },
-          photo6: {
-            title: "Integración Sin Fisuras",
-            logic: "Compatible con el 99% de los sistemas telefónicos y calendarios actuales.",
-            benefit: "No se requieren cambios de infraestructura.",
-            alt: "Integración perfecta"
           },
           photo7: {
             title: "Voz Ultra Realista",
@@ -2351,12 +2333,6 @@ export const translations = {
             logic: "Configura il tuo profilo IA in meno di 10 minuti con le tue preferenze aziendali.",
             benefit: "Risparmia tempo fin dalla prima ora.",
             alt: "Configurazione rapida Anvela"
-          },
-          photo6: {
-            title: "Integrazione Senza Soluzioni di Continuità",
-            logic: "Compatibile con il 99% degli attuali sistemi telefonici e calendari.",
-            benefit: "Nessun cambiamento di infrastruttura richiesto.",
-            alt: "Integrazione perfetta"
           },
           photo7: {
             title: "Voce Ultra-Realistica",
