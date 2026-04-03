@@ -346,7 +346,6 @@ export const translations = {
             "Interactions : Bilingue (Français / Anglais)",
             "Appels : Illimités",
             "Auto-callbacks pour no-shows (l'IA rappelle)",
-            "Routage intelligent : Analyse de contexte et priorité",
             "Offre lancement : premier mois à 50% du prix normal"
           ]
         },
@@ -1045,7 +1044,6 @@ export const translations = {
             "Interactions: Bilingual (English / French)",
             "Calls: Unlimited",
             "Auto-callbacks for no-shows (AI calls back)",
-            "Smart routing: Context and priority analysis",
             "Launch Offer: first month at 50% off"
           ]
         },
@@ -1744,7 +1742,6 @@ export const translations = {
             "Interacciones: Bilingüe (Inglés / Español)",
             "Llamadas: Ilimitadas",
             "Auto-callbacks para no-shows (IA vuelve a llamar)",
-            "Enrutamiento inteligente: Análisis de contexto y prioridad",
             "Oferta lanzamiento: primer mes al 50% del precio normal"
           ]
         },
@@ -2447,7 +2444,6 @@ export const translations = {
             "Interazioni: Bilingue (Inglese / Italiano)",
             "Chiamate: Illimitate",
             "Auto-callbacks per no-shows (l'IA richiama)",
-            "Routing intelligente: Analisi del contesto e priorità",
             "Offerta lancio: primo mese al 50% del prezzo normale"
           ]
         },
