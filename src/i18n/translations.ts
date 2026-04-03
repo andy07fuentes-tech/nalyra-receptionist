@@ -345,7 +345,6 @@ export const translations = {
             "Gestion : Modifications et annulations par IA",
             "Interactions : Bilingue (Français / Anglais)",
             "Appels : Illimités",
-            "Auto-callbacks pour no-shows (l'IA rappelle)",
             "Offre lancement : premier mois à 50% du prix normal"
           ]
         },
@@ -1043,7 +1042,6 @@ export const translations = {
             "Management: AI-handled modifications & cancellations",
             "Interactions: Bilingual (English / French)",
             "Calls: Unlimited",
-            "Auto-callbacks for no-shows (AI calls back)",
             "Launch Offer: first month at 50% off"
           ]
         },
@@ -1741,7 +1739,6 @@ export const translations = {
             "Gestión: Modificaciones y cancelaciones por IA",
             "Interacciones: Bilingüe (Inglés / Español)",
             "Llamadas: Ilimitadas",
-            "Auto-callbacks para no-shows (IA vuelve a llamar)",
             "Oferta lanzamiento: primer mes al 50% del precio normal"
           ]
         },
@@ -2443,7 +2440,6 @@ export const translations = {
             "Gestione: Modifiche e cancellazioni gestite dall'IA",
             "Interazioni: Bilingue (Inglese / Italiano)",
             "Chiamate: Illimitate",
-            "Auto-callbacks per no-shows (l'IA richiama)",
             "Offerta lancio: primo mese al 50% del prezzo normale"
           ]
         },
