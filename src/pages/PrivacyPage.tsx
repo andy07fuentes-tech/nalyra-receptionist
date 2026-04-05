@@ -130,7 +130,7 @@ export default function PrivacyPage() {
 
             <div>
               <h3 className="font-semibold text-slate-900 mb-2">3. Engagements contractuels</h3>
-              <p>Les forfaits <strong>Night Shift</strong> et <strong>Co-Pilot</strong> requièrent un engagement minimum de 3 mois. Le forfait <strong>Elite</strong> requiert un engagement minimum de 6 mois. Aucun remboursement n'est accordé pour les mois entamés.</p>
+              <p>Les forfaits <strong>Night Shift</strong> et <strong>Co-Pilot</strong> requièrent un engagement minimum de 3 mois. Le forfait <strong>Anvela Signature</strong> requiert un engagement minimum de 6 mois. Aucun remboursement n'est accordé pour les mois entamés.</p>
             </div>
 
             <div>

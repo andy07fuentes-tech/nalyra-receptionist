@@ -309,7 +309,7 @@ export const translations = {
       roiTagline: "Un seul rendez-vous pourrait suffire à couvrir votre abonnement. Le reste est du gain pur.",
       tiers: [
         {
-          name: "The Night Shift",
+          name: "Night Shift",
           price: "199",
           weeklyNote: "soit environ 49$ par semaine",
           setupFee: "0",
@@ -328,7 +328,7 @@ export const translations = {
           ]
         },
         {
-          name: "The Co-Pilot",
+          name: "Co-Pilot",
           price: "379",
           weeklyNote: "soit environ 89$ par semaine",
           isPopular: true,
@@ -336,7 +336,7 @@ export const translations = {
           setupFeeNote: "Contrat minimum de 3 mois",
           description: "Couverture complète 24/7. Votre téléphone ne sonne plus dans le vide — il génère des revenus, même pendant le travail.",
           features: [
-            "Inclut TOUT du forfait 'The Night Shift'",
+            "Inclut TOUT du forfait 'Night Shift'",
             "Suivi : Appels non résolus avec transcription",
             "Disponibilité : 24/7 (Débordement jour + Nuit complète)",
             "Routing : Humain d'abord (3 sonneries), l'IA prend le relais",
@@ -349,14 +349,14 @@ export const translations = {
           ]
         },
         {
-          name: "The Elite",
+          name: "Anvela Signature",
           price: "697",
           weeklyNote: "soit environ 165$ par semaine",
           setupFee: "497",
           setupFeeNote: "Contrat minimum de 6 mois",
           description: "Votre système de croissance complet. L'IA répond, relance, réserve et suit chaque lead — pendant que vous travaillez.",
           features: [
-            "Inclut TOUT de 'The Night Shift' et 'The Co-Pilot'",
+            "Inclut TOUT de 'Night Shift' et 'Co-Pilot'",
             "Transfert : Destinations illimitées (réception, gérant, service...)",
             "Mémoire clients : Mila reconnaît vos habitués et personnalise chaque appel",
             "Logique : Intégration CRM sur mesure selon votre système actuel",
@@ -395,7 +395,7 @@ export const translations = {
         },
         {
           question: "Y a-t-il un engagement à long terme ?",
-          answer: "Les forfaits 'Night Shift' et 'Co-Pilot' ont un engagement minimal de 3 mois. Le forfait 'Elite' requiert 6 mois en raison de la complexité de l'intégration CRM personnalisée."
+          answer: "Les forfaits 'Night Shift' et 'Co-Pilot' ont un engagement minimal de 3 mois. Le forfait 'Anvela Signature' requiert 6 mois en raison de la complexité de l'intégration CRM personnalisée."
         },
         {
           question: "Pour quels types d'entreprises Anvela est-elle faite ?",
@@ -1006,7 +1006,7 @@ export const translations = {
       roiTagline: "A single appointment could be enough to cover your subscription. The rest is pure gain.",
       tiers: [
         {
-          name: "The Night Shift",
+          name: "Night Shift",
           price: "199",
           weeklyNote: "approx. $49 / week",
           setupFee: "0",
@@ -1025,7 +1025,7 @@ export const translations = {
           ]
         },
         {
-          name: "The Co-Pilot",
+          name: "Co-Pilot",
           price: "379",
           weeklyNote: "approx. $89 / week",
           isPopular: true,
@@ -1033,7 +1033,7 @@ export const translations = {
           setupFeeNote: "Minimum 3-month commitment",
           description: "Full 24/7 coverage. Your phone stops ringing into a void — it generates revenue, even during work hours.",
           features: [
-            "Includes EVERYTHING from 'The Night Shift' plan",
+            "Includes EVERYTHING from 'Night Shift' plan",
             "Follow-up: Unresolved calls with transcription",
             "Availability: 24/7 (Day overflow + Full night)",
             "Routing: Human first (3 rings), AI takes over",
@@ -1046,14 +1046,14 @@ export const translations = {
           ]
         },
         {
-          name: "The Elite",
+          name: "Anvela Signature",
           price: "697",
           weeklyNote: "approx. $165 / week",
           setupFee: "497",
           setupFeeNote: "Minimum 6-month commitment",
           description: "Your complete growth system. The AI answers, restarts, reserves, and follows each lead — while you work.",
           features: [
-            "Includes EVERYTHING from 'The Night Shift' & 'The Co-Pilot'",
+            "Includes EVERYTHING from 'Night Shift' & 'Co-Pilot'",
             "Transfer: Unlimited destinations (front desk, manager...)",
             "Customer Memory: Mila recognizes regular customers",
             "Logic: Custom CRM integration based on your system",
@@ -1118,7 +1118,7 @@ export const translations = {
         },
         {
           question: "Is there a long-term commitment?",
-          answer: "The 'Night Shift' and 'Co-Pilot' plans have a 3-month minimum commitment. The 'Elite' plan requires 6 months due to the complexity of the custom CRM integration."
+          answer: "The 'Night Shift' and 'Co-Pilot' plans have a 3-month minimum commitment. The 'Anvela Signature' plan requires 6 months due to the complexity of the custom CRM integration."
         },
         {
           question: "What types of businesses is Anvela for?",
@@ -1703,12 +1703,12 @@ export const translations = {
       roiTagline: "Una sola cita podría ser suficiente para cubrir tu suscripción. El resto es ganancia pura.",
       tiers: [
         {
-          name: "The Night Shift",
+          name: "Night Shift",
           price: "199",
           weeklyNote: "aprox. $49 / semana",
           setupFee: "0",
           setupFeeNote: "Contrato mínimo de 3 meses",
-          description: "Su equipo descansa. Sus leads no. Capturamos cada llamada perdida mientras está cerrado, y su calendario se llena solo.",
+          description: "Su equipo descansa. Sus leads no. Capturamos cada llamada perdida mientras está cerrado, y su calendario se llena solo. Incluye TODO del plan 'Night Shift'.",
           features: [
             "Disponibilidad: Lun-Vie (18:00 - 8:00) + Fines de semana 24h",
             "Llamadas: Ilimitadas (sin cargos por minuto)",
@@ -1722,7 +1722,7 @@ export const translations = {
           ]
         },
         {
-          name: "The Co-Pilot",
+          name: "Co-Pilot",
           price: "379",
           weeklyNote: "aprox. $89 / semana",
           isPopular: true,
@@ -1730,7 +1730,7 @@ export const translations = {
           setupFeeNote: "Contrato mínimo de 3 meses",
           description: "Cobertura completa 24/7. Su teléfono deja de sonar en el vacío: genera ingresos, incluso durante las horas de trabajo.",
           features: [
-            "Incluye TODO del plan 'The Night Shift'",
+            "Incluye TODO del plan 'Night Shift'",
             "Seguimiento: Llamadas no resueltas con transcripción",
             "Disponibilidad: 24/7 (Desbordamiento día + Noche completa)",
             "Enrutamiento: Humano primero (3 tonos), la IA toma el relevo",
@@ -1743,14 +1743,14 @@ export const translations = {
           ]
         },
         {
-          name: "The Elite",
+          name: "Anvela Signature",
           price: "697",
           weeklyNote: "aprox. $165 / semana",
           setupFee: "497",
           setupFeeNote: "Contrato mínimo de 6 meses",
           description: "Su sistema completo de crecimiento. La IA responde, relanza, reserva y sigue a cada lead, mientras usted trabaja.",
           features: [
-            "Incluye TODO de 'The Night Shift' y 'The Co-Pilot'",
+            "Incluye TODO de 'Night Shift' y 'Co-Pilot'",
             "Transferencia: Destinos ilimitados (recepción, gerente, servicio...)",
             "Memoria de clientes: Mila reconoce a sus clientes habituales y personaliza cada llamada",
             "Lógica: Integración CRM personalizada según su sistema actual",
@@ -1815,7 +1815,7 @@ export const translations = {
         },
         {
           question: "¿Existe un compromiso a largo plazo?",
-          answer: "Los planes 'Night Shift' y 'Co-Pilot' tienen un compromiso mínimo de 3 meses. El plan 'Elite' requiere 6 meses debido a la complejidad de la integración personalizada con CRM."
+          answer: "Los planes 'Night Shift' y 'Co-Pilot' tienen un compromiso mínimo de 3 meses. El plan 'Anvela Signature' requiere 6 meses debido a la complejidad de la integración personalizada con CRM."
         },
         {
           question: "¿Para qué tipos de empresas es Anvela?",
@@ -2404,7 +2404,7 @@ export const translations = {
       roiTagline: "Un solo appuntamento potrebbe bastare a coprire il tuo abbonamento. Il resto è guadagno puro.",
       tiers: [
         {
-          name: "The Night Shift",
+          name: "Night Shift",
           price: "199",
           weeklyNote: "circa 49$ a settimana",
           setupFee: "0",
@@ -2423,7 +2423,7 @@ export const translations = {
           ]
         },
         {
-          name: "The Co-Pilot",
+          name: "Co-Pilot",
           price: "379",
           weeklyNote: "circa 89$ a settimana",
           isPopular: true,
@@ -2431,7 +2431,7 @@ export const translations = {
           setupFeeNote: "Contratto minimo 3 mesi",
           description: "Copertura completa 24/7. Il tuo telefono smette di squillare a vuoto — genera entrate, anche durante il lavoro.",
           features: [
-            "Include TUTTO del pacchetto 'The Night Shift'",
+            "Include TUTTO del pacchetto 'Night Shift'",
             "Seguimento: Chiamate non risolte con trascrizione",
             "Disponibilità: 24/7 (Overflow giorno + Notte intera)",
             "Routing: Umano prima (3 squilli), l'IA prende il sopravvento",
@@ -2444,14 +2444,14 @@ export const translations = {
           ]
         },
         {
-          name: "The Elite",
+          name: "Anvela Signature",
           price: "697",
           weeklyNote: "circa 165$ a settimana",
           setupFee: "497",
           setupFeeNote: "Contratto minimo 6 mesi",
           description: "Il tuo sistema di crescita completo. L'IA risponde, rilancia, prenota e segue ogni lead — mentre tu lavori.",
           features: [
-            "Include TUTTO di 'The Night Shift' e 'The Co-Pilot'",
+            "Include TUTTO di 'Night Shift' e 'Co-Pilot'",
             "Trasferimento: Destinazioni illimitate (reception, manager, servizio...)",
             "Memoria clienti: Mila riconosce i clienti abituali e personalizza ogni chiamata",
             "Logica: Integrazione CRM personalizzata in base al sistema esistente",
@@ -2514,7 +2514,7 @@ export const translations = {
         },
         {
           question: "C'è un impegno a lungo termine?",
-          answer: "I piani 'Night Shift' e 'Co-Pilot' hanno un impegno minimo di 3 mesi. Il piano 'Elite' richiede 6 mesi a causa della complessità dell'integrazione CRM personalizzata."
+          answer: "I piani 'Night Shift' e 'Co-Pilot' hanno un impegno minimo di 3 mesi. Il piano 'Anvela Signature' richiede 6 mesi a causa della complessità dell'integrazione CRM personalizzata."
         },
         {
           question: "Per che tipo di aziende è pensata Anvela?",
