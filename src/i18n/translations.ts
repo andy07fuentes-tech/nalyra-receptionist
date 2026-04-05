@@ -324,7 +324,8 @@ export const translations = {
             "Transcription complète + résumé IA des appels",
             "Rapport : 'Night Shift Report' quotidien à 8h00",
             "Langue : Français (Optimisé pour les marchés locaux)",
-            "Réduction des no-shows : jusqu'à 30–50% avec rappels"
+            "Réduction des no-shows : jusqu'à 30–50% avec rappels",
+            "Offre lancement : premier mois à 50% du prix normal"
           ]
         },
         {
@@ -366,7 +367,8 @@ export const translations = {
             "BONUS : Site web d'une page gratuit inclus",
             "Appels : Illimités",
             "Rapports mensuels personnalisés + optimisation IA",
-            "Augmentation de rendez-vous : +30–40%"
+            "Augmentation de rendez-vous : +30–40%",
+            "Offre lancement : premier mois à 50% du prix normal"
           ]
         }
       ]
@@ -1021,7 +1023,8 @@ export const translations = {
             "Full transcription + AI call summary",
             "Report: Daily 'Night Shift Report' at 8:00 AM",
             "Language: French (Optimized for local markets)",
-            "No-show reduction: up to 30–50% with reminders"
+            "No-show reduction: up to 30–50% with reminders",
+            "Launch Offer: first month at 50% off"
           ]
         },
         {
@@ -1063,7 +1066,8 @@ export const translations = {
             "BONUS: Free one-page website included",
             "Calls: Unlimited",
             "Monthly personalized reports + AI optimization",
-            "Appointment increase: +30–40%"
+            "Appointment increase: +30–40%",
+            "Launch Offer: first month at 50% off"
           ]
         }
       ]
@@ -1718,7 +1722,8 @@ export const translations = {
             "Transcripción completa + resumen IA de llamadas",
             "Informe: 'Night Shift Report' diario a las 8:00",
             "Idioma: Francés (Optimizado para mercados locales)",
-            "Reducción de no-shows: hasta 30–50% con recordatorios"
+            "Reducción de no-shows: hasta 30–50% con recordatorios",
+            "Oferta lanzamiento: primer mes al 50% del precio normal"
           ]
         },
         {
@@ -1760,7 +1765,8 @@ export const translations = {
             "BONUS: Sitio web de una página gratis incluido",
             "Llamadas: Ilimitadas",
             "Informes mensuales personalizados + optimización IA",
-            "Aumento de citas: +30–40%"
+            "Aumento de citas: +30–40%",
+            "Oferta lanzamiento: primer mes al 50% del precio normal"
           ]
         }
       ]
@@ -2419,7 +2425,8 @@ export const translations = {
             "Trascrizione completa + riepilogo IA chiamate",
             "Rapporto: 'Night Shift Report' quotidiano alle 8:00",
             "Lingua: Francese (Ottimizzato per i mercati locali)",
-            "Riduzione no-shows: fino al 30–50% con promemoria"
+            "Riduzione no-shows: fino al 30–50% con promemoria",
+            "Offerta lancio: primo mese al 50% del prezzo normale"
           ]
         },
         {
@@ -2461,7 +2468,8 @@ export const translations = {
             "BONUS: Sito web di una pagina gratuito incluso",
             "Chiamate: Illimitate",
             "Rapporti mensili personalizzati + ottimizzazione IA",
-            "Aumento appuntamenti: +30–40%"
+            "Aumento appuntamenti: +30–40%",
+            "Offerta lancio: primo mese al 50% del prezzo normale"
           ]
         }
       ]
