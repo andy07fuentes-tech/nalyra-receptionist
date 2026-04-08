@@ -698,7 +698,7 @@ export const translations = {
       newsletterLabel: "Abonnez-vous à notre newsletter",
       newsletterPlaceholder: "Entrez votre email",
       newsletterButtonText: "S'abonner",
-      newsletterHeading: "Sign up for updates",
+      newsletterHeading: "Inscrivez-vous pour les mises à jour",
       newsletterSuccessText: "Merci pour votre abonnement !",
       newsletterErrorText: "Veuillez réessayer.",
       socialFollow: "Suivez-nous",
@@ -2823,12 +2823,12 @@ export const translations = {
       newsletterLabel: "Iscriviti alla nostra newsletter",
       newsletterPlaceholder: "Inserisci la tua email",
       newsletterButtonText: "Iscriviti",
-      newsletterHeading: "Sign up for updates",
+      newsletterHeading: "Iscriviti per gli aggiornamenti",
       newsletterSuccessText: "Grazie per l'iscrizione!",
       newsletterErrorText: "Per favore riprova.",
       socialFollow: "Seguici",
       madeInQuebec: "Fatto in Quebec",
-      copyrightText: "© Anvela AI. All rights reserved.",
+      copyrightText: "© Anvela AI. Tutti i diritti riservati.",
       backToTopText: "Torna su",
       linkGroups: {
         product: {
