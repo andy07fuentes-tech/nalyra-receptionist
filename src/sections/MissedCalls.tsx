@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useMemo } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { OptimizedVideo } from '../components/OptimizedVideo';
 import { ArrowRight } from 'lucide-react';
@@ -12,23 +12,60 @@ export function MissedCalls() {
     const sectionRef = useRef<HTMLElement>(null);
     const videoContainerRef = useRef<HTMLDivElement>(null);
     const textRef = useRef<HTMLDivElement>(null);
+    const titleRef = useRef<HTMLHeadingElement>(null);
+
+    const titleText = t('missedCalls.title');
+    
+    // Split text into words and characters for animation
+    const splitTitle = useMemo(() => {
+        return titleText.split(' ').map((word: string, wordIndex: number) => ({
+            word,
+            characters: Array.from(word),
+            id: wordIndex
+        }));
+    }, [titleText]);
 
     useEffect(() => {
         if (!sectionRef.current) return;
 
         const ctx = gsap.context(() => {
-            // Text reveal animation
+            // Hero section scroll reveal (Sequel style)
+            const chars = titleRef.current?.querySelectorAll('.char-span');
+            if (chars && chars.length > 0) {
+                gsap.fromTo(
+                    chars,
+                    { 
+                        opacity: 0.15,
+                        color: 'rgb(148, 163, 184)', // slate-400
+                    },
+                    {
+                        opacity: 1,
+                        color: 'rgb(15, 23, 42)', // slate-900
+                        stagger: 0.1,
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: titleRef.current,
+                            start: 'top 80%',
+                            end: 'top 20%',
+                            scrub: 0.5,
+                        },
+                    }
+                );
+            }
+
+            // Subtitle and Button entry animation
             gsap.fromTo(
-                textRef.current,
+                '.content-entry',
                 { 
                     opacity: 0, 
-                    y: 40,
+                    y: 20,
                 },
                 {
                     opacity: 1,
                     y: 0,
-                    duration: 1.5,
-                    ease: 'expo.out',
+                    duration: 1,
+                    stagger: 0.2,
+                    ease: 'power3.out',
                     scrollTrigger: {
                         trigger: textRef.current,
                         start: 'top 85%',
@@ -69,7 +106,7 @@ export function MissedCalls() {
         }, sectionRef);
 
         return () => ctx.revert();
-    }, []);
+    }, [splitTitle]);
 
     return (
         <section
@@ -86,20 +123,32 @@ export function MissedCalls() {
                 <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
                     {/* Left Side: Content */}
                     <div ref={textRef} className="max-w-xl">
-                        <span className="inline-block text-blue-600 font-bold tracking-[0.3em] uppercase text-xs mb-6">
+                        <span className="content-entry inline-block text-blue-600 font-bold tracking-[0.3em] uppercase text-xs mb-6">
                             {t('missedCalls.subtitle')}
                         </span>
-                        <h2 className="font-serif text-4xl md:text-6xl lg:text-7xl text-slate-900 mb-8 leading-[1.1] tracking-tight">
-                            {t('missedCalls.title')}
+                        
+                        <h2 
+                            ref={titleRef}
+                            className="font-serif text-4xl md:text-6xl lg:text-7xl text-slate-900 mb-8 leading-[1.1] tracking-tight"
+                        >
+                            {splitTitle.map((item: any, wordIdx: number) => (
+                                <span key={wordIdx} className="inline-block mr-[0.2em] whitespace-nowrap">
+                                    {item.characters.map((char: string, charIdx: number) => (
+                                        <span key={charIdx} className="char-span inline-block">
+                                            {char}
+                                        </span>
+                                    ))}
+                                </span>
+                            ))}
                         </h2>
                         
-                        <p className="text-xl md:text-2xl font-medium mb-12 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent max-w-lg">
+                        <p className="content-entry text-xl md:text-2xl font-medium mb-12 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent max-w-lg">
                             {t('missedCalls.vision')}
                         </p>
                         
                         <a 
                             href="#pricing"
-                            className="btn-premium-fill inline-flex items-center gap-4 px-8 py-4 rounded-full group shadow-lg shadow-blue-500/10"
+                            className="content-entry btn-premium-fill inline-flex items-center gap-4 px-8 py-4 rounded-full group shadow-lg shadow-blue-500/10"
                         >
                             {t('missedCalls.cta')}
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
