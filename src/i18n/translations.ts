@@ -1760,7 +1760,7 @@ export const translations = {
             "Memoria de clientes: Mila reconoce a sus clientes habituales y personaliza cada llamada",
             "Lógica: Integración CRM personalizada según su sistema actual",
             "Seguimiento: SMS automático en 15 min para cada lead",
-            "Triaje: Lógica inteligente de múltiples pasos",
+            "Gestión completa: modificaciones, cancelaciones y reservas en una sola llamada",
             "Soporte: Soporte VIP Prioritario (respuesta < 2h)",
             "BONUS: Sitio web de una página gratis incluido",
             "Llamadas: Ilimitadas",
