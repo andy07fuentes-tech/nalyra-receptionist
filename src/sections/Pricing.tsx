@@ -131,11 +131,28 @@ export function Pricing() {
                     </div>
                 </div>
 
-                {/* ROI Tagline */}
-                <div className="max-w-2xl mx-auto mb-4 text-center fade-up">
-                    <p className="text-sm md:text-base text-slate-500 italic">
+                {/* ROI Block */}
+                <div className="max-w-2xl mx-auto mb-12 fade-up">
+                    <p className="text-sm md:text-base text-slate-500 italic text-center mb-6">
                         💡 {t('pricing.roiTagline') as string}
                     </p>
+                    <div className="grid grid-cols-3 gap-3">
+                        <div className="rounded-2xl bg-white border border-slate-200 shadow-sm p-4 md:p-5 text-center flex flex-col items-center">
+                            <span className="text-2xl mb-2">📞</span>
+                            <p className="text-slate-900 font-bold text-xs md:text-sm leading-tight mb-2">{t('pricing.roiStat1Title') as string}</p>
+                            <p className="text-slate-400 text-[10px] md:text-xs leading-snug">{t('pricing.roiStat1Desc') as string}</p>
+                        </div>
+                        <div className="rounded-2xl bg-white border border-slate-200 shadow-sm p-4 md:p-5 text-center flex flex-col items-center">
+                            <span className="text-2xl mb-2">💰</span>
+                            <p className="text-blue-600 font-bold text-xs md:text-sm leading-tight mb-2">{t('pricing.roiStat2Title') as string}</p>
+                            <p className="text-slate-400 text-[10px] md:text-xs leading-snug">{t('pricing.roiStat2Desc') as string}</p>
+                        </div>
+                        <div className="rounded-2xl bg-blue-50 border border-blue-100 shadow-sm p-4 md:p-5 text-center flex flex-col items-center">
+                            <span className="text-2xl mb-2">📅</span>
+                            <p className="text-blue-700 font-bold text-xs md:text-sm leading-tight mb-2">{t('pricing.roiStat3Title') as string}</p>
+                            <p className="text-slate-400 text-[10px] md:text-xs leading-snug">{t('pricing.roiStat3Desc') as string}</p>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Pricing Cards */}
