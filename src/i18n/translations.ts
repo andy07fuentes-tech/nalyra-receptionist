@@ -309,8 +309,8 @@ export const translations = {
       roiTagline: "Un seul rendez-vous pourrait suffire à couvrir votre abonnement. Le reste est du gain pur.",
       roiStat1Title: "3 à 5 appels manqués par semaine",
       roiStat1Desc: "Sans réceptionniste IA, chaque appel sans réponse est une perte directe",
-      roiStat2Title: "150–300 $ par appel converti",
-      roiStat2Desc: "La valeur moyenne d'un appel non répondu",
+      roiStat2Title: "Un service = 150–500 $ de revenu",
+      roiStat2Desc: "Ce que rapporte concrètement chaque réservation confirmée",
       roiStat3Title: "1 appel converti = abonnement couvert",
       roiStat3Desc: "Anvela commence à 199 $/mois",
       tiers: [
@@ -1014,8 +1014,8 @@ export const translations = {
       roiTagline: "A single appointment could be enough to cover your subscription. The rest is pure gain.",
       roiStat1Title: "3–5 missed calls per week",
       roiStat1Desc: "Without AI, every unanswered call is direct lost revenue",
-      roiStat2Title: "$150–300 per converted call",
-      roiStat2Desc: "The average value of an unanswered call",
+      roiStat2Title: "One service = $150–500 in revenue",
+      roiStat2Desc: "What each confirmed booking actually brings in",
       roiStat3Title: "1 converted call = subscription covered",
       roiStat3Desc: "Anvela starts at $199/month",
       tiers: [
@@ -1719,8 +1719,8 @@ export const translations = {
       roiTagline: "Una sola cita podría ser suficiente para cubrir tu suscripción. El resto es ganancia pura.",
       roiStat1Title: "3 a 5 llamadas perdidas por semana",
       roiStat1Desc: "Sin IA, cada llamada sin respuesta es una pérdida directa",
-      roiStat2Title: "150–300 $ por llamada convertida",
-      roiStat2Desc: "El valor promedio de una llamada no respondida",
+      roiStat2Title: "Un servicio = 150–500 $ de ingresos",
+      roiStat2Desc: "Lo que genera concretamente cada reserva confirmada",
       roiStat3Title: "1 llamada convertida = suscripción cubierta",
       roiStat3Desc: "Anvela empieza desde 199 $/mes",
       tiers: [
@@ -2428,8 +2428,8 @@ export const translations = {
       roiTagline: "Un solo appuntamento potrebbe bastare a coprire il tuo abbonamento. Il resto è guadagno puro.",
       roiStat1Title: "3–5 chiamate perse a settimana",
       roiStat1Desc: "Senza IA, ogni chiamata senza risposta è una perdita diretta",
-      roiStat2Title: "150–300 $ per chiamata convertita",
-      roiStat2Desc: "Il valore medio di una chiamata non risposta",
+      roiStat2Title: "Un servizio = 150–500 $ di fatturato",
+      roiStat2Desc: "Quello che porta concretamente ogni prenotazione confermata",
       roiStat3Title: "1 chiamata convertita = abbonamento coperto",
       roiStat3Desc: "Anvela parte da 199 $/mese",
       tiers: [
