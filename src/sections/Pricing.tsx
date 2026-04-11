@@ -3,6 +3,111 @@ import { Check, Star } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useNavigate } from 'react-router-dom';
 
+// ── ROI stat helpers ──────────────────────────────────────────────────────────
+
+function useCountUp(target: number, duration: number, started: boolean): number {
+    const [count, setCount] = useState(0);
+    useEffect(() => {
+        if (!started) return;
+        let startTime: number | null = null;
+        let raf: number;
+        const step = (timestamp: number) => {
+            if (!startTime) startTime = timestamp;
+            const progress = Math.min((timestamp - startTime) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            setCount(Math.round(eased * target));
+            if (progress < 1) raf = requestAnimationFrame(step);
+        };
+        raf = requestAnimationFrame(step);
+        return () => cancelAnimationFrame(raf);
+    }, [started, target, duration]);
+    return count;
+}
+
+interface RoiCardProps {
+    animateTo: number;
+    prefix?: string;
+    suffix?: string;
+    icon: string;
+    accentColor: string;
+    titleKey: string;
+    descKey: string;
+    delay: number;
+}
+
+function RoiStatCard({ animateTo, prefix = '', suffix = '', icon, accentColor, titleKey, descKey, delay }: RoiCardProps) {
+    const { t } = useLanguage();
+    const cardRef = useRef<HTMLDivElement>(null);
+    const [inView, setInView] = useState(false);
+    const [shimmerDone, setShimmerDone] = useState(false);
+    const count = useCountUp(animateTo, 1800, shimmerDone);
+
+    useEffect(() => {
+        const el = cardRef.current;
+        if (!el) return;
+        const obs = new IntersectionObserver(
+            ([entry]) => { if (entry.isIntersecting) { setInView(true); obs.disconnect(); } },
+            { threshold: 0.2 }
+        );
+        obs.observe(el);
+        return () => obs.disconnect();
+    }, []);
+
+    useEffect(() => {
+        if (!inView) return;
+        const timer = setTimeout(() => setShimmerDone(true), 900 + delay);
+        return () => clearTimeout(timer);
+    }, [inView, delay]);
+
+    return (
+        <div
+            ref={cardRef}
+            className="relative rounded-2xl bg-slate-900 overflow-hidden"
+            style={{ borderTop: `2px solid ${accentColor}` }}
+        >
+            {/* Shimmer sweep */}
+            {!shimmerDone && inView && (
+                <div className="absolute inset-0 z-10 rounded-2xl roi-card-shimmer" />
+            )}
+
+            {/* Skeleton shown while waiting */}
+            {!shimmerDone && (
+                <div className="p-5 md:p-6">
+                    <div className="w-8 h-8 rounded-full roi-skeleton mb-4" />
+                    <div className="w-20 h-9 rounded-lg roi-skeleton mb-3" />
+                    <div className="w-full h-3 rounded roi-skeleton mb-2" />
+                    <div className="w-3/4 h-3 rounded roi-skeleton" />
+                </div>
+            )}
+
+            {/* Real content */}
+            <div className={`p-5 md:p-6 transition-all duration-700 ${shimmerDone ? 'opacity-100 translate-y-0' : 'opacity-0 absolute inset-0 pointer-events-none'}`}>
+                <span className="text-2xl block mb-3">{icon}</span>
+                <div
+                    className="font-serif text-4xl md:text-5xl font-bold mb-2 tabular-nums leading-none"
+                    style={{ color: accentColor }}
+                >
+                    {prefix}{count.toLocaleString()}{suffix}
+                </div>
+                <p className="text-slate-200 font-semibold text-[11px] md:text-xs leading-tight mb-1.5">
+                    {t(`pricing.${titleKey}`) as string}
+                </p>
+                <p className="text-slate-500 text-[10px] leading-snug">
+                    {t(`pricing.${descKey}`) as string}
+                </p>
+            </div>
+        </div>
+    );
+}
+
+const ROI_STATS: RoiCardProps[] = [
+    { animateTo: 5, prefix: '', suffix: '+', icon: '📞', accentColor: '#64748b', titleKey: 'roiStat1Title', descKey: 'roiStat1Desc', delay: 0 },
+    { animateTo: 500, prefix: '$', suffix: '', icon: '💰', accentColor: '#3b82f6', titleKey: 'roiStat2Title', descKey: 'roiStat2Desc', delay: 150 },
+    { animateTo: 199, prefix: '$', suffix: '/mo', icon: '📅', accentColor: '#60a5fa', titleKey: 'roiStat3Title', descKey: 'roiStat3Desc', delay: 300 },
+];
+
+// ─────────────────────────────────────────────────────────────────────────────
+
 export function Pricing() {
     const { t } = useLanguage();
     const navigate = useNavigate();
@@ -137,21 +242,9 @@ export function Pricing() {
                         💡 {t('pricing.roiTagline') as string}
                     </p>
                     <div className="grid grid-cols-3 gap-3">
-                        <div className="rounded-2xl bg-white border border-slate-200 shadow-sm p-4 md:p-5 text-center flex flex-col items-center">
-                            <span className="text-2xl mb-2">📞</span>
-                            <p className="text-slate-900 font-bold text-xs md:text-sm leading-tight mb-2">{t('pricing.roiStat1Title') as string}</p>
-                            <p className="text-slate-400 text-[10px] md:text-xs leading-snug">{t('pricing.roiStat1Desc') as string}</p>
-                        </div>
-                        <div className="rounded-2xl bg-white border border-slate-200 shadow-sm p-4 md:p-5 text-center flex flex-col items-center">
-                            <span className="text-2xl mb-2">💰</span>
-                            <p className="text-blue-600 font-bold text-xs md:text-sm leading-tight mb-2">{t('pricing.roiStat2Title') as string}</p>
-                            <p className="text-slate-400 text-[10px] md:text-xs leading-snug">{t('pricing.roiStat2Desc') as string}</p>
-                        </div>
-                        <div className="rounded-2xl bg-blue-50 border border-blue-100 shadow-sm p-4 md:p-5 text-center flex flex-col items-center">
-                            <span className="text-2xl mb-2">📅</span>
-                            <p className="text-blue-700 font-bold text-xs md:text-sm leading-tight mb-2">{t('pricing.roiStat3Title') as string}</p>
-                            <p className="text-slate-400 text-[10px] md:text-xs leading-snug">{t('pricing.roiStat3Desc') as string}</p>
-                        </div>
+                        {ROI_STATS.map((stat, i) => (
+                            <RoiStatCard key={i} {...stat} />
+                        ))}
                     </div>
                 </div>
 

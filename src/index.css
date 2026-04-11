@@ -792,4 +792,23 @@
     background-clip: text;
     filter: drop-shadow(0 0 1px rgba(210, 168, 85, 0.2));
   }
+
+  /* ROI Stat Cards — shimmer + skeleton */
+  .roi-card-shimmer {
+    background: linear-gradient(120deg, #0f172a 30%, #1e293b 38%, #334155 40%, #0f172a 48%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    animation: roiShimmer 1.0s ease-in-out forwards;
+  }
+
+  @keyframes roiShimmer {
+    100% { background-position: -100% 0; }
+  }
+
+  .roi-skeleton {
+    background: linear-gradient(120deg, #1e293b 30%, #2d3f55 38%, #2d3f55 40%, #1e293b 48%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    animation: roiShimmer 1.4s ease-in-out infinite;
+  }
 }
