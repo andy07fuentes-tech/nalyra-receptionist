@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useMemo } from 'react';
 import { ShieldCheck, Calendar, Zap } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import gsap from 'gsap';
@@ -10,6 +10,19 @@ gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 export function FeatureShowcase() {
     const { t } = useLanguage();
     const sectionRef = useRef<HTMLDivElement>(null);
+    const titleRef = useRef<HTMLHeadingElement>(null);
+    const headerRef = useRef<HTMLDivElement>(null);
+
+    const titleText = t('featureShowcase.mainTitle') || "How Anvela Powers Your Growth";
+
+    // Split text into words and characters for animation
+    const splitTitle = useMemo(() => {
+        return titleText.split(' ').map((word: string, wordIndex: number) => ({
+            word,
+            characters: Array.from(word),
+            id: wordIndex
+        }));
+    }, [titleText]);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -57,20 +70,49 @@ export function FeatureShowcase() {
                 });
             });
 
-            // CSS pulses handled via classes for smoothness on mobile
-            /* 
-            gsap.to(".node-pulse", {
-                scale: 2,
-                opacity: 0,
-                duration: 2.5,
-                repeat: -1,
-                stagger: {
-                    each: 0.8,
-                    from: "random"
+            // Character reveal (Sequel style)
+            const chars = titleRef.current?.querySelectorAll('.char-span');
+            if (chars && chars.length > 0) {
+                gsap.fromTo(
+                    chars,
+                    { 
+                        opacity: 0.15,
+                        color: 'rgb(148, 163, 184)', // slate-400
+                    },
+                    {
+                        opacity: 1,
+                        color: 'rgb(15, 23, 42)', // slate-900
+                        stagger: 0.1,
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: titleRef.current,
+                            start: 'top 85%',
+                            end: 'top 35%',
+                            scrub: 0.5,
+                        },
+                    }
+                );
+            }
+
+            // Header elements entry animation
+            gsap.fromTo(
+                '.showcase-header-entry',
+                { 
+                    opacity: 0, 
+                    y: 20,
                 },
-                ease: "power1.out"
-            });
-            */
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    stagger: 0.2,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: headerRef.current,
+                        start: 'top 90%',
+                    },
+                }
+            );
         }, sectionRef);
 
         return () => {
@@ -166,12 +208,23 @@ export function FeatureShowcase() {
 
             <div className="container-custom relative z-10">
                 {/* Section Header */}
-                <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24 fade-up">
-                    <span className="text-blue-600 font-bold text-xs uppercase tracking-[0.2em] mb-4 block">
+                <div ref={headerRef} className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
+                    <span className="showcase-header-entry text-blue-600 font-bold text-xs uppercase tracking-[0.2em] mb-4 block">
                         {t('featureShowcase.processSubtitle')}
                     </span>
-                    <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-dark-theme mb-6">
-                        {t('featureShowcase.mainTitle') || "How Anvela Powers Your Growth"}
+                    <h2 
+                        ref={titleRef}
+                        className="font-serif text-4xl md:text-5xl lg:text-6xl text-dark-theme mb-6 leading-[1.1]"
+                    >
+                        {splitTitle.map((item: any, wordIdx: number) => (
+                            <span key={wordIdx} className="inline-block mr-[0.25em] whitespace-nowrap">
+                                {item.characters.map((char: string, charIdx: number) => (
+                                    <span key={charIdx} className="char-span inline-block">
+                                        {char}
+                                    </span>
+                                ))}
+                            </span>
+                        ))}
                     </h2>
                 </div>
 
