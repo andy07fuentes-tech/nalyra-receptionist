@@ -1,5 +1,5 @@
-import { useRef, useEffect, useState } from 'react';
-import { Check, Star } from 'lucide-react';
+import React, { useRef, useEffect, useState } from 'react';
+import { Check, Star, PhoneMissed, TrendingUp, BadgeCheck } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useNavigate } from 'react-router-dom';
 
@@ -28,14 +28,15 @@ interface RoiCardProps {
     animateTo: number;
     prefix?: string;
     suffix?: string;
-    icon: string;
+    Icon: React.ElementType;
     accentColor: string;
+    glowColor: string;
     titleKey: string;
     descKey: string;
     delay: number;
 }
 
-function RoiStatCard({ animateTo, prefix = '', suffix = '', icon, accentColor, titleKey, descKey, delay }: RoiCardProps) {
+function RoiStatCard({ animateTo, prefix = '', suffix = '', Icon, accentColor, glowColor, titleKey, descKey, delay }: RoiCardProps) {
     const { t } = useLanguage();
     const cardRef = useRef<HTMLDivElement>(null);
     const [inView, setInView] = useState(false);
@@ -65,6 +66,12 @@ function RoiStatCard({ animateTo, prefix = '', suffix = '', icon, accentColor, t
             className="relative rounded-2xl bg-slate-900 overflow-hidden"
             style={{ borderTop: `2px solid ${accentColor}` }}
         >
+            {/* Glow orb behind number */}
+            <div
+                className="absolute -top-6 -left-6 w-28 h-28 rounded-full blur-2xl opacity-20 pointer-events-none"
+                style={{ background: glowColor }}
+            />
+
             {/* Shimmer sweep */}
             {!shimmerDone && inView && (
                 <div className="absolute inset-0 z-10 rounded-2xl roi-card-shimmer" />
@@ -81,15 +88,20 @@ function RoiStatCard({ animateTo, prefix = '', suffix = '', icon, accentColor, t
             )}
 
             {/* Real content */}
-            <div className={`p-5 md:p-6 transition-all duration-700 ${shimmerDone ? 'opacity-100 translate-y-0' : 'opacity-0 absolute inset-0 pointer-events-none'}`}>
-                <span className="text-2xl block mb-3">{icon}</span>
+            <div className={`relative p-5 md:p-6 transition-all duration-700 ${shimmerDone ? 'opacity-100 translate-y-0' : 'opacity-0 absolute inset-0 pointer-events-none'}`}>
+                <div
+                    className="w-9 h-9 rounded-xl flex items-center justify-center mb-4"
+                    style={{ background: `${accentColor}20`, border: `1px solid ${accentColor}40` }}
+                >
+                    <Icon size={18} style={{ color: accentColor }} strokeWidth={2} />
+                </div>
                 <div
                     className="font-serif text-4xl md:text-5xl font-bold mb-2 tabular-nums leading-none"
                     style={{ color: accentColor }}
                 >
                     {prefix}{count.toLocaleString()}{suffix}
                 </div>
-                <p className="text-slate-200 font-semibold text-[11px] md:text-xs leading-tight mb-1.5">
+                <p className="text-slate-300 font-semibold text-[11px] md:text-xs leading-tight mb-1.5">
                     {t(`pricing.${titleKey}`) as string}
                 </p>
                 <p className="text-slate-500 text-[10px] leading-snug">
@@ -101,9 +113,9 @@ function RoiStatCard({ animateTo, prefix = '', suffix = '', icon, accentColor, t
 }
 
 const ROI_STATS: RoiCardProps[] = [
-    { animateTo: 5, prefix: '', suffix: '+', icon: '📞', accentColor: '#64748b', titleKey: 'roiStat1Title', descKey: 'roiStat1Desc', delay: 0 },
-    { animateTo: 500, prefix: '$', suffix: '', icon: '💰', accentColor: '#3b82f6', titleKey: 'roiStat2Title', descKey: 'roiStat2Desc', delay: 150 },
-    { animateTo: 199, prefix: '$', suffix: '/mo', icon: '📅', accentColor: '#60a5fa', titleKey: 'roiStat3Title', descKey: 'roiStat3Desc', delay: 300 },
+    { animateTo: 5, prefix: '', suffix: '+', Icon: PhoneMissed, accentColor: '#f87171', glowColor: '#ef4444', titleKey: 'roiStat1Title', descKey: 'roiStat1Desc', delay: 0 },
+    { animateTo: 500, prefix: '$', suffix: '', Icon: TrendingUp, accentColor: '#34d399', glowColor: '#10b981', titleKey: 'roiStat2Title', descKey: 'roiStat2Desc', delay: 150 },
+    { animateTo: 199, prefix: '$', suffix: '/mo', Icon: BadgeCheck, accentColor: '#60a5fa', glowColor: '#3b82f6', titleKey: 'roiStat3Title', descKey: 'roiStat3Desc', delay: 300 },
 ];
 
 // ─────────────────────────────────────────────────────────────────────────────
