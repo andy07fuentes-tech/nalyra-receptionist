@@ -1,4 +1,5 @@
-import React, { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState } from 'react';
+import type { LucideIcon } from 'lucide-react';
 import { Check, Star, PhoneMissed, TrendingUp, BadgeCheck } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useNavigate } from 'react-router-dom';
@@ -28,7 +29,7 @@ interface RoiCardProps {
     animateTo: number;
     prefix?: string;
     suffix?: string;
-    Icon: React.ElementType;
+    Icon: LucideIcon;
     accentColor: string;
     glowColor: string;
     titleKey: string;
@@ -36,7 +37,7 @@ interface RoiCardProps {
     delay: number;
 }
 
-function RoiStatCard({ animateTo, prefix = '', suffix = '', Icon, accentColor, glowColor, titleKey, descKey, delay }: RoiCardProps) {
+function RoiStatCard({ animateTo, prefix = '', suffix = '', Icon, accentColor, glowColor, titleKey, descKey, delay }: RoiCardProps & { Icon: LucideIcon }) {
     const { t } = useLanguage();
     const cardRef = useRef<HTMLDivElement>(null);
     const [inView, setInView] = useState(false);
@@ -93,7 +94,7 @@ function RoiStatCard({ animateTo, prefix = '', suffix = '', Icon, accentColor, g
                     className="w-9 h-9 rounded-xl flex items-center justify-center mb-4"
                     style={{ background: `${accentColor}20`, border: `1px solid ${accentColor}40` }}
                 >
-                    <Icon size={18} style={{ color: accentColor }} strokeWidth={2} />
+                    <Icon size={18} color={accentColor} strokeWidth={2} />
                 </div>
                 <div
                     className="font-serif text-4xl md:text-5xl font-bold mb-2 tabular-nums leading-none"
