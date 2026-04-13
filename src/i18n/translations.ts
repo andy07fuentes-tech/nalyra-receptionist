@@ -213,7 +213,7 @@ export const translations = {
             alt: "Technologie NLP Avancée"
           },
           photo8: {
-            title: "Apprentissage Continu",
+            title: "Apprentissage Continue",
             logic: "L'IA apprend de chaque interaction pour devenir plus précise chaque jour.",
             benefit: "Un employé qui ne cesse de s'améliorer.",
             alt: "Apprentissage automatique"
@@ -451,7 +451,7 @@ export const translations = {
           tastingNotes: "Base de connaissances avec capacités d'auto-apprentissage",
           accuracy: "95%",
           speed: "Immédiat",
-          uptime: "Continu",
+          uptime: "Continue",
         },
       },
       metrics: {
@@ -1886,7 +1886,7 @@ export const translations = {
           tastingNotes: "Integración de base de conocimientos con capacidad de autoaprendizaje",
           accuracy: "95%",
           speed: "Inmediato",
-          uptime: "Continuo",
+          uptime: "Continua",
         },
       },
       metrics: {
@@ -2593,7 +2593,7 @@ export const translations = {
           tastingNotes: "Integrazione base di conoscenza con capacità di auto-apprendimento",
           accuracy: "95%",
           speed: "Immediato",
-          uptime: "Continuo",
+          uptime: "Continua",
         },
       },
       metrics: {
