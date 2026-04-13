@@ -64,7 +64,7 @@ const PHOTO_CONFIG = [
   },
   {
     id: "photo-7",
-    src: "/images/tech-nlp.jpg",
+    src: "/images/tech-voice-realism.jpg",
     key: "photo7"
   },
   {

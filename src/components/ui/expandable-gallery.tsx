@@ -12,7 +12,7 @@ const PHOTO_CONFIG = [
   { id: "photo-2", src: "/images/features/tablet-booking.jpg", key: "photo2" },
   { id: "photo-3", src: "/images/feature-support.jpg", key: "photo3" },
   { id: "photo-4", src: "/images/features/automation-icons.jpg", key: "photo4" },
-  { id: "photo-7", src: "/images/tech-nlp.jpg", key: "photo7" },
+  { id: "photo-7", src: "/images/tech-voice-realism.jpg", key: "photo7" },
   { id: "photo-8", src: "/images/tech-ml.jpg", key: "photo8" },
   { id: "photo-9", src: "/images/hero-banner.jpg", key: "photo9" },
 ];
