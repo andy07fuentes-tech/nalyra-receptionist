@@ -670,7 +670,7 @@ export const translations = {
         title: "Dernière étape :",
         titleHighlight: "Vérification par appel.",
         description: "Nous avons enregistré le profil de {{business}} et votre intérêt pour le forfait {{plan}}.",
-        inputDescription: "Pour finaliser votre abonnement et planifier votre appel de configuration, veuillez entrer votre numéro de téléphone direct ci-dessous.",
+        inputDescription: "Pour planifier votre appel de configuration, veuillez entrer votre numéro de téléphone ci-dessous.",
         phonePlaceholder: "+1 (514) 000-0000",
         backButton: "Retour",
         submittingButton: "Appel en cours...",
