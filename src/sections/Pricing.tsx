@@ -115,7 +115,7 @@ function RoiStatCard({ animateTo, prefix = '', suffix = '', Icon, accentColor, g
 
 const ROI_STATS: RoiCardProps[] = [
     { animateTo: 5, prefix: '', suffix: '+', Icon: PhoneMissed, accentColor: '#f87171', glowColor: '#ef4444', titleKey: 'roiStat1Title', descKey: 'roiStat1Desc', delay: 0 },
-    { animateTo: 500, prefix: '$', suffix: '', Icon: TrendingUp, accentColor: '#34d399', glowColor: '#10b981', titleKey: 'roiStat2Title', descKey: 'roiStat2Desc', delay: 150 },
+    { animateTo: 150, prefix: '$', suffix: '+', Icon: TrendingUp, accentColor: '#34d399', glowColor: '#10b981', titleKey: 'roiStat2Title', descKey: 'roiStat2Desc', delay: 150 },
     { animateTo: 199, prefix: '$', suffix: '/mo', Icon: BadgeCheck, accentColor: '#60a5fa', glowColor: '#3b82f6', titleKey: 'roiStat3Title', descKey: 'roiStat3Desc', delay: 300 },
 ];
 

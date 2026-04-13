@@ -309,8 +309,8 @@ export const translations = {
       roiTagline: "Un seul rendez-vous pourrait suffire à couvrir votre abonnement. Le reste est du gain pur.",
       roiStat1Title: "Appels manqués cette semaine",
       roiStat1Desc: "Chaque appel sans réponse est un client qui appelle votre compétiteur. C'est une perte directe de revenus.",
-      roiStat2Title: "Valeur moyenne d'un seul client récupéré",
-      roiStat2Desc: "Une seule réservation couvre largement votre investissement mensuel.",
+      roiStat2Title: "Valeur d'un seul client",
+      roiStat2Desc: "Même pour vos services les plus abordables, il suffit de 1 à 2 rendez-vous récupérés pour rentabiliser votre mois. Tout le reste est du profit net.",
       roiStat3Title: "ROI immédiat",
       roiStat3Desc: "Récupérez un seul client par mois et votre abonnement est payé. Le reste, c'est du profit pur.",
       tiers: [
@@ -1014,8 +1014,8 @@ export const translations = {
       roiTagline: "A single appointment could be enough to cover your subscription. The rest is pure gain.",
       roiStat1Title: "Missed calls this week",
       roiStat1Desc: "Every unanswered call is a client calling your competitor. That's direct lost revenue.",
-      roiStat2Title: "Average value of one recovered client",
-      roiStat2Desc: "A single booking more than covers your monthly investment.",
+      roiStat2Title: "Value of a single client",
+      roiStat2Desc: "Even for your most affordable services, 1 to 2 recovered bookings is enough to make your month profitable. Everything else is pure profit.",
       roiStat3Title: "Immediate ROI",
       roiStat3Desc: "Recover one client per month and your subscription is paid. Everything else is pure profit.",
       tiers: [
@@ -1719,8 +1719,8 @@ export const translations = {
       roiTagline: "Una sola cita podría ser suficiente para cubrir tu suscripción. El resto es ganancia pura.",
       roiStat1Title: "Llamadas perdidas esta semana",
       roiStat1Desc: "Cada llamada sin respuesta es un cliente que llama a tu competidor. Es una pérdida directa de ingresos.",
-      roiStat2Title: "Valor promedio de un solo cliente recuperado",
-      roiStat2Desc: "Una sola reserva cubre ampliamente tu inversión mensual.",
+      roiStat2Title: "Valor de un solo cliente",
+      roiStat2Desc: "Incluso para tus servicios más económicos, con 1 o 2 reservas recuperadas ya rentabilizas el mes. Todo lo demás es ganancia neta.",
       roiStat3Title: "ROI inmediato",
       roiStat3Desc: "Recupera un solo cliente al mes y tu suscripción está pagada. El resto es ganancia pura.",
       tiers: [
@@ -2428,8 +2428,8 @@ export const translations = {
       roiTagline: "Un solo appuntamento potrebbe bastare a coprire il tuo abbonamento. Il resto è guadagno puro.",
       roiStat1Title: "Chiamate perse questa settimana",
       roiStat1Desc: "Ogni chiamata senza risposta è un cliente che chiama il tuo concorrente. È una perdita diretta di fatturato.",
-      roiStat2Title: "Valore medio di un solo cliente recuperato",
-      roiStat2Desc: "Una sola prenotazione copre ampiamente il tuo investimento mensile.",
+      roiStat2Title: "Valore di un singolo cliente",
+      roiStat2Desc: "Anche per i tuoi servizi più economici, bastano 1 o 2 prenotazioni recuperate per rendere profittevole il mese. Tutto il resto è profitto netto.",
       roiStat3Title: "ROI immediato",
       roiStat3Desc: "Recupera un solo cliente al mese e il tuo abbonamento è pagato. Il resto è profitto puro.",
       tiers: [
