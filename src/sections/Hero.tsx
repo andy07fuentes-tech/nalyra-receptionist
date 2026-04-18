@@ -146,12 +146,10 @@ export function Hero({ isReady }: { isReady: boolean }) {
               Initialising 3D Engine...
             </div>
           }>
-            <div className="absolute inset-0 scale-[0.72] md:scale-100">
-              <Spline
-                scene="https://prod.spline.design/LtzKN5G7iNd46w9T/scene.splinecode"
-                style={{ width: '100%', height: '100%' }}
-              />
-            </div>
+            <Spline
+              scene="https://prod.spline.design/LtzKN5G7iNd46w9T/scene.splinecode"
+              style={{ width: '100%', height: '100%' }}
+            />
           </Suspense>
         )}
 
@@ -160,7 +158,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
       </div>
 
       {/* Content */}
-      <div ref={contentRef} className="relative z-20 flex flex-col items-center justify-center h-full pt-8 md:pt-10 pb-16 md:pb-20 px-4 w-full text-center">
+      <div ref={contentRef} className="relative z-20 flex flex-col items-center justify-center h-full pt-16 md:pt-10 pb-32 md:pb-20 px-4 w-full text-center">
         {/* Script accent */}
         <div className={`transition-all duration-1000 ease-out ${phase >= 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'} mb-2 mt-4`}>
           <span className="font-script text-2xl md:text-3xl lg:text-5xl text-blue-400">
@@ -197,7 +195,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
         </div>
 
         {/* Secondary CTAs */}
-        <div className={`mt-3 md:mt-6 flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-700 ease-out ${phase >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: '0.6s' }}>
+        <div className={`mt-6 flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-700 ease-out ${phase >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: '0.6s' }}>
           <GradientButton
             variant="variant"
             onClick={() => scrollToSection('#video-demo')}
@@ -222,7 +220,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
         </div>
 
         {/* Stats */}
-        <div className={`mt-5 md:mt-10 transition-all duration-1000 ease-out ${phase >= 4 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+        <div className={`mt-10 transition-all duration-1000 ease-out ${phase >= 4 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16">
             {stats.map((stat, index) => (
               <div key={index} className="text-center group">
