@@ -155,6 +155,8 @@ export function Hero({ isReady }: { isReady: boolean }) {
 
         {/* Cinematic Overlays */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80 pointer-events-none z-10" />
+        {/* Mobile edge fade — softens sphere sides on portrait screens */}
+        <div className="absolute inset-0 pointer-events-none z-10 md:hidden" style={{ background: 'radial-gradient(ellipse 65% 85% at center, transparent 35%, black 85%)' }} />
       </div>
 
       {/* Content */}
