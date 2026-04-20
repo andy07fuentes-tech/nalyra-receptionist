@@ -350,6 +350,7 @@ export const translations = {
             "Transfert : Redirection live vers votre réception (1 numéro)",
             "Réservation : Rendez-vous + rappels SMS (24h/2h)",
             "Gestion : Modifications et annulations par IA",
+            "Avis Google : SMS automatique au client le lendemain de son rendez-vous",
             "Interactions : Bilingue (Français / Anglais)",
             "Appels : Illimités",
             "Offre lancement : premier mois à 50% du prix normal"
@@ -364,6 +365,7 @@ export const translations = {
           description: "Votre système de croissance complet. L'IA répond, relance, réserve et suit chaque lead — pendant que vous travaillez.",
           features: [
             "Inclut TOUT de 'Night Shift' et 'Co-Pilot'",
+            "Filtre anti-mauvais avis : les clients insatisfaits ne reçoivent pas le lien Google — vous recevez une alerte privée",
             "Transfert : Destinations illimitées (réception, gérant, service...)",
             "Mémoire clients : Mila reconnaît vos habitués et personnalise chaque appel",
             "Logique : Intégration CRM sur mesure selon votre système actuel",
@@ -1055,6 +1057,7 @@ export const translations = {
             "Transfer: Live redirection to your front desk (1 number)",
             "Booking: Appointments + SMS reminders (24h/2h)",
             "Management: AI-handled modifications & cancellations",
+            "Google Reviews: Automatic SMS to client the morning after their appointment",
             "Interactions: Bilingual (English / French)",
             "Calls: Unlimited",
             "Launch Offer: first month at 50% off"
@@ -1069,6 +1072,7 @@ export const translations = {
           description: "Your complete growth system. The AI answers, restarts, reserves, and follows each lead — while you work.",
           features: [
             "Includes EVERYTHING from 'Night Shift' & 'Co-Pilot'",
+            "Negative Review Filter: unhappy clients never get the Google link — you get a private alert instead",
             "Transfer: Unlimited destinations (front desk, manager...)",
             "Customer Memory: Mila recognizes regular customers",
             "Logic: Custom CRM integration based on your system",
@@ -1760,6 +1764,7 @@ export const translations = {
             "Transferencia: Redirección en vivo a su recepción (1 número)",
             "Reserva: Citas + recordatorios SMS (24h/2h)",
             "Gestión: Modificaciones y cancelaciones por IA",
+            "Reseñas Google: SMS automático al cliente la mañana después de su cita",
             "Interacciones: Bilingüe (Inglés / Español)",
             "Llamadas: Ilimitadas",
             "Oferta lanzamiento: primer mes al 50% del precio normal"
@@ -1774,6 +1779,7 @@ export const translations = {
           description: "Su sistema completo de crecimiento. La IA responde, relanza, reserva y sigue a cada lead, mientras usted trabaja.",
           features: [
             "Incluye TODO de 'Night Shift' y 'Co-Pilot'",
+            "Filtro anti-reseñas negativas: los clientes insatisfechos no reciben el enlace de Google — usted recibe una alerta privada",
             "Transferencia: Destinos ilimitados (recepción, gerente, servicio...)",
             "Memoria de clientes: Mila reconoce a sus clientes habituales y personaliza cada llamada",
             "Lógica: Integración CRM personalizada según su sistema actual",
@@ -2469,6 +2475,7 @@ export const translations = {
             "Trasferimento: Reindirizzamento live alla tua reception (1 numero)",
             "Prenotazione: Appuntamenti + promemoria SMS (24h/2h)",
             "Gestione: Modifiche e cancellazioni gestite dall'IA",
+            "Recensioni Google: SMS automatico al cliente la mattina dopo l'appuntamento",
             "Interazioni: Bilingue (Inglese / Italiano)",
             "Chiamate: Illimitate",
             "Offerta lancio: primo mese al 50% del prezzo normale"
@@ -2483,6 +2490,7 @@ export const translations = {
           description: "Il tuo sistema di crescita completo. L'IA risponde, rilancia, prenota e segue ogni lead — mentre tu lavori.",
           features: [
             "Include TUTTO di 'Night Shift' e 'Co-Pilot'",
+            "Filtro anti-recensioni negative: i clienti insoddisfatti non ricevono il link Google — tu ricevi un avviso privato",
             "Trasferimento: Destinazioni illimitate (reception, manager, servizio...)",
             "Memoria clienti: Mila riconosce i clienti abituali e personalizza ogni chiamata",
             "Logica: Integrazione CRM personalizzata in base al sistema esistente",
