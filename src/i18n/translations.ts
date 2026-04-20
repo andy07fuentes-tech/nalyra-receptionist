@@ -365,7 +365,7 @@ export const translations = {
           description: "Votre système de croissance complet. L'IA répond, relance, réserve et suit chaque lead — pendant que vous travaillez.",
           features: [
             "Inclut TOUT de 'Night Shift' et 'Co-Pilot'",
-            "Filtre anti-mauvais avis : les clients insatisfaits ne reçoivent pas le lien Google — vous recevez une alerte privée",
+            "Gestion proactive des avis : les clients insatisfaits sont pris en charge en privé — vous recevez une alerte pour agir avant qu'ils partent.",
             "Transfert : Destinations illimitées (réception, gérant, service...)",
             "Mémoire clients : Mila reconnaît vos habitués et personnalise chaque appel",
             "Logique : Intégration CRM sur mesure selon votre système actuel",
@@ -1072,7 +1072,7 @@ export const translations = {
           description: "Your complete growth system. The AI answers, restarts, reserves, and follows each lead — while you work.",
           features: [
             "Includes EVERYTHING from 'Night Shift' & 'Co-Pilot'",
-            "Negative Review Filter: unhappy clients never get the Google link — you get a private alert instead",
+            "Proactive review management: unhappy clients are handled privately — you get an alert to act before they walk away.",
             "Transfer: Unlimited destinations (front desk, manager...)",
             "Customer Memory: Mila recognizes regular customers",
             "Logic: Custom CRM integration based on your system",
@@ -1779,7 +1779,7 @@ export const translations = {
           description: "Su sistema completo de crecimiento. La IA responde, relanza, reserva y sigue a cada lead, mientras usted trabaja.",
           features: [
             "Incluye TODO de 'Night Shift' y 'Co-Pilot'",
-            "Filtro anti-reseñas negativas: los clientes insatisfechos no reciben el enlace de Google — usted recibe una alerta privada",
+            "Gestión proactiva de reseñas: los clientes insatisfechos son atendidos en privado — usted recibe una alerta para actuar antes de que se vayan.",
             "Transferencia: Destinos ilimitados (recepción, gerente, servicio...)",
             "Memoria de clientes: Mila reconoce a sus clientes habituales y personaliza cada llamada",
             "Lógica: Integración CRM personalizada según su sistema actual",
@@ -2490,7 +2490,7 @@ export const translations = {
           description: "Il tuo sistema di crescita completo. L'IA risponde, rilancia, prenota e segue ogni lead — mentre tu lavori.",
           features: [
             "Include TUTTO di 'Night Shift' e 'Co-Pilot'",
-            "Filtro anti-recensioni negative: i clienti insoddisfatti non ricevono il link Google — tu ricevi un avviso privato",
+            "Gestione proattiva delle recensioni: i clienti insoddisfatti vengono gestiti privatamente — ricevi un avviso per agire prima che se ne vadano.",
             "Trasferimento: Destinazioni illimitate (reception, manager, servizio...)",
             "Memoria clienti: Mila riconosce i clienti abituali e personalizza ogni chiamata",
             "Logica: Integrazione CRM personalizzata in base al sistema esistente",
