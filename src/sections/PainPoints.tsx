@@ -3,7 +3,7 @@ import { AlertCircle } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ExpandableGallery } from '../components/ui/expandable-gallery';
+import { StickyPainGallery } from '../components/ui/sticky-pain-gallery';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -129,8 +129,7 @@ export function PainPoints() {
                         {t('painPoints.description')}
                     </p>
                 </div>
-                {/* Changed the bottom layout mapping of the items to use the ExpandableGallery instead*/}
-                <ExpandableGallery />
+                <StickyPainGallery />
             </div>
         </section>
     );

@@ -44,7 +44,8 @@ export default function LandingPage() {
         // Wait for DOM to be ready
         const timer = setTimeout(() => {
             // Animate sections on scroll (exclude hero which handles its own entrance)
-            const sections = document.querySelectorAll('section:not(#hero)');
+            // Exclude #hero (own animation) and #pain-points (contains sticky children — GSAP transform breaks CSS sticky)
+            const sections = document.querySelectorAll('section:not(#hero):not(#pain-points)');
 
             sections.forEach((section) => {
                 gsap.fromTo(
