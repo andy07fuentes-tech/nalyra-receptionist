@@ -812,4 +812,13 @@
     background-position: 100% 0;
     animation: roiShimmer 1.4s ease-in-out infinite;
   }
+
+  @keyframes hero-glow-pulse {
+    0%, 100% { opacity: 0.10; }
+    50%       { opacity: 0.28; }
+  }
+
+  .hero-glow {
+    animation: hero-glow-pulse 4s ease-in-out infinite;
+  }
 }

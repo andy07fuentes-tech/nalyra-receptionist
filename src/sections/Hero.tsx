@@ -1,10 +1,8 @@
-import { useEffect, useRef, useState, Suspense } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Link } from 'react-router-dom';
-import Spline from '@splinetool/react-spline';
 import gsap from 'gsap';
-import { useInView } from '../hooks/useInView';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { GradientButton } from '../components/ui/gradient-button';
 import { useAudio } from '../contexts/AudioContext';
@@ -39,7 +37,6 @@ export function Hero({ isReady }: { isReady: boolean }) {
   const { play } = useAudio();
   const { t } = useLanguage();
   const sectionRef = useRef<HTMLElement>(null);
-  const [inViewRef, inView] = useInView({ threshold: 0.05 });
   const contentRef = useRef<HTMLDivElement>(null);
   const [phase, setPhase] = useState(0);
 
@@ -121,117 +118,121 @@ export function Hero({ isReady }: { isReady: boolean }) {
   return (
     <section
       id="hero"
-      ref={(el) => {
-        if (sectionRef.current !== el) {
-          (sectionRef as any).current = el;
-        }
-        if (inViewRef.current !== el) {
-          (inViewRef as any).current = el;
-        }
-      }}
+      ref={sectionRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Animated gradient background */}
-      <div className={`absolute inset-0 transition-opacity duration-1000 ease-out ${phase >= 1 ? 'opacity-100' : 'opacity-0'}`}>
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#141414] to-[#1a1a2e]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(59,130,246,0.15)_0%,_transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(6,182,212,0.15)_0%,_transparent_50%)]" />
-      </div>
+      {/* Background: AI Robot Video */}
+      <div className="absolute inset-0 z-0 overflow-hidden bg-black">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover object-left"
+          src="/images/hero-robot.mp4"
+        />
 
-      {/* Background: Spline 3D Scene (Original Pulsing Sphere) */}
-      <div className="absolute inset-0 z-0 overflow-hidden bg-black flex justify-center items-center">
-        {inView && (
-          <Suspense fallback={
-            <div className="absolute inset-0 flex items-center justify-center bg-black text-white/20 text-xs font-mono uppercase tracking-widest">
-              Initialising 3D Engine...
-            </div>
-          }>
-            <Spline
-              scene="https://prod.spline.design/LtzKN5G7iNd46w9T/scene.splinecode"
-              style={{ width: '100%', height: '100%' }}
-            />
-          </Suspense>
-        )}
+        {/* Blue breathing glow — behind robot on left */}
+        <div
+          className="hero-glow absolute inset-0 pointer-events-none z-[5]"
+          style={{
+            background: 'radial-gradient(ellipse 55% 70% at 30% 55%, rgba(59,130,246,0.22) 0%, transparent 70%)',
+          }}
+        />
 
         {/* Cinematic Overlays */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80 pointer-events-none z-10" />
-        {/* Mobile edge fade — softens sphere sides on portrait screens */}
-        <div className="absolute inset-0 pointer-events-none z-10 md:hidden" style={{ background: 'radial-gradient(ellipse 65% 85% at center, transparent 35%, black 85%)' }} />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(59,130,246,0.15)_0%,_transparent_50%)] pointer-events-none z-10" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(6,182,212,0.15)_0%,_transparent_50%)] pointer-events-none z-10" />
       </div>
 
+      {/* Film grain */}
+      <svg className="absolute w-0 h-0">
+        <filter id="hero-grain">
+          <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+          <feColorMatrix type="saturate" values="0" />
+        </filter>
+      </svg>
+      <div
+        className="absolute inset-0 pointer-events-none z-[15]"
+        style={{ filter: 'url(#hero-grain)', opacity: 0.12 }}
+      />
+
       {/* Content */}
-      <div ref={contentRef} className="relative z-20 flex flex-col items-center justify-center h-full pt-16 md:pt-10 pb-32 md:pb-20 px-4 w-full text-center">
-        {/* Script accent */}
-        <div className={`transition-all duration-1000 ease-out ${phase >= 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'} mb-2 mt-4`}>
-          <span className="font-script text-2xl md:text-3xl lg:text-5xl text-blue-400">
-            {t('hero.scriptText')}
-          </span>
-        </div>
-
-        {/* Divider line */}
-        <div className={`my-4 md:my-8 h-px bg-blue-500/50 transition-all duration-1000 ease-out ${phase >= 2 ? 'w-24 opacity-100' : 'w-0 opacity-0'}`} style={{ transitionDelay: '0.2s' }} />
-
-        {/* Main Title */}
-        <h1 className={`font-serif text-[1.6rem] md:text-4xl lg:text-5xl xl:text-6xl text-white leading-[1.1] md:leading-[1.1] tracking-wide transition-all duration-1000 ease-out ${phase >= 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.3s' }}>
-          {titleLines.map((line, i) => (
-            <span key={i} className="block">{line}</span>
-          ))}
-        </h1>
-
-        {/* Main CTA: Start Onboarding */}
-        <div className={`mt-6 md:mt-8 transition-all duration-1000 ease-out ${phase >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: '0.4s' }}>
-          <GradientButton variant="variant" asChild className="group h-auto rounded-xl shadow-[0_0_20px_rgba(201,98,135,0.2)] active:scale-95 border-0">
-            <Link
-              to="/onboarding"
-              className="inline-flex items-center gap-3 px-8 py-4 w-full h-full"
-            >
-              <div className="flex flex-col items-center leading-none relative z-10 w-full text-center">
-                <span className="text-[9px] tracking-[0.2em] text-white/50 mb-1 uppercase font-[Poppins]">{t('hero.ctaSubtitle')}</span>
-                <span className="font-serif text-lg md:text-xl text-white font-normal">{t('hero.ctaMain')}</span>
-              </div>
-              <div className="p-1.5 bg-white/10 rounded-lg transition-colors z-10 relative">
-                <ArrowRight className="w-5 h-5 text-white transition-transform duration-300 group-hover:translate-x-1" />
-              </div>
-            </Link>
-          </GradientButton>
-        </div>
-
-        {/* Secondary CTAs */}
-        <div className={`mt-6 flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-700 ease-out ${phase >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: '0.6s' }}>
-          <GradientButton
-            variant="variant"
-            onClick={() => scrollToSection('#video-demo')}
-            className="min-w-[180px] border-0 !rounded-full py-3"
-            aria-label={t('hero.videoDemo') as string}
-          >
-            <span className="font-serif text-lg text-white flex items-center justify-center gap-2 font-normal hover:scale-105 transition-transform">
-              {t('hero.videoDemo')}
+      <div ref={contentRef} className="relative z-20 flex flex-col items-center lg:items-end justify-center h-full pt-16 md:pt-10 pb-32 md:pb-20 px-4 lg:pr-16 w-full text-center lg:text-right">
+        <div className="w-full lg:max-w-lg">
+          {/* Script accent */}
+          <div className={`transition-all duration-1000 ease-out ${phase >= 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'} mb-2 mt-4`}>
+            <span className="font-script text-2xl md:text-3xl lg:text-5xl text-blue-400">
+              {t('hero.scriptText')}
             </span>
-          </GradientButton>
+          </div>
 
-          <GradientButton
-            variant="variant"
-            onClick={() => scrollToSection('#pricing')}
-            className="min-w-[180px] border-0 !rounded-full py-3"
-            aria-label={t('hero.prices') as string}
-          >
-            <span className="font-serif text-lg text-white flex items-center justify-center gap-2 font-normal hover:scale-105 transition-transform">
-              {t('hero.prices')}
-            </span>
-          </GradientButton>
-        </div>
+          {/* Divider line */}
+          <div className={`my-4 md:my-8 h-px bg-blue-500/50 transition-all duration-1000 ease-out ${phase >= 2 ? 'w-24 opacity-100' : 'w-0 opacity-0'}`} style={{ transitionDelay: '0.2s', marginLeft: 'auto' }} />
 
-        {/* Stats */}
-        <div className={`mt-10 transition-all duration-1000 ease-out ${phase >= 4 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center group">
-                <div className="font-serif text-4xl md:text-5xl text-blue-500 mb-2 tabular-nums">
-                  {counts[index]}{stat.suffix}
-                </div>
-                <div className="text-[10px] md:text-xs text-white/50 uppercase tracking-[0.2em] font-medium">{stat.label}</div>
-              </div>
+          {/* Main Title */}
+          <h1 className={`font-serif text-[1.6rem] md:text-4xl lg:text-5xl xl:text-6xl text-white leading-[1.1] md:leading-[1.1] tracking-wide transition-all duration-1000 ease-out ${phase >= 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.3s' }}>
+            {titleLines.map((line, i) => (
+              <span key={i} className="block">{line}</span>
             ))}
+          </h1>
+
+          {/* Main CTA: Start Onboarding */}
+          <div className={`mt-6 md:mt-8 transition-all duration-1000 ease-out ${phase >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: '0.4s' }}>
+            <GradientButton variant="variant" asChild className="group h-auto rounded-xl shadow-[0_0_20px_rgba(201,98,135,0.2)] active:scale-95 border-0">
+              <Link
+                to="/onboarding"
+                className="inline-flex items-center gap-3 px-8 py-4 w-full h-full"
+              >
+                <div className="flex flex-col items-center leading-none relative z-10 w-full text-center">
+                  <span className="text-[9px] tracking-[0.2em] text-white/50 mb-1 uppercase font-[Poppins]">{t('hero.ctaSubtitle')}</span>
+                  <span className="font-serif text-lg md:text-xl text-white font-normal">{t('hero.ctaMain')}</span>
+                </div>
+                <div className="p-1.5 bg-white/10 rounded-lg transition-colors z-10 relative">
+                  <ArrowRight className="w-5 h-5 text-white transition-transform duration-300 group-hover:translate-x-1" />
+                </div>
+              </Link>
+            </GradientButton>
+          </div>
+
+          {/* Secondary CTAs */}
+          <div className={`mt-6 flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-700 ease-out ${phase >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: '0.6s' }}>
+            <GradientButton
+              variant="variant"
+              onClick={() => scrollToSection('#video-demo')}
+              className="min-w-[180px] border-0 !rounded-full py-3"
+              aria-label={t('hero.videoDemo') as string}
+            >
+              <span className="font-serif text-lg text-white flex items-center justify-center gap-2 font-normal hover:scale-105 transition-transform">
+                {t('hero.videoDemo')}
+              </span>
+            </GradientButton>
+
+            <GradientButton
+              variant="variant"
+              onClick={() => scrollToSection('#pricing')}
+              className="min-w-[180px] border-0 !rounded-full py-3"
+              aria-label={t('hero.prices') as string}
+            >
+              <span className="font-serif text-lg text-white flex items-center justify-center gap-2 font-normal hover:scale-105 transition-transform">
+                {t('hero.prices')}
+              </span>
+            </GradientButton>
+          </div>
+
+          {/* Stats */}
+          <div className={`mt-10 transition-all duration-1000 ease-out ${phase >= 4 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16">
+              {stats.map((stat, index) => (
+                <div key={index} className="text-center group">
+                  <div className="font-serif text-4xl md:text-5xl text-blue-500 mb-2 tabular-nums">
+                    {counts[index]}{stat.suffix}
+                  </div>
+                  <div className="text-[10px] md:text-xs text-white/50 uppercase tracking-[0.2em] font-medium">{stat.label}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
