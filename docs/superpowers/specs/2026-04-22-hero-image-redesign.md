@@ -14,15 +14,15 @@ Replace the current Spline 3D background in `src/sections/Hero.tsx` with a high-
 
 ## Asset
 
-- **File:** User-provided AI robot image (dark humanoid robot, side profile, facing right, deep dark background)
-- **Save to:** `public/images/hero-robot.jpg` (or `.png` depending on format Pablo drops in)
+- **File:** Grok AI-generated video of dark AI humanoid robot (side profile, cinematic dark background, subtle motion)
+- **Saved at:** `public/images/hero-robot.mp4` (3.2MB)
 - **Composition:** Robot on the left half of the frame, dark empty space on the right — text overlays the right dark space on desktop
 
 ---
 
 ## Visual Layers (back to front)
 
-1. **Base image** — `<img>` or `<div>` with `background-image`, `object-fit: cover`, `object-position: left center`. Full viewport.
+1. **Base video** — `<video autoPlay muted loop playsInline>` with `object-fit: cover`, `object-position: left center`. Full viewport. Replaces the Spline scene entirely.
 2. **Existing gradient overlays** — keep as-is (`from-black/40 via-transparent to-black/80` top-to-bottom, radial blue/cyan accents). Already work perfectly with a dark image.
 3. **Blue breathing glow** — CSS animated `radial-gradient` in Anvela blue (`rgba(59,130,246,0.18)`) centered on the left half (behind the robot). Uses the same keyframe pattern as the sticky gallery glow: slow 4s ease-in-out infinite pulse between 0.10 and 0.25 opacity.
 4. **Film grain overlay** — SVG `feTurbulence` filter or CSS `url(#grain)` at ~12-15% opacity, animated at 8fps to simulate film noise. Covers the full viewport. `pointer-events: none`.
