@@ -99,12 +99,20 @@ export function StickyPainGallery() {
 
   return (
     <div className="w-full">
-      {/* Mobile: all cards stacked */}
+      {/* Mobile: all cards stacked with alternating slide-in */}
       <div className="flex flex-col gap-4 md:hidden">
         {PHOTO_CONFIG.map((photo, i) => {
           const d = getData(photo);
+          const fromLeft = i % 2 === 0;
           return (
-            <div key={photo.id} className="h-[420px]">
+            <motion.div
+              key={photo.id}
+              className="h-[420px]"
+              initial={{ opacity: 0, x: fromLeft ? -40 : 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            >
               <PainCard
                 src={photo.src} alt={d.title}
                 {...d}
@@ -112,7 +120,7 @@ export function StickyPainGallery() {
                 index={i} total={PHOTO_CONFIG.length}
                 featured={i === 0}
               />
-            </div>
+            </motion.div>
           );
         })}
       </div>
