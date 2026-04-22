@@ -1,40 +1,26 @@
-import { useEffect, useRef } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export function ClientCapture() {
     const { t } = useLanguage();
-    const sectionRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            },
-            { threshold: 0.1, rootMargin: '0px 0px -10% 0px' }
-        );
-
-        const elements = sectionRef.current?.querySelectorAll('.fade-up, .slide-in-left, .slide-in-right');
-        elements?.forEach((el) => observer.observe(el));
-
-        return () => observer.disconnect();
-    }, []);
 
     return (
         <section
             id="client-capture"
-            ref={sectionRef}
             className="bg-white py-24 relative overflow-hidden"
         >
             <div className="container-custom relative">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
 
-                    {/* Left: Image Placeholder */}
-                    <div className="slide-in-left order-2 lg:order-1 relative">
+                    {/* Left: Image */}
+                    <motion.div
+                        className="order-2 lg:order-1 relative"
+                        initial={{ opacity: 0, x: -60 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, amount: 0.2 }}
+                        transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+                    >
                         <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-2xl">
                             <img
                                 src="/images/features/client-capture.jpg"
@@ -42,10 +28,16 @@ export function ClientCapture() {
                                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                             />
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Right: Text Content */}
-                    <div className="slide-in-right order-1 lg:order-2 space-y-8">
+                    <motion.div
+                        className="order-1 lg:order-2 space-y-8"
+                        initial={{ opacity: 0, x: 60 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, amount: 0.2 }}
+                        transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+                    >
                         <div>
                             <span className="text-blue-500 font-medium text-xs uppercase tracking-[0.2em] mb-4 block">
                                 {t('clientCapture.subtitle') || 'RÉCEPTION IA'}
@@ -74,7 +66,7 @@ export function ClientCapture() {
                             <span className="font-serif text-[240px] text-slate-900 leading-none">01</span>
                         </div>
 
-                    </div>
+                    </motion.div>
 
                 </div>
             </div>
