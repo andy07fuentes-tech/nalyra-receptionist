@@ -43,23 +43,22 @@ export default function LandingPage() {
 
         // Wait for DOM to be ready
         const timer = setTimeout(() => {
-            // Animate sections on scroll
-            const sections = document.querySelectorAll('section');
+            // Animate sections on scroll (exclude hero which handles its own entrance)
+            const sections = document.querySelectorAll('section:not(#hero)');
 
             sections.forEach((section) => {
                 gsap.fromTo(
                     section,
-                    { opacity: 0.9, y: 30 },
+                    { opacity: 0, y: 80 },
                     {
                         opacity: 1,
                         y: 0,
-                        duration: 0.8,
-                        ease: 'power2.out',
+                        duration: 1,
+                        ease: 'power3.out',
                         scrollTrigger: {
                             trigger: section,
-                            start: 'top 80%',
-                            end: 'top 20%',
-                            toggleActions: 'play none none reverse',
+                            start: 'top 88%',
+                            toggleActions: 'play none none none',
                         },
                     }
                 );

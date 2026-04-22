@@ -3,6 +3,7 @@ import type { LucideIcon } from 'lucide-react';
 import { Check, Star, PhoneMissed, TrendingUp, BadgeCheck } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 // ── ROI stat helpers ──────────────────────────────────────────────────────────
 
@@ -281,17 +282,20 @@ export function Pricing() {
                                 : { border: '#007e99', glow: '#00a8cc', shadow: 'rgba(0, 126, 153, 0.2)' };
 
                         return (
-                            <div
+                            <motion.div
                                 key={i}
-                                className={`fade-up relative rounded-3xl flex flex-col transition-all duration-500 hover:-translate-y-2 group h-full
-                  ${hasGlow 
-                                        ? 'border-transparent shadow-2xl z-10 solar-aura-glow' 
+                                initial={{ opacity: 0, y: 70 }}
+                                whileInView={{ opacity: 1, y: isPopular ? -16 : 0 }}
+                                viewport={{ once: true, amount: 0.1 }}
+                                transition={{ duration: 0.8, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
+                                whileHover={{ y: isPopular ? -24 : -8, transition: { duration: 0.3, ease: 'easeOut' } }}
+                                className={`relative rounded-3xl flex flex-col group h-full
+                  ${hasGlow
+                                        ? 'border-transparent shadow-2xl z-10 solar-aura-glow'
                                         : 'bg-white border-slate-200 shadow-lg hover:border-blue-500/20'
                                     }
-                  ${isPopular ? 'md:-translate-y-4 md:hover:-translate-y-6 scale-105' : ''}
                   ${isElite ? 'scale-105' : ''}`}
-                                style={{ 
-                                    transitionDelay: `${i * 0.1}s`,
+                                style={{
                                     // @ts-ignore
                                     '--border-color': glowColors.border,
                                     '--border-glow': glowColors.glow,
@@ -400,7 +404,7 @@ export function Pricing() {
                                         </button>
                                     </div>
                                 </div>
-                            </div>
+                            </motion.div>
                         );
                     })}
                 </div>

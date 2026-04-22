@@ -1,5 +1,6 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import { Send, CheckCircle, AlertCircle, Phone, Mail, Clock } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 
 // Icon lookup map for dynamic icon resolution from config strings
@@ -27,25 +28,6 @@ export function ContactForm() {
   });
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: '0px 0px -10% 0px' }
-    );
-
-    const elements = sectionRef.current?.querySelectorAll('.fade-up, .slide-in-left, .slide-in-right');
-    elements?.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -78,7 +60,6 @@ export function ContactForm() {
   return (
     <section
       id="contact"
-      ref={sectionRef}
       className="section-padding relative overflow-hidden bg-slate-50"
     >
       {/* Background Pattern */}
@@ -91,7 +72,13 @@ export function ContactForm() {
 
       <div className="container-custom relative">
         {/* Section Header */}
-        <div className="fade-up text-center mb-16">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+        >
           <span className="font-script text-3xl text-blue-600 block mb-2">{t('contact.scriptText')}</span>
           <span className="text-blue-500 text-xs uppercase tracking-[0.2em] mb-4 block">
             {t('contact.subtitle')}
@@ -102,19 +89,28 @@ export function ContactForm() {
           <p className="text-slate-600 max-w-2xl mx-auto">
             {t('contact.introText')}
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
           {/* Contact Info */}
           <div className="lg:col-span-2 space-y-6">
-            <div className="slide-in-left" style={{ transitionDelay: '0.1s' }}>
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            >
               <h3 className="font-serif text-h5 text-dark-theme mb-6">{t('contact.contactInfoTitle')}</h3>
               <div className="space-y-4" role="list" aria-label="Contact information">
-                {contactInfo.map((item) => {
+                {contactInfo.map((item, index) => {
                   const IconComponent = iconMap[item.icon];
                   return (
-                    <div
+                    <motion.div
                       key={item.label}
+                      initial={{ opacity: 0, x: -40 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true, amount: 0.1 }}
+                      transition={{ duration: 0.6, delay: 0.2 + index * 0.1, ease: [0.22, 1, 0.36, 1] }}
                       className="flex items-start gap-4 p-4 bg-white rounded-lg border border-slate-200 shadow-sm hover:border-blue-500/30 transition-colors"
                       role="listitem"
                     >
@@ -126,16 +122,22 @@ export function ContactForm() {
                         <p className="text-dark-theme font-medium">{item.value}</p>
                         <p className="text-sm text-slate-500">{item.subtext}</p>
                       </div>
-                    </div>
+                    </motion.div>
                   );
                 })}
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* Form */}
           <div className="lg:col-span-3">
-            <div className="slide-in-right bg-white rounded-xl border border-slate-200 p-8 shadow-xl" style={{ transitionDelay: '0.15s' }}>
+            <motion.div
+              className="bg-white rounded-xl border border-slate-200 p-8 shadow-xl"
+              initial={{ opacity: 0, x: 60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            >
               {status === 'success' ? (
                 <div className="text-center py-12" role="alert">
                   <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
@@ -284,7 +286,7 @@ export function ContactForm() {
                   </p>
                 </form>
               )}
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
