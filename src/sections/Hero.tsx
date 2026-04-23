@@ -39,6 +39,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const videoOverlayRef = useRef<HTMLDivElement>(null);
   const [phase, setPhase] = useState(0);
 
   // Build count-up hooks from stats config
@@ -97,7 +98,40 @@ export function Hero({ isReady }: { isReady: boolean }) {
   }, []);
 
   useEffect(() => {
-    if (videoRef.current) videoRef.current.playbackRate = 0.6;
+    const video = videoRef.current;
+    const overlay = videoOverlayRef.current;
+    if (!video || !overlay) return;
+
+    video.playbackRate = 0.6;
+
+    const FADE = 2; // seconds of crossfade
+    let fadingOut = false;
+
+    const handleTimeUpdate = () => {
+      if (!video.duration || fadingOut) return;
+      const realSecsLeft = (video.duration - video.currentTime) / (video.playbackRate || 1);
+      if (realSecsLeft < FADE) {
+        fadingOut = true;
+        overlay.style.transition = `opacity ${FADE}s linear`;
+        overlay.style.opacity = '1';
+      }
+    };
+
+    const handleEnded = () => {
+      video.currentTime = 0;
+      video.play().then(() => {
+        overlay.style.transition = `opacity ${FADE}s ease-in`;
+        overlay.style.opacity = '0';
+        fadingOut = false;
+      }).catch(() => {});
+    };
+
+    video.addEventListener('timeupdate', handleTimeUpdate);
+    video.addEventListener('ended', handleEnded);
+    return () => {
+      video.removeEventListener('timeupdate', handleTimeUpdate);
+      video.removeEventListener('ended', handleEnded);
+    };
   }, []);
 
   useEffect(() => {
@@ -131,11 +165,17 @@ export function Hero({ isReady }: { isReady: boolean }) {
         <video
           autoPlay
           muted
-          loop
           playsInline
           ref={videoRef}
           className="absolute inset-0 w-full h-full object-cover object-left"
           src="/images/hero-robot.mp4"
+        />
+
+        {/* Crossfade overlay — fades to black at loop point to hide the cut */}
+        <div
+          ref={videoOverlayRef}
+          className="absolute inset-0 bg-black z-[2] pointer-events-none"
+          style={{ opacity: 0 }}
         />
 
         {/* Blue breathing glow — behind robot on left */}
