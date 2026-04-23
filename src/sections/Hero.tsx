@@ -1,15 +1,15 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, Suspense } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Link } from 'react-router-dom';
+import Spline from '@splinetool/react-spline';
 import gsap from 'gsap';
+import { useInView } from '../hooks/useInView';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { GradientButton } from '../components/ui/gradient-button';
 import { useAudio } from '../contexts/AudioContext';
 
 gsap.registerPlugin(ScrollTrigger);
-
-
 
 function useCountUp(target: number, duration = 2000, start = false) {
   const [count, setCount] = useState(0);
@@ -40,9 +40,10 @@ export function Hero({ isReady }: { isReady: boolean }) {
   const contentRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const videoOverlayRef = useRef<HTMLDivElement>(null);
+  const [inViewRef, inView] = useInView({ threshold: 0.05 });
   const [phase, setPhase] = useState(0);
+  const [isDesktop, setIsDesktop] = useState(() => typeof window !== 'undefined' && window.innerWidth >= 1024);
 
-  // Build count-up hooks from stats config
   const stats = [
     { value: 100, suffix: "%", label: t('hero.stats.calls.label') },
     { value: 24, suffix: "/7", label: t('hero.stats.availability.label') },
@@ -54,12 +55,18 @@ export function Hero({ isReady }: { isReady: boolean }) {
   const count2 = useCountUp(stats[2]?.value ?? 0, 1800, phase >= 4);
   const counts = [count0, count1, count2];
 
-  // GSAP ScrollTrigger animation - Cinematic Fly-Through
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 1024px)');
+    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+
+  // GSAP ScrollTrigger — Cinematic Fly-Through
   useEffect(() => {
     if (!sectionRef.current || !contentRef.current) return;
 
     const ctx = gsap.context(() => {
-      // The "Fly-Through" effect: Scale up and blur out content
       gsap.to(contentRef.current, {
         scale: 1.4,
         filter: 'blur(40px)',
@@ -71,17 +78,16 @@ export function Hero({ isReady }: { isReady: boolean }) {
           start: 'top top',
           end: 'bottom top',
           scrub: true,
-          pin: true, // Pin the section for the cinematic entrance
+          pin: true,
           anticipatePin: 1
         },
       });
 
-      // Subtle background scale-up for depth
       const wrapper = sectionRef.current;
       if (!wrapper) return;
-      const splineWrapper = wrapper.querySelector('.z-0');
-      if (splineWrapper) {
-        gsap.to(splineWrapper, {
+      const bgWrapper = wrapper.querySelector('.z-0');
+      if (bgWrapper) {
+        gsap.to(bgWrapper, {
           scale: 1.1,
           ease: 'none',
           scrollTrigger: {
@@ -97,6 +103,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
     return () => ctx.revert();
   }, []);
 
+  // Video crossfade loop (desktop only — refs are null on mobile so this is a no-op)
   useEffect(() => {
     const video = videoRef.current;
     const overlay = videoOverlayRef.current;
@@ -104,7 +111,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
 
     video.playbackRate = 0.6;
 
-    const FADE = 2; // seconds of crossfade
+    const FADE = 2;
     let fadingOut = false;
 
     const handleTimeUpdate = () => {
@@ -136,9 +143,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
 
   useEffect(() => {
     if (!isReady) return;
-    if (isReady) {
-      play();
-    }
+    play();
     const t1 = setTimeout(() => setPhase(1), 100);
     const t2 = setTimeout(() => setPhase(2), 600);
     const t3 = setTimeout(() => setPhase(3), 1200);
@@ -157,42 +162,69 @@ export function Hero({ isReady }: { isReady: boolean }) {
   return (
     <section
       id="hero"
-      ref={sectionRef}
+      ref={(el) => {
+        (sectionRef as any).current = el;
+        (inViewRef as any).current = el;
+      }}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background: AI Robot Video */}
-      <div className="absolute inset-0 z-0 overflow-hidden bg-black">
-        <video
-          autoPlay
-          muted
-          playsInline
-          ref={videoRef}
-          className="absolute inset-0 w-full h-full object-cover object-[30%_center] lg:object-left"
-          src="/images/hero-robot.mp4"
-        />
+      {/* Mobile / tablet: Spline 3D sphere */}
+      {!isDesktop && (
+        <>
+          <div className={`absolute inset-0 transition-opacity duration-1000 ease-out ${phase >= 1 ? 'opacity-100' : 'opacity-0'}`}>
+            <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#141414] to-[#1a1a2e]" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(59,130,246,0.15)_0%,_transparent_50%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(6,182,212,0.15)_0%,_transparent_50%)]" />
+          </div>
+          <div className="absolute inset-0 z-0 overflow-hidden bg-black flex justify-center items-center">
+            {inView && (
+              <Suspense fallback={
+                <div className="absolute inset-0 flex items-center justify-center bg-black text-white/20 text-xs font-mono uppercase tracking-widest">
+                  Initialising 3D Engine...
+                </div>
+              }>
+                <Spline
+                  scene="https://prod.spline.design/LtzKN5G7iNd46w9T/scene.splinecode"
+                  style={{ width: '100%', height: '100%' }}
+                />
+              </Suspense>
+            )}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80 pointer-events-none z-10" />
+            {/* Edge fade — softens sphere on portrait screens */}
+            <div className="absolute inset-0 pointer-events-none z-10" style={{ background: 'radial-gradient(ellipse 65% 85% at center, transparent 35%, black 85%)' }} />
+          </div>
+        </>
+      )}
 
-        {/* Crossfade overlay — fades to black at loop point to hide the cut */}
-        <div
-          ref={videoOverlayRef}
-          className="absolute inset-0 bg-black z-[2] pointer-events-none"
-          style={{ opacity: 0 }}
-        />
+      {/* Desktop: AI Robot Video */}
+      {isDesktop && (
+        <div className="absolute inset-0 z-0 overflow-hidden bg-black">
+          <video
+            autoPlay
+            muted
+            playsInline
+            ref={videoRef}
+            className="absolute inset-0 w-full h-full object-cover object-left"
+            src="/images/hero-robot.mp4"
+          />
+          <div
+            ref={videoOverlayRef}
+            className="absolute inset-0 bg-black z-[2] pointer-events-none"
+            style={{ opacity: 0 }}
+          />
+          <div
+            className="hero-glow absolute inset-0 pointer-events-none z-[5]"
+            style={{
+              background: 'radial-gradient(ellipse 55% 70% at 30% 55%, rgba(59,130,246,0.22) 0%, transparent 70%)',
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80 pointer-events-none z-10" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(59,130,246,0.15)_0%,_transparent_50%)] pointer-events-none z-10" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(6,182,212,0.15)_0%,_transparent_50%)] pointer-events-none z-10" />
+        </div>
+      )}
 
-        {/* Blue breathing glow — behind robot on left */}
-        <div
-          className="hero-glow absolute inset-0 pointer-events-none z-[5]"
-          style={{
-            background: 'radial-gradient(ellipse 55% 70% at 30% 55%, rgba(59,130,246,0.22) 0%, transparent 70%)',
-          }}
-        />
-
-        {/* Cinematic Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80 pointer-events-none z-10" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(59,130,246,0.15)_0%,_transparent_50%)] pointer-events-none z-10" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(6,182,212,0.15)_0%,_transparent_50%)] pointer-events-none z-10" />
-      </div>
-
-      {/* Film grain */}
+      {/* Film grain — both breakpoints */}
       <svg className="absolute w-0 h-0">
         <filter id="hero-grain">
           <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
@@ -224,7 +256,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
             ))}
           </h1>
 
-          {/* Main CTA: Start Onboarding */}
+          {/* Main CTA */}
           <div className={`mt-6 md:mt-8 transition-all duration-1000 ease-out ${phase >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: '0.4s' }}>
             <GradientButton variant="variant" asChild className="group h-auto rounded-xl shadow-[0_0_20px_rgba(201,98,135,0.2)] active:scale-95 border-0">
               <Link
@@ -283,10 +315,10 @@ export function Hero({ isReady }: { isReady: boolean }) {
         </div>
       </div>
 
-      {/* Bottom fade - changed to white to match the next section */}
+      {/* Bottom fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 md:h-48 bg-gradient-to-t from-white via-white/80 to-transparent z-30 pointer-events-none" />
 
-      {/* Side decorative */}
+      {/* Side decorative (desktop only) */}
       <div className={`absolute left-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-4 transition-opacity duration-1000 z-30 ${phase >= 3 ? 'opacity-100' : 'opacity-0'}`}>
         <div className="w-px h-20 bg-gradient-to-b from-transparent via-blue-500/50 to-transparent" />
         <span className="text-blue-500 text-xs tracking-widest" style={{ writingMode: 'vertical-lr' }}>{t('hero.decorativeText')}</span>
