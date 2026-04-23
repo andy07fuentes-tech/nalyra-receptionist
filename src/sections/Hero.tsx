@@ -167,7 +167,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
           muted
           playsInline
           ref={videoRef}
-          className="absolute inset-0 w-full h-full object-cover object-left"
+          className="absolute inset-0 w-full h-full object-cover object-[30%_center] lg:object-left"
           src="/images/hero-robot.mp4"
         />
 
@@ -205,8 +205,8 @@ export function Hero({ isReady }: { isReady: boolean }) {
       />
 
       {/* Content */}
-      <div ref={contentRef} className="relative z-20 flex flex-col items-center lg:items-end justify-center h-full pt-16 md:pt-10 pb-32 md:pb-20 px-4 lg:pr-16 w-full text-center lg:text-right">
-        <div className="w-full lg:max-w-lg">
+      <div ref={contentRef} className="relative z-20 flex flex-col items-center justify-center h-full pt-16 md:pt-10 pb-32 md:pb-20 px-4 w-full text-center">
+        <div className="w-full max-w-lg">
           {/* Script accent */}
           <div className={`transition-all duration-1000 ease-out ${phase >= 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'} mb-2 mt-4`}>
             <span className="font-script text-2xl md:text-3xl lg:text-5xl text-blue-400">
@@ -215,7 +215,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
           </div>
 
           {/* Divider line */}
-          <div className={`my-4 md:my-8 h-px bg-blue-500/50 transition-all duration-1000 ease-out ${phase >= 2 ? 'w-24 opacity-100' : 'w-0 opacity-0'}`} style={{ transitionDelay: '0.2s', marginLeft: 'auto' }} />
+          <div className={`my-4 md:my-8 h-px bg-blue-500/50 transition-all duration-1000 ease-out ${phase >= 2 ? 'w-24 opacity-100' : 'w-0 opacity-0'}`} style={{ transitionDelay: '0.2s', margin: '0 auto' }} />
 
           {/* Main Title */}
           <h1 className={`font-serif text-[1.6rem] md:text-4xl lg:text-5xl xl:text-6xl text-white leading-[1.1] md:leading-[1.1] tracking-wide transition-all duration-1000 ease-out ${phase >= 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.3s' }}>
