@@ -38,6 +38,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
   const { t } = useLanguage();
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [phase, setPhase] = useState(0);
 
   // Build count-up hooks from stats config
@@ -96,6 +97,10 @@ export function Hero({ isReady }: { isReady: boolean }) {
   }, []);
 
   useEffect(() => {
+    if (videoRef.current) videoRef.current.playbackRate = 0.6;
+  }, []);
+
+  useEffect(() => {
     if (!isReady) return;
     if (isReady) {
       play();
@@ -128,6 +133,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
           muted
           loop
           playsInline
+          ref={videoRef}
           className="absolute inset-0 w-full h-full object-cover object-left"
           src="/images/hero-robot.mp4"
         />
