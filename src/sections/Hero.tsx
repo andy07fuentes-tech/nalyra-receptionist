@@ -104,6 +104,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
   }, []);
 
   const GARAGE_VIDEOS = [
+    '/videos/garage-luxury.mp4',
     '/videos/garage-night.mp4',
     '/videos/anvela-answers.mp4',
     '/videos/garage-workshop.mp4',
