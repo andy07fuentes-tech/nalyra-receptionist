@@ -1,10 +1,8 @@
-import { useEffect, useRef, useState, Suspense } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Link } from 'react-router-dom';
-import Spline from '@splinetool/react-spline';
 import gsap from 'gsap';
-import { useInView } from '../hooks/useInView';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { GradientButton } from '../components/ui/gradient-button';
 import { useAudio } from '../contexts/AudioContext';
@@ -40,9 +38,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
   const contentRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const videoOverlayRef = useRef<HTMLDivElement>(null);
-  const [inViewRef, inView] = useInView({ threshold: 0.05 });
   const [phase, setPhase] = useState(0);
-  const [isDesktop, setIsDesktop] = useState(() => typeof window !== 'undefined' && window.innerWidth >= 1024);
 
   const stats = [
     { value: 100, suffix: "%", label: t('hero.stats.calls.label') },
@@ -54,13 +50,6 @@ export function Hero({ isReady }: { isReady: boolean }) {
   const count1 = useCountUp(stats[1]?.value ?? 0, 2200, phase >= 4);
   const count2 = useCountUp(stats[2]?.value ?? 0, 1800, phase >= 4);
   const counts = [count0, count1, count2];
-
-  useEffect(() => {
-    const mq = window.matchMedia('(min-width: 1024px)');
-    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
-    mq.addEventListener('change', handler);
-    return () => mq.removeEventListener('change', handler);
-  }, []);
 
   // GSAP ScrollTrigger — Cinematic Fly-Through
   useEffect(() => {
@@ -176,43 +165,11 @@ export function Hero({ isReady }: { isReady: boolean }) {
   return (
     <section
       id="hero"
-      ref={(el) => {
-        (sectionRef as any).current = el;
-        (inViewRef as any).current = el;
-      }}
+      ref={sectionRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Mobile / tablet: Spline 3D sphere */}
-      {!isDesktop && (
-        <>
-          <div className={`absolute inset-0 transition-opacity duration-1000 ease-out ${phase >= 1 ? 'opacity-100' : 'opacity-0'}`}>
-            <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#141414] to-[#1a1a2e]" />
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(59,130,246,0.15)_0%,_transparent_50%)]" />
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(6,182,212,0.15)_0%,_transparent_50%)]" />
-          </div>
-          <div className="absolute inset-0 z-0 overflow-hidden bg-black flex justify-center items-center">
-            {inView && (
-              <Suspense fallback={
-                <div className="absolute inset-0 flex items-center justify-center bg-black text-white/20 text-xs font-mono uppercase tracking-widest">
-                  Initialising 3D Engine...
-                </div>
-              }>
-                <Spline
-                  scene="https://prod.spline.design/LtzKN5G7iNd46w9T/scene.splinecode"
-                  style={{ width: '100%', height: '100%' }}
-                />
-              </Suspense>
-            )}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80 pointer-events-none z-10" />
-            {/* Edge fade — softens sphere on portrait screens */}
-            <div className="absolute inset-0 pointer-events-none z-10" style={{ background: 'radial-gradient(ellipse 65% 85% at center, transparent 35%, black 85%)' }} />
-          </div>
-        </>
-      )}
-
-      {/* Desktop: AI Robot Video */}
-      {isDesktop && (
-        <div className="absolute inset-0 z-0 overflow-hidden bg-black">
+      {/* Hero video — all screen sizes */}
+      <div className="absolute inset-0 z-0 overflow-hidden bg-black">
           <video
             autoPlay
             muted
@@ -236,7 +193,6 @@ export function Hero({ isReady }: { isReady: boolean }) {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(59,130,246,0.15)_0%,_transparent_50%)] pointer-events-none z-10" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(6,182,212,0.15)_0%,_transparent_50%)] pointer-events-none z-10" />
         </div>
-      )}
 
       {/* Film grain — both breakpoints */}
       <svg className="absolute w-0 h-0">
