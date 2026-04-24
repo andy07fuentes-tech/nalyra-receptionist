@@ -4,8 +4,8 @@ export const translations = {
   fr: {
     // Site
     site: {
-      title: "Anvela - Communication Commerciale Intelligente",
-      description: "Transformez votre entreprise avec des services de réceptionniste alimentés par l'IA. Gestion d'appels intelligente 24/7, planification de rendez-vous et support client.",
+      title: "Anvela - La Réceptionniste IA pour l'Industrie Auto",
+      description: "Transformez votre garage avec une réceptionniste IA disponible 24/7. Ne manquez plus jamais un appel, remplissez votre agenda automatiquement.",
     },
 
     // Navigation
@@ -58,32 +58,32 @@ export const translations = {
 
     // Hero
     hero: {
-      scriptText: "L'Avenir de la Communication Commerciale",
-      mainTitle: "Votre Réceptionniste\nIA Intelligent",
+      scriptText: "Pendant que vous travaillez...",
+      mainTitle: "Chaque appel manqué\nest un travail perdu.",
       ctaButton: "Offre de Lancement",
       videoDemo: "Démo Vidéo",
       prices: "Tarifs",
-      decorativeText: "INTELLIGENT • EFFICACE • FIABLE",
+      decorativeText: "FIABLE • DISPONIBLE • ABORDABLE",
       ctaSubtitle: "1er mois à -50%",
-      ctaMain: "Commencer avec Anvela",
+      ctaMain: "Obtenir Anvela pour votre garage",
       noCreditCard: "Offre limitée • Opérationnel en 48h",
       stats: {
-        calls: { value: "100", suffix: "%", label: "Taux de Réponse" },
+        calls: { value: "100", suffix: "%", label: "Appels Répondus" },
         availability: { value: "24", suffix: "/7", label: "Toujours Disponible" },
-        savings: { value: "50", suffix: "%", label: "Réduction des Coûts" },
+        savings: { value: "50", suffix: "%", label: "vs. Embaucher un Employé" },
       },
     },
     missedCalls: {
       subtitle: "IMPACT FINANCIER",
       title: "Chaque appel manqué est une opportunité perdue.",
-      vision: "Et si chaque entreprise pouvait se permettre de ne jamais manquer un appel ?",
+      vision: "Et si chaque garage pouvait se permettre de ne jamais manquer un appel ?",
       cta: "Ne perdez plus d'argent",
     },
 
     // Gallery
     gallery: {
       scriptText: "Capacités de l'IA",
-      mainTitle: "Conçu pour Tous les Secteurs",
+      mainTitle: "La Réception IA pour l'Industrie Auto",
       selectClients: "L'Avantage Anvela",
       clientsList: "Chaque appel manqué est un client perdu et une opportunité financière gâchée. Notre IA intelligente gère vos réservations, répond aux questions complexes et qualifie vos leads 24h/24 et 7/7, avec une précision humaine et une efficacité robotique.",
       item1: { title: "RÉSERVATION SMART", subtitle: "GESTION AGENDAS" },
@@ -409,7 +409,7 @@ export const translations = {
         },
         {
           question: "Pour quels types d'entreprises Anvela est-elle faite ?",
-          answer: "Anvela fonctionne pour toute entreprise qui reçoit des appels : garages, cliniques, cabinets juridiques, immobilier, restaurants, commerces et plus encore. Si vos clients vous appellent, Anvela peut répondre à leur place."
+          answer: "Anvela est conçue spécifiquement pour les garages automobiles, ateliers de carrosserie et centres de service auto. Si vous avez un atelier et un téléphone qui sonne, Anvela est faite pour vous."
         },
         {
           question: "Anvela est-elle bilingue ?",
@@ -545,7 +545,7 @@ export const translations = {
       quote: {
         prefix: "Innovation",
         text: "Nous construisons l'avenir de la communication commerciale, une conversation à la fois.",
-        attribution: "L'Équipe AI Receptionist",
+        attribution: "L'Équipe Anvela",
       },
     },
 
@@ -559,7 +559,7 @@ export const translations = {
       articles: {
         trends: {
           title: "Tendances Réceptionniste IA",
-          excerpt: "Découvrez comment les réceptionnistes IA transforment le service client dans tous les secteurs.",
+          excerpt: "Découvrez comment les réceptionnistes IA transforment la gestion des appels dans les garages et ateliers automobiles.",
           category: "Industrie",
         },
         integration: {
@@ -597,7 +597,7 @@ export const translations = {
       storyTitle: "Né à Montréal, pour les garages indépendants",
       storyParagraphs: {
         1: "Anvela est née d'une réalité simple : les garages indépendants perdent des clients chaque soir parce que personne ne répond au téléphone. Fondée à Montréal, Anvela déploie une réceptionniste IA en 48 heures — sans formation, sans frais cachés.",
-        2: "Nous démarrons avec les garages, mais la vision est plus large : offrir à chaque entreprise locale un standard téléphonique IA professionnel, à la hauteur des grandes entreprises.",
+        2: "Notre mission : donner à chaque garage indépendant les outils téléphoniques des grandes chaînes — sans les coûts, sans la complexité.",
       },
       storyTimeline: {
         users: { value: "1er", label: "Client fondateur actif" },
@@ -634,7 +634,7 @@ export const translations = {
         businessNameLabel: "Nom de l'entreprise",
         businessNamePlaceholder: "Ex. : Garage Tremblay",
         businessTypeLabel: "Type d'entreprise",
-        businessTypeOptions: ["Garage / Auto", "Médical / Clinique", "Juridique", "Immobilier", "Restaurant", "Commerce / Détail", "Autre"],
+        businessTypeOptions: ["Garage / Mécanique", "Carrosserie / Peinture", "Centre de Service Auto", "Concessionnaire", "Autre"],
         messageLabel: "Message",
         messagePlaceholder: "Décrivez vos besoins en réception ou posez vos questions...",
         submitText: "Envoyer ma demande",
@@ -702,7 +702,7 @@ export const translations = {
     footer: {
       brandName: "Anvela",
       tagline: "Communication Intelligente",
-      description: "Transformez votre entreprise avec des services de réceptionniste alimentés par l'IA. Disponible 24/7, toujours professionnel, incroyablement efficace.",
+      description: "Transformez votre garage avec une réceptionniste IA disponible 24/7. Toujours professionnelle, incroyablement efficace.",
       newsletterLabel: "Abonnez-vous à notre newsletter",
       newsletterPlaceholder: "Entrez votre email",
       newsletterButtonText: "S'abonner",
@@ -739,8 +739,8 @@ export const translations = {
   en: {
     // Site
     site: {
-      title: "AI Receptionist - Smart Business Communication",
-      description: "Transform your business with AI-powered receptionist services. 24/7 intelligent call handling, appointment scheduling, and customer support.",
+      title: "Anvela - The AI Receptionist for Auto Shops",
+      description: "Transform your auto shop with an AI receptionist available 24/7. Never miss a call, fill your calendar automatically.",
     },
 
     // Navigation
@@ -793,31 +793,32 @@ export const translations = {
 
     // Hero
     hero: {
-      scriptText: "The Future of Business Communication",
-      mainTitle: "Your Intelligent\nAI Receptionist",
+      scriptText: "While you're under the hood...",
+      mainTitle: "Every missed call\nis a job lost.",
       ctaButton: "Launch Offer",
       videoDemo: "Video Demo",
       prices: "Prices",
-      decorativeText: "INTELLIGENT • EFFICIENT • RELIABLE",
+      decorativeText: "RELIABLE • AVAILABLE • AFFORDABLE",
       ctaSubtitle: "1st month -50%",
-      ctaMain: "Get Started with Anvela",
+      ctaMain: "Get Anvela for your shop",
       noCreditCard: "Limited offer • Live in 48h",
       stats: {
-        calls: { value: "100", suffix: "%", label: "Call Answer Rate" },
+        calls: { value: "100", suffix: "%", label: "Calls Answered" },
         availability: { value: "24", suffix: "/7", label: "Always Available" },
+        savings: { value: "50", suffix: "%", label: "vs. Hiring Staff" },
       },
     },
     missedCalls: {
       subtitle: "FINANCIAL IMPACT",
       title: "Every missed call is a lost opportunity.",
-      vision: "What if every business could afford to never miss a call again?",
+      vision: "What if every auto shop could afford to never miss a call again?",
       cta: "Stop losing money",
     },
 
     // Gallery
     gallery: {
       scriptText: "AI Capabilities",
-      mainTitle: "Built for Every Industry",
+      mainTitle: "The AI Receptionist for the Auto Industry",
       selectClients: "The Anvela Advantage",
       clientsList: "Every missed call is a missed client and missed revenue. Our intelligent AI handles your bookings, answers complex questions, and qualifies your leads 24/7, with human-like precision and robotic efficiency.",
       item1: { title: "SMART BOOKING", subtitle: "CALENDAR MGMT" },
@@ -1277,7 +1278,7 @@ export const translations = {
       quote: {
         prefix: "Innovation",
         text: "We're building the future of business communication, one conversation at a time.",
-        attribution: "The AI Receptionist Team",
+        attribution: "The Anvela Team",
       },
     },
 
@@ -1291,7 +1292,7 @@ export const translations = {
       articles: {
         trends: {
           title: "AI Receptionist Trends",
-          excerpt: "Discover how AI receptionists are transforming customer service across industries.",
+          excerpt: "Discover how AI receptionists are transforming call management for auto shops and garages.",
           category: "Industry",
         },
         integration: {
@@ -1329,7 +1330,7 @@ export const translations = {
       storyTitle: "Built in Montreal, for independent garages",
       storyParagraphs: {
         1: "Anvela was built on a simple reality: independent garages lose clients every evening because no one picks up the phone. Founded in Montreal, Anvela deploys an AI receptionist in 48 hours — no training, no hidden fees.",
-        2: "We're starting with garages, but the vision is broader: give every local business a professional AI phone system that works like a big company's.",
+        2: "Our mission: give every independent garage the phone technology of large chains — without the cost or complexity.",
       },
       storyTimeline: {
         users: { value: "1st", label: "Founding client active" },
@@ -1366,7 +1367,7 @@ export const translations = {
         businessNameLabel: "Business Name",
         businessNamePlaceholder: "e.g. Tremblay Auto Shop",
         businessTypeLabel: "Type of Business",
-        businessTypeOptions: ["Garage / Auto", "Medical / Clinic", "Legal", "Real Estate", "Restaurant", "Retail / Store", "Other"],
+        businessTypeOptions: ["Garage / Mechanic", "Body Shop / Paint", "Auto Service Center", "Dealership", "Other"],
         messageLabel: "Message",
         messagePlaceholder: "Tell us about your reception needs or ask any questions...",
         submitText: "Send My Request",
@@ -1434,7 +1435,7 @@ export const translations = {
     footer: {
       brandName: "Anvela",
       tagline: "Intelligent Communication",
-      description: "Transform your business with AI-powered receptionist services. Available 24/7, always professional, incredibly efficient.",
+      description: "Transform your auto shop with an AI receptionist available 24/7. Always professional, incredibly efficient.",
       newsletterLabel: "Subscribe to our newsletter",
       newsletterPlaceholder: "Enter your email",
       newsletterButtonText: "Subscribe",
@@ -1502,31 +1503,32 @@ export const translations = {
 
     // Hero
     hero: {
-      scriptText: "El Futuro de la Comunicación Empresarial",
-      mainTitle: "Su Recepcionista\nIA Inteligente",
+      scriptText: "Mientras estás trabajando...",
+      mainTitle: "Cada llamada perdida\nes un trabajo perdido.",
       ctaButton: "Oferta de Lanzamiento",
       videoDemo: "Demo en Video",
       prices: "Precios",
-      decorativeText: "INTELIGENTE • EFICIENTE • CONFIABLE",
+      decorativeText: "CONFIABLE • DISPONIBLE • ACCESIBLE",
       ctaSubtitle: "1er mes al -50%",
-      ctaMain: "Comenzar con Anvela",
+      ctaMain: "Obtén Anvela para tu taller",
       noCreditCard: "Oferta limitada • Operativo en 48h",
       stats: {
-        calls: { value: "100", suffix: "%", label: "Tasa de Respuesta" },
+        calls: { value: "100", suffix: "%", label: "Llamadas Respondidas" },
         availability: { value: "24", suffix: "/7", label: "Siempre Disponible" },
+        savings: { value: "50", suffix: "%", label: "vs. Contratar Personal" },
       },
     },
     missedCalls: {
       subtitle: "IMPACTO FINANCIERO",
       title: "Cada llamada perdida es una oportunidad perdida.",
-      vision: "¿Y si cada empresa pudiera permitirse no volver a perder una llamada?",
+      vision: "¿Y si cada taller automotriz pudiera permitirse no volver a perder una llamada?",
       cta: "Deja de perder dinero",
     },
 
     // Gallery
     gallery: {
       scriptText: "Capacidades de IA",
-      mainTitle: "Diseñado para Todos los Sectores",
+      mainTitle: "La Recepción IA para la Industria Automotriz",
       selectClients: "La Ventaja Anvela",
       clientsList: "Cada llamada perdida es un cliente perdido y dinero que dejas de ganar. Nuestra IA inteligente gestiona tus reservas, responde preguntas complejas y califica tus leads 24/7, con precisión humana y eficiencia robótica.",
       item1: { title: "RESERVA INTELIGENTE", subtitle: "GESTIÓN AGENDAS" },
@@ -1998,7 +2000,7 @@ export const translations = {
       articles: {
         trends: {
           title: "Tendencias de Recepcionista IA",
-          excerpt: "Descubra cómo los recepcionistas IA están transformando el servicio al cliente en todas las industrias.",
+          excerpt: "Descubra cómo los recepcionistas IA están transformando la gestión de llamadas en talleres y centros automotrices.",
           category: "Industria",
         },
         integration: {
@@ -2036,7 +2038,7 @@ export const translations = {
       storyTitle: "Nacido en Montreal, para garages independientes",
       storyParagraphs: {
         1: "Anvela nació de una realidad simple: los garages independientes pierden clientes cada noche porque nadie contesta el teléfono. Fundada en Montreal, Anvela implementa un recepcionista IA en 48 horas — sin formación, sin tarifas ocultas.",
-        2: "Empezamos con garages, pero la visión es más amplia: dar a cada negocio local un sistema telefónico IA profesional que funcione como el de una gran empresa.",
+        2: "Nuestra misión: dar a cada taller independiente la tecnología telefónica de las grandes cadenas — sin los costos ni la complejidad.",
       },
       storyTimeline: {
         users: { value: "1er", label: "Cliente fundador activo" },
@@ -2073,7 +2075,7 @@ export const translations = {
         businessNameLabel: "Nombre de la Empresa",
         businessNamePlaceholder: "Ej. Taller Tremblay",
         businessTypeLabel: "Tipo de Negocio",
-        businessTypeOptions: ["Garage / Auto", "Médico / Clínica", "Legal", "Inmobiliaria", "Restaurante", "Comercio / Tienda", "Otro"],
+        businessTypeOptions: ["Garage / Mecánico", "Carrocería / Pintura", "Centro de Servicio Auto", "Concesionario", "Otro"],
         messageLabel: "Mensaje",
         messagePlaceholder: "Cuéntenos sobre sus necesidades de recepción o haga sus preguntas...",
         submitText: "Enviar mi solicitud",
@@ -2210,32 +2212,32 @@ export const translations = {
 
     // Hero
     hero: {
-      scriptText: "Il Futuro della Comunicazione Aziendale",
-      mainTitle: "Il Tuo Receptionist\nIA Intelligente",
+      scriptText: "Mentre sei sotto il cofano...",
+      mainTitle: "Ogni chiamata persa\nè un lavoro perso.",
       ctaButton: "Offerta di Lancio",
       videoDemo: "Video Demo",
       prices: "Prezzi",
-      decorativeText: "INTELLIGENTE • EFFICIENTE • AFFIDABILE",
+      decorativeText: "AFFIDABILE • DISPONIBILE • CONVENIENTE",
       ctaSubtitle: "1° mese al -50%",
-      ctaMain: "Inizia con Anvela",
+      ctaMain: "Ottieni Anvela per la tua officina",
       noCreditCard: "Offerta limitata • Operativo in 48h",
       stats: {
-        calls: { value: "100", suffix: "%", label: "Tasso di Risposta" },
+        calls: { value: "100", suffix: "%", label: "Chiamate Risposte" },
         availability: { value: "24", suffix: "/7", label: "Sempre Disponibile" },
-        savings: { value: "50", suffix: "%", label: "Riduzione Costi" },
+        savings: { value: "50", suffix: "%", label: "vs. Assumere Personale" },
       },
     },
     missedCalls: {
       subtitle: "IMPATTO FINANZIARIO",
       title: "Ogni chiamata persa è un'opportunità persa.",
-      vision: "E se ogni azienda potesse permettersi di non perdere mai più una chiamata?",
+      vision: "E se ogni officina potesse permettersi di non perdere mai più una chiamata?",
       cta: "Smetti di perdere soldi",
     },
 
     // Gallery
     gallery: {
       scriptText: "Capacità dell'IA",
-      mainTitle: "Progettato per Ogni Settore",
+      mainTitle: "La Reception IA per l'Industria Auto",
       selectClients: "Il Vantaggio Anvela",
       clientsList: "Ogni chiamata persa è un cliente perso e un mancato guadagno. La nostra IA intelligente gestisce le tue prenotazioni, risponde a domande complesse e qualifica i tuoi lead 24/7, con precisione umana ed efficienza robotica.",
       item1: { title: "PRENOTAZIONE SMART", subtitle: "GESTIONE AGENDAS" },
@@ -2707,7 +2709,7 @@ export const translations = {
       articles: {
         trends: {
           title: "Tendenze Receptionist IA",
-          excerpt: "Scopri come i receptionist IA stanno trasformando il servizio clienti in tutti i settori.",
+          excerpt: "Scopri come i receptionist IA stanno trasformando la gestione delle chiamate nelle officine e nei centri auto.",
           category: "Industria",
         },
         integration: {
@@ -2745,7 +2747,7 @@ export const translations = {
       storyTitle: "Nato a Montreal, per le officine indipendenti",
       storyParagraphs: {
         1: "Anvela è nata da una realtà semplice: le officine indipendenti perdono clienti ogni sera perché nessuno risponde al telefono. Fondata a Montreal, Anvela implementa un receptionist IA in 48 ore — senza formazione, senza costi nascosti.",
-        2: "Iniziamo con le officine, ma la visione è più ampia: dare a ogni attività locale un sistema telefonico IA professionale che funzioni come quello di una grande azienda.",
+        2: "La nostra missione: dare a ogni officina indipendente la tecnologia telefonica delle grandi catene — senza i costi né la complessità.",
       },
       storyTimeline: {
         users: { value: "1°", label: "Cliente fondatore attivo" },
@@ -2782,7 +2784,7 @@ export const translations = {
         businessNameLabel: "Nome dell'Azienda",
         businessNamePlaceholder: "Es. Garage Tremblay",
         businessTypeLabel: "Tipo di Attività",
-        businessTypeOptions: ["Garage / Auto", "Medico / Clinica", "Legale", "Immobiliare", "Ristorante", "Commercio / Negozio", "Altro"],
+        businessTypeOptions: ["Garage / Meccanico", "Carrozzeria / Verniciatura", "Centro Assistenza Auto", "Concessionaria", "Altro"],
         messageLabel: "Messaggio",
         messagePlaceholder: "Descrivici le tue esigenze di reception o fai le tue domande...",
         submitText: "Invia la mia richiesta",

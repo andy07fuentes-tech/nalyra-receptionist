@@ -103,15 +103,22 @@ export function Hero({ isReady }: { isReady: boolean }) {
     return () => ctx.revert();
   }, []);
 
-  // Video crossfade loop (desktop only — refs are null on mobile so this is a no-op)
+  const GARAGE_VIDEOS = [
+    '/videos/garage-night.mp4',
+    '/videos/anvela-answers.mp4',
+    '/videos/garage-workshop.mp4',
+  ];
+  const [videoIndex, setVideoIndex] = useState(0);
+
+  // 3-video sequence with crossfade (desktop only)
   useEffect(() => {
     const video = videoRef.current;
     const overlay = videoOverlayRef.current;
     if (!video || !overlay) return;
 
-    video.playbackRate = 0.6;
+    video.playbackRate = 0.7;
 
-    const FADE = 2;
+    const FADE = 1.5;
     let fadingOut = false;
 
     const handleTimeUpdate = () => {
@@ -125,12 +132,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
     };
 
     const handleEnded = () => {
-      video.currentTime = 0;
-      video.play().then(() => {
-        overlay.style.transition = `opacity ${FADE}s ease-in`;
-        overlay.style.opacity = '0';
-        fadingOut = false;
-      }).catch(() => {});
+      setVideoIndex(prev => (prev + 1) % GARAGE_VIDEOS.length);
     };
 
     video.addEventListener('timeupdate', handleTimeUpdate);
@@ -139,7 +141,18 @@ export function Hero({ isReady }: { isReady: boolean }) {
       video.removeEventListener('timeupdate', handleTimeUpdate);
       video.removeEventListener('ended', handleEnded);
     };
-  }, []);
+  }, [videoIndex]);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    const overlay = videoOverlayRef.current;
+    if (!video || !overlay) return;
+    video.load();
+    video.play().then(() => {
+      overlay.style.transition = `opacity 1.5s ease-in`;
+      overlay.style.opacity = '0';
+    }).catch(() => {});
+  }, [videoIndex]);
 
   useEffect(() => {
     if (!isReady) return;
@@ -204,8 +217,8 @@ export function Hero({ isReady }: { isReady: boolean }) {
             muted
             playsInline
             ref={videoRef}
-            className="absolute inset-0 w-full h-full object-cover object-left"
-            src="/images/hero-robot.mp4"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+            src={GARAGE_VIDEOS[videoIndex]}
           />
           <div
             ref={videoOverlayRef}
@@ -215,7 +228,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
           <div
             className="hero-glow absolute inset-0 pointer-events-none z-[5]"
             style={{
-              background: 'radial-gradient(ellipse 55% 70% at 30% 55%, rgba(59,130,246,0.22) 0%, transparent 70%)',
+              background: 'radial-gradient(ellipse 55% 70% at 30% 55%, rgba(245,158,11,0.18) 0%, transparent 70%)',
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80 pointer-events-none z-10" />
