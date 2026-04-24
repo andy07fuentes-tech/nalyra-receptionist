@@ -171,7 +171,6 @@ export function Hero({ isReady }: { isReady: boolean }) {
       {/* Hero video — all screen sizes */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-black">
           <video
-            autoPlay
             muted
             playsInline
             ref={videoRef}
@@ -181,7 +180,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
           <div
             ref={videoOverlayRef}
             className="absolute inset-0 bg-black z-[2] pointer-events-none"
-            style={{ opacity: 0 }}
+            style={{ opacity: 1 }}
           />
           <div
             className="hero-glow absolute inset-0 pointer-events-none z-[5]"
