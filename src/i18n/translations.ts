@@ -29,7 +29,8 @@ export const translations = {
       brandName: "Anvela",
       brandSubname: "Communication Intelligente",
       yearText: "Nouvelle Génération",
-      enterButton: "Lancer l'Expérience",
+      enterButton: "Découvrir Anvela",
+      tagline: "Votre garage ne dort plus",
     },
 
     // Cinematic Showcase
@@ -764,7 +765,8 @@ export const translations = {
       brandName: "Anvela",
       brandSubname: "Intelligent Communication",
       yearText: "Next Gen",
-      enterButton: "Start Experience",
+      enterButton: "Discover Anvela",
+      tagline: "Your shop never sleeps again",
     },
 
     // Cinematic Showcase
@@ -1498,7 +1500,8 @@ export const translations = {
       brandName: "Recepcionista IA",
       brandSubname: "Comunicación Inteligente",
       yearText: "Next Gen",
-      enterButton: "Iniciar Experiencia",
+      enterButton: "Descubrir Anvela",
+      tagline: "Su taller nunca duerme más",
     },
 
     // Hero
@@ -2207,7 +2210,8 @@ export const translations = {
       brandName: "Receptionist IA",
       brandSubname: "Comunicazione Intelligente",
       yearText: "Nuova Generazione",
-      enterButton: "Inizia Esperienza",
+      enterButton: "Scopri Anvela",
+      tagline: "La tua officina non dorme più",
     },
 
     // Hero
