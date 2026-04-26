@@ -208,7 +208,6 @@ export function Pricing() {
         const baseMonthlyPrice = parseInt(tier.price) || 0;
         const discountedMonthly = Math.round(baseMonthlyPrice * 0.9);
         const annualTotal = discountedMonthly * 10;
-        const glowColors = getGlowColors(i);
 
         return (
             <>
