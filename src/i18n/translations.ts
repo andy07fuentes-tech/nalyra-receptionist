@@ -137,7 +137,7 @@ export const translations = {
     painPoints: {
       scriptText: "Le Coût du Statu Quo",
       subtitle: "POINTS DE FRICTION",
-      mainTitle: "Quand la Réception Humaine Ne Peut Pas Tout Gérer",
+      mainTitle: "Ce que vous perdez en silence à chaque appel sans réponse",
       description: "Entre les appels manqués, les heures fermées et les moments de forte affluence, même les meilleures équipes ne peuvent pas répondre à tout, tout le temps. Anvela prend le relais en arrière-plan pour que rien ne soit perdu.",
       items: [
         {
@@ -426,7 +426,7 @@ export const translations = {
     features: {
       scriptText: "Capacités Puissantes",
       subtitle: "FONCTIONNALITÉS IA",
-      mainTitle: "Tout ce dont Votre Entreprise a Besoin",
+      mainTitle: "Tout ce dont votre garage a besoin pour ne plus perdre un client",
       solutions: {
         callHandling: {
           name: "Gestion d'Appels",
@@ -606,7 +606,7 @@ export const translations = {
       },
       storyQuote: {
         prefix: "Mission",
-        text: "Démocratiser l'accès à la technologie de communication intelligente pour les entreprises de toutes tailles.",
+        text: "Donner à chaque garage indépendant les outils des grandes chaînes — sans les coûts.",
         attribution: "Notre Mission",
       },
     },
@@ -691,10 +691,10 @@ export const translations = {
     // Founder
     founder: {
       scriptText: "La personne derrière Anvela",
-      mainTitle: "Construit par quelqu'un qui comprend les défis des petites entreprises.",
+      mainTitle: "Construit par quelqu'un qui a vu des garages perdre des clients chaque soir après 17h.",
       quote: "J'ai créé Anvela parce que chaque appel manqué est un client perdu. Votre entreprise mérite mieux.",
       title: "Fondateur & PDG",
-      bio: "Pablo Fuentes a lancé Anvela après avoir vu trop d'entreprises montréalaises perdre des clients à cause d'appels sans réponse — non pas par manque de service, mais par manque de temps. Entrepreneur technologique basé à Montréal, il a combiné l'IA vocale avec une connaissance du marché local pour créer une réceptionniste qui ne dort jamais, ne prend jamais de pause, et s'adapte à la langue de chaque client, quelle qu'elle soit. Anvela est sa réponse à une question simple : et si chaque entreprise pouvait se permettre de ne jamais manquer un appel ?",
+      bio: "Pablo Fuentes a lancé Anvela après avoir vu trop de garages indépendants à Montréal perdre des clients à cause d'appels sans réponse — non pas par manque de service, mais par manque de temps. Entrepreneur technologique basé à Montréal, il a combiné l'IA vocale avec une connaissance du marché local pour créer une réceptionniste qui ne dort jamais, ne prend jamais de pause, et s'adapte à la langue de chaque client, quelle qu'elle soit. Anvela est sa réponse à une question simple : et si chaque garage indépendant pouvait se permettre de ne jamais manquer un appel ?",
       location: "Montréal, Québec",
     },
 
@@ -872,7 +872,7 @@ export const translations = {
     painPoints: {
       scriptText: "The Cost of Inaction",
       subtitle: "FRICTION POINTS",
-      mainTitle: "When Human Reception Can't Handle Everything",
+      mainTitle: "What You're Silently Losing Every Time a Call Goes Unanswered",
       description: "Between missed calls, closed hours, and peak times, even the best teams can't answer everything, all the time. Anvela takes over in the background so nothing is lost.",
       items: [
         {
@@ -1159,7 +1159,7 @@ export const translations = {
     features: {
       scriptText: "Powerful Capabilities",
       subtitle: "AI-POWERED FEATURES",
-      mainTitle: "Everything Your Business Needs",
+      mainTitle: "Everything Your Shop Needs to Never Lose Another Customer",
       solutions: {
         callHandling: {
           name: "Call Handling",
@@ -1339,7 +1339,7 @@ export const translations = {
       },
       storyQuote: {
         prefix: "Mission",
-        text: "To democratize access to intelligent communication technology for businesses of all sizes.",
+        text: "Give every independent garage the tools of large chains — without the cost.",
         attribution: "Our Mission",
       },
     },
@@ -1424,10 +1424,10 @@ export const translations = {
     // Founder
     founder: {
       scriptText: "The person behind Anvela",
-      mainTitle: "Built by someone who understands the challenges small businesses face.",
+      mainTitle: "Built by someone who watched garages lose customers every night after 5pm.",
       quote: "I built Anvela because every missed call is a lost client. Your business deserves better.",
       title: "Founder & CEO",
-      bio: "Pablo Fuentes launched Anvela after watching too many Montreal businesses lose clients to missed calls — not from bad service, but from being stretched too thin. A tech entrepreneur based in Montreal, he combined AI voice technology with deep local market knowledge to build a receptionist that never sleeps, never takes breaks, and adapts to any language a client speaks. Anvela is his answer to one simple question: what if every business could afford to never miss a call again?",
+      bio: "Pablo Fuentes launched Anvela after watching too many independent garages in Montreal lose clients to missed calls — not from bad service, but from being stretched too thin. A tech entrepreneur based in Montreal, he combined AI voice technology with deep local market knowledge to build a receptionist that never sleeps, never takes breaks, and adapts to any language a client speaks. Anvela is his answer to one simple question: what if every independent garage could afford to never miss a call again?",
       location: "Montreal, Quebec",
     },
 
@@ -1580,7 +1580,7 @@ export const translations = {
     painPoints: {
       scriptText: "El Costo de la Inacción",
       subtitle: "PUNTOS DE FRICCIÓN",
-      mainTitle: "Cuando la Recepción Humana no Puede Manejarlo Todo",
+      mainTitle: "Lo que pierde en silencio cada vez que una llamada no es contestada",
       description: "Entre las llamadas perdidas, el horario de cierre y los momentos de mayor afluencia, incluso los mejores equipos no pueden responder a todo, todo el tiempo. Anvela toma el relevo en segundo plano para que no se pierda nada.",
       items: [
         {
@@ -1867,7 +1867,7 @@ export const translations = {
     features: {
       scriptText: "Capacidades Potentes",
       subtitle: "FUNCIONES IA",
-      mainTitle: "Todo lo que su Negocio Necesita",
+      mainTitle: "Todo lo que su taller necesita para no perder otro cliente",
       solutions: {
         callHandling: {
           name: "Gestión de Llamadas",
@@ -2047,7 +2047,7 @@ export const translations = {
       },
       storyQuote: {
         prefix: "Misión",
-        text: "Democratizar el acceso a la tecnología de comunicación inteligente para negocios de todos los tamaños.",
+        text: "Dar a cada taller independiente las herramientas de las grandes cadenas — sin los costos.",
         attribution: "Nuestra Misión",
       },
     },
@@ -2132,10 +2132,10 @@ export const translations = {
     // Founder
     founder: {
       scriptText: "La persona detrás de Anvela",
-      mainTitle: "Construido por alguien que entiende los desafíos de las pequeñas empresas.",
+      mainTitle: "Construido por alguien que vio talleres perder clientes cada noche después de las 17h.",
       quote: "Creé Anvela porque cada llamada perdida es un cliente perdido. Su negocio merece más.",
       title: "Fundador & CEO",
-      bio: "Pablo Fuentes lanzó Anvela después de ver demasiadas empresas en Montreal perder clientes por llamadas sin respuesta — no por falta de servicio, sino por falta de tiempo. Emprendedor tecnológico con base en Montreal, combinó la IA de voz con un profundo conocimiento del mercado local para crear una recepcionista que nunca duerme, nunca descansa y se adapta al idioma de cada cliente, sea cual sea. Anvela es su respuesta a una pregunta sencilla: ¿y si cada empresa pudiera permitirse no perder nunca una llamada?",
+      bio: "Pablo Fuentes lanzó Anvela después de ver demasiados talleres independientes en Montreal perder clientes por llamadas sin respuesta — no por falta de servicio, sino por falta de tiempo. Emprendedor tecnológico con base en Montreal, combinó la IA de voz con un profundo conocimiento del mercado local para crear una recepcionista que nunca duerme, nunca descansa y se adapta al idioma de cada cliente, sea cual sea. Anvela es su respuesta a una pregunta sencilla: ¿y si cada taller independiente pudiera permitirse no perder nunca una llamada?",
       location: "Montreal, Quebec",
     },
 
@@ -2291,7 +2291,7 @@ export const translations = {
     painPoints: {
       scriptText: "Il Costo dell'Inazione",
       subtitle: "PUNTI DI ATTRITO",
-      mainTitle: "Quando la Reception Umana Non Può Gestire Tutto",
+      mainTitle: "Ciò che perdi in silenzio ogni volta che una chiamata rimane senza risposta",
       description: "Tra chiamate perse, orari di chiusura e momenti di punta, anche i team migliori non possono rispondere a tutto, tutto il tempo. Anvela subentra in background affinché nulla vada perduto.",
       items: [
         {
@@ -2576,7 +2576,7 @@ export const translations = {
     features: {
       scriptText: "Capacità Potenti",
       subtitle: "FUNZIONALITÀ IA",
-      mainTitle: "Tutto ciò che la Tua Azienda Necessita",
+      mainTitle: "Tutto ciò di cui la tua officina ha bisogno per non perdere mai più un cliente",
       solutions: {
         callHandling: {
           name: "Gestione Chiamate",
@@ -2756,7 +2756,7 @@ export const translations = {
       },
       storyQuote: {
         prefix: "Missione",
-        text: "Democratizzare l'accesso alla tecnologia di comunicazione intelligente per aziende di tutte le dimensioni.",
+        text: "Dare a ogni officina indipendente gli strumenti delle grandi catene — senza i costi.",
         attribution: "La Nostra Missione",
       },
     },
@@ -2841,10 +2841,10 @@ export const translations = {
     // Founder
     founder: {
       scriptText: "La persona dietro Anvela",
-      mainTitle: "Costruito da qualcuno che capisce le sfide delle piccole imprese.",
+      mainTitle: "Costruito da qualcuno che ha visto le officine perdere clienti ogni sera dopo le 17.",
       quote: "Ho creato Anvela perché ogni chiamata persa è un cliente perso. La tua azienda merita di meglio.",
       title: "Fondatore & CEO",
-      bio: "Pablo Fuentes ha lanciato Anvela dopo aver visto troppe aziende di Montreal perdere clienti per chiamate senza risposta — non per mancanza di servizio, ma per mancanza di tempo. Imprenditore tecnologico con sede a Montreal, ha combinato l'IA vocale con una profonda conoscenza del mercato locale per creare una receptionist che non dorme mai, non si prende mai pause e si adatta alla lingua di ogni cliente, qualunque essa sia. Anvela è la sua risposta a una semplice domanda: e se ogni azienda potesse permettersi di non perdere mai una chiamata?",
+      bio: "Pablo Fuentes ha lanciato Anvela dopo aver visto troppe officine indipendenti di Montreal perdere clienti per chiamate senza risposta — non per mancanza di servizio, ma per mancanza di tempo. Imprenditore tecnologico con sede a Montreal, ha combinato l'IA vocale con una profonda conoscenza del mercato locale per creare una receptionist che non dorme mai, non si prende mai pause e si adatta alla lingua di ogni cliente, qualunque essa sia. Anvela è la sua risposta a una semplice domanda: e se ogni officina indipendente potesse permettersi di non perdere mai una chiamata?",
       location: "Montreal, Quebec",
     },
 
