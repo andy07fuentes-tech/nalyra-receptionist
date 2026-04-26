@@ -92,12 +92,20 @@ export function Hero({ isReady }: { isReady: boolean }) {
     return () => ctx.revert();
   }, []);
 
-  const GARAGE_VIDEOS = [
-    '/videos/garage-luxury.mp4',
-    '/videos/garage-workshop.mp4',
-    '/videos/anvela-answers.mp4',
-    '/videos/garage-night.mp4',
-  ];
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
+  const GARAGE_VIDEOS = isMobile
+    ? [
+        '/videos/anvela-answers.mp4',
+        '/videos/garage-workshop.mp4',
+        '/videos/garage-night.mp4',
+        '/videos/garage-luxury.mp4',
+      ]
+    : [
+        '/videos/garage-luxury.mp4',
+        '/videos/garage-workshop.mp4',
+        '/videos/anvela-answers.mp4',
+        '/videos/garage-night.mp4',
+      ];
   const [videoIndex, setVideoIndex] = useState(0);
 
   // 3-video sequence with crossfade (desktop only)
