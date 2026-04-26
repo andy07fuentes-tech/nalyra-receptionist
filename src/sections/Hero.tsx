@@ -37,6 +37,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const preloadRef = useRef<HTMLVideoElement>(null);
   const videoOverlayRef = useRef<HTMLDivElement>(null);
   const [phase, setPhase] = useState(0);
 
@@ -100,13 +101,11 @@ export function Hero({ isReady }: { isReady: boolean }) {
   ];
   const [videoIndex, setVideoIndex] = useState(0);
 
-  // 3-video sequence with crossfade (desktop only)
+  // Fade-out + advance index when current video ends
   useEffect(() => {
     const video = videoRef.current;
     const overlay = videoOverlayRef.current;
     if (!video || !overlay) return;
-
-    video.playbackRate = 0.7;
 
     const FADE = 1.5;
     let fadingOut = false;
@@ -133,15 +132,32 @@ export function Hero({ isReady }: { isReady: boolean }) {
     };
   }, [videoIndex]);
 
+  // Load + play current video; fade overlay only once canplay fires (frame is ready)
   useEffect(() => {
     const video = videoRef.current;
     const overlay = videoOverlayRef.current;
     if (!video || !overlay) return;
+
     video.load();
-    video.play().then(() => {
-      overlay.style.transition = `opacity 1.5s ease-in`;
+
+    const handleCanPlay = () => {
+      video.playbackRate = 0.7;
+      video.play().catch(() => {});
+      overlay.style.transition = 'opacity 1.5s ease-in';
       overlay.style.opacity = '0';
-    }).catch(() => {});
+    };
+
+    video.addEventListener('canplay', handleCanPlay, { once: true });
+    return () => video.removeEventListener('canplay', handleCanPlay);
+  }, [videoIndex]);
+
+  // Preload the next video in the background while current plays
+  useEffect(() => {
+    const preload = preloadRef.current;
+    if (!preload) return;
+    const nextIndex = (videoIndex + 1) % GARAGE_VIDEOS.length;
+    preload.src = GARAGE_VIDEOS[nextIndex];
+    preload.load();
   }, [videoIndex]);
 
   useEffect(() => {
@@ -173,9 +189,18 @@ export function Hero({ isReady }: { isReady: boolean }) {
           <video
             muted
             playsInline
+            preload="auto"
             ref={videoRef}
             className="absolute inset-0 w-full h-full object-cover object-center"
             src={GARAGE_VIDEOS[videoIndex]}
+          />
+          <video
+            ref={preloadRef}
+            muted
+            playsInline
+            preload="auto"
+            aria-hidden="true"
+            className="absolute opacity-0 pointer-events-none w-0 h-0"
           />
           <div
             ref={videoOverlayRef}
