@@ -359,54 +359,83 @@ export function Pricing() {
                 </div>
             </div>
 
-            {/* ── MOBILE: featured layout — Co-Pilot on top, Night Shift + Elite below ── */}
-            <div className="md:hidden mt-16 px-4 space-y-4">
-                {/* Featured card — Co-Pilot (popular, index 1) */}
-                {pricingTiers[1] && (() => {
-                    const tier = pricingTiers[1];
-                    const gc = getGlowColors(1);
-                    const disc = Math.round((parseInt(tier.price) || 0) * 0.9);
+            {/* ── MOBILE: vertical stack — all features visible, compact padding ── */}
+            <div className="md:hidden mt-16 px-4 space-y-8">
+                {pricingTiers.map((tier: any, i: number) => {
+                    const isPopular = i === 1;
+                    const isElite = i === 2;
+                    const isStandard = i === 0;
+                    const gc = getGlowColors(i);
+                    const basePrice = parseInt(tier.price) || 0;
+                    const disc = Math.round(basePrice * 0.9);
                     return (
                         <motion.div
-                            initial={{ opacity: 0, y: 24 }}
+                            key={i}
+                            initial={{ opacity: 0, y: 32 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                            viewport={{ once: true, amount: 0.1 }}
+                            transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
                             className="relative rounded-3xl solar-aura-glow border-transparent shadow-2xl"
                             style={{
                                 // @ts-ignore
                                 '--border-color': gc.border, '--border-glow': gc.glow, '--glow-color': gc.shadow,
                             }}
                         >
+                            {/* Badge */}
                             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30">
-                                <div className="bg-blue-600 text-white text-[10px] font-bold uppercase tracking-widest py-2 px-8 rounded-full shadow-[0_4px_25px_rgba(0,210,255,0.6)] whitespace-nowrap border border-blue-400/30">
-                                    {t('pricing.bestValue')}
-                                </div>
+                                {isStandard && (
+                                    <div className="bg-slate-700 text-white text-[10px] font-bold uppercase tracking-widest py-2 px-7 rounded-full whitespace-nowrap border border-slate-500/30">
+                                        {t('pricing.essentiel')}
+                                    </div>
+                                )}
+                                {isPopular && (
+                                    <div className="bg-blue-600 text-white text-[10px] font-bold uppercase tracking-widest py-2 px-7 rounded-full shadow-[0_4px_25px_rgba(0,210,255,0.6)] whitespace-nowrap border border-blue-400/30">
+                                        {t('pricing.bestValue')}
+                                    </div>
+                                )}
+                                {isElite && (
+                                    <div className="bg-slate-900 text-gold-200 text-[10px] font-bold uppercase tracking-widest py-2 px-7 rounded-full shadow-[0_4px_25px_rgba(210,168,85,0.4)] whitespace-nowrap border border-gold-500/40">
+                                        {t('pricing.completeSolution')}
+                                    </div>
+                                )}
                             </div>
+
+                            {/* Animated border */}
                             <div className="absolute inset-0 z-0 rounded-3xl overflow-hidden">
                                 <div className="premium-border-animate" />
                             </div>
-                            <div className="relative z-10 m-[2px] bg-white rounded-[22px] overflow-hidden">
-                                <div className="absolute inset-0 bg-gradient-to-b from-blue-500/10 to-transparent pointer-events-none z-0" />
-                                <div className="relative p-5 pb-4">
-                                    <h4 className="text-lg font-bold text-slate-900 mb-1">{tier.name}</h4>
-                                    <div className="flex items-baseline">
-                                        <span className="text-3xl font-serif text-slate-900">${isYearly ? disc : tier.price}</span>
+
+                            <div className="relative z-10 m-[2px] bg-white rounded-[22px] overflow-hidden flex flex-col">
+                                {isPopular && <div className="absolute inset-0 bg-gradient-to-b from-blue-500/10 to-transparent pointer-events-none z-0" />}
+                                {isElite && <div className="absolute inset-0 bg-gradient-to-b from-gold-500/10 to-transparent pointer-events-none z-0" />}
+                                {isStandard && <div className="absolute inset-0 bg-gradient-to-b from-slate-500/5 to-transparent pointer-events-none z-0" />}
+
+                                {/* Header — name + price */}
+                                <div className={`relative p-5 pb-4 ${isElite ? 'bg-white/40 backdrop-blur-xl' : ''}`}>
+                                    <h4 className={`text-xl font-bold mb-1.5 ${isElite ? 'text-gradient-gold' : 'text-slate-900'}`}>{tier.name}</h4>
+                                    <div className="flex items-baseline mb-1">
+                                        <span className={`text-4xl font-serif ${isElite ? 'text-gradient-gold' : 'text-slate-900'}`}>${isYearly ? disc : tier.price}</span>
                                         <span className="text-slate-900 ml-2 font-bold italic text-sm">{t('pricing.cadMonth')}</span>
                                     </div>
-                                    {isYearly ? (
-                                        <div className="text-[11px] font-bold italic text-slate-600 mt-0.5">
+                                    {isYearly && basePrice ? (
+                                        <div className={`text-[11px] font-bold italic ${isElite ? 'text-gold-600' : 'text-slate-500'}`}>
                                             {t('pricing.annualBillingNotice', { price: disc * 10 })}
                                         </div>
                                     ) : tier.weeklyNote ? (
-                                        <div className="text-[11px] italic text-slate-500 mt-0.5">({tier.weeklyNote})</div>
+                                        <div className={`text-[11px] font-bold italic ${isElite ? 'text-gold-600' : 'text-slate-500'}`}>({tier.weeklyNote})</div>
                                     ) : null}
+                                    <div className={`mt-3 text-[10px] font-bold uppercase tracking-widest inline-block px-3 py-1 rounded-full ${isElite ? 'bg-gold-50/50 text-gold-700 border border-gold-500/30' : 'bg-blue-50 text-blue-600 border border-blue-500/10'}`}>
+                                        {t('pricing.setupFeeLabel')}: ${tier.setupFee}
+                                    </div>
                                 </div>
-                                <div className="bg-slate-900 p-5">
-                                    <div className="space-y-2 mb-4">
-                                        {tier.features?.slice(0, 4).map((feature: string, j: number) => (
+
+                                {/* Features + CTA */}
+                                <div className="bg-slate-900 p-5 flex-grow flex flex-col">
+                                    <p className={`text-xs text-slate-400 leading-relaxed mb-4 border-l-2 pl-3 ${isElite ? 'border-gold-500/40' : 'border-blue-500/30'}`}>{tier.description}</p>
+                                    <div className="space-y-2.5 mb-5">
+                                        {tier.features?.map((feature: string, j: number) => (
                                             <div key={j} className="flex items-start">
-                                                <div className="w-4 h-4 rounded-full flex items-center justify-center mr-2.5 shrink-0 bg-blue-600/50 border border-blue-500">
+                                                <div className={`w-4 h-4 rounded-full flex items-center justify-center mr-2.5 shrink-0 border ${isPopular ? 'bg-blue-600/50 border-blue-500' : 'bg-slate-800 border-slate-700'}`}>
                                                     <Check className="w-2.5 h-2.5 text-white" strokeWidth={4} />
                                                 </div>
                                                 <span className="text-xs text-slate-300 font-medium leading-snug">{feature}</span>
@@ -415,7 +444,13 @@ export function Pricing() {
                                     </div>
                                     <button
                                         onClick={() => handleSubscribe(tier.name)}
-                                        className="w-full py-3 rounded-xl font-bold uppercase tracking-widest text-sm transition-all bg-blue-600 text-white hover:bg-blue-700 shadow-md shadow-blue-500/30"
+                                        className={`w-full py-3.5 rounded-xl font-bold uppercase tracking-widest text-sm transition-all mt-auto
+                                            ${isElite
+                                                ? 'bg-gradient-to-r from-gold-600 via-gold-500 to-gold-600 text-white shadow-md shadow-gold-500/30'
+                                                : isPopular
+                                                    ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-md shadow-blue-500/30'
+                                                    : 'bg-white/10 text-white border border-white/10 hover:bg-white/20'
+                                            }`}
                                     >
                                         {t('pricing.ctaButton') !== 'pricing.ctaButton' ? t('pricing.ctaButton') : 'Start Trial'}
                                     </button>
@@ -423,70 +458,7 @@ export function Pricing() {
                             </div>
                         </motion.div>
                     );
-                })()}
-
-                {/* Compact row — Night Shift (0) + Elite (2) */}
-                <div className="flex gap-3">
-                    {([0, 2] as const).map(i => {
-                        const tier = pricingTiers[i];
-                        if (!tier) return null;
-                        const isElite = i === 2;
-                        const gc = getGlowColors(i);
-                        const disc = Math.round((parseInt(tier.price) || 0) * 0.9);
-                        return (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, y: 24 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: isElite ? 0.15 : 0.08, ease: [0.22, 1, 0.36, 1] }}
-                                className="flex-1 relative rounded-3xl solar-aura-glow border-transparent shadow-xl"
-                                style={{
-                                    // @ts-ignore
-                                    '--border-color': gc.border, '--border-glow': gc.glow, '--glow-color': gc.shadow,
-                                }}
-                            >
-                                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30">
-                                    <div className={`text-[9px] font-bold uppercase tracking-widest py-1.5 px-4 rounded-full whitespace-nowrap ${isElite ? 'bg-slate-900 text-gold-200 border border-gold-500/40 shadow-[0_4px_25px_rgba(210,168,85,0.4)]' : 'bg-slate-700 text-white border border-slate-500/30'}`}>
-                                        {isElite ? t('pricing.completeSolution') : t('pricing.essentiel')}
-                                    </div>
-                                </div>
-                                <div className="absolute inset-0 z-0 rounded-3xl overflow-hidden">
-                                    <div className="premium-border-animate" />
-                                </div>
-                                <div className="relative z-10 m-[2px] bg-white rounded-[22px] overflow-hidden h-full flex flex-col">
-                                    {isElite && <div className="absolute inset-0 bg-gradient-to-b from-gold-500/10 to-transparent pointer-events-none z-0" />}
-                                    {!isElite && <div className="absolute inset-0 bg-gradient-to-b from-slate-500/5 to-transparent pointer-events-none z-0" />}
-                                    <div className="relative p-3.5 pb-2.5">
-                                        <h4 className={`text-sm font-bold mb-1 ${isElite ? 'text-gradient-gold' : 'text-slate-900'}`}>{tier.name}</h4>
-                                        <div className="flex items-baseline">
-                                            <span className={`text-2xl font-serif ${isElite ? 'text-gradient-gold' : 'text-slate-900'}`}>${isYearly ? disc : tier.price}</span>
-                                            <span className="text-slate-500 ml-1 text-[10px] italic">/mo</span>
-                                        </div>
-                                    </div>
-                                    <div className="bg-slate-900 p-3.5 flex-grow flex flex-col">
-                                        <div className="space-y-1.5 mb-3 flex-grow">
-                                            {tier.features?.slice(0, 3).map((feature: string, j: number) => (
-                                                <div key={j} className="flex items-start">
-                                                    <div className="w-3 h-3 rounded-full flex items-center justify-center mr-1.5 shrink-0 mt-0.5 bg-slate-800 border border-slate-700">
-                                                        <Check className="w-1.5 h-1.5 text-white" strokeWidth={4} />
-                                                    </div>
-                                                    <span className="text-[10px] text-slate-300 leading-snug">{feature}</span>
-                                                </div>
-                                            ))}
-                                        </div>
-                                        <button
-                                            onClick={() => handleSubscribe(tier.name)}
-                                            className={`w-full py-2 rounded-xl font-bold uppercase tracking-widest text-[9px] transition-all ${isElite ? 'bg-gradient-to-r from-gold-600 via-gold-500 to-gold-600 text-white' : 'bg-white/10 text-white border border-white/10 hover:bg-white/20'}`}
-                                        >
-                                            {t('pricing.ctaButton') !== 'pricing.ctaButton' ? t('pricing.ctaButton') : 'Start Trial'}
-                                        </button>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        );
-                    })}
-                </div>
+                })}
             </div>
 
             {/* ── DESKTOP: existing grid ── */}
