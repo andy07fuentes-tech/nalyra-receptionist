@@ -120,9 +120,7 @@ export function Pricing() {
     const navigate = useNavigate();
 
     const sectionRef = useRef<HTMLDivElement>(null);
-    const scrollRef = useRef<HTMLDivElement>(null);
     const [isYearly, setIsYearly] = useState(false);
-    const [activeIndex, setActiveIndex] = useState(1);
 
     const handleSubscribe = (planName: string) => {
         navigate('/onboarding', {
@@ -146,46 +144,6 @@ export function Pricing() {
         elements?.forEach((el) => observer.observe(el));
         return () => observer.disconnect();
     }, []);
-
-    // Scroll mobile carousel to popular card on mount
-    useEffect(() => {
-        const container = scrollRef.current;
-        if (!container || window.innerWidth >= 768) return;
-        setTimeout(() => {
-            const cards = container.querySelectorAll('[data-card]');
-            const card = cards[1] as HTMLElement;
-            if (!card) return;
-            const left = card.offsetLeft - (container.offsetWidth - card.offsetWidth) / 2;
-            container.scrollTo({ left, behavior: 'instant' as ScrollBehavior });
-        }, 50);
-    }, []);
-
-    const scrollToCard = (index: number) => {
-        const container = scrollRef.current;
-        if (!container) return;
-        const cards = container.querySelectorAll('[data-card]');
-        const card = cards[index] as HTMLElement;
-        if (!card) return;
-        const left = card.offsetLeft - (container.offsetWidth - card.offsetWidth) / 2;
-        container.scrollTo({ left, behavior: 'smooth' });
-        setActiveIndex(index);
-    };
-
-    const handleScroll = () => {
-        const container = scrollRef.current;
-        if (!container) return;
-        const cards = container.querySelectorAll('[data-card]');
-        const containerCenter = container.scrollLeft + container.offsetWidth / 2;
-        let closest = 0;
-        let minDist = Infinity;
-        cards.forEach((card, i) => {
-            const el = card as HTMLElement;
-            const cardCenter = el.offsetLeft + el.offsetWidth / 2;
-            const dist = Math.abs(cardCenter - containerCenter);
-            if (dist < minDist) { minDist = dist; closest = i; }
-        });
-        setActiveIndex(closest);
-    };
 
     const tiers: any[] = t('pricing.tiers') as any;
     const pricingTiers = Array.isArray(tiers) && tiers.length === 3 ? tiers : [];
@@ -401,53 +359,133 @@ export function Pricing() {
                 </div>
             </div>
 
-            {/* ── MOBILE: swipe carousel ── */}
-            <div className="md:hidden overflow-hidden mt-16">
-                <div
-                    ref={scrollRef}
-                    onScroll={handleScroll}
-                    className="flex overflow-x-auto snap-x snap-mandatory gap-4 px-[9vw] pb-4 scrollbar-hide"
-                    style={{ WebkitOverflowScrolling: 'touch' }}
-                >
-                    {pricingTiers.map((tier: any, i: number) => {
-                        const glowColors = getGlowColors(i);
+            {/* ── MOBILE: featured layout — Co-Pilot on top, Night Shift + Elite below ── */}
+            <div className="md:hidden mt-16 px-4 space-y-4">
+                {/* Featured card — Co-Pilot (popular, index 1) */}
+                {pricingTiers[1] && (() => {
+                    const tier = pricingTiers[1];
+                    const gc = getGlowColors(1);
+                    const disc = Math.round((parseInt(tier.price) || 0) * 0.9);
+                    return (
+                        <motion.div
+                            initial={{ opacity: 0, y: 24 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                            className="relative rounded-3xl solar-aura-glow border-transparent shadow-2xl"
+                            style={{
+                                // @ts-ignore
+                                '--border-color': gc.border, '--border-glow': gc.glow, '--glow-color': gc.shadow,
+                            }}
+                        >
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30">
+                                <div className="bg-blue-600 text-white text-[10px] font-bold uppercase tracking-widest py-2 px-8 rounded-full shadow-[0_4px_25px_rgba(0,210,255,0.6)] whitespace-nowrap border border-blue-400/30">
+                                    {t('pricing.bestValue')}
+                                </div>
+                            </div>
+                            <div className="absolute inset-0 z-0 rounded-3xl overflow-hidden">
+                                <div className="premium-border-animate" />
+                            </div>
+                            <div className="relative z-10 m-[2px] bg-white rounded-[22px] overflow-hidden">
+                                <div className="absolute inset-0 bg-gradient-to-b from-blue-500/10 to-transparent pointer-events-none z-0" />
+                                <div className="relative p-5 pb-4">
+                                    <h4 className="text-lg font-bold text-slate-900 mb-1">{tier.name}</h4>
+                                    <div className="flex items-baseline">
+                                        <span className="text-3xl font-serif text-slate-900">${isYearly ? disc : tier.price}</span>
+                                        <span className="text-slate-900 ml-2 font-bold italic text-sm">{t('pricing.cadMonth')}</span>
+                                    </div>
+                                    {isYearly ? (
+                                        <div className="text-[11px] font-bold italic text-slate-600 mt-0.5">
+                                            {t('pricing.annualBillingNotice', { price: disc * 10 })}
+                                        </div>
+                                    ) : tier.weeklyNote ? (
+                                        <div className="text-[11px] italic text-slate-500 mt-0.5">({tier.weeklyNote})</div>
+                                    ) : null}
+                                </div>
+                                <div className="bg-slate-900 p-5">
+                                    <div className="space-y-2 mb-4">
+                                        {tier.features?.slice(0, 4).map((feature: string, j: number) => (
+                                            <div key={j} className="flex items-start">
+                                                <div className="w-4 h-4 rounded-full flex items-center justify-center mr-2.5 shrink-0 bg-blue-600/50 border border-blue-500">
+                                                    <Check className="w-2.5 h-2.5 text-white" strokeWidth={4} />
+                                                </div>
+                                                <span className="text-xs text-slate-300 font-medium leading-snug">{feature}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <button
+                                        onClick={() => handleSubscribe(tier.name)}
+                                        className="w-full py-3 rounded-xl font-bold uppercase tracking-widest text-sm transition-all bg-blue-600 text-white hover:bg-blue-700 shadow-md shadow-blue-500/30"
+                                    >
+                                        {t('pricing.ctaButton') !== 'pricing.ctaButton' ? t('pricing.ctaButton') : 'Start Trial'}
+                                    </button>
+                                </div>
+                            </div>
+                        </motion.div>
+                    );
+                })()}
+
+                {/* Compact row — Night Shift (0) + Elite (2) */}
+                <div className="flex gap-3">
+                    {([0, 2] as const).map(i => {
+                        const tier = pricingTiers[i];
+                        if (!tier) return null;
+                        const isElite = i === 2;
+                        const gc = getGlowColors(i);
+                        const disc = Math.round((parseInt(tier.price) || 0) * 0.9);
                         return (
                             <motion.div
                                 key={i}
-                                data-card={String(i)}
-                                animate={{
-                                    scale: i === activeIndex ? 1 : 0.93,
-                                    opacity: i === activeIndex ? 1 : 0.55,
-                                }}
-                                transition={{ duration: 0.3, ease: 'easeOut' }}
-                                className="snap-center flex-none w-[82vw] relative rounded-3xl flex flex-col group solar-aura-glow border-transparent shadow-2xl z-10"
+                                initial={{ opacity: 0, y: 24 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: isElite ? 0.15 : 0.08, ease: [0.22, 1, 0.36, 1] }}
+                                className="flex-1 relative rounded-3xl solar-aura-glow border-transparent shadow-xl"
                                 style={{
                                     // @ts-ignore
-                                    '--border-color': glowColors.border,
-                                    '--border-glow': glowColors.glow,
-                                    '--glow-color': glowColors.shadow,
+                                    '--border-color': gc.border, '--border-glow': gc.glow, '--glow-color': gc.shadow,
                                 }}
                             >
-                                {renderCardInner(tier, i)}
+                                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30">
+                                    <div className={`text-[9px] font-bold uppercase tracking-widest py-1.5 px-4 rounded-full whitespace-nowrap ${isElite ? 'bg-slate-900 text-gold-200 border border-gold-500/40 shadow-[0_4px_25px_rgba(210,168,85,0.4)]' : 'bg-slate-700 text-white border border-slate-500/30'}`}>
+                                        {isElite ? t('pricing.completeSolution') : t('pricing.essentiel')}
+                                    </div>
+                                </div>
+                                <div className="absolute inset-0 z-0 rounded-3xl overflow-hidden">
+                                    <div className="premium-border-animate" />
+                                </div>
+                                <div className="relative z-10 m-[2px] bg-white rounded-[22px] overflow-hidden h-full flex flex-col">
+                                    {isElite && <div className="absolute inset-0 bg-gradient-to-b from-gold-500/10 to-transparent pointer-events-none z-0" />}
+                                    {!isElite && <div className="absolute inset-0 bg-gradient-to-b from-slate-500/5 to-transparent pointer-events-none z-0" />}
+                                    <div className="relative p-3.5 pb-2.5">
+                                        <h4 className={`text-sm font-bold mb-1 ${isElite ? 'text-gradient-gold' : 'text-slate-900'}`}>{tier.name}</h4>
+                                        <div className="flex items-baseline">
+                                            <span className={`text-2xl font-serif ${isElite ? 'text-gradient-gold' : 'text-slate-900'}`}>${isYearly ? disc : tier.price}</span>
+                                            <span className="text-slate-500 ml-1 text-[10px] italic">/mo</span>
+                                        </div>
+                                    </div>
+                                    <div className="bg-slate-900 p-3.5 flex-grow flex flex-col">
+                                        <div className="space-y-1.5 mb-3 flex-grow">
+                                            {tier.features?.slice(0, 3).map((feature: string, j: number) => (
+                                                <div key={j} className="flex items-start">
+                                                    <div className="w-3 h-3 rounded-full flex items-center justify-center mr-1.5 shrink-0 mt-0.5 bg-slate-800 border border-slate-700">
+                                                        <Check className="w-1.5 h-1.5 text-white" strokeWidth={4} />
+                                                    </div>
+                                                    <span className="text-[10px] text-slate-300 leading-snug">{feature}</span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                        <button
+                                            onClick={() => handleSubscribe(tier.name)}
+                                            className={`w-full py-2 rounded-xl font-bold uppercase tracking-widest text-[9px] transition-all ${isElite ? 'bg-gradient-to-r from-gold-600 via-gold-500 to-gold-600 text-white' : 'bg-white/10 text-white border border-white/10 hover:bg-white/20'}`}
+                                        >
+                                            {t('pricing.ctaButton') !== 'pricing.ctaButton' ? t('pricing.ctaButton') : 'Start Trial'}
+                                        </button>
+                                    </div>
+                                </div>
                             </motion.div>
                         );
                     })}
-                </div>
-
-                {/* Dots indicator */}
-                <div className="flex justify-center gap-2 mt-5 mb-2">
-                    {pricingTiers.map((_, i) => (
-                        <button
-                            key={i}
-                            onClick={() => scrollToCard(i)}
-                            className={`rounded-full transition-all duration-300 ${
-                                i === activeIndex
-                                    ? 'w-6 h-2 bg-blue-600'
-                                    : 'w-2 h-2 bg-slate-300'
-                            }`}
-                            aria-label={`Plan ${i + 1}`}
-                        />
-                    ))}
                 </div>
             </div>
 
