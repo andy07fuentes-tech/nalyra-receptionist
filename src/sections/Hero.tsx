@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Play } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
@@ -258,7 +258,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
                 className="inline-flex items-center gap-3 px-8 py-4 w-full h-full"
               >
                 <div className="flex flex-col items-center leading-none relative z-10 w-full text-center">
-                  <span className="text-[9px] tracking-[0.2em] text-white/50 mb-1 uppercase font-[Poppins]">{t('hero.ctaSubtitle')}</span>
+                  <span className="text-[9px] tracking-[0.2em] text-white mb-1 uppercase font-[Poppins]">{t('hero.ctaSubtitle')}</span>
                   <span className="font-serif text-lg md:text-xl text-white font-normal">{t('hero.ctaMain')}</span>
                 </div>
                 <div className="p-1.5 bg-white/10 rounded-lg transition-colors z-10 relative">
@@ -269,17 +269,29 @@ export function Hero({ isReady }: { isReady: boolean }) {
           </div>
 
           {/* Secondary CTAs */}
-          <div className={`mt-6 flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-700 ease-out ${phase >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: '0.6s' }}>
-            <GradientButton
-              variant="variant"
-              onClick={() => scrollToSection('#video-demo')}
-              className="min-w-[180px] border-0 !rounded-full py-3"
-              aria-label={t('hero.videoDemo') as string}
-            >
-              <span className="font-serif text-lg text-white flex items-center justify-center gap-2 font-normal hover:scale-105 transition-transform">
-                {t('hero.videoDemo')}
+          <div className={`mt-6 flex flex-col items-center justify-center gap-4 transition-all duration-700 ease-out ${phase >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: '0.6s' }}>
+
+            {/* Demo — pulsing ring + play icon + label */}
+            <div className="flex flex-col items-center gap-2">
+              <span className="text-[9px] text-white/90 tracking-[0.18em] uppercase font-sans font-medium">
+                Voir comment ça marche
               </span>
-            </GradientButton>
+              <div className="relative">
+                <span className="absolute inset-0 rounded-full bg-blue-500/20 animate-ping" style={{ animationDuration: '2.2s' }} />
+                <span className="absolute inset-0 rounded-full bg-blue-400/12 animate-ping" style={{ animationDuration: '2.2s', animationDelay: '1.1s' }} />
+                <GradientButton
+                  variant="variant"
+                  onClick={() => scrollToSection('#video-demo')}
+                  className="relative z-10 min-w-[180px] border-0 !rounded-full py-3"
+                  aria-label={t('hero.videoDemo') as string}
+                >
+                  <span className="font-serif text-lg text-white flex items-center justify-center gap-2.5 font-normal hover:scale-105 transition-transform">
+                    <Play className="w-3.5 h-3.5 fill-white text-white shrink-0" />
+                    {t('hero.videoDemo')}
+                  </span>
+                </GradientButton>
+              </div>
+            </div>
 
             <GradientButton
               variant="variant"
