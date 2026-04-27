@@ -114,24 +114,24 @@ export default function OnboardingPage() {
             <main className="pt-32 pb-20 px-6 max-w-7xl mx-auto min-h-[calc(100vh-80px)] flex items-center justify-center">
 
                 {step === 1 && (
-                    <div className="grid lg:grid-cols-12 gap-16 items-center w-full step-content">
-                        <div className="lg:col-span-5 space-y-8">
+                    <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center w-full step-content">
+                        <div className="lg:col-span-5 space-y-5 lg:space-y-8 px-2 lg:px-0">
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-600/10 border border-blue-500/20 text-blue-600 text-xs font-medium">
                                 <Search className="w-3 h-3" />
                                 {t('onboarding.step1.badge') as string}
                             </div>
                             <div>
-                                <h1 className="font-serif text-4xl md:text-5xl leading-tight mb-4 text-slate-900">
+                                <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl leading-tight mb-3 text-slate-900">
                                     {t('onboarding.step1.title') as string} <br />
                                     <span className="text-blue-600 italic">{t('onboarding.step1.titleHighlight') as string}</span>
                                 </h1>
-                                <p className="text-slate-500 text-base leading-relaxed max-w-md">
+                                <p className="hidden sm:block text-slate-500 text-base leading-relaxed max-w-md">
                                     {t('onboarding.step1.description') as string}
                                 </p>
                             </div>
                         </div>
                         <div className="lg:col-span-7">
-                            <div className="relative p-8 md:p-12 rounded-3xl bg-white border border-slate-200 shadow-xl">
+                            <div className="relative p-6 md:p-12 rounded-3xl bg-white border border-slate-200 shadow-xl">
                                 <div className="space-y-6">
                                     <div className="relative">
                                         <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
@@ -192,7 +192,7 @@ export default function OnboardingPage() {
                             </h2>
                             <p className="text-slate-500">{t('onboarding.step2.description') as string}</p>
                         </div>
-                        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
+                        <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto items-stretch px-1 md:px-0">
                             {tiers.map((tier: any, i: number) => {
                                 const isSelected = selectedPlan === tier.name;
                                 const isPopular = tier.isPopular === true || tier.isPopular === 'true' || i === 1;
