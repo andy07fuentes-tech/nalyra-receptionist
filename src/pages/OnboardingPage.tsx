@@ -38,8 +38,8 @@ export default function OnboardingPage() {
 
     useEffect(() => {
         gsap.fromTo('.step-content',
-            { opacity: 0, x: 20 },
-            { opacity: 1, x: 0, duration: 0.6, ease: 'power2.out' }
+            { opacity: 0, y: 12 },
+            { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }
         );
     }, [step]);
 
@@ -82,7 +82,7 @@ export default function OnboardingPage() {
     };
 
     return (
-        <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-blue-500/30">
+        <div className="min-h-screen overflow-x-hidden bg-slate-50 text-slate-900 font-sans selection:bg-blue-500/30">
             {/* Navigation */}
             <nav className="fixed top-0 inset-x-0 p-6 z-50 flex items-center justify-between border-b border-slate-200 bg-white/80 backdrop-blur-md">
                 <Link to="/" className="flex items-center gap-2 group">
@@ -95,7 +95,7 @@ export default function OnboardingPage() {
                 <div className="flex flex-col items-center gap-2">
                     <div className="flex items-center gap-2">
                         {[1, 2, 3].map((s) => (
-                            <div key={s} className={`h-1.5 w-16 rounded-full transition-all duration-500 ${s <= step ? 'bg-blue-600 shadow-[0_0_15px_rgba(37,99,235,0.2)]' : 'bg-slate-200'}`} />
+                            <div key={s} className={`h-1.5 w-8 sm:w-16 rounded-full transition-all duration-500 ${s <= step ? 'bg-blue-600 shadow-[0_0_15px_rgba(37,99,235,0.2)]' : 'bg-slate-200'}`} />
                         ))}
                     </div>
                     <span className="text-[10px] text-slate-400 uppercase tracking-[0.3em] font-medium">
@@ -105,7 +105,7 @@ export default function OnboardingPage() {
 
                 <div className="flex items-center gap-6">
                     <LanguageToggle isScrolled={true} />
-                    <button className="text-slate-400 hover:text-slate-900 transition-colors text-xs font-medium underline underline-offset-4">
+                    <button className="hidden sm:block text-slate-400 hover:text-slate-900 transition-colors text-xs font-medium underline underline-offset-4">
                         {t('onboarding.saveExit') as string}
                     </button>
                 </div>
@@ -212,8 +212,8 @@ export default function OnboardingPage() {
                                         className={`relative rounded-3xl overflow-hidden border transition-all duration-500 text-left flex flex-col group h-full
                                             ${isSelected ? 'ring-2 ring-blue-600 ring-offset-4' : ''}
                                             solar-aura-glow
-                                            ${isPopular ? 'md:-translate-y-2 scale-[1.03] z-10' : ''}
-                                            ${isElite ? 'scale-[1.03] z-10' : ''}`}
+                                            ${isPopular ? 'md:-translate-y-2 md:scale-[1.03] z-10' : ''}
+                                            ${isElite ? 'md:scale-[1.03] z-10' : ''}`}
                                         style={{
                                             // @ts-ignore
                                             '--border-color': glowColors.border,
