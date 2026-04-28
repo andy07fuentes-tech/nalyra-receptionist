@@ -100,7 +100,7 @@ export function VideoPromo() {
                         {/* Frame Wrapper */}
                         <div className="relative z-10 p-2 md:p-3 rounded-2xl bg-gradient-to-br from-white/10 to-transparent border border-white/10 backdrop-blur-sm shadow-2xl overflow-hidden aspect-video">
                             {/* Video Placeholder Background */}
-                            <div className="absolute inset-0 bg-black flex items-center justify-center overflow-hidden rounded-xl">
+                            <div className="absolute inset-0 bg-wine-900 flex items-center justify-center overflow-hidden rounded-xl">
                                 {/* Video Element (Hidden if URL empty) */}
                                 <video
                                     autoPlay

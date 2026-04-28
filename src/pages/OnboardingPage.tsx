@@ -174,7 +174,7 @@ export default function OnboardingPage() {
                                     <button
                                         disabled={!selectedBusiness}
                                         onClick={handleNext}
-                                        className={`w-full h-14 rounded-xl flex items-center justify-center gap-3 font-bold uppercase tracking-widest transition-all ${selectedBusiness ? 'bg-slate-900 hover:bg-black text-white shadow-xl shadow-slate-900/10' : 'bg-slate-200 text-slate-500 cursor-not-allowed'}`}
+                                        className={`w-full h-14 rounded-xl flex items-center justify-center gap-3 font-bold uppercase tracking-widest transition-all ${selectedBusiness ? 'bg-slate-900 hover:bg-wine-900 text-white shadow-xl shadow-slate-900/10' : 'bg-slate-200 text-slate-500 cursor-not-allowed'}`}
                                     >
                                         {t('onboarding.step1.continueButton') as string}
                                         <ArrowRight className="w-5 h-5" />
@@ -320,7 +320,7 @@ export default function OnboardingPage() {
                             <button
                                 disabled={!selectedPlan}
                                 onClick={handleNext}
-                                className={`w-full sm:w-auto px-8 sm:px-12 py-4 sm:py-3 rounded-xl flex items-center justify-center gap-3 font-bold uppercase tracking-widest transition-all ${selectedPlan ? 'bg-slate-900 hover:bg-black text-white shadow-xl shadow-slate-900/10' : 'bg-slate-200 text-slate-500 cursor-not-allowed'}`}
+                                className={`w-full sm:w-auto px-8 sm:px-12 py-4 sm:py-3 rounded-xl flex items-center justify-center gap-3 font-bold uppercase tracking-widest transition-all ${selectedPlan ? 'bg-slate-900 hover:bg-wine-900 text-white shadow-xl shadow-slate-900/10' : 'bg-slate-200 text-slate-500 cursor-not-allowed'}`}
                             >
                                 {t('onboarding.step2.continueButton') as string}
                                 <ArrowRight className="w-5 h-5" />
@@ -357,7 +357,7 @@ export default function OnboardingPage() {
                             <button
                                 onClick={handleSubmit}
                                 disabled={!phoneNumber || isSubmitting}
-                                className={`w-full h-14 sm:h-16 rounded-xl font-bold uppercase tracking-widest shadow-xl transition-all flex items-center justify-center gap-4 ${!phoneNumber || isSubmitting ? 'bg-slate-200 text-slate-500 cursor-not-allowed' : 'bg-slate-900 hover:bg-black text-white shadow-slate-900/20'}`}
+                                className={`w-full h-14 sm:h-16 rounded-xl font-bold uppercase tracking-widest shadow-xl transition-all flex items-center justify-center gap-4 ${!phoneNumber || isSubmitting ? 'bg-slate-200 text-slate-500 cursor-not-allowed' : 'bg-slate-900 hover:bg-wine-900 text-white shadow-slate-900/20'}`}
                             >
                                 {isSubmitting ? t('onboarding.step3.submittingButton') as string : t('onboarding.step3.submitButton') as string}
                                 <ArrowRight className="w-5 h-5" />
@@ -373,7 +373,7 @@ export default function OnboardingPage() {
 
                 {step === 4 && (
                     <div className="max-w-xl w-full step-content text-center px-4 sm:px-0">
-                        <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-green-50 border border-green-100 flex items-center justify-center mx-auto mb-6 sm:mb-8 animate-bounce shadow-sm">
+                        <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-green-50 border border-green-100 flex items-center justify-center mx-auto mb-6 sm:mb-8 animate-pulse shadow-sm">
                             <CheckCircle2 className="w-10 h-10 sm:w-12 sm:h-12 text-green-600" />
                         </div>
                         <h2 className="font-serif text-4xl sm:text-5xl text-slate-900 mb-4 sm:mb-6">

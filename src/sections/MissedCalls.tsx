@@ -142,7 +142,7 @@ export function MissedCalls() {
                             ))}
                         </h2>
                         
-                        <p className="content-entry text-xl md:text-2xl font-medium mb-12 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent max-w-lg">
+                        <p className="content-entry text-xl md:text-2xl font-medium mb-12 text-blue-700 max-w-lg">
                             {t('missedCalls.vision')}
                         </p>
                         

@@ -56,7 +56,7 @@ export function CinematicShowcase() {
                             
                             <div className={`${step.id % 2 === 0 ? 'md:order-1' : ''} relative group`}>
                                 <div className="absolute -inset-4 bg-blue-500/10 rounded-[40px] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                                <div className="relative aspect-video rounded-[32px] overflow-hidden border border-white/10 shadow-2xl bg-black">
+                                <div className="relative aspect-video rounded-[32px] overflow-hidden border border-white/10 shadow-2xl bg-wine-900">
                                     <OptimizedVideo 
                                         src={step.video} 
                                         preload="auto"
