@@ -226,7 +226,7 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
         className="text-center px-6 z-20 opacity-0" 
       >
         <h1 ref={brandNameRef} className="font-serif text-2xl md:text-4xl text-dark-theme tracking-[0.1em] mb-1 uppercase">
-          {t('preloader.brandName').split('').map((char, i) => (
+          {t('preloader.brandName').split('').map((char: string, i: number) => (
             <span key={i} className="brand-char inline-block">{char === ' ' ? ' ' : char}</span>
           ))}
         </h1>
