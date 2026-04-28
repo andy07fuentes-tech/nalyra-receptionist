@@ -791,6 +791,9 @@
       animation: none;
       box-shadow: none;
     }
+    .premium-border-animate {
+      display: none;
+    }
   }
 
   .text-gradient-gold {

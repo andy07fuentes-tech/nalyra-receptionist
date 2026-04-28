@@ -111,7 +111,7 @@ export default function OnboardingPage() {
                 </div>
             </nav>
 
-            <main className="pt-32 pb-20 px-6 max-w-7xl mx-auto min-h-[calc(100vh-80px)] flex items-center justify-center">
+            <main className="pt-32 pb-20 px-6 max-w-7xl mx-auto min-h-[calc(100vh-80px)] flex items-start md:items-center justify-center">
 
                 {step === 1 && (
                     <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center w-full step-content">
@@ -185,12 +185,12 @@ export default function OnboardingPage() {
                 )}
 
                 {step === 2 && (
-                    <div className="w-full step-content space-y-12">
+                    <div className="w-full step-content space-y-6 md:space-y-12">
                         <div className="text-center max-w-2xl mx-auto">
-                            <h2 className="font-serif text-4xl md:text-5xl mb-4 text-slate-900">
+                            <h2 className="font-serif text-2xl md:text-5xl mb-4 text-slate-900">
                                 {t('onboarding.step2.title') as string} <span className="text-blue-600 italic">{t('onboarding.step2.titleHighlight') as string}</span>
                             </h2>
-                            <p className="text-slate-500">{t('onboarding.step2.description') as string}</p>
+                            <p className="hidden sm:block text-slate-500">{t('onboarding.step2.description') as string}</p>
                         </div>
                         <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto items-stretch px-4 md:px-0">
                             {tiers.map((tier: any, i: number) => {
@@ -227,7 +227,7 @@ export default function OnboardingPage() {
                                         </div>
 
                                         <div className="relative z-10 flex flex-col flex-grow m-[2px] bg-white rounded-[22px] overflow-hidden h-full">
-                                            <div className={`p-8 pb-4 relative overflow-hidden ${isElite ? 'bg-white/40 backdrop-blur-xl' : 'bg-white'}`}>
+                                            <div className={`p-5 pb-3 md:p-8 md:pb-4 relative overflow-hidden ${isElite ? 'bg-white/40 backdrop-blur-xl' : 'bg-white'}`}>
                                                 {isPopular && (
                                                     <div className="absolute inset-0 bg-gradient-to-b from-blue-500/10 to-transparent pointer-events-none" />
                                                 )}
@@ -282,7 +282,7 @@ export default function OnboardingPage() {
                                                 )}
                                             </div>
 
-                                            <div className="bg-slate-900 p-8 flex-grow flex flex-col h-full">
+                                            <div className="bg-slate-900 p-5 md:p-8 flex-grow flex flex-col h-full">
                                                 <p className={`text-xs text-slate-400 mb-8 leading-relaxed border-l-2 pl-4 ${isElite ? 'border-gold-500/40' : 'border-blue-500/30'}`}>{tier.description}</p>
                                                 <div className="space-y-4 mb-8 flex-grow">
                                                     {tier.features?.map((f: string, j: number) => (
@@ -308,7 +308,7 @@ export default function OnboardingPage() {
                                 );
                             })}
                         </div>
-                        <div className="flex justify-center gap-6 mt-12">
+                        <div className="flex justify-center gap-6 mt-4 md:mt-12">
                             <button onClick={handleBack} className="px-8 py-3 text-slate-500 hover:text-slate-900 transition-colors uppercase text-xs font-bold tracking-widest">
                                 {t('onboarding.step2.backButton') as string}
                             </button>
