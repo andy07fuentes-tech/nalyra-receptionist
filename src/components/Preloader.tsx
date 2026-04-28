@@ -54,6 +54,8 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const buttonContainerRef = useRef<HTMLDivElement>(null);
   const brandRef = useRef<HTMLDivElement>(null);
+  const brandNameRef = useRef<HTMLHeadingElement>(null);
+  const subnameRef = useRef<HTMLParagraphElement>(null);
   const lineContainerRef = useRef<HTMLDivElement>(null);
   const lineRef = useRef<HTMLDivElement>(null);
   const lightRayRef = useRef<HTMLDivElement>(null);
@@ -64,28 +66,42 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
         onComplete: () => setPhase('ready')
       });
 
-      // Phase 1: Reveal Text and Line Container
-      tl.fromTo([brandRef.current, lineContainerRef.current],
-        { opacity: 0, y: 10 },
-        { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }
+      // Show container immediately
+      tl.set(brandRef.current, { opacity: 1 });
+
+      // Luminous character blur reveal — "ANVELA" letter by letter
+      const chars = brandNameRef.current?.querySelectorAll('.brand-char');
+      if (chars?.length) {
+        tl.fromTo(chars,
+          { opacity: 0, filter: 'blur(20px)' },
+          { opacity: 1, filter: 'blur(0px)', duration: 0.9, ease: 'power2.out', stagger: 0.08 },
+          0
+        );
+      }
+
+      // Subname bloom (whole element — gradient-clip breaks if split into spans)
+      tl.fromTo(subnameRef.current,
+        { opacity: 0, filter: 'blur(12px)', y: 4 },
+        { opacity: 1, filter: 'blur(0px)', y: 0, duration: 0.8, ease: 'power2.out' },
+        0.35
       );
 
-      // Phase 1: Animate Line Width (synchronous with the 3s total duration)
+      // Line container fade-in + fill
+      tl.fromTo(lineContainerRef.current,
+        { opacity: 0 },
+        { opacity: 1, duration: 0.3 },
+        0.2
+      );
       tl.fromTo(lineRef.current,
         { width: '0%' },
         { width: '100%', duration: 1.8, ease: 'none' },
-        0.2 // Start earlier
+        0.2
       );
 
-      // Phase 1: Fade out both
+      // Fade out both at 2.4s
       tl.to([brandRef.current, lineContainerRef.current],
-        { 
-          opacity: 0, 
-          y: -10, 
-          duration: 0.6, 
-          ease: 'power2.in' 
-        },
-        2.4 // Fade out at the 2.4s mark of the 3s total
+        { opacity: 0, y: -10, duration: 0.6, ease: 'power2.in' },
+        2.4
       );
     }
   }, [phase]);
@@ -209,10 +225,12 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
         ref={brandRef}
         className="text-center px-6 z-20 opacity-0" 
       >
-        <h1 className="font-serif text-2xl md:text-4xl text-dark-theme tracking-[0.1em] mb-1 uppercase">
-          {t('preloader.brandName')}
+        <h1 ref={brandNameRef} className="font-serif text-2xl md:text-4xl text-dark-theme tracking-[0.1em] mb-1 uppercase">
+          {t('preloader.brandName').split('').map((char, i) => (
+            <span key={i} className="brand-char inline-block">{char === ' ' ? ' ' : char}</span>
+          ))}
         </h1>
-        <p className="font-script text-3xl md:text-4xl bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent italic">
+        <p ref={subnameRef} className="font-script text-3xl md:text-4xl bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent italic">
           {t('preloader.brandSubname')}
         </p>
       </div>
