@@ -83,7 +83,7 @@ export default function OnboardingPage() {
     };
 
     return (
-        <div className="min-h-[100dvh] w-full max-w-[100vw] overflow-x-hidden bg-slate-50 text-slate-900 font-sans selection:bg-blue-500/30">
+        <div className="min-h-[100dvh] w-full max-w-[100vw] overflow-x-clip bg-slate-50 text-slate-900 font-sans selection:bg-blue-500/30">
             {/* Navigation */}
             <nav className="fixed top-0 inset-x-0 p-4 sm:p-6 z-50 flex items-center justify-between border-b border-slate-200 bg-white/80 backdrop-blur-md">
                 <Link to="/" className="flex items-center gap-2 group z-10">
@@ -152,7 +152,7 @@ export default function OnboardingPage() {
                                                         className="w-full p-4 flex items-start gap-3 hover:bg-slate-50 text-left border-b border-slate-100"
                                                     >
                                                         <MapPin className="w-4 h-4 text-blue-600 mt-1 shrink-0" />
-                                                        <span className="text-sm text-slate-700 break-words">{s.description}</span>
+                                                        <span className="text-sm text-slate-700 break-words flex-1 overflow-hidden">{s.description}</span>
                                                     </button>
                                                 ))}
                                             </div>
@@ -193,7 +193,7 @@ export default function OnboardingPage() {
                             </h2>
                             <p className="text-slate-500 text-sm sm:text-base">{t('onboarding.step2.description') as string}</p>
                         </div>
-                        <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto items-stretch px-4 md:px-0">
+                        <div className="grid md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto items-stretch px-0 sm:px-4 md:px-0">
                             {tiers.map((tier: any, i: number) => {
                                 const isSelected = selectedPlan === tier.name;
                                 const isPopular = tier.isPopular === true || tier.isPopular === 'true' || i === 1;
@@ -228,7 +228,7 @@ export default function OnboardingPage() {
                                         </div>
 
                                         <div className="relative z-10 flex flex-col flex-grow m-[2px] bg-white rounded-[22px] overflow-hidden h-full">
-                                            <div className={`p-5 pb-3 md:p-8 md:pb-4 relative overflow-hidden ${isElite ? 'bg-white/40 backdrop-blur-xl' : 'bg-white'}`}>
+                                            <div className={`p-4 sm:p-5 pb-3 md:p-8 md:pb-4 relative overflow-hidden ${isElite ? 'bg-white/40 backdrop-blur-xl' : 'bg-white'}`}>
                                                 {isPopular && (
                                                     <div className="absolute inset-0 bg-gradient-to-b from-blue-500/10 to-transparent pointer-events-none" />
                                                 )}
@@ -258,15 +258,15 @@ export default function OnboardingPage() {
                                                 )}
 
                                                 {isSelected && (
-                                                    <div className="absolute top-4 right-4 w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center shadow-lg animate-in zoom-in duration-300">
-                                                        <Check className="w-4 h-4 text-white" strokeWidth={3} />
+                                                    <div className="absolute top-4 right-4 w-5 h-5 sm:w-6 sm:h-6 bg-blue-600 rounded-full flex items-center justify-center shadow-lg animate-in zoom-in duration-300">
+                                                        <Check className="w-3 h-3 sm:w-4 sm:h-4 text-white" strokeWidth={3} />
                                                     </div>
                                                 )}
 
-                                                <h3 className={`text-xl font-bold mb-2 ${isElite ? 'text-gradient-gold' : 'text-slate-900'}`}>{tier.name}</h3>
+                                                <h3 className={`text-lg sm:text-xl font-bold mb-1 sm:mb-2 ${isElite ? 'text-gradient-gold' : 'text-slate-900'}`}>{tier.name}</h3>
                                                 <div className="flex items-baseline gap-1 mb-1">
-                                                    <span className={`text-4xl font-serif ${isElite ? 'text-gradient-gold' : 'text-slate-900'}`}>${tier.price}</span>
-                                                    <span className="text-slate-900 text-[10px] font-bold uppercase tracking-tight">{t('onboarding.step2.cadMonth') as string}</span>
+                                                    <span className={`text-3xl sm:text-4xl font-serif ${isElite ? 'text-gradient-gold' : 'text-slate-900'}`}>${tier.price}</span>
+                                                    <span className="text-slate-900 text-[9px] sm:text-[10px] font-bold uppercase tracking-tight">{t('onboarding.step2.cadMonth') as string}</span>
                                                 </div>
                                                 {tier.weeklyNote && (
                                                     <div className={`text-[10px] font-bold mb-2 italic lowercase mb-4 ${isElite ? 'text-gold-600' : 'text-slate-600'}`}>
@@ -283,15 +283,15 @@ export default function OnboardingPage() {
                                                 )}
                                             </div>
 
-                                            <div className="bg-slate-900 p-5 md:p-8 flex-grow flex flex-col h-full">
-                                                <p className={`text-xs text-slate-400 mb-8 leading-relaxed border-l-2 pl-4 ${isElite ? 'border-gold-500/40' : 'border-blue-500/30'}`}>{tier.description}</p>
-                                                <div className="space-y-4 mb-8 flex-grow">
+                                            <div className="bg-slate-900 p-4 sm:p-5 md:p-8 flex-grow flex flex-col h-full">
+                                                <p className={`text-xs text-slate-400 mb-6 sm:mb-8 leading-relaxed border-l-2 pl-4 ${isElite ? 'border-gold-500/40' : 'border-blue-500/30'}`}>{tier.description}</p>
+                                                <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 flex-grow">
                                                     {tier.features?.map((f: string, j: number) => (
                                                         <div key={j} className="flex items-start gap-3">
-                                                            <div className={`w-4 h-4 rounded-full flex items-center justify-center mt-0.5 shrink-0 border ${isElite ? 'bg-slate-800 border-slate-700' : isPopular ? 'bg-blue-600/50 border-blue-500' : 'bg-slate-800 border-slate-700'}`}>
-                                                                <Check className="w-3 h-3 text-white" strokeWidth={4} />
+                                                            <div className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full flex items-center justify-center mt-0.5 shrink-0 border ${isElite ? 'bg-slate-800 border-slate-700' : isPopular ? 'bg-blue-600/50 border-blue-500' : 'bg-slate-800 border-slate-700'}`}>
+                                                                <Check className="w-2 h-2 sm:w-3 sm:h-3 text-white" strokeWidth={4} />
                                                             </div>
-                                                            <span className="text-[10px] text-slate-300 font-medium leading-tight">{f}</span>
+                                                            <span className="text-[9px] sm:text-[10px] text-slate-300 font-medium leading-tight break-words flex-1">{f}</span>
                                                         </div>
                                                     ))}
                                                 </div>
