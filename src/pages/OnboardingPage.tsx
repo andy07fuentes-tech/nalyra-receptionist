@@ -83,7 +83,7 @@ export default function OnboardingPage() {
     };
 
     return (
-        <div className="min-h-[100dvh] w-full max-w-[100vw] overflow-x-clip bg-slate-50 text-slate-900 font-sans selection:bg-blue-500/30">
+        <div className="min-h-[100dvh] w-full max-w-full overflow-x-clip bg-slate-50 text-slate-900 font-sans selection:bg-blue-500/30">
             {/* Navigation */}
             <nav className="fixed top-0 inset-x-0 p-4 sm:p-6 z-50 flex items-center justify-between border-b border-slate-200 bg-white/80 backdrop-blur-md">
                 <Link to="/" className="flex items-center gap-2 group z-10">
