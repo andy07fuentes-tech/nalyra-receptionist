@@ -37,6 +37,7 @@ export default function OnboardingPage() {
     });
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         gsap.fromTo('.step-content',
             { opacity: 0, y: 12 },
             { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }
@@ -82,7 +83,7 @@ export default function OnboardingPage() {
     };
 
     return (
-        <div className="min-h-screen overflow-x-hidden bg-slate-50 text-slate-900 font-sans selection:bg-blue-500/30">
+        <div className="min-h-[100dvh] w-full max-w-[100vw] overflow-x-hidden bg-slate-50 text-slate-900 font-sans selection:bg-blue-500/30">
             {/* Navigation */}
             <nav className="fixed top-0 inset-x-0 p-4 sm:p-6 z-50 flex items-center justify-between border-b border-slate-200 bg-white/80 backdrop-blur-md">
                 <Link to="/" className="flex items-center gap-2 group z-10">
@@ -241,17 +242,17 @@ export default function OnboardingPage() {
                                                 )}
 
                                                 {isStandard && (
-                                                    <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-slate-700 text-white text-[8px] font-bold uppercase tracking-widest py-1.5 px-4 rounded-b-xl shadow-[0_4px_15px_rgba(71,85,105,0.4)]">
+                                                    <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-slate-700 text-white text-[7px] sm:text-[8px] font-bold uppercase tracking-widest py-1.5 px-3 sm:px-4 rounded-b-xl shadow-[0_4px_15px_rgba(71,85,105,0.4)] whitespace-nowrap w-max">
                                                         {t('pricing.essentiel') as string}
                                                     </div>
                                                 )}
                                                 {isPopular && !isElite && (
-                                                    <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[8px] font-bold uppercase tracking-widest py-1.5 px-4 rounded-b-xl shadow-[0_4px_15px_rgba(0,210,255,0.4)]">
+                                                    <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[7px] sm:text-[8px] font-bold uppercase tracking-widest py-1.5 px-3 sm:px-4 rounded-b-xl shadow-[0_4px_15px_rgba(0,210,255,0.4)] whitespace-nowrap w-max">
                                                         {t('pricing.bestValue') as string}
                                                     </div>
                                                 )}
                                                 {isElite && (
-                                                    <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-slate-900 text-gold-200 text-[8px] font-bold uppercase tracking-widest py-1.5 px-4 rounded-b-xl shadow-[0_4px_15px_rgba(210,168,85,0.4)] border-x border-b border-gold-500/30">
+                                                    <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-slate-900 text-gold-200 text-[7px] sm:text-[8px] font-bold uppercase tracking-widest py-1.5 px-3 sm:px-4 rounded-b-xl shadow-[0_4px_15px_rgba(210,168,85,0.4)] border-x border-b border-gold-500/30 whitespace-nowrap w-max">
                                                         {t('pricing.completeSolution') as string}
                                                     </div>
                                                 )}
