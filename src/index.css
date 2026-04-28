@@ -786,6 +786,13 @@
     animation: solar-pulse 6s ease-in-out infinite;
   }
 
+  @media (max-width: 767px) {
+    .solar-aura-glow {
+      animation: none;
+      box-shadow: none;
+    }
+  }
+
   .text-gradient-gold {
     background: linear-gradient(135deg, #fce07e, #d2a855, #a88644);
     -webkit-background-clip: text;

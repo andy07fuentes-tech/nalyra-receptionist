@@ -192,7 +192,7 @@ export default function OnboardingPage() {
                             </h2>
                             <p className="text-slate-500">{t('onboarding.step2.description') as string}</p>
                         </div>
-                        <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto items-stretch px-1 md:px-0">
+                        <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto items-stretch px-4 md:px-0">
                             {tiers.map((tier: any, i: number) => {
                                 const isSelected = selectedPlan === tier.name;
                                 const isPopular = tier.isPopular === true || tier.isPopular === 'true' || i === 1;
