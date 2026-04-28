@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Search, MapPin, ArrowRight, CheckCircle2, Building2, Sparkles, Check } from 'lucide-react';
+import { Search, MapPin, ArrowRight, CheckCircle2, Building2, Sparkles, Check, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import gsap from 'gsap';
 import usePlacesAutocomplete from "use-places-autocomplete";
@@ -193,7 +193,7 @@ export default function OnboardingPage() {
                             </h2>
                             <p className="text-slate-500 text-sm sm:text-base">{t('onboarding.step2.description') as string}</p>
                         </div>
-                        <div className="grid md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto items-stretch px-0 sm:px-4 md:px-0">
+                        <div className="grid md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto items-start md:items-stretch px-0 sm:px-4 md:px-0">
                             {tiers.map((tier: any, i: number) => {
                                 const isSelected = selectedPlan === tier.name;
                                 const isPopular = tier.isPopular === true || tier.isPopular === 'true' || i === 1;
@@ -281,9 +281,13 @@ export default function OnboardingPage() {
                                                         *{tier.setupFeeNote}
                                                     </div>
                                                 )}
+
+                                                <div className="md:hidden flex justify-center mt-4">
+                                                    <ChevronDown className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${isSelected ? 'rotate-180' : ''}`} />
+                                                </div>
                                             </div>
 
-                                            <div className="bg-slate-900 p-4 sm:p-5 md:p-8 flex-grow flex flex-col h-full">
+                                            <div className={`bg-slate-900 p-4 sm:p-5 md:p-8 flex-grow flex-col h-full ${isSelected ? 'flex' : 'hidden md:flex'}`}>
                                                 <p className={`text-xs text-slate-400 mb-6 sm:mb-8 leading-relaxed border-l-2 pl-4 ${isElite ? 'border-gold-500/40' : 'border-blue-500/30'}`}>{tier.description}</p>
                                                 <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 flex-grow">
                                                     {tier.features?.map((f: string, j: number) => (
