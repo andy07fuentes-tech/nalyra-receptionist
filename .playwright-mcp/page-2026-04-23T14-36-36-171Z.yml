@@ -1,0 +1,935 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - heading "Anvela" [level=1] [ref=e5]
+      - paragraph [ref=e6]: Communication Intelligente
+    - generic:
+      - generic:
+        - button "Lancer l'Expérience":
+          - generic:
+            - img
+            - text: Lancer l'Expérience
+      - paragraph: Expérience Initialisée
+  - generic [ref=e9]:
+    - navigation "Main navigation" [ref=e10]:
+      - generic [ref=e11]:
+        - button "Anvela" [ref=e13] [cursor=pointer]
+        - generic [ref=e14]:
+          - button "Anvela" [ref=e15] [cursor=pointer]
+          - generic [ref=e16]: Votre Réception Numérique 24/7
+        - generic [ref=e17]:
+          - button "Parler à Anvela" [ref=e18] [cursor=pointer]:
+            - img [ref=e19]
+            - text: Parler à Anvela
+          - link "Commencer":
+            - /url: /onboarding
+          - button "Mute" [ref=e21] [cursor=pointer]:
+            - img [ref=e22]
+          - button "Langue" [ref=e27] [cursor=pointer]:
+            - img [ref=e28]
+            - generic [ref=e31]: 🇫🇷
+            - generic [ref=e32]: fr
+    - main [ref=e33]:
+      - generic [ref=e35]:
+        - img
+        - generic [ref=e39]:
+          - generic [ref=e40]: L'Avenir de la Communication Commerciale
+          - heading "Votre Réceptionniste IA Intelligent" [level=1] [ref=e41]:
+            - generic [ref=e42]: Votre Réceptionniste
+            - generic [ref=e43]: IA Intelligent
+          - link "1er mois à -50% Commencer avec Anvela" [ref=e45] [cursor=pointer]:
+            - /url: /onboarding
+            - generic [ref=e46]:
+              - generic [ref=e47]: 1er mois à -50%
+              - generic [ref=e48]: Commencer avec Anvela
+            - img [ref=e50]
+          - generic [ref=e52]:
+            - button "Démo Vidéo" [ref=e53] [cursor=pointer]:
+              - generic [ref=e54]: Démo Vidéo
+            - button "Tarifs" [ref=e55] [cursor=pointer]:
+              - generic [ref=e56]: Tarifs
+          - generic [ref=e58]:
+            - generic [ref=e59]:
+              - generic [ref=e60]: 0%
+              - generic [ref=e61]: Taux de Réponse
+            - generic [ref=e62]:
+              - generic [ref=e63]: 0/7
+              - generic [ref=e64]: Toujours Disponible
+            - generic [ref=e65]:
+              - generic [ref=e66]: 0%
+              - generic [ref=e67]: Réduction des Coûts
+        - generic [ref=e70]: INTELLIGENT • EFFICACE • FIABLE
+      - generic [ref=e75]:
+        - generic [ref=e76]: IMPACT FINANCIER
+        - heading "C h a q u e a p p e l m a n q u é e s t u n e o p p o r t u n i t é p e r d u e ." [level=2] [ref=e77]:
+          - generic [ref=e78]:
+            - generic [ref=e79]: C
+            - generic [ref=e80]: h
+            - generic [ref=e81]: a
+            - generic [ref=e82]: q
+            - generic [ref=e83]: u
+            - generic [ref=e84]: e
+          - generic [ref=e85]:
+            - generic [ref=e86]: a
+            - generic [ref=e87]: p
+            - generic [ref=e88]: p
+            - generic [ref=e89]: e
+            - generic [ref=e90]: l
+          - generic [ref=e91]:
+            - generic [ref=e92]: m
+            - generic [ref=e93]: a
+            - generic [ref=e94]: "n"
+            - generic [ref=e95]: q
+            - generic [ref=e96]: u
+            - generic [ref=e97]: é
+          - generic [ref=e98]:
+            - generic [ref=e99]: e
+            - generic [ref=e100]: s
+            - generic [ref=e101]: t
+          - generic [ref=e102]:
+            - generic [ref=e103]: u
+            - generic [ref=e104]: "n"
+            - generic [ref=e105]: e
+          - generic [ref=e106]:
+            - generic [ref=e107]: o
+            - generic [ref=e108]: p
+            - generic [ref=e109]: p
+            - generic [ref=e110]: o
+            - generic [ref=e111]: r
+            - generic [ref=e112]: t
+            - generic [ref=e113]: u
+            - generic [ref=e114]: "n"
+            - generic [ref=e115]: i
+            - generic [ref=e116]: t
+            - generic [ref=e117]: é
+          - generic [ref=e118]:
+            - generic [ref=e119]: p
+            - generic [ref=e120]: e
+            - generic [ref=e121]: r
+            - generic [ref=e122]: d
+            - generic [ref=e123]: u
+            - generic [ref=e124]: e
+            - generic [ref=e125]: .
+        - paragraph [ref=e126]: Et si chaque entreprise pouvait se permettre de ne jamais manquer un appel ?
+        - link "Ne perdez plus d'argent" [ref=e127] [cursor=pointer]:
+          - /url: "#pricing"
+          - text: Ne perdez plus d'argent
+          - img [ref=e128]
+      - generic [ref=e137]:
+        - generic [ref=e139]:
+          - generic [ref=e140]: Expérience Client
+          - heading "01Disponibilité Radieuse" [level=3] [ref=e141]:
+            - generic [ref=e142]: "01"
+            - text: Disponibilité Radieuse
+          - paragraph [ref=e143]: Votre réceptionniste numérique ne connaît jamais de mauvaise journée. Chaque client est accueilli avec une chaleur constante et un professionnalisme bienveillant, 24h/24.
+        - generic [ref=e148]:
+          - generic [ref=e149]: Fiabilité Totale
+          - heading "02Zéro Absence, Zéro Interruption" [level=3] [ref=e150]:
+            - generic [ref=e151]: "02"
+            - text: Zéro Absence, Zéro Interruption
+          - paragraph [ref=e152]: La fiabilité redéfinie. Pas de congés maladie, pas d'absences imprévues, et aucun trou de couverture. Anvela est toujours au poste pour que votre entreprise ne rate aucun appel.
+        - generic [ref=e157]:
+          - generic [ref=e158]: Éthique & Image
+          - heading "03Courtoisie Inébranlable" [level=3] [ref=e159]:
+            - generic [ref=e160]: "03"
+            - text: Courtoisie Inébranlable
+          - paragraph [ref=e161]: Un protocole parfait, à chaque fois. Notre IA conserve un ton poli, calme et respectueux, même face aux situations complexes, protégeant ainsi l'image de votre marque.
+        - generic [ref=e166]:
+          - generic [ref=e167]: Productivité Maximale
+          - heading "04Performance sans Pause" [level=3] [ref=e168]:
+            - generic [ref=e169]: "04"
+            - text: Performance sans Pause
+          - paragraph [ref=e170]: Une productivité continue sans temps mort. Pas de pause café, pas d'heures de déjeuner, ni de demandes de vacances. Un service ininterrompu qui optimise votre efficacité.
+      - generic [ref=e175]:
+        - generic [ref=e176]:
+          - generic [ref=e177]:
+            - img [ref=e178]
+            - generic [ref=e180]: POINTS DE FRICTION
+          - heading "Q u a n d l a R é c e p t i o n H u m a i n e N e P e u t P a s T o u t G é r e r" [level=2] [ref=e181]:
+            - generic [ref=e182]:
+              - generic [ref=e183]: Q
+              - generic [ref=e184]: u
+              - generic [ref=e185]: a
+              - generic [ref=e186]: "n"
+              - generic [ref=e187]: d
+            - generic [ref=e188]:
+              - generic [ref=e189]: l
+              - generic [ref=e190]: a
+            - generic [ref=e191]:
+              - generic [ref=e192]: R
+              - generic [ref=e193]: é
+              - generic [ref=e194]: c
+              - generic [ref=e195]: e
+              - generic [ref=e196]: p
+              - generic [ref=e197]: t
+              - generic [ref=e198]: i
+              - generic [ref=e199]: o
+              - generic [ref=e200]: "n"
+            - generic [ref=e201]:
+              - generic [ref=e202]: H
+              - generic [ref=e203]: u
+              - generic [ref=e204]: m
+              - generic [ref=e205]: a
+              - generic [ref=e206]: i
+              - generic [ref=e207]: "n"
+              - generic [ref=e208]: e
+            - generic [ref=e209]:
+              - generic [ref=e210]: "N"
+              - generic [ref=e211]: e
+            - generic [ref=e212]:
+              - generic [ref=e213]: P
+              - generic [ref=e214]: e
+              - generic [ref=e215]: u
+              - generic [ref=e216]: t
+            - generic [ref=e217]:
+              - generic [ref=e218]: P
+              - generic [ref=e219]: a
+              - generic [ref=e220]: s
+            - generic [ref=e221]:
+              - generic [ref=e222]: T
+              - generic [ref=e223]: o
+              - generic [ref=e224]: u
+              - generic [ref=e225]: t
+            - generic [ref=e226]:
+              - generic [ref=e227]: G
+              - generic [ref=e228]: é
+              - generic [ref=e229]: r
+              - generic [ref=e230]: e
+              - generic [ref=e231]: r
+          - paragraph [ref=e232]: Entre les appels manqués, les heures fermées et les moments de forte affluence, même les meilleures équipes ne peuvent pas répondre à tout, tout le temps. Anvela prend le relais en arrière-plan pour que rien ne soit perdu.
+        - generic [ref=e234]:
+          - generic [ref=e235]:
+            - generic [ref=e237]:
+              - img "Relais 'Prospects Chauds' Après-Heures" [ref=e238]
+              - generic [ref=e242]: 02 / 07
+              - generic [ref=e243]:
+                - heading "Relais 'Prospects Chauds' Après-Heures" [level=3] [ref=e244]
+                - generic [ref=e245]:
+                  - generic [ref=e246]:
+                    - generic [ref=e247]: Logique
+                    - paragraph [ref=e248]: Pendant que votre équipe se repose, Anvela prend l'appel, planifie le rendez-vous dans votre agenda et enregistre le résumé complet.
+                  - generic [ref=e249]:
+                    - generic [ref=e250]: Bénéfice
+                    - paragraph [ref=e251]: À 8h00, pas de piles de messages vocaux vagues. Juste une liste de clients déjà réservés à confirmer et à accueillir.
+            - generic [ref=e253]:
+              - img "Élimination de la 'Corvée Administrative'" [ref=e254]
+              - generic [ref=e258]: 03 / 07
+              - generic [ref=e259]:
+                - heading "Élimination de la 'Corvée Administrative'" [level=3] [ref=e260]
+                - generic [ref=e261]:
+                  - generic [ref=e262]:
+                    - generic [ref=e263]: Logique
+                    - paragraph [ref=e264]: L'IA gère les appels FAQ à haut volume et faible valeur (horaires, adresse, assurances, tarifs de base).
+                  - generic [ref=e265]:
+                    - generic [ref=e266]: Bénéfice
+                    - paragraph [ref=e267]: Votre personnel peut se concentrer sur des tâches à haute valeur ajoutée, comme rassurer un patient anxieux.
+            - generic [ref=e269]:
+              - img "Synchronisation CRM Directe" [ref=e270]
+              - generic [ref=e274]: 04 / 07
+              - generic [ref=e275]:
+                - heading "Synchronisation CRM Directe" [level=3] [ref=e276]
+                - generic [ref=e277]:
+                  - generic [ref=e278]:
+                    - generic [ref=e279]: Logique
+                    - paragraph [ref=e280]: Chaque interaction est synchronisée avec votre CRM ou Google Sheets, déclenchant des suivis automatiques.
+                  - generic [ref=e281]:
+                    - generic [ref=e282]: Bénéfice
+                    - paragraph [ref=e283]: Plus de saisie manuelle erronée. Toutes les infos sont traçables, propres et prêtes pour la conversion finale.
+          - generic [ref=e286]:
+            - img "Filet de Sécurité 'Zéro Opportunité'" [ref=e287]
+            - generic [ref=e291]: 01 / 07
+            - generic [ref=e292]:
+              - heading "Filet de Sécurité 'Zéro Opportunité'" [level=3] [ref=e293]
+              - generic [ref=e294]:
+                - generic [ref=e295]:
+                  - generic [ref=e296]: Logique
+                  - paragraph [ref=e297]: L'IA agit comme un relais intelligent. Elle ne décroche que si la ligne principale est occupée ou après trois sonneries sans réponse.
+                - generic [ref=e298]:
+                  - generic [ref=e299]: Bénéfice
+                  - paragraph [ref=e300]: Chaque prospect est capturé et réservé sans que votre équipe ne se sente pressée par le téléphone alors qu'un patient est devant elle.
+          - generic [ref=e301]:
+            - generic [ref=e303]:
+              - img "Voix Ultra-Réaliste" [ref=e304]
+              - generic [ref=e308]: 05 / 07
+              - generic [ref=e309]:
+                - heading "Voix Ultra-Réaliste" [level=3] [ref=e310]
+                - generic [ref=e311]:
+                  - generic [ref=e312]:
+                    - generic [ref=e313]: Logique
+                    - paragraph [ref=e314]: Une technologie de synthèse vocale qui imite parfaitement le ton et l'empathie humaine.
+                  - generic [ref=e315]:
+                    - generic [ref=e316]: Bénéfice
+                    - paragraph [ref=e317]: Vos clients ne devinent jamais qu'ils parlent à une IA.
+            - generic [ref=e319]:
+              - img "Apprentissage Continue" [ref=e320]
+              - generic [ref=e324]: 06 / 07
+              - generic [ref=e325]:
+                - heading "Apprentissage Continue" [level=3] [ref=e326]
+                - generic [ref=e327]:
+                  - generic [ref=e328]:
+                    - generic [ref=e329]: Logique
+                    - paragraph [ref=e330]: L'IA apprend de chaque interaction pour devenir plus précise chaque jour.
+                  - generic [ref=e331]:
+                    - generic [ref=e332]: Bénéfice
+                    - paragraph [ref=e333]: Un employé qui ne cesse de s'améliorer.
+            - generic [ref=e335]:
+              - img "Vision Anvela" [ref=e336]
+              - generic [ref=e340]: 07 / 07
+              - generic [ref=e341]:
+                - heading "Vision Anvela" [level=3] [ref=e342]
+                - generic [ref=e343]:
+                  - generic [ref=e344]:
+                    - generic [ref=e345]: Logique
+                    - paragraph [ref=e346]: Redéfinir le futur du service client par l'intelligence conversationnelle.
+                  - generic [ref=e347]:
+                    - generic [ref=e348]: Bénéfice
+                    - paragraph [ref=e349]: Positionnez votre entreprise comme leader technologique.
+      - generic [ref=e357]:
+        - generic [ref=e360]: ANVELA EN ACTION
+        - generic [ref=e362]:
+          - generic [ref=e364]:
+            - button "Présentation" [ref=e365] [cursor=pointer]:
+              - generic [ref=e367]: Présentation
+            - button "Appel Réel" [ref=e368] [cursor=pointer]:
+              - generic [ref=e369]:
+                - img [ref=e370]
+                - text: Appel Réel
+          - generic [ref=e372]:
+            - generic [ref=e373]:
+              - heading "Anvela en Action" [level=2] [ref=e374]
+              - paragraph [ref=e375]: Découvrez comment notre réceptionniste IA transforme votre accueil client, gère vos rendez-vous et qualifie vos prospects 24h/24.
+            - generic [ref=e377] [cursor=pointer]:
+              - img "Video guide thumbnail" [ref=e378]
+              - img [ref=e380]
+            - list [ref=e384]:
+              - listitem [ref=e385]:
+                - generic [ref=e386]:
+                  - img [ref=e387]
+                  - generic [ref=e390]: Démo Anvela
+              - listitem [ref=e391]:
+                - generic [ref=e392]:
+                  - img [ref=e393]
+                  - generic [ref=e396]: Efficacité Absolue
+              - listitem [ref=e397]:
+                - generic [ref=e398]:
+                  - img [ref=e399]
+                  - generic [ref=e402]: Intégration Simple
+              - listitem [ref=e403]:
+                - generic [ref=e404]:
+                  - img [ref=e405]
+                  - generic [ref=e408]: Multilingue
+              - listitem [ref=e409]:
+                - generic [ref=e410]:
+                  - img [ref=e411]
+                  - generic [ref=e414]: Sécurité & Fiabilité
+      - generic [ref=e415]:
+        - img
+        - generic [ref=e416]:
+          - generic [ref=e417]:
+            - generic [ref=e418]: NOTRE PROCESSUS
+            - heading "C o m m e n t A n v e l a p r o p u l s e v o t r e c r o i s s a n c e" [level=2] [ref=e419]:
+              - generic [ref=e420]:
+                - generic [ref=e421]: C
+                - generic [ref=e422]: o
+                - generic [ref=e423]: m
+                - generic [ref=e424]: m
+                - generic [ref=e425]: e
+                - generic [ref=e426]: "n"
+                - generic [ref=e427]: t
+              - generic [ref=e428]:
+                - generic [ref=e429]: A
+                - generic [ref=e430]: "n"
+                - generic [ref=e431]: v
+                - generic [ref=e432]: e
+                - generic [ref=e433]: l
+                - generic [ref=e434]: a
+              - generic [ref=e435]:
+                - generic [ref=e436]: p
+                - generic [ref=e437]: r
+                - generic [ref=e438]: o
+                - generic [ref=e439]: p
+                - generic [ref=e440]: u
+                - generic [ref=e441]: l
+                - generic [ref=e442]: s
+                - generic [ref=e443]: e
+              - generic [ref=e444]:
+                - generic [ref=e445]: v
+                - generic [ref=e446]: o
+                - generic [ref=e447]: t
+                - generic [ref=e448]: r
+                - generic [ref=e449]: e
+              - generic [ref=e450]:
+                - generic [ref=e451]: c
+                - generic [ref=e452]: r
+                - generic [ref=e453]: o
+                - generic [ref=e454]: i
+                - generic [ref=e455]: s
+                - generic [ref=e456]: s
+                - generic [ref=e457]: a
+                - generic [ref=e458]: "n"
+                - generic [ref=e459]: c
+                - generic [ref=e460]: e
+          - generic [ref=e461]:
+            - generic [ref=e462]:
+              - img [ref=e468]
+              - heading "Ne ratez plus un seul client" [level=3] [ref=e471]
+              - paragraph [ref=e472]: Chaque appel manqué, c'est un client perdu. Anvela prend l'appel, comprend la demande et collecte les infos utiles.
+              - generic: "01"
+            - generic [ref=e473]:
+              - img [ref=e479]
+              - heading "Planification instantanée, sans friction" [level=3] [ref=e481]
+              - paragraph [ref=e482]: Vérifie les disponibilités, propose des créneaux, confirme par SMS/email, et réduit les no-shows.
+              - generic: "02"
+            - generic [ref=e483]:
+              - img [ref=e489]
+              - heading "Du contact à la conversion" [level=3] [ref=e491]
+              - paragraph [ref=e492]: Crée automatiquement une fiche client, envoie un suivi, et alimente votre CRM/Google Sheets. Tout est traçable.
+              - generic: "03"
+      - generic [ref=e493]:
+        - generic [ref=e494]:
+          - generic [ref=e495]: Capacités de l'IA
+          - heading "Conçu pour Tous les Secteurs" [level=2] [ref=e496]
+        - generic [ref=e497]:
+          - generic [ref=e500]:
+            - paragraph [ref=e501]: "- voici anvela - notre ai -"
+            - heading "Anvela AI" [level=3] [ref=e502]
+          - generic [ref=e505]:
+            - paragraph [ref=e506]: GESTION AGENDAS
+            - heading "RÉSERVATION SMART" [level=3] [ref=e507]
+          - generic [ref=e510]:
+            - paragraph [ref=e511]: QUALIFICATION IA
+            - heading "CAPTURE DE LEADS" [level=3] [ref=e512]
+          - generic [ref=e515]:
+            - paragraph [ref=e516]: DISPONIBILITÉ TOTALE
+            - heading "RÉCEPTION 24/7" [level=3] [ref=e517]
+          - generic [ref=e520]:
+            - paragraph [ref=e521]: FLUX DE TRAVAIL
+            - heading "SYNCHRONISATION" [level=3] [ref=e522]
+          - generic [ref=e525]:
+            - paragraph [ref=e526]: FR / EN / ES / IT
+            - heading "MULTILINGUE" [level=3] [ref=e527]
+          - generic [ref=e530]:
+            - paragraph [ref=e531]: INTÉGRATION CRM
+            - heading "DONNÉES CLIENTS" [level=3] [ref=e532]
+          - generic [ref=e535]:
+            - paragraph [ref=e536]: SUPPORT DÉBORDEMENT
+            - heading "RELAIS ÉQUIPE" [level=3] [ref=e537]
+          - generic [ref=e540]:
+            - paragraph [ref=e541]: PROTECTION DONNÉES
+            - heading "SÉCURITÉ" [level=3] [ref=e542]
+          - generic [ref=e545]:
+            - paragraph [ref=e546]: LOGIQUE AVANCÉE
+            - heading "INTELLIGENCE" [level=3] [ref=e547]
+          - generic [ref=e550]:
+            - paragraph [ref=e551]: "- voici anvela - notre ai -"
+            - heading "Anvela AI" [level=3] [ref=e552]
+          - generic [ref=e555]:
+            - paragraph [ref=e556]: GESTION AGENDAS
+            - heading "RÉSERVATION SMART" [level=3] [ref=e557]
+          - generic [ref=e560]:
+            - paragraph [ref=e561]: QUALIFICATION IA
+            - heading "CAPTURE DE LEADS" [level=3] [ref=e562]
+          - generic [ref=e565]:
+            - paragraph [ref=e566]: DISPONIBILITÉ TOTALE
+            - heading "RÉCEPTION 24/7" [level=3] [ref=e567]
+          - generic [ref=e570]:
+            - paragraph [ref=e571]: FLUX DE TRAVAIL
+            - heading "SYNCHRONISATION" [level=3] [ref=e572]
+          - generic [ref=e575]:
+            - paragraph [ref=e576]: FR / EN / ES / IT
+            - heading "MULTILINGUE" [level=3] [ref=e577]
+          - generic [ref=e580]:
+            - paragraph [ref=e581]: INTÉGRATION CRM
+            - heading "DONNÉES CLIENTS" [level=3] [ref=e582]
+          - generic [ref=e585]:
+            - paragraph [ref=e586]: SUPPORT DÉBORDEMENT
+            - heading "RELAIS ÉQUIPE" [level=3] [ref=e587]
+          - generic [ref=e590]:
+            - paragraph [ref=e591]: PROTECTION DONNÉES
+            - heading "SÉCURITÉ" [level=3] [ref=e592]
+          - generic [ref=e595]:
+            - paragraph [ref=e596]: LOGIQUE AVANCÉE
+            - heading "INTELLIGENCE" [level=3] [ref=e597]
+      - generic [ref=e600]:
+        - generic [ref=e602]: L'Avantage Anvela
+        - paragraph [ref=e603]:
+          - text: Chaque appel manqué est un client perdu et une opportunité financière gâchée.
+          - generic [ref=e604]: Notre IA intelligente gère vos réservations, répond aux questions complexes et qualifie vos leads 24h/24 et 7/7, avec une précision humaine et une efficacité robotique.
+      - generic [ref=e606]:
+        - generic:
+          - heading "Anvela" [level=2]
+        - generic [ref=e612]:
+          - generic [ref=e615]: "01"
+          - generic [ref=e616]:
+            - heading "VOIX IA" [level=3] [ref=e617]
+            - paragraph [ref=e618]: APPELS INTELLIGENTS
+        - generic [ref=e626]: Faites défiler pour explorer
+      - generic [ref=e628]:
+        - generic [ref=e629]:
+          - generic [ref=e630]: Capacités Puissantes
+          - generic [ref=e631]: FONCTIONNALITÉS IA
+          - heading "Tout ce dont Votre Entreprise a Besoin" [level=2] [ref=e632]
+        - generic [ref=e633]:
+          - button "Gestion d'Appels" [ref=e634] [cursor=pointer]
+          - button "Planification" [ref=e635] [cursor=pointer]
+          - button "Support Client" [ref=e636] [cursor=pointer]
+        - generic [ref=e637]:
+          - generic [ref=e638]:
+            - generic [ref=e639]:
+              - generic [ref=e640]: Routage Intelligent
+              - heading "Gestion d'Appels" [level=3] [ref=e641]
+              - paragraph [ref=e643]: Anvela répond aux appels avec des conversations naturelles, comprend l'intention et achemine vers le bon service.
+              - paragraph [ref=e644]: Traitement du langage naturel avec analyse de sentiment
+            - generic [ref=e645]:
+              - generic [ref=e646]:
+                - generic [ref=e647]: 99%
+                - generic [ref=e648]: Précision
+              - generic [ref=e649]:
+                - generic [ref=e650]: Instantané
+                - generic [ref=e651]: Vitesse
+              - generic [ref=e652]:
+                - generic [ref=e653]: 24/7
+                - generic [ref=e654]: Disponibilité
+            - button "Commencer" [ref=e655] [cursor=pointer]:
+              - text: Commencer
+              - img [ref=e657]
+          - generic [ref=e660]:
+            - generic [ref=e661]:
+              - img "Gestion d'Appels" [ref=e663]
+              - generic:
+                - img "Planification"
+              - generic:
+                - img "Support Client"
+            - generic [ref=e664]:
+              - button [ref=e665] [cursor=pointer]:
+                - img [ref=e666]
+              - generic [ref=e668]: 1 / 3
+              - button [ref=e669] [cursor=pointer]:
+                - img [ref=e670]
+          - generic [ref=e673]:
+            - generic [ref=e674]:
+              - img [ref=e677]
+              - generic [ref=e680]:
+                - heading "Propulsé par IA" [level=4] [ref=e681]
+                - paragraph [ref=e682]: NLP avancé pour des conversations naturelles
+            - generic [ref=e683]:
+              - img [ref=e686]
+              - generic [ref=e689]:
+                - heading "Toujours Actif" [level=4] [ref=e690]
+                - paragraph [ref=e691]: Disponibilité 24/7 sans interruption
+            - generic [ref=e692]:
+              - img [ref=e695]
+              - generic [ref=e697]:
+                - heading "Réponse Instantanée" [level=4] [ref=e698]
+                - paragraph [ref=e699]: Temps de réponse inférieurs à la seconde
+            - generic [ref=e700]:
+              - img [ref=e703]
+              - generic [ref=e705]:
+                - heading "Personnalisable" [level=4] [ref=e706]
+                - paragraph [ref=e707]: Adapté à votre image de marque
+      - generic [ref=e710]:
+        - generic [ref=e711]:
+          - generic [ref=e712]: Un Investissement Rentable
+          - heading "NOS TARIFS" [level=2] [ref=e713]
+          - heading "Des forfaits adaptés à vos besoins" [level=3] [ref=e714]
+          - generic [ref=e716]:
+            - img [ref=e717]
+            - text: "Offre de lancement : premier mois à 50% du tarif normal. Opérationnel en moins de 48h."
+          - generic [ref=e720]:
+            - button "Mensuel" [ref=e722] [cursor=pointer]
+            - button "Annuel 2 mois offerts & -10%" [ref=e723] [cursor=pointer]:
+              - text: Annuel
+              - generic [ref=e724]: 2 mois offerts & -10%
+        - generic [ref=e726]:
+          - generic [ref=e727]: L'AVANTAGE ANVELA
+          - generic [ref=e728]:
+            - generic [ref=e729]:
+              - generic [ref=e730]:
+                - generic [ref=e731]: 👤
+                - generic [ref=e732]: Réceptionniste à temps partiel
+              - generic [ref=e733]: ~2 500$ / mois
+            - generic [ref=e734]:
+              - generic [ref=e735]:
+                - generic [ref=e736]: ⚡
+                - generic [ref=e737]: Anvela — disponible 24/7
+              - generic [ref=e738]: à partir de 199$ / mois · soit environ 49$ / sem.
+          - generic [ref=e739]: Pas pour remplacer votre équipe — pour lui donner du renfort, sans le coût extra.
+        - generic [ref=e740]:
+          - paragraph [ref=e741]: 💡 Un seul rendez-vous pourrait suffire à couvrir votre abonnement. Le reste est du gain pur.
+          - generic [ref=e742]:
+            - generic [ref=e743]:
+              - generic:
+                - generic:
+                  - img
+                - generic: 0+
+                - paragraph: Appels manqués par semaine
+                - paragraph: Chaque appel sans réponse est un client qui appelle votre compétiteur. C'est une perte directe de revenus.
+            - generic [ref=e749]:
+              - generic:
+                - generic:
+                  - img
+                - generic: $0+
+                - paragraph: Valeur d'un seul client
+                - paragraph: Même pour vos services les plus abordables, il suffit de 1 à 2 rendez-vous récupérés pour rentabiliser votre mois. Tout le reste est du profit net.
+            - generic [ref=e755]:
+              - generic:
+                - generic:
+                  - img
+                - generic: $0/mo
+                - paragraph: ROI immédiat
+                - paragraph: Récupérez un seul client par mois et votre abonnement est payé. Le reste, c'est du profit pur.
+        - generic [ref=e761]:
+          - generic [ref=e762]:
+            - generic [ref=e766]: ESSENTIEL
+            - generic [ref=e767]:
+              - generic [ref=e768]:
+                - heading "Night Shift" [level=4] [ref=e769]
+                - generic [ref=e770]:
+                  - generic [ref=e771]: $199
+                  - generic [ref=e772]: CAD / mois
+                - generic [ref=e773]: (soit environ 49$ par semaine)
+                - generic [ref=e774]: "Frais de mise en service: $0"
+                - generic [ref=e775]: "*Contrat minimum de 3 mois"
+              - generic [ref=e776]:
+                - paragraph [ref=e777]: Votre équipe se repose. Vos leads non. Nous capturons chaque appel manqué pendant que vous êtes fermé — et votre calendrier se remplit tout seul.
+                - generic [ref=e778]:
+                  - generic [ref=e779]:
+                    - img [ref=e781]
+                    - generic [ref=e783]: "Disponibilité : Lun–Ven (18h00 – 8h00) + Week-end 24h"
+                  - generic [ref=e784]:
+                    - img [ref=e786]
+                    - generic [ref=e788]: "Appels : Illimités (aucun frais à la minute)"
+                  - generic [ref=e789]:
+                    - img [ref=e791]
+                    - generic [ref=e793]: "IA : Réponse aux FAQ + capture de leads qualifiés"
+                  - generic [ref=e794]:
+                    - img [ref=e796]
+                    - generic [ref=e798]: "Réservation : Rendez-vous auto (Google Calendar)"
+                  - generic [ref=e799]:
+                    - img [ref=e801]
+                    - generic [ref=e803]: "Notification : SMS instantané à la capture d'un lead"
+                  - generic [ref=e804]:
+                    - img [ref=e806]
+                    - generic [ref=e808]: Transcription complète + résumé IA des appels
+                  - generic [ref=e809]:
+                    - img [ref=e811]
+                    - generic [ref=e813]: "Rapport : 'Night Shift Report' quotidien à 8h00"
+                  - generic [ref=e814]:
+                    - img [ref=e816]
+                    - generic [ref=e818]: "Langue : Français (Optimisé pour les marchés locaux)"
+                  - generic [ref=e819]:
+                    - img [ref=e821]
+                    - generic [ref=e823]: "Réduction des no-shows : jusqu'à 30–50% avec rappels"
+                  - generic [ref=e824]:
+                    - img [ref=e826]
+                    - generic [ref=e828]: "Offre lancement : premier mois à 50% du prix normal"
+                - button "Profiter de l'offre" [ref=e829] [cursor=pointer]
+          - generic [ref=e830]:
+            - generic [ref=e834]: MEILLEURE VALEUR
+            - generic [ref=e835]:
+              - generic [ref=e836]:
+                - heading "Co-Pilot" [level=4] [ref=e837]
+                - generic [ref=e838]:
+                  - generic [ref=e839]: $379
+                  - generic [ref=e840]: CAD / mois
+                - generic [ref=e841]: (soit environ 89$ par semaine)
+                - generic [ref=e842]: "Frais de mise en service: $197"
+                - generic [ref=e843]: "*Contrat minimum de 3 mois"
+              - generic [ref=e844]:
+                - paragraph [ref=e845]: Couverture complète 24/7. Votre téléphone ne sonne plus dans le vide — il génère des revenus, même pendant le travail.
+                - generic [ref=e846]:
+                  - generic [ref=e847]:
+                    - img [ref=e849]
+                    - generic [ref=e851]: Inclut TOUT du forfait 'Night Shift'
+                  - generic [ref=e852]:
+                    - img [ref=e854]
+                    - generic [ref=e856]: "Suivi : Appels non résolus avec transcription"
+                  - generic [ref=e857]:
+                    - img [ref=e859]
+                    - generic [ref=e861]: "Disponibilité : 24/7 (Débordement jour + Nuit complète)"
+                  - generic [ref=e862]:
+                    - img [ref=e864]
+                    - generic [ref=e866]: "Routing : Humain d'abord (3 sonneries), l'IA prend le relais"
+                  - generic [ref=e867]:
+                    - img [ref=e869]
+                    - generic [ref=e871]: "Transfert : Redirection live vers votre réception (1 numéro)"
+                  - generic [ref=e872]:
+                    - img [ref=e874]
+                    - generic [ref=e876]: "Réservation : Rendez-vous + rappels SMS (24h/2h)"
+                  - generic [ref=e877]:
+                    - img [ref=e879]
+                    - generic [ref=e881]: "Gestion : Modifications et annulations par IA"
+                  - generic [ref=e882]:
+                    - img [ref=e884]
+                    - generic [ref=e886]: "Avis Google : SMS automatique au client le lendemain de son rendez-vous"
+                  - generic [ref=e887]:
+                    - img [ref=e889]
+                    - generic [ref=e891]: "Interactions : Bilingue (Français / Anglais)"
+                  - generic [ref=e892]:
+                    - img [ref=e894]
+                    - generic [ref=e896]: "Appels : Illimités"
+                  - generic [ref=e897]:
+                    - img [ref=e899]
+                    - generic [ref=e901]: "Offre lancement : premier mois à 50% du prix normal"
+                - button "Profiter de l'offre" [ref=e902] [cursor=pointer]
+          - generic [ref=e903]:
+            - generic [ref=e907]: SOLUTION COMPLÈTE
+            - generic [ref=e908]:
+              - generic [ref=e909]:
+                - heading "Anvela Signature" [level=4] [ref=e910]
+                - generic [ref=e911]:
+                  - generic [ref=e912]: $697
+                  - generic [ref=e913]: CAD / mois
+                - generic [ref=e914]: (soit environ 165$ par semaine)
+                - generic [ref=e915]: "Frais de mise en service: $497"
+                - generic [ref=e916]: "*Contrat minimum de 6 mois"
+              - generic [ref=e917]:
+                - paragraph [ref=e918]: Votre système de croissance complet. L'IA répond, relance, réserve et suit chaque lead — pendant que vous travaillez.
+                - generic [ref=e919]:
+                  - generic [ref=e920]:
+                    - img [ref=e922]
+                    - generic [ref=e924]: Inclut TOUT de 'Night Shift' et 'Co-Pilot'
+                  - generic [ref=e925]:
+                    - img [ref=e927]
+                    - generic [ref=e929]: "Gestion proactive des avis : les clients insatisfaits sont pris en charge en privé — vous recevez une alerte pour agir avant qu'ils partent."
+                  - generic [ref=e930]:
+                    - img [ref=e932]
+                    - generic [ref=e934]: "Transfert : Destinations illimitées (réception, gérant, service...)"
+                  - generic [ref=e935]:
+                    - img [ref=e937]
+                    - generic [ref=e939]: "Mémoire clients : Mila reconnaît vos habitués et personnalise chaque appel"
+                  - generic [ref=e940]:
+                    - img [ref=e942]
+                    - generic [ref=e944]: "Logique : Intégration CRM sur mesure selon votre système actuel"
+                  - generic [ref=e945]:
+                    - img [ref=e947]
+                    - generic [ref=e949]: "Suivi : SMS auto en 15 min pour chaque lead"
+                  - generic [ref=e950]:
+                    - img [ref=e952]
+                    - generic [ref=e954]: "Gestion complète : modifications, annulations et réservations en un seul appel"
+                  - generic [ref=e955]:
+                    - img [ref=e957]
+                    - generic [ref=e959]: "Support : Support VIP Prioritaire (réponse < 2h)"
+                  - generic [ref=e960]:
+                    - img [ref=e962]
+                    - generic [ref=e964]: "BONUS : Site web d'une page gratuit inclus"
+                  - generic [ref=e965]:
+                    - img [ref=e967]
+                    - generic [ref=e969]: "Appels : Illimités"
+                  - generic [ref=e970]:
+                    - img [ref=e972]
+                    - generic [ref=e974]: Rapports mensuels personnalisés + optimisation IA
+                  - generic [ref=e975]:
+                    - img [ref=e977]
+                    - generic [ref=e979]: "Augmentation de rendez-vous : +30–40%"
+                  - generic [ref=e980]:
+                    - img [ref=e982]
+                    - generic [ref=e984]: "Offre lancement : premier mois à 50% du prix normal"
+                - button "Profiter de l'offre" [ref=e985] [cursor=pointer]
+      - generic [ref=e988]:
+        - generic [ref=e990]:
+          - generic [ref=e991]: FAQ
+          - heading "Questions Fréquentes" [level=2] [ref=e992]
+        - generic [ref=e994]:
+          - heading "Comment se passe l'intégration avec mon système actuel ?" [level=3] [ref=e997]:
+            - button "Comment se passe l'intégration avec mon système actuel ?" [ref=e998] [cursor=pointer]:
+              - generic [ref=e999]: Comment se passe l'intégration avec mon système actuel ?
+              - img [ref=e1001]
+          - heading "Est-ce que l'IA peut vraiment prendre des rendez-vous ?" [level=3] [ref=e1005]:
+            - button "Est-ce que l'IA peut vraiment prendre des rendez-vous ?" [ref=e1006] [cursor=pointer]:
+              - generic [ref=e1007]: Est-ce que l'IA peut vraiment prendre des rendez-vous ?
+              - img [ref=e1009]
+          - heading "Que se passe-t-il si l'IA ne connaît pas la réponse ?" [level=3] [ref=e1013]:
+            - button "Que se passe-t-il si l'IA ne connaît pas la réponse ?" [ref=e1014] [cursor=pointer]:
+              - generic [ref=e1015]: Que se passe-t-il si l'IA ne connaît pas la réponse ?
+              - img [ref=e1017]
+          - heading "Puis-je personnaliser la voix et le script ?" [level=3] [ref=e1021]:
+            - button "Puis-je personnaliser la voix et le script ?" [ref=e1022] [cursor=pointer]:
+              - generic [ref=e1023]: Puis-je personnaliser la voix et le script ?
+              - img [ref=e1025]
+          - heading "Y a-t-il un engagement à long terme ?" [level=3] [ref=e1029]:
+            - button "Y a-t-il un engagement à long terme ?" [ref=e1030] [cursor=pointer]:
+              - generic [ref=e1031]: Y a-t-il un engagement à long terme ?
+              - img [ref=e1033]
+          - heading "Pour quels types d'entreprises Anvela est-elle faite ?" [level=3] [ref=e1037]:
+            - button "Pour quels types d'entreprises Anvela est-elle faite ?" [ref=e1038] [cursor=pointer]:
+              - generic [ref=e1039]: Pour quels types d'entreprises Anvela est-elle faite ?
+              - img [ref=e1041]
+          - heading "Anvela est-elle bilingue ?" [level=3] [ref=e1045]:
+            - button "Anvela est-elle bilingue ?" [ref=e1046] [cursor=pointer]:
+              - generic [ref=e1047]: Anvela est-elle bilingue ?
+              - img [ref=e1049]
+          - heading "Combien de temps faut-il pour être opérationnel ?" [level=3] [ref=e1053]:
+            - button "Combien de temps faut-il pour être opérationnel ?" [ref=e1054] [cursor=pointer]:
+              - generic [ref=e1055]: Combien de temps faut-il pour être opérationnel ?
+              - img [ref=e1057]
+      - generic [ref=e1060]:
+        - generic [ref=e1061]:
+          - generic [ref=e1062]: La personne derrière Anvela
+          - heading "Construit par quelqu'un qui comprend les défis des petites entreprises." [level=2] [ref=e1063]
+        - generic [ref=e1065]:
+          - blockquote [ref=e1066]: "\"J'ai créé Anvela parce que chaque appel manqué est un client perdu. Votre entreprise mérite mieux.\""
+          - separator [ref=e1067]
+          - generic [ref=e1068]:
+            - generic [ref=e1069]: PF
+            - generic [ref=e1070]:
+              - generic [ref=e1071]:
+                - heading "Pablo Fuentes" [level=3] [ref=e1072]
+                - generic [ref=e1073]: ·
+                - generic [ref=e1074]: Fondateur & PDG
+              - paragraph [ref=e1075]: "Pablo Fuentes a lancé Anvela après avoir vu trop d'entreprises montréalaises perdre des clients à cause d'appels sans réponse — non pas par manque de service, mais par manque de temps. Entrepreneur technologique basé à Montréal, il a combiné l'IA vocale avec une connaissance du marché local pour créer une réceptionniste qui ne dort jamais, ne prend jamais de pause, et s'adapte à la langue de chaque client, quelle qu'elle soit. Anvela est sa réponse à une question simple : et si chaque entreprise pouvait se permettre de ne jamais manquer un appel ?"
+              - generic [ref=e1076]:
+                - img [ref=e1077]
+                - generic [ref=e1080]: Montréal, Québec
+      - generic [ref=e1084]:
+        - generic [ref=e1085]:
+          - generic [ref=e1086]: Contactez-nous
+          - generic [ref=e1087]: CONTACT
+          - heading "Parlons-en" [level=2] [ref=e1088]
+          - paragraph [ref=e1089]: Prêt à transformer votre communication ? Soumettez votre demande — notre équipe vous rappelle dans les minutes qui suivent. Premier mois à 50%.
+        - generic [ref=e1090]:
+          - generic [ref=e1092]:
+            - heading "Informations de Contact" [level=3] [ref=e1093]
+            - list "Contact information" [ref=e1094]:
+              - listitem [ref=e1095]:
+                - img [ref=e1097]
+                - generic [ref=e1099]:
+                  - paragraph [ref=e1100]: Téléphone
+                  - paragraph [ref=e1101]: (438) 814-7578 · (514) 679-2107
+                  - paragraph [ref=e1102]: Ligne directe Anvela 24/7
+              - listitem [ref=e1103]:
+                - img [ref=e1105]
+                - generic [ref=e1108]:
+                  - paragraph [ref=e1109]: Email
+                  - paragraph [ref=e1110]: pablo@anvela.ca · support@anvela.ca
+                  - paragraph [ref=e1111]: Réponse sous 24h
+              - listitem [ref=e1112]:
+                - img [ref=e1114]
+                - generic [ref=e1117]:
+                  - paragraph [ref=e1118]: Heures
+                  - paragraph [ref=e1119]: Toujours Disponible
+                  - paragraph [ref=e1120]: 24/7/365 Support
+          - generic [ref=e1123]:
+            - generic [ref=e1124]:
+              - generic [ref=e1125]:
+                - generic [ref=e1126]: Nom Complet *
+                - textbox "Nom Complet *" [ref=e1127]:
+                  - /placeholder: Jean Tremblay
+              - generic [ref=e1128]:
+                - generic [ref=e1129]: Numéro de Téléphone *
+                - textbox "Numéro de Téléphone *" [ref=e1130]:
+                  - /placeholder: +1 (514) 000-0000
+              - generic [ref=e1131]:
+                - generic [ref=e1132]: Adresse Email *
+                - textbox "Adresse Email *" [ref=e1133]:
+                  - /placeholder: jean@entreprise.com
+              - generic [ref=e1134]:
+                - generic [ref=e1135]: Nom de l'entreprise *
+                - textbox "Nom de l'entreprise *" [ref=e1136]:
+                  - /placeholder: "Ex. : Garage Tremblay"
+            - generic [ref=e1137]:
+              - generic [ref=e1138]: Type d'entreprise
+              - combobox "Type d'entreprise" [ref=e1139]:
+                - option "—" [selected]
+                - option "Garage / Auto"
+                - option "Médical / Clinique"
+                - option "Juridique"
+                - option "Immobilier"
+                - option "Restaurant"
+                - option "Commerce / Détail"
+                - option "Autre"
+            - generic [ref=e1140]:
+              - generic [ref=e1141]: Message
+              - textbox "Message" [ref=e1142]:
+                - /placeholder: Décrivez vos besoins en réception ou posez vos questions...
+            - button "Envoyer ma demande" [ref=e1143] [cursor=pointer]:
+              - img [ref=e1144]
+              - text: Envoyer ma demande
+            - paragraph [ref=e1147]: En soumettant ce formulaire, vous acceptez notre Politique de Confidentialité et nos Conditions de Service.
+    - contentinfo [ref=e1148]:
+      - generic [ref=e1151]:
+        - heading "Inscrivez-vous pour les mises à jour" [level=2] [ref=e1152]
+        - generic [ref=e1154]:
+          - textbox "Entrez votre email" [ref=e1155]
+          - button "S'abonner" [ref=e1156] [cursor=pointer]
+      - generic [ref=e1158]:
+        - generic [ref=e1159]:
+          - generic [ref=e1160]:
+            - generic [ref=e1161]:
+              - img "Anvela Logo" [ref=e1162]
+              - paragraph [ref=e1163]: Communication Intelligente
+            - generic [ref=e1164]:
+              - generic [ref=e1165]:
+                - img [ref=e1167]
+                - generic [ref=e1170]:
+                  - paragraph [ref=e1171]: Adresse
+                  - paragraph [ref=e1172]: Montréal, Québec, Canada
+              - generic [ref=e1173]:
+                - img [ref=e1175]
+                - generic [ref=e1177]:
+                  - paragraph [ref=e1178]: Téléphone
+                  - paragraph [ref=e1179]: (438) 814-7578 · (514) 679-2107
+              - generic [ref=e1180]:
+                - img [ref=e1182]
+                - generic [ref=e1185]:
+                  - paragraph [ref=e1186]: Email
+                  - paragraph [ref=e1187]: pablo@anvela.ca · support@anvela.ca
+              - generic [ref=e1188]:
+                - img [ref=e1189]
+                - generic [ref=e1204]: Fait au Québec
+          - generic [ref=e1205]:
+            - heading "Produit" [level=3] [ref=e1206]
+            - navigation "Produit" [ref=e1207]:
+              - list [ref=e1208]:
+                - listitem [ref=e1209]:
+                  - button "Fonctionnalités" [ref=e1210] [cursor=pointer]
+                - listitem [ref=e1211]:
+                  - button "Tarification" [ref=e1212] [cursor=pointer]
+                - listitem [ref=e1213]:
+                  - button "Intégrations" [ref=e1214] [cursor=pointer]
+                - listitem [ref=e1215]:
+                  - button "API" [ref=e1216] [cursor=pointer]
+          - generic [ref=e1217]:
+            - heading "Entreprise" [level=3] [ref=e1218]
+            - navigation "Entreprise" [ref=e1219]:
+              - list [ref=e1220]:
+                - listitem [ref=e1221]:
+                  - button "À Propos" [ref=e1222] [cursor=pointer]
+                - listitem [ref=e1223]:
+                  - button "Carrières" [ref=e1224] [cursor=pointer]
+                - listitem [ref=e1225]:
+                  - button "Blog" [ref=e1226] [cursor=pointer]
+                - listitem [ref=e1227]:
+                  - button "Presse" [ref=e1228] [cursor=pointer]
+          - generic [ref=e1229]:
+            - heading "Suivez-nous" [level=3] [ref=e1230]
+            - generic [ref=e1231]:
+              - link [ref=e1232] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e1233]
+              - link [ref=e1237] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e1238]
+              - link [ref=e1240] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e1241]
+              - link [ref=e1244] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e1245]
+        - generic:
+          - heading "Anvela" [level=2]
+      - generic [ref=e1250]:
+        - generic [ref=e1251]:
+          - generic [ref=e1252]: © Anvela AI. Tous droits réservés.
+          - generic [ref=e1253]:
+            - link "Politique de Confidentialité" [ref=e1254] [cursor=pointer]:
+              - /url: /privacy
+            - link "Conditions de Service" [ref=e1255] [cursor=pointer]:
+              - /url: /privacy
+            - link "Politique de Cookies" [ref=e1256] [cursor=pointer]:
+              - /url: /privacy
+        - button "Retour en haut" [ref=e1257] [cursor=pointer]:
+          - generic [ref=e1258]: Retour en haut
+          - img [ref=e1260]
+    - button "Retour en haut":
+      - img

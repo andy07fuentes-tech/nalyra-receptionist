@@ -790,6 +790,8 @@
     .solar-aura-glow {
       animation: none;
       box-shadow: none;
+      border-color: var(--border-color);
+      background-color: var(--border-color);
     }
     .premium-border-animate {
       display: none;

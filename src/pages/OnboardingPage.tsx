@@ -84,26 +84,26 @@ export default function OnboardingPage() {
     return (
         <div className="min-h-screen overflow-x-hidden bg-slate-50 text-slate-900 font-sans selection:bg-blue-500/30">
             {/* Navigation */}
-            <nav className="fixed top-0 inset-x-0 p-6 z-50 flex items-center justify-between border-b border-slate-200 bg-white/80 backdrop-blur-md">
-                <Link to="/" className="flex items-center gap-2 group">
-                    <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center group-hover:bg-blue-500 transition-colors">
+            <nav className="fixed top-0 inset-x-0 p-4 sm:p-6 z-50 flex items-center justify-between border-b border-slate-200 bg-white/80 backdrop-blur-md">
+                <Link to="/" className="flex items-center gap-2 group z-10">
+                    <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center group-hover:bg-blue-500 transition-colors shrink-0">
                         <Building2 className="w-5 h-5 text-white" />
                     </div>
                     <span className="font-serif text-xl tracking-tight text-slate-900">Anvela</span>
                 </Link>
 
-                <div className="flex flex-col items-center gap-2">
-                    <div className="flex items-center gap-2">
+                <div className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 w-max">
+                    <div className="flex items-center gap-1.5 sm:gap-2">
                         {[1, 2, 3].map((s) => (
-                            <div key={s} className={`h-1.5 w-8 sm:w-16 rounded-full transition-all duration-500 ${s <= step ? 'bg-blue-600 shadow-[0_0_15px_rgba(37,99,235,0.2)]' : 'bg-slate-200'}`} />
+                            <div key={s} className={`h-1.5 w-6 sm:w-16 rounded-full transition-all duration-500 ${s <= step ? 'bg-blue-600 shadow-[0_0_15px_rgba(37,99,235,0.2)]' : 'bg-slate-200'}`} />
                         ))}
                     </div>
-                    <span className="text-[10px] text-slate-400 uppercase tracking-[0.3em] font-medium">
+                    <span className="text-[9px] sm:text-[10px] text-slate-400 uppercase tracking-[0.2em] sm:tracking-[0.3em] font-medium">
                         {ti('onboarding.stepCounter', { step: String(step) })}
                     </span>
                 </div>
 
-                <div className="flex items-center gap-6">
+                <div className="flex items-center gap-4 sm:gap-6 z-10">
                     <LanguageToggle isScrolled={true} />
                     <button className="hidden sm:block text-slate-400 hover:text-slate-900 transition-colors text-xs font-medium underline underline-offset-4">
                         {t('onboarding.saveExit') as string}
@@ -111,7 +111,7 @@ export default function OnboardingPage() {
                 </div>
             </nav>
 
-            <main className="pt-32 pb-20 px-6 max-w-7xl mx-auto min-h-[calc(100vh-80px)] flex items-start md:items-center justify-center">
+            <main className="pt-24 pb-32 sm:pt-32 sm:pb-20 px-4 sm:px-6 max-w-7xl mx-auto min-h-[100dvh] flex items-start md:items-center justify-center">
 
                 {step === 1 && (
                     <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center w-full step-content">
@@ -122,16 +122,16 @@ export default function OnboardingPage() {
                             </div>
                             <div>
                                 <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl leading-tight mb-3 text-slate-900">
-                                    {t('onboarding.step1.title') as string} <br />
+                                    {t('onboarding.step1.title') as string} <br className="hidden sm:block" />
                                     <span className="text-blue-600 italic">{t('onboarding.step1.titleHighlight') as string}</span>
                                 </h1>
-                                <p className="hidden sm:block text-slate-500 text-base leading-relaxed max-w-md">
+                                <p className="text-slate-500 text-sm sm:text-base leading-relaxed max-w-md">
                                     {t('onboarding.step1.description') as string}
                                 </p>
                             </div>
                         </div>
                         <div className="lg:col-span-7">
-                            <div className="relative p-6 md:p-12 rounded-3xl bg-white border border-slate-200 shadow-xl">
+                            <div className="relative p-5 sm:p-8 md:p-12 rounded-3xl bg-white border border-slate-200 shadow-xl">
                                 <div className="space-y-6">
                                     <div className="relative">
                                         <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
@@ -142,30 +142,30 @@ export default function OnboardingPage() {
                                             onChange={(e) => setValue(e.target.value)}
                                             className="w-full h-14 pl-12 pr-4 bg-white border border-slate-300 rounded-xl focus:outline-none focus:border-slate-900 transition-all text-slate-900 placeholder:text-slate-500 font-medium"
                                         />
+                                        {value.length > 0 && !selectedBusiness && (
+                                            <div className="absolute left-0 right-0 top-full mt-2 bg-white border border-slate-200 rounded-xl z-20 overflow-hidden shadow-2xl">
+                                                {filteredData.map((s) => (
+                                                    <button
+                                                        key={s.place_id}
+                                                        onClick={() => { setSelectedBusiness(s); setValue(s.description, false); clearSuggestions(); }}
+                                                        className="w-full p-4 flex items-start gap-3 hover:bg-slate-50 text-left border-b border-slate-100"
+                                                    >
+                                                        <MapPin className="w-4 h-4 text-blue-600 mt-1 shrink-0" />
+                                                        <span className="text-sm text-slate-700 break-words">{s.description}</span>
+                                                    </button>
+                                                ))}
+                                            </div>
+                                        )}
                                     </div>
-                                    {value.length > 0 && !selectedBusiness && (
-                                        <div className="absolute left-12 right-12 mt-2 bg-white border border-slate-200 rounded-xl z-20 overflow-hidden shadow-2xl">
-                                            {filteredData.map((s) => (
-                                                <button
-                                                    key={s.place_id}
-                                                    onClick={() => { setSelectedBusiness(s); setValue(s.description, false); clearSuggestions(); }}
-                                                    className="w-full p-4 flex items-start gap-3 hover:bg-slate-50 text-left border-b border-slate-100"
-                                                >
-                                                    <MapPin className="w-4 h-4 text-blue-600 mt-1" />
-                                                    <span className="text-sm text-slate-700">{s.description}</span>
-                                                </button>
-                                            ))}
-                                        </div>
-                                    )}
                                     {selectedBusiness && (
-                                        <div className="p-6 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-between shadow-sm">
-                                            <div className="flex items-center gap-4">
-                                                <div className="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center">
+                                        <div className="p-4 sm:p-6 rounded-2xl bg-blue-50 border border-blue-100 flex flex-col sm:flex-row items-start sm:items-center justify-between shadow-sm gap-4">
+                                            <div className="flex items-center gap-3 sm:gap-4 overflow-hidden w-full sm:w-auto">
+                                                <div className="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center shrink-0">
                                                     <CheckCircle2 className="w-6 h-6 text-white" />
                                                 </div>
-                                                <span className="font-medium text-slate-900">{selectedBusiness.structured_formatting?.main_text || selectedBusiness.description}</span>
+                                                <span className="font-medium text-slate-900 break-words line-clamp-2">{selectedBusiness.structured_formatting?.main_text || selectedBusiness.description}</span>
                                             </div>
-                                            <button onClick={() => setSelectedBusiness(null)} className="text-xs text-blue-600 font-bold uppercase tracking-widest">
+                                            <button onClick={() => setSelectedBusiness(null)} className="text-xs text-blue-600 font-bold uppercase tracking-widest shrink-0 self-end sm:self-auto">
                                                 {t('onboarding.step1.changeButton') as string}
                                             </button>
                                         </div>
@@ -186,11 +186,11 @@ export default function OnboardingPage() {
 
                 {step === 2 && (
                     <div className="w-full step-content space-y-6 md:space-y-12">
-                        <div className="text-center max-w-2xl mx-auto">
-                            <h2 className="font-serif text-2xl md:text-5xl mb-4 text-slate-900">
+                        <div className="text-center max-w-2xl mx-auto px-4 sm:px-0">
+                            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl mb-4 text-slate-900">
                                 {t('onboarding.step2.title') as string} <span className="text-blue-600 italic">{t('onboarding.step2.titleHighlight') as string}</span>
                             </h2>
-                            <p className="hidden sm:block text-slate-500">{t('onboarding.step2.description') as string}</p>
+                            <p className="text-slate-500 text-sm sm:text-base">{t('onboarding.step2.description') as string}</p>
                         </div>
                         <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto items-stretch px-4 md:px-0">
                             {tiers.map((tier: any, i: number) => {
@@ -308,14 +308,14 @@ export default function OnboardingPage() {
                                 );
                             })}
                         </div>
-                        <div className="flex justify-center gap-6 mt-4 md:mt-12">
-                            <button onClick={handleBack} className="px-8 py-3 text-slate-500 hover:text-slate-900 transition-colors uppercase text-xs font-bold tracking-widest">
+                        <div className="flex flex-col-reverse sm:flex-row justify-center gap-4 sm:gap-6 mt-8 md:mt-12 px-4 sm:px-0">
+                            <button onClick={handleBack} className="w-full sm:w-auto px-8 py-4 sm:py-3 text-slate-500 hover:text-slate-900 transition-colors uppercase text-xs font-bold tracking-widest bg-slate-100 sm:bg-transparent rounded-xl sm:rounded-none">
                                 {t('onboarding.step2.backButton') as string}
                             </button>
                             <button
                                 disabled={!selectedPlan}
                                 onClick={handleNext}
-                                className={`px-12 py-3 rounded-xl flex items-center gap-3 font-bold uppercase tracking-widest transition-all ${selectedPlan ? 'bg-slate-900 hover:bg-black text-white shadow-xl shadow-slate-900/10' : 'bg-slate-200 text-slate-500 cursor-not-allowed'}`}
+                                className={`w-full sm:w-auto px-8 sm:px-12 py-4 sm:py-3 rounded-xl flex items-center justify-center gap-3 font-bold uppercase tracking-widest transition-all ${selectedPlan ? 'bg-slate-900 hover:bg-black text-white shadow-xl shadow-slate-900/10' : 'bg-slate-200 text-slate-500 cursor-not-allowed'}`}
                             >
                                 {t('onboarding.step2.continueButton') as string}
                                 <ArrowRight className="w-5 h-5" />
@@ -326,39 +326,39 @@ export default function OnboardingPage() {
 
                 {step === 3 && (
                     <div className="max-w-2xl w-full step-content">
-                        <div className="relative p-10 md:p-16 rounded-3xl bg-white border border-slate-200 shadow-2xl text-center space-y-8">
-                            <div className="w-20 h-20 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center mx-auto mb-4 shadow-sm">
-                                <Sparkles className="w-10 h-10 text-blue-600" />
+                        <div className="relative p-6 sm:p-10 md:p-16 rounded-3xl bg-white border border-slate-200 shadow-xl text-center space-y-6 sm:space-y-8">
+                            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center mx-auto mb-2 sm:mb-4 shadow-sm">
+                                <Sparkles className="w-8 h-8 sm:w-10 sm:h-10 text-blue-600" />
                             </div>
-                            <h2 className="font-serif text-4xl text-slate-900">
-                                {t('onboarding.step3.title') as string} <span className="text-blue-600 italic">{t('onboarding.step3.titleHighlight') as string}</span>
+                            <h2 className="font-serif text-3xl sm:text-4xl text-slate-900">
+                                {t('onboarding.step3.title') as string} <br className="sm:hidden" /> <span className="text-blue-600 italic">{t('onboarding.step3.titleHighlight') as string}</span>
                             </h2>
-                            <p className="text-slate-500 leading-relaxed text-lg">
+                            <p className="text-slate-500 leading-relaxed text-base sm:text-lg">
                                 {ti('onboarding.step3.description', {
                                     business: selectedBusiness?.description || '',
                                     plan: selectedPlan || '',
                                 })}
                             </p>
-                            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-left space-y-4">
+                            <div className="p-4 sm:p-6 rounded-2xl bg-slate-50 border border-slate-200 text-left space-y-4">
                                 <p className="text-sm text-slate-600">{t('onboarding.step3.inputDescription') as string}</p>
                                 <input
                                     type="tel"
                                     placeholder={t('onboarding.step3.phonePlaceholder') as string}
                                     value={phoneNumber}
                                     onChange={(e) => setPhoneNumber(e.target.value)}
-                                    className="w-full h-14 px-4 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-blue-600 transition-all text-slate-900 text-lg tracking-widest shadow-inner placeholder:text-slate-300"
+                                    className="w-full h-14 px-4 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-blue-600 transition-all text-slate-900 text-base sm:text-lg tracking-widest shadow-inner placeholder:text-slate-300"
                                 />
                             </div>
                             <button
                                 onClick={handleSubmit}
                                 disabled={!phoneNumber || isSubmitting}
-                                className={`w-full h-16 rounded-xl font-bold uppercase tracking-widest shadow-xl transition-all flex items-center justify-center gap-4 ${!phoneNumber || isSubmitting ? 'bg-slate-200 text-slate-500 cursor-not-allowed' : 'bg-slate-900 hover:bg-black text-white shadow-slate-900/20'}`}
+                                className={`w-full h-14 sm:h-16 rounded-xl font-bold uppercase tracking-widest shadow-xl transition-all flex items-center justify-center gap-4 ${!phoneNumber || isSubmitting ? 'bg-slate-200 text-slate-500 cursor-not-allowed' : 'bg-slate-900 hover:bg-black text-white shadow-slate-900/20'}`}
                             >
                                 {isSubmitting ? t('onboarding.step3.submittingButton') as string : t('onboarding.step3.submitButton') as string}
                                 <ArrowRight className="w-5 h-5" />
                             </button>
                             <div className="flex justify-center">
-                                <button onClick={handleBack} className="text-slate-400 hover:text-slate-900 transition-colors text-xs font-bold uppercase tracking-widest">
+                                <button onClick={handleBack} className="text-slate-400 hover:text-slate-900 transition-colors text-xs font-bold uppercase tracking-widest py-2">
                                     {t('onboarding.step3.backButton') as string}
                                 </button>
                             </div>
@@ -367,21 +367,21 @@ export default function OnboardingPage() {
                 )}
 
                 {step === 4 && (
-                    <div className="max-w-xl w-full step-content text-center">
-                        <div className="w-24 h-24 rounded-full bg-green-50 border border-green-100 flex items-center justify-center mx-auto mb-8 animate-bounce shadow-sm">
-                            <CheckCircle2 className="w-12 h-12 text-green-600" />
+                    <div className="max-w-xl w-full step-content text-center px-4 sm:px-0">
+                        <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-green-50 border border-green-100 flex items-center justify-center mx-auto mb-6 sm:mb-8 animate-bounce shadow-sm">
+                            <CheckCircle2 className="w-10 h-10 sm:w-12 sm:h-12 text-green-600" />
                         </div>
-                        <h2 className="font-serif text-5xl text-slate-900 mb-6">
-                            {t('onboarding.step4.title') as string} <span className="text-green-600 italic">{t('onboarding.step4.titleHighlight') as string}</span>
+                        <h2 className="font-serif text-4xl sm:text-5xl text-slate-900 mb-4 sm:mb-6">
+                            {t('onboarding.step4.title') as string} <br className="sm:hidden" /> <span className="text-green-600 italic">{t('onboarding.step4.titleHighlight') as string}</span>
                         </h2>
-                        <p className="text-slate-500 text-xl leading-relaxed mb-10">
+                        <p className="text-slate-500 text-lg sm:text-xl leading-relaxed mb-8 sm:mb-10">
                             {ti('onboarding.step4.description', { plan: selectedPlan || '' })}
                         </p>
-                        <div className="p-8 rounded-3xl bg-blue-50 border border-blue-100 text-center space-y-4 shadow-sm">
+                        <div className="p-6 sm:p-8 rounded-3xl bg-blue-50 border border-blue-100 text-center space-y-3 sm:space-y-4 shadow-sm">
                             <h3 className="text-blue-600 font-bold uppercase tracking-[0.2em] text-xs">{t('onboarding.step4.nextStepsTitle') as string}</h3>
-                            <p className="text-slate-800 font-serif text-2xl">{t('onboarding.step4.nextStepsText') as string}</p>
+                            <p className="text-slate-800 font-serif text-xl sm:text-2xl">{t('onboarding.step4.nextStepsText') as string}</p>
                         </div>
-                        <Link to="/" className="inline-flex items-center gap-3 mt-12 text-slate-400 hover:text-slate-900 transition-colors font-medium">
+                        <Link to="/" className="inline-flex items-center gap-3 mt-8 sm:mt-12 text-slate-400 hover:text-slate-900 transition-colors font-medium">
                             {t('onboarding.step4.returnLink') as string}
                         </Link>
                     </div>
