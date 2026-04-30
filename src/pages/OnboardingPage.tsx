@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Search, MapPin, ArrowRight, CheckCircle2, Building2, Sparkles, Check, ChevronDown } from 'lucide-react';
+import { Search, MapPin, ArrowRight, CheckCircle2, Building2, Sparkles, Check, ChevronDown, Phone } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import gsap from 'gsap';
 import usePlacesAutocomplete from "use-places-autocomplete";
@@ -385,6 +385,23 @@ export default function OnboardingPage() {
                         <div className="p-6 sm:p-8 rounded-3xl bg-blue-50 border border-blue-100 text-center space-y-3 sm:space-y-4 shadow-sm">
                             <h3 className="text-blue-600 font-bold uppercase tracking-[0.2em] text-xs">{t('onboarding.step4.nextStepsTitle') as string}</h3>
                             <p className="text-slate-800 font-serif text-xl sm:text-2xl">{t('onboarding.step4.nextStepsText') as string}</p>
+                        </div>
+                        <div className="mt-8 pt-8 border-t border-slate-200">
+                            <p className="font-serif text-xl text-slate-900 mb-2">
+                                {t('onboarding.step4.calendarTitle') as string}
+                            </p>
+                            <p className="text-sm text-slate-500 mb-6">
+                                {t('onboarding.step4.calendarSubtitle') as string}
+                            </p>
+                            <a
+                                href="https://calendly.com/pablo-anvela/appel-decouverte"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-bold uppercase tracking-wider text-sm shadow-lg hover:bg-blue-700 active:scale-95 transition-all"
+                            >
+                                <Phone className="w-4 h-4" />
+                                {t('onboarding.step4.calendarButton') as string}
+                            </a>
                         </div>
                         <Link to="/" className="inline-flex items-center gap-3 mt-8 sm:mt-12 text-slate-400 hover:text-slate-900 transition-colors font-medium">
                             {t('onboarding.step4.returnLink') as string}

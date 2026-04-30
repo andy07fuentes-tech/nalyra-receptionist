@@ -44,10 +44,10 @@ export function ContactForm() {
       setFormData({ name: '', email: '', phone: '', businessName: '', businessType: '', message: '' });
     } catch {
       setStatus('error');
+      setTimeout(() => setStatus('idle'), 5000);
     }
 
     setIsSubmitting(false);
-    setTimeout(() => setStatus('idle'), 5000);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -139,11 +139,28 @@ export function ContactForm() {
               transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
             >
               {status === 'success' ? (
-                <div className="text-center py-12" role="alert">
+                <div className="text-center py-8" role="alert">
                   <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
                   <h3 className="font-serif text-h5 text-dark-theme mb-2">
                     {t('contact.form.successMessage')}
                   </h3>
+                  <div className="mt-8 pt-8 border-t border-slate-200">
+                    <p className="font-serif text-xl text-dark-theme mb-2">
+                      {t('contact.form.calendarTitle')}
+                    </p>
+                    <p className="text-sm text-slate-500 mb-6">
+                      {t('contact.form.calendarSubtitle')}
+                    </p>
+                    <a
+                      href="https://calendly.com/pablo-anvela/appel-decouverte"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-bold uppercase tracking-wider text-sm shadow-lg hover:bg-blue-700 hover:shadow-blue-500/25 active:scale-95 transition-all"
+                    >
+                      <Phone className="w-4 h-4" />
+                      {t('contact.form.calendarButton')}
+                    </a>
+                  </div>
                 </div>
               ) : status === 'error' ? (
                 <div className="text-center py-12" role="alert">
