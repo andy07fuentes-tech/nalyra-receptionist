@@ -99,22 +99,12 @@ export function StickyPainGallery() {
 
   return (
     <div className="w-full">
-      {/* Mobile: stacking scroll cards */}
-      <div className="md:hidden relative -mx-4">
+      {/* Mobile: all cards stacked */}
+      <div className="flex flex-col gap-4 md:hidden">
         {PHOTO_CONFIG.map((photo, i) => {
-          const PEEK = 56;
           const d = getData(photo);
           return (
-            <div
-              key={photo.id}
-              style={{
-                position: 'sticky',
-                top: `${i * PEEK}px`,
-                height: `calc(100vh - ${i * PEEK}px)`,
-                zIndex: i + 1,
-              }}
-              className="mx-4 rounded-2xl overflow-hidden shadow-2xl"
-            >
+            <div key={photo.id} className="h-[420px]">
               <PainCard
                 src={photo.src} alt={d.title}
                 {...d}
@@ -125,7 +115,6 @@ export function StickyPainGallery() {
             </div>
           );
         })}
-        <div style={{ height: '50vh' }} />
       </div>
 
       {/* Desktop: 3-column sticky layout */}
