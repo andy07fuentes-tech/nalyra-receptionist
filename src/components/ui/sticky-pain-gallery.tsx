@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../../contexts/LanguageContext';
 
@@ -83,6 +83,20 @@ function PainCard({
 export function StickyPainGallery() {
   const { t } = useLanguage();
   const [sideHovered, setSideHovered] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll = () => {
+    if (!carouselRef.current) return;
+    const { scrollLeft, clientWidth } = carouselRef.current;
+    setActiveIndex(Math.round(scrollLeft / (clientWidth * 0.85 + 16)));
+  };
+
+  const scrollToCard = (index: number) => {
+    if (!carouselRef.current) return;
+    const cardWidth = carouselRef.current.clientWidth * 0.85 + 16;
+    carouselRef.current.scrollTo({ left: cardWidth * index, behavior: 'smooth' });
+  };
 
   const logicLabel   = t('painPoints.gallery.labels.logic') as string;
   const benefitLabel = t('painPoints.gallery.labels.benefit') as string;
@@ -99,30 +113,49 @@ export function StickyPainGallery() {
 
   return (
     <div className="w-full">
-      {/* Mobile: all cards stacked with alternating slide-in */}
-      <div className="flex flex-col gap-4 md:hidden">
-        {PHOTO_CONFIG.map((photo, i) => {
-          const d = getData(photo);
-          const fromLeft = i % 2 === 0;
-          return (
-            <motion.div
-              key={photo.id}
-              className="h-[420px]"
-              initial={{ opacity: 0, x: fromLeft ? -40 : 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.15 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <PainCard
-                src={photo.src} alt={d.title}
-                {...d}
-                logicLabel={logicLabel} benefitLabel={benefitLabel}
-                index={i} total={PHOTO_CONFIG.length}
-                featured={i === 0}
-              />
-            </motion.div>
-          );
-        })}
+      {/* Mobile: horizontal snap carousel */}
+      <div className="md:hidden">
+        <div
+          ref={carouselRef}
+          onScroll={handleScroll}
+          className="flex overflow-x-scroll snap-x snap-mandatory scrollbar-hide gap-4 pb-4 -mx-4 px-4"
+          style={{ WebkitOverflowScrolling: 'touch' }}
+        >
+          {PHOTO_CONFIG.map((photo, i) => {
+            const d = getData(photo);
+            return (
+              <div
+                key={photo.id}
+                className="flex-shrink-0 w-[85vw] h-[480px] snap-start"
+              >
+                <PainCard
+                  src={photo.src} alt={d.title}
+                  {...d}
+                  logicLabel={logicLabel} benefitLabel={benefitLabel}
+                  index={i} total={PHOTO_CONFIG.length}
+                  featured={i === 0}
+                />
+              </div>
+            );
+          })}
+          {/* trailing spacer so last card can fully snap */}
+          <div className="flex-shrink-0 w-4" />
+        </div>
+
+        {/* Dot indicators */}
+        <div className="flex justify-center gap-2 mt-4">
+          {PHOTO_CONFIG.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => scrollToCard(i)}
+              className={`transition-all duration-300 rounded-full ${
+                i === activeIndex
+                  ? 'w-6 h-2 bg-blue-500'
+                  : 'w-2 h-2 bg-slate-300'
+              }`}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Desktop: 3-column sticky layout */}
