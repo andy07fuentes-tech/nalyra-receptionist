@@ -1,6 +1,7 @@
 import { useState, useCallback, useEffect } from 'react';
 import { Navigation } from '../sections/Navigation';
 import { Hero } from '../sections/Hero';
+import { HeroSplit } from '../sections/HeroSplit';
 import { MissedCalls } from '../sections/MissedCalls';
 import { PainPoints } from '../sections/PainPoints';
 import { VideoDemo } from '../sections/VideoDemo';
@@ -25,6 +26,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function LandingPage() {
     const [isLoading, setIsLoading] = useState(true);
+    const [heroLayout, setHeroLayout] = useState<'fullscreen' | 'split'>('fullscreen');
 
     const handlePreloaderComplete = useCallback(() => {
         setIsLoading(false);
@@ -85,8 +87,30 @@ export default function LandingPage() {
             <div className={`min-h-screen bg-slate-50 ${isLoading ? 'overflow-hidden max-h-screen' : ''}`}>
                 <Navigation />
 
-                <main className="bg-slate-50">
-                    <Hero isReady={!isLoading} />
+                <main>
+                    {/* Layout Toggle (Dev Only) */}
+                    <div className="absolute top-24 right-4 z-50 flex gap-2 bg-black/50 p-1.5 rounded-lg backdrop-blur-md border border-white/10">
+                        <button 
+                            onClick={() => setHeroLayout('fullscreen')} 
+                            className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors ${heroLayout === 'fullscreen' ? 'bg-blue-600 text-white shadow-lg' : 'text-slate-300 hover:text-white hover:bg-white/10'}`}
+                        >
+                            Fullscreen Video
+                        </button>
+                        <button 
+                            onClick={() => setHeroLayout('split')} 
+                            className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors ${heroLayout === 'split' ? 'bg-blue-600 text-white shadow-lg' : 'text-slate-300 hover:text-white hover:bg-white/10'}`}
+                        >
+                            Split Layout
+                        </button>
+                    </div>
+
+                    {heroLayout === 'fullscreen' ? (
+                        <Hero isReady={!isLoading} />
+                    ) : (
+                        <HeroSplit isReady={!isLoading} />
+                    )}
+                    
+
                     <MissedCalls />
                     <CinematicShowcase />
                     <PainPoints />

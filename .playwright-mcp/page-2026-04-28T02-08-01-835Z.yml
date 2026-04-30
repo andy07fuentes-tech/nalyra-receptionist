@@ -1,0 +1,375 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e143]:
+    - generic [ref=e144]:
+      - button "SOUND" [ref=e145] [cursor=pointer]:
+        - generic [ref=e146]: SOUND
+      - link "EN" [ref=e153] [cursor=pointer]:
+        - /url: /en
+  - main [ref=e5]:
+    - generic:
+      - generic:
+        - img "IVRESS - EVOLVE RELATIONSHIP" [ref=e9]
+        - generic:
+          - generic:
+            - heading "A B R A N D S I T E B Y I V R E S S" [level=1]:
+              - generic:
+                - generic:
+                  - generic: A
+                  - generic: B
+                  - generic: R
+                  - generic: A
+                  - generic: "N"
+                  - generic: D
+                  - generic: S
+                  - generic: I
+                  - generic: T
+                  - generic: E
+                  - generic: B
+                  - generic: "Y"
+              - generic:
+                - generic:
+                  - generic: I
+                  - generic: V
+                  - generic: R
+                  - generic: E
+                  - generic: S
+                  - generic: S
+            - generic:
+              - generic: 紡
+              - generic: ぐ
+              - generic: 物
+              - generic: 語
+        - button "CLICK TO START" [ref=e154] [cursor=pointer]:
+          - generic [ref=e155]:
+            - generic [ref=e156]: CLICK TO
+            - generic [ref=e157]: START
+        - generic [ref=e13]:
+          - generic [ref=e14]:
+            - generic:
+              - paragraph: 旅人は、 世界の片隅で探索を続けていた
+          - generic [ref=e15]:
+            - generic:
+              - paragraph:
+                - text: 名も無き者と出会った
+                - text: その背には、悶々と影が揺れていた
+          - generic [ref=e16]:
+            - generic [ref=e17]:
+              - generic:
+                - paragraph:
+                  - text: 旅人は光を解き放ち、闇を打ち払った
+                  - text: そして彼らに、守り神と勇気を授けた
+            - generic [ref=e18]:
+              - generic:
+                - paragraph:
+                  - text: 「僕もいつか何者かになりたい」
+                  - text: 名も無き者の心に小さく芽生えた
+          - generic [ref=e19]:
+            - generic:
+              - paragraph:
+                - text: 旅人の示した先に、
+                - generic:
+                  - generic:
+                    - generic: かり
+                    - text: 化
+                - text: の城が浮かび上がった
+                - text: 彼らはついに、歩み始めた
+          - generic [ref=e20]:
+            - generic:
+              - paragraph:
+                - generic: 化
+                - generic: の
+                - generic: 城
+                - generic: に
+                - generic: 近
+                - generic: づ
+                - generic: く
+                - generic: に
+                - generic: つ
+                - generic: れ
+                - generic: 、
+                - generic: 影
+                - generic: は
+                - generic: 数
+                - generic: を
+                - generic: 増
+                - generic: し
+                - generic: 強
+                - generic: 大
+                - generic: と
+                - generic: な
+                - generic: る
+                - generic: そ
+                - generic: れ
+                - generic: で
+                - generic: も
+                - generic: 歩
+                - generic: み
+                - generic: を
+                - generic: 止
+                - generic: め
+                - generic: な
+                - generic: か
+                - generic: っ
+                - generic: た
+                - generic: の
+                - generic: は
+                - generic: 、
+                - generic: 一
+                - generic: 人
+                - generic: で
+                - generic: は
+                - generic: な
+                - generic: か
+                - generic: っ
+                - generic: た
+                - generic: か
+                - generic: ら
+                - generic: だ
+          - generic [ref=e21]:
+            - generic [ref=e22]:
+              - generic:
+                - paragraph:
+                  - text: ―着いた先は、終着地ではなかった
+                  - text: 名も無き者達は、 思考を巡らせた
+            - generic [ref=e23]:
+              - generic:
+                - paragraph:
+                  - text: 彼らが出した答えは、「感謝」だった
+                  - text: 化の城があったからこそ挑戦し、
+                  - text: 多くを学び、変容できたのだから
+            - generic [ref=e24]:
+              - generic:
+                - paragraph:
+                  - text: やがて名も無き者は人々を導く旅人となる
+                  - text: この物語は終わることなく紡がれていく
+          - generic:
+            - generic:
+              - img
+            - generic:
+              - generic:
+                - generic:
+                  - list:
+                    - listitem:
+                      - link "instagram":
+                        - /url: https://www.instagram.com/ivress1201
+                        - img "instagram"
+                    - listitem:
+                      - link "x":
+                        - /url: https://x.com/ivress1201
+                        - img "x"
+                    - listitem:
+                      - link "facebook":
+                        - /url: https://www.facebook.com/ivress1201
+                        - img "facebook"
+                - generic:
+                  - link "コーポレートサイト external link":
+                    - /url: https://www.ivress.co.jp/
+                    - text: コーポレートサイト
+                    - img "external link"
+                  - link "採用情報 external link":
+                    - /url: https://ivress.co.jp/special/
+                    - text: 採用情報
+                    - img "external link"
+                  - link "お問い合わせ external link":
+                    - /url: https://www.ivress.co.jp/contact/
+                    - text: お問い合わせ
+                    - img "external link"
+              - generic:
+                - link "個人情報保護方針":
+                  - /url: https://www.ivress.co.jp/privacy/
+                - generic: © 2026 株式会社イヴレス All rights reserved.
+          - generic [ref=e25]:
+            - list [ref=e26]:
+              - listitem [ref=e27]:
+                - paragraph [ref=e28]:
+                  - generic [ref=e29]:
+                    - generic [ref=e30]: P
+                    - generic [ref=e31]: r
+                    - generic [ref=e32]: o
+                    - generic [ref=e33]: l
+                    - generic [ref=e34]: o
+                    - generic [ref=e35]: g
+                    - generic [ref=e36]: u
+                    - generic [ref=e37]: e
+              - listitem:
+                - paragraph [ref=e38]:
+                  - generic [ref=e39]:
+                    - generic [ref=e40]: E
+                    - generic [ref=e41]: "n"
+                    - generic [ref=e42]: c
+                    - generic [ref=e43]: o
+                    - generic [ref=e44]: u
+                    - generic [ref=e45]: "n"
+                    - generic [ref=e46]: t
+                    - generic [ref=e47]: e
+                    - generic [ref=e48]: r
+              - listitem:
+                - paragraph [ref=e49]:
+                  - generic [ref=e50]:
+                    - generic [ref=e51]: P
+                    - generic [ref=e52]: o
+                    - generic [ref=e53]: w
+                    - generic [ref=e54]: e
+                    - generic [ref=e55]: r
+              - listitem:
+                - paragraph [ref=e56]:
+                  - generic [ref=e57]:
+                    - generic [ref=e58]: O
+                    - generic [ref=e59]: a
+                    - generic [ref=e60]: t
+                    - generic [ref=e61]: h
+              - listitem:
+                - paragraph [ref=e62]:
+                  - generic [ref=e63]:
+                    - generic [ref=e64]: B
+                    - generic [ref=e65]: o
+                    - generic [ref=e66]: "n"
+                    - generic [ref=e67]: d
+              - listitem:
+                - paragraph [ref=e68]:
+                  - generic [ref=e69]:
+                    - generic [ref=e70]: T
+                    - generic [ref=e71]: r
+                    - generic [ref=e72]: i
+                    - generic [ref=e73]: a
+                    - generic [ref=e74]: l
+              - listitem:
+                - paragraph [ref=e75]:
+                  - generic [ref=e76]:
+                    - generic [ref=e77]: E
+                    - generic [ref=e78]: x
+                    - generic [ref=e79]: p
+                    - generic [ref=e80]: a
+                    - generic [ref=e81]: "n"
+                    - generic [ref=e82]: s
+                    - generic [ref=e83]: i
+                    - generic [ref=e84]: o
+                    - generic [ref=e85]: "n"
+              - listitem:
+                - paragraph [ref=e86]:
+                  - generic [ref=e87]:
+                    - generic [ref=e88]: S
+                    - generic [ref=e89]: p
+                    - generic [ref=e90]: i
+                    - generic [ref=e91]: r
+                    - generic [ref=e92]: a
+                    - generic [ref=e93]: l
+              - listitem:
+                - paragraph [ref=e94]:
+                  - generic [ref=e95]:
+                    - generic [ref=e96]: I
+                    - generic [ref=e97]: V
+                    - generic [ref=e98]: R
+                    - generic [ref=e99]: E
+                    - generic [ref=e100]: S
+                    - generic [ref=e101]: S
+            - generic [ref=e102]:
+              - generic [ref=e103]:
+                - generic [ref=e104]:
+                  - generic [ref=e105]: "0"
+                  - generic [ref=e106]: "1"
+                - generic [ref=e107]:
+                  - generic [ref=e108]: "0"
+                  - generic [ref=e109]: "2"
+                - generic [ref=e110]:
+                  - generic [ref=e111]: "0"
+                  - generic [ref=e112]: "3"
+                - generic [ref=e113]:
+                  - generic [ref=e114]: "0"
+                  - generic [ref=e115]: "4"
+                - generic [ref=e116]:
+                  - generic [ref=e117]: "0"
+                  - generic [ref=e118]: "5"
+                - generic [ref=e119]:
+                  - generic [ref=e120]: "0"
+                  - generic [ref=e121]: "6"
+                - generic [ref=e122]:
+                  - generic [ref=e123]: "0"
+                  - generic [ref=e124]: "7"
+                - generic [ref=e125]:
+                  - generic [ref=e126]: "0"
+                  - generic [ref=e127]: "8"
+                - generic [ref=e128]:
+                  - generic [ref=e129]: "0"
+                  - generic [ref=e130]: "9"
+              - generic [ref=e131]:
+                - generic [ref=e132]: /
+                - generic [ref=e133]: "0"
+                - generic [ref=e134]: "9"
+          - generic [ref=e135]:
+            - generic [ref=e136]: SCROLL TO CONTINUE
+            - generic [ref=e137]:
+              - img [ref=e138]
+              - img [ref=e139]
+              - img [ref=e140]
+              - img [ref=e141]
+        - generic:
+          - generic:
+            - generic:
+              - paragraph:
+                - generic: ―
+                - generic: 逆
+                - generic: 境
+                - generic: を
+                - generic: 進
+                - generic: 化
+                - generic: の
+                - generic: 糧
+                - generic: と
+                - generic: し
+                - generic: ろ
+                - generic: ―
+                - generic: 傷
+                - generic: つ
+                - generic: き
+                - generic: 、
+                - generic: 倒
+                - generic: れ
+                - generic: 、
+                - generic: 迷
+                - generic: う
+                - generic: た
+                - generic: び
+                - generic: に
+                - generic: 強
+                - generic: く
+                - generic: な
+                - generic: れ
+                - generic: る
+                - generic: 逆
+                - generic: 境
+                - generic: は
+                - generic: 決
+                - generic: し
+                - generic: て
+                - generic: 人
+                - generic: を
+                - generic: 退
+                - generic: か
+                - generic: せ
+                - generic: る
+                - generic: も
+                - generic: の
+                - generic: で
+                - generic: は
+                - generic: な
+                - generic: い
+                - generic: 向
+                - generic: き
+                - generic: 合
+                - generic: う
+                - generic: 者
+                - generic: を
+                - generic: 強
+                - generic: く
+                - generic: 、
+                - generic: よ
+                - generic: り
+                - generic: 高
+                - generic: み
+                - generic: へ
+                - generic: と
+                - generic: 導
+                - generic: く
+    - button "TAP TO CLOSE":
+      - generic: TAP TO CLOSE

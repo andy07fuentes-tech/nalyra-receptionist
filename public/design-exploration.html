@@ -1,0 +1,1735 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anvela · Design Exploration — 4 Hero Variants</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Poppins:wght@300;400;500;600;700;800&family=Qwitcher+Grypen:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    /* ── Anvela design tokens ── */
+    :root {
+      --gold-200: #fff3d6;
+      --gold-300: #e4cb99;
+      --gold-400: #dbb977;
+      --gold-500: #d2a855;
+      --gold-600: #a88644;
+      --gold-700: #7e6533;
+      --wine-900: #070707;
+      --wine-800: #0e0e0e;
+      --wine-700: #161616;
+      --wine-600: #1d1d1d;
+      --wine-500: #242424;
+      --wine-400: #505050;
+      --blue-900: #002a33;
+      --blue-800: #005466;
+      --blue-700: #007e99;
+      --blue-600: #00a8cc;
+      --blue-500: #00d2ff;
+      --blue-400: #33dbff;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #edeae3;
+    }
+
+    /* ── Explorer chrome ── */
+    .x-nav {
+      position: sticky; top: 0; z-index: 200;
+      display: flex; align-items: center; gap: 1.5rem;
+      padding: 0 2.5rem;
+      height: 52px;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e0dbd2;
+    }
+    .x-nav-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #2a1f0e;
+    }
+    .x-nav-sep { flex: 1; }
+    .x-pills { display: flex; gap: 0.5rem; }
+    .x-pill {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.28rem 0.9rem;
+      border-radius: 100px;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+    .x-pill:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
+    .x-pill-a { background: #f5efe4; color: var(--gold-700); border: 1px solid var(--gold-300); }
+    .x-pill-b { background: var(--wine-800); color: var(--blue-400); border: 1px solid var(--blue-800); }
+    .x-pill-c { background: var(--wine-900); color: var(--gold-400); border: 1px solid rgba(210,168,85,0.4); }
+    .x-pill-d { background: #0e0a03; color: var(--gold-300); border: 1px solid rgba(228,203,153,0.5); box-shadow: 0 0 10px rgba(210,168,85,0.1); }
+
+    .x-label {
+      padding: 2.5rem 2.5rem 1.5rem;
+      text-align: center;
+      position: relative;
+    }
+    .x-label::after {
+      content: '';
+      display: block;
+      width: 36px; height: 1px;
+      background: var(--gold-500);
+      margin: 1.2rem auto 0;
+    }
+    .x-label-letter {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--gold-600);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    .x-label h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      color: #1a1007;
+    }
+    .x-label p {
+      font-size: 0.7rem;
+      color: #9a8e7e;
+      margin-top: 0.3rem;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Animations ── */
+    @keyframes pulse-glow {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.55; transform: scale(0.82); }
+    }
+    @keyframes breathe {
+      0%, 100% { opacity: 0.4; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.05); }
+    }
+    @keyframes float-card {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes shimmer-bar {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    @keyframes blink-cursor {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+
+    /* ═══════════════════════════════════════════════════════
+       VARIANT A — MAISON DE LUXE
+       Editorial split · cream + gold · Cormorant dominant
+    ═══════════════════════════════════════════════════════ */
+
+    #va { background: #f5efe4; }
+
+    .va-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Hairline texture */
+    .va-texture {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image: repeating-linear-gradient(
+        0deg,
+        transparent, transparent 58px,
+        rgba(126,101,51,0.04) 58px, rgba(126,101,51,0.04) 59px
+      );
+    }
+
+    .va-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem 3.5rem 5rem 6rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .va-kicker {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+    .va-kicker::before {
+      content: '';
+      display: block;
+      width: 28px; height: 1px;
+      background: var(--gold-500);
+    }
+    .va-kicker span {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold-600);
+    }
+
+    .va-script {
+      font-family: 'Qwitcher Grypen', cursive;
+      font-size: 3.2rem;
+      color: var(--gold-500);
+      line-height: 0.9;
+      margin-bottom: 0.4rem;
+    }
+
+    .va-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 4.5vw, 5rem);
+      font-weight: 300;
+      line-height: 1.08;
+      color: #1a1007;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.8rem;
+    }
+    .va-headline em {
+      font-style: italic;
+      color: var(--gold-600);
+    }
+
+    .va-rule {
+      width: 44px; height: 1px;
+      background: linear-gradient(to right, var(--gold-500), transparent);
+      margin-bottom: 1.6rem;
+    }
+
+    .va-body {
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: #5a4f3f;
+      line-height: 1.85;
+      max-width: 360px;
+      margin-bottom: 2.5rem;
+    }
+
+    .va-ctas { display: flex; gap: 1rem; align-items: center; }
+
+    .va-btn-p {
+      background: var(--gold-600);
+      color: #fff;
+      border: none;
+      padding: 0.95rem 2.2rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.35s;
+      position: relative;
+      overflow: hidden;
+    }
+    .va-btn-p::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.6s;
+    }
+    .va-btn-p:hover::before { transform: translateX(100%); }
+    .va-btn-p:hover { background: var(--gold-700); }
+
+    .va-btn-s {
+      background: transparent;
+      color: var(--gold-700);
+      border: 1px solid var(--gold-400);
+      padding: 0.95rem 1.6rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .va-btn-s:hover { background: var(--gold-200); border-color: var(--gold-500); }
+
+    /* Right: phone conversation */
+    .va-right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 5rem 4rem 3rem;
+      position: relative;
+      z-index: 2;
+    }
+    .va-right::before {
+      content: '';
+      position: absolute; left: 0; top: 12%; bottom: 12%;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, var(--gold-300) 25%, var(--gold-300) 75%, transparent);
+    }
+
+    .va-vertical-text {
+      position: absolute;
+      top: 50%; right: 1.5rem;
+      transform: translateY(-50%) rotate(90deg);
+      font-size: 0.55rem;
+      font-weight: 600;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--gold-400);
+      white-space: nowrap;
+      opacity: 0.7;
+    }
+
+    .va-phone {
+      width: 290px;
+      border-radius: 28px;
+      background: #fff;
+      box-shadow:
+        0 2px 4px rgba(0,0,0,0.04),
+        0 16px 48px rgba(126,101,51,0.14),
+        0 40px 80px rgba(126,101,51,0.06);
+      overflow: hidden;
+      animation: float-card 6s ease-in-out infinite;
+    }
+
+    .va-ph-top {
+      background: linear-gradient(145deg, #1a1007 0%, #2d1f08 100%);
+      padding: 1.1rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .va-ph-avatar {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-700), var(--gold-500));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .va-ph-caller { flex: 1; }
+    .va-ph-name {
+      font-size: 0.75rem; font-weight: 600;
+      color: #fff;
+    }
+    .va-ph-sub {
+      font-size: 0.58rem;
+      color: rgba(255,255,255,0.4);
+      margin-top: 1px;
+    }
+    .va-ph-badge {
+      font-size: 0.5rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #f87171;
+      background: rgba(248,113,113,0.12);
+      border: 1px solid rgba(248,113,113,0.25);
+      padding: 0.2rem 0.55rem;
+      border-radius: 100px;
+    }
+
+    .va-ph-msgs {
+      background: #f5efe4;
+      padding: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .va-msg-anvela {
+      background: #fff;
+      border-radius: 10px 10px 10px 3px;
+      padding: 0.65rem 0.85rem;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+    }
+    .va-msg-anvela .sender {
+      font-size: 0.5rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-600);
+      margin-bottom: 0.22rem;
+    }
+    .va-msg-anvela .text {
+      font-size: 0.68rem;
+      color: #4a3f30;
+      line-height: 1.5;
+    }
+    .va-msg-anvela .ts {
+      font-size: 0.48rem;
+      color: #bbb;
+      margin-top: 0.2rem;
+      text-align: right;
+    }
+
+    .va-msg-client {
+      background: var(--gold-700);
+      border-radius: 10px 10px 3px 10px;
+      padding: 0.65rem 0.85rem;
+      align-self: flex-end;
+      max-width: 80%;
+    }
+    .va-msg-client .text {
+      font-size: 0.68rem;
+      color: rgba(255,255,255,0.95);
+      line-height: 1.5;
+    }
+    .va-msg-client .ts {
+      font-size: 0.48rem;
+      color: rgba(255,255,255,0.4);
+      margin-top: 0.2rem;
+      text-align: right;
+    }
+
+    .va-typing {
+      display: flex; align-items: center; gap: 0.4rem;
+      padding: 0.55rem 0.85rem;
+    }
+    .va-typing span {
+      font-size: 0.55rem;
+      color: #aaa;
+      font-style: italic;
+    }
+    .va-dots { display: flex; gap: 3px; align-items: center; }
+    .va-dot {
+      width: 4px; height: 4px;
+      background: var(--gold-400);
+      border-radius: 50%;
+      animation: pulse-glow 1.4s ease-in-out infinite;
+    }
+    .va-dot:nth-child(2) { animation-delay: 0.2s; }
+    .va-dot:nth-child(3) { animation-delay: 0.4s; }
+
+    .va-ph-footer {
+      background: #fff;
+      border-top: 1px solid #f0ebe0;
+      padding: 0.75rem 1rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+    .va-stat {
+      text-align: center;
+      padding: 0.4rem;
+      border-radius: 8px;
+      background: #faf7f2;
+    }
+    .va-stat-n {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--gold-600);
+      display: block;
+      line-height: 1;
+    }
+    .va-stat-l {
+      font-size: 0.48rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #bbb;
+      display: block;
+      margin-top: 0.2rem;
+    }
+
+
+    /* ═══════════════════════════════════════════════════════
+       VARIANT B — TECH DARK
+       Full dark · Poppins bold · Blue glow · Dashboard feed
+    ═══════════════════════════════════════════════════════ */
+
+    #vb { background: var(--wine-900); }
+    .x-label-b {
+      background: #060606;
+      border-top: 1px solid #111;
+    }
+    .x-label-b .x-label-letter { color: rgba(0,210,255,0.55); }
+    .x-label-b h2 { color: #f0f0f0; }
+    .x-label-b p { color: #555; }
+    .x-label-b::after { background: var(--blue-700); }
+
+    .vb-wrap {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .vb-grid {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(0,210,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,210,255,0.025) 1px, transparent 1px);
+      background-size: 64px 64px;
+    }
+    .vb-orb-1 {
+      position: absolute;
+      width: 900px; height: 900px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,210,255,0.07) 0%, transparent 65%);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      animation: breathe 8s ease-in-out infinite;
+    }
+    .vb-orb-2 {
+      position: absolute;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(210,168,85,0.05) 0%, transparent 70%);
+      top: 10%; right: 5%;
+      pointer-events: none;
+    }
+
+    .vb-inner {
+      position: relative; z-index: 2;
+      max-width: 1080px; width: 100%;
+      margin: 0 auto;
+      padding: 5rem 4rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .vb-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(0,210,255,0.07);
+      border: 1px solid rgba(0,210,255,0.18);
+      border-radius: 100px;
+      padding: 0.32rem 0.9rem;
+      margin-bottom: 2rem;
+    }
+    .vb-badge-dot {
+      width: 6px; height: 6px;
+      background: var(--blue-500);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--blue-500);
+      animation: pulse-glow 2s ease-in-out infinite;
+    }
+    .vb-badge-txt {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--blue-400);
+    }
+
+    .vb-headline {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(2.8rem, 4vw, 4rem);
+      font-weight: 800;
+      line-height: 1.06;
+      color: #fff;
+      letter-spacing: -0.04em;
+      margin-bottom: 0.5rem;
+    }
+    .vb-headline-accent {
+      display: block;
+      background: linear-gradient(90deg, var(--blue-400) 0%, var(--blue-500) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .vb-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 1.8rem;
+    }
+
+    .vb-body {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.85;
+      max-width: 420px;
+      margin-bottom: 2.5rem;
+    }
+
+    .vb-ctas { display: flex; gap: 1rem; align-items: center; }
+
+    .vb-btn-p {
+      background: var(--blue-500);
+      color: var(--wine-900);
+      border: none;
+      padding: 0.9rem 2rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.3s;
+      box-shadow: 0 0 28px rgba(0,210,255,0.28);
+    }
+    .vb-btn-p:hover {
+      box-shadow: 0 0 50px rgba(0,210,255,0.5);
+      transform: translateY(-2px);
+    }
+
+    .vb-btn-s {
+      background: transparent;
+      color: rgba(255,255,255,0.5);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 0.9rem 1.5rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
+    .vb-btn-s:hover { border-color: rgba(255,255,255,0.28); color: #fff; }
+
+    /* Right: dashboard cards */
+    .vb-cards { display: flex; flex-direction: column; gap: 0.85rem; }
+
+    .vb-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 14px;
+      padding: 1.15rem 1.3rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .vb-card-hd {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.9rem;
+    }
+    .vb-card-title {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+    }
+    .vb-live {
+      display: flex; align-items: center; gap: 0.35rem;
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #4ade80;
+    }
+    .vb-live-dot {
+      width: 5px; height: 5px;
+      background: #4ade80;
+      border-radius: 50%;
+      animation: pulse-glow 1.5s ease-in-out infinite;
+    }
+
+    .vb-call {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .vb-call:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .vb-avatar {
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.65rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .vb-av-green { background: rgba(74,222,128,0.08); border: 1px solid rgba(74,222,128,0.2); color: #4ade80; }
+    .vb-av-blue  { background: var(--blue-900); border: 1px solid var(--blue-800); color: var(--blue-400); }
+    .vb-av-red   { background: rgba(248,113,113,0.08); border: 1px solid rgba(248,113,113,0.2); color: #f87171; }
+
+    .vb-call-info { flex: 1; }
+    .vb-call-name {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.82);
+    }
+    .vb-call-detail {
+      font-size: 0.58rem;
+      color: rgba(255,255,255,0.3);
+      margin-top: 1px;
+    }
+
+    .vb-tag {
+      font-size: 0.5rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.18rem 0.5rem;
+      border-radius: 100px;
+    }
+    .vb-tag-ok   { background: rgba(74,222,128,0.12); color: #4ade80; border: 1px solid rgba(74,222,128,0.25); }
+    .vb-tag-live { background: rgba(0,210,255,0.1);   color: var(--blue-400); border: 1px solid rgba(0,210,255,0.2); }
+    .vb-tag-re   { background: rgba(251,191,36,0.1);  color: #fbbf24; border: 1px solid rgba(251,191,36,0.2); }
+
+    .vb-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+    .vb-stat {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.055);
+      border-radius: 10px;
+      padding: 0.9rem 0.5rem;
+      text-align: center;
+    }
+    .vb-stat-n {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.55rem;
+      font-weight: 800;
+      display: block;
+      letter-spacing: -0.03em;
+    }
+    .vb-stat-l {
+      font-size: 0.52rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.28);
+      display: block;
+      margin-top: 0.15rem;
+    }
+    .vb-s1 .vb-stat-n { color: #f87171; }
+    .vb-s2 .vb-stat-n { color: var(--blue-400); }
+    .vb-s3 .vb-stat-n { color: #4ade80; }
+
+
+    /* ═══════════════════════════════════════════════════════
+       VARIANT C — CINÉMA
+       Atmospheric · Cormorant italic dominant · Gold on dark
+    ═══════════════════════════════════════════════════════ */
+
+    #vc { background: var(--wine-900); }
+    .x-label-c {
+      background: #040404;
+      border-top: 1px solid #0e0e0e;
+    }
+    .x-label-c .x-label-letter { color: rgba(210,168,85,0.45); }
+    .x-label-c h2 { color: #f0f0f0; }
+    .x-label-c p { color: #555; }
+    .x-label-c::after { background: var(--gold-700); }
+
+    .vc-wrap {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Cinematic light cone */
+    .vc-cone {
+      position: absolute;
+      top: -30%;
+      right: -15%;
+      width: 80%;
+      height: 160%;
+      background: conic-gradient(
+        from 210deg at 100% 45%,
+        transparent 0deg,
+        rgba(210,168,85,0.055) 18deg,
+        rgba(210,168,85,0.025) 40deg,
+        transparent 58deg
+      );
+      pointer-events: none;
+    }
+    .vc-glow-pool {
+      position: absolute;
+      bottom: -20%;
+      left: -5%;
+      width: 55%;
+      height: 60%;
+      background: radial-gradient(ellipse at center, rgba(0,84,102,0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    /* Film grain */
+    .vc-grain {
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E") repeat;
+      pointer-events: none;
+      opacity: 0.4;
+    }
+    /* Horizontal scan lines */
+    .vc-scan {
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(
+        0deg, transparent, transparent 3px,
+        rgba(255,255,255,0.006) 3px, rgba(255,255,255,0.006) 4px
+      );
+      pointer-events: none;
+    }
+
+    .vc-inner {
+      position: relative; z-index: 2;
+      max-width: 1080px; width: 100%;
+      margin: 0 auto;
+      padding: 6rem 4rem;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .vc-eyebrow {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .vc-eb-line { width: 28px; height: 1px; background: var(--gold-600); }
+    .vc-eb-txt {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: var(--gold-500);
+    }
+
+    .vc-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.5rem, 5.5vw, 5.5rem);
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(255,255,255,0.92);
+      line-height: 1.04;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+    .vc-headline strong {
+      font-style: normal;
+      font-weight: 600;
+      color: var(--gold-400);
+      display: block;
+    }
+
+    .vc-ornament {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 1.8rem;
+    }
+    .vc-orn-line { flex: 1; height: 1px; background: rgba(255,255,255,0.07); }
+    .vc-orn-diamond {
+      width: 5px; height: 5px;
+      background: var(--gold-500);
+      transform: rotate(45deg);
+    }
+
+    .vc-body {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.38);
+      line-height: 1.9;
+      max-width: 400px;
+      margin-bottom: 3rem;
+    }
+
+    .vc-ctas { display: flex; gap: 1.5rem; align-items: center; }
+
+    .vc-btn-p {
+      position: relative;
+      background: transparent;
+      color: var(--gold-300);
+      border: 1px solid rgba(210,168,85,0.4);
+      padding: 1rem 2.4rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      cursor: pointer;
+      overflow: hidden;
+      transition: color 0.4s;
+    }
+    .vc-btn-p::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, var(--gold-700), var(--gold-500));
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .vc-btn-p:hover::before { opacity: 1; }
+    .vc-btn-p:hover { color: #fff; }
+    .vc-btn-p-label { position: relative; z-index: 1; }
+
+    .vc-btn-s {
+      background: none;
+      border: none;
+      border-bottom: 1px solid rgba(255,255,255,0.14);
+      color: rgba(255,255,255,0.3);
+      padding: 0.4rem 0;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .vc-btn-s:hover { color: rgba(255,255,255,0.65); border-color: rgba(255,255,255,0.35); }
+
+    /* Right: stacked notification card */
+    .vc-right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .vc-stack {
+      position: relative;
+      width: 310px;
+    }
+
+    .vc-card-bg2 {
+      position: absolute;
+      top: 18px; left: 10px; right: 10px;
+      height: 72px;
+      background: rgba(255,255,255,0.015);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 14px;
+    }
+    .vc-card-bg1 {
+      position: absolute;
+      top: 9px; left: 5px; right: 5px;
+      height: 72px;
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 14px;
+    }
+    .vc-card {
+      position: relative; z-index: 2;
+      background: rgba(12,10,6,0.92);
+      border: 1px solid rgba(210,168,85,0.18);
+      border-radius: 16px;
+      padding: 1.3rem;
+      backdrop-filter: blur(40px);
+      box-shadow:
+        0 24px 64px rgba(0,0,0,0.6),
+        0 0 0 1px rgba(210,168,85,0.08) inset,
+        inset 0 1px 0 rgba(255,255,255,0.04);
+    }
+
+    .vc-card-hd {
+      display: flex; align-items: center; gap: 0.8rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid rgba(255,255,255,0.055);
+    }
+    .vc-card-icon {
+      width: 38px; height: 38px;
+      background: linear-gradient(135deg, var(--gold-700), var(--gold-500));
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+      box-shadow: 0 4px 16px rgba(210,168,85,0.25);
+    }
+    .vc-card-ttl {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.88);
+    }
+    .vc-card-sub {
+      font-size: 0.58rem;
+      color: rgba(255,255,255,0.3);
+      margin-top: 1px;
+    }
+    .vc-card-ts {
+      font-size: 0.52rem;
+      color: rgba(255,255,255,0.2);
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+
+    .vc-card-body {
+      font-size: 0.73rem;
+      color: rgba(255,255,255,0.58);
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+    .vc-card-body strong { color: var(--gold-400); }
+
+    .vc-card-tags { display: flex; gap: 0.45rem; }
+    .vc-tag {
+      font-size: 0.52rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.22rem 0.6rem;
+      border-radius: 100px;
+    }
+    .vc-tag-gold {
+      background: rgba(210,168,85,0.12);
+      color: var(--gold-400);
+      border: 1px solid rgba(210,168,85,0.28);
+    }
+    .vc-tag-blue {
+      background: rgba(0,210,255,0.08);
+      color: var(--blue-400);
+      border: 1px solid rgba(0,210,255,0.18);
+    }
+
+    /* Stats below card */
+    .vc-stats {
+      display: flex; gap: 0;
+      margin-top: 2rem;
+      width: 100%;
+      border: 1px solid rgba(255,255,255,0.055);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .vc-stat-item {
+      flex: 1;
+      text-align: center;
+      padding: 1rem 0.5rem;
+      background: rgba(255,255,255,0.018);
+      border-right: 1px solid rgba(255,255,255,0.04);
+    }
+    .vc-stat-item:last-child { border-right: none; }
+    .vc-stat-n {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      font-weight: 500;
+      color: var(--gold-400);
+      display: block;
+      line-height: 1;
+    }
+    .vc-stat-l {
+      font-size: 0.5rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.22);
+      display: block;
+      margin-top: 0.35rem;
+    }
+
+
+    /* ═══════════════════════════════════════════════════════
+       VARIANT D — MAISON CINÉMA (The Mix)
+       Layout A · Colors A+C · Copy C
+       Dark wine · Warm gold · Cormorant large italic · Phone mock
+    ═══════════════════════════════════════════════════════ */
+
+    #vd { background: var(--wine-900); }
+    .x-label-d {
+      background: #050402;
+      border-top: 1px solid #111;
+    }
+    .x-label-d .x-label-letter { color: rgba(210,168,85,0.5); }
+    .x-label-d h2 { color: #ede5d3; }
+    .x-label-d p { color: #555; }
+    .x-label-d::after { background: var(--gold-600); }
+
+    .vd-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Warm light cone — subtle, no scan lines */
+    .vd-cone {
+      position: absolute;
+      top: -20%; right: -10%;
+      width: 70%; height: 140%;
+      background: conic-gradient(
+        from 215deg at 100% 50%,
+        transparent 0deg,
+        rgba(210,168,85,0.042) 20deg,
+        rgba(210,168,85,0.018) 48deg,
+        transparent 68deg
+      );
+      pointer-events: none;
+    }
+
+    /* Hairline warm texture — A style but gold-tinted */
+    .vd-texture {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image: repeating-linear-gradient(
+        0deg,
+        transparent, transparent 58px,
+        rgba(210,168,85,0.022) 58px, rgba(210,168,85,0.022) 59px
+      );
+    }
+
+    .vd-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem 3.5rem 5rem 6rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .vd-eyebrow {
+      display: flex; align-items: center; gap: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+    .vd-eyebrow::before {
+      content: '';
+      display: block;
+      width: 28px; height: 1px;
+      background: var(--gold-600);
+    }
+    .vd-eyebrow span {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: var(--gold-500);
+    }
+
+    .vd-script {
+      font-family: 'Qwitcher Grypen', cursive;
+      font-size: 3.2rem;
+      color: var(--gold-500);
+      line-height: 0.9;
+      margin-bottom: 0.4rem;
+    }
+
+    .vd-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.2rem, 4.8vw, 5.2rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.06;
+      color: var(--gold-200);
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+    .vd-headline strong {
+      font-style: normal;
+      font-weight: 600;
+      color: var(--gold-400);
+      display: block;
+    }
+
+    .vd-ornament {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 1.8rem;
+    }
+    .vd-orn-line { width: 44px; height: 1px; background: linear-gradient(to right, var(--gold-600), transparent); flex-shrink: 0; }
+    .vd-orn-diamond { width: 5px; height: 5px; background: var(--gold-500); transform: rotate(45deg); flex-shrink: 0; }
+
+    .vd-body {
+      font-size: 0.83rem;
+      font-weight: 300;
+      color: rgba(228,203,153,0.42);
+      line-height: 1.9;
+      max-width: 360px;
+      margin-bottom: 2.5rem;
+    }
+
+    .vd-ctas { display: flex; gap: 1rem; align-items: center; }
+
+    .vd-btn-p {
+      background: var(--gold-600);
+      color: #fff;
+      border: none;
+      padding: 0.95rem 2.2rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.35s;
+      position: relative;
+      overflow: hidden;
+    }
+    .vd-btn-p::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.6s;
+    }
+    .vd-btn-p:hover::before { transform: translateX(100%); }
+    .vd-btn-p:hover { background: var(--gold-500); }
+
+    .vd-btn-s {
+      background: transparent;
+      color: var(--gold-400);
+      border: 1px solid rgba(210,168,85,0.28);
+      padding: 0.95rem 1.6rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .vd-btn-s:hover { background: rgba(210,168,85,0.06); border-color: var(--gold-400); }
+
+    /* Right: phone mock — dark version */
+    .vd-right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 5rem 4rem 3rem;
+      position: relative;
+      z-index: 2;
+    }
+    .vd-right::before {
+      content: '';
+      position: absolute; left: 0; top: 12%; bottom: 12%;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, rgba(210,168,85,0.18) 25%, rgba(210,168,85,0.18) 75%, transparent);
+    }
+
+    .vd-vertical-text {
+      position: absolute;
+      top: 50%; right: 1.5rem;
+      transform: translateY(-50%) rotate(90deg);
+      font-size: 0.55rem;
+      font-weight: 600;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--gold-600);
+      white-space: nowrap;
+      opacity: 0.55;
+    }
+
+    .vd-phone {
+      width: 290px;
+      border-radius: 28px;
+      background: var(--wine-800);
+      border: 1px solid rgba(210,168,85,0.1);
+      box-shadow:
+        0 2px 4px rgba(0,0,0,0.4),
+        0 16px 48px rgba(0,0,0,0.55),
+        0 0 0 1px rgba(210,168,85,0.04),
+        0 40px 80px rgba(0,0,0,0.3);
+      overflow: hidden;
+      animation: float-card 6s ease-in-out infinite;
+    }
+
+    .vd-ph-top {
+      background: linear-gradient(145deg, #0c0800 0%, #140f04 100%);
+      padding: 1.1rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      border-bottom: 1px solid rgba(210,168,85,0.07);
+    }
+    .vd-ph-avatar {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-700), var(--gold-500));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+      box-shadow: 0 2px 14px rgba(210,168,85,0.22);
+    }
+    .vd-ph-caller { flex: 1; }
+    .vd-ph-name { font-size: 0.75rem; font-weight: 600; color: var(--gold-200); }
+    .vd-ph-sub  { font-size: 0.58rem; color: rgba(228,203,153,0.28); margin-top: 1px; }
+    .vd-ph-badge {
+      font-size: 0.5rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #f87171;
+      background: rgba(248,113,113,0.1);
+      border: 1px solid rgba(248,113,113,0.2);
+      padding: 0.2rem 0.55rem;
+      border-radius: 100px;
+    }
+
+    .vd-ph-msgs {
+      background: #0a0800;
+      padding: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .vd-msg-anvela {
+      background: var(--wine-700);
+      border: 1px solid rgba(210,168,85,0.07);
+      border-radius: 10px 10px 10px 3px;
+      padding: 0.65rem 0.85rem;
+    }
+    .vd-msg-anvela .sender {
+      font-size: 0.5rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-500);
+      margin-bottom: 0.22rem;
+    }
+    .vd-msg-anvela .text { font-size: 0.68rem; color: rgba(228,203,153,0.68); line-height: 1.5; }
+    .vd-msg-anvela .ts  { font-size: 0.48rem; color: rgba(210,168,85,0.2); margin-top: 0.2rem; text-align: right; }
+
+    .vd-msg-client {
+      background: var(--gold-700);
+      border-radius: 10px 10px 3px 10px;
+      padding: 0.65rem 0.85rem;
+      align-self: flex-end;
+      max-width: 80%;
+    }
+    .vd-msg-client .text { font-size: 0.68rem; color: rgba(255,255,255,0.92); line-height: 1.5; }
+    .vd-msg-client .ts  { font-size: 0.48rem; color: rgba(255,255,255,0.32); margin-top: 0.2rem; text-align: right; }
+
+    .vd-typing {
+      display: flex; align-items: center; gap: 0.4rem;
+      padding: 0.55rem 0.85rem;
+    }
+    .vd-typing span { font-size: 0.55rem; color: rgba(210,168,85,0.3); font-style: italic; }
+    .vd-dots { display: flex; gap: 3px; align-items: center; }
+    .vd-dot {
+      width: 4px; height: 4px;
+      background: var(--gold-500);
+      border-radius: 50%;
+      animation: pulse-glow 1.4s ease-in-out infinite;
+    }
+    .vd-dot:nth-child(2) { animation-delay: 0.2s; }
+    .vd-dot:nth-child(3) { animation-delay: 0.4s; }
+
+    .vd-ph-footer {
+      background: #0a0800;
+      border-top: 1px solid rgba(210,168,85,0.07);
+      padding: 0.75rem 1rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+    .vd-stat {
+      text-align: center;
+      padding: 0.4rem;
+      border-radius: 8px;
+      background: rgba(210,168,85,0.03);
+      border: 1px solid rgba(210,168,85,0.06);
+    }
+    .vd-stat-n {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--gold-500);
+      display: block;
+      line-height: 1;
+    }
+    .vd-stat-l {
+      font-size: 0.48rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(210,168,85,0.22);
+      display: block;
+      margin-top: 0.2rem;
+    }
+
+    /* ── Footer ── */
+    .x-footer {
+      text-align: center;
+      padding: 2.5rem;
+      background: #edeae3;
+      border-top: 1px solid #ddd8ce;
+    }
+    .x-footer p {
+      font-size: 0.62rem;
+      color: #a89e8e;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Explorer nav ── -->
+<nav class="x-nav">
+  <span class="x-nav-brand">Anvela · Design Exploration</span>
+  <div class="x-nav-sep"></div>
+  <div class="x-pills">
+    <a href="#va" class="x-pill x-pill-a">A · Maison de Luxe</a>
+    <a href="#vb" class="x-pill x-pill-b">B · Tech Dark</a>
+    <a href="#vc" class="x-pill x-pill-c">C · Cinéma</a>
+    <a href="#vd" class="x-pill x-pill-d">D · Maison Cinéma ✦</a>
+  </div>
+</nav>
+
+
+<!-- ════════════════════════════════════════════
+     VARIANT A — MAISON DE LUXE
+════════════════════════════════════════════ -->
+<div id="va">
+  <div class="x-label">
+    <span class="x-label-letter">Variant A</span>
+    <h2>Maison de Luxe</h2>
+    <p>Split layout · Cormorant dominant · Cream + gold palette · Luxury editorial feeling</p>
+  </div>
+
+  <div class="va-wrap">
+    <div class="va-texture"></div>
+
+    <div class="va-left">
+      <div class="va-kicker"><span>Réceptionniste IA Premium</span></div>
+      <div class="va-script">Anvela</div>
+      <h1 class="va-headline">
+        Ne manquez<br>
+        plus jamais<br>
+        un <em>appel client</em>
+      </h1>
+      <div class="va-rule"></div>
+      <p class="va-body">
+        Votre réceptionniste virtuelle répond à chaque appel, 24h/24, 7j/7 — avec la précision et l'élégance que vos clients méritent.
+      </p>
+      <div class="va-ctas">
+        <button class="va-btn-p">Parler à Anvela</button>
+        <button class="va-btn-s">Voir les tarifs</button>
+      </div>
+    </div>
+
+    <div class="va-right">
+      <span class="va-vertical-text">disponible 24h / 24</span>
+
+      <div class="va-phone">
+        <div class="va-ph-top">
+          <div class="va-ph-avatar">📞</div>
+          <div class="va-ph-caller">
+            <div class="va-ph-name">Marie Dubois</div>
+            <div class="va-ph-sub">Appel entrant · il y a 2 min</div>
+          </div>
+          <div class="va-ph-badge">Manqué</div>
+        </div>
+
+        <div class="va-ph-msgs">
+          <div class="va-msg-anvela">
+            <div class="sender">Anvela</div>
+            <div class="text">Bonjour Madame Dubois — j'ai bien noté votre appel. Comment puis-je vous aider ?</div>
+            <div class="ts">14:32</div>
+          </div>
+          <div class="va-msg-client">
+            <div class="text">Je voulais prendre un rendez-vous pour jeudi si possible.</div>
+            <div class="ts">14:33</div>
+          </div>
+          <div class="va-msg-anvela">
+            <div class="sender">Anvela</div>
+            <div class="text">Parfait ! J'ai une disponibilité jeudi à 10h ou à 14h. Laquelle vous convient le mieux ?</div>
+            <div class="ts">14:33</div>
+          </div>
+          <div class="va-typing">
+            <span>Anvela répond</span>
+            <div class="va-dots">
+              <div class="va-dot"></div>
+              <div class="va-dot"></div>
+              <div class="va-dot"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="va-ph-footer">
+          <div class="va-stat">
+            <span class="va-stat-n">24/7</span>
+            <span class="va-stat-l">Disponibilité</span>
+          </div>
+          <div class="va-stat">
+            <span class="va-stat-n">&lt; 3s</span>
+            <span class="va-stat-l">Délai réponse</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     VARIANT B — TECH DARK
+════════════════════════════════════════════ -->
+<div id="vb">
+  <div class="x-label x-label-b">
+    <span class="x-label-letter">Variant B</span>
+    <h2>Tech Dark</h2>
+    <p>Dashboard product feel · Poppins 800 · Blue neon glow · Live call feed</p>
+  </div>
+
+  <div class="vb-wrap">
+    <div class="vb-grid"></div>
+    <div class="vb-orb-1"></div>
+    <div class="vb-orb-2"></div>
+
+    <div class="vb-inner">
+      <div>
+        <div class="vb-badge">
+          <div class="vb-badge-dot"></div>
+          <span class="vb-badge-txt">Système actif maintenant</span>
+        </div>
+
+        <h1 class="vb-headline">
+          Votre réception
+          <span class="vb-headline-accent">toujours ouverte.</span>
+        </h1>
+        <p class="vb-sub">Jamais occupé. Jamais fermé.</p>
+
+        <p class="vb-body">
+          Anvela répond à chaque appel en moins de 3 secondes, qualifie vos clients, prend les rendez-vous, et vous envoie un résumé instantané. Zéro appel manqué. Zéro client perdu.
+        </p>
+
+        <div class="vb-ctas">
+          <button class="vb-btn-p">Parler à Anvela →</button>
+          <button class="vb-btn-s">Voir les tarifs</button>
+        </div>
+      </div>
+
+      <div class="vb-cards">
+        <!-- Live call feed -->
+        <div class="vb-card">
+          <div class="vb-card-hd">
+            <span class="vb-card-title">Appels en cours</span>
+            <span class="vb-live">
+              <span class="vb-live-dot"></span>Live
+            </span>
+          </div>
+          <div class="vb-call">
+            <div class="vb-avatar vb-av-green">MR</div>
+            <div class="vb-call-info">
+              <div class="vb-call-name">Marc Rousseau</div>
+              <div class="vb-call-detail">Demande de devis · 4m 12s</div>
+            </div>
+            <span class="vb-tag vb-tag-ok">Traité</span>
+          </div>
+          <div class="vb-call">
+            <div class="vb-avatar vb-av-blue">LT</div>
+            <div class="vb-call-info">
+              <div class="vb-call-name">Lucie Tran</div>
+              <div class="vb-call-detail">Prise de rendez-vous · 1m 44s</div>
+            </div>
+            <span class="vb-tag vb-tag-live">En cours</span>
+          </div>
+          <div class="vb-call">
+            <div class="vb-avatar vb-av-red">JB</div>
+            <div class="vb-call-info">
+              <div class="vb-call-name">Jean Bernard</div>
+              <div class="vb-call-detail">Appel manqué · relancé par SMS</div>
+            </div>
+            <span class="vb-tag vb-tag-re">Relancé</span>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="vb-stats">
+          <div class="vb-stat vb-s1">
+            <span class="vb-stat-n">0</span>
+            <span class="vb-stat-l">Manqués</span>
+          </div>
+          <div class="vb-stat vb-s2">
+            <span class="vb-stat-n">2.4s</span>
+            <span class="vb-stat-l">Réponse</span>
+          </div>
+          <div class="vb-stat vb-s3">
+            <span class="vb-stat-n">98%</span>
+            <span class="vb-stat-l">Satisfaction</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     VARIANT C — CINÉMA
+════════════════════════════════════════════ -->
+<div id="vc">
+  <div class="x-label x-label-c">
+    <span class="x-label-letter">Variant C</span>
+    <h2>Cinéma</h2>
+    <p>Atmospheric dark · Cormorant italic dominant · Gold accents · Dramatic light cone</p>
+  </div>
+
+  <div class="vc-wrap">
+    <div class="vc-cone"></div>
+    <div class="vc-glow-pool"></div>
+    <div class="vc-grain"></div>
+    <div class="vc-scan"></div>
+
+    <div class="vc-inner">
+      <div>
+        <div class="vc-eyebrow">
+          <div class="vc-eb-line"></div>
+          <span class="vc-eb-txt">Réceptionniste IA · 24h/24</span>
+        </div>
+
+        <h1 class="vc-headline">
+          Chaque appel<br>
+          mérite une<br>
+          <strong>réponse parfaite</strong>
+        </h1>
+
+        <div class="vc-ornament">
+          <div class="vc-orn-line"></div>
+          <div class="vc-orn-diamond"></div>
+          <div class="vc-orn-line"></div>
+        </div>
+
+        <p class="vc-body">
+          Anvela prend chaque appel avec grâce et précision. Disponible à toute heure, elle capte chaque opportunité que vous ne pouviez pas décrocher — et transforme chaque contact en client fidèle.
+        </p>
+
+        <div class="vc-ctas">
+          <button class="vc-btn-p"><span class="vc-btn-p-label">Parler à Anvela</span></button>
+          <button class="vc-btn-s">Découvrir les tarifs</button>
+        </div>
+      </div>
+
+      <div class="vc-right">
+        <div class="vc-stack">
+          <div class="vc-card-bg2"></div>
+          <div class="vc-card-bg1"></div>
+          <div class="vc-card">
+            <div class="vc-card-hd">
+              <div class="vc-card-icon">✦</div>
+              <div>
+                <div class="vc-card-ttl">Anvela · Appel traité</div>
+                <div class="vc-card-sub">Sophie Martin — +1 (514) 555-0192</div>
+              </div>
+              <div class="vc-card-ts">à l'instant</div>
+            </div>
+            <div class="vc-card-body">
+              Sophie souhaitait un <strong>rendez-vous vendredi matin</strong>. J'ai confirmé le créneau 10h–11h et envoyé la confirmation par SMS.
+            </div>
+            <div class="vc-card-tags">
+              <span class="vc-tag vc-tag-gold">RDV confirmé</span>
+              <span class="vc-tag vc-tag-blue">SMS envoyé</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="vc-stats">
+          <div class="vc-stat-item">
+            <span class="vc-stat-n">5+</span>
+            <span class="vc-stat-l">Appels / jour</span>
+          </div>
+          <div class="vc-stat-item">
+            <span class="vc-stat-n">$150</span>
+            <span class="vc-stat-l">Récupérés / mois</span>
+          </div>
+          <div class="vc-stat-item">
+            <span class="vc-stat-n">24/7</span>
+            <span class="vc-stat-l">Disponibilité</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     VARIANT D — MAISON CINÉMA (The Mix)
+     Layout A · Colors A+C · Copy C
+════════════════════════════════════════════ -->
+<div id="vd">
+  <div class="x-label x-label-d">
+    <span class="x-label-letter">Variant D · Le Mix</span>
+    <h2>Maison Cinéma</h2>
+    <p>Layout A (split) · Copy C · Dark wine + warm gold — ton choix combiné</p>
+  </div>
+
+  <div class="vd-wrap">
+    <div class="vd-cone"></div>
+    <div class="vd-texture"></div>
+
+    <div class="vd-left">
+      <div class="vd-eyebrow"><span>Réceptionniste IA · 24h/24</span></div>
+      <div class="vd-script">Anvela</div>
+      <h1 class="vd-headline">
+        Chaque appel<br>
+        mérite une<br>
+        <strong>réponse parfaite</strong>
+      </h1>
+      <div class="vd-ornament">
+        <div class="vd-orn-line"></div>
+        <div class="vd-orn-diamond"></div>
+      </div>
+      <p class="vd-body">
+        Anvela prend chaque appel avec grâce et précision. Disponible à toute heure, elle capte chaque opportunité que vous ne pouviez pas décrocher — et transforme chaque contact en client fidèle.
+      </p>
+      <div class="vd-ctas">
+        <button class="vd-btn-p">Parler à Anvela</button>
+        <button class="vd-btn-s">Voir les tarifs</button>
+      </div>
+    </div>
+
+    <div class="vd-right">
+      <span class="vd-vertical-text">disponible 24h / 24</span>
+
+      <div class="vd-phone">
+        <div class="vd-ph-top">
+          <div class="vd-ph-avatar">📞</div>
+          <div class="vd-ph-caller">
+            <div class="vd-ph-name">Marie Dubois</div>
+            <div class="vd-ph-sub">Appel entrant · il y a 2 min</div>
+          </div>
+          <div class="vd-ph-badge">Manqué</div>
+        </div>
+
+        <div class="vd-ph-msgs">
+          <div class="vd-msg-anvela">
+            <div class="sender">Anvela</div>
+            <div class="text">Bonjour Madame Dubois — j'ai bien noté votre appel. Comment puis-je vous aider ?</div>
+            <div class="ts">14:32</div>
+          </div>
+          <div class="vd-msg-client">
+            <div class="text">Je voulais prendre un rendez-vous pour jeudi si possible.</div>
+            <div class="ts">14:33</div>
+          </div>
+          <div class="vd-msg-anvela">
+            <div class="sender">Anvela</div>
+            <div class="text">Parfait ! J'ai une disponibilité jeudi à 10h ou à 14h. Laquelle vous convient le mieux ?</div>
+            <div class="ts">14:33</div>
+          </div>
+          <div class="vd-typing">
+            <span>Anvela répond</span>
+            <div class="vd-dots">
+              <div class="vd-dot"></div>
+              <div class="vd-dot"></div>
+              <div class="vd-dot"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="vd-ph-footer">
+          <div class="vd-stat">
+            <span class="vd-stat-n">24/7</span>
+            <span class="vd-stat-l">Disponibilité</span>
+          </div>
+          <div class="vd-stat">
+            <span class="vd-stat-n">&lt; 3s</span>
+            <span class="vd-stat-l">Délai réponse</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<footer class="x-footer">
+  <p>Anvela · Design Exploration · 4 Hero Variants · Généré avec Claude Code</p>
+</footer>
+
+</body>
+</html>

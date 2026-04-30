@@ -36,8 +36,18 @@ export function CinematicShowcase() {
     ];
 
     return (
-        <section className="bg-[#020202] text-white py-24 md:py-32">
-            <div className="container-custom max-w-6xl">
+        <section className="bg-[#020202] text-white py-24 md:py-32 relative overflow-hidden">
+            {/* Elegant V-Shape Divider from the previous section (MissedCalls, which is white) */}
+            <div className="absolute top-0 left-0 right-0 flex justify-center z-10 pointer-events-none -translate-y-[1px]">
+                <svg 
+                    viewBox="0 0 50 30" 
+                    className="w-[35px] h-[21px] md:w-[50px] md:h-[30px] fill-current text-white"
+                >
+                    <path d="M 0 0 L 50 0 C 35 0 28 18 25 30 C 22 18 15 0 0 0 Z" />
+                </svg>
+            </div>
+
+            <div className="container-custom max-w-6xl relative z-20">
                 <div className="space-y-32">
                     {steps.map((step) => (
                         <div key={step.id} className="grid md:grid-cols-2 gap-12 md:gap-24 items-center">
