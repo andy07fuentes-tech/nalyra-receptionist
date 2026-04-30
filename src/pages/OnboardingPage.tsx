@@ -362,6 +362,23 @@ export default function OnboardingPage() {
                                 {isSubmitting ? t('onboarding.step3.submittingButton') as string : t('onboarding.step3.submitButton') as string}
                                 <ArrowRight className="w-5 h-5" />
                             </button>
+
+                            <div className="flex items-center gap-3">
+                                <div className="flex-1 h-px bg-slate-200" />
+                                <span className="text-xs text-slate-400 font-medium">{t('onboarding.step4.calendarOr') as string}</span>
+                                <div className="flex-1 h-px bg-slate-200" />
+                            </div>
+
+                            <a
+                                href="https://calendly.com/pablo-anvela/appel-decouverte"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-full h-14 sm:h-16 rounded-xl font-bold uppercase tracking-widest border-2 border-slate-900 text-slate-900 hover:bg-slate-50 active:scale-95 transition-all flex items-center justify-center gap-4"
+                            >
+                                <Phone className="w-5 h-5" />
+                                {t('onboarding.step4.calendarButton') as string}
+                            </a>
+
                             <div className="flex justify-center">
                                 <button onClick={handleBack} className="text-slate-400 hover:text-slate-900 transition-colors text-xs font-bold uppercase tracking-widest py-2">
                                     {t('onboarding.step3.backButton') as string}

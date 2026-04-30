@@ -298,6 +298,22 @@ export function ContactForm() {
                     )}
                   </button>
 
+                  <div className="flex items-center gap-3">
+                    <div className="flex-1 h-px bg-slate-200" />
+                    <span className="text-xs text-slate-400 font-medium">{t('contact.form.calendarOr')}</span>
+                    <div className="flex-1 h-px bg-slate-200" />
+                  </div>
+
+                  <a
+                    href="https://calendly.com/pablo-anvela/appel-decouverte"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-4 border-2 border-blue-600 text-blue-600 rounded-lg font-bold uppercase tracking-wider hover:bg-blue-50 active:scale-95 transition-all flex items-center justify-center gap-2"
+                  >
+                    <Phone className="w-4 h-4" />
+                    {t('contact.form.calendarButton')}
+                  </a>
+
                   <p className="text-xs text-slate-400 text-center font-medium">
                     {t('contact.privacyNotice')}
                   </p>
