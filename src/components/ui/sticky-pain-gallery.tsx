@@ -102,33 +102,30 @@ export function StickyPainGallery() {
       {/* Mobile: stacking scroll cards */}
       <div className="md:hidden relative -mx-4">
         {PHOTO_CONFIG.map((photo, i) => {
+          const PEEK = 56;
           const d = getData(photo);
-          const PEEK = 48; // px of each previous card visible at top when stacked
-          const topOffset = i * PEEK;
           return (
-            <div key={photo.id} style={{ height: '75vh' }}>
-              <div
-                style={{
-                  position: 'sticky',
-                  top: `${topOffset}px`,
-                  height: `calc(100vh - ${topOffset}px - 24px)`,
-                  zIndex: i + 1,
-                }}
-                className="mx-4 rounded-2xl overflow-hidden shadow-2xl"
-              >
-                <PainCard
-                  src={photo.src} alt={d.title}
-                  {...d}
-                  logicLabel={logicLabel} benefitLabel={benefitLabel}
-                  index={i} total={PHOTO_CONFIG.length}
-                  featured={i === 0}
-                />
-              </div>
+            <div
+              key={photo.id}
+              style={{
+                position: 'sticky',
+                top: `${i * PEEK}px`,
+                height: `calc(100vh - ${i * PEEK}px)`,
+                zIndex: i + 1,
+              }}
+              className="mx-4 rounded-2xl overflow-hidden shadow-2xl"
+            >
+              <PainCard
+                src={photo.src} alt={d.title}
+                {...d}
+                logicLabel={logicLabel} benefitLabel={benefitLabel}
+                index={i} total={PHOTO_CONFIG.length}
+                featured={i === 0}
+              />
             </div>
           );
         })}
-        {/* spacer so last card stays visible after scrolling */}
-        <div style={{ height: '30vh' }} />
+        <div style={{ height: '50vh' }} />
       </div>
 
       {/* Desktop: 3-column sticky layout */}
