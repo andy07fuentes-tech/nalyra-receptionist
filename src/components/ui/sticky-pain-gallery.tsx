@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../../contexts/LanguageContext';
 
@@ -83,20 +83,6 @@ function PainCard({
 export function StickyPainGallery() {
   const { t } = useLanguage();
   const [sideHovered, setSideHovered] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const carouselRef = useRef<HTMLDivElement>(null);
-
-  const handleScroll = () => {
-    if (!carouselRef.current) return;
-    const { scrollLeft, clientWidth } = carouselRef.current;
-    setActiveIndex(Math.round(scrollLeft / (clientWidth * 0.85 + 16)));
-  };
-
-  const scrollToCard = (index: number) => {
-    if (!carouselRef.current) return;
-    const cardWidth = carouselRef.current.clientWidth * 0.85 + 16;
-    carouselRef.current.scrollTo({ left: cardWidth * index, behavior: 'smooth' });
-  };
 
   const logicLabel   = t('painPoints.gallery.labels.logic') as string;
   const benefitLabel = t('painPoints.gallery.labels.benefit') as string;
@@ -113,20 +99,22 @@ export function StickyPainGallery() {
 
   return (
     <div className="w-full">
-      {/* Mobile: horizontal snap carousel */}
-      <div className="md:hidden">
-        <div
-          ref={carouselRef}
-          onScroll={handleScroll}
-          className="flex overflow-x-scroll snap-x snap-mandatory scrollbar-hide gap-4 pb-4 -mx-4 px-4"
-          style={{ WebkitOverflowScrolling: 'touch' }}
-        >
-          {PHOTO_CONFIG.map((photo, i) => {
-            const d = getData(photo);
-            return (
+      {/* Mobile: stacking scroll cards */}
+      <div className="md:hidden relative -mx-4">
+        {PHOTO_CONFIG.map((photo, i) => {
+          const d = getData(photo);
+          const PEEK = 48; // px of each previous card visible at top when stacked
+          const topOffset = i * PEEK;
+          return (
+            <div key={photo.id} style={{ height: '75vh' }}>
               <div
-                key={photo.id}
-                className="flex-shrink-0 w-[85vw] h-[480px] snap-start"
+                style={{
+                  position: 'sticky',
+                  top: `${topOffset}px`,
+                  height: `calc(100vh - ${topOffset}px - 24px)`,
+                  zIndex: i + 1,
+                }}
+                className="mx-4 rounded-2xl overflow-hidden shadow-2xl"
               >
                 <PainCard
                   src={photo.src} alt={d.title}
@@ -136,26 +124,11 @@ export function StickyPainGallery() {
                   featured={i === 0}
                 />
               </div>
-            );
-          })}
-          {/* trailing spacer so last card can fully snap */}
-          <div className="flex-shrink-0 w-4" />
-        </div>
-
-        {/* Dot indicators */}
-        <div className="flex justify-center gap-2 mt-4">
-          {PHOTO_CONFIG.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => scrollToCard(i)}
-              className={`transition-all duration-300 rounded-full ${
-                i === activeIndex
-                  ? 'w-6 h-2 bg-blue-500'
-                  : 'w-2 h-2 bg-slate-300'
-              }`}
-            />
-          ))}
-        </div>
+            </div>
+          );
+        })}
+        {/* spacer so last card stays visible after scrolling */}
+        <div style={{ height: '30vh' }} />
       </div>
 
       {/* Desktop: 3-column sticky layout */}
