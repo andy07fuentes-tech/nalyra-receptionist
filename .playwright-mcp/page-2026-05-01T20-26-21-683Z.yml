@@ -1,0 +1,72 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic:
+      - generic:
+        - img
+  - generic [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e4]:
+        - heading "AI Modernism of Kharkiv [Ukraine]" [level=3] [ref=e7]
+        - generic [ref=e8]:
+          - generic [ref=e9]:
+            - link "Index" [ref=e10] [cursor=pointer]:
+              - /url: "#Home-hero"
+              - heading "Index" [level=3] [ref=e11]
+            - heading / [level=3] [ref=e13]
+            - link "Experiment" [ref=e14] [cursor=pointer]:
+              - /url: /experiment
+              - heading "Experiment" [level=3] [ref=e15]
+            - heading / [level=3] [ref=e17]
+            - link "About" [ref=e18] [cursor=pointer]:
+              - /url: /about
+              - heading "About" [level=3] [ref=e19]
+          - generic [ref=e20]:
+            - link "[Gallery]" [ref=e21] [cursor=pointer]:
+              - /url: "#"
+              - heading "[Gallery]" [level=3] [ref=e22]
+            - heading "Obys Agency ©2025" [level=3] [ref=e24]
+    - generic [ref=e28]:
+      - generic:
+        - generic:
+          - generic:
+            - img
+      - navigation [ref=e33]:
+        - generic [ref=e34]:
+          - heading "AI Modernism of Kharkiv [Ukraine]" [level=3] [ref=e37]
+          - generic [ref=e38]:
+            - generic [ref=e39]:
+              - link "Index" [ref=e40] [cursor=pointer]:
+                - /url: "#Home-hero"
+                - heading "Index" [level=3] [ref=e41]
+              - heading / [level=3] [ref=e43]
+              - link "Experiment" [ref=e44] [cursor=pointer]:
+                - /url: /experiment
+                - heading "Experiment" [level=3] [ref=e45]
+              - heading / [level=3] [ref=e47]
+              - link "About" [ref=e48] [cursor=pointer]:
+                - /url: /about
+                - heading "About" [level=3] [ref=e49]
+            - generic [ref=e50]:
+              - link "[Gallery]" [ref=e51] [cursor=pointer]:
+                - /url: "#"
+                - heading "[Gallery]" [level=3] [ref=e52]
+              - heading "Obys Agency ©2025" [level=3] [ref=e54]
+      - generic [ref=e56]:
+        - generic [ref=e59]:
+          - heading "Modernists:" [level=3] [ref=e62]
+          - generic [ref=e63]:
+            - 'heading "E01: Anatol Petrytskiy" [level=3] [ref=e65]'
+            - 'heading "E02: Vasyl Ermilov" [level=3] [ref=e67]'
+            - 'heading "E03: Oleksandr Khvostenko-Khvostov" [level=3] [ref=e69]'
+            - 'heading "E04: Borys Kosarev" [level=3] [ref=e71]'
+            - 'heading "E05: Vadym Meller" [level=3] [ref=e73]'
+        - generic [ref=e74]:
+          - generic [ref=e75]:
+            - heading "AIM—" [level=2] [ref=e77]
+            - heading "AI Modernism" [level=2] [ref=e79]
+            - heading "Of Kharkiv" [level=2] [ref=e81]
+          - link "Scroll to Explore" [ref=e82] [cursor=pointer]:
+            - /url: "#Home-about"
+            - heading "Scroll to Explore" [level=3] [ref=e85]
+            - img [ref=e88]
+      - img [ref=e93]

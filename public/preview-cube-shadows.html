@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cube Shadow Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Poppins:wght@300;400;500&family=Qwitcher+Grypen&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; background: #f8fafc; }
+
+    /* ── NAV ── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+      background: rgba(248,250,252,0.9); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+      display: flex;
+    }
+    .nav a {
+      flex: 1; text-align: center; padding: 14px 8px;
+      color: #94a3b8; text-decoration: none;
+      font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+      transition: color 0.2s; border-right: 1px solid rgba(0,0,0,0.05);
+    }
+    .nav a:last-child { border-right: none; }
+    .nav a:hover { color: #2563eb; }
+
+    /* ── SHARED SECTION ── */
+    .cube-section {
+      position: relative; height: 100vh; width: 100%;
+      background: #f8fafc; overflow: hidden;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+    }
+
+    /* Existing mesh gradient blobs (matches real site) */
+    .bg-blob-tl {
+      position: absolute; top: -10%; left: -10%;
+      width: 50%; height: 50%;
+      background: rgba(96,165,250,0.12);
+      border-radius: 50%; filter: blur(120px);
+      pointer-events: none;
+    }
+    .bg-blob-br {
+      position: absolute; bottom: -10%; right: -10%;
+      width: 60%; height: 60%;
+      background: rgba(129,140,248,0.12);
+      border-radius: 50%; filter: blur(150px);
+      pointer-events: none;
+    }
+
+    /* Anvela script header */
+    .section-brand {
+      position: absolute; top: 10%; left: 0; right: 0;
+      text-align: center; z-index: 20; pointer-events: none;
+    }
+    .section-brand h2 {
+      font-family: 'Qwitcher Grypen', cursive;
+      font-size: clamp(48px, 8vw, 80px); color: rgba(37,99,235,0.9);
+    }
+    .section-brand .divider {
+      height: 1px; width: 128px; margin: 6px auto 0;
+      background: linear-gradient(to right, transparent, rgba(37,99,235,0.3), transparent);
+    }
+
+    /* Canvas wrapper */
+    .canvas-wrap {
+      position: relative; width: 100%; height: 100%;
+    }
+    canvas {
+      display: block; width: 100% !important; height: 100% !important;
+    }
+
+    /* Info pill at bottom */
+    .info-pill {
+      position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+      z-index: 20; background: rgba(255,255,255,0.85); backdrop-filter: blur(16px);
+      border: 1px solid rgba(203,213,225,0.8); border-radius: 16px;
+      padding: 20px 36px; text-align: center;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+      min-width: 280px;
+    }
+    .info-pill .label {
+      font-size: 10px; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: #3b82f6; margin-bottom: 6px;
+    }
+    .info-pill .title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px; color: #0f172a;
+    }
+
+    /* Scroll indicator */
+    .scroll-hint {
+      position: absolute; top: 44px; left: 44px; z-index: 20;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .ping-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #3b82f6; animation: ping 1.5s ease-in-out infinite;
+    }
+    .scroll-hint span {
+      font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: #94a3b8;
+    }
+    @keyframes ping {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.5; transform: scale(1.4); }
+    }
+
+    /* Option badge */
+    .opt-badge {
+      position: absolute; top: 44px; right: 44px; z-index: 20;
+      padding: 8px 18px; border-radius: 99px;
+      background: rgba(37,99,235,0.08); border: 1px solid rgba(37,99,235,0.2);
+      font-size: 11px; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; color: #2563eb;
+    }
+    .opt-badge.purple { background: rgba(124,58,237,0.08); border-color: rgba(124,58,237,0.2); color: #7c3aed; }
+    .opt-badge.slate  { background: rgba(71,85,105,0.08);  border-color: rgba(71,85,105,0.2);  color: #475569; }
+
+    /* Description strip */
+    .desc-strip {
+      position: absolute; top: 90px; left: 0; right: 0;
+      text-align: center; z-index: 20; pointer-events: none;
+    }
+    .desc-strip p {
+      font-size: 12px; color: #94a3b8; letter-spacing: 0.06em;
+    }
+
+    /* ── OPTION 2 CSS GLOW ── */
+    .glow-halo {
+      position: absolute;
+      bottom: 22%;            /* sits just below center of canvas (where cube rests) */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 340px; height: 60px;
+      background: radial-gradient(ellipse, rgba(99,102,241,0.55) 0%, rgba(37,99,235,0.2) 40%, transparent 70%);
+      filter: blur(18px);
+      border-radius: 50%;
+      pointer-events: none; z-index: 5;
+      animation: halo-breathe 3s ease-in-out infinite;
+    }
+    @keyframes halo-breathe {
+      0%, 100% { opacity: 1; transform: translateX(-50%) scaleX(1); }
+      50%       { opacity: 0.65; transform: translateX(-50%) scaleX(0.85); }
+    }
+
+    /* section divider */
+    .divider-line {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(0,0,0,0.06), transparent);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <a href="#opt1">Option 1<br><span style="opacity:.5;font-size:9px">Contact Shadow</span></a>
+    <a href="#opt2">Option 2<br><span style="opacity:.5;font-size:9px">CSS Glow Halo</span></a>
+    <a href="#opt3">Option 3<br><span style="opacity:.5;font-size:9px">Dark Glass Floor</span></a>
+  </nav>
+
+
+  <!-- ══════════════════════════════════════════
+       OPTION 1 — CONTACT SHADOW
+  ══════════════════════════════════════════ -->
+  <section id="opt1" class="cube-section">
+    <div class="bg-blob-tl"></div>
+    <div class="bg-blob-br"></div>
+    <div class="section-brand">
+      <h2>Anvela</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="scroll-hint">
+      <div class="ping-dot"></div>
+      <span>DÉFILER POUR PIVOTER</span>
+    </div>
+    <div class="opt-badge">Option 1 — Contact Shadow</div>
+    <div class="desc-strip">
+      <p>Ombre molle réaliste · S'étire quand le cube monte · S'intensifie quand il descend</p>
+    </div>
+    <div class="canvas-wrap">
+      <canvas id="canvas1"></canvas>
+    </div>
+    <div class="info-pill">
+      <div class="label">01 · Voice AI</div>
+      <div class="title">Disponibilité Radieuse</div>
+    </div>
+  </section>
+
+  <div class="divider-line"></div>
+
+
+  <!-- ══════════════════════════════════════════
+       OPTION 2 — CSS GLOW HALO
+  ══════════════════════════════════════════ -->
+  <section id="opt2" class="cube-section">
+    <div class="bg-blob-tl"></div>
+    <div class="bg-blob-br"></div>
+    <div class="section-brand">
+      <h2>Anvela</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="scroll-hint">
+      <div class="ping-dot"></div>
+      <span>DÉFILER POUR PIVOTER</span>
+    </div>
+    <div class="opt-badge purple">Option 2 — Halo CSS</div>
+    <div class="desc-strip">
+      <p>Halo bleu/indigo · Couleur de la marque · Pulse lentement · Zéro impact performance</p>
+    </div>
+    <div class="canvas-wrap">
+      <div class="glow-halo"></div>
+      <canvas id="canvas2"></canvas>
+    </div>
+    <div class="info-pill">
+      <div class="label">01 · Voice AI</div>
+      <div class="title">Disponibilité Radieuse</div>
+    </div>
+  </section>
+
+  <div class="divider-line"></div>
+
+
+  <!-- ══════════════════════════════════════════
+       OPTION 3 — DARK GLASS FLOOR + REFLECTION
+  ══════════════════════════════════════════ -->
+  <section id="opt3" class="cube-section">
+    <div class="bg-blob-tl"></div>
+    <div class="bg-blob-br"></div>
+    <div class="section-brand">
+      <h2>Anvela</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="scroll-hint">
+      <div class="ping-dot"></div>
+      <span>DÉFILER POUR PIVOTER</span>
+    </div>
+    <div class="opt-badge slate">Option 3 — Glass Floor</div>
+    <div class="desc-strip">
+      <p>Plancher en verre sombre · Reflet du cube en dessous · Ambiance produit haut de gamme</p>
+    </div>
+    <div class="canvas-wrap">
+      <canvas id="canvas3"></canvas>
+    </div>
+    <div class="info-pill">
+      <div class="label">01 · Voice AI</div>
+      <div class="title">Disponibilité Radieuse</div>
+    </div>
+  </section>
+
+
+  <script type="module">
+    import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
+
+    /* ── Shared constants ─────────────────────── */
+    const CUBE_SIZE  = 1.9;
+    const GROUND_Y   = -1.55;
+    const FACE_COLORS = [0x2563eb, 0x4338ca, 0x0ea5e9, 0x1d4ed8, 0x7c3aed, 0x0369a1];
+
+    function makeCubeMaterials(opacity = 1) {
+      return FACE_COLORS.map(c => new THREE.MeshStandardMaterial({
+        color: c, metalness: 0.55, roughness: 0.12,
+        transparent: opacity < 1, opacity
+      }));
+    }
+
+    function makeCube(materials) {
+      return new THREE.Mesh(new THREE.BoxGeometry(CUBE_SIZE, CUBE_SIZE, CUBE_SIZE), materials);
+    }
+
+    function makeLights(scene) {
+      scene.add(new THREE.AmbientLight(0xffffff, 1.5));
+      const p = new THREE.PointLight(0xffffff, 3);
+      p.position.set(0, 0, 5); scene.add(p);
+      const s1 = new THREE.SpotLight(0xffffff, 2.5);
+      s1.position.set(10, 10, 10); s1.angle = 0.2; s1.penumbra = 1; scene.add(s1);
+      const s2 = new THREE.SpotLight(0x3b82f6, 2.5);
+      s2.position.set(-10, 5, 5); s2.angle = 0.2; s2.penumbra = 1; scene.add(s2);
+    }
+
+    function makeRenderer(canvas, bgColor = 0xf8fafc) {
+      const r = new THREE.WebGLRenderer({ canvas, antialias: true });
+      r.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      r.setClearColor(bgColor, 1);
+      resize(r, canvas);
+      return r;
+    }
+
+    function makeCamera(canvas) {
+      const cam = new THREE.PerspectiveCamera(45, canvas.clientWidth / canvas.clientHeight, 0.1, 100);
+      cam.position.set(0, 0, 6.5);
+      return cam;
+    }
+
+    function resize(renderer, canvas) {
+      const w = canvas.clientWidth, h = canvas.clientHeight;
+      renderer.setSize(w, h, false);
+    }
+
+
+    /* ══════════════════════════════════════════
+       OPTION 1 — CONTACT SHADOW (blob under cube)
+    ══════════════════════════════════════════ */
+    (function initOpt1() {
+      const canvas = document.getElementById('canvas1');
+      const scene  = new THREE.Scene();
+      const camera = makeCamera(canvas);
+      const renderer = makeRenderer(canvas);
+      makeLights(scene);
+
+      /* Main cube */
+      const cube = makeCube(makeCubeMaterials());
+      scene.add(cube);
+
+      /* Contact shadow blob — canvas texture radial gradient */
+      const blobCanvas = document.createElement('canvas');
+      blobCanvas.width = blobCanvas.height = 256;
+      const bctx = blobCanvas.getContext('2d');
+      const grad = bctx.createRadialGradient(128, 128, 0, 128, 128, 128);
+      grad.addColorStop(0,   'rgba(15, 30, 70, 0.75)');
+      grad.addColorStop(0.4, 'rgba(15, 30, 70, 0.35)');
+      grad.addColorStop(1,   'rgba(15, 30, 70, 0)');
+      bctx.fillStyle = grad;
+      bctx.ellipse(128, 128, 128, 128, 0, 0, Math.PI * 2);
+      bctx.fill();
+      const blobTex = new THREE.CanvasTexture(blobCanvas);
+
+      const shadowPlane = new THREE.Mesh(
+        new THREE.PlaneGeometry(3.5, 1.8),
+        new THREE.MeshBasicMaterial({ map: blobTex, transparent: true, depthWrite: false })
+      );
+      shadowPlane.rotation.x = -Math.PI / 2;
+      shadowPlane.position.y = GROUND_Y;
+      scene.add(shadowPlane);
+
+      let t = 0;
+      function animate() {
+        requestAnimationFrame(animate);
+        t += 0.016;
+
+        /* Float + rotation */
+        cube.position.y = Math.sin(t * 1.2) * 0.28;
+        cube.rotation.y += 0.007;
+        cube.rotation.x = Math.sin(t * 0.45) * 0.12;
+
+        /* Contact shadow reacts to height above ground */
+        const height = cube.position.y - GROUND_Y; // ~1.27 to ~1.83
+        const norm   = (height - 1.0) / 1.2;       // 0..1
+        shadowPlane.material.opacity = 0.85 - norm * 0.45;
+        shadowPlane.scale.set(1 + norm * 0.35, 1, 1 + norm * 0.15);
+        shadowPlane.position.x = cube.position.x * 0.05;
+
+        if (canvas.clientWidth !== renderer.domElement.width || canvas.clientHeight !== renderer.domElement.height) {
+          resize(renderer, canvas);
+          camera.aspect = canvas.clientWidth / canvas.clientHeight;
+          camera.updateProjectionMatrix();
+        }
+        renderer.render(scene, camera);
+      }
+      animate();
+    })();
+
+
+    /* ══════════════════════════════════════════
+       OPTION 2 — CSS GLOW HALO
+       (cube only, halo is pure CSS)
+    ══════════════════════════════════════════ */
+    (function initOpt2() {
+      const canvas = document.getElementById('canvas2');
+      const scene  = new THREE.Scene();
+      const camera = makeCamera(canvas);
+      const renderer = makeRenderer(canvas);
+      makeLights(scene);
+
+      const cube = makeCube(makeCubeMaterials());
+      scene.add(cube);
+
+      /* The CSS halo div is already in the HTML (.glow-halo).
+         We just run the cube animation here. */
+      let t = 0;
+      function animate() {
+        requestAnimationFrame(animate);
+        t += 0.016;
+        cube.position.y = Math.sin(t * 1.2) * 0.28;
+        cube.rotation.y += 0.007;
+        cube.rotation.x = Math.sin(t * 0.45) * 0.12;
+        if (canvas.clientWidth !== renderer.domElement.width || canvas.clientHeight !== renderer.domElement.height) {
+          resize(renderer, canvas);
+          camera.aspect = canvas.clientWidth / canvas.clientHeight;
+          camera.updateProjectionMatrix();
+        }
+        renderer.render(scene, camera);
+      }
+      animate();
+    })();
+
+
+    /* ══════════════════════════════════════════
+       OPTION 3 — DARK GLASS FLOOR + REFLECTION
+    ══════════════════════════════════════════ */
+    (function initOpt3() {
+      const canvas = document.getElementById('canvas3');
+      const scene  = new THREE.Scene();
+      const camera = makeCamera(canvas);
+      const renderer = makeRenderer(canvas);
+      makeLights(scene);
+
+      /* Main cube */
+      const cube = makeCube(makeCubeMaterials());
+      scene.add(cube);
+
+      /* Dark glass floor disc */
+      const floorMat = new THREE.MeshStandardMaterial({
+        color: 0x050a1a, metalness: 0.92, roughness: 0.05,
+        transparent: true, opacity: 0.88
+      });
+      const floor = new THREE.Mesh(new THREE.CircleGeometry(2.4, 72), floorMat);
+      floor.rotation.x = -Math.PI / 2;
+      floor.position.y = GROUND_Y;
+      scene.add(floor);
+
+      /* Soft edge glow ring on the floor */
+      const ringCanvas = document.createElement('canvas');
+      ringCanvas.width = ringCanvas.height = 512;
+      const rctx = ringCanvas.getContext('2d');
+      const rgrad = rctx.createRadialGradient(256, 256, 130, 256, 256, 256);
+      rgrad.addColorStop(0,    'rgba(0,0,0,0)');
+      rgrad.addColorStop(0.7,  'rgba(37, 99, 235, 0.0)');
+      rgrad.addColorStop(0.85, 'rgba(37, 99, 235, 0.35)');
+      rgrad.addColorStop(1,    'rgba(37, 99, 235, 0)');
+      rctx.fillStyle = rgrad;
+      rctx.fillRect(0, 0, 512, 512);
+      const ringTex = new THREE.CanvasTexture(ringCanvas);
+      const ring = new THREE.Mesh(
+        new THREE.CircleGeometry(2.6, 72),
+        new THREE.MeshBasicMaterial({ map: ringTex, transparent: true, depthWrite: false })
+      );
+      ring.rotation.x = -Math.PI / 2;
+      ring.position.y = GROUND_Y - 0.01;
+      scene.add(ring);
+
+      /* Ghost reflection cube (below floor, flipped Y) */
+      const reflMats = makeCubeMaterials(0.22);
+      const reflCube = new THREE.Mesh(new THREE.BoxGeometry(CUBE_SIZE, CUBE_SIZE, CUBE_SIZE), reflMats);
+      reflCube.scale.y = -1;
+      scene.add(reflCube);
+
+      /* Fade gradient on the reflection (darker toward bottom) */
+      const fadeMat = new THREE.MeshBasicMaterial({
+        color: 0xf8fafc, transparent: true, opacity: 0, depthWrite: false, side: THREE.DoubleSide
+      });
+      // We'll use opacity gradient by stacking a semi-transparent box below
+      const fadeBox = new THREE.Mesh(new THREE.BoxGeometry(2.6, 1.5, 2.6), fadeMat);
+      scene.add(fadeBox);
+
+      let t = 0;
+      function animate() {
+        requestAnimationFrame(animate);
+        t += 0.016;
+
+        /* Main cube float/rotate */
+        cube.position.y = Math.sin(t * 1.2) * 0.28;
+        cube.rotation.y += 0.007;
+        cube.rotation.x = Math.sin(t * 0.45) * 0.12;
+
+        /* Mirror reflection through floor plane */
+        reflCube.position.y = 2 * GROUND_Y - cube.position.y;
+        reflCube.rotation.y = cube.rotation.y;
+        reflCube.rotation.x = -cube.rotation.x;
+
+        /* Fade box sits between floor and reflection bottom */
+        fadeBox.position.y = GROUND_Y - 0.75;
+        fadeMat.opacity = 0.82; // mask lower part of reflection
+
+        /* Ring glow pulses subtly */
+        const ringScale = 1 + Math.sin(t * 0.8) * 0.04;
+        ring.scale.set(ringScale, 1, ringScale);
+
+        if (canvas.clientWidth !== renderer.domElement.width || canvas.clientHeight !== renderer.domElement.height) {
+          resize(renderer, canvas);
+          camera.aspect = canvas.clientWidth / canvas.clientHeight;
+          camera.updateProjectionMatrix();
+        }
+        renderer.render(scene, camera);
+      }
+      animate();
+    })();
+
+  </script>
+</body>
+</html>

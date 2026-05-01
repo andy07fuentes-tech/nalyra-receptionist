@@ -1,0 +1,687 @@
+- generic [ref=e4]:
+  - navigation [ref=e5]:
+    - generic [ref=e6]:
+      - heading "AI Modernism of Kharkiv [Ukraine]" [level=3] [ref=e9]
+      - generic [ref=e10]:
+        - generic [ref=e11]:
+          - link "Index" [ref=e12] [cursor=pointer]:
+            - /url: /
+            - heading "Index" [level=3] [ref=e13]
+          - heading / [level=3] [ref=e15]
+          - link "Experiment" [ref=e16] [cursor=pointer]:
+            - /url: "#Hero-ex"
+            - heading "Experiment" [level=3] [ref=e17]
+          - heading / [level=3] [ref=e19]
+          - link "About" [ref=e20] [cursor=pointer]:
+            - /url: /about
+            - heading "About" [level=3] [ref=e21]
+        - generic [ref=e22]:
+          - link "[Gallery]" [ref=e23] [cursor=pointer]:
+            - /url: "#"
+            - heading "[Gallery]" [level=3] [ref=e24]
+          - heading "Obys Agency ©2025" [level=3] [ref=e26]
+  - generic [ref=e31]:
+    - generic [ref=e33]:
+      - heading "AI Modernism of Kharkiv [Ukraine]" [level=3] [ref=e36]
+      - generic [ref=e37]:
+        - generic [ref=e38]:
+          - link "Index" [ref=e39] [cursor=pointer]:
+            - /url: /
+            - heading "Index" [level=3] [ref=e40]
+          - heading / [level=3] [ref=e42]
+          - link "Experiment" [ref=e43] [cursor=pointer]:
+            - /url: /experiment
+            - heading "Experiment" [level=3] [ref=e44]
+          - heading / [level=3] [ref=e46]
+          - link "About" [ref=e47] [cursor=pointer]:
+            - /url: /about
+            - heading "About" [level=3] [ref=e48]
+        - generic [ref=e49]:
+          - link "[Gallery]" [ref=e50] [cursor=pointer]:
+            - /url: "#"
+            - heading "[Gallery]" [level=3] [ref=e51]
+          - heading "Obys Agency ©2023" [level=3] [ref=e53]
+    - generic [ref=e54]:
+      - heading "05" [level=1] [ref=e57]
+      - generic [ref=e59]:
+        - heading "Experiment" [level=1] [ref=e61]
+        - heading "18 Artworks" [level=3] [ref=e63]
+  - generic [ref=e65]:
+    - generic [ref=e66]:
+      - generic [ref=e67]:
+        - generic [ref=e70]:
+          - heading "Modernists:" [level=3] [ref=e73]
+          - generic [ref=e74]:
+            - 'heading "E01: Anatol Petrytskiy" [level=3] [ref=e76]'
+            - 'heading "E02: Vasyl Ermilov" [level=3] [ref=e78]'
+            - 'heading "E03: Oleksandr Khvostenko-Khvostov" [level=3] [ref=e80]'
+            - 'heading "E04: Borys Kosarev" [level=3] [ref=e82]'
+            - 'heading "E05: Vadym Meller" [level=3] [ref=e84]'
+        - generic [ref=e86]:
+          - generic:
+            - heading "1895-1964" [level=3] [ref=e88]
+            - heading "E01:" [level=3] [ref=e90]
+          - generic [ref=e92]: Anatol
+          - generic [ref=e94]: Petrytskiy
+      - generic [ref=e95]:
+        - generic [ref=e96]:
+          - generic [ref=e98]: Anatoly Galaktionovich Petrytskiy
+          - generic [ref=e100]: (1895-1964)—Ukrainian painter, graphic
+          - generic [ref=e102]: artist, set designer, teacher. Academician
+          - generic [ref=e104]: of the USSR Academy of Arts (1947).
+        - heading "(03)" [level=3] [ref=e106]
+      - generic [ref=e108]:
+        - generic [ref=e109]:
+          - heading "Inspiration Source:" [level=3] [ref=e112]
+          - img "Anatol Petrytskiy" [ref=e114]
+        - generic [ref=e116]:
+          - generic [ref=e117]:
+            - generic [ref=e118]:
+              - heading "AI Artwork №1:" [level=3] [ref=e121]:
+                - text: AI Artwork
+                - text: "№1:"
+              - img "Anatol Petrytskiy" [ref=e124]
+            - generic [ref=e127]:
+              - heading "Details:" [level=3] [ref=e130]
+              - generic [ref=e131]:
+                - img "Anatol Petrytskiy" [ref=e133]
+                - generic [ref=e135]:
+                  - img "Anatol Petrytskiy" [ref=e137]
+                  - img "Anatol Petrytskiy" [ref=e140]
+          - generic [ref=e142]:
+            - generic [ref=e143]:
+              - heading "AI Artwork №2:" [level=3] [ref=e146]:
+                - text: AI Artwork
+                - text: "№2:"
+              - img "Anatol Petrytskiy" [ref=e149]
+            - generic [ref=e152]:
+              - heading "Details:" [level=3] [ref=e155]
+              - generic [ref=e156]:
+                - generic [ref=e157]:
+                  - img "Anatol Petrytskiy" [ref=e159]
+                  - img "Anatol Petrytskiy" [ref=e162]
+                - img "Anatol Petrytskiy" [ref=e165]
+    - generic [ref=e169]:
+      - generic [ref=e170]:
+        - heading "Inspiration Source:" [level=3] [ref=e173]
+        - generic [ref=e174]:
+          - img "Anatol Petrytskiy"
+      - generic [ref=e176]:
+        - generic [ref=e177]:
+          - heading "AI Artwork №1:" [level=3] [ref=e180]:
+            - text: AI Artwork
+            - text: "№1:"
+          - generic [ref=e182]:
+            - img "Anatol Petrytskiy"
+        - generic [ref=e185]:
+          - heading "Details:" [level=3] [ref=e188]
+          - generic [ref=e189]:
+            - generic [ref=e190]:
+              - img "Anatol Petrytskiy"
+            - generic [ref=e192]:
+              - generic [ref=e193]:
+                - img "Anatol Petrytskiy"
+              - generic [ref=e195]:
+                - img "Anatol Petrytskiy"
+  - generic [ref=e198]:
+    - generic [ref=e199]:
+      - generic [ref=e201]:
+        - generic [ref=e204]:
+          - heading "Modernists:" [level=3] [ref=e207]
+          - generic [ref=e208]:
+            - 'heading "E01: Anatol Petrytskiy" [level=3] [ref=e210]'
+            - 'heading "E02: Vasyl Ermilov" [level=3] [ref=e212]'
+            - 'heading "E03: Oleksandr Khvostenko-Khvostov" [level=3] [ref=e214]'
+            - 'heading "E04: Borys Kosarev" [level=3] [ref=e216]'
+            - 'heading "E05: Vadym Meller" [level=3] [ref=e218]'
+        - generic [ref=e220]:
+          - generic:
+            - heading "1894-1968" [level=3] [ref=e222]
+            - heading "E02:" [level=3] [ref=e224]
+          - generic [ref=e226]: Vasyl
+          - generic [ref=e228]: Ermilov
+      - generic [ref=e229]:
+        - generic [ref=e230]:
+          - generic [ref=e232]: Vasyl Dmytrovych Ermilov
+          - generic [ref=e234]: (1894-1968)—Ukrainian artist, avant-
+          - generic [ref=e236]: gardist and designer. A participant in
+          - generic [ref=e238]: various artistic movements of the 20s.
+        - heading "(03)" [level=3] [ref=e240]
+        - generic:
+          - img "Vasyl Ermilov"
+      - generic [ref=e242]:
+        - generic [ref=e243]:
+          - heading "Inspiration Source:" [level=3] [ref=e246]
+          - generic [ref=e247]:
+            - img "Vasyl Ermilov"
+        - generic [ref=e248]:
+          - generic [ref=e249]:
+            - generic [ref=e250]:
+              - heading "AI Artwork №1:" [level=3] [ref=e253]:
+                - text: AI Artwork
+                - text: "№1:"
+              - img "Vasyl Ermilov" [ref=e256]
+            - generic [ref=e259]:
+              - heading "Details:" [level=3] [ref=e262]
+              - generic [ref=e263]:
+                - generic [ref=e264]:
+                  - img "Vasyl Ermilov"
+                - generic [ref=e266]:
+                  - generic [ref=e267]:
+                    - img "Vasyl Ermilov"
+                  - generic [ref=e269]:
+                    - img "Vasyl Ermilov"
+          - generic [ref=e271]:
+            - generic [ref=e272]:
+              - heading "AI Artwork №2:" [level=3] [ref=e275]:
+                - text: AI Artwork
+                - text: "№2:"
+              - img "Vasyl Ermilov" [ref=e278]
+            - generic [ref=e281]:
+              - heading "Details:" [level=3] [ref=e284]
+              - generic [ref=e285]:
+                - generic [ref=e286]:
+                  - generic [ref=e287]:
+                    - img "Vasyl Ermilov"
+                  - generic [ref=e289]:
+                    - img "Vasyl Ermilov"
+                - generic [ref=e291]:
+                  - img "Vasyl Ermilov"
+    - generic [ref=e295]:
+      - generic [ref=e296]:
+        - heading "Inspiration Source:" [level=3] [ref=e299]
+        - generic [ref=e300]:
+          - img "Vasyl Ermilov"
+      - generic [ref=e302]:
+        - generic [ref=e303]:
+          - heading "AI Artwork №1:" [level=3] [ref=e306]:
+            - text: AI Artwork
+            - text: "№1:"
+          - img "Vasyl Ermilov" [ref=e309]
+        - generic [ref=e312]:
+          - heading "Details:" [level=3] [ref=e315]
+          - generic [ref=e316]:
+            - generic [ref=e317]:
+              - img "Vasyl Ermilov"
+            - generic [ref=e319]:
+              - generic [ref=e320]:
+                - img "Vasyl Ermilov"
+              - generic [ref=e322]:
+                - img "Vasyl Ermilov"
+  - generic [ref=e327]:
+    - generic [ref=e328]:
+      - generic [ref=e329]:
+        - generic [ref=e331]: "01"
+        - generic [ref=e333]: "02"
+        - generic [ref=e335]: "03"
+      - generic [ref=e336]:
+        - generic [ref=e338]: V. Ermilov
+        - generic [ref=e340]: A. Petrytskiy
+        - generic [ref=e342]: V. Meller
+    - generic [ref=e343]:
+      - heading "№ 9 September" [level=3] [ref=e346]
+      - generic [ref=e347]:
+        - generic [ref=e348]:
+          - heading "City" [level=3] [ref=e350]
+          - heading "Kharkiv:" [level=3] [ref=e352]
+          - heading "D. Kholubenko Khranka Svyr M. Khasko V. Ermilov O. Korzh L. Lopovok I. Malozemov O. Maryamov V. Meller S. Melnyk L. Nedolya A. Petrytskiy M. Semenko L. Skrypnyk D. Sotnyk E. Strikha M. Kholostenko M. Shcerbak M. Schteinberg E. Iavoroskiy H. Ianovytskiy" [level=3] [ref=e354]:
+            - text: D. Kholubenko
+            - text: Khranka Svyr
+            - text: M. Khasko
+            - text: V. Ermilov
+            - text: O. Korzh
+            - text: L. Lopovok
+            - text: I. Malozemov
+            - text: O. Maryamov
+            - text: V. Meller
+            - text: S. Melnyk
+            - text: L. Nedolya
+            - text: A. Petrytskiy
+            - text: M. Semenko
+            - text: L. Skrypnyk
+            - text: D. Sotnyk
+            - text: E. Strikha
+            - text: M. Kholostenko
+            - text: M. Shcerbak
+            - text: M. Schteinberg
+            - text: E. Iavoroskiy
+            - text: H. Ianovytskiy
+        - generic [ref=e355]:
+          - heading "Kyiv:" [level=3] [ref=e357]
+          - heading "O. Buzko O. Vlyzko S. Dragomanov Y. Dubkov Y. Paliychuk M. Skuba L. Frenkel G. Shkurupiy" [level=3] [ref=e359]:
+            - text: O. Buzko
+            - text: O. Vlyzko
+            - text: S. Dragomanov
+            - text: Y. Dubkov
+            - text: Y. Paliychuk
+            - text: M. Skuba
+            - text: L. Frenkel
+            - text: G. Shkurupiy
+        - generic [ref=e360]:
+          - generic [ref=e361]:
+            - heading "Odesa:" [level=3] [ref=e363]
+            - heading "B. Buchma S. Holovanivskiy O. Pereguda M. Tereshchenko" [level=3] [ref=e365]:
+              - text: B. Buchma
+              - text: S. Holovanivskiy
+              - text: O. Pereguda
+              - text: M. Tereshchenko
+          - generic [ref=e366]:
+            - heading "Other:" [level=3] [ref=e368]
+            - heading "V. WerS. H. Prampolini E. Deslav W. Herwart K. Malevich V. Tatlin A. Rodchenko" [level=3] [ref=e370]:
+              - text: V. WerS.
+              - text: H. Prampolini
+              - text: E. Deslav
+              - text: W. Herwart
+              - text: K. Malevich
+              - text: V. Tatlin
+              - text: A. Rodchenko
+      - generic [ref=e371]:
+        - generic [ref=e372]:
+          - heading "№" [level=3] [ref=e374]
+          - heading "01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21" [level=3] [ref=e376]:
+            - text: "01"
+            - text: "02"
+            - text: "03"
+            - text: "04"
+            - text: "05"
+            - text: "06"
+            - text: "07"
+            - text: "08"
+            - text: "09"
+            - text: "10"
+            - text: "11"
+            - text: "12"
+            - text: "13"
+            - text: "14"
+            - text: "15"
+            - text: "16"
+            - text: "17"
+            - text: "18"
+            - text: "19"
+            - text: "20"
+            - text: "21"
+        - heading "22 23 24 25 26 27 28 29" [level=3] [ref=e379]:
+          - text: "22"
+          - text: "23"
+          - text: "24"
+          - text: "25"
+          - text: "26"
+          - text: "27"
+          - text: "28"
+          - text: "29"
+        - generic [ref=e380]:
+          - heading "30 31 32 33" [level=3] [ref=e383]:
+            - text: "30"
+            - text: "31"
+            - text: "32"
+            - text: "33"
+          - heading "34 35 36 37 38 39 40" [level=3] [ref=e386]:
+            - text: "34"
+            - text: "35"
+            - text: "36"
+            - text: "37"
+            - text: "38"
+            - text: "39"
+            - text: "40"
+    - generic [ref=e391]:
+      - 'heading "Translation: New Generation" [level=3] [ref=e394]'
+      - generic [ref=e395]:
+        - heading "“Nova" [level=1] [ref=e397]: “Nova
+        - heading "Heneratsiia”" [level=1] [ref=e399]: Heneratsiia”
+  - generic [ref=e402]:
+    - generic [ref=e403]:
+      - generic [ref=e406]:
+        - generic [ref=e409]:
+          - heading "Modernists:" [level=3] [ref=e412]
+          - generic [ref=e413]:
+            - 'heading "E01: Anatol Petrytskiy" [level=3] [ref=e415]'
+            - 'heading "E02: Vasyl Ermilov" [level=3] [ref=e417]'
+            - 'heading "E03: Oleksandr Khvostenko-Khvostov" [level=3] [ref=e419]'
+            - 'heading "E04: Borys Kosarev" [level=3] [ref=e421]'
+            - 'heading "E05: Vadym Meller" [level=3] [ref=e423]'
+        - generic [ref=e425]:
+          - generic:
+            - heading "1895-1968" [level=3] [ref=e427]
+            - heading "E03:" [level=3] [ref=e429]
+          - generic [ref=e431]: Oleksandr
+          - generic [ref=e433]: Khvostenko-
+          - generic [ref=e435]: Khvostov
+      - generic [ref=e436]:
+        - generic [ref=e437]:
+          - generic [ref=e439]: Oleksandr Veniaminovych Khvostenko-
+          - generic [ref=e441]: Khvostov (1895-1968)—Ukrainian
+          - generic [ref=e443]: theatrical set designer, one of the
+          - generic [ref=e445]: founders of Ukrainian scenography.
+        - heading "(04)" [level=3] [ref=e447]
+      - generic [ref=e449]:
+        - generic [ref=e450]:
+          - heading "Inspiration Source:" [level=3] [ref=e453]
+          - generic [ref=e454]:
+            - img "Oleksandr Khvostenko-Khvostov"
+        - generic [ref=e455]:
+          - generic [ref=e456]:
+            - generic [ref=e457]:
+              - heading "AI Artwork №1:" [level=3] [ref=e460]:
+                - text: AI Artwork
+                - text: "№1:"
+              - img "Oleksandr Khvostenko-Khvostov" [ref=e463]
+            - generic [ref=e466]:
+              - heading "Details:" [level=3] [ref=e469]
+              - generic [ref=e470]:
+                - generic [ref=e471]:
+                  - img "Oleksandr Khvostenko-Khvostov"
+                - generic [ref=e473]:
+                  - generic [ref=e474]:
+                    - img "Oleksandr Khvostenko-Khvostov"
+                  - generic [ref=e476]:
+                    - img "Oleksandr Khvostenko-Khvostov"
+          - generic [ref=e478]:
+            - generic [ref=e479]:
+              - heading "AI Artwork №2:" [level=3] [ref=e482]:
+                - text: AI Artwork
+                - text: "№2:"
+              - img "Oleksandr Khvostenko-Khvostov" [ref=e485]
+            - generic [ref=e488]:
+              - heading "Details:" [level=3] [ref=e491]
+              - generic [ref=e492]:
+                - generic [ref=e493]:
+                  - generic [ref=e494]:
+                    - img "Oleksandr Khvostenko-Khvostov"
+                  - generic [ref=e496]:
+                    - img "Oleksandr Khvostenko-Khvostov"
+                - generic [ref=e498]:
+                  - img "Oleksandr Khvostenko-Khvostov"
+    - generic [ref=e502]:
+      - generic [ref=e503]:
+        - heading "Inspiration Source:" [level=3] [ref=e506]
+        - generic [ref=e507]:
+          - img "Oleksandr Khvostenko-Khvostov"
+      - generic [ref=e508]:
+        - generic [ref=e509]:
+          - generic [ref=e510]:
+            - heading "AI Artwork №1:" [level=3] [ref=e513]:
+              - text: AI Artwork
+              - text: "№1:"
+            - img "Oleksandr Khvostenko-Khvostov" [ref=e516]
+          - generic [ref=e519]:
+            - heading "Details:" [level=3] [ref=e522]
+            - generic [ref=e523]:
+              - generic [ref=e524]:
+                - img "Oleksandr Khvostenko-Khvostov"
+              - generic [ref=e526]:
+                - generic [ref=e527]:
+                  - img "Oleksandr Khvostenko-Khvostov"
+                - generic [ref=e529]:
+                  - img "Oleksandr Khvostenko-Khvostov"
+        - generic [ref=e531]:
+          - generic [ref=e532]:
+            - heading "AI Artwork №2:" [level=3] [ref=e535]:
+              - text: AI Artwork
+              - text: "№2:"
+            - img "Oleksandr Khvostenko-Khvostov" [ref=e538]
+          - generic [ref=e541]:
+            - heading "Details:" [level=3] [ref=e544]
+            - generic [ref=e545]:
+              - generic [ref=e546]:
+                - generic [ref=e547]:
+                  - img "Oleksandr Khvostenko-Khvostov"
+                - generic [ref=e549]:
+                  - img "Oleksandr Khvostenko-Khvostov"
+              - generic [ref=e551]:
+                - img "Oleksandr Khvostenko-Khvostov"
+  - generic [ref=e554]:
+    - generic [ref=e555]:
+      - generic [ref=e558]:
+        - generic [ref=e561]:
+          - heading "Modernists:" [level=3] [ref=e564]
+          - generic [ref=e565]:
+            - 'heading "E01: Anatol Petrytskiy" [level=3] [ref=e567]'
+            - 'heading "E02: Vasyl Ermilov" [level=3] [ref=e569]'
+            - 'heading "E03: Oleksandr Khvostenko-Khvostov" [level=3] [ref=e571]'
+            - 'heading "E04: Borys Kosarev" [level=3] [ref=e573]'
+            - 'heading "E05: Vadym Meller" [level=3] [ref=e575]'
+        - generic [ref=e577]:
+          - generic:
+            - heading "1897-1994" [level=3] [ref=e579]
+            - heading "E04:" [level=3] [ref=e581]
+          - generic [ref=e583]: Borys
+          - generic [ref=e585]: Kosarev
+      - generic [ref=e586]:
+        - generic [ref=e587]:
+          - generic [ref=e589]: Borys Vasyliovych Kosarev
+          - generic [ref=e591]: (1897-1994)—Ukrainian theatrical set
+          - generic [ref=e593]: designer, graphic designer, painter,
+          - generic [ref=e595]: photographer, and famous educator.
+        - heading "(04)" [level=3] [ref=e597]
+      - generic [ref=e599]:
+        - generic [ref=e600]:
+          - heading "Inspiration Source:" [level=3] [ref=e603]
+          - generic [ref=e604]:
+            - img "Borys Kosarev"
+        - generic [ref=e605]:
+          - generic [ref=e606]:
+            - generic [ref=e607]:
+              - heading "AI Artwork №1:" [level=3] [ref=e610]:
+                - text: AI Artwork
+                - text: "№1:"
+              - img "Borys Kosarev" [ref=e613]
+            - generic [ref=e616]:
+              - heading "Details:" [level=3] [ref=e619]
+              - generic [ref=e620]:
+                - generic [ref=e621]:
+                  - img "Borys Kosarev"
+                - generic [ref=e623]:
+                  - generic [ref=e624]:
+                    - img "Borys Kosarev"
+                  - generic [ref=e626]:
+                    - img "Borys Kosarev"
+          - generic [ref=e628]:
+            - generic [ref=e629]:
+              - heading "AI Artwork №2:" [level=3] [ref=e632]:
+                - text: AI Artwork
+                - text: "№2:"
+              - img "Borys Kosarev" [ref=e635]
+            - generic [ref=e638]:
+              - heading "Details:" [level=3] [ref=e641]
+              - generic [ref=e642]:
+                - generic [ref=e643]:
+                  - generic [ref=e644]:
+                    - img "Borys Kosarev"
+                  - generic [ref=e646]:
+                    - img "Borys Kosarev"
+                - generic [ref=e648]:
+                  - img "Borys Kosarev"
+          - generic [ref=e650]:
+            - generic [ref=e651]:
+              - heading "AI Artwork №3:" [level=3] [ref=e654]:
+                - text: AI Artwork
+                - text: "№3:"
+              - img "Borys Kosarev" [ref=e657]
+            - generic [ref=e660]:
+              - heading "Details:" [level=3] [ref=e663]
+              - generic [ref=e664]:
+                - generic [ref=e665]:
+                  - img "Borys Kosarev"
+                - generic [ref=e667]:
+                  - generic [ref=e668]:
+                    - img "Borys Kosarev"
+                  - generic [ref=e670]:
+                    - img "Borys Kosarev"
+    - generic [ref=e674]:
+      - generic [ref=e675]:
+        - heading "Inspiration Source:" [level=3] [ref=e678]
+        - generic [ref=e679]:
+          - img "Borys Kosarev"
+      - generic [ref=e681]:
+        - generic [ref=e682]:
+          - heading "AI Artwork №1:" [level=3] [ref=e685]:
+            - text: AI Artwork
+            - text: "№1:"
+          - generic [ref=e687]:
+            - img "Borys Kosarev"
+        - generic [ref=e690]:
+          - heading "Details:" [level=3] [ref=e693]
+          - generic [ref=e694]:
+            - generic [ref=e695]:
+              - img "Borys Kosarev"
+            - generic [ref=e697]:
+              - generic [ref=e698]:
+                - img "Borys Kosarev"
+              - generic [ref=e700]:
+                - img "Borys Kosarev"
+  - generic [ref=e705]:
+    - generic [ref=e706]:
+      - generic [ref=e707]:
+        - generic [ref=e709]: "07"
+        - generic [ref=e711]: +
+        - generic [ref=e713]: "03"
+      - generic [ref=e714]:
+        - generic [ref=e716]: Seven
+        - generic [ref=e718]: Plus
+        - generic [ref=e720]: Three
+        - generic [ref=e721]:
+          - generic [ref=e723]: "1916"
+          - generic [ref=e725]: "-18"
+    - generic [ref=e728]:
+      - heading "Album-Manifesto" [level=3] [ref=e731]
+      - generic [ref=e733]:
+        - heading "Name:" [level=3] [ref=e735]
+        - heading "Union of Seven:" [level=3] [ref=e737]
+        - heading "V. Bobrytskiy V. Diakov M. Kalmykov B. Kosarev B. Tsybys N. Myschenko H. Tsapok +" [level=3] [ref=e739]:
+          - text: V. Bobrytskiy
+          - text: V. Diakov
+          - text: M. Kalmykov
+          - text: B. Kosarev
+          - text: B. Tsybys
+          - text: N. Myschenko
+          - text: H. Tsapok
+          - text: +
+        - heading "Group of Three:" [level=3] [ref=e741]
+        - heading "O. Hladkov V. Ermilov M. Kats" [level=3] [ref=e743]:
+          - text: O. Hladkov
+          - text: V. Ermilov
+          - text: M. Kats
+      - generic [ref=e745]:
+        - heading "№" [level=3] [ref=e747]
+        - heading "01 02 03 04 05 06 07 + ‍ 01 02 03" [level=3] [ref=e749]:
+          - text: "01"
+          - text: "02"
+          - text: "03"
+          - text: "04"
+          - text: "05"
+          - text: "06"
+          - text: "07"
+          - text: +
+          - text: ‍
+          - text: "01"
+          - text: "02"
+          - text: "03"
+    - generic [ref=e754]:
+      - 'heading "Translation: Union of Seven" [level=3] [ref=e756]'
+      - generic [ref=e757]:
+        - generic [ref=e759]: “Spilka
+        - generic [ref=e761]: Semy”
+  - generic [ref=e767]:
+    - generic [ref=e768]:
+      - generic [ref=e771]:
+        - generic [ref=e774]:
+          - heading "Modernists:" [level=3] [ref=e777]
+          - generic [ref=e778]:
+            - 'heading "E01: Anatol Petrytskiy" [level=3] [ref=e780]'
+            - 'heading "E02: Vasyl Ermilov" [level=3] [ref=e782]'
+            - 'heading "E03: Oleksandr Khvostenko-Khvostov" [level=3] [ref=e784]'
+            - 'heading "E04: Borys Kosarev" [level=3] [ref=e786]'
+            - 'heading "E05: Vadym Meller" [level=3] [ref=e788]'
+        - generic [ref=e790]:
+          - generic:
+            - heading "1884–1962" [level=3] [ref=e792]
+            - heading "E05:" [level=3] [ref=e794]
+          - generic [ref=e796]: Vadym
+          - generic [ref=e798]: Meller
+      - generic [ref=e799]:
+        - generic [ref=e800]:
+          - generic [ref=e802]: Vadym Georgiyovych Meller
+          - generic [ref=e804]: (1884–1962)—Ukrainian avant-garde
+          - generic [ref=e806]: artist (cubo-futurist, constructivist,
+          - generic [ref=e808]: expressionist), theatrical designer.
+        - heading "(04)" [level=3] [ref=e810]
+      - generic [ref=e812]:
+        - generic [ref=e813]:
+          - heading "Inspiration Source:" [level=3] [ref=e816]
+          - generic [ref=e817]:
+            - img "Vadym Meller"
+        - generic [ref=e818]:
+          - generic [ref=e819]:
+            - generic [ref=e820]:
+              - heading "AI Artwork №1:" [level=3] [ref=e823]:
+                - text: AI Artwork
+                - text: "№1:"
+              - img "Vadym Meller" [ref=e826]
+            - generic [ref=e829]:
+              - heading "Details:" [level=3] [ref=e832]
+              - generic [ref=e833]:
+                - generic [ref=e834]:
+                  - img "Vadym Meller"
+                - generic [ref=e836]:
+                  - generic [ref=e837]:
+                    - img "Vadym Meller"
+                  - generic [ref=e839]:
+                    - img "Vadym Meller"
+          - generic [ref=e841]:
+            - generic [ref=e842]:
+              - heading "AI Artwork №2:" [level=3] [ref=e845]:
+                - text: AI Artwork
+                - text: "№2:"
+              - img "Vadym Meller" [ref=e848]
+            - generic [ref=e851]:
+              - heading "Details:" [level=3] [ref=e854]
+              - generic [ref=e855]:
+                - generic [ref=e856]:
+                  - generic [ref=e857]:
+                    - img "Vadym Meller"
+                  - generic [ref=e859]:
+                    - img "Vadym Meller"
+                - generic [ref=e861]:
+                  - img "Vadym Meller"
+          - generic [ref=e863]:
+            - generic [ref=e864]:
+              - heading "AI Artwork №3:" [level=3] [ref=e867]:
+                - text: AI Artwork
+                - text: "№3:"
+              - img "Vadym Meller" [ref=e870]
+            - generic [ref=e873]:
+              - heading "Details:" [level=3] [ref=e876]
+              - generic [ref=e877]:
+                - generic [ref=e878]:
+                  - img "Vadym Meller"
+                - generic [ref=e880]:
+                  - generic [ref=e881]:
+                    - img "Vadym Meller"
+                  - generic [ref=e883]:
+                    - img "Vadym Meller"
+    - generic [ref=e887]:
+      - generic [ref=e888]:
+        - heading "Inspiration Source:" [level=3] [ref=e891]
+        - generic [ref=e892]:
+          - img "Vadym Meller"
+      - generic [ref=e894]:
+        - generic [ref=e895]:
+          - heading "AI Artwork №1:" [level=3] [ref=e898]:
+            - text: AI Artwork
+            - text: "№1:"
+          - img "Vadym Meller" [ref=e901]
+        - generic [ref=e904]:
+          - heading "Details:" [level=3] [ref=e907]
+          - generic [ref=e908]:
+            - generic [ref=e909]:
+              - img "Vadym Meller"
+            - generic [ref=e911]:
+              - generic [ref=e912]:
+                - img "Vadym Meller"
+              - generic [ref=e914]:
+                - img "Vadym Meller"
+  - generic [ref=e917]:
+    - generic [ref=e919]:
+      - heading "An AI Experiment Based on the Kharkiv Modernism" [level=3] [ref=e922]
+      - heading "Obys Agency ©2025" [level=3] [ref=e924]
+    - img [ref=e928]

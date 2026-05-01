@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Points de Friction Animation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { overflow-x: hidden; }
+
+    body {
+      background: #0c0908;
+      color: #f5f0e8;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* ── Intro ──────────────────────────────────── */
+    .intro {
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .intro p {
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.2);
+    }
+    .arrow {
+      font-size: 20px;
+      color: rgba(201,169,110,0.35);
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(7px); }
+    }
+
+    /* ── Section shell ──────────────────────────── */
+    .pain-section {
+      height: 400vh;
+      position: relative;
+    }
+
+    .pain-inner {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      display: flex;
+      overflow: hidden;
+    }
+
+    /* ── LEFT — editorial headline ──────────────── */
+    .pain-left {
+      width: 42%;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 0 0 7vw;
+      position: relative;
+      z-index: 2;
+    }
+
+    .pain-left .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 3vh;
+    }
+    .pain-left .eyebrow-line {
+      width: 28px;
+      height: 1px;
+      background: #c9a96e;
+      opacity: 0.6;
+    }
+    .pain-left .eyebrow-text {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.35em;
+      color: #c9a96e;
+      text-transform: uppercase;
+    }
+
+    /* Big stacked words — the editorial centrepiece */
+    .pain-left .big-word {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      line-height: 0.88;
+      color: #f5f0e8;
+      display: block;
+      font-size: clamp(4rem, 9.5vw, 10rem);
+      letter-spacing: -0.01em;
+    }
+    .pain-left .big-word.italic {
+      font-style: italic;
+      color: #c9a96e;
+    }
+
+    .pain-left .sub-line {
+      margin-top: 4vh;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .pain-left .sub-line .sub-text {
+      font-size: 10px;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      color: rgba(245,240,232,0.35);
+      max-width: 220px;
+      line-height: 1.65;
+    }
+    .pain-left .counter {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 11px;
+      color: rgba(201,169,110,0.4);
+      letter-spacing: 0.2em;
+      white-space: nowrap;
+    }
+
+    /* Thin vertical border */
+    .pain-left::after {
+      content: '';
+      position: absolute;
+      top: 15%;
+      right: 0;
+      width: 1px;
+      height: 70%;
+      background: rgba(245,240,232,0.07);
+    }
+
+    /* ── RIGHT — cards track ────────────────────── */
+    .pain-right {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding-left: 5vw;
+      overflow: visible;
+    }
+
+    .cards-track {
+      display: flex;
+      gap: 20px;
+      align-items: stretch;
+      /* will be moved by GSAP */
+    }
+
+    /* ── Card ───────────────────────────────────── */
+    .card {
+      flex-shrink: 0;
+      width: min(280px, 22vw);
+      height: 72vh;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      background: #1a1512;
+      cursor: default;
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .card:hover img { transform: scale(1.05); }
+
+    .card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(5,3,2,0.97) 0%,
+        rgba(5,3,2,0.55) 40%,
+        rgba(5,3,2,0.05) 100%
+      );
+    }
+
+    /* Crosshairs */
+    .crosshair {
+      position: absolute;
+      top: 16px;
+      width: 12px;
+      height: 12px;
+      opacity: 0.18;
+      transition: opacity 0.4s;
+      z-index: 3;
+    }
+    .crosshair.tl { left: 16px; border-top: 1px solid #f5f0e8; border-left: 1px solid #f5f0e8; }
+    .crosshair.tr { right: 16px; border-top: 1px solid #f5f0e8; border-right: 1px solid #f5f0e8; }
+    .card:hover .crosshair { opacity: 0.55; }
+
+    .card-content {
+      position: absolute;
+      bottom: 0;
+      inset-x: 0;
+      padding: 22px;
+      z-index: 2;
+    }
+
+    .card-idx {
+      font-size: 8px;
+      letter-spacing: 0.35em;
+      color: rgba(201,169,110,0.45);
+      margin-bottom: 7px;
+    }
+    .card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: #f5f0e8;
+      line-height: 1.2;
+      margin-bottom: 7px;
+    }
+    .card-desc {
+      font-size: 10px;
+      font-weight: 300;
+      color: rgba(245,240,232,0.5);
+      line-height: 1.6;
+    }
+
+    /* ── Outro ──────────────────────────────────── */
+    .outro {
+      height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .outro p {
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.12);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="intro">
+    <p>Scroll pour voir l'animation</p>
+    <div class="arrow">↓</div>
+  </div>
+
+  <section class="pain-section" id="pain-section">
+    <div class="pain-inner">
+
+      <!-- LEFT: big editorial text -->
+      <div class="pain-left">
+        <div class="eyebrow">
+          <div class="eyebrow-line"></div>
+          <span class="eyebrow-text">03 — Points de friction</span>
+        </div>
+
+        <span class="big-word">Points</span>
+        <span class="big-word italic">de</span>
+        <span class="big-word">Friction</span>
+
+        <div class="sub-line">
+          <span class="counter">01 — 06</span>
+          <p class="sub-text">
+            Ce que vous perdez en silence à chaque appel sans réponse.
+          </p>
+        </div>
+      </div>
+
+      <!-- RIGHT: scrolling portrait cards -->
+      <div class="pain-right">
+        <div class="cards-track" id="cards-track">
+
+          <div class="card" id="c1">
+            <img src="/images/features/phone-reception.jpg" alt="Fuite de revenus">
+            <div class="card-overlay"></div>
+            <div class="crosshair tl"></div>
+            <div class="crosshair tr"></div>
+            <div class="card-content">
+              <div class="card-idx">01 / 06</div>
+              <h3 class="card-title">Fuite de Revenus</h3>
+              <p class="card-desc">85 % des appelants ne rappellent pas s'ils tombent sur une messagerie.</p>
+            </div>
+          </div>
+
+          <div class="card" id="c2">
+            <img src="/images/features/tablet-booking.jpg" alt="Coûts fixes">
+            <div class="card-overlay"></div>
+            <div class="crosshair tl"></div>
+            <div class="crosshair tr"></div>
+            <div class="card-content">
+              <div class="card-idx">02 / 06</div>
+              <h3 class="card-title">Coûts Fixes Élevés</h3>
+              <p class="card-desc">Le recrutement et la formation 24/7 sont un gouffre financier imprévisible.</p>
+            </div>
+          </div>
+
+          <div class="card" id="c3">
+            <img src="/images/feature-support.jpg" alt="Lacunes de couverture">
+            <div class="card-overlay"></div>
+            <div class="crosshair tl"></div>
+            <div class="crosshair tr"></div>
+            <div class="card-content">
+              <div class="card-idx">03 / 06</div>
+              <h3 class="card-title">Lacunes de Couverture</h3>
+              <p class="card-desc">Anvela offre une disponibilité absolue 24/7/365, sans exception.</p>
+            </div>
+          </div>
+
+          <div class="card" id="c4">
+            <img src="/images/features/automation-icons.jpg" alt="Service inconstant">
+            <div class="card-overlay"></div>
+            <div class="crosshair tl"></div>
+            <div class="crosshair tr"></div>
+            <div class="card-content">
+              <div class="card-idx">04 / 06</div>
+              <h3 class="card-title">Service Inconstant</h3>
+              <p class="card-desc">La performance du personnel fluctue. Anvela délivre une expérience parfaite à chaque appel.</p>
+            </div>
+          </div>
+
+          <div class="card" id="c5">
+            <img src="/images/tech-voice-realism.jpg" alt="Rotation du personnel">
+            <div class="card-overlay"></div>
+            <div class="crosshair tl"></div>
+            <div class="crosshair tr"></div>
+            <div class="card-content">
+              <div class="card-idx">05 / 06</div>
+              <h3 class="card-title">Rotation du Personnel</h3>
+              <p class="card-desc">Turn-over de 75 % dans les rôles de support — perte constante de savoir-faire.</p>
+            </div>
+          </div>
+
+          <div class="card" id="c6">
+            <img src="/images/apprentissage-continu.jpg" alt="Friction administrative">
+            <div class="card-overlay"></div>
+            <div class="crosshair tl"></div>
+            <div class="crosshair tr"></div>
+            <div class="card-content">
+              <div class="card-idx">06 / 06</div>
+              <h3 class="card-title">Friction Administrative</h3>
+              <p class="card-desc">La saisie manuelle entraîne des erreurs et la perte d'informations cruciales.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="outro">
+    <p>Anvela — Réceptionniste IA</p>
+  </div>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    const section = document.getElementById('pain-section');
+    const track   = document.getElementById('cards-track');
+    const cards   = Array.from(track.querySelectorAll('.card'));
+
+    // ── Phase 1: cards appear one by one (sequential stagger) ──
+    // Each card starts off-screen to the right and clips into view
+    gsap.set(cards, { x: '110vw', opacity: 0 });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: 'top top',
+        end: '55% bottom',
+        scrub: 1.2,
+      }
+    });
+
+    cards.forEach((card, i) => {
+      tl.to(card, {
+        x: 0,
+        opacity: 1,
+        ease: 'power3.out',
+        duration: 1,
+      }, i * 0.6); // stagger in timeline
+    });
+
+    // ── Phase 2: whole track slides left together ──
+    gsap.to(track, {
+      x: () => -(track.scrollWidth - window.innerWidth * 0.58),
+      ease: 'none',
+      scrollTrigger: {
+        trigger: section,
+        start: '45% top',
+        end: 'bottom bottom',
+        scrub: 1.5,
+      }
+    });
+  </script>
+</body>
+</html>

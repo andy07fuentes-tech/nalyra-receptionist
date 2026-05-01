@@ -103,67 +103,68 @@ export function StickyPainGallery() {
   const mobileContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!mobileContainerRef.current) return;
-    
-    // Only run on mobile
-    if (window.innerWidth >= 768) return;
+    let ctx = gsap.context(() => {
+      // Desktop Blur Reveal Animation (Kookie Kollective Style)
+      if (window.innerWidth >= 768) {
+        const blurCards = gsap.utils.toArray('.blur-reveal-card') as HTMLElement[];
+        blurCards.forEach((card) => {
+          gsap.fromTo(card,
+            { 
+              opacity: 0,
+              filter: 'blur(20px)',
+              y: 60
+            },
+            {
+              opacity: 1,
+              filter: 'blur(0px)',
+              y: 0,
+              duration: 1.2,
+              ease: 'power3.out',
+              scrollTrigger: {
+                trigger: card,
+                start: 'top 85%',
+                toggleActions: 'play none none reverse' // Reverses when scrolling back up
+              }
+            }
+          );
+        });
+      }
 
-    const cards = gsap.utils.toArray('.mobile-card') as HTMLElement[];
-    if (cards.length === 0) return;
+      // Mobile Stacked Fanning Animation (Existing)
+      if (window.innerWidth < 768 && mobileContainerRef.current) {
+        const cards = gsap.utils.toArray('.mobile-card') as HTMLElement[];
+        if (cards.length > 0) {
+          gsap.set(cards, {
+            y: ((i: number) => i === 0 ? 0 : window.innerHeight) as any,
+            opacity: (i: number) => i === 0 ? 1 : 0,
+            scale: 1,
+            rotateZ: 0
+          });
 
-    // Set initial states
-    gsap.set(cards, {
-      y: ((i: number) => i === 0 ? 0 : window.innerHeight) as any,
-      opacity: (i: number) => i === 0 ? 1 : 0,
-      scale: 1,
-      rotateZ: 0
-    });
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: mobileContainerRef.current,
+              start: 'top top',
+              end: 'bottom bottom',
+              scrub: 1,
+            }
+          });
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: mobileContainerRef.current,
-        start: 'top top',
-        end: 'bottom bottom',
-        scrub: 1,
+          cards.forEach((card, i) => {
+            if (i === 0) return;
+            const rotate = i % 2 === 0 ? 4 + i : -(4 + i);
+            const xOffset = i % 2 === 0 ? 10 + (i*2) : -(10 + (i*2));
+            const previousCards = cards.slice(0, i);
+            
+            tl.to(card, { y: 0, opacity: 1, duration: 1, ease: 'power2.out' }, `label${i}`)
+              .to(previousCards, { scale: '-=0.04', y: '-=15', opacity: '-=0.15', duration: 1, ease: 'power2.out' }, `label${i}`)
+              .to(card, { rotateZ: rotate, x: xOffset, duration: 0.5, ease: 'power1.inOut' }, `label${i}+=0.5`);
+          });
+        }
       }
     });
 
-    cards.forEach((card, i) => {
-      if (i === 0) return; // First card is already visible
-
-      // Determine rotation based on index (even indices rotate right, odd left)
-      const rotate = i % 2 === 0 ? 4 + i : -(4 + i);
-      const xOffset = i % 2 === 0 ? 10 + (i*2) : -(10 + (i*2));
-
-      // As card i comes in, previous cards push back and fade slightly
-      const previousCards = cards.slice(0, i);
-      
-      tl.to(card, {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        ease: 'power2.out',
-      }, `label${i}`)
-      .to(previousCards, {
-        scale: '-=0.04',
-        y: '-=15',
-        opacity: '-=0.15',
-        duration: 1,
-        ease: 'power2.out',
-      }, `label${i}`)
-      .to(card, {
-        rotateZ: rotate,
-        x: xOffset,
-        duration: 0.5,
-        ease: 'power1.inOut'
-      }, `label${i}+=0.5`);
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach(st => {
-        if (st.vars.trigger === mobileContainerRef.current) st.kill();
-      });
-    };
+    return () => ctx.revert(); // Proper cleanup for GSAP in React
   }, []);
 
   return (
@@ -202,7 +203,7 @@ export function StickyPainGallery() {
           {LEFT_PHOTOS.map((photo, i) => (
             <div
               key={photo.id}
-              className="h-[520px]"
+              className="h-[520px] blur-reveal-card"
               onMouseEnter={() => setSideHovered(true)}
               onMouseLeave={() => setSideHovered(false)}
             >
@@ -253,7 +254,7 @@ export function StickyPainGallery() {
           {RIGHT_PHOTOS.map((photo, i) => (
             <div
               key={photo.id}
-              className="h-[520px]"
+              className="h-[520px] blur-reveal-card"
               onMouseEnter={() => setSideHovered(true)}
               onMouseLeave={() => setSideHovered(false)}
             >
