@@ -113,8 +113,8 @@ export function StickyPainGallery() {
 
     // Set initial states
     gsap.set(cards, {
-      y: (i) => i === 0 ? 0 : '100vh',
-      opacity: (i) => i === 0 ? 1 : 0,
+      y: ((i: number) => i === 0 ? 0 : window.innerHeight) as any,
+      opacity: (i: number) => i === 0 ? 1 : 0,
       scale: 1,
       rotateZ: 0
     });
