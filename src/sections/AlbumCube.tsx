@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState, Suspense } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { useTexture, Environment, Float, MeshDistortMaterial } from '@react-three/drei';
+import { useTexture, Environment, Float, MeshDistortMaterial, ContactShadows } from '@react-three/drei';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import * as THREE from 'three';
@@ -152,6 +152,14 @@ export function AlbumCube() {
                             <spotLight position={[-10, 5, 5]} intensity={2.5} angle={0.2} penumbra={1} color="#3b82f6" />
 
                             <Cube rotationProgress={rotationProgress} />
+                            <ContactShadows
+                                position={[0, -1.8, 0]}
+                                opacity={0.38}
+                                scale={8}
+                                blur={2.8}
+                                far={3}
+                                color="#1a2d5a"
+                            />
                             {/* We could hide glass planes or make them lighter for light theme */}
                             <group position={[0, 0, -2]}>
                                 <mesh rotation={[0.4, 0.5, 0]}>
