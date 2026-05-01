@@ -1,7 +1,10 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../../contexts/LanguageContext';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+gsap.registerPlugin(ScrollTrigger);
 const PHOTO_CONFIG = [
   { id: "photo-1", src: "/images/features/phone-reception.jpg", key: "photo1" },
   { id: "photo-2", src: "/images/features/tablet-booking.jpg", key: "photo2" },
@@ -97,24 +100,98 @@ export function StickyPainGallery() {
   const leftData   = LEFT_PHOTOS.map(getData);
   const rightData  = RIGHT_PHOTOS.map(getData);
 
+  const mobileContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!mobileContainerRef.current) return;
+    
+    // Only run on mobile
+    if (window.innerWidth >= 768) return;
+
+    const cards = gsap.utils.toArray('.mobile-card') as HTMLElement[];
+    if (cards.length === 0) return;
+
+    // Set initial states
+    gsap.set(cards, {
+      y: (i) => i === 0 ? 0 : '100vh',
+      opacity: (i) => i === 0 ? 1 : 0,
+      scale: 1,
+      rotateZ: 0
+    });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: mobileContainerRef.current,
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: 1,
+      }
+    });
+
+    cards.forEach((card, i) => {
+      if (i === 0) return; // First card is already visible
+
+      // Determine rotation based on index (even indices rotate right, odd left)
+      const rotate = i % 2 === 0 ? 4 + i : -(4 + i);
+      const xOffset = i % 2 === 0 ? 10 + (i*2) : -(10 + (i*2));
+
+      // As card i comes in, previous cards push back and fade slightly
+      const previousCards = cards.slice(0, i);
+      
+      tl.to(card, {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: 'power2.out',
+      }, `label${i}`)
+      .to(previousCards, {
+        scale: '-=0.04',
+        y: '-=15',
+        opacity: '-=0.15',
+        duration: 1,
+        ease: 'power2.out',
+      }, `label${i}`)
+      .to(card, {
+        rotateZ: rotate,
+        x: xOffset,
+        duration: 0.5,
+        ease: 'power1.inOut'
+      }, `label${i}+=0.5`);
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach(st => {
+        if (st.vars.trigger === mobileContainerRef.current) st.kill();
+      });
+    };
+  }, []);
+
   return (
     <div className="w-full">
-      {/* Mobile: all cards stacked */}
-      <div className="flex flex-col gap-4 md:hidden">
-        {PHOTO_CONFIG.map((photo, i) => {
-          const d = getData(photo);
-          return (
-            <div key={photo.id} className="h-[420px]">
-              <PainCard
-                src={photo.src} alt={d.title}
-                {...d}
-                logicLabel={logicLabel} benefitLabel={benefitLabel}
-                index={i} total={PHOTO_CONFIG.length}
-                featured={i === 0}
-              />
-            </div>
-          );
-        })}
+      {/* Mobile: Stacked Fanning Animation */}
+      <div ref={mobileContainerRef} className="relative h-[400vh] md:hidden">
+        <div className="sticky top-20 h-[80vh] w-full flex items-center justify-center overflow-hidden perspective-1000">
+          {PHOTO_CONFIG.map((photo, i) => {
+            const d = getData(photo);
+            return (
+              <div 
+                key={photo.id} 
+                className="mobile-card absolute w-full max-w-sm px-4"
+                style={{ zIndex: PHOTO_CONFIG.length - i }}
+              >
+                <div className="h-[450px] shadow-2xl rounded-2xl">
+                  <PainCard
+                    src={photo.src} alt={d.title}
+                    {...d}
+                    logicLabel={logicLabel} benefitLabel={benefitLabel}
+                    index={i} total={PHOTO_CONFIG.length}
+                    featured={i === 0}
+                  />
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
 
       {/* Desktop: 3-column sticky layout */}
