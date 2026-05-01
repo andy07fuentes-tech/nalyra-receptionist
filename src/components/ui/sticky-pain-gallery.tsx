@@ -177,9 +177,9 @@ export function StickyPainGallery() {
               <div 
                 key={photo.id} 
                 className="mobile-card absolute w-full max-w-sm px-4"
-                style={{ zIndex: PHOTO_CONFIG.length - i }}
+                style={{ zIndex: i }}
               >
-                <div className="h-[450px] shadow-2xl rounded-2xl">
+                <div className="h-[450px] shadow-2xl rounded-2xl bg-[#020202] overflow-hidden">
                   <PainCard
                     src={photo.src} alt={d.title}
                     {...d}

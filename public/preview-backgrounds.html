@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Background Preview — CinematicShowcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Poppins:wght@300;400;500&family=Qwitcher+Grypen&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; background: #000; color: #fff; }
+
+    /* ─── NAV ─────────────────────────────────────────────── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+      background: rgba(0,0,0,0.85); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: flex; gap: 0;
+    }
+    .nav a {
+      flex: 1; text-align: center;
+      padding: 14px 8px;
+      color: rgba(255,255,255,0.55); text-decoration: none;
+      font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+      transition: color 0.2s, background 0.2s;
+      border-right: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav a:last-child { border-right: none; }
+    .nav a:hover { color: #fff; background: rgba(255,255,255,0.04); }
+    .nav a.opt1:hover { color: #60a5fa; }
+    .nav a.opt2:hover { color: #a78bfa; }
+    .nav a.opt3:hover { color: #94a3b8; }
+
+    /* ─── SHARED SECTION STRUCTURE ───────────────────────── */
+    .showcase-section {
+      position: relative;
+      padding: 100px 0 80px;
+      overflow: hidden;
+      min-height: 100vh;
+    }
+
+    /* Label badge */
+    .section-label {
+      position: absolute; top: 76px; left: 50%; transform: translateX(-50%);
+      z-index: 10;
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 16px; border-radius: 99px;
+      font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+    }
+    .label-dot { width: 6px; height: 6px; border-radius: 50%; }
+
+    /* Content container */
+    .container {
+      max-width: 1100px; margin: 0 auto; padding: 0 32px;
+      position: relative; z-index: 10;
+    }
+
+    /* Step rows */
+    .step-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+      margin-bottom: 100px;
+    }
+    .step-row:last-child { margin-bottom: 0; }
+    .step-row.reverse .step-text { order: 2; }
+    .step-row.reverse .step-video { order: 1; }
+
+    .step-subtitle {
+      display: inline-block;
+      padding: 4px 14px; border-radius: 99px;
+      font-family: 'Qwitcher Grypen', cursive; font-size: 22px;
+      margin-bottom: 16px;
+    }
+    .step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 56px; line-height: 1; font-weight: 400;
+      opacity: 0.35; margin-right: 12px;
+    }
+    .step-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 4vw, 52px); font-weight: 400;
+      line-height: 1.1; margin-bottom: 20px;
+    }
+    .step-desc {
+      font-size: 16px; line-height: 1.75; color: rgba(255,255,255,0.5);
+      max-width: 420px;
+    }
+
+    /* Video placeholder */
+    .video-wrap {
+      position: relative;
+      aspect-ratio: 16/9;
+      border-radius: 24px; overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 32px 64px rgba(0,0,0,0.5);
+      background: #0d0d1a;
+    }
+    .video-wrap video {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .video-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    /* Placeholder for videos that won't load */
+    .video-placeholder {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, #0d0d2b 0%, #0a1628 100%);
+      color: rgba(255,255,255,0.15); font-size: 13px; letter-spacing: 0.1em;
+    }
+
+    /* ══════════════════════════════════════════════════════
+       OPTION 1 — FLOATING GLOW ORBS
+    ══════════════════════════════════════════════════════ */
+    #option1 { background: #020202; }
+
+    .orb {
+      position: absolute; border-radius: 50%; filter: blur(80px);
+      pointer-events: none; will-change: transform;
+    }
+    .orb-1 {
+      width: 600px; height: 600px; top: -120px; left: -100px;
+      background: radial-gradient(circle, rgba(37,99,235,0.22) 0%, rgba(37,99,235,0.06) 50%, transparent 70%);
+      animation: drift1 14s ease-in-out infinite;
+    }
+    .orb-2 {
+      width: 500px; height: 500px; top: 30%; right: -80px;
+      background: radial-gradient(circle, rgba(99,102,241,0.18) 0%, rgba(99,102,241,0.05) 50%, transparent 70%);
+      animation: drift2 18s ease-in-out infinite;
+    }
+    .orb-3 {
+      width: 450px; height: 450px; bottom: 10%; left: 30%;
+      background: radial-gradient(circle, rgba(14,165,233,0.14) 0%, rgba(14,165,233,0.04) 50%, transparent 70%);
+      animation: drift3 22s ease-in-out infinite;
+    }
+    .orb-4 {
+      width: 350px; height: 350px; top: 55%; left: 10%;
+      background: radial-gradient(circle, rgba(139,92,246,0.12) 0%, rgba(139,92,246,0.03) 50%, transparent 70%);
+      animation: drift4 16s ease-in-out infinite;
+    }
+
+    @keyframes drift1 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33%       { transform: translate(60px, 80px) scale(1.08); }
+      66%       { transform: translate(-40px, 40px) scale(0.95); }
+    }
+    @keyframes drift2 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      40%       { transform: translate(-80px, 60px) scale(1.1); }
+      70%       { transform: translate(30px, -50px) scale(0.92); }
+    }
+    @keyframes drift3 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      35%       { transform: translate(50px, -70px) scale(1.06); }
+      65%       { transform: translate(-60px, 30px) scale(0.96); }
+    }
+    @keyframes drift4 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50%       { transform: translate(70px, -60px) scale(1.12); }
+    }
+
+    /* Subtle film grain */
+    #option1::after {
+      content: '';
+      position: absolute; inset: 0; pointer-events: none; z-index: 1;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-size: 180px 180px;
+    }
+
+    #option1 .step-subtitle { background: rgba(37,99,235,0.1); border: 1px solid rgba(37,99,235,0.2); color: #60a5fa; }
+    #option1 .step-num { color: rgba(96,165,250,0.5); }
+
+    /* ══════════════════════════════════════════════════════
+       OPTION 2 — ANIMATED MESH GRADIENT (AURORA)
+    ══════════════════════════════════════════════════════ */
+    #option2 { background: #050510; }
+
+    .aurora-layer {
+      position: absolute; inset: 0; pointer-events: none;
+    }
+    .aurora-1 {
+      background: radial-gradient(ellipse 80% 50% at 20% 40%, rgba(37,99,235,0.18) 0%, transparent 60%);
+      animation: aurora-shift1 12s ease-in-out infinite;
+    }
+    .aurora-2 {
+      background: radial-gradient(ellipse 60% 70% at 80% 20%, rgba(139,92,246,0.14) 0%, transparent 55%);
+      animation: aurora-shift2 16s ease-in-out infinite;
+    }
+    .aurora-3 {
+      background: radial-gradient(ellipse 70% 40% at 50% 80%, rgba(6,182,212,0.1) 0%, transparent 60%);
+      animation: aurora-shift3 20s ease-in-out infinite;
+    }
+    .aurora-4 {
+      background: radial-gradient(ellipse 50% 60% at 70% 60%, rgba(79,70,229,0.12) 0%, transparent 55%);
+      animation: aurora-shift4 14s ease-in-out infinite;
+    }
+
+    /* Horizontal light streak */
+    .aurora-streak {
+      position: absolute; left: 0; right: 0;
+      height: 1px; background: linear-gradient(90deg, transparent, rgba(99,102,241,0.25), transparent);
+      animation: streak-drift 18s ease-in-out infinite;
+      pointer-events: none;
+    }
+    .aurora-streak:nth-child(5) { top: 30%; animation-delay: 0s; }
+    .aurora-streak:nth-child(6) { top: 65%; animation-delay: -9s; opacity: 0.6; }
+
+    @keyframes aurora-shift1 {
+      0%, 100% { transform: translate(0, 0) scale(1); opacity: 1; }
+      50%       { transform: translate(8%, 6%) scale(1.15); opacity: 0.7; }
+    }
+    @keyframes aurora-shift2 {
+      0%, 100% { transform: translate(0, 0) scale(1); opacity: 1; }
+      50%       { transform: translate(-10%, 8%) scale(1.1); opacity: 0.8; }
+    }
+    @keyframes aurora-shift3 {
+      0%, 100% { transform: translate(0, 0) scale(1); opacity: 1; }
+      50%       { transform: translate(5%, -10%) scale(1.2); opacity: 0.6; }
+    }
+    @keyframes aurora-shift4 {
+      0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+      50%       { transform: translate(-8%, -6%) scale(1.05); opacity: 1; }
+    }
+    @keyframes streak-drift {
+      0%, 100% { opacity: 0; transform: scaleX(0.3); }
+      30%, 70%  { opacity: 1; transform: scaleX(1); }
+    }
+
+    /* Vignette */
+    .aurora-vignette {
+      position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(ellipse 90% 80% at 50% 50%, transparent 50%, rgba(0,0,0,0.55) 100%);
+    }
+
+    #option2 .step-subtitle { background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.25); color: #a78bfa; }
+    #option2 .step-num { color: rgba(167,139,250,0.4); }
+    #option2 .step-desc { color: rgba(255,255,255,0.45); }
+
+    /* ══════════════════════════════════════════════════════
+       OPTION 3 — DOT GRID + FILM GRAIN (STATIC)
+    ══════════════════════════════════════════════════════ */
+    #option3 { background: #080812; }
+
+    /* Dot grid via SVG background */
+    .dot-grid {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image: radial-gradient(circle, rgba(99,102,241,0.28) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, black 30%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, black 30%, transparent 100%);
+      opacity: 0.45;
+    }
+
+    /* SVG noise film grain */
+    .film-grain {
+      position: absolute; inset: 0; pointer-events: none; z-index: 2;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 160px 160px;
+    }
+
+    /* Faint horizontal scan lines */
+    .scanlines {
+      position: absolute; inset: 0; pointer-events: none; z-index: 3;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 3px,
+        rgba(255,255,255,0.012) 3px,
+        rgba(255,255,255,0.012) 4px
+      );
+    }
+
+    /* Corner accent lines */
+    .corner-accent {
+      position: absolute; pointer-events: none; z-index: 4;
+      width: 80px; height: 80px;
+    }
+    .corner-accent.tl { top: 32px; left: 32px; border-top: 1px solid rgba(99,102,241,0.3); border-left: 1px solid rgba(99,102,241,0.3); }
+    .corner-accent.tr { top: 32px; right: 32px; border-top: 1px solid rgba(99,102,241,0.3); border-right: 1px solid rgba(99,102,241,0.3); }
+    .corner-accent.bl { bottom: 32px; left: 32px; border-bottom: 1px solid rgba(99,102,241,0.3); border-left: 1px solid rgba(99,102,241,0.3); }
+    .corner-accent.br { bottom: 32px; right: 32px; border-bottom: 1px solid rgba(99,102,241,0.3); border-right: 1px solid rgba(99,102,241,0.3); }
+
+    /* Vertical line accents */
+    .vert-line {
+      position: absolute; top: 0; bottom: 0; width: 1px;
+      background: linear-gradient(to bottom, transparent, rgba(99,102,241,0.15) 20%, rgba(99,102,241,0.15) 80%, transparent);
+      pointer-events: none;
+    }
+    .vert-line.left  { left: 10%; }
+    .vert-line.right { right: 10%; }
+
+    #option3 .step-subtitle { background: rgba(99,102,241,0.08); border: 1px solid rgba(99,102,241,0.2); color: #818cf8; }
+    #option3 .step-num { color: rgba(129,140,248,0.35); }
+    #option3 .step-desc { color: rgba(255,255,255,0.45); }
+
+    /* ─── SECTION DIVIDERS ──────────────────────────────── */
+    .section-divider {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+    }
+
+    /* ─── OPTION LABEL BADGE ───────────────────────────── */
+    .opt-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 20px; border-radius: 99px;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+    }
+    .opt-badge-wrap {
+      text-align: center; padding: 32px 0 40px;
+      position: relative; z-index: 10;
+    }
+    .opt-badge-sub {
+      margin-top: 8px; font-size: 13px; color: rgba(255,255,255,0.35);
+      font-weight: 300; letter-spacing: 0.04em;
+    }
+
+    .badge-1 { background: rgba(37,99,235,0.12); border: 1px solid rgba(37,99,235,0.3); color: #60a5fa; }
+    .badge-2 { background: rgba(139,92,246,0.12); border: 1px solid rgba(139,92,246,0.3); color: #a78bfa; }
+    .badge-3 { background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.3); color: #818cf8; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .step-row { grid-template-columns: 1fr; gap: 32px; margin-bottom: 64px; }
+      .step-row.reverse .step-text,
+      .step-row.reverse .step-video { order: unset; }
+      .step-num { font-size: 40px; }
+      .step-title { font-size: 32px; }
+      .nav a { font-size: 9px; padding: 12px 4px; letter-spacing: 0.06em; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="#option1" class="opt1">Option 1<br><span style="opacity:.5;font-size:9px">Orbes flottants</span></a>
+    <a href="#option2" class="opt2">Option 2<br><span style="opacity:.5;font-size:9px">Aurora mesh</span></a>
+    <a href="#option3" class="opt3">Option 3<br><span style="opacity:.5;font-size:9px">Grille + grain</span></a>
+  </nav>
+
+
+  <!-- ══════════════════════════════════════════════
+       OPTION 1 — FLOATING GLOW ORBS
+  ══════════════════════════════════════════════ -->
+  <section id="option1" class="showcase-section">
+    <!-- Background layers -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+
+    <!-- Option label -->
+    <div class="opt-badge-wrap">
+      <div class="opt-badge badge-1">Option 1 — Orbes flottants</div>
+      <p class="opt-badge-sub">Sphères lumineuses bleues qui dérivent lentement · Atmosphère tech premium</p>
+    </div>
+
+    <div class="container">
+      <!-- Step 1 -->
+      <div class="step-row">
+        <div class="step-text">
+          <div class="step-subtitle">Expérience Client</div>
+          <div class="step-title">
+            <span class="step-num">01</span>Disponibilité Radieuse
+          </div>
+          <p class="step-desc">Votre réceptionniste numérique ne connaît jamais de mauvaise journée. Chaque client est accueilli avec une chaleur constante et un professionnalisme bienveillant, 24h/24.</p>
+        </div>
+        <div class="step-video">
+          <div class="video-wrap">
+            <video src="/videos/Happy_Receptionist_Working_Late.mp4" autoplay muted loop playsinline></video>
+            <div class="video-placeholder" id="v1-placeholder" style="display:none">Vidéo 01</div>
+            <div class="video-overlay"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Step 2 -->
+      <div class="step-row reverse">
+        <div class="step-text">
+          <div class="step-subtitle">Fiabilité Totale</div>
+          <div class="step-title">
+            <span class="step-num">02</span>Zéro Absence, Zéro Interruption
+          </div>
+          <p class="step-desc">La fiabilité redéfinie. Pas de congés maladie, pas d'absences imprévues, et aucun trou de couverture. Anvela est toujours au poste.</p>
+        </div>
+        <div class="step-video">
+          <div class="video-wrap">
+            <video src="/videos/grok-video-8fc70472-35f5-43b1-9bb5-08f13a925240.mp4" autoplay muted loop playsinline></video>
+            <div class="video-overlay"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Step 3 -->
+      <div class="step-row">
+        <div class="step-text">
+          <div class="step-subtitle">Éthique & Image</div>
+          <div class="step-title">
+            <span class="step-num">03</span>Courtoisie Inébranlable
+          </div>
+          <p class="step-desc">Un protocole parfait, à chaque fois. Notre IA conserve un ton poli, calme et respectueux, même face aux situations complexes.</p>
+        </div>
+        <div class="step-video">
+          <div class="video-wrap">
+            <video src="/videos/grok-video-d83d8f4f-54b9-4ce1-bd54-45d3139fc69c.mp4" autoplay muted loop playsinline></video>
+            <div class="video-overlay"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Step 4 -->
+      <div class="step-row reverse">
+        <div class="step-text">
+          <div class="step-subtitle">Productivité Maximale</div>
+          <div class="step-title">
+            <span class="step-num">04</span>Performance sans Pause
+          </div>
+          <p class="step-desc">Une productivité continue sans temps mort. Pas de pause café, pas d'heures de déjeuner. Un service ininterrompu qui optimise votre efficacité.</p>
+        </div>
+        <div class="step-video">
+          <div class="video-wrap">
+            <video src="/videos/grok-video-ffaf98bf-cac3-4884-891d-7a5a4d05776a.mp4" autoplay muted loop playsinline></video>
+            <div class="video-overlay"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+
+  <!-- ══════════════════════════════════════════════
+       OPTION 2 — AURORA MESH GRADIENT
+  ══════════════════════════════════════════════ -->
+  <section id="option2" class="showcase-section">
+    <!-- Background layers -->
+    <div class="aurora-layer aurora-1"></div>
+    <div class="aurora-layer aurora-2"></div>
+    <div class="aurora-layer aurora-3"></div>
+    <div class="aurora-layer aurora-4"></div>
+    <div class="aurora-streak"></div>
+    <div class="aurora-streak"></div>
+    <div class="aurora-vignette"></div>
+
+    <!-- Option label -->
+    <div class="opt-badge-wrap">
+      <div class="opt-badge badge-2">Option 2 — Aurora Mesh</div>
+      <p class="opt-badge-sub">Dégradés animés bleu/violet/cyan · Ambiance cinématique profonde</p>
+    </div>
+
+    <div class="container">
+      <div class="step-row">
+        <div class="step-text">
+          <div class="step-subtitle">Expérience Client</div>
+          <div class="step-title">
+            <span class="step-num">01</span>Disponibilité Radieuse
+          </div>
+          <p class="step-desc">Votre réceptionniste numérique ne connaît jamais de mauvaise journée. Chaque client est accueilli avec une chaleur constante et un professionnalisme bienveillant, 24h/24.</p>
+        </div>
+        <div class="step-video">
+          <div class="video-wrap">
+            <video src="/videos/Happy_Receptionist_Working_Late.mp4" autoplay muted loop playsinline></video>
+            <div class="video-overlay"></div>
+          </div>
+        </div>
+      </div>
+      <div class="step-row reverse">
+        <div class="step-text">
+          <div class="step-subtitle">Fiabilité Totale</div>
+          <div class="step-title">
+            <span class="step-num">02</span>Zéro Absence, Zéro Interruption
+          </div>
+          <p class="step-desc">La fiabilité redéfinie. Pas de congés maladie, pas d'absences imprévues, et aucun trou de couverture. Anvela est toujours au poste.</p>
+        </div>
+        <div class="step-video">
+          <div class="video-wrap">
+            <video src="/videos/grok-video-8fc70472-35f5-43b1-9bb5-08f13a925240.mp4" autoplay muted loop playsinline></video>
+            <div class="video-overlay"></div>
+          </div>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-text">
+          <div class="step-subtitle">Éthique & Image</div>
+          <div class="step-title">
+            <span class="step-num">03</span>Courtoisie Inébranlable
+          </div>
+          <p class="step-desc">Un protocole parfait, à chaque fois. Notre IA conserve un ton poli, calme et respectueux, même face aux situations complexes.</p>
+        </div>
+        <div class="step-video">
+          <div class="video-wrap">
+            <video src="/videos/grok-video-d83d8f4f-54b9-4ce1-bd54-45d3139fc69c.mp4" autoplay muted loop playsinline></video>
+            <div class="video-overlay"></div>
+          </div>
+        </div>
+      </div>
+      <div class="step-row reverse">
+        <div class="step-text">
+          <div class="step-subtitle">Productivité Maximale</div>
+          <div class="step-title">
+            <span class="step-num">04</span>Performance sans Pause
+          </div>
+          <p class="step-desc">Une productivité continue sans temps mort. Pas de pause café, pas d'heures de déjeuner. Un service ininterrompu qui optimise votre efficacité.</p>
+        </div>
+        <div class="step-video">
+          <div class="video-wrap">
+            <video src="/videos/grok-video-ffaf98bf-cac3-4884-891d-7a5a4d05776a.mp4" autoplay muted loop playsinline></video>
+            <div class="video-overlay"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+
+  <!-- ══════════════════════════════════════════════
+       OPTION 3 — DOT GRID + FILM GRAIN
+  ══════════════════════════════════════════════ -->
+  <section id="option3" class="showcase-section">
+    <!-- Background layers -->
+    <div class="dot-grid"></div>
+    <div class="film-grain"></div>
+    <div class="scanlines"></div>
+    <div class="corner-accent tl"></div>
+    <div class="corner-accent tr"></div>
+    <div class="corner-accent bl"></div>
+    <div class="corner-accent br"></div>
+    <div class="vert-line left"></div>
+    <div class="vert-line right"></div>
+
+    <!-- Option label -->
+    <div class="opt-badge-wrap">
+      <div class="opt-badge badge-3">Option 3 — Grille de points + grain</div>
+      <p class="opt-badge-sub">Grille de points · Grain cinématographique · Lignes d'encadrement · Zéro animation</p>
+    </div>
+
+    <div class="container">
+      <div class="step-row">
+        <div class="step-text">
+          <div class="step-subtitle">Expérience Client</div>
+          <div class="step-title">
+            <span class="step-num">01</span>Disponibilité Radieuse
+          </div>
+          <p class="step-desc">Votre réceptionniste numérique ne connaît jamais de mauvaise journée. Chaque client est accueilli avec une chaleur constante et un professionnalisme bienveillant, 24h/24.</p>
+        </div>
+        <div class="step-video">
+          <div class="video-wrap">
+            <video src="/videos/Happy_Receptionist_Working_Late.mp4" autoplay muted loop playsinline></video>
+            <div class="video-overlay"></div>
+          </div>
+        </div>
+      </div>
+      <div class="step-row reverse">
+        <div class="step-text">
+          <div class="step-subtitle">Fiabilité Totale</div>
+          <div class="step-title">
+            <span class="step-num">02</span>Zéro Absence, Zéro Interruption
+          </div>
+          <p class="step-desc">La fiabilité redéfinie. Pas de congés maladie, pas d'absences imprévues, et aucun trou de couverture. Anvela est toujours au poste.</p>
+        </div>
+        <div class="step-video">
+          <div class="video-wrap">
+            <video src="/videos/grok-video-8fc70472-35f5-43b1-9bb5-08f13a925240.mp4" autoplay muted loop playsinline></video>
+            <div class="video-overlay"></div>
+          </div>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-text">
+          <div class="step-subtitle">Éthique & Image</div>
+          <div class="step-title">
+            <span class="step-num">03</span>Courtoisie Inébranlable
+          </div>
+          <p class="step-desc">Un protocole parfait, à chaque fois. Notre IA conserve un ton poli, calme et respectueux, même face aux situations complexes.</p>
+        </div>
+        <div class="step-video">
+          <div class="video-wrap">
+            <video src="/videos/grok-video-d83d8f4f-54b9-4ce1-bd54-45d3139fc69c.mp4" autoplay muted loop playsinline></video>
+            <div class="video-overlay"></div>
+          </div>
+        </div>
+      </div>
+      <div class="step-row reverse">
+        <div class="step-text">
+          <div class="step-subtitle">Productivité Maximale</div>
+          <div class="step-title">
+            <span class="step-num">04</span>Performance sans Pause
+          </div>
+          <p class="step-desc">Une productivité continue sans temps mort. Pas de pause café, pas d'heures de déjeuner. Un service ininterrompu qui optimise votre efficacité.</p>
+        </div>
+        <div class="step-video">
+          <div class="video-wrap">
+            <video src="/videos/grok-video-ffaf98bf-cac3-4884-891d-7a5a4d05776a.mp4" autoplay muted loop playsinline></video>
+            <div class="video-overlay"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // If videos fail to load, show placeholder text
+    document.querySelectorAll('.video-wrap video').forEach(v => {
+      v.addEventListener('error', () => {
+        v.style.display = 'none';
+        const ph = v.nextElementSibling;
+        if (ph && ph.classList.contains('video-placeholder')) {
+          ph.style.display = 'flex';
+        } else {
+          const div = document.createElement('div');
+          div.className = 'video-placeholder';
+          div.textContent = 'Vidéo';
+          v.parentNode.insertBefore(div, v.nextSibling);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
