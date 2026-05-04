@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12px; color: #1a1a2e; background: white; }
+  .page { width: 210mm; min-height: 297mm; padding: 20mm 20mm 20mm 20mm; margin: 0 auto; }
+
+  /* Header */
+  .header { display: flex; align-items: center; justify-content: space-between; border-bottom: 3px solid #1a3a5c; padding-bottom: 14px; margin-bottom: 24px; }
+  .header-logo { width: 80px; height: 80px; object-fit: contain; }
+  .header-title { text-align: center; flex: 1; padding: 0 20px; }
+  .header-title h1 { font-size: 18px; font-weight: 800; letter-spacing: 1px; color: #1a1a2e; }
+  .header-title p { font-size: 10px; color: #666; font-style: italic; margin-top: 4px; }
+  .header-right { width: 80px; }
+
+  /* Sections */
+  .section { margin-bottom: 22px; }
+  .section-title { font-size: 12px; font-weight: 800; letter-spacing: 0.5px; color: #1a1a2e; border-bottom: 1.5px solid #1a3a5c; padding-bottom: 5px; margin-bottom: 12px; text-transform: uppercase; }
+
+  /* Client info */
+  .client-field { display: flex; align-items: flex-end; margin-bottom: 10px; }
+  .client-label { font-weight: 700; font-size: 11px; min-width: 160px; }
+  .client-line { flex: 1; border-bottom: 1px solid #aaa; height: 18px; }
+
+  /* Table */
+  table { width: 100%; border-collapse: collapse; margin-bottom: 12px; font-size: 11px; }
+  thead tr { background-color: #1a1a2e; color: white; }
+  thead th { padding: 8px 10px; text-align: center; font-weight: 700; font-size: 11px; }
+  tbody tr { border-bottom: 1px solid #ddd; }
+  tbody tr:nth-child(even) { background-color: #f7f8fa; }
+  tbody td { padding: 8px 10px; text-align: center; }
+  tbody td:first-child { width: 30px; }
+  .price-cell { color: #1a3a5c; font-weight: 800; font-size: 12px; }
+  .checkbox { width: 14px; height: 14px; border: 2px solid #1a1a2e; display: inline-block; }
+
+  /* Bullets */
+  .bullets { list-style: none; padding: 0; }
+  .bullets li { padding: 3px 0 3px 14px; position: relative; font-size: 11px; line-height: 1.5; }
+  .bullets li::before { content: "•"; position: absolute; left: 0; color: #1a3a5c; font-weight: bold; }
+  .bullets li strong { color: #1a1a2e; }
+
+  p { font-size: 11px; line-height: 1.6; margin-bottom: 6px; }
+
+  /* Signatures */
+  .sig-block { display: flex; gap: 40px; margin-top: 30px; }
+  .sig-col { flex: 1; }
+  .sig-col h4 { font-size: 11px; font-weight: 800; margin-bottom: 16px; }
+  .sig-line { border-bottom: 1px solid #333; margin-bottom: 10px; height: 32px; }
+  .sig-label { font-size: 10px; color: #555; }
+
+  .footer { margin-top: 30px; border-top: 1px solid #ccc; padding-top: 10px; text-align: center; font-size: 9px; color: #888; font-style: italic; }
+
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <img class="header-logo" src="/anvela-logo.jpg" alt="Anvela" />
+    <div class="header-title">
+      <h1>CONTRAT DE SERVICE &amp; ÉTAT DE TRAVAIL (SOW)</h1>
+      <p>Dernière mise à jour : Mai 2026 &nbsp;·&nbsp; Anvela Inc.</p>
+    </div>
+    <div class="header-right"></div>
+  </div>
+
+  <!-- 0. Client Info -->
+  <div class="section">
+    <div class="section-title">Informations du Client</div>
+    <div class="client-field"><span class="client-label">Nom de l'entreprise :</span><span class="client-line"></span></div>
+    <div class="client-field"><span class="client-label">Représentant :</span><span class="client-line"></span></div>
+    <div class="client-field"><span class="client-label">Adresse :</span><span class="client-line"></span></div>
+  </div>
+
+  <!-- 1. Plan -->
+  <div class="section">
+    <div class="section-title">1. Forfait Sélectionné et Engagement</div>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Forfait</th>
+          <th>Frais de Mise en Service</th>
+          <th>Frais Mensuel</th>
+          <th>Durée Minimale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="checkbox"></span></td>
+          <td>Night Shift (Essential)</td>
+          <td>Gratuit</td>
+          <td class="price-cell">199 $ / mois</td>
+          <td>3 Mois</td>
+        </tr>
+        <tr>
+          <td><span class="checkbox"></span></td>
+          <td>Co-Pilot</td>
+          <td>197 $</td>
+          <td class="price-cell">449 $ / mois</td>
+          <td>3 Mois</td>
+        </tr>
+        <tr>
+          <td><span class="checkbox"></span></td>
+          <td>Anvela Signature</td>
+          <td>497 $</td>
+          <td class="price-cell">697 $ / mois</td>
+          <td>6 Mois</td>
+        </tr>
+      </tbody>
+    </table>
+    <ul class="bullets">
+      <li><strong>Période Initiale :</strong> Le Client s'engage pour la Durée Minimale indiquée ci-dessus afin de permettre l'optimisation de l'IA et la stabilité de l'intégration.</li>
+      <li><strong>Renouvellement :</strong> Après la Période Initiale, ce contrat se renouvelle automatiquement de mois en mois.</li>
+      <li><strong>Résiliation :</strong> Suite à la Période Initiale, le Client peut résilier avec un préavis écrit de 30 jours.</li>
+    </ul>
+  </div>
+
+  <!-- 2. Services -->
+  <div class="section">
+    <div class="section-title">2. Description des Services d'Anvela</div>
+    <p>Anvela déploiera et gérera <strong>"Mila"</strong>, une solution de réception vocale intelligente, incluant :</p>
+    <ul class="bullets">
+      <li><strong>Architecture Vocale Propriétaire :</strong> Utilisation de modèles de langage avancés pour des conversations naturelles et fluides.</li>
+      <li><strong>Logique d'Automatisation Anvela :</strong> Programmation de flux de travail personnalisés pour la gestion des rendez-vous et la qualification des prospects.</li>
+      <li><strong>Base de Données Cloud :</strong> Synchronisation et archivage sécurisé des données d'appels en temps réel.</li>
+      <li><strong>Système de Notification SMS :</strong> Envoi automatisé de confirmations et rappels de rendez-vous.</li>
+    </ul>
+  </div>
+
+  <!-- 3. Data Protection -->
+  <div class="section">
+    <div class="section-title">3. Protection des Données (Loi 25)</div>
+    <ul class="bullets">
+      <li><strong>Consentement :</strong> Le Client est responsable d'informer ses appelants que les conversations sont enregistrées et traitées par un système automatisé à des fins de service.</li>
+      <li><strong>Autorisation d'enregistrement :</strong> Le Client autorise expressément Anvela à enregistrer les appels entrants reçus sur les numéros configurés dans le cadre du service.</li>
+      <li><strong>Processeurs Tiers :</strong> Les données transitent par des infrastructures technologiques tierces sécurisées, tel que détaillé dans la Politique de Confidentialité d'Anvela (<strong>anvela.ca/privacy</strong>).</li>
+    </ul>
+  </div>
+
+  <!-- 4. Liability -->
+  <div class="section">
+    <div class="section-title">4. Limitation de Responsabilité</div>
+    <p>Anvela fournit un service basé sur l'IA générative. Le Client reconnaît que la technologie peut occasionnellement produire des erreurs d'interprétation (hallucinations). Anvela ne peut être tenue responsable des erreurs ou réponses inexactes générées par les modèles d'intelligence artificielle. La responsabilité totale d'Anvela est limitée au montant mensuel payé par le Client pour le mois en cours.</p>
+  </div>
+
+  <!-- Signatures -->
+  <div style="margin-top: 20px; border-top: 2px solid #1a1a2e; padding-top: 16px;">
+    <div class="section-title" style="border-bottom:none; margin-bottom: 16px;">Signatures</div>
+    <div class="sig-block">
+      <div class="sig-col">
+        <h4>Signature du Client</h4>
+        <div class="sig-line"></div>
+        <div class="sig-label">Signature</div>
+        <div style="height:20px;"></div>
+        <div class="sig-line"></div>
+        <div class="sig-label">Date</div>
+      </div>
+      <div class="sig-col">
+        <h4>Anvela Inc. (Pablo Fuentes)</h4>
+        <div class="sig-line"></div>
+        <div class="sig-label">Signature</div>
+        <div style="height:20px;"></div>
+        <div class="sig-line"></div>
+        <div class="sig-label">Date</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    Ce document constitue un accord légalement contraignant entre les parties signataires. &nbsp;©&nbsp;Anvela Inc. – anvela.ca
+  </div>
+
+</div>
+</body>
+</html>
