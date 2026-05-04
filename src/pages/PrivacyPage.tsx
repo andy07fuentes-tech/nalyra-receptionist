@@ -108,6 +108,23 @@ export default function PrivacyPage() {
               <h3 className="font-semibold text-slate-900 mb-2">7. Langue</h3>
               <p>Cette politique est rédigée en français conformément aux exigences de la Loi 25 du Québec. Une version en anglais est disponible sur demande à pablo@anvela.ca.</p>
             </div>
+
+            <div>
+              <h3 className="font-semibold text-slate-900 mb-2">8. Traitement des données de service (IA Vocale)</h3>
+              <p className="mb-3">Dans le cadre de la prestation de ses services de réceptionniste virtuelle, Anvela traite également des données relatives aux appelants qui interagissent avec ses agents. Les points suivants s'appliquent :</p>
+              <ul className="space-y-3 list-disc list-inside text-slate-600">
+                <li>
+                  <strong>Interaction automatisée :</strong> Toute personne composant le numéro d'un client Anvela interagit avec un système d'intelligence artificielle automatisé. Aucun agent humain n'est présent lors de l'appel, sauf indication contraire explicite du client.
+                </li>
+                <li>
+                  <strong>Enregistrement et transcription :</strong> Les appels sont enregistrés et transcrits afin de permettre au système de répondre efficacement et de fournir un compte rendu à l'établissement client. Ces enregistrements sont accessibles au client Anvela concerné et sont conservés conformément aux politiques de conservation décrites à la section 4.
+                </li>
+                <li>
+                  <strong>Traitement par des tiers spécialisés :</strong> Les données vocales sont traitées par des fournisseurs de services d'intelligence artificielle spécialisés et certifiés. Ces prestataires agissent à titre de sous-traitants et sont soumis à des obligations de confidentialité et de sécurité conformes aux standards de l'industrie. Aucune donnée vocale n'est vendue ou utilisée à des fins publicitaires.
+                </li>
+              </ul>
+              <p className="mt-3">Les appelants souhaitant exercer leurs droits relatifs à leurs données (accès, rectification, suppression) peuvent nous contacter à <strong>pablo@anvela.ca</strong>.</p>
+            </div>
           </div>
         </section>
 
@@ -141,6 +158,7 @@ export default function PrivacyPage() {
             <div>
               <h3 className="font-semibold text-slate-900 mb-2">5. Limitation de responsabilité</h3>
               <p>Anvela ne saurait être tenue responsable des pertes indirectes, consécutives ou spéciales résultant de l'utilisation ou de l'impossibilité d'utiliser nos services. Notre responsabilité totale est limitée aux montants effectivement payés pour le mois en cours.</p>
+              <p className="mt-3">De plus, Anvela ne peut être tenue responsable des erreurs, omissions ou réponses inexactes générées par les modèles d'intelligence artificielle sous-jacents (hallucinations). La nature probabiliste des modèles de langage implique que des imprécisions peuvent survenir malgré les mesures de configuration et de surveillance en place. Le client est invité à valider toute information critique communiquée par le service avant d'agir sur celle-ci.</p>
             </div>
 
             <div>
