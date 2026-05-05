@@ -93,12 +93,25 @@ export function Hero({ isReady }: { isReady: boolean }) {
     return () => ctx.revert();
   }, []);
 
-  const GARAGE_VIDEOS = [
+  const DESKTOP_VIDEOS = [
+    '/videos/hero-garage-night.mp4',
+    '/videos/hero-customer-calling.mp4',
+    '/videos/hero-receptionist-answering.mp4',
+    '/videos/hero-happy-owner.mp4',
+  ];
+  const MOBILE_VIDEOS = [
     '/videos/anvela-answers.mp4',
     '/videos/garage-workshop.mp4',
     '/videos/garage-night.mp4',
     '/videos/garage-luxury.mp4',
   ];
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
+  useEffect(() => {
+    const handler = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', handler);
+    return () => window.removeEventListener('resize', handler);
+  }, []);
+  const GARAGE_VIDEOS = isMobile ? MOBILE_VIDEOS : DESKTOP_VIDEOS;
   const [videoIndex, setVideoIndex] = useState(0);
 
   // Fade-out + advance index when current video ends

@@ -36,23 +36,13 @@ export function CinematicShowcase() {
     ];
 
     return (
-        <section className="bg-[#020202] text-white py-24 md:py-32 relative overflow-hidden">
+        <section id="cinematic-showcase" className="text-white py-24 md:py-32 relative overflow-hidden">
             {/* Background: floating orbs + dot grid */}
             <div className="cin-orb cin-orb-1" />
             <div className="cin-orb cin-orb-2" />
             <div className="cin-orb cin-orb-3" />
             <div className="cin-orb cin-orb-4" />
             <div className="cin-dot-grid" />
-
-            {/* Elegant V-Shape Divider from the previous section (MissedCalls, which is white) */}
-            <div className="absolute top-0 left-0 right-0 flex justify-center z-10 pointer-events-none -translate-y-[1px]">
-                <svg 
-                    viewBox="0 0 50 30" 
-                    className="w-[35px] h-[21px] md:w-[50px] md:h-[30px] fill-current text-white"
-                >
-                    <path d="M 0 0 L 50 0 C 35 0 28 18 25 30 C 22 18 15 0 0 0 Z" />
-                </svg>
-            </div>
 
             <div className="container-custom max-w-6xl relative z-20">
                 <div className="space-y-32">

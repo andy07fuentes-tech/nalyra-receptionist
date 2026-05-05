@@ -42,7 +42,8 @@ export function HorizontalGallery() {
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
       const sliderEl = slider.current;
-      if (!sliderEl) return;
+      const compEl = component.current;
+      if (!sliderEl || !compEl) return;
 
       // Calculate the total width of one set of items
       const totalWidth = sliderEl.scrollWidth / 2;
@@ -61,6 +62,47 @@ export function HorizontalGallery() {
       // Hover effect to pause/slow down
       sliderEl.addEventListener('mouseenter', () => gsap.to(gsap.getTweensOf(sliderEl), { timeScale: 0.2, duration: 0.5 }));
       sliderEl.addEventListener('mouseleave', () => gsap.to(gsap.getTweensOf(sliderEl), { timeScale: 1, duration: 0.5 }));
+
+      const pageWrapper = (document.querySelector('.min-h-screen.bg-slate-50') || document.body) as HTMLElement;
+
+      const applyColors = (p: number, forward: boolean) => {
+        const from = forward;
+        const bg    = gsap.utils.interpolate(from ? '#f8fafc' : '#050505', from ? '#050505' : '#f8fafc', p);
+        const title = gsap.utils.interpolate(from ? '#171717' : '#ffffff', from ? '#ffffff' : '#171717', p);
+        const script= gsap.utils.interpolate(from ? '#2563eb' : '#60a5fa', from ? '#60a5fa' : '#2563eb', p);
+        const cardBg= gsap.utils.interpolate(from ? '#fdfdfd' : '#111111', from ? '#111111' : '#fdfdfd', p);
+        const cardBd= gsap.utils.interpolate(from ? '#f5f5f5' : '#262626', from ? '#262626' : '#f5f5f5', p);
+        const border= gsap.utils.interpolate(from ? '#f5f5f5' : '#1a1a1a', from ? '#1a1a1a' : '#f5f5f5', p);
+
+        pageWrapper.style.backgroundColor = bg;
+        (compEl as HTMLElement).style.borderTopColor = border;
+        (compEl as HTMLElement).style.borderBottomColor = border;
+        document.querySelectorAll<HTMLElement>('.gallery-title').forEach(el => { el.style.color = title; });
+        document.querySelectorAll<HTMLElement>('.gallery-script').forEach(el => { el.style.color = script; });
+        document.querySelectorAll<HTMLElement>('.gallery-card-bg').forEach(el => {
+          el.style.backgroundColor = cardBg;
+          el.style.borderColor = cardBd;
+        });
+      };
+
+      // ── White → Black (gallery enters) ───────────────────────────
+      ScrollTrigger.create({
+        trigger: compEl,
+        start: 'top 65%',
+        end: 'top 10%',
+        scrub: 1,
+        onUpdate: self => applyColors(self.progress, true),
+      });
+
+      // ── Black → White (AnvelaAdvantage enters) ───────────────────
+      ScrollTrigger.create({
+        trigger: '#anvela-advantage',
+        start: 'top 70%',
+        end: 'top 15%',
+        scrub: 1,
+        onUpdate: self => applyColors(self.progress, false),
+      });
+
     }, component);
 
     return () => ctx.revert();
@@ -71,15 +113,19 @@ export function HorizontalGallery() {
 
 
   return (
-    <div ref={component} className="overflow-hidden bg-white py-16 md:pt-24 md:pb-32 border-y border-neutral-100">
+    <div 
+      ref={component} 
+      className="overflow-hidden py-16 md:pt-24 md:pb-32 border-y"
+      style={{ backgroundColor: 'transparent', borderTopColor: '#f5f5f5', borderBottomColor: '#f5f5f5' }}
+    >
       <div className="container-custom mb-12 px-4 text-center md:text-left">
         <span 
-          className="font-script text-2xl md:text-3xl text-blue-600 block mb-2 opacity-80"
+          className="gallery-script font-script text-2xl md:text-3xl text-blue-600 block mb-2 opacity-80"
           style={{ textDecoration: 'none' }}
         >
           {t('gallery.scriptText')}
         </span>
-        <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl text-neutral-900 max-w-3xl leading-[1.05] tracking-tight mx-auto md:mx-0">
+        <h2 className="gallery-title font-serif text-2xl md:text-4xl lg:text-5xl text-neutral-900 max-w-3xl leading-[1.05] tracking-tight mx-auto md:mx-0">
           {t('gallery.mainTitle')}
         </h2>
       </div>
@@ -100,7 +146,7 @@ export function HorizontalGallery() {
             }`}
           >
             {/* Video Frame */}
-            <div className={`relative aspect-[4/5] overflow-hidden rounded-xl md:rounded-2xl border border-neutral-100 bg-neutral-50 shadow-sm transition-[transform,box-shadow] duration-500 group-hover:shadow-xl group-hover:-translate-y-2`}>
+            <div className={`gallery-card-bg relative aspect-[4/5] overflow-hidden rounded-xl md:rounded-2xl border border-neutral-100 bg-neutral-50 shadow-sm transition-[transform,box-shadow] duration-500 group-hover:shadow-xl group-hover:-translate-y-2`}>
               <OptimizedVideo
                 src={item.video}
                 preload="metadata"
