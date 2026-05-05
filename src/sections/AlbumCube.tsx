@@ -14,18 +14,23 @@ interface CubeProps {
     rotationProgress: number;
 }
 
+const CUBE_TEXTURES = [
+    '/images/cube/cube-1.jpg',
+    '/images/cube/cube-2.jpg',
+    '/images/cube/cube-3.jpg',
+    '/images/cube/cube-4.jpg',
+    '/images/cube/cube-5.jpg',
+    '/images/cube/cube-6.jpg',
+];
+
+// Preload textures immediately so there's no delay when scrolling into view
+useTexture.preload(CUBE_TEXTURES);
+
 const Cube = ({ rotationProgress }: CubeProps) => {
     const meshRef = useRef<THREE.Mesh>(null);
     const { viewport } = useThree();
 
-    const textures = useTexture([
-        '/images/cube/cube-1.jpg',
-        '/images/cube/cube-2.jpg',
-        '/images/cube/cube-3.jpg',
-        '/images/cube/cube-4.jpg',
-        '/images/cube/cube-5.jpg',
-        '/images/cube/cube-6.jpg',
-    ]);
+    const textures = useTexture(CUBE_TEXTURES);
 
     const cubeSize = Math.min(viewport.width * 0.5, viewport.height * 0.35, 3);
 
