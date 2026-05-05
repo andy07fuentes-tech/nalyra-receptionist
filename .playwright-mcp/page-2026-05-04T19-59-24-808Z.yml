@@ -1,0 +1,9 @@
+- generic [ref=e3]:
+  - text: "* * * *"
+  - generic [ref=e31]:
+    - heading "Form Submitted" [level=1] [ref=e32]
+    - paragraph [ref=e33]: Your response has been recorded
+  - link "Form automated with" [ref=e24] [cursor=pointer]:
+    - /url: https://n8n.io/?utm_source=n8n-internal&utm_medium=form-trigger&utm_campaign=3798ba8e14d9deea227f0078d98fa6e7ad49dd634aefe7d3f7e528e3fb895acf
+    - text: Form automated with
+    - img [ref=e25]

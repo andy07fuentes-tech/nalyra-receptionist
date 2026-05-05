@@ -36,7 +36,9 @@ export function CinematicShowcase() {
     ];
 
     return (
-        <section id="cinematic-showcase" className="text-white py-24 md:py-32 relative overflow-hidden">
+        <section id="cinematic-showcase" className="bg-[#020202] text-white py-24 md:py-32 relative overflow-hidden">
+            {/* Soft fade from white page above */}
+            <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-slate-50 to-transparent pointer-events-none z-10" />
             {/* Background: floating orbs + dot grid */}
             <div className="cin-orb cin-orb-1" />
             <div className="cin-orb cin-orb-2" />

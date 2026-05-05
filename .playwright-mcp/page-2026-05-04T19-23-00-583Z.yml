@@ -1,0 +1,43 @@
+- generic [ref=e1]:
+  - heading "Google Docs" [level=1] [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]:
+          - button "Main menu" [ref=e6] [cursor=pointer]:
+            - img [ref=e7]
+          - link "Docs" [ref=e11] [cursor=pointer]:
+            - /url: https://docs.google.com/document/?usp=docs_alc&authuser=0
+            - img [ref=e12]
+            - generic [ref=e13]: Docs
+        - search [ref=e16]:
+          - table [ref=e18]:
+            - rowgroup [ref=e19]:
+              - row "Anvela" [ref=e205]:
+                - cell "Anvela" [ref=e206]:
+                  - combobox "Search bar" [ref=e22]: Anvela
+          - button "Clear search" [ref=e207] [cursor=pointer]:
+            - img [ref=e208]
+          - button "Search" [ref=e23] [cursor=pointer]:
+            - img [ref=e24]
+        - generic [ref=e28]:
+          - button "Google apps" [ref=e32] [cursor=pointer]:
+            - img [ref=e33]
+          - 'button "Google Account: pabs (andy07fuentes@hotmail.com)" [ref=e38] [cursor=pointer]':
+            - img [ref=e40]
+            - img [ref=e46]
+  - generic [ref=e49]:
+    - generic [ref=e119]:
+      - generic [ref=e121]:
+        - heading "Search results" [ref=e211]
+        - button "Owner Filter Options" [ref=e123]:
+          - generic [ref=e213] [cursor=pointer]: Owned by anyone
+        - generic [ref=e132]:
+          - button "List view" [ref=e133] [cursor=pointer]
+          - button "Open file picker" [ref=e143] [cursor=pointer]
+      - generic [ref=e217]:
+        - generic [ref=e219]: Search results
+        - region [active] [ref=e221]:
+          - generic [ref=e222]: No text documents yet
+          - generic [ref=e223]: Select a blank document or choose another template above to get started
+    - button "Create new document" [ref=e224] [cursor=pointer]
+  - region [ref=e227]: No matching results

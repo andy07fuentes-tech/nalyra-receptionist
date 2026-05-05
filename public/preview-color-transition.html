@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preview — Color Transition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: auto; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8fafc;
+      color: #111111;
+      overflow-x: hidden;
+    }
+
+    /* ─── Section 1: Light (MissedCalls-style) ─── */
+    #section-before {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 5vw;
+      position: relative;
+    }
+
+    .eyebrow-light {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #94a3b8;
+      margin-bottom: 24px;
+    }
+
+    .headline-light {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 300;
+      color: #0f172a;
+      line-height: 1;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .headline-light em {
+      font-style: italic;
+      color: #64748b;
+    }
+
+    .body-light {
+      font-size: 14px;
+      font-weight: 300;
+      color: #64748b;
+      max-width: 480px;
+      text-align: center;
+      line-height: 1.7;
+      margin-bottom: 48px;
+    }
+
+    .stat-row {
+      display: flex;
+      gap: 48px;
+    }
+
+    .stat-box {
+      text-align: center;
+    }
+
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 300;
+      color: #0f172a;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 9px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #94a3b8;
+      margin-top: 6px;
+    }
+
+    /* ─── Section 2: CinematicShowcase ─── */
+    #section-cinematic {
+      min-height: 100vh;
+      padding: 100px 5vw;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Floating orbs */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    .orb-1 {
+      width: 600px; height: 600px;
+      top: -120px; left: -100px;
+      background: radial-gradient(circle, rgba(37,99,235,0.25) 0%, rgba(37,99,235,0.08) 50%, transparent 70%);
+      animation: drift1 14s infinite alternate ease-in-out;
+    }
+    .orb-2 {
+      width: 500px; height: 500px;
+      top: 30%; right: -80px;
+      background: radial-gradient(circle, rgba(99,102,241,0.2) 0%, rgba(99,102,241,0.06) 50%, transparent 70%);
+      animation: drift2 18s infinite alternate ease-in-out;
+    }
+    .orb-3 {
+      width: 450px; height: 450px;
+      bottom: 10%; left: 30%;
+      background: radial-gradient(circle, rgba(14,165,233,0.18) 0%, rgba(14,165,233,0.05) 50%, transparent 70%);
+      animation: drift3 22s infinite alternate ease-in-out;
+    }
+
+    @keyframes drift1 { from { transform: translate(0,0) scale(1); } to { transform: translate(40px, 30px) scale(1.1); } }
+    @keyframes drift2 { from { transform: translate(0,0) scale(1); } to { transform: translate(-30px, 40px) scale(0.95); } }
+    @keyframes drift3 { from { transform: translate(0,0) scale(1); } to { transform: translate(20px, -30px) scale(1.05); } }
+
+    /* Dot grid */
+    .dot-grid {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(99,102,241,0.3) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    .cin-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .cin-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .cin-eyebrow-line {
+      width: 32px; height: 1px;
+      background: rgba(0,210,255,0.5);
+    }
+
+    .cin-eyebrow-text {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: rgba(0,210,255,0.7);
+    }
+
+    .cin-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 300;
+      color: #f1f5f9;
+      line-height: 1.05;
+      margin-bottom: 16px;
+    }
+
+    .cin-title em {
+      font-style: italic;
+      color: rgba(0,210,255,0.8);
+    }
+
+    .cin-sub {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(241,245,249,0.45);
+      max-width: 440px;
+      line-height: 1.7;
+      margin-bottom: 72px;
+    }
+
+    /* 4-step grid */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    @media (max-width: 767px) {
+      .steps-grid { grid-template-columns: 1fr; }
+    }
+
+    .step-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: center;
+      padding: 32px;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.03);
+      backdrop-filter: blur(8px);
+    }
+
+    .step-card.reverse {
+      direction: rtl;
+    }
+    .step-card.reverse > * { direction: ltr; }
+
+    .step-text {}
+
+    .step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 300;
+      color: rgba(0,210,255,0.2);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .step-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 99px;
+      background: rgba(0,210,255,0.08);
+      border: 1px solid rgba(0,210,255,0.15);
+      font-size: 8px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(0,210,255,0.7);
+      margin-bottom: 10px;
+    }
+
+    .step-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: #f1f5f9;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .step-desc {
+      font-size: 11px;
+      font-weight: 300;
+      color: rgba(241,245,249,0.4);
+      line-height: 1.65;
+    }
+
+    .step-video {
+      aspect-ratio: 16/9;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .step-video::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0,210,255,0.06) 0%, rgba(99,102,241,0.06) 100%);
+    }
+
+    .step-video-icon {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.15);
+      font-size: 28px;
+    }
+
+    /* ─── Section 3: Light (PainPoints-style) ─── */
+    #section-after {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 5vw;
+    }
+
+    .headline-after {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 300;
+      color: #0f172a;
+      line-height: 1;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .headline-after em {
+      font-style: italic;
+      color: #c9a96e;
+    }
+
+    .body-after {
+      font-size: 13px;
+      font-weight: 300;
+      color: #64748b;
+      max-width: 420px;
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    /* ─── Scroll hint ─── */
+    .scroll-hint {
+      position: fixed;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      z-index: 100;
+      opacity: 1;
+      transition: opacity 0.4s;
+    }
+
+    .scroll-hint p {
+      font-size: 8px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: currentColor;
+      opacity: 0.3;
+    }
+
+    .scroll-arrow {
+      font-size: 16px;
+      opacity: 0.25;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="scroll-hint" id="scroll-hint">
+    <p>Scroll</p>
+    <div class="scroll-arrow">↓</div>
+  </div>
+
+  <!-- ─── SECTION 1: Light ─────────────────── -->
+  <section id="section-before">
+    <div class="eyebrow-light">01 — Appels manqués</div>
+    <h1 class="headline-light">
+      Chaque appel<br/>
+      <em>sans réponse</em><br/>
+      est un client perdu
+    </h1>
+    <p class="body-light">
+      85 % des appelants ne rappellent pas s'ils tombent sur une messagerie.
+      Anvela répond à chaque appel, 24h/24, 7j/7.
+    </p>
+    <div class="stat-row">
+      <div class="stat-box">
+        <div class="stat-num">85%</div>
+        <div class="stat-label">N'appellent pas</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">24/7</div>
+        <div class="stat-label">Disponibilité</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">+40%</div>
+        <div class="stat-label">Réservations</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 2: Dark (CinematicShowcase) ─ -->
+  <section id="section-cinematic">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="dot-grid"></div>
+
+    <div class="cin-inner">
+      <div class="cin-eyebrow">
+        <div class="cin-eyebrow-line"></div>
+        <span class="cin-eyebrow-text">02 — Capacité d'Anvela</span>
+      </div>
+      <h2 class="cin-title">
+        Une intelligence<br/>
+        <em>qui agit</em>
+      </h2>
+      <p class="cin-sub">
+        Anvela comprend, répond et réserve — exactement comme votre meilleure réceptionniste.
+      </p>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-text">
+            <div class="step-num">01</div>
+            <div class="step-badge">Écoute</div>
+            <h3 class="step-title">Compréhension naturelle</h3>
+            <p class="step-desc">Analyse le contexte et l'intention de l'appelant en temps réel.</p>
+          </div>
+          <div class="step-video">
+            <div class="step-video-icon">▶</div>
+          </div>
+        </div>
+
+        <div class="step-card reverse">
+          <div class="step-text">
+            <div class="step-num">02</div>
+            <div class="step-badge">Réponse</div>
+            <h3 class="step-title">Voix ultra-réaliste</h3>
+            <p class="step-desc">Une voix chaleureuse, indiscernable d'un humain.</p>
+          </div>
+          <div class="step-video">
+            <div class="step-video-icon">▶</div>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-text">
+            <div class="step-num">03</div>
+            <div class="step-badge">Action</div>
+            <h3 class="step-title">Réservation en direct</h3>
+            <p class="step-desc">Accède à votre agenda et confirme instantanément.</p>
+          </div>
+          <div class="step-video">
+            <div class="step-video-icon">▶</div>
+          </div>
+        </div>
+
+        <div class="step-card reverse">
+          <div class="step-text">
+            <div class="step-num">04</div>
+            <div class="step-badge">Mémoire</div>
+            <h3 class="step-title">Apprentissage continu</h3>
+            <p class="step-desc">S'améliore à chaque appel, adapté à votre établissement.</p>
+          </div>
+          <div class="step-video">
+            <div class="step-video-icon">▶</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 3: Light (PainPoints-style) ── -->
+  <section id="section-after">
+    <div class="eyebrow-light">03 — Points de friction</div>
+    <h2 class="headline-after">
+      Points<br/>
+      <em>de</em><br/>
+      Friction
+    </h2>
+    <p class="body-after">
+      Ce que vous perdez en silence à chaque appel sans réponse.
+    </p>
+  </section>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    const body = document.body;
+
+    // ── Palette ──────────────────────────────────
+    const LIGHT_BG   = '#f8fafc';
+    const DARK_BG    = '#020202';
+    const LIGHT_TEXT = '#111111';
+    const DARK_TEXT  = '#f1f5f9';
+
+    // ── White → Black: entering CinematicShowcase ─
+    ScrollTrigger.create({
+      trigger: '#section-cinematic',
+      start: 'top 75%',
+      end:   'top 15%',
+      scrub: 0.8,
+      onUpdate(self) {
+        const p = self.progress;
+        body.style.backgroundColor = gsap.utils.interpolate(LIGHT_BG, DARK_BG, p);
+        body.style.color            = gsap.utils.interpolate(LIGHT_TEXT, DARK_TEXT, p);
+      }
+    });
+
+    // ── Black → White: leaving CinematicShowcase ──
+    ScrollTrigger.create({
+      trigger: '#section-after',
+      start: 'top 75%',
+      end:   'top 15%',
+      scrub: 0.8,
+      onUpdate(self) {
+        const p = self.progress;
+        body.style.backgroundColor = gsap.utils.interpolate(DARK_BG, LIGHT_BG, p);
+        body.style.color            = gsap.utils.interpolate(DARK_TEXT, LIGHT_TEXT, p);
+      }
+    });
+
+    // ── Hide scroll hint after first scroll ───────
+    let hintHidden = false;
+    window.addEventListener('scroll', () => {
+      if (!hintHidden && window.scrollY > 80) {
+        hintHidden = true;
+        document.getElementById('scroll-hint').style.opacity = '0';
+      }
+    }, { passive: true });
+  </script>
+</body>
+</html>

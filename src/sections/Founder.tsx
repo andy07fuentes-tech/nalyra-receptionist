@@ -38,13 +38,17 @@ export function Founder() {
 
             <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
               <motion.div
-                className="flex-shrink-0 w-20 h-20 rounded-full bg-blue-600 flex items-center justify-center text-white text-2xl font-bold tracking-tight shadow-lg"
+                className="flex-shrink-0 w-28 h-28 rounded-full overflow-hidden ring-2 ring-blue-100 ring-offset-2 shadow-xl"
                 initial={{ opacity: 0, scale: 0.7 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
               >
-                PF
+                <img
+                  src="/images/pablo-founder.png"
+                  alt="Pablo Fuentes"
+                  className="w-full h-full object-cover object-top"
+                />
               </motion.div>
 
               <motion.div

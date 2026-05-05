@@ -1,0 +1,1383 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - generic [ref=e8]:
+          - link "Makhno" [ref=e9] [cursor=pointer]:
+            - /url: /work/makhno
+          - link "Source Unknown" [ref=e10] [cursor=pointer]:
+            - /url: /work/source-unknown
+          - link "Autex" [ref=e11] [cursor=pointer]:
+            - /url: /work/autex
+          - link "Odin’s Crow" [ref=e12] [cursor=pointer]:
+            - /url: /work/odins-crow
+          - link "Olga Prudka" [ref=e13] [cursor=pointer]:
+            - /url: /work/olga-prudka
+          - link "Yulia" [ref=e14] [cursor=pointer]:
+            - /url: /work/yulia
+          - link "The Ways We Work (Miro)" [ref=e15] [cursor=pointer]:
+            - /url: /work/the-ways-we-work-miro
+          - link "Design Education Series" [ref=e16] [cursor=pointer]:
+            - /url: /work/design-education-series
+          - link "Obys’ Design Books" [ref=e17] [cursor=pointer]:
+            - /url: /work/obys-design-books
+          - link "Eminente" [ref=e18] [cursor=pointer]:
+            - /url: /work/eminente
+          - link "Abetka" [ref=e19] [cursor=pointer]:
+            - /url: /work/abetka
+          - link "BlackSheep" [ref=e20] [cursor=pointer]:
+            - /url: /work/black-sheep
+          - link "Salience Labs" [ref=e21] [cursor=pointer]:
+            - /url: /work/salience-labs
+          - link "AI Modernism of Kharkiv" [ref=e22] [cursor=pointer]:
+            - /url: /work/ai-modernism-of-kharkiv
+          - link "Glyphic Biotechnologies" [ref=e23] [cursor=pointer]:
+            - /url: /work/glyphic-biotechnologies
+          - link "Porsche Taycan" [ref=e24] [cursor=pointer]:
+            - /url: /work/porsche-taycan
+          - link "Ayocin (Atmos Lamp)" [ref=e25] [cursor=pointer]:
+            - /url: /work/ayocin-atmos-lamp
+          - link "Grids" [ref=e26] [cursor=pointer]:
+            - /url: /work/grids
+          - link "Peter Lindbergh" [ref=e27] [cursor=pointer]:
+            - /url: /work/peter-lindbergh
+          - link "Makhno" [ref=e28] [cursor=pointer]:
+            - /url: /work/makhno
+          - link "Source Unknown" [ref=e29] [cursor=pointer]:
+            - /url: /work/source-unknown
+          - link "Autex" [ref=e30] [cursor=pointer]:
+            - /url: /work/autex
+          - link "Odin’s Crow" [ref=e31] [cursor=pointer]:
+            - /url: /work/odins-crow
+          - link "Olga Prudka" [ref=e32] [cursor=pointer]:
+            - /url: /work/olga-prudka
+          - link "Yulia" [ref=e33] [cursor=pointer]:
+            - /url: /work/yulia
+          - link "The Ways We Work (Miro)" [ref=e34] [cursor=pointer]:
+            - /url: /work/the-ways-we-work-miro
+          - link "Design Education Series" [ref=e35] [cursor=pointer]:
+            - /url: /work/design-education-series
+          - link "Obys’ Design Books" [ref=e36] [cursor=pointer]:
+            - /url: /work/obys-design-books
+          - link "Eminente" [ref=e37] [cursor=pointer]:
+            - /url: /work/eminente
+          - link "Abetka" [ref=e38] [cursor=pointer]:
+            - /url: /work/abetka
+          - link "BlackSheep" [ref=e39] [cursor=pointer]:
+            - /url: /work/black-sheep
+          - link "Salience Labs" [ref=e40] [cursor=pointer]:
+            - /url: /work/salience-labs
+          - link "AI Modernism of Kharkiv" [ref=e41] [cursor=pointer]:
+            - /url: /work/ai-modernism-of-kharkiv
+          - link "Glyphic Biotechnologies" [ref=e42] [cursor=pointer]:
+            - /url: /work/glyphic-biotechnologies
+          - link "Porsche Taycan" [ref=e43] [cursor=pointer]:
+            - /url: /work/porsche-taycan
+          - link "Ayocin (Atmos Lamp)" [ref=e44] [cursor=pointer]:
+            - /url: /work/ayocin-atmos-lamp
+          - link "Grids" [ref=e45] [cursor=pointer]:
+            - /url: /work/grids
+          - link "Peter Lindbergh" [ref=e46] [cursor=pointer]:
+            - /url: /work/peter-lindbergh
+        - generic [ref=e48]:
+          - link "Makhno" [ref=e49] [cursor=pointer]:
+            - /url: /work/makhno
+            - generic [ref=e51]: Makhno
+          - link "Source Unknown" [ref=e52] [cursor=pointer]:
+            - /url: /work/source-unknown
+            - generic [ref=e54]: Source Unknown
+          - link "Autex" [ref=e55] [cursor=pointer]:
+            - /url: /work/autex
+            - generic [ref=e57]: Autex
+          - link "Odin’s Crow" [ref=e58] [cursor=pointer]:
+            - /url: /work/odins-crow
+            - generic [ref=e60]: Odin’s Crow
+          - link "Olga Prudka" [ref=e61] [cursor=pointer]:
+            - /url: /work/olga-prudka
+            - generic [ref=e63]: Olga Prudka
+          - link "Yulia" [ref=e64] [cursor=pointer]:
+            - /url: /work/yulia
+            - generic [ref=e66]: Yulia
+          - link "The Ways We Work (Miro)" [ref=e67] [cursor=pointer]:
+            - /url: /work/the-ways-we-work-miro
+            - generic [ref=e69]: The Ways We Work (Miro)
+          - link "Design Education Series" [ref=e70] [cursor=pointer]:
+            - /url: /work/design-education-series
+            - generic [ref=e72]: Design Education Series
+          - link "Obys’ Design Books" [ref=e73] [cursor=pointer]:
+            - /url: /work/obys-design-books
+            - generic [ref=e75]: Obys’ Design Books
+          - link "Eminente" [ref=e76] [cursor=pointer]:
+            - /url: /work/eminente
+            - generic [ref=e78]: Eminente
+          - link "Abetka" [ref=e79] [cursor=pointer]:
+            - /url: /work/abetka
+            - generic [ref=e81]: Abetka
+          - link "BlackSheep" [ref=e82] [cursor=pointer]:
+            - /url: /work/black-sheep
+            - generic [ref=e84]: BlackSheep
+          - link "Salience Labs" [ref=e85] [cursor=pointer]:
+            - /url: /work/salience-labs
+            - generic [ref=e87]: Salience Labs
+          - link "AI Modernism of Kharkiv" [ref=e88] [cursor=pointer]:
+            - /url: /work/ai-modernism-of-kharkiv
+            - generic [ref=e90]: AI Modernism of Kharkiv
+          - link "Glyphic Biotechnologies" [ref=e91] [cursor=pointer]:
+            - /url: /work/glyphic-biotechnologies
+            - generic [ref=e93]: Glyphic Biotechnologies
+          - link "Porsche Taycan" [ref=e94] [cursor=pointer]:
+            - /url: /work/porsche-taycan
+            - generic [ref=e96]: Porsche Taycan
+          - link "Ayocin (Atmos Lamp)" [ref=e97] [cursor=pointer]:
+            - /url: /work/ayocin-atmos-lamp
+            - generic [ref=e99]: Ayocin (Atmos Lamp)
+          - link "Grids" [ref=e100] [cursor=pointer]:
+            - /url: /work/grids
+            - generic [ref=e102]: Grids
+          - link "Peter Lindbergh" [ref=e103] [cursor=pointer]:
+            - /url: /work/peter-lindbergh
+            - generic [ref=e105]: Peter Lindbergh
+          - link "Makhno" [ref=e106] [cursor=pointer]:
+            - /url: /work/makhno
+            - generic [ref=e108]: Makhno
+          - link "Source Unknown" [ref=e109] [cursor=pointer]:
+            - /url: /work/source-unknown
+            - generic [ref=e111]: Source Unknown
+          - link "Autex" [ref=e112] [cursor=pointer]:
+            - /url: /work/autex
+            - generic [ref=e114]: Autex
+          - link "Odin’s Crow" [ref=e115] [cursor=pointer]:
+            - /url: /work/odins-crow
+            - generic [ref=e117]: Odin’s Crow
+          - link "Olga Prudka" [ref=e118] [cursor=pointer]:
+            - /url: /work/olga-prudka
+            - generic [ref=e120]: Olga Prudka
+          - link "Yulia" [ref=e121] [cursor=pointer]:
+            - /url: /work/yulia
+            - generic [ref=e123]: Yulia
+          - link "The Ways We Work (Miro)" [ref=e124] [cursor=pointer]:
+            - /url: /work/the-ways-we-work-miro
+            - generic [ref=e126]: The Ways We Work (Miro)
+          - link "Design Education Series" [ref=e127] [cursor=pointer]:
+            - /url: /work/design-education-series
+            - generic [ref=e129]: Design Education Series
+          - link "Obys’ Design Books" [ref=e130] [cursor=pointer]:
+            - /url: /work/obys-design-books
+            - generic [ref=e132]: Obys’ Design Books
+          - link "Eminente" [ref=e133] [cursor=pointer]:
+            - /url: /work/eminente
+            - generic [ref=e135]: Eminente
+          - link "Abetka" [ref=e136] [cursor=pointer]:
+            - /url: /work/abetka
+            - generic [ref=e138]: Abetka
+          - link "BlackSheep" [ref=e139] [cursor=pointer]:
+            - /url: /work/black-sheep
+            - generic [ref=e141]: BlackSheep
+          - link "Salience Labs" [ref=e142] [cursor=pointer]:
+            - /url: /work/salience-labs
+            - generic [ref=e144]: Salience Labs
+          - link "AI Modernism of Kharkiv" [ref=e145] [cursor=pointer]:
+            - /url: /work/ai-modernism-of-kharkiv
+            - generic [ref=e147]: AI Modernism of Kharkiv
+          - link "Glyphic Biotechnologies" [ref=e148] [cursor=pointer]:
+            - /url: /work/glyphic-biotechnologies
+            - generic [ref=e150]: Glyphic Biotechnologies
+          - link "Porsche Taycan" [ref=e151] [cursor=pointer]:
+            - /url: /work/porsche-taycan
+            - generic [ref=e153]: Porsche Taycan
+          - link "Ayocin (Atmos Lamp)" [ref=e154] [cursor=pointer]:
+            - /url: /work/ayocin-atmos-lamp
+            - generic [ref=e156]: Ayocin (Atmos Lamp)
+          - link "Grids" [ref=e157] [cursor=pointer]:
+            - /url: /work/grids
+            - generic [ref=e159]: Grids
+          - link "Peter Lindbergh" [ref=e160] [cursor=pointer]:
+            - /url: /work/peter-lindbergh
+            - generic [ref=e162]: Peter Lindbergh
+        - generic:
+          - generic:
+            - generic:
+              - generic: Architecture, Furniture
+              - generic: Creative Direction, Web Design/Dev
+              - generic: "01"
+            - generic:
+              - generic: Fashion
+              - generic: Web Design/Dev
+              - generic: "02"
+            - generic:
+              - generic: Architecture
+              - generic: Web Design
+              - generic: "03"
+            - generic:
+              - generic: Fashion, Photography
+              - generic: Creative Direction, Web Design/Dev
+              - generic: "04"
+            - generic:
+              - generic: Photography, Fashion
+              - generic: Web Design/Dev, Identity
+              - generic: "05"
+            - generic:
+              - generic: Fashion
+              - generic: Web Design/Dev, Identity
+              - generic: "06"
+            - generic:
+              - generic: Technology
+              - generic: Web Design/Dev
+              - generic: "07"
+            - generic:
+              - generic: Education
+              - generic: Concept, Web Design/Dev, Identity
+              - generic: "08"
+            - generic:
+              - generic: Education
+              - generic: Concept, Web Design/Dev, Identity
+              - generic: "09"
+            - generic:
+              - generic: Fashion, Photography
+              - generic: Creative Direction, Web Design/Dev
+              - generic: "10"
+            - generic:
+              - generic: Culture
+              - generic: Concept, Web Design/Dev, Identity
+              - generic: "11"
+            - generic:
+              - generic: Architecture, Development
+              - generic: Creative Direction, Web Design/Dev
+              - generic: "12"
+            - generic:
+              - generic: Technology
+              - generic: Web Design/Dev, 3D
+              - generic: "13"
+            - generic:
+              - generic: Culture, Side Project
+              - generic: Concept, Web Design/Dev, Identity
+              - generic: "14"
+            - generic:
+              - generic: Technology, Biotech
+              - generic: Creative Direction, Web Design/Dev, 3D
+              - generic: "15"
+            - generic:
+              - generic: Automotive
+              - generic: Web Design/Dev
+              - generic: "16"
+            - generic:
+              - generic: Technology, Furniture
+              - generic: Creative Direction, Web Design/Dev
+              - generic: "17"
+            - generic:
+              - generic: Education, Side Project
+              - generic: Concept, Web Design/Dev, Identity
+              - generic: "18"
+            - generic:
+              - generic: Fashion, Photography
+              - generic: Concept, Web Design/Dev
+              - generic: "19"
+            - generic:
+              - generic: Architecture, Furniture
+              - generic: Creative Direction, Web Design/Dev
+              - generic: "01"
+            - generic:
+              - generic: Fashion
+              - generic: Web Design/Dev
+              - generic: "02"
+            - generic:
+              - generic: Architecture
+              - generic: Web Design
+              - generic: "03"
+            - generic:
+              - generic: Fashion, Photography
+              - generic: Creative Direction, Web Design/Dev
+              - generic: "04"
+            - generic:
+              - generic: Photography, Fashion
+              - generic: Web Design/Dev, Identity
+              - generic: "05"
+            - generic:
+              - generic: Fashion
+              - generic: Web Design/Dev, Identity
+              - generic: "06"
+            - generic:
+              - generic: Technology
+              - generic: Web Design/Dev
+              - generic: "07"
+            - generic:
+              - generic: Education
+              - generic: Concept, Web Design/Dev, Identity
+              - generic: "08"
+            - generic:
+              - generic: Education
+              - generic: Concept, Web Design/Dev, Identity
+              - generic: "09"
+            - generic:
+              - generic: Fashion, Photography
+              - generic: Creative Direction, Web Design/Dev
+              - generic: "10"
+            - generic:
+              - generic: Culture
+              - generic: Concept, Web Design/Dev, Identity
+              - generic: "11"
+            - generic:
+              - generic: Architecture, Development
+              - generic: Creative Direction, Web Design/Dev
+              - generic: "12"
+            - generic:
+              - generic: Technology
+              - generic: Web Design/Dev, 3D
+              - generic: "13"
+            - generic:
+              - generic: Culture, Side Project
+              - generic: Concept, Web Design/Dev, Identity
+              - generic: "14"
+            - generic:
+              - generic: Technology, Biotech
+              - generic: Creative Direction, Web Design/Dev, 3D
+              - generic: "15"
+            - generic:
+              - generic: Automotive
+              - generic: Web Design/Dev
+              - generic: "16"
+            - generic:
+              - generic: Technology, Furniture
+              - generic: Creative Direction, Web Design/Dev
+              - generic: "17"
+            - generic:
+              - generic: Education, Side Project
+              - generic: Concept, Web Design/Dev, Identity
+              - generic: "18"
+            - generic:
+              - generic: Fashion, Photography
+              - generic: Concept, Web Design/Dev
+              - generic: "19"
+      - generic:
+        - generic:
+          - generic:
+            - link "Makhno":
+              - /url: /work/makhno
+            - link "Source Unknown":
+              - /url: /work/source-unknown
+            - link "Autex":
+              - /url: /work/autex
+            - link "Odin’s Crow":
+              - /url: /work/odins-crow
+            - link "Olga Prudka":
+              - /url: /work/olga-prudka
+            - link "Yulia":
+              - /url: /work/yulia
+            - link "The Ways We Work (Miro)":
+              - /url: /work/the-ways-we-work-miro
+            - link "Design Education Series":
+              - /url: /work/design-education-series
+            - link "Obys’ Design Books":
+              - /url: /work/obys-design-books
+            - link "Eminente":
+              - /url: /work/eminente
+            - link "Abetka":
+              - /url: /work/abetka
+            - link "BlackSheep":
+              - /url: /work/black-sheep
+            - link "Salience Labs":
+              - /url: /work/salience-labs
+            - link "AI Modernism of Kharkiv":
+              - /url: /work/ai-modernism-of-kharkiv
+            - link "Glyphic Biotechnologies":
+              - /url: /work/glyphic-biotechnologies
+            - link "Porsche Taycan":
+              - /url: /work/porsche-taycan
+            - link "Ayocin (Atmos Lamp)":
+              - /url: /work/ayocin-atmos-lamp
+            - link "Grids":
+              - /url: /work/grids
+            - link "Peter Lindbergh":
+              - /url: /work/peter-lindbergh
+            - link "Makhno":
+              - /url: /work/makhno
+            - link "Source Unknown":
+              - /url: /work/source-unknown
+            - link "Autex":
+              - /url: /work/autex
+            - link "Odin’s Crow":
+              - /url: /work/odins-crow
+            - link "Olga Prudka":
+              - /url: /work/olga-prudka
+            - link "Yulia":
+              - /url: /work/yulia
+            - link "The Ways We Work (Miro)":
+              - /url: /work/the-ways-we-work-miro
+            - link "Design Education Series":
+              - /url: /work/design-education-series
+            - link "Obys’ Design Books":
+              - /url: /work/obys-design-books
+            - link "Eminente":
+              - /url: /work/eminente
+            - link "Abetka":
+              - /url: /work/abetka
+            - link "BlackSheep":
+              - /url: /work/black-sheep
+            - link "Salience Labs":
+              - /url: /work/salience-labs
+            - link "AI Modernism of Kharkiv":
+              - /url: /work/ai-modernism-of-kharkiv
+            - link "Glyphic Biotechnologies":
+              - /url: /work/glyphic-biotechnologies
+            - link "Porsche Taycan":
+              - /url: /work/porsche-taycan
+            - link "Ayocin (Atmos Lamp)":
+              - /url: /work/ayocin-atmos-lamp
+            - link "Grids":
+              - /url: /work/grids
+            - link "Peter Lindbergh":
+              - /url: /work/peter-lindbergh
+        - generic:
+          - generic:
+            - link "Makhno":
+              - /url: /work/makhno
+              - generic:
+                - generic: Makhno
+            - link "Source Unknown":
+              - /url: /work/source-unknown
+              - generic:
+                - generic: Source Unknown
+            - link "Autex":
+              - /url: /work/autex
+              - generic:
+                - generic: Autex
+            - link "Odin’s Crow":
+              - /url: /work/odins-crow
+              - generic:
+                - generic: Odin’s Crow
+            - link "Olga Prudka":
+              - /url: /work/olga-prudka
+              - generic:
+                - generic: Olga Prudka
+            - link "Yulia":
+              - /url: /work/yulia
+              - generic:
+                - generic: Yulia
+            - link "The Ways We Work (Miro)":
+              - /url: /work/the-ways-we-work-miro
+              - generic:
+                - generic: The Ways We Work (Miro)
+            - link "Design Education Series":
+              - /url: /work/design-education-series
+              - generic:
+                - generic: Design Education Series
+            - link "Obys’ Design Books":
+              - /url: /work/obys-design-books
+              - generic:
+                - generic: Obys’ Design Books
+            - link "Eminente":
+              - /url: /work/eminente
+              - generic:
+                - generic: Eminente
+            - link "Abetka":
+              - /url: /work/abetka
+              - generic:
+                - generic: Abetka
+            - link "BlackSheep":
+              - /url: /work/black-sheep
+              - generic:
+                - generic: BlackSheep
+            - link "Salience Labs":
+              - /url: /work/salience-labs
+              - generic:
+                - generic: Salience Labs
+            - link "AI Modernism of Kharkiv":
+              - /url: /work/ai-modernism-of-kharkiv
+              - generic:
+                - generic: AI Modernism of Kharkiv
+            - link "Glyphic Biotechnologies":
+              - /url: /work/glyphic-biotechnologies
+              - generic:
+                - generic: Glyphic Biotechnologies
+            - link "Porsche Taycan":
+              - /url: /work/porsche-taycan
+              - generic:
+                - generic: Porsche Taycan
+            - link "Ayocin (Atmos Lamp)":
+              - /url: /work/ayocin-atmos-lamp
+              - generic:
+                - generic: Ayocin (Atmos Lamp)
+            - link "Grids":
+              - /url: /work/grids
+              - generic:
+                - generic: Grids
+            - link "Peter Lindbergh":
+              - /url: /work/peter-lindbergh
+              - generic:
+                - generic: Peter Lindbergh
+            - link "Makhno":
+              - /url: /work/makhno
+              - generic:
+                - generic: Makhno
+            - link "Source Unknown":
+              - /url: /work/source-unknown
+              - generic:
+                - generic: Source Unknown
+            - link "Autex":
+              - /url: /work/autex
+              - generic:
+                - generic: Autex
+            - link "Odin’s Crow":
+              - /url: /work/odins-crow
+              - generic:
+                - generic: Odin’s Crow
+            - link "Olga Prudka":
+              - /url: /work/olga-prudka
+              - generic:
+                - generic: Olga Prudka
+            - link "Yulia":
+              - /url: /work/yulia
+              - generic:
+                - generic: Yulia
+            - link "The Ways We Work (Miro)":
+              - /url: /work/the-ways-we-work-miro
+              - generic:
+                - generic: The Ways We Work (Miro)
+            - link "Design Education Series":
+              - /url: /work/design-education-series
+              - generic:
+                - generic: Design Education Series
+            - link "Obys’ Design Books":
+              - /url: /work/obys-design-books
+              - generic:
+                - generic: Obys’ Design Books
+            - link "Eminente":
+              - /url: /work/eminente
+              - generic:
+                - generic: Eminente
+            - link "Abetka":
+              - /url: /work/abetka
+              - generic:
+                - generic: Abetka
+            - link "BlackSheep":
+              - /url: /work/black-sheep
+              - generic:
+                - generic: BlackSheep
+            - link "Salience Labs":
+              - /url: /work/salience-labs
+              - generic:
+                - generic: Salience Labs
+            - link "AI Modernism of Kharkiv":
+              - /url: /work/ai-modernism-of-kharkiv
+              - generic:
+                - generic: AI Modernism of Kharkiv
+            - link "Glyphic Biotechnologies":
+              - /url: /work/glyphic-biotechnologies
+              - generic:
+                - generic: Glyphic Biotechnologies
+            - link "Porsche Taycan":
+              - /url: /work/porsche-taycan
+              - generic:
+                - generic: Porsche Taycan
+            - link "Ayocin (Atmos Lamp)":
+              - /url: /work/ayocin-atmos-lamp
+              - generic:
+                - generic: Ayocin (Atmos Lamp)
+            - link "Grids":
+              - /url: /work/grids
+              - generic:
+                - generic: Grids
+            - link "Peter Lindbergh":
+              - /url: /work/peter-lindbergh
+              - generic:
+                - generic: Peter Lindbergh
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic: "01"
+                - generic: Architecture, Furniture
+              - generic:
+                - generic: "02"
+                - generic: Fashion
+              - generic:
+                - generic: "03"
+                - generic: Architecture
+              - generic:
+                - generic: "04"
+                - generic: Fashion, Photography
+              - generic:
+                - generic: "05"
+                - generic: Photography, Fashion
+              - generic:
+                - generic: "06"
+                - generic: Fashion
+              - generic:
+                - generic: "07"
+                - generic: Technology
+              - generic:
+                - generic: "08"
+                - generic: Education
+              - generic:
+                - generic: "09"
+                - generic: Education
+              - generic:
+                - generic: "10"
+                - generic: Fashion, Photography
+              - generic:
+                - generic: "11"
+                - generic: Culture
+              - generic:
+                - generic: "12"
+                - generic: Architecture, Development
+              - generic:
+                - generic: "13"
+                - generic: Technology
+              - generic:
+                - generic: "14"
+                - generic: Culture, Side Project
+              - generic:
+                - generic: "15"
+                - generic: Technology, Biotech
+              - generic:
+                - generic: "16"
+                - generic: Automotive
+              - generic:
+                - generic: "17"
+                - generic: Technology, Furniture
+              - generic:
+                - generic: "18"
+                - generic: Education, Side Project
+              - generic:
+                - generic: "19"
+                - generic: Fashion, Photography
+              - generic:
+                - generic: "01"
+                - generic: Architecture, Furniture
+              - generic:
+                - generic: "02"
+                - generic: Fashion
+              - generic:
+                - generic: "03"
+                - generic: Architecture
+              - generic:
+                - generic: "04"
+                - generic: Fashion, Photography
+              - generic:
+                - generic: "05"
+                - generic: Photography, Fashion
+              - generic:
+                - generic: "06"
+                - generic: Fashion
+              - generic:
+                - generic: "07"
+                - generic: Technology
+              - generic:
+                - generic: "08"
+                - generic: Education
+              - generic:
+                - generic: "09"
+                - generic: Education
+              - generic:
+                - generic: "10"
+                - generic: Fashion, Photography
+              - generic:
+                - generic: "11"
+                - generic: Culture
+              - generic:
+                - generic: "12"
+                - generic: Architecture, Development
+              - generic:
+                - generic: "13"
+                - generic: Technology
+              - generic:
+                - generic: "14"
+                - generic: Culture, Side Project
+              - generic:
+                - generic: "15"
+                - generic: Technology, Biotech
+              - generic:
+                - generic: "16"
+                - generic: Automotive
+              - generic:
+                - generic: "17"
+                - generic: Technology, Furniture
+              - generic:
+                - generic: "18"
+                - generic: Education, Side Project
+              - generic:
+                - generic: "19"
+                - generic: Fashion, Photography
+      - generic:
+        - generic:
+          - generic:
+            - generic: "01"
+            - generic: "03"
+            - generic: "05"
+            - generic: "06"
+            - generic: "10"
+            - generic: "12"
+            - generic: "15"
+            - generic: "16"
+            - generic: "17"
+            - generic: "20"
+            - generic: "21"
+            - generic: "23"
+            - generic: "26"
+            - generic: "27"
+            - generic: "30"
+            - generic: "32"
+            - generic: "33"
+            - generic: "35"
+            - generic: "37"
+            - generic: "38"
+            - generic: "42"
+            - generic: "44"
+            - generic: "47"
+            - generic: "48"
+            - generic: "49"
+            - generic: "52"
+            - generic: "53"
+            - generic: "55"
+            - generic: "58"
+            - generic: "59"
+            - generic: "62"
+            - generic: "64"
+            - generic: "65"
+            - generic: "67"
+            - generic: "69"
+            - generic: "70"
+            - generic: "74"
+            - generic: "76"
+            - generic: "79"
+            - generic: "80"
+            - generic:
+              - link "Makhno":
+                - /url: /work/makhno
+            - generic:
+              - link "Source Unknown":
+                - /url: /work/source-unknown
+            - generic:
+              - link "Autex":
+                - /url: /work/autex
+            - generic:
+              - link "Odin’s Crow":
+                - /url: /work/odins-crow
+            - generic:
+              - link "Olga Prudka":
+                - /url: /work/olga-prudka
+            - generic:
+              - link "Yulia":
+                - /url: /work/yulia
+            - generic:
+              - link "The Ways We Work (Miro)":
+                - /url: /work/the-ways-we-work-miro
+            - generic:
+              - link "Design Education Series":
+                - /url: /work/design-education-series
+            - generic:
+              - link "Obys’ Design Books":
+                - /url: /work/obys-design-books
+            - generic:
+              - link "Eminente":
+                - /url: /work/eminente
+            - generic:
+              - link "Abetka":
+                - /url: /work/abetka
+            - generic:
+              - link "BlackSheep":
+                - /url: /work/black-sheep
+            - generic:
+              - link "Salience Labs":
+                - /url: /work/salience-labs
+            - generic:
+              - link "AI Modernism of Kharkiv":
+                - /url: /work/ai-modernism-of-kharkiv
+            - generic:
+              - link "Glyphic Biotechnologies":
+                - /url: /work/glyphic-biotechnologies
+            - generic:
+              - link "Porsche Taycan":
+                - /url: /work/porsche-taycan
+            - generic:
+              - link "Ayocin (Atmos Lamp)":
+                - /url: /work/ayocin-atmos-lamp
+            - generic:
+              - link "Grids":
+                - /url: /work/grids
+            - generic:
+              - link "Peter Lindbergh":
+                - /url: /work/peter-lindbergh
+            - generic:
+              - link "Makhno":
+                - /url: /work/makhno
+            - generic:
+              - link "Source Unknown":
+                - /url: /work/source-unknown
+            - generic:
+              - link "Autex":
+                - /url: /work/autex
+            - generic:
+              - link "Odin’s Crow":
+                - /url: /work/odins-crow
+            - generic:
+              - link "Olga Prudka":
+                - /url: /work/olga-prudka
+            - generic:
+              - link "Yulia":
+                - /url: /work/yulia
+            - generic:
+              - link "The Ways We Work (Miro)":
+                - /url: /work/the-ways-we-work-miro
+            - generic:
+              - link "Design Education Series":
+                - /url: /work/design-education-series
+            - generic:
+              - link "Obys’ Design Books":
+                - /url: /work/obys-design-books
+            - generic:
+              - link "Eminente":
+                - /url: /work/eminente
+            - generic:
+              - link "Abetka":
+                - /url: /work/abetka
+            - generic:
+              - link "BlackSheep":
+                - /url: /work/black-sheep
+            - generic:
+              - link "Salience Labs":
+                - /url: /work/salience-labs
+            - generic:
+              - link "AI Modernism of Kharkiv":
+                - /url: /work/ai-modernism-of-kharkiv
+            - generic:
+              - link "Glyphic Biotechnologies":
+                - /url: /work/glyphic-biotechnologies
+            - generic:
+              - link "Porsche Taycan":
+                - /url: /work/porsche-taycan
+            - generic:
+              - link "Ayocin (Atmos Lamp)":
+                - /url: /work/ayocin-atmos-lamp
+            - generic:
+              - link "Grids":
+                - /url: /work/grids
+            - generic:
+              - link "Peter Lindbergh":
+                - /url: /work/peter-lindbergh
+        - generic:
+          - generic:
+            - figure
+            - generic:
+              - generic: Makhno
+            - generic:
+              - generic:
+                - generic: Makhno
+              - generic:
+                - generic: Architecture, Furniture
+              - generic:
+                - generic: Creative Direction, Web Design/Dev
+              - generic:
+                - generic: "02"
+          - generic:
+            - figure
+            - generic:
+              - generic: Source Unknown
+            - generic:
+              - generic:
+                - generic: Source Unknown
+              - generic:
+                - generic: Fashion
+              - generic:
+                - generic: Web Design/Dev
+              - generic:
+                - generic: "04"
+          - generic:
+            - figure:
+              - img "Woman in dark dress stands beside a modern wall with dark green geometric panels."
+            - generic:
+              - generic: Autex
+            - generic:
+              - generic:
+                - generic: Autex
+              - generic:
+                - generic: Architecture
+              - generic:
+                - generic: Web Design
+              - generic:
+                - generic: "07"
+          - generic:
+            - figure
+            - generic:
+              - generic: Odin’s Crow
+            - generic:
+              - generic:
+                - generic: Odin’s Crow
+              - generic:
+                - generic: Fashion, Photography
+              - generic:
+                - generic: Creative Direction, Web Design/Dev
+              - generic:
+                - generic: "08"
+          - generic:
+            - figure
+            - generic:
+              - generic: Olga Prudka
+            - generic:
+              - generic:
+                - generic: Olga Prudka
+              - generic:
+                - generic: Photography, Fashion
+              - generic:
+                - generic: Web Design/Dev, Identity
+              - generic:
+                - generic: "11"
+          - generic:
+            - figure
+            - generic:
+              - generic: Yulia
+            - generic:
+              - generic:
+                - generic: Yulia
+              - generic:
+                - generic: Fashion
+              - generic:
+                - generic: Web Design/Dev, Identity
+              - generic:
+                - generic: "12"
+          - generic:
+            - figure
+            - generic:
+              - generic: The Ways We Work (Miro)
+            - generic:
+              - generic:
+                - generic: The Ways We Work (Miro)
+              - generic:
+                - generic: Technology
+              - generic:
+                - generic: Web Design/Dev
+              - generic:
+                - generic: "13"
+          - generic:
+            - figure
+            - generic:
+              - generic: Design Education Series
+            - generic:
+              - generic:
+                - generic: Design Education Series
+              - generic:
+                - generic: Education
+              - generic:
+                - generic: Concept, Web Design/Dev, Identity
+              - generic:
+                - generic: "14"
+          - generic:
+            - figure
+            - generic:
+              - generic: Obys’ Design Books
+            - generic:
+              - generic:
+                - generic: Obys’ Design Books
+              - generic:
+                - generic: Education
+              - generic:
+                - generic: Concept, Web Design/Dev, Identity
+              - generic:
+                - generic: "17"
+          - generic:
+            - figure
+            - generic:
+              - generic: Eminente
+            - generic:
+              - generic:
+                - generic: Eminente
+              - generic:
+                - generic: Fashion, Photography
+              - generic:
+                - generic: Creative Direction, Web Design/Dev
+              - generic:
+                - generic: "18"
+          - generic:
+            - figure
+            - generic:
+              - generic: Abetka
+            - generic:
+              - generic:
+                - generic: Abetka
+              - generic:
+                - generic: Culture
+              - generic:
+                - generic: Concept, Web Design/Dev, Identity
+              - generic:
+                - generic: "21"
+          - generic:
+            - figure
+            - generic:
+              - generic: BlackSheep
+            - generic:
+              - generic:
+                - generic: BlackSheep
+              - generic:
+                - generic: Architecture, Development
+              - generic:
+                - generic: Creative Direction, Web Design/Dev
+              - generic:
+                - generic: "22"
+          - generic:
+            - figure
+            - generic:
+              - generic: Salience Labs
+            - generic:
+              - generic:
+                - generic: Salience Labs
+              - generic:
+                - generic: Technology
+              - generic:
+                - generic: Web Design/Dev, 3D
+              - generic:
+                - generic: "23"
+          - generic:
+            - figure
+            - generic:
+              - generic: AI Modernism of Kharkiv
+            - generic:
+              - generic:
+                - generic: AI Modernism of Kharkiv
+              - generic:
+                - generic: Culture, Side Project
+              - generic:
+                - generic: Concept, Web Design/Dev, Identity
+              - generic:
+                - generic: "24"
+          - generic:
+            - figure
+            - generic:
+              - generic: Glyphic Biotechnologies
+            - generic:
+              - generic:
+                - generic: Glyphic Biotechnologies
+              - generic:
+                - generic: Technology, Biotech
+              - generic:
+                - generic: Creative Direction, Web Design/Dev, 3D
+              - generic:
+                - generic: "25"
+          - generic:
+            - figure:
+              - img "Side view of a blue sports car with driver and passenger doors open."
+            - generic:
+              - generic: Porsche Taycan
+            - generic:
+              - generic:
+                - generic: Porsche Taycan
+              - generic:
+                - generic: Automotive
+              - generic:
+                - generic: Web Design/Dev
+              - generic:
+                - generic: "27"
+          - generic:
+            - figure
+            - generic:
+              - generic: Ayocin (Atmos Lamp)
+            - generic:
+              - generic:
+                - generic: Ayocin (Atmos Lamp)
+              - generic:
+                - generic: Technology, Furniture
+              - generic:
+                - generic: Creative Direction, Web Design/Dev
+              - generic:
+                - generic: "28"
+          - generic:
+            - figure
+            - generic:
+              - generic: Grids
+            - generic:
+              - generic:
+                - generic: Grids
+              - generic:
+                - generic: Education, Side Project
+              - generic:
+                - generic: Concept, Web Design/Dev, Identity
+              - generic:
+                - generic: "29"
+          - generic:
+            - figure
+            - generic:
+              - generic: Peter Lindbergh
+            - generic:
+              - generic:
+                - generic: Peter Lindbergh
+              - generic:
+                - generic: Fashion, Photography
+              - generic:
+                - generic: Concept, Web Design/Dev
+              - generic:
+                - generic: "32"
+          - generic:
+            - figure
+            - generic:
+              - generic: Makhno
+            - generic:
+              - generic:
+                - generic: Makhno
+              - generic:
+                - generic: Architecture, Furniture
+              - generic:
+                - generic: Creative Direction, Web Design/Dev
+              - generic:
+                - generic: "33"
+          - generic:
+            - figure
+            - generic:
+              - generic: Source Unknown
+            - generic:
+              - generic:
+                - generic: Source Unknown
+              - generic:
+                - generic: Fashion
+              - generic:
+                - generic: Web Design/Dev
+              - generic:
+                - generic: "34"
+          - generic:
+            - figure:
+              - img "Woman in dark dress stands beside a modern wall with dark green geometric panels."
+            - generic:
+              - generic: Autex
+            - generic:
+              - generic:
+                - generic: Autex
+              - generic:
+                - generic: Architecture
+              - generic:
+                - generic: Web Design
+              - generic:
+                - generic: "36"
+          - generic:
+            - figure
+            - generic:
+              - generic: Odin’s Crow
+            - generic:
+              - generic:
+                - generic: Odin’s Crow
+              - generic:
+                - generic: Fashion, Photography
+              - generic:
+                - generic: Creative Direction, Web Design/Dev
+              - generic:
+                - generic: "37"
+          - generic:
+            - figure
+            - generic:
+              - generic: Olga Prudka
+            - generic:
+              - generic:
+                - generic: Olga Prudka
+              - generic:
+                - generic: Photography, Fashion
+              - generic:
+                - generic: Web Design/Dev, Identity
+              - generic:
+                - generic: "38"
+          - generic:
+            - figure
+            - generic:
+              - generic: Yulia
+            - generic:
+              - generic:
+                - generic: Yulia
+              - generic:
+                - generic: Fashion
+              - generic:
+                - generic: Web Design/Dev, Identity
+              - generic:
+                - generic: "39"
+          - generic:
+            - figure
+            - generic:
+              - generic: The Ways We Work (Miro)
+            - generic:
+              - generic:
+                - generic: The Ways We Work (Miro)
+              - generic:
+                - generic: Technology
+              - generic:
+                - generic: Web Design/Dev
+              - generic:
+                - generic: "42"
+          - generic:
+            - figure
+            - generic:
+              - generic: Design Education Series
+            - generic:
+              - generic:
+                - generic: Design Education Series
+              - generic:
+                - generic: Education
+              - generic:
+                - generic: Concept, Web Design/Dev, Identity
+              - generic:
+                - generic: "45"
+          - generic:
+            - figure
+            - generic:
+              - generic: Obys’ Design Books
+            - generic:
+              - generic:
+                - generic: Obys’ Design Books
+              - generic:
+                - generic: Education
+              - generic:
+                - generic: Concept, Web Design/Dev, Identity
+              - generic:
+                - generic: "47"
+          - generic:
+            - figure
+            - generic:
+              - generic: Eminente
+            - generic:
+              - generic:
+                - generic: Eminente
+              - generic:
+                - generic: Fashion, Photography
+              - generic:
+                - generic: Creative Direction, Web Design/Dev
+              - generic:
+                - generic: "48"
+          - generic:
+            - figure
+            - generic:
+              - generic: Abetka
+            - generic:
+              - generic:
+                - generic: Abetka
+              - generic:
+                - generic: Culture
+              - generic:
+                - generic: Concept, Web Design/Dev, Identity
+              - generic:
+                - generic: "50"
+          - generic:
+            - figure
+            - generic:
+              - generic: BlackSheep
+            - generic:
+              - generic:
+                - generic: BlackSheep
+              - generic:
+                - generic: Architecture, Development
+              - generic:
+                - generic: Creative Direction, Web Design/Dev
+              - generic:
+                - generic: "52"
+          - generic:
+            - figure
+            - generic:
+              - generic: Salience Labs
+            - generic:
+              - generic:
+                - generic: Salience Labs
+              - generic:
+                - generic: Technology
+              - generic:
+                - generic: Web Design/Dev, 3D
+              - generic:
+                - generic: "55"
+          - generic:
+            - figure
+            - generic:
+              - generic: AI Modernism of Kharkiv
+            - generic:
+              - generic:
+                - generic: AI Modernism of Kharkiv
+              - generic:
+                - generic: Culture, Side Project
+              - generic:
+                - generic: Concept, Web Design/Dev, Identity
+              - generic:
+                - generic: "56"
+          - generic:
+            - figure
+            - generic:
+              - generic: Glyphic Biotechnologies
+            - generic:
+              - generic:
+                - generic: Glyphic Biotechnologies
+              - generic:
+                - generic: Technology, Biotech
+              - generic:
+                - generic: Creative Direction, Web Design/Dev, 3D
+              - generic:
+                - generic: "59"
+          - generic:
+            - figure:
+              - img "Side view of a blue sports car with driver and passenger doors open."
+            - generic:
+              - generic: Porsche Taycan
+            - generic:
+              - generic:
+                - generic: Porsche Taycan
+              - generic:
+                - generic: Automotive
+              - generic:
+                - generic: Web Design/Dev
+              - generic:
+                - generic: "60"
+          - generic:
+            - figure
+            - generic:
+              - generic: Ayocin (Atmos Lamp)
+            - generic:
+              - generic:
+                - generic: Ayocin (Atmos Lamp)
+              - generic:
+                - generic: Technology, Furniture
+              - generic:
+                - generic: Creative Direction, Web Design/Dev
+              - generic:
+                - generic: "61"
+          - generic:
+            - figure
+            - generic:
+              - generic: Grids
+            - generic:
+              - generic:
+                - generic: Grids
+              - generic:
+                - generic: Education, Side Project
+              - generic:
+                - generic: Concept, Web Design/Dev, Identity
+              - generic:
+                - generic: "62"
+          - generic:
+            - figure
+            - generic:
+              - generic: Peter Lindbergh
+            - generic:
+              - generic:
+                - generic: Peter Lindbergh
+              - generic:
+                - generic: Fashion, Photography
+              - generic:
+                - generic: Concept, Web Design/Dev
+              - generic:
+                - generic: "65"
+      - generic [ref=e163]:
+        - button "Vertical," [ref=e164]
+        - button "Horizontal," [ref=e165]
+        - button "Grid" [ref=e166]
+      - generic [ref=e169]: All rights reserved. ©2026 Obys
+  - generic [ref=e170]:
+    - paragraph [ref=e171]: The studio is shaped by people who care deeply about design and the process behind. Each project becomes a case study and a meaningful part of our portfolio, developed with care and attention.
+    - generic [ref=e172]:
+      - generic [ref=e174]: "Contact:"
+      - link "info@obys.agency" [ref=e175] [cursor=pointer]:
+        - /url: mailto:info@obys.agency
+        - generic [ref=e177]: info@obys.agency
+  - banner:
+    - link "Obys" [ref=e180] [cursor=pointer]:
+      - /url: /
+      - img [ref=e181]
+    - generic:
+      - generic [ref=e187]:
+        - link "Work," [ref=e188] [cursor=pointer]:
+          - /url: /
+        - link "About" [ref=e189] [cursor=pointer]:
+          - /url: /about
+      - generic:
+        - generic: CET 00:00 AM
+      - button "Contact" [ref=e190] [cursor=pointer]
+  - generic:
+    - img

@@ -3,6 +3,13 @@
     "playwright": {
       "command": "npx",
       "args": ["@playwright/mcp@latest"]
+    },
+    "higgsfield": {
+      "command": "npx",
+      "args": ["-y", "higgsfield-mcp"],
+      "env": {
+        "HF_API_KEY": "21dd4b5d-9fed-4503-b51a-fa8da40557f6"
+      }
     }
   }
 }

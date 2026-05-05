@@ -1,0 +1,576 @@
+- generic:
+  - banner:
+    - navigation:
+      - link:
+        - /url: /
+        - img
+      - generic:
+        - link:
+          - /url: /
+          - text: Explore
+        - generic:
+          - button: Image
+        - generic:
+          - button: Video
+        - generic:
+          - button: Audio
+        - link:
+          - /url: /generate
+          - text: Collab
+        - link:
+          - /url: /canvas
+          - text: Canvas
+          - generic: New
+        - generic:
+          - button: Edit
+        - generic:
+          - button: Character
+        - link:
+          - /url: /marketing-studio/product
+          - text: Marketing Studio
+          - generic: New
+        - link:
+          - /url: /cinema-studio?autoSelectFolder=true
+          - text: Cinema Studio
+        - link:
+          - /url: /original-series
+          - text: Originals
+        - link:
+          - /url: /mcp
+          - text: MCP
+          - generic: New
+        - link:
+          - /url: /apps
+          - text: Apps
+        - link:
+          - /url: /chat
+          - text: Assist
+        - generic:
+          - button: Community
+      - generic:
+        - generic:
+          - link:
+            - /url: /pricing
+            - generic:
+              - img
+              - text: Pricing
+              - generic: 30% OFF
+          - separator
+          - generic:
+            - generic:
+              - button:
+                - img
+            - link:
+              - /url: /asset/all
+              - generic:
+                - img
+              - generic: Assets
+            - generic:
+              - button:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - img
+                      - img
+  - main:
+    - generic:
+      - generic:
+        - heading [level=1]: "404"
+        - heading [level=2]: Page not found
+        - link:
+          - /url: /
+          - text: Back to home
+  - contentinfo:
+    - navigation:
+      - paragraph:
+        - generic: © 2026 Higgsfield AI™.
+        - text: All rights reserved.
+      - list:
+        - listitem:
+          - link:
+            - /url: mailto:press@higgsfield.ai
+            - text: Press
+        - listitem:
+          - link:
+            - /url: /creative-challenge
+            - text: Creative Challenge
+        - listitem:
+          - link:
+            - /url: /privacy-policy
+            - text: Privacy
+        - listitem:
+          - link:
+            - /url: /terms-of-use-agreement
+            - text: Terms
+        - listitem:
+          - link:
+            - /url: /cookie-notice
+            - text: Cookie Notice
+        - listitem:
+          - link:
+            - /url: "#cookie-settings"
+            - text: Cookie Settings
+  - region "Notifications Alt+T"
+  - alert
+  - dialog:
+    - generic:
+      - banner:
+        - generic:
+          - generic:
+            - img
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - img
+                - generic: Create an account
+            - generic:
+              - generic:
+                - generic:
+                  - img
+                - generic: Set up your plan
+            - generic:
+              - generic:
+                - generic: Get maximum value
+          - button: Skip One-time Offer
+      - main:
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - img
+                - generic: One-time offer Expires in
+                - paragraph: 04:57
+              - heading [level=3]:
+                - text: EXCLUSIVE
+                - generic: 87% DISCOUNT
+                - text: TO GET Secret Ultra Plan offer
+              - paragraph: Unlock "Secret" Ultra Monthly offer with additional value - for a price you will never see again
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - paragraph: Current Plan
+                  - heading [level=3]: Plus Monthly Plan
+                  - button [disabled]:
+                    - img
+                    - text: Already Purchased
+                  - list:
+                    - listitem:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img
+                          - generic: Standard Plus monthly plan
+                    - listitem:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img
+                          - generic: 1,000 credits per month
+                    - listitem:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img
+                          - generic: 30-day unlimited Nano Banana 2
+                    - listitem:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img
+                          - generic: No additional monthly unlimited models
+                - generic:
+                  - generic:
+                    - paragraph: 87% DISCOUNT
+                  - heading [level=3]: Ultra Monthly Plan
+                  - button: Continue to Payment
+                  - list:
+                    - listitem:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img
+                          - generic:
+                            - generic: GET ULTRA MONTHLY WITH 87% OFF
+                        - generic:
+                          - generic:
+                            - img
+                            - generic: SPECIAL OFFER
+                    - listitem:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img
+                          - generic:
+                            - generic: 3,000 credits per month
+                    - listitem:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img
+                          - generic:
+                            - generic: 30-DAY UNLIMITED Nano Banana 2
+                    - listitem:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img
+                          - generic:
+                            - generic: +3 UNLIMITED video models
+                        - generic:
+                          - generic:
+                            - generic: Kling 2.5
+                          - generic:
+                            - generic: Seedance 1.0
+                          - generic:
+                            - generic: Hailuo 2.3
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - heading [level=3]:
+                    - text: Full bundle just for
+                    - generic: $60
+                  - generic:
+                    - generic:
+                      - text: Original price was
+                      - generic: $479
+                    - generic: Save $419 with 87% OFF!
+                  - generic:
+                    - button: Continue to Payment
+                    - button: See What You Get
+                  - paragraph: Click "Continue to Payment" to proceed to checkout and complete the one-time $60 Monthly Ultra plan purchase, upgrading your plan to Ultra Monthly. Unlimited Models last 1 month, and your subscription will renew at the standard Ultra plan rate ($129/mo) with 3,000 credits after 1 month.
+          - generic:
+            - generic:
+              - generic:
+                - heading [level=2]: What do you get with this OFFER?
+                - paragraph: Secure $479 worth of value for a one-time $60 fee. Valid only now!
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Ultra Monthly Plan with 87% OFF
+                          - paragraph:
+                            - img
+                            - text: One Time Offer
+                      - paragraph: Unlock Ultra Monthly Plan with one-time 87% off for just $60
+                    - generic:
+                      - heading [level=3]:
+                        - text: ULTRA MONTHLY PLAN
+                        - img
+                        - text: 87% OFF
+                      - paragraph: Get exclusive access to more features and unlimited models
+                      - generic:
+                        - generic:
+                          - img
+                          - generic: Early access
+                        - generic:
+                          - img
+                          - generic: More unlimited models
+                        - generic:
+                          - img
+                          - generic: Special offer
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: FREE UNLIMITED Video Generations
+                          - generic:
+                            - paragraph:
+                              - img
+                              - text: One Time Offer
+                      - paragraph: Test thousands of complex iterations on best video models – all without touching your credit balance for 1 month
+                    - generic:
+                      - generic:
+                        - generic:
+                          - img
+                          - generic: UNLIMITED
+                        - img
+                        - generic:
+                          - generic: Kling 2.5
+                          - generic:
+                            - generic: Turbo, 720p
+                            - button:
+                              - img
+                      - generic:
+                        - generic:
+                          - img
+                          - generic: UNLIMITED
+                        - img
+                        - generic:
+                          - generic: Seedance 1.0
+                          - generic:
+                            - generic: Pro Fast
+                            - button:
+                              - img
+                      - generic:
+                        - generic:
+                          - img
+                          - generic: UNLIMITED
+                        - img
+                        - generic:
+                          - generic: Minimax Hailuo 2.3
+                          - generic:
+                            - generic: Standard
+                            - button:
+                              - img
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: x3 Credit Value
+                          - generic:
+                            - paragraph:
+                              - img
+                              - text: One Time Offer
+                      - paragraph: Full access with 3,000 credits included
+                    - generic:
+                      - generic:
+                        - generic:
+                          - heading [level=3]: PLUS MONTHLY
+                        - generic:
+                          - generic: 1,000
+                          - generic:
+                            - paragraph: ~500 generations
+                            - paragraph: with given credits
+                      - generic:
+                        - generic:
+                          - heading [level=3]: ULTRA MONTHLY
+                          - generic:
+                            - generic: Best Offer
+                        - generic:
+                          - generic: 3,000
+                          - generic:
+                            - paragraph: ~1,500 generations
+                            - paragraph: with given credits
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - paragraph:
+                          - img
+                          - text: One Time Offer
+                        - heading [level=5]: Premium Priority for a month
+                        - paragraph: Jump the line and generate renders up to 4× faster
+                        - generic:
+                          - generic: "With Premium Priority: x4 faster"
+                          - img
+                  - generic:
+                    - generic:
+                      - generic:
+                        - paragraph:
+                          - img
+                          - text: One Time Offer
+                        - heading [level=5]: Save up to $419 dollars
+                        - paragraph: Pay more without unlimited or pay $60 now with a one-time 87% OFF
+                        - generic:
+                          - heading [level=5]: $419 saved
+                          - generic:
+                            - paragraph: Pay more without unlimited or pay $60 now with a one-time 87% OFF
+                            - generic: Pay less by upgrading to Ultra Plan
+          - generic:
+            - generic:
+              - generic:
+                - heading [level=2]:
+                  - text: GRAB THIS
+                  - mark: ONE TIME CHANCE
+                  - text: to unlock UNLIMITED POWER
+                - paragraph: Don't wait all year for Black Friday – this deal is better
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - img
+                      - generic:
+                        - generic: Upgrade to Ultra Monthly with 3k credits
+                        - generic: Generate more with extra credits
+                        - generic:
+                          - generic: $60
+                          - generic: $129
+                      - paragraph: INCLUDED
+                    - generic:
+                      - generic:
+                        - img
+                      - generic:
+                        - generic: 30-DAY UNLIMITED Nano Banana 2
+                        - generic: Get 30-day unlimited access to top image model
+                        - generic:
+                          - generic: $10
+                          - generic: $150
+                      - paragraph: INCLUDED
+                    - generic:
+                      - generic:
+                        - img
+                      - generic:
+                        - generic: UNLIMITED Best Video Models
+                        - generic: Unlimited Kling 2.5 Turbo, Seedance 1.0, Hailuo 2.3 for 1 month
+                        - generic:
+                          - generic: FREE
+                          - generic: $200
+                      - paragraph: INCLUDED
+                    - generic:
+                      - generic:
+                        - img
+                      - generic:
+                        - generic: PREMIUM PRIORITY Generations
+                        - generic: Create faster – no more long waits in queues
+                        - generic:
+                          - generic: FREE
+                      - paragraph: INCLUDED
+                  - generic:
+                    - heading [level=3]:
+                      - text: One time price of
+                      - generic: $60
+                    - paragraph:
+                      - text: Original price was
+                      - generic: $479
+                      - generic: Save $419 with $87% OFF!
+                    - button: Continue to Payment
+                    - button: Continue Without Welcome Bundle
+                    - paragraph: Click "Continue to Payment" to proceed to checkout and complete the one-time $60 Monthly Ultra plan purchase, upgrading your plan to Ultra Monthly. Unlimited Models last 1 month, and your subscription will renew at the standard Ultra plan rate ($129/mo) with 3,000 credits after 1 month.
+          - generic:
+            - generic:
+              - generic:
+                - heading [level=2]:
+                  - text: a platform trusted by
+                  - mark: 18 million creators
+                - paragraph: Join a global creative network where people generate AI images, share insights, and inspire each other every day.
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - article:
+                        - generic:
+                          - generic:
+                            - img
+                            - img
+                            - img
+                            - img
+                            - img
+                          - heading [level=3]: It's gone from a side tool to something I rely on daily
+                        - paragraph: I've been using Higgsfield for a few months now and it honestly changed how I approach projects. The speed is insane, and the quality is more than enough for professional work. It's gone from a side tool to something I rely on daily
+                        - generic:
+                          - generic: JM
+                          - paragraph: Jessica Moore
+                      - article:
+                        - generic:
+                          - generic:
+                            - img
+                            - img
+                            - img
+                            - img
+                            - img
+                          - heading [level=3]: Delivered a project two days early thanks to Higgsfield
+                        - paragraph: I was blown away by how intuitive it is. No endless tutorials or confusing menus — you just dive in and create. We delivered a client project two days early thanks to Higgsfield, and they were impressed by the visuals
+                        - generic:
+                          - generic: DH
+                          - paragraph: Daniel Harris
+                      - article:
+                        - generic:
+                          - generic:
+                            - img
+                            - img
+                            - img
+                            - img
+                          - heading [level=3]: It's become my go-to for quick creative work
+                        - paragraph: The platform is really solid. Sometimes I wish there were more advanced controls, but the trade-off is speed. For quick creative experiments and even serious work, it's become my go-to
+                        - generic:
+                          - generic: OB
+                          - paragraph: Olivia Bennett
+                      - article:
+                        - generic:
+                          - generic:
+                            - img
+                            - img
+                            - img
+                            - img
+                            - img
+                          - heading [level=3]: The unlimited models alone made it worth it
+                        - paragraph: Being able to iterate without worrying about credits is huge. I test way more ideas now and the quality of my final output has gone up dramatically.
+                        - generic:
+                          - generic: MC
+                          - paragraph: Marcus Chen
+                      - article:
+                        - generic:
+                          - generic:
+                            - img
+                            - img
+                            - img
+                            - img
+                            - img
+                          - heading [level=3]: Finally a tool that keeps up with my ideas
+                        - paragraph: Most AI tools slow you down with limits and queues. Higgsfield with the Ultra bundle is different — priority access means my renders start almost instantly, and the quality keeps surprising me every time
+                        - generic:
+                          - generic: SK
+                          - paragraph: Sarah Kim
+                - generic:
+                  - button [disabled]:
+                    - img
+                  - button:
+                    - img
+  - generic:
+    - dialog:
+      - generic:
+        - generic:
+          - button: ×
+      - generic: This website uses cookies
+      - generic:
+        - generic:
+          - text: Our website uses cookies and similar technologies to improve our service, analyze usage, and personalize content and advertising. We only use non-essential cookies if you enable them. By choosing Accept, you agree to our
+          - link:
+            - /url: https://higgsfield.ai/privacy-policy
+            - text: Privacy Policy
+          - text: ","
+          - link:
+            - /url: https://higgsfield.ai/terms-of-use-agreement
+            - text: Terms of Use
+          - text: ", and"
+          - link:
+            - /url: https://higgsfield.ai/cookie-notice
+            - text: Cookie Policy
+          - text: . Manage your preferences at any time.
+      - generic:
+        - button: Accept all
+        - button: Reject all
+      - button:
+        - generic: Customize
+  - dialog [ref=e812]:
+    - generic [ref=e815]:
+      - button "Close" [active] [ref=e816] [cursor=pointer]:
+        - img [ref=e817]
+      - generic [ref=e819]:
+        - generic [ref=e820]:
+          - img [ref=e821]
+          - generic [ref=e823]: One-time offer Expires in
+          - paragraph [ref=e824]: 04:57
+        - heading "SAVE $424 AND GET 3X BETTER RESULTS WITH ULTRA UPGRADE" [level=3] [ref=e825]:
+          - mark [ref=e826]: SAVE $424
+          - text: AND GET
+          - mark [ref=e827]: 3X
+          - text: BETTER RESULTS WITH ULTRA UPGRADE
+        - generic [ref=e828]: "Heads up: We really want you to succeed, so offer you additional 8% discount"
+      - img [ref=e831]:
+        - generic [ref=e832]:
+          - generic [ref=e861]: Save $424
+          - generic [ref=e862]: WITHOUT ADD-ON
+          - generic [ref=e863]: WITH ADD-ON
+          - generic [ref=e864]: x3
+      - generic [ref=e865]:
+        - button "Get for $55 $60" [ref=e866] [cursor=pointer]:
+          - img [ref=e867]
+          - text: Get for $55
+          - generic [ref=e869]: $60
+        - button "Skip the offer" [ref=e870] [cursor=pointer]
+      - generic [ref=e872]:
+        - img [ref=e873]
+        - paragraph [ref=e875]:
+          - generic [ref=e876]: Get Unlimited Video Models, +1800 credits and more
+      - paragraph [ref=e878]: Click "Continue to Payment" to proceed to checkout and complete the one-time $55 Monthly Ultra plan purchase, upgrading your plan to Ultra Monthly. Unlimited Models last 1 month, and your subscription will renew at the standard Ultra plan rate ($129/mo) with 3,000 credits after 1 month.

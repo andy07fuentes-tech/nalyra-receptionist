@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Obys Preloader — Clone</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --col: 18vw; /* one column width — the small frame size */
+    }
+
+    body {
+      background: #f0ede8;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    /* ── FAKE SITE CONTENT ── */
+    .site {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+    }
+    .site h1 {
+      font-size: clamp(2rem, 8vw, 7rem);
+      font-weight: 200;
+      letter-spacing: -0.04em;
+      color: #111;
+    }
+
+    /* ── PRELOADER BLACK BG ── */
+    #preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      pointer-events: none;
+    }
+    #preloader-bg {
+      position: absolute;
+      inset: 0;
+      background: #000;
+    }
+
+    /* ── IMAGE FRAMES — fixed, centered, one column wide ── */
+    .preloader-img-wrap {
+      position: fixed;
+      width: var(--col);
+      aspect-ratio: 3/4;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+      /* starts fully clipped from center — invisible */
+      clip-path: inset(50%);
+      will-change: clip-path;
+      z-index: 101;
+      transition: clip-path 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .preloader-img-wrap.is-on {
+      clip-path: inset(0%);
+    }
+    .preloader-img-wrap img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.15);
+      will-change: transform;
+      transition: transform 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .preloader-img-wrap.is-on img {
+      transform: scale(1);
+    }
+
+    /* ── COUNTER — right side, vertically centered ── */
+    #preloader-prg {
+      position: fixed;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 200;
+      font-size: clamp(0.7rem, 1vw, 0.9rem);
+      font-weight: 400;
+      color: #fff;
+      mix-blend-mode: difference;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0.01em;
+      pointer-events: none;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fake site -->
+  <div class="site">
+    <h1>Your site here.</h1>
+  </div>
+
+  <!-- Black overlay -->
+  <div id="preloader">
+    <div id="preloader-bg"></div>
+  </div>
+
+  <!-- Image frames (one per image, all stacked at center) -->
+  <div class="preloader-img-wrap" id="img-0">
+    <img src="/images/ai-receptionist-woman.jpg" alt="" />
+  </div>
+  <div class="preloader-img-wrap" id="img-1">
+    <img src="/images/hero-banner.jpg" alt="" />
+  </div>
+  <div class="preloader-img-wrap" id="img-2">
+    <img src="/images/our-story.jpg" alt="" />
+  </div>
+  <div class="preloader-img-wrap" id="img-3">
+    <img src="/images/apprentissage-continu.jpg" alt="" />
+  </div>
+  <div class="preloader-img-wrap" id="img-4">
+    <img src="/images/woman-profile.jpg" alt="" />
+  </div>
+
+  <!-- Counter -->
+  <div id="preloader-prg">0</div>
+
+  <script>
+    const frames  = Array.from(document.querySelectorAll('.preloader-img-wrap'));
+    const counter = document.getElementById('preloader-prg');
+    const bg      = document.getElementById('preloader-bg');
+    const site    = document.querySelector('.site');
+
+    let current = -1;
+
+    function showNext() {
+      // hide previous
+      if (current >= 0) frames[current].classList.remove('is-on');
+      current = (current + 1) % frames.length;
+      frames[current].classList.add('is-on');
+    }
+
+    function run() {
+      const totalDuration = 2.8; // seconds
+      const imageHoldTime = totalDuration / frames.length;
+
+      // Cycle images
+      showNext();
+      let imageTimer = setInterval(() => {
+        showNext();
+      }, imageHoldTime * 1000);
+
+      // Counter 0 → 100
+      const obj = { val: 0 };
+      gsap.to(obj, {
+        val: 100,
+        duration: totalDuration,
+        ease: 'power1.inOut',
+        onUpdate() {
+          counter.textContent = Math.round(obj.val);
+        },
+        onComplete() {
+          clearInterval(imageTimer);
+          counter.textContent = '100';
+
+          // Brief pause then exit
+          setTimeout(() => {
+            // Hide current image frame
+            frames[current].classList.remove('is-on');
+
+            // Fade out black bg + counter
+            gsap.to([bg, counter], {
+              opacity: 0,
+              duration: 0.7,
+              ease: 'power1.inOut',
+              onComplete() {
+                document.getElementById('preloader').style.display = 'none';
+              }
+            });
+
+            // Reveal site
+            gsap.to(site, {
+              opacity: 1,
+              duration: 0.9,
+              delay: 0.3,
+              ease: 'power1.out',
+            });
+
+          }, 200);
+        }
+      });
+    }
+
+    // Start once first image is ready
+    const firstImg = frames[0].querySelector('img');
+    if (firstImg.complete) run();
+    else firstImg.addEventListener('load', run);
+  </script>
+</body>
+</html>

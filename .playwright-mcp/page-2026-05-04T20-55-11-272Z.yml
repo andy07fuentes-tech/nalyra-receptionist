@@ -1,0 +1,151 @@
+- generic:
+  - generic [ref=e2]:
+    - iframe [active] [ref=e8]:
+      - generic:
+        - generic [ref=f10e887]:
+          - generic [ref=f10e890]:
+            - generic [ref=f10e891]:
+              - button [ref=f10e893] [cursor=pointer]
+              - generic [ref=f10e898]:
+                - generic [ref=f10e899]:
+                  - generic [ref=f10e905]: ANVELA_Contrat_SOW_v3
+                  - generic [ref=f10e908]:
+                    - img [ref=f10e910]
+                    - generic [ref=f10e913]: consulté
+                  - button [ref=f10e914] [cursor=pointer]
+                - generic [ref=f10e922]:
+                  - button "Fichier" [ref=f10e925] [cursor=pointer]
+                  - button "Consulter" [ref=f10e928] [cursor=pointer]
+            - generic [ref=f10e929]:
+              - button "Modifier le document" [ref=f10e930] [cursor=pointer]
+              - button [ref=f10e932] [cursor=pointer]
+          - generic [ref=f10e937]:
+            - generic [ref=f10e946]:
+              - generic [ref=f10e947]:
+                - generic [ref=f10e949]: Viewed
+                - paragraph [ref=f10e952]: Une fois le document terminé par tous les signataires, vous pourrez en télécharger une copie signée.
+              - generic [ref=f10e953]:
+                - button "Partager via un lien" [ref=f10e954] [cursor=pointer]:
+                  - paragraph [ref=f10e958]: Partager via un lien
+                - button "Modifier le document" [ref=f10e959] [cursor=pointer]:
+                  - paragraph [ref=f10e961]: Modifier le document
+                - button "Convertir en modèle" [ref=f10e962] [cursor=pointer]:
+                  - paragraph [ref=f10e964]: Convertir en modèle
+                - button "Vérifier les données" [ref=f10e965] [cursor=pointer]:
+                  - paragraph [ref=f10e967]: Vérifier les données
+              - generic [ref=f10e970]:
+                - generic [ref=f10e971]:
+                  - paragraph [ref=f10e972]: Owner
+                  - paragraph [ref=f10e973]: pabs
+                - generic [ref=f10e974]:
+                  - paragraph [ref=f10e975]: Created
+                  - paragraph [ref=f10e976]: 4 mai 2026
+                - generic [ref=f10e977]:
+                  - paragraph [ref=f10e978]: Folder
+                  - paragraph [ref=f10e979]: All documents
+                - generic [ref=f10e980]:
+                  - paragraph [ref=f10e981]: Sent
+                  - paragraph [ref=f10e982]: 4 mai 2026
+                - generic [ref=f10e983]:
+                  - paragraph [ref=f10e984]: Expiration Date
+                  - paragraph [ref=f10e985]: 3 juillet 2026
+              - generic [ref=f10e988]:
+                - heading "Destinataires" [level=4] [ref=f10e989]
+                - generic [ref=f10e992] [cursor=pointer]:
+                  - generic [ref=f10e995]: PA
+                  - generic [ref=f10e996]:
+                    - generic [ref=f10e998]:
+                      - paragraph [ref=f10e1001]: pablofuentes070707@gmail.com
+                      - paragraph [ref=f10e1003]: Signer
+                    - paragraph [ref=f10e1006]: pablofuentes070707@gmail.com
+                  - button [ref=f10e1009]
+                - generic [ref=f10e1017] [cursor=pointer]: Gérer les destinataires
+            - generic [ref=f10e1020]:
+              - generic [ref=f10e1024]: Une fois le document terminé par tous les signataires, vous pourrez en télécharger une copie signée.
+              - generic [ref=f10e1037]:
+                - generic [ref=f10e1049]:
+                  - generic [ref=f10e1051]:
+                    - generic [ref=f10e1052]:
+                      - img
+                      - generic [ref=f10e1053]:
+                        - checkbox [checked] [disabled]
+                    - heading "pablofuentes070707@gmail.com" [level=4]
+                  - generic [ref=f10e1055]:
+                    - generic [ref=f10e1056]:
+                      - img
+                      - generic [ref=f10e1057]:
+                        - checkbox [disabled]
+                    - heading "pablofuentes070707@gmail.com" [level=4]
+                  - generic [ref=f10e1059]:
+                    - generic [ref=f10e1060]:
+                      - img
+                      - generic [ref=f10e1061]:
+                        - checkbox [disabled]
+                    - heading "pablofuentes070707@gmail.com" [level=4]
+                  - generic [ref=f10e1064]:
+                    - textbox [disabled] [ref=f10e1068]:
+                      - /placeholder: Saisir une valeur
+                      - text: garage Pablo
+                    - heading "pablofuentes070707@gmail.com" [level=4]
+                  - generic [ref=f10e1071]:
+                    - textbox [disabled] [ref=f10e1075]:
+                      - /placeholder: Saisir une valeur
+                      - text: Pablo
+                    - heading "pablofuentes070707@gmail.com" [level=4]
+                  - generic [ref=f10e1078]:
+                    - textbox [disabled] [ref=f10e1082]:
+                      - /placeholder: Saisir une valeur
+                      - text: 11491 rolland
+                    - heading "pablofuentes070707@gmail.com" [level=4]
+                - generic [ref=f10e1094]:
+                  - generic [ref=f10e1096]:
+                    - heading "pablofuentes070707@gmail.com" [level=4]
+                  - generic [ref=f10e1101]:
+                    - generic [ref=f10e1103]:
+                      - img [ref=f10e1105]
+                      - generic [ref=f10e1108]: 04 / 05 / 2026
+                    - heading "pablofuentes070707@gmail.com" [level=4]
+                  - generic [ref=f10e1110]:
+                    - generic [ref=f10e1112]:
+                      - img [ref=f10e1114]
+                      - generic [ref=f10e1117]: 04 / 05 / 2026
+                    - heading "pablofuentes070707@gmail.com" [level=4]
+                  - generic [ref=f10e1119]:
+                    - heading "pablofuentes070707@gmail.com" [level=4]
+        - dialog [ref=f10e1125]:
+          - button [ref=f10e1126] [cursor=pointer]
+          - heading "Modifier ce document ?" [level=3] [ref=f10e1130]
+          - paragraph [ref=f10e1133]:
+            - text: Si vous le faites, ses champs de signature
+            - generic [ref=f10e1134]: et d’initiales seront effacés,
+            - text: et vous devrez renvoyer le document afin que les destinataires signent la version mise à jour.
+          - generic [ref=f10e1135]:
+            - button "Modifier le document" [active] [ref=f10e1138] [cursor=pointer]
+            - button "Annuler" [ref=f10e1141] [cursor=pointer]
+    - generic [ref=e9]:
+      - generic:
+        - img "PandaDoc"
+        - button "PandaDoc" [ref=e10] [cursor=pointer]:
+          - generic [ref=e11]:
+            - generic: PandaDoc
+      - generic [ref=e13]:
+        - button "New document" [ref=e14] [cursor=pointer]: New document
+        - generic:
+          - generic:
+            - button "Accueil" [ref=e17] [cursor=pointer]:
+              - generic: Accueil
+            - button "Documents" [ref=e20] [cursor=pointer]:
+              - generic: Documents
+            - button "Modèles" [ref=e23] [cursor=pointer]:
+              - generic: Modèles
+            - button "Contacts" [ref=e26] [cursor=pointer]:
+              - generic: Contacts
+      - generic:
+        - generic:
+          - button "Inviter des utilisateurs" [ref=e30] [cursor=pointer]:
+            - generic: Inviter des utilisateurs
+          - button "Paramètres" [ref=e34] [cursor=pointer]:
+            - generic: Paramètres
+  - iframe [ref=e39]:
+    
+  - generic: Cookies Settings

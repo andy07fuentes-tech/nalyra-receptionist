@@ -1,0 +1,108 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - img "Anvela" [ref=e4]
+    - generic [ref=e5]:
+      - heading "CONTRAT DE SERVICE & ÉTAT DE TRAVAIL (SOW)" [level=1] [ref=e6]
+      - paragraph [ref=e7]: "Dernière mise à jour : Mai 2026 · Anvela Inc."
+  - generic [ref=e8]:
+    - generic [ref=e9]: Informations du Client
+    - generic [ref=e11]: "Nom de l'entreprise :"
+    - generic [ref=e14]: "Représentant :"
+    - generic [ref=e17]: "Adresse :"
+  - generic [ref=e19]:
+    - generic [ref=e20]: 1. Forfait Sélectionné et Engagement
+    - table [ref=e21]:
+      - rowgroup [ref=e22]:
+        - row "Forfait Frais de Mise en Service Frais Mensuel Durée Minimale" [ref=e23]:
+          - columnheader [ref=e24]
+          - columnheader "Forfait" [ref=e25]
+          - columnheader "Frais de Mise en Service" [ref=e26]
+          - columnheader "Frais Mensuel" [ref=e27]
+          - columnheader "Durée Minimale" [ref=e28]
+      - rowgroup [ref=e29]:
+        - row "Night Shift (Essential) Gratuit 199 $ / mois 3 Mois" [ref=e30]:
+          - cell [ref=e31]
+          - cell "Night Shift (Essential)" [ref=e33]
+          - cell "Gratuit" [ref=e34]
+          - cell "199 $ / mois" [ref=e35]
+          - cell "3 Mois" [ref=e36]
+        - row "Co-Pilot 197 $ 449 $ / mois 3 Mois" [ref=e37]:
+          - cell [ref=e38]
+          - cell "Co-Pilot" [ref=e40]
+          - cell "197 $" [ref=e41]
+          - cell "449 $ / mois" [ref=e42]
+          - cell "3 Mois" [ref=e43]
+        - row "Anvela Signature 497 $ 697 $ / mois 6 Mois" [ref=e44]:
+          - cell [ref=e45]
+          - cell "Anvela Signature" [ref=e47]
+          - cell "497 $" [ref=e48]
+          - cell "697 $ / mois" [ref=e49]
+          - cell "6 Mois" [ref=e50]
+    - list [ref=e51]:
+      - listitem [ref=e52]:
+        - text: •
+        - strong [ref=e53]: "Période Initiale :"
+        - text: Le Client s'engage pour la Durée Minimale indiquée ci-dessus afin de permettre l'optimisation de l'IA et la stabilité de l'intégration.
+      - listitem [ref=e54]:
+        - text: •
+        - strong [ref=e55]: "Renouvellement :"
+        - text: Après la Période Initiale, ce contrat se renouvelle automatiquement de mois en mois.
+      - listitem [ref=e56]:
+        - text: •
+        - strong [ref=e57]: "Résiliation :"
+        - text: Suite à la Période Initiale, le Client peut résilier avec un préavis écrit de 30 jours.
+  - generic [ref=e58]:
+    - generic [ref=e59]: 2. Description des Services d'Anvela
+    - paragraph [ref=e60]:
+      - text: Anvela déploiera et gérera
+      - strong [ref=e61]: "\"Mila\""
+      - text: ", une solution de réception vocale intelligente, incluant :"
+    - list [ref=e62]:
+      - listitem [ref=e63]:
+        - text: •
+        - strong [ref=e64]: "Architecture Vocale Propriétaire :"
+        - text: Utilisation de modèles de langage avancés pour des conversations naturelles et fluides.
+      - listitem [ref=e65]:
+        - text: •
+        - strong [ref=e66]: "Logique d'Automatisation Anvela :"
+        - text: Programmation de flux de travail personnalisés pour la gestion des rendez-vous et la qualification des prospects.
+      - listitem [ref=e67]:
+        - text: •
+        - strong [ref=e68]: "Base de Données Cloud :"
+        - text: Synchronisation et archivage sécurisé des données d'appels en temps réel.
+      - listitem [ref=e69]:
+        - text: •
+        - strong [ref=e70]: "Système de Notification SMS :"
+        - text: Envoi automatisé de confirmations et rappels de rendez-vous.
+  - generic [ref=e71]:
+    - generic [ref=e72]: 3. Protection des Données (Loi 25)
+    - list [ref=e73]:
+      - listitem [ref=e74]:
+        - text: •
+        - strong [ref=e75]: "Consentement :"
+        - text: Le Client est responsable d'informer ses appelants que les conversations sont enregistrées et traitées par un système automatisé à des fins de service.
+      - listitem [ref=e76]:
+        - text: •
+        - strong [ref=e77]: "Autorisation d'enregistrement :"
+        - text: Le Client autorise expressément Anvela à enregistrer les appels entrants reçus sur les numéros configurés dans le cadre du service.
+      - listitem [ref=e78]:
+        - text: •
+        - strong [ref=e79]: "Processeurs Tiers :"
+        - text: Les données transitent par des infrastructures technologiques tierces sécurisées, tel que détaillé dans la Politique de Confidentialité d'Anvela (
+        - strong [ref=e80]: anvela.ca/privacy
+        - text: ).
+  - generic [ref=e81]:
+    - generic [ref=e82]: 4. Limitation de Responsabilité
+    - paragraph [ref=e83]: Anvela fournit un service basé sur l'IA générative. Le Client reconnaît que la technologie peut occasionnellement produire des erreurs d'interprétation (hallucinations). Anvela ne peut être tenue responsable des erreurs ou réponses inexactes générées par les modèles d'intelligence artificielle. La responsabilité totale d'Anvela est limitée au montant mensuel payé par le Client pour le mois en cours.
+  - generic [ref=e84]:
+    - generic [ref=e85]: Signatures
+    - generic [ref=e86]:
+      - generic [ref=e87]:
+        - heading "Signature du Client" [level=4] [ref=e88]
+        - generic [ref=e90]: Signature
+        - generic [ref=e93]: Date
+      - generic [ref=e94]:
+        - heading "Anvela Inc. (Pablo Fuentes)" [level=4] [ref=e95]
+        - generic [ref=e97]: Signature
+        - generic [ref=e100]: Date
+  - generic [ref=e101]: Ce document constitue un accord légalement contraignant entre les parties signataires. © Anvela Inc. – anvela.ca

@@ -63,45 +63,7 @@ export function HorizontalGallery() {
       sliderEl.addEventListener('mouseenter', () => gsap.to(gsap.getTweensOf(sliderEl), { timeScale: 0.2, duration: 0.5 }));
       sliderEl.addEventListener('mouseleave', () => gsap.to(gsap.getTweensOf(sliderEl), { timeScale: 1, duration: 0.5 }));
 
-      const pageWrapper = (document.querySelector('.min-h-screen.bg-slate-50') || document.body) as HTMLElement;
 
-      const applyColors = (p: number, forward: boolean) => {
-        const from = forward;
-        const bg    = gsap.utils.interpolate(from ? '#f8fafc' : '#050505', from ? '#050505' : '#f8fafc', p);
-        const title = gsap.utils.interpolate(from ? '#171717' : '#ffffff', from ? '#ffffff' : '#171717', p);
-        const script= gsap.utils.interpolate(from ? '#2563eb' : '#60a5fa', from ? '#60a5fa' : '#2563eb', p);
-        const cardBg= gsap.utils.interpolate(from ? '#fdfdfd' : '#111111', from ? '#111111' : '#fdfdfd', p);
-        const cardBd= gsap.utils.interpolate(from ? '#f5f5f5' : '#262626', from ? '#262626' : '#f5f5f5', p);
-        const border= gsap.utils.interpolate(from ? '#f5f5f5' : '#1a1a1a', from ? '#1a1a1a' : '#f5f5f5', p);
-
-        pageWrapper.style.backgroundColor = bg;
-        (compEl as HTMLElement).style.borderTopColor = border;
-        (compEl as HTMLElement).style.borderBottomColor = border;
-        document.querySelectorAll<HTMLElement>('.gallery-title').forEach(el => { el.style.color = title; });
-        document.querySelectorAll<HTMLElement>('.gallery-script').forEach(el => { el.style.color = script; });
-        document.querySelectorAll<HTMLElement>('.gallery-card-bg').forEach(el => {
-          el.style.backgroundColor = cardBg;
-          el.style.borderColor = cardBd;
-        });
-      };
-
-      // ── White → Black (gallery enters) ───────────────────────────
-      ScrollTrigger.create({
-        trigger: compEl,
-        start: 'top 65%',
-        end: 'top 10%',
-        scrub: 1,
-        onUpdate: self => applyColors(self.progress, true),
-      });
-
-      // ── Black → White (AnvelaAdvantage enters) ───────────────────
-      ScrollTrigger.create({
-        trigger: '#anvela-advantage',
-        start: 'top 70%',
-        end: 'top 15%',
-        scrub: 1,
-        onUpdate: self => applyColors(self.progress, false),
-      });
 
     }, component);
 
@@ -161,7 +123,7 @@ export function HorizontalGallery() {
               }`}>
                 {t(item.subtitleKey)}
               </p>
-              <h3 className="text-blue-300 font-serif text-sm md:text-base leading-tight">
+              <h3 className="text-neutral-800 font-serif text-sm md:text-base leading-tight">
                 {t(item.titleKey)}
               </h3>
             </div>

@@ -46,7 +46,8 @@ export default function LandingPage() {
             timer = setTimeout(() => {
                 // Animate sections on scroll (exclude hero which handles its own entrance)
                 // Exclude #hero (own animation) and #pain-points (contains sticky children — GSAP transform breaks CSS sticky)
-                const sections = document.querySelectorAll('section:not(#hero):not(#pain-points)');
+                // Exclude #album-cube (contains a GSAP pin — animating transform breaks the pin spacer)
+                const sections = document.querySelectorAll('section:not(#hero):not(#pain-points):not(#album-cube)');
 
                 sections.forEach((section) => {
                     gsap.fromTo(
@@ -66,21 +67,6 @@ export default function LandingPage() {
                     );
                 });
 
-                // Smooth white → dark background transition as CinematicShowcase enters
-                const cinematic = document.querySelector('#cinematic-showcase');
-                const pageBg = document.querySelector<HTMLElement>('.page-bg-root');
-                if (cinematic && pageBg) {
-                    gsap.to(pageBg, {
-                        backgroundColor: '#020202',
-                        ease: 'none',
-                        scrollTrigger: {
-                            trigger: cinematic,
-                            start: 'top 100%',
-                            end: 'top 30%',
-                            scrub: true,
-                        }
-                    });
-                }
 
                 // Refresh ScrollTrigger
                 ScrollTrigger.refresh();
