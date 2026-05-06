@@ -1,8 +1,54 @@
+import { useRef, useLayoutEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { OptimizedVideo } from '../components/OptimizedVideo';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export function CinematicShowcase() {
     const { t } = useLanguage();
+    const sectionRef = useRef<HTMLElement>(null);
+
+    useLayoutEffect(() => {
+        let ctx = gsap.context(() => {
+            // White to Black transition for the section
+            gsap.fromTo(
+                sectionRef.current,
+                { 
+                    backgroundColor: "#ffffff",
+                    color: "#0f172a" // slate-900
+                },
+                {
+                    backgroundColor: "#020202",
+                    color: "#ffffff",
+                    scrollTrigger: {
+                        trigger: sectionRef.current,
+                        start: "top 50%",
+                        end: "top 20%",
+                        scrub: 1,
+                    }
+                }
+            );
+
+            // Transition descriptions from dark gray to light gray
+            gsap.fromTo(
+                ".cinematic-desc",
+                { color: "#475569" }, // slate-600
+                {
+                    color: "#94a3b8", // slate-400
+                    scrollTrigger: {
+                        trigger: sectionRef.current,
+                        start: "top 50%",
+                        end: "top 20%",
+                        scrub: 1,
+                    }
+                }
+            );
+        }, sectionRef);
+
+        return () => ctx.revert();
+    }, []);
 
     const steps = [
         {
@@ -36,9 +82,9 @@ export function CinematicShowcase() {
     ];
 
     return (
-        <section id="cinematic-showcase" className="bg-[#020202] text-white py-24 md:py-32 relative overflow-hidden">
-            {/* Soft fade from white page above */}
-            <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-slate-50 to-transparent pointer-events-none z-10" />
+        <section ref={sectionRef} id="cinematic-showcase" className="py-24 md:py-32 relative overflow-hidden">
+            {/* Soft fade from white page above - removed to allow full section color transition */}
+            
             {/* Background: floating orbs + dot grid */}
             <div className="cin-orb cin-orb-1" />
             <div className="cin-orb cin-orb-2" />
@@ -58,7 +104,7 @@ export function CinematicShowcase() {
                                     <span className="text-blue-500/50 mr-4">0{step.id}</span>
                                     {step.title}
                                 </h3>
-                                <p className="text-slate-400 text-lg md:text-xl leading-relaxed max-w-lg">
+                                <p className="cinematic-desc text-lg md:text-xl leading-relaxed max-w-lg">
                                     {step.description}
                                 </p>
                             </div>
