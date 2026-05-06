@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { Send, CheckCircle, AlertCircle, Phone, Mail, Clock } from 'lucide-react';
+import { Send, CheckCircle, AlertCircle, Phone, Mail, Clock, MessageSquare, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 
 // Icon lookup map for dynamic icon resolution from config strings
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  Phone, Mail, Clock,
+  Phone, Mail, Clock, MessageSquare
 };
 
 export function ContactForm() {
@@ -13,8 +13,9 @@ export function ContactForm() {
 
   // Define contact info
   const contactInfo = [
-    { icon: 'Phone', label: t('contact.contactItems.phone.label'), value: t('contact.contactItems.phone.value'), subtext: t('contact.contactItems.phone.subtext') },
-    { icon: 'Mail', label: t('contact.contactItems.email.label'), value: t('contact.contactItems.email.value'), subtext: t('contact.contactItems.email.subtext') },
+    { icon: 'Phone', label: t('contact.contactItems.phone.label'), value: t('contact.contactItems.phone.value'), subtext: t('contact.contactItems.phone.subtext'), link: 'tel:+14388147578' },
+    { icon: 'MessageSquare', label: t('contact.contactItems.sms.label'), value: t('contact.contactItems.sms.value'), subtext: t('contact.contactItems.sms.subtext'), link: 'sms:+15146792107' },
+    { icon: 'Mail', label: t('contact.contactItems.email.label'), value: t('contact.contactItems.email.value'), subtext: t('contact.contactItems.email.subtext'), link: 'mailto:pablo@anvela.ca' },
     { icon: 'Clock', label: t('contact.contactItems.hours.label'), value: t('contact.contactItems.hours.value'), subtext: t('contact.contactItems.hours.subtext') },
   ];
 
@@ -104,6 +105,35 @@ export function ContactForm() {
               <div className="space-y-4" role="list" aria-label="Contact information">
                 {contactInfo.map((item, index) => {
                   const IconComponent = iconMap[item.icon];
+                  
+                  const ContentBlock = (
+                    <div className={`group flex items-center gap-4 p-4 bg-white rounded-lg border border-slate-200 shadow-sm transition-all ${item.link ? 'cursor-pointer hover:border-blue-500 hover:bg-blue-50/30 hover:shadow-md' : ''}`}>
+                      <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 transition-colors ${item.link?.startsWith('sms:') ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/30 group-hover:bg-blue-700 group-hover:scale-105' : 'bg-blue-50 text-blue-600 group-hover:bg-blue-100'}`}>
+                        {IconComponent && <IconComponent className="w-5 h-5" />}
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-xs text-slate-400 uppercase tracking-wider mb-1">{item.label}</p>
+                        <p className="text-dark-theme font-medium">{item.value}</p>
+                        <p className="text-sm text-slate-500">{item.subtext}</p>
+                      </div>
+                      
+                      {item.link && (
+                        <div className="flex-shrink-0 ml-2">
+                          {item.link.startsWith('sms:') ? (
+                            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider rounded-full group-hover:bg-blue-600 group-hover:text-white transition-all shadow-sm group-hover:shadow-md">
+                              {item.label}
+                              <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                            </span>
+                          ) : (
+                            <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-400 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-sm group-hover:shadow-blue-500/30 group-hover:scale-110">
+                              <ArrowRight className="w-4 h-4" />
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  );
+
                   return (
                     <motion.div
                       key={item.label}
@@ -111,17 +141,15 @@ export function ContactForm() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true, amount: 0.1 }}
                       transition={{ duration: 0.6, delay: 0.2 + index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                      className="flex items-start gap-4 p-4 bg-white rounded-lg border border-slate-200 shadow-sm hover:border-blue-500/30 transition-colors"
                       role="listitem"
                     >
-                      <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center flex-shrink-0">
-                        {IconComponent && <IconComponent className="w-5 h-5 text-blue-600" />}
-                      </div>
-                      <div>
-                        <p className="text-xs text-slate-400 uppercase tracking-wider mb-1">{item.label}</p>
-                        <p className="text-dark-theme font-medium">{item.value}</p>
-                        <p className="text-sm text-slate-500">{item.subtext}</p>
-                      </div>
+                      {item.link ? (
+                        <a href={item.link} className="block w-full outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg">
+                          {ContentBlock}
+                        </a>
+                      ) : (
+                        ContentBlock
+                      )}
                     </motion.div>
                   );
                 })}
