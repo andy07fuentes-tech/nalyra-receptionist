@@ -145,16 +145,20 @@ function DemoCallButton({ isScrolled }: { isScrolled: boolean }) {
   }
 
   return (
-    <button
-      onClick={startCall}
-      className={`flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-widest transition-all px-3 py-1.5 rounded-full border
-        ${isScrolled
-          ? 'text-blue-600 border-blue-600 hover:bg-blue-600 hover:text-white'
-          : 'text-blue-500 border-blue-500/30 hover:bg-blue-500/5 hover:text-white'}`}
-    >
-      <Phone className="w-3.5 h-3.5" />
-      {t('nav.freeTrial')}
-    </button>
+    <div className="relative overflow-hidden rounded-full">
+      <div className="btn-shimmer pointer-events-none absolute inset-0 w-1/3 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+      <button
+        onClick={startCall}
+        className={`relative flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-widest transition-all px-3 py-1.5 rounded-full border
+          ${isScrolled
+            ? 'text-blue-600 border-blue-600 hover:bg-blue-600 hover:text-white'
+            : 'text-blue-500 border-blue-500/30 hover:bg-blue-500/5 hover:text-white'}`}
+      >
+        <span className="live-dot inline-block w-1.5 h-1.5 rounded-full bg-green-400 flex-shrink-0" />
+        <Phone className="w-3.5 h-3.5" />
+        {t('nav.freeTrial')}
+      </button>
+    </div>
   );
 }
 

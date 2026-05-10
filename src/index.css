@@ -907,4 +907,20 @@ html, body {
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+
+  @keyframes btn-shimmer {
+    0%   { transform: translateX(-130%) skewX(-20deg); }
+    100% { transform: translateX(230%)  skewX(-20deg); }
+  }
+  .btn-shimmer {
+    animation: btn-shimmer 3.5s ease-in-out infinite;
+  }
+
+  @keyframes live-dot-glow {
+    0%, 100% { opacity: 1;   box-shadow: 0 0 5px 1px #4ade80; }
+    50%       { opacity: 0.5; box-shadow: 0 0 10px 3px #4ade80; }
+  }
+  .live-dot {
+    animation: live-dot-glow 1.8s ease-in-out infinite;
+  }
 }
