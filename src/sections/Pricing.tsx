@@ -42,8 +42,7 @@ function RoiStatCard({ animateTo, prefix = '', suffix = '', Icon, accentColor, g
     const { t } = useLanguage();
     const cardRef = useRef<HTMLDivElement>(null);
     const [inView, setInView] = useState(false);
-    const [shimmerDone, setShimmerDone] = useState(false);
-    const count = useCountUp(animateTo, 1800, shimmerDone);
+    const count = useCountUp(animateTo, 1600, inView);
 
     useEffect(() => {
         const el = cardRef.current;
@@ -56,34 +55,22 @@ function RoiStatCard({ animateTo, prefix = '', suffix = '', Icon, accentColor, g
         return () => obs.disconnect();
     }, []);
 
-    useEffect(() => {
-        if (!inView) return;
-        const timer = setTimeout(() => setShimmerDone(true), 900 + delay);
-        return () => clearTimeout(timer);
-    }, [inView, delay]);
-
     return (
         <div
             ref={cardRef}
-            className="relative rounded-2xl bg-slate-900 overflow-hidden"
-            style={{ borderTop: `2px solid ${accentColor}` }}
+            className="relative rounded-2xl bg-slate-900 overflow-hidden transition-all duration-700"
+            style={{
+                borderTop: `2px solid ${accentColor}`,
+                opacity: inView ? 1 : 0,
+                transform: inView ? 'translateY(0)' : 'translateY(22px)',
+                transitionDelay: `${delay}ms`,
+            }}
         >
             <div
                 className="absolute -top-6 -left-6 w-28 h-28 rounded-full blur-2xl opacity-20 pointer-events-none"
                 style={{ background: glowColor }}
             />
-            {!shimmerDone && inView && (
-                <div className="absolute inset-0 z-10 rounded-2xl roi-card-shimmer" />
-            )}
-            {!shimmerDone && (
-                <div className="p-5 md:p-6">
-                    <div className="w-8 h-8 rounded-full roi-skeleton mb-4" />
-                    <div className="w-20 h-9 rounded-lg roi-skeleton mb-3" />
-                    <div className="w-full h-3 rounded roi-skeleton mb-2" />
-                    <div className="w-3/4 h-3 rounded roi-skeleton" />
-                </div>
-            )}
-            <div className={`relative p-5 md:p-6 transition-all duration-700 ${shimmerDone ? 'opacity-100 translate-y-0' : 'opacity-0 absolute inset-0 pointer-events-none'}`}>
+            <div className="relative p-5 md:p-6">
                 <div
                     className="w-9 h-9 rounded-xl flex items-center justify-center mb-4"
                     style={{ background: `${accentColor}20`, border: `1px solid ${accentColor}40` }}
