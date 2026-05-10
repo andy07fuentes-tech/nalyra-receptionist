@@ -70,6 +70,10 @@ function RoiStatCard({ animateTo, prefix = '', suffix = '', Icon, accentColor, g
                 className="absolute -top-6 -left-6 w-28 h-28 rounded-full blur-2xl opacity-20 pointer-events-none"
                 style={{ background: glowColor }}
             />
+            <div
+                className="btn-shimmer pointer-events-none absolute inset-0 w-1/2 bg-gradient-to-r from-transparent via-white/[0.06] to-transparent"
+                style={{ animationDelay: `${delay * 1.5}ms` }}
+            />
             <div className="relative p-5 md:p-6">
                 <div
                     className="w-9 h-9 rounded-xl flex items-center justify-center mb-4"
