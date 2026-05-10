@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Instagram, Linkedin, Twitter, ArrowUp, Youtube, MapPin, Phone, Mail } from 'lucide-react';
+import { Instagram, Linkedin, Twitter, ArrowUp, Youtube, MapPin, Phone, Mail, Calendar } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const QuebecFlag = () => (
@@ -41,14 +41,14 @@ export function Footer() {
         title: linkGroupsData.product.title,
         links: linkGroupsData.product.links.map((name: string, i: number) => ({
           name,
-          href: ['#feature-showcase', '#pricing', '#faq', '#contact'][i]
+          href: ['#feature-showcase', '#pricing', '#faq'][i]
         })),
       },
       {
         title: linkGroupsData.company.title,
         links: linkGroupsData.company.links.map((name: string, i: number) => ({
           name,
-          href: ['#story', '#contact', '#faq', '#contact'][i]
+          href: ['#founder', '#contact'][i]
         })),
       },
     ];
@@ -69,28 +69,38 @@ export function Footer() {
 
   return (
     <footer className="relative bg-white font-sans" role="contentinfo">
-      {/* 1. Newsletter Section - Cream Background */}
-      <div className="bg-[#E8E3DD] py-20">
+      {/* 1. CTA Strip */}
+      <div className="bg-[#0a1628] py-20">
         <div className="container-custom">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-10">
-            <h2 className="text-4xl md:text-5xl font-serif text-blue-900 max-w-md leading-tight">
-              {t('footer.newsletterHeading')}
-            </h2>
-            <div className="w-full lg:max-w-xl">
-              <form className="relative flex items-center border-b border-blue-900/20 pb-2 group focus-within:border-blue-900 transition-colors duration-300" onSubmit={(e) => e.preventDefault()}>
-                <input
-                  type="email"
-                  placeholder={t('footer.newsletterPlaceholder')}
-                  className="bg-transparent border-none focus:ring-0 w-full py-4 text-xl text-blue-900 placeholder:text-blue-900/40 font-light"
-                  required
-                />
-                <button
-                  type="submit"
-                  className="bg-blue-900 text-white px-8 py-3 text-sm tracking-widest uppercase hover:bg-blue-800 transition-all duration-300 ml-4 whitespace-nowrap"
-                >
-                  {t('footer.newsletterButtonText')}
-                </button>
-              </form>
+            <div className="space-y-3 max-w-xl">
+              <p className="text-blue-400 text-xs uppercase tracking-[0.25em] font-bold">
+                Offre de lancement · Premier mois à −50%
+              </p>
+              <h2 className="text-4xl md:text-5xl font-serif text-white leading-tight">
+                Prêt à ne plus jamais manquer un appel ?
+              </h2>
+              <p className="text-white/50 text-sm">
+                Opérationnel en moins de 48h. Sans engagement technique.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 flex-shrink-0">
+              <a
+                href="https://calendly.com/pablo-anvela/appel-decouverte"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 px-8 py-4 bg-blue-500 hover:bg-blue-400 text-white font-bold uppercase tracking-wider text-sm transition-all duration-300 rounded-lg shadow-lg shadow-blue-500/20 hover:shadow-blue-400/30 active:scale-95"
+              >
+                <Calendar className="w-4 h-4" />
+                Prendre rendez-vous
+              </a>
+              <a
+                href="tel:+14388147578"
+                className="inline-flex items-center gap-2.5 px-8 py-4 border border-white/20 hover:border-white/40 text-white/70 hover:text-white font-medium text-sm transition-all duration-300 rounded-lg"
+              >
+                <Phone className="w-4 h-4" />
+                (438) 814-7578
+              </a>
             </div>
           </div>
         </div>

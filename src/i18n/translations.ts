@@ -192,7 +192,7 @@ export const translations = {
           photo3: {
             title: "Élimination de la 'Corvée Administrative'",
             logic: "L'IA gère les appels FAQ à haut volume et faible valeur (horaires, adresse, assurances, tarifs de base).",
-            benefit: "Votre personnel peut se concentrer sur des tâches à haute valeur ajoutée, comme rassurer un patient anxieux.",
+            benefit: "Votre personnel peut se concentrer sur des tâches à haute valeur ajoutée, comme accueillir le client qui est devant eux.",
             alt: "Support client et interaction"
           },
           photo4: {
@@ -726,11 +726,11 @@ export const translations = {
       linkGroups: {
         product: {
           title: "Produit",
-          links: ["Fonctionnalités", "Tarification", "Intégrations", "API"],
+          links: ["Fonctionnalités", "Tarifs", "FAQ"],
         },
         company: {
-          title: "Entreprise",
-          links: ["À Propos", "Carrières", "Blog", "Presse"],
+          title: "Anvela",
+          links: ["À Propos", "Contact"],
         },
       },
       legalLinks: ["Politique de Confidentialité", "Conditions de Service", "Politique de Cookies"],
@@ -1469,11 +1469,11 @@ export const translations = {
       linkGroups: {
         product: {
           title: "Product",
-          links: ["Features", "Pricing", "Integrations", "API"],
+          links: ["Features", "Pricing", "FAQ"],
         },
         company: {
-          title: "Company",
-          links: ["About Us", "Careers", "Blog", "Press"],
+          title: "Anvela",
+          links: ["About", "Contact"],
         },
       },
       legalLinks: ["Privacy Policy", "Terms of Service", "Cookie Policy"],
@@ -2188,11 +2188,11 @@ export const translations = {
       linkGroups: {
         product: {
           title: "Producto",
-          links: ["Funciones", "Precios", "Integraciones", "API"],
+          links: ["Funciones", "Precios", "FAQ"],
         },
         company: {
-          title: "Empresa",
-          links: ["Sobre Nosotros", "Carreras", "Blog", "Prensa"],
+          title: "Anvela",
+          links: ["Sobre Nosotros", "Contacto"],
         },
       },
       legalLinks: ["Política de Privacidad", "Términos de Servicio", "Política de Cookies"],
@@ -2907,11 +2907,11 @@ export const translations = {
       linkGroups: {
         product: {
           title: "Prodotto",
-          links: ["Funzionalità", "Prezzi", "Integrazioni", "API"],
+          links: ["Funzionalità", "Prezzi", "FAQ"],
         },
         company: {
-          title: "Azienda",
-          links: ["Chi Siamo", "Carriere", "Blog", "Stampa"],
+          title: "Anvela",
+          links: ["Chi Siamo", "Contatto"],
         },
       },
       legalLinks: ["Informativa Privacy", "Termini di Servizio", "Politica Cookie"],

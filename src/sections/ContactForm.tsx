@@ -21,11 +21,8 @@ export function ContactForm() {
 
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
     phone: '',
     businessName: '',
-    businessType: '',
-    message: ''
   });
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -42,7 +39,7 @@ export function ContactForm() {
       });
       if (!res.ok) throw new Error('Failed');
       setStatus('success');
-      setFormData({ name: '', email: '', phone: '', businessName: '', businessType: '', message: '' });
+      setFormData({ name: '', phone: '', businessName: '' });
     } catch {
       setStatus('error');
       setTimeout(() => setStatus('idle'), 5000);
@@ -198,60 +195,62 @@ export function ContactForm() {
                   </h3>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6" noValidate>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    {/* Name */}
-                    <div>
-                      <label htmlFor="contact-name" className="block text-sm text-slate-700 font-medium mb-2">
-                        {t('contact.form.nameLabel')} <span className="text-blue-500">*</span>
-                      </label>
-                      <input
-                        id="contact-name"
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        placeholder={t('contact.form.namePlaceholder')}
-                        autoComplete="name"
-                        className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-dark-theme placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
-                      />
-                    </div>
+                <div className="space-y-6">
+                  {/* Primary CTA — Calendly */}
+                  <a
+                    href="https://calendly.com/pablo-anvela/appel-decouverte"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-4 bg-blue-600 text-white rounded-lg font-bold uppercase tracking-wider shadow-lg hover:bg-blue-700 hover:shadow-blue-500/25 active:scale-95 transition-all flex items-center justify-center gap-2"
+                  >
+                    <Phone className="w-4 h-4" />
+                    {t('contact.form.calendarButton')}
+                  </a>
 
-                    {/* Phone */}
-                    <div>
-                      <label htmlFor="contact-phone" className="block text-sm text-slate-700 font-medium mb-2">
-                        {t('contact.form.phoneLabel')} <span className="text-blue-500">*</span>
-                      </label>
-                      <input
-                        id="contact-phone"
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        required
-                        placeholder={t('contact.form.phonePlaceholder')}
-                        autoComplete="tel"
-                        className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-dark-theme placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
-                      />
-                    </div>
+                  <div className="flex items-center gap-3">
+                    <div className="flex-1 h-px bg-slate-200" />
+                    <span className="text-xs text-slate-400 font-medium">{t('contact.form.calendarOr')}</span>
+                    <div className="flex-1 h-px bg-slate-200" />
+                  </div>
 
-                    {/* Email */}
-                    <div>
-                      <label htmlFor="contact-email" className="block text-sm text-slate-700 font-medium mb-2">
-                        {t('contact.form.emailLabel')} <span className="text-blue-500">*</span>
-                      </label>
-                      <input
-                        id="contact-email"
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        placeholder={t('contact.form.emailPlaceholder')}
-                        autoComplete="email"
-                        className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-dark-theme placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
-                      />
+                  {/* Secondary — Quick form */}
+                  <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      {/* Name */}
+                      <div>
+                        <label htmlFor="contact-name" className="block text-sm text-slate-700 font-medium mb-2">
+                          {t('contact.form.nameLabel')} <span className="text-blue-500">*</span>
+                        </label>
+                        <input
+                          id="contact-name"
+                          type="text"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          required
+                          placeholder={t('contact.form.namePlaceholder')}
+                          autoComplete="name"
+                          className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-dark-theme placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
+                        />
+                      </div>
+
+                      {/* Phone */}
+                      <div>
+                        <label htmlFor="contact-phone" className="block text-sm text-slate-700 font-medium mb-2">
+                          {t('contact.form.phoneLabel')} <span className="text-blue-500">*</span>
+                        </label>
+                        <input
+                          id="contact-phone"
+                          type="tel"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          required
+                          placeholder={t('contact.form.phonePlaceholder')}
+                          autoComplete="tel"
+                          className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-dark-theme placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
+                        />
+                      </div>
                     </div>
 
                     {/* Business Name */}
@@ -270,82 +269,31 @@ export function ContactForm() {
                         className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-dark-theme placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
                       />
                     </div>
-                  </div>
 
-                  {/* Business Type */}
-                  <div>
-                    <label htmlFor="contact-business-type" className="block text-sm text-slate-700 font-medium mb-2">
-                      {t('contact.form.businessTypeLabel')}
-                    </label>
-                    <select
-                      id="contact-business-type"
-                      name="businessType"
-                      value={formData.businessType}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-dark-theme focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
+                    {/* Submit Button */}
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full py-4 border-2 border-blue-600 text-blue-600 rounded-lg font-bold uppercase tracking-wider hover:bg-blue-50 active:scale-95 transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      <option value="">—</option>
-                      {(t('contact.form.businessTypeOptions') as unknown as string[]).map((option: string) => (
-                        <option key={option} value={option}>{option}</option>
-                      ))}
-                    </select>
-                  </div>
+                      {isSubmitting ? (
+                        <>
+                          <div className="w-5 h-5 border-2 border-blue-400/30 border-t-blue-600 rounded-full animate-spin" />
+                          {t('contact.form.submittingText')}
+                        </>
+                      ) : (
+                        <>
+                          <Send className="w-4 h-4" />
+                          {t('contact.form.submitText')}
+                        </>
+                      )}
+                    </button>
 
-                  {/* Message */}
-                  <div>
-                    <label htmlFor="contact-message" className="block text-sm text-slate-700 font-medium mb-2">
-                      {t('contact.form.messageLabel')}
-                    </label>
-                    <textarea
-                      id="contact-message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      rows={4}
-                      placeholder={t('contact.form.messagePlaceholder')}
-                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-dark-theme placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all resize-none"
-                    />
-                  </div>
-
-                  {/* Submit Button */}
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full py-4 bg-blue-600 text-white rounded-lg font-bold uppercase tracking-wider shadow-lg hover:bg-blue-700 hover:shadow-blue-500/25 active:scale-95 transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                        {t('contact.form.submittingText')}
-                      </>
-                    ) : (
-                      <>
-                        <Send className="w-4 h-4" />
-                        {t('contact.form.submitText')}
-                      </>
-                    )}
-                  </button>
-
-                  <div className="flex items-center gap-3">
-                    <div className="flex-1 h-px bg-slate-200" />
-                    <span className="text-xs text-slate-400 font-medium">{t('contact.form.calendarOr')}</span>
-                    <div className="flex-1 h-px bg-slate-200" />
-                  </div>
-
-                  <a
-                    href="https://calendly.com/pablo-anvela/appel-decouverte"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full py-4 border-2 border-blue-600 text-blue-600 rounded-lg font-bold uppercase tracking-wider hover:bg-blue-50 active:scale-95 transition-all flex items-center justify-center gap-2"
-                  >
-                    <Phone className="w-4 h-4" />
-                    {t('contact.form.calendarButton')}
-                  </a>
-
-                  <p className="text-xs text-slate-400 text-center font-medium">
-                    {t('contact.privacyNotice')}
-                  </p>
-                </form>
+                    <p className="text-xs text-slate-400 text-center font-medium">
+                      {t('contact.privacyNotice')}
+                    </p>
+                  </form>
+                </div>
               )}
             </motion.div>
           </div>
