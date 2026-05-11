@@ -3,7 +3,7 @@ import { Navigation } from '../sections/Navigation';
 import { Hero } from '../sections/Hero';
 import { MissedCalls } from '../sections/MissedCalls';
 import { PainPoints } from '../sections/PainPoints';
-import { VideoDemo } from '../sections/VideoDemo';
+import { DemoShowcase } from '../sections/DemoShowcase';
 import { FeatureShowcase } from '../sections/FeatureShowcase';
 import { HorizontalGallery } from '../sections/HorizontalGallery';
 import { AnvelaAdvantage } from '../sections/AnvelaAdvantage';
@@ -96,7 +96,7 @@ export default function LandingPage() {
                     <MissedCalls />
                     <CinematicShowcase />
                     <PainPoints />
-                    <VideoDemo />
+                    {!isLoading && <DemoShowcase />}
                     <FeatureShowcase />
                     <HorizontalGallery />
                     <AnvelaAdvantage />

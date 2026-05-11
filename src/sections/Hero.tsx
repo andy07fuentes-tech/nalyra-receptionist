@@ -294,7 +294,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
                 <span className="absolute inset-0 rounded-full bg-blue-400/12 animate-ping" style={{ animationDuration: '2.2s', animationDelay: '1.1s' }} />
                 <GradientButton
                   variant="variant"
-                  onClick={() => scrollToSection('#video-demo')}
+                  onClick={() => scrollToSection('#demo-showcase')}
                   className="relative z-10 min-w-[180px] border-0 !rounded-full py-3"
                   aria-label={t('hero.videoDemo') as string}
                 >
