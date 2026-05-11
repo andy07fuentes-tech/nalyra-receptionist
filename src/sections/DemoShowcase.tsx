@@ -11,8 +11,9 @@ const retellClient = new RetellWebClient();
 
 export function DemoShowcase() {
     const { t } = useLanguage();
-    const { setIsMuted } = useAudio();
+    const { setIsMuted, setIsDimmed } = useAudio();
 
+    const video1Ref  = useRef<HTMLVideoElement>(null);
     const videoRef   = useRef<HTMLVideoElement>(null);
     const waveRef    = useRef<HTMLDivElement>(null);
     const bookingRef = useRef<HTMLDivElement>(null);
@@ -75,9 +76,14 @@ export function DemoShowcase() {
             el.classList.add('ds-badge-show');
         };
 
-        const onPause  = () => bars()?.forEach(b => { b.style.animationPlayState = 'paused'; });
-        const onPlay   = () => bars()?.forEach(b => { b.style.animationPlayState = 'running'; });
-        const onEnded  = () => bars()?.forEach(b => { b.style.animationPlayState = 'paused'; });
+        // Track how many videos are playing to know when to un-dim
+        let playingCount = 0;
+        const onAnyPlay  = () => { playingCount++; setIsDimmed(true); };
+        const onAnyStop  = () => { playingCount = Math.max(0, playingCount - 1); if (playingCount === 0) setIsDimmed(false); };
+
+        const onPause  = () => { bars()?.forEach(b => { b.style.animationPlayState = 'paused'; }); onAnyStop(); };
+        const onPlay   = () => { bars()?.forEach(b => { b.style.animationPlayState = 'running'; }); onAnyPlay(); };
+        const onEnded  = () => { bars()?.forEach(b => { b.style.animationPlayState = 'paused'; }); onAnyStop(); };
 
         const onTimeUpdate = () => {
             const t = video.currentTime;
@@ -91,11 +97,18 @@ export function DemoShowcase() {
             if (t < 91) { smsFired.current     = false; smsRef.current?.classList.remove('ds-badge-show'); }
         };
 
+        // Live call video (right frame)
         video.addEventListener('pause',      onPause);
         video.addEventListener('play',       onPlay);
         video.addEventListener('ended',      onEnded);
         video.addEventListener('timeupdate', onTimeUpdate);
         video.addEventListener('seeked',     onSeeked);
+
+        // Presentation video (left frame) — just dim, no waveform/badges
+        const v1 = video1Ref.current;
+        v1?.addEventListener('play',  onAnyPlay);
+        v1?.addEventListener('pause', onAnyStop);
+        v1?.addEventListener('ended', onAnyStop);
 
         return () => {
             video.removeEventListener('pause',      onPause);
@@ -103,8 +116,12 @@ export function DemoShowcase() {
             video.removeEventListener('ended',      onEnded);
             video.removeEventListener('timeupdate', onTimeUpdate);
             video.removeEventListener('seeked',     onSeeked);
+            v1?.removeEventListener('play',  onAnyPlay);
+            v1?.removeEventListener('pause', onAnyStop);
+            v1?.removeEventListener('ended', onAnyStop);
+            setIsDimmed(false);
         };
-    }, []);
+    }, [setIsDimmed]);
 
     const pills = [
         { icon: '🌙', key: 'availability' },
@@ -153,6 +170,7 @@ export function DemoShowcase() {
                         <div className="ds-browser-frame">
                             <div className="ds-video-wrap">
                                 <video
+                                    ref={video1Ref}
                                     src="/videos/anvela-demo.mp4"
                                     poster="/images/anvela-video-thumbnail.jpg"
                                     controls
