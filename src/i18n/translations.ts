@@ -736,6 +736,48 @@ export const translations = {
       legalLinks: ["Politique de Confidentialité", "Conditions de Service", "Politique de Cookies"],
     },
 
+    // Demo Showcase
+    demoShowcase: {
+      liveBadge: "DÉMO EN DIRECT · GARAGE PABLO",
+      title: "Découvrez",
+      titleSuffix: ", votre réceptionniste IA",
+      subtitle: "Mila répond à chaque appel en français et en anglais — prend des rendez-vous, vérifie les disponibilités, et envoie une confirmation par SMS. Automatiquement.",
+      frame1: {
+        label: "Présentation",
+        pill: "Avatar IA",
+        footerTitle: "Mila se présente",
+        footerSub: "Avatar IA · Présentation personnalisée",
+        tag: "HeyGen",
+      },
+      frame2: {
+        label: "Appel en direct",
+        pill: "EN DIRECT",
+        footerTitle: "Vrai appel · Vraie réservation",
+        footerSub: "Calendrier mis à jour · SMS envoyé automatiquement",
+        tag: "En direct",
+      },
+      pills: {
+        availability: { label: "24/7 Disponible", desc: "Ne manque aucun appel, jour et nuit" },
+        bilingual: { label: "Bilingue", desc: "Passe du FR à l'EN naturellement" },
+        speed: { label: "<2s Réponse", desc: "Voix IA en temps réel" },
+        booking: { label: "Réservation live", desc: "Vérifie le calendrier instantanément" },
+        analytics: { label: "Analytiques", desc: "Résumés post-appel" },
+        secure: { label: "Sécurisé", desc: "Données chiffrées" },
+      },
+      stats: {
+        availability: "Disponible",
+        responseTime: "Temps de réponse",
+        languages: "Langues",
+        calls: "Appels simultanés",
+      },
+      cta: {
+        primary: "Essayer un appel démo",
+        secondary: "En savoir plus →",
+        connecting: "Connexion...",
+        endCall: "Raccrocher",
+      },
+    },
+
     // Language Toggle
     language: {
       title: "Langue",
@@ -1479,6 +1521,48 @@ export const translations = {
       legalLinks: ["Privacy Policy", "Terms of Service", "Cookie Policy"],
     },
 
+    // Demo Showcase
+    demoShowcase: {
+      liveBadge: "LIVE DEMO · GARAGE PABLO",
+      title: "Meet",
+      titleSuffix: ", your AI receptionist",
+      subtitle: "Mila answers every call in French and English — books appointments, checks availability, and sends SMS confirmations. Automatically.",
+      frame1: {
+        label: "Introduction",
+        pill: "AI Avatar",
+        footerTitle: "Mila introduces herself",
+        footerSub: "AI Avatar · Personalized presentation",
+        tag: "HeyGen",
+      },
+      frame2: {
+        label: "Live call",
+        pill: "LIVE",
+        footerTitle: "Real call · Real booking",
+        footerSub: "Calendar updated · SMS sent automatically",
+        tag: "Live",
+      },
+      pills: {
+        availability: { label: "24/7 Available", desc: "Never misses a call, day or night" },
+        bilingual: { label: "Bilingual", desc: "Switches FR↔EN naturally" },
+        speed: { label: "<2s Response", desc: "Real-time AI voice" },
+        booking: { label: "Live booking", desc: "Checks calendar instantly" },
+        analytics: { label: "Analytics", desc: "Post-call summaries" },
+        secure: { label: "Secure", desc: "Encrypted data" },
+      },
+      stats: {
+        availability: "Available",
+        responseTime: "Response time",
+        languages: "Languages",
+        calls: "Simultaneous calls",
+      },
+      cta: {
+        primary: "Try a demo call",
+        secondary: "Learn more →",
+        connecting: "Connecting...",
+        endCall: "Hang up",
+      },
+    },
+
     // Language Toggle
     language: {
       title: "Language",
@@ -2198,6 +2282,48 @@ export const translations = {
       legalLinks: ["Política de Privacidad", "Términos de Servicio", "Política de Cookies"],
     },
 
+    // Demo Showcase
+    demoShowcase: {
+      liveBadge: "DEMO EN VIVO · GARAGE PABLO",
+      title: "Conoce a",
+      titleSuffix: ", tu recepcionista IA",
+      subtitle: "Mila responde cada llamada en francés e inglés — programa citas, verifica disponibilidad y envía confirmaciones por SMS. Automáticamente.",
+      frame1: {
+        label: "Presentación",
+        pill: "Avatar IA",
+        footerTitle: "Mila se presenta",
+        footerSub: "Avatar IA · Presentación personalizada",
+        tag: "HeyGen",
+      },
+      frame2: {
+        label: "Llamada en vivo",
+        pill: "EN VIVO",
+        footerTitle: "Llamada real · Reserva real",
+        footerSub: "Calendario actualizado · SMS enviado automáticamente",
+        tag: "En vivo",
+      },
+      pills: {
+        availability: { label: "24/7 Disponible", desc: "No pierde ninguna llamada, día y noche" },
+        bilingual: { label: "Bilingüe", desc: "Cambia de FR a EN naturalmente" },
+        speed: { label: "<2s Respuesta", desc: "Voz IA en tiempo real" },
+        booking: { label: "Reserva en vivo", desc: "Verifica el calendario al instante" },
+        analytics: { label: "Analíticas", desc: "Resúmenes post-llamada" },
+        secure: { label: "Seguro", desc: "Datos cifrados" },
+      },
+      stats: {
+        availability: "Disponible",
+        responseTime: "Tiempo de respuesta",
+        languages: "Idiomas",
+        calls: "Llamadas simultáneas",
+      },
+      cta: {
+        primary: "Probar una llamada demo",
+        secondary: "Saber más →",
+        connecting: "Conectando...",
+        endCall: "Colgar",
+      },
+    },
+
     // Language Toggle
     language: {
       title: "Idioma",
@@ -2915,6 +3041,48 @@ export const translations = {
         },
       },
       legalLinks: ["Informativa Privacy", "Termini di Servizio", "Politica Cookie"],
+    },
+
+    // Demo Showcase
+    demoShowcase: {
+      liveBadge: "DEMO DAL VIVO · GARAGE PABLO",
+      title: "Scopri",
+      titleSuffix: ", la tua receptionist IA",
+      subtitle: "Mila risponde a ogni chiamata in francese e in inglese — prenota appuntamenti, verifica la disponibilità e invia conferme via SMS. Automaticamente.",
+      frame1: {
+        label: "Presentazione",
+        pill: "Avatar IA",
+        footerTitle: "Mila si presenta",
+        footerSub: "Avatar IA · Presentazione personalizzata",
+        tag: "HeyGen",
+      },
+      frame2: {
+        label: "Chiamata dal vivo",
+        pill: "LIVE",
+        footerTitle: "Vera chiamata · Vera prenotazione",
+        footerSub: "Calendario aggiornato · SMS inviato automaticamente",
+        tag: "Dal vivo",
+      },
+      pills: {
+        availability: { label: "24/7 Disponibile", desc: "Non perde nessuna chiamata, giorno e notte" },
+        bilingual: { label: "Bilingue", desc: "Passa da FR a EN naturalmente" },
+        speed: { label: "<2s Risposta", desc: "Voce IA in tempo reale" },
+        booking: { label: "Prenotazione live", desc: "Verifica il calendario istantaneamente" },
+        analytics: { label: "Analitiche", desc: "Riepiloghi post-chiamata" },
+        secure: { label: "Sicuro", desc: "Dati crittografati" },
+      },
+      stats: {
+        availability: "Disponibile",
+        responseTime: "Tempo di risposta",
+        languages: "Lingue",
+        calls: "Chiamate simultanee",
+      },
+      cta: {
+        primary: "Prova una chiamata demo",
+        secondary: "Scopri di più →",
+        connecting: "Connessione...",
+        endCall: "Riaggancia",
+      },
     },
 
     // Language Toggle

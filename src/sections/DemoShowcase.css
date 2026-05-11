@@ -251,6 +251,7 @@
   color: #34d399;
   letter-spacing: 0.1em;
   z-index: 20;
+  pointer-events: none;
 }
 .ds-call-dot {
   width: 6px; height: 6px;
@@ -294,6 +295,7 @@
   gap: 3px;
   padding: 0 20px 8px;
   z-index: 10;
+  pointer-events: none;
 }
 .ds-bar {
   width: 3px;
@@ -488,6 +490,36 @@
   transition: all 0.2s;
 }
 .ds-btn-ghost:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.25); color: #fff; }
+.ds-btn-end-call {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: #f87171;
+  border: 1px solid #ef4444;
+  padding: 15px 32px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  animation: ds-pulse-glow-red 1.8s ease-in-out infinite;
+}
+.ds-btn-end-call:hover { background: #ef4444; color: #fff; }
+@keyframes ds-pulse-glow-red {
+  0%   { box-shadow: 0 0 0 0 rgba(239,68,68,0.5); }
+  70%  { box-shadow: 0 0 0 8px rgba(239,68,68,0); }
+  100% { box-shadow: 0 0 0 0 rgba(239,68,68,0); }
+}
+.ds-btn-connecting {
+  opacity: 0.7;
+  cursor: not-allowed;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ds-spin { animation: ds-spin-anim 1s linear infinite; }
+@keyframes ds-spin-anim { to { transform: rotate(360deg); } }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {

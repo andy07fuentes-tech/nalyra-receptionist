@@ -1,9 +1,18 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { PhoneOff, Loader2 } from 'lucide-react';
+import { RetellWebClient } from 'retell-client-js-sdk';
+import { useLanguage } from '../contexts/LanguageContext';
+import { useAudio } from '../contexts/AudioContext';
 import './DemoShowcase.css';
 
 const WAVEFORM_HEIGHTS = [6,14,22,30,20,36,26,38,18,32,28,38,24,34,20,30,36,28,40,32,36,24,38,20,30,16,28,22,38,18,30,14,22,10,16,8];
 
+const retellClient = new RetellWebClient();
+
 export function DemoShowcase() {
+    const { t } = useLanguage();
+    const { setIsMuted } = useAudio();
+
     const videoRef   = useRef<HTMLVideoElement>(null);
     const waveRef    = useRef<HTMLDivElement>(null);
     const bookingRef = useRef<HTMLDivElement>(null);
@@ -11,8 +20,37 @@ export function DemoShowcase() {
     const bookingFired = useRef(false);
     const smsFired     = useRef(false);
 
+    const [callStatus, setCallStatus] = useState<'idle' | 'connecting' | 'active'>('idle');
+
+    // Retell call handlers
+    const startCall = async () => {
+        setCallStatus('connecting');
+        setIsMuted(true);
+        try {
+            const res = await fetch('https://n8n.srv1401769.hstgr.cloud/webhook/anvela/create-web-call', { method: 'POST' });
+            const { access_token, sample_rate } = await res.json();
+            await retellClient.startCall({ accessToken: access_token, sampleRate: sample_rate });
+            setCallStatus('active');
+        } catch {
+            setIsMuted(false);
+            setCallStatus('idle');
+        }
+    };
+
+    const endCall = () => {
+        retellClient.stopCall();
+        setIsMuted(false);
+        setCallStatus('idle');
+    };
+
     useEffect(() => {
-        // Build waveform bars
+        const onEnded = () => { setIsMuted(false); setCallStatus('idle'); };
+        retellClient.on('call_ended', onEnded);
+        return () => { retellClient.off('call_ended', onEnded); };
+    }, [setIsMuted]);
+
+    // Waveform + video events
+    useEffect(() => {
         const waveform = waveRef.current;
         if (waveform) {
             WAVEFORM_HEIGHTS.forEach(h => {
@@ -68,6 +106,15 @@ export function DemoShowcase() {
         };
     }, []);
 
+    const pills = [
+        { icon: '🌙', key: 'availability' },
+        { icon: '🇫🇷', key: 'bilingual' },
+        { icon: '⚡', key: 'speed' },
+        { icon: '📅', key: 'booking' },
+        { icon: '📊', key: 'analytics' },
+        { icon: '🔒', key: 'secure' },
+    ] as const;
+
     return (
         <section id="demo-showcase" className="ds-section">
             <div className="ds-grid" />
@@ -80,17 +127,16 @@ export function DemoShowcase() {
                 {/* Header */}
                 <div className="ds-live-badge">
                     <div className="ds-live-dot" />
-                    DÉMO EN DIRECT · GARAGE PABLO
+                    {t('demoShowcase.liveBadge') as string}
                 </div>
 
                 <h2 className="ds-title">
-                    Découvrez <span className="ds-gradient-text">Mila</span>,<br />
-                    votre réceptionniste IA
+                    {t('demoShowcase.title') as string} <span className="ds-gradient-text">Mila</span>
+                    {t('demoShowcase.titleSuffix') as string}
                 </h2>
 
                 <p className="ds-sub">
-                    Mila répond à chaque appel en français et en anglais — prend des rendez-vous,
-                    vérifie les disponibilités, et envoie une confirmation par SMS. Automatiquement.
+                    {t('demoShowcase.subtitle') as string}
                 </p>
 
                 {/* Two frames */}
@@ -100,8 +146,8 @@ export function DemoShowcase() {
                     <div className="ds-frame-col">
                         <div className="ds-frame-label">
                             <div className="ds-frame-label-num">1</div>
-                            <div className="ds-frame-label-text">Présentation</div>
-                            <div className="ds-label-pill ds-pill-purple">Avatar IA</div>
+                            <div className="ds-frame-label-text">{t('demoShowcase.frame1.label') as string}</div>
+                            <div className="ds-label-pill ds-pill-purple">{t('demoShowcase.frame1.pill') as string}</div>
                         </div>
 
                         <div className="ds-browser-frame">
@@ -118,10 +164,10 @@ export function DemoShowcase() {
 
                         <div className="ds-frame-footer">
                             <div>
-                                <div className="ds-frame-footer-title">Mila se présente</div>
-                                <div className="ds-frame-footer-sub">Avatar IA · Présentation personnalisée</div>
+                                <div className="ds-frame-footer-title">{t('demoShowcase.frame1.footerTitle') as string}</div>
+                                <div className="ds-frame-footer-sub">{t('demoShowcase.frame1.footerSub') as string}</div>
                             </div>
-                            <div className="ds-frame-footer-tag ds-pill-purple">HeyGen</div>
+                            <div className="ds-frame-footer-tag ds-pill-purple">{t('demoShowcase.frame1.tag') as string}</div>
                         </div>
                     </div>
 
@@ -129,8 +175,8 @@ export function DemoShowcase() {
                     <div className="ds-frame-col">
                         <div className="ds-frame-label">
                             <div className="ds-frame-label-num">2</div>
-                            <div className="ds-frame-label-text">Appel en direct</div>
-                            <div className="ds-label-pill ds-pill-green">LIVE</div>
+                            <div className="ds-frame-label-text">{t('demoShowcase.frame2.label') as string}</div>
+                            <div className="ds-label-pill ds-pill-green">{t('demoShowcase.frame2.pill') as string}</div>
                         </div>
 
                         <div className="ds-browser-frame">
@@ -179,28 +225,21 @@ export function DemoShowcase() {
 
                         <div className="ds-frame-footer">
                             <div>
-                                <div className="ds-frame-footer-title">Vrai appel · Vraie réservation</div>
-                                <div className="ds-frame-footer-sub">Calendrier mis à jour · SMS envoyé automatiquement</div>
+                                <div className="ds-frame-footer-title">{t('demoShowcase.frame2.footerTitle') as string}</div>
+                                <div className="ds-frame-footer-sub">{t('demoShowcase.frame2.footerSub') as string}</div>
                             </div>
-                            <div className="ds-frame-footer-tag ds-pill-green">En direct</div>
+                            <div className="ds-frame-footer-tag ds-pill-green">{t('demoShowcase.frame2.tag') as string}</div>
                         </div>
                     </div>
                 </div>
 
                 {/* Feature pills */}
                 <div className="ds-pills-row">
-                    {[
-                        { icon: '🌙', label: '24/7 Disponible',   desc: 'Ne manque aucun appel, jour et nuit' },
-                        { icon: '🇫🇷', label: 'Bilingue',          desc: 'Passe du FR à l\'EN naturellement' },
-                        { icon: '⚡', label: '<2s Réponse',        desc: 'Voix IA en temps réel' },
-                        { icon: '📅', label: 'Réservation live',   desc: 'Vérifie le calendrier instantanément' },
-                        { icon: '📊', label: 'Analytiques',        desc: 'Résumés post-appel' },
-                        { icon: '🔒', label: 'Sécurisé',           desc: 'Données chiffrées' },
-                    ].map(p => (
-                        <div key={p.label} className="ds-fpill">
+                    {pills.map(p => (
+                        <div key={p.key} className="ds-fpill">
                             <div className="ds-fpill-icon">{p.icon}</div>
-                            <div className="ds-fpill-label">{p.label}</div>
-                            <div className="ds-fpill-desc">{p.desc}</div>
+                            <div className="ds-fpill-label">{t(`demoShowcase.pills.${p.key}.label`) as string}</div>
+                            <div className="ds-fpill-desc">{t(`demoShowcase.pills.${p.key}.desc`) as string}</div>
                         </div>
                     ))}
                 </div>
@@ -209,23 +248,37 @@ export function DemoShowcase() {
 
                 {/* Stats */}
                 <div className="ds-stats-row">
-                    {[
-                        { num: '24/7',  label: 'Disponible' },
-                        { num: '<2s',   label: 'Temps de réponse' },
-                        { num: 'Multi', label: 'Langues' },
-                        { num: '∞',     label: 'Appels simultanés' },
-                    ].map(s => (
-                        <div key={s.label} className="ds-stat">
+                    {([
+                        { num: '24/7',  key: 'availability' },
+                        { num: '<2s',   key: 'responseTime' },
+                        { num: 'Multi', key: 'languages' },
+                        { num: '∞',     key: 'calls' },
+                    ] as const).map(s => (
+                        <div key={s.key} className="ds-stat">
                             <div className="ds-stat-num">{s.num}</div>
-                            <div className="ds-stat-label">{s.label}</div>
+                            <div className="ds-stat-label">{t(`demoShowcase.stats.${s.key}`) as string}</div>
                         </div>
                     ))}
                 </div>
 
                 {/* CTA */}
                 <div className="ds-cta-row">
-                    <button className="ds-btn-primary">📞 &nbsp;Essayer un appel démo</button>
-                    <button className="ds-btn-ghost">En savoir plus &nbsp;→</button>
+                    {callStatus === 'active' ? (
+                        <button className="ds-btn-end-call" onClick={endCall}>
+                            <PhoneOff size={16} />
+                            {t('demoShowcase.cta.endCall') as string}
+                        </button>
+                    ) : callStatus === 'connecting' ? (
+                        <button className="ds-btn-primary ds-btn-connecting" disabled>
+                            <Loader2 size={16} className="ds-spin" />
+                            {t('demoShowcase.cta.connecting') as string}
+                        </button>
+                    ) : (
+                        <button className="ds-btn-primary" onClick={startCall}>
+                            📞 &nbsp;{t('demoShowcase.cta.primary') as string}
+                        </button>
+                    )}
+                    <button className="ds-btn-ghost">{t('demoShowcase.cta.secondary') as string}</button>
                 </div>
 
             </div>
