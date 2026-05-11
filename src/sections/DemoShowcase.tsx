@@ -87,14 +87,14 @@ export function DemoShowcase() {
 
         const onTimeUpdate = () => {
             const t = video.currentTime;
-            if (!bookingFired.current && t >= 89) { bookingFired.current = true; triggerBadge(bookingRef.current); }
-            if (!smsFired.current    && t >= 91) { smsFired.current     = true; triggerBadge(smsRef.current); }
+            if (!bookingFired.current && t >= 79) { bookingFired.current = true; triggerBadge(bookingRef.current); }
+            if (!smsFired.current    && t >= 80) { smsFired.current     = true; triggerBadge(smsRef.current); }
         };
 
         const onSeeked = () => {
             const t = video.currentTime;
-            if (t < 89) { bookingFired.current = false; bookingRef.current?.classList.remove('ds-badge-show'); }
-            if (t < 91) { smsFired.current     = false; smsRef.current?.classList.remove('ds-badge-show'); }
+            if (t < 79) { bookingFired.current = false; bookingRef.current?.classList.remove('ds-badge-show'); }
+            if (t < 80) { smsFired.current     = false; smsRef.current?.classList.remove('ds-badge-show'); }
         };
 
         // Live call video (right frame)
