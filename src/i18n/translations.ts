@@ -281,6 +281,7 @@ export const translations = {
       step3: { text: "Intégration Simple", helper: "Prêt en moins de 10 minutes." },
       step4: { text: "Multilingue", helper: "Parle la langue de vos clients." },
       step5: { text: "Sécurité & Fiabilité", helper: "Vos données sont protégées." },
+      continuationLabel: "Voir la suite — confirmation & calendrier →",
     },
 
     // Pricing
@@ -776,6 +777,7 @@ export const translations = {
         connecting: "Connexion...",
         endCall: "Raccrocher",
       },
+      continuationLabel: "Voir la suite →",
     },
 
     // Language Toggle
@@ -1163,6 +1165,7 @@ export const translations = {
       step3: { text: "Simple Integration", helper: "Ready in less than 10 minutes." },
       step4: { text: "Multilingual", helper: "Speaks your customers' language." },
       step5: { text: "Security & Reliability", helper: "Your data is protected." },
+      continuationLabel: "Watch part 2 — confirmation & calendar →",
     },
 
     // FAQ
@@ -1561,6 +1564,7 @@ export const translations = {
         connecting: "Connecting...",
         endCall: "Hang up",
       },
+      continuationLabel: "Watch part 2 →",
     },
 
     // Language Toggle
@@ -1923,6 +1927,7 @@ export const translations = {
       step3: { text: "Integración Simple", helper: "Listo en menos de 10 minutos." },
       step4: { text: "Multilingüe", helper: "Habla el idioma de sus clientes." },
       step5: { text: "Seguridad y Fiabilidad", helper: "Sus datos están protegidos." },
+      continuationLabel: "Ver parte 2 — confirmación y calendario →",
     },
 
     // FAQ
@@ -2322,6 +2327,7 @@ export const translations = {
         connecting: "Conectando...",
         endCall: "Colgar",
       },
+      continuationLabel: "Ver parte 2 →",
     },
 
     // Language Toggle
@@ -2685,6 +2691,7 @@ export const translations = {
       step3: { text: "Integrazione Semplice", helper: "Pronto in meno di 10 minuti." },
       step4: { text: "Multilingue", helper: "Parle la lingua dei tuoi clienti." },
       step5: { text: "Sicurezza e Affidabilità", helper: "I tuoi dati sono protetti." },
+      continuationLabel: "Guarda parte 2 — conferma e calendario →",
     },
 
     faq: {
@@ -3083,6 +3090,7 @@ export const translations = {
         connecting: "Connessione...",
         endCall: "Riaggancia",
       },
+      continuationLabel: "Guarda parte 2 →",
     },
 
     // Language Toggle

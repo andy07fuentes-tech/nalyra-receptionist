@@ -22,6 +22,8 @@ export interface VideoDemoData {
   videoThumbnailUrl: string;
   videoUrl: string;
   items?: ChecklistItem[];
+  continuationUrl?: string;
+  continuationLabel?: string;
 }
 
 // Define the props for the main component
@@ -228,6 +230,38 @@ export const OnboardingChecklist = ({
             </Dialog>
           </motion.div>
         </AnimatePresence>
+
+        {/* Continuation link */}
+        {currentDemo.continuationUrl && (
+          <div className="flex justify-center -mt-4 mb-4">
+            <Dialog onOpenChange={(open) => setIsDimmed(open)}>
+              <DialogTrigger asChild>
+                <button className="flex items-center gap-2 text-white/45 hover:text-white/90 transition-colors duration-300 text-xs group">
+                  <PlayCircle className="h-3.5 w-3.5 shrink-0 group-hover:text-blue-400 transition-colors duration-300" />
+                  <span className="underline underline-offset-4 decoration-white/20 group-hover:decoration-white/60 transition-all duration-300">
+                    {currentDemo.continuationLabel || 'Voir la suite'}
+                  </span>
+                  <span className="opacity-50 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all duration-300">→</span>
+                </button>
+              </DialogTrigger>
+              <DialogContent className="max-w-5xl p-0 border-0 bg-transparent shadow-none overflow-hidden rounded-2xl sm:rounded-3xl">
+                <div className="relative aspect-[9/16] md:aspect-video w-full bg-black/90 backdrop-blur-xl">
+                  <div className="absolute top-4 right-4 z-[60]">
+                    <DialogClose className="p-2 bg-black/50 hover:bg-black/70 backdrop-blur-md rounded-full border border-white/20 text-white transition-all duration-300">
+                      <XIcon className="h-6 w-6" />
+                    </DialogClose>
+                  </div>
+                  <video
+                    src={currentDemo.continuationUrl}
+                    controls
+                    autoPlay
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </DialogContent>
+            </Dialog>
+          </div>
+        )}
 
         {/* Checklist below if vertical */}
         {isVertical && (

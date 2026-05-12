@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Globe2, PhoneOff, Loader2 } from 'lucide-react';
+import { Globe2, PhoneOff, Loader2, PlayCircle, X as XIcon } from 'lucide-react';
 import { RetellWebClient } from 'retell-client-js-sdk';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useAudio } from '../contexts/AudioContext';
@@ -22,6 +22,7 @@ export function DemoShowcase() {
     const smsFired     = useRef(false);
 
     const [callStatus, setCallStatus] = useState<'idle' | 'connecting' | 'active'>('idle');
+    const [showContinuation, setShowContinuation] = useState(false);
 
     // Retell call handlers
     const startCall = async () => {
@@ -248,6 +249,19 @@ export function DemoShowcase() {
                             </div>
                             <div className="ds-frame-footer-tag ds-pill-green">{t('demoShowcase.frame2.tag') as string}</div>
                         </div>
+
+                        {/* Continuation link */}
+                        <div className="flex justify-center mt-4">
+                            <button
+                                onClick={() => setShowContinuation(true)}
+                                className="flex items-center gap-2 text-white font-bold hover:text-emerald-300 transition-colors duration-300 text-sm group"
+                            >
+                                <PlayCircle className="h-4 w-4 shrink-0 text-emerald-400 group-hover:scale-110 transition-transform duration-200" />
+                                <span className="underline underline-offset-4 decoration-white/40 group-hover:decoration-emerald-300 transition-all duration-300">
+                                    {t('demoShowcase.continuationLabel') as string || 'Voir la suite →'}
+                                </span>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -300,6 +314,33 @@ export function DemoShowcase() {
                 </div>
 
             </div>
+
+            {/* Continuation video modal */}
+            {showContinuation && (
+                <div
+                    className="fixed inset-0 z-[100] bg-black/85 backdrop-blur-sm flex items-center justify-center p-4"
+                    onClick={() => setShowContinuation(false)}
+                >
+                    <div
+                        className="relative w-full max-w-3xl rounded-2xl overflow-hidden bg-black shadow-2xl"
+                        onClick={e => e.stopPropagation()}
+                    >
+                        <button
+                            onClick={() => setShowContinuation(false)}
+                            className="absolute top-3 right-3 z-10 p-2 bg-black/60 hover:bg-black/80 backdrop-blur-md rounded-full border border-white/20 text-white transition-all duration-200"
+                        >
+                            <XIcon className="h-5 w-5" />
+                        </button>
+                        <video
+                            src="/videos/voicemail-blurred.mp4"
+                            controls
+                            autoPlay
+                            playsInline
+                            className="w-full aspect-video object-contain"
+                        />
+                    </div>
+                </div>
+            )}
         </section>
     );
 }
