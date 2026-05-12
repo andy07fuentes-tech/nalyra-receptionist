@@ -163,9 +163,9 @@ export function MissedCalls() {
                             <div className="ringing-pulse absolute inset-0 rounded-full border-2 border-blue-400/20 z-0" />
                             
                             <div className="relative z-10 w-full h-full rounded-full overflow-hidden border-[8px] border-slate-50 shadow-2xl">
-                                <OptimizedVideo 
+                                <OptimizedVideo
                                     src="/videos/phone-ringing.mp4"
-                                    preload="auto"
+                                    preload="none"
                                     className="w-full h-full object-cover"
                                 />
                                 

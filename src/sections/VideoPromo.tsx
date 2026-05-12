@@ -86,7 +86,7 @@ export function VideoPromo() {
                         className="w-full h-full object-cover grayscale-[0.2] brightness-90"
                         muted
                         playsInline
-                        preload="auto"
+                        preload="none"
                         src="/videos/anvela-demo.mp4"
                     />
 

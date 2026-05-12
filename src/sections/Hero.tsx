@@ -202,16 +202,16 @@ export function Hero({ isReady }: { isReady: boolean }) {
           <video
             muted
             playsInline
-            preload="auto"
+            preload="none"
             ref={videoRef}
             className="absolute inset-0 w-full h-full object-cover object-center"
-            src={GARAGE_VIDEOS[videoIndex]}
+            src={isReady ? GARAGE_VIDEOS[videoIndex] : undefined}
           />
           <video
             ref={preloadRef}
             muted
             playsInline
-            preload="auto"
+            preload="none"
             aria-hidden="true"
             className="absolute opacity-0 pointer-events-none w-0 h-0"
           />
