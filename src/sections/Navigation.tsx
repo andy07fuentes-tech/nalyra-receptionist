@@ -103,7 +103,7 @@ function DemoCallButton({ isScrolled }: { isScrolled: boolean }) {
     try {
       const res = await fetch('https://n8n.srv1401769.hstgr.cloud/webhook/anvela/create-web-call', { method: 'POST' });
       const { access_token, sample_rate } = await res.json();
-      await retellClient.startCall({ accessToken: access_token, sampleRate: sample_rate });
+      await retellClient.startCall({ accessToken: access_token, sampleRate: sample_rate ?? 16000 });
       setStatus('active');
     } catch {
       setIsMuted(false);

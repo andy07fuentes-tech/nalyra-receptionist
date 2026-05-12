@@ -422,6 +422,7 @@
   transform: translateY(-3px);
 }
 .ds-fpill-icon  { font-size: 20px; margin-bottom: 10px; }
+.ds-fpill-svg { width: 22px; height: 22px; color: rgba(125, 180, 255, 0.95); stroke-width: 1.9; }
 .ds-fpill-label { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.9); }
 .ds-fpill-desc  { font-size: 10px; color: rgba(255,255,255,0.32); margin-top: 4px; line-height: 1.4; }
 

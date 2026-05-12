@@ -744,10 +744,10 @@ export const translations = {
       subtitle: "Mila répond à chaque appel en français et en anglais — prend des rendez-vous, vérifie les disponibilités, et envoie une confirmation par SMS. Automatiquement.",
       frame1: {
         label: "Présentation",
-        pill: "Avatar IA",
+        pill: "Mila",
         footerTitle: "Mila se présente",
         footerSub: "Avatar IA · Présentation personnalisée",
-        tag: "HeyGen",
+        tag: "Simplement intelligent",
       },
       frame2: {
         label: "Appel en direct",
@@ -758,7 +758,7 @@ export const translations = {
       },
       pills: {
         availability: { label: "24/7 Disponible", desc: "Ne manque aucun appel, jour et nuit" },
-        bilingual: { label: "Bilingue", desc: "Passe du FR à l'EN naturellement" },
+        bilingual: { label: "FR/EN et plus", desc: "Support multilingue naturel" },
         speed: { label: "<2s Réponse", desc: "Voix IA en temps réel" },
         booking: { label: "Réservation live", desc: "Vérifie le calendrier instantanément" },
         analytics: { label: "Analytiques", desc: "Résumés post-appel" },
@@ -1529,10 +1529,10 @@ export const translations = {
       subtitle: "Mila answers every call in French and English — books appointments, checks availability, and sends SMS confirmations. Automatically.",
       frame1: {
         label: "Introduction",
-        pill: "AI Avatar",
+        pill: "Mila",
         footerTitle: "Mila introduces herself",
         footerSub: "AI Avatar · Personalized presentation",
-        tag: "HeyGen",
+        tag: "Simply Intelligent",
       },
       frame2: {
         label: "Live call",
@@ -1543,7 +1543,7 @@ export const translations = {
       },
       pills: {
         availability: { label: "24/7 Available", desc: "Never misses a call, day or night" },
-        bilingual: { label: "Bilingual", desc: "Switches FR↔EN naturally" },
+        bilingual: { label: "FR/EN and more", desc: "Natural multilingual support" },
         speed: { label: "<2s Response", desc: "Real-time AI voice" },
         booking: { label: "Live booking", desc: "Checks calendar instantly" },
         analytics: { label: "Analytics", desc: "Post-call summaries" },
@@ -2290,10 +2290,10 @@ export const translations = {
       subtitle: "Mila responde cada llamada en francés e inglés — programa citas, verifica disponibilidad y envía confirmaciones por SMS. Automáticamente.",
       frame1: {
         label: "Presentación",
-        pill: "Avatar IA",
+        pill: "Mila",
         footerTitle: "Mila se presenta",
         footerSub: "Avatar IA · Presentación personalizada",
-        tag: "HeyGen",
+        tag: "Simplemente inteligente",
       },
       frame2: {
         label: "Llamada en vivo",
@@ -2304,7 +2304,7 @@ export const translations = {
       },
       pills: {
         availability: { label: "24/7 Disponible", desc: "No pierde ninguna llamada, día y noche" },
-        bilingual: { label: "Bilingüe", desc: "Cambia de FR a EN naturalmente" },
+        bilingual: { label: "FR/EN y más", desc: "Soporte multilingüe natural" },
         speed: { label: "<2s Respuesta", desc: "Voz IA en tiempo real" },
         booking: { label: "Reserva en vivo", desc: "Verifica el calendario al instante" },
         analytics: { label: "Analíticas", desc: "Resúmenes post-llamada" },
@@ -3051,10 +3051,10 @@ export const translations = {
       subtitle: "Mila risponde a ogni chiamata in francese e in inglese — prenota appuntamenti, verifica la disponibilità e invia conferme via SMS. Automaticamente.",
       frame1: {
         label: "Presentazione",
-        pill: "Avatar IA",
+        pill: "Mila",
         footerTitle: "Mila si presenta",
         footerSub: "Avatar IA · Presentazione personalizzata",
-        tag: "HeyGen",
+        tag: "Semplicemente intelligente",
       },
       frame2: {
         label: "Chiamata dal vivo",
@@ -3065,7 +3065,7 @@ export const translations = {
       },
       pills: {
         availability: { label: "24/7 Disponibile", desc: "Non perde nessuna chiamata, giorno e notte" },
-        bilingual: { label: "Bilingue", desc: "Passa da FR a EN naturalmente" },
+        bilingual: { label: "FR/EN e altro", desc: "Supporto multilingue naturale" },
         speed: { label: "<2s Risposta", desc: "Voce IA in tempo reale" },
         booking: { label: "Prenotazione live", desc: "Verifica il calendario istantaneamente" },
         analytics: { label: "Analitiche", desc: "Riepiloghi post-chiamata" },

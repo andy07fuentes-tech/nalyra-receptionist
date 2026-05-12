@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from 'react';
 import type { LucideIcon } from 'lucide-react';
-import { Check, Star, PhoneMissed, TrendingUp, BadgeCheck } from 'lucide-react';
+import { Check, Star, PhoneMissed, TrendingUp, BadgeCheck, Lightbulb } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -339,9 +339,18 @@ export function Pricing() {
 
                 {/* ROI Block */}
                 <div className="max-w-2xl mx-auto mb-12 fade-up">
-                    <p className="text-sm md:text-base text-slate-500 italic text-center mb-6">
-                        💡 {t('pricing.roiTagline') as string}
-                    </p>
+                    <div className="relative mb-7 overflow-hidden rounded-2xl border border-blue-500/20 bg-white/80 px-5 py-4 shadow-[0_18px_55px_rgba(15,23,42,0.08)] backdrop-blur-md">
+                        <div className="absolute inset-x-8 -top-10 h-20 bg-gradient-to-r from-transparent via-blue-400/20 to-gold-400/20 blur-2xl pointer-events-none" />
+                        <div className="btn-shimmer pointer-events-none absolute inset-0 w-1/3 bg-gradient-to-r from-transparent via-white/60 to-transparent" />
+                        <div className="relative flex items-center gap-4 text-left">
+                            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-gold-400/40 bg-gradient-to-br from-gold-50 to-blue-50 text-gold-600 shadow-[0_0_24px_rgba(210,168,85,0.28)]">
+                                <Lightbulb className="h-5 w-5" strokeWidth={2.2} />
+                            </div>
+                            <p className="font-serif text-base md:text-xl font-bold leading-snug text-slate-900">
+                                {t('pricing.roiTagline') as string}
+                            </p>
+                        </div>
+                    </div>
                     <div className="grid grid-cols-3 gap-3">
                         {ROI_STATS.map((stat, i) => (
                             <RoiStatCard key={i} {...stat} />

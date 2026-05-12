@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { PhoneOff, Loader2 } from 'lucide-react';
+import { Globe2, PhoneOff, Loader2 } from 'lucide-react';
 import { RetellWebClient } from 'retell-client-js-sdk';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useAudio } from '../contexts/AudioContext';
@@ -30,7 +30,7 @@ export function DemoShowcase() {
         try {
             const res = await fetch('https://n8n.srv1401769.hstgr.cloud/webhook/anvela/create-web-call', { method: 'POST' });
             const { access_token, sample_rate } = await res.json();
-            await retellClient.startCall({ accessToken: access_token, sampleRate: sample_rate });
+            await retellClient.startCall({ accessToken: access_token, sampleRate: sample_rate ?? 16000 });
             setCallStatus('active');
         } catch {
             setIsMuted(false);
@@ -125,7 +125,7 @@ export function DemoShowcase() {
 
     const pills = [
         { icon: '🌙', key: 'availability' },
-        { icon: '🇫🇷', key: 'bilingual' },
+        { icon: <Globe2 className="ds-fpill-svg" aria-hidden="true" />, key: 'bilingual' },
         { icon: '⚡', key: 'speed' },
         { icon: '📅', key: 'booking' },
         { icon: '📊', key: 'analytics' },
