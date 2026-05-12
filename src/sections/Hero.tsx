@@ -162,7 +162,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
 
     video.addEventListener('canplay', handleCanPlay, { once: true });
     return () => video.removeEventListener('canplay', handleCanPlay);
-  }, [videoIndex]);
+  }, [videoIndex, isReady]);
 
   // Preload the next video in the background while current plays
   useEffect(() => {
