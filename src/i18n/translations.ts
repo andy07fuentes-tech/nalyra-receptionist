@@ -322,18 +322,16 @@ export const translations = {
           weeklyNote: "soit environ 49$ par semaine",
           setupFee: "0",
           setupFeeNote: "Contrat minimum de 3 mois",
-          description: "Votre équipe se repose. Vos leads non. Nous capturons chaque appel manqué pendant que vous êtes fermé — et votre calendrier se remplit tout seul.",
+          description: "Pendant que vous êtes fermé, votre téléphone continue de générer des rendez-vous.",
           features: [
-            "Disponibilité : Lun–Ven (18h00 – 8h00) + Week-end 24h",
-            "Appels : Illimités (aucun frais à la minute)",
-            "IA : Réponse aux FAQ + capture de leads qualifiés",
-            "Réservation : Rendez-vous auto (Google Calendar)",
-            "Notification : SMS instantané à la capture d'un lead",
-            "Transcription complète + résumé IA des appels",
-            "Rapport : 'Night Shift Report' quotidien à 8h00",
-            "Langue : Français (Optimisé pour les marchés locaux)",
-            "Réduction des no-shows : jusqu'à 30–50% avec rappels",
-            "Offre lancement : premier mois à 50% du prix normal"
+            { label: "🌙 Réponse automatique après les heures", detail: "Lun–Ven 18h–8h + week-end 24h" },
+            { label: "📞 IA qui répond et qualifie les appels", detail: "Questions fréquentes + prise d'informations client" },
+            { label: "📅 Prise de rendez-vous automatique", detail: "Directement dans votre calendrier (Google Calendar)" },
+            { label: "📩 Notification SMS instantanée", detail: "Dès qu'un lead ou un rendez-vous est capturé" },
+            { label: "🌍 Optimisé pour le marché local (FR)" },
+            { label: "☎️ Appels illimités" },
+            { label: "🎯 Résultat", detail: "Aucun appel perdu le soir et le week-end. Votre calendrier se remplit même quand vous êtes fermé." },
+            { label: "🎁 Offre de lancement", detail: "Premier mois à 50%" }
           ]
         },
         {
@@ -343,19 +341,18 @@ export const translations = {
           isPopular: true,
           setupFee: "197",
           setupFeeNote: "Contrat minimum de 3 mois",
-          description: "Couverture complète 24/7. Votre téléphone ne sonne plus dans le vide — il génère des revenus, même pendant le travail.",
+          description: "Votre téléphone travaille pour vous — même quand vous êtes occupé ou fermé.",
           features: [
-            "Inclut TOUT du forfait 'Night Shift'",
-            "Suivi : Appels non résolus avec transcription",
-            "Disponibilité : 24/7 (Débordement jour + Nuit complète)",
-            "Routing : Humain d'abord (3 sonneries), l'IA prend le relais",
-            "Transfert : Redirection live vers votre réception (1 numéro)",
-            "Réservation : Rendez-vous + rappels SMS (24h/2h)",
-            "Gestion : Modifications et annulations par IA",
-            "Avis Google : SMS automatique au client le lendemain de son rendez-vous",
-            "Interactions : Bilingue (Français / Anglais)",
-            "Appels : Illimités",
-            "Offre lancement : premier mois à 50% du prix normal"
+            { label: "📞 Réponse intelligente 24/7", detail: "L'IA prend les appels lorsque vous êtes indisponible ou débordé" },
+            { label: "📅 Prise de rendez-vous automatisée", detail: "L'IA réserve directement dans votre calendrier" },
+            { label: "🔁 Capture intelligente des appels manqués", detail: "Chaque appel est capturé avec les informations du client, même s'il ne reste pas en ligne." },
+            { label: "💬 Rappels SMS automatisés (24h / 2h)", detail: "Réduction des absences" },
+            { label: "📲 Transfert vers humain (si nécessaire)", detail: "L'appel peut être redirigé vers vous en direct" },
+            { label: "🌙 Couverture complète jour + nuit", detail: "Aucun appel laissé sans réponse" },
+            { label: "🌍 Bilingue (FR / EN)" },
+            { label: "☎️ Appels illimités" },
+            { label: "🎯 Résultat", detail: "Moins d'appels manqués. Plus de rendez-vous — sans changer vos habitudes." },
+            { label: "🎁 Offre de lancement", detail: "Premier mois à 50%" }
           ]
         },
         {
@@ -364,21 +361,20 @@ export const translations = {
           weeklyNote: "soit environ 165$ par semaine",
           setupFee: "497",
           setupFeeNote: "Contrat minimum de 6 mois",
-          description: "Votre système de croissance complet. L'IA répond, relance, réserve et suit chaque lead — pendant que vous travaillez.",
+          description: "On s'occupe de tout. Chaque appel devient une opportunité.",
           features: [
-            "Inclut TOUT de 'Night Shift' et 'Co-Pilot'",
-            "Gestion proactive des avis : les clients insatisfaits sont pris en charge en privé — vous recevez une alerte pour agir avant qu'ils partent.",
-            "Transfert : Destinations illimitées (réception, gérant, service...)",
-            "Mémoire clients : Mila reconnaît vos habitués et personnalise chaque appel",
-            "Logique : Intégration CRM sur mesure selon votre système actuel",
-            "Suivi : SMS auto en 15 min pour chaque lead",
-            "Gestion complète : modifications, annulations et réservations en un seul appel",
-            "Support : Support VIP Prioritaire (réponse < 2h)",
-            "BONUS : Site web d'une page gratuit inclus",
-            "Appels : Illimités",
-            "Rapports mensuels personnalisés + optimisation IA",
-            "Augmentation de rendez-vous : +30–40%",
-            "Offre lancement : premier mois à 50% du prix normal"
+            { label: "📞 Réponse 24/7 intelligente", detail: "L'IA répond, qualifie et gère chaque appel — même après les heures" },
+            { label: "📅 Prise de rendez-vous complète", detail: "Réservation, modification et annulation directement au téléphone" },
+            { label: "🔁 Rappel automatique des appels manqués", detail: "Aucun client perdu — chaque appel est relancé" },
+            { label: "💬 Suivi automatique par SMS (15 min)", detail: "Confirmation + relance sans effort" },
+            { label: "🧠 Reconnaissance des clients réguliers", detail: "Expérience personnalisée à chaque appel" },
+            { label: "🔗 Intégration CRM sur mesure", detail: "Connexion à votre système actuel (ou CRM fourni si vous n'en avez pas)" },
+            { label: "⭐ Protection de votre réputation", detail: "Les clients insatisfaits sont redirigés en privé avant de laisser un avis" },
+            { label: "📊 Optimisation continue + rapports mensuels", detail: "On ajuste le système pour maximiser vos rendez-vous" },
+            { label: "🎯 Support prioritaire VIP (< 2h)" },
+            { label: "☎️ Appels illimités" },
+            { label: "🏆 Résultat", detail: "Plus de rendez-vous. Moins de pertes. Zéro gestion de réception." },
+            { label: "🎁 Offre de lancement", detail: "Premier mois à 50%" }
           ]
         }
       ]
@@ -1083,18 +1079,16 @@ export const translations = {
           weeklyNote: "approx. $49 / week",
           setupFee: "0",
           setupFeeNote: "Minimum 3-month commitment",
-          description: "Your team rests. Your leads don't. We capture every missed call while you're closed — and your calendar fills itself.",
+          description: "While you're closed, your phone keeps booking appointments.",
           features: [
-            "Availability: Mon–Fri (6:00 PM – 8:00 AM) + Weekend 24h",
-            "Calls: Unlimited (no per-minute charges)",
-            "AI: FAQ response + qualified lead capture",
-            "Booking: Auto-appointments (Google Calendar)",
-            "Notification: Instant SMS on lead capture",
-            "Full transcription + AI call summary",
-            "Report: Daily 'Night Shift Report' at 8:00 AM",
-            "Language: French (Optimized for local markets)",
-            "No-show reduction: up to 30–50% with reminders",
-            "Launch Offer: first month at 50% off"
+            { label: "🌙 Automatic after-hours response", detail: "Mon–Fri 6pm–8am + Weekends 24/7" },
+            { label: "📞 AI answers and qualifies calls", detail: "FAQ responses + client info capture" },
+            { label: "📅 Automatic appointment booking", detail: "Directly in your calendar (Google Calendar)" },
+            { label: "📩 Instant SMS notification", detail: "When a lead or appointment is captured" },
+            { label: "🌍 Optimized for local market (EN)" },
+            { label: "☎️ Unlimited calls" },
+            { label: "🎯 Result", detail: "No calls missed evenings or weekends. Your calendar fills up even when you're closed." },
+            { label: "🎁 Launch offer", detail: "First month 50% off" }
           ]
         },
         {
@@ -1104,19 +1098,18 @@ export const translations = {
           isPopular: true,
           setupFee: "197",
           setupFeeNote: "Minimum 3-month commitment",
-          description: "Full 24/7 coverage. Your phone stops ringing into a void — it generates revenue, even during work hours.",
+          description: "Your phone works for you — even when you're busy or closed.",
           features: [
-            "Includes EVERYTHING from 'Night Shift' plan",
-            "Follow-up: Unresolved calls with transcription",
-            "Availability: 24/7 (Day overflow + Full night)",
-            "Routing: Human first (3 rings), AI takes over",
-            "Transfer: Live redirection to your front desk (1 number)",
-            "Booking: Appointments + SMS reminders (24h/2h)",
-            "Management: AI-handled modifications & cancellations",
-            "Google Reviews: Automatic SMS to client the morning after their appointment",
-            "Interactions: Bilingual (English / French)",
-            "Calls: Unlimited",
-            "Launch Offer: first month at 50% off"
+            { label: "📞 Intelligent 24/7 response", detail: "AI picks up when you're unavailable or overwhelmed" },
+            { label: "📅 Automated appointment booking", detail: "AI books directly in your calendar" },
+            { label: "🔁 Smart missed call capture", detail: "Every call captured with client info, even if they don't stay on the line." },
+            { label: "💬 Automated SMS reminders (24h / 2h)", detail: "Reduces no-shows" },
+            { label: "📲 Transfer to human (if needed)", detail: "Call can be redirected to you live" },
+            { label: "🌙 Full day + night coverage", detail: "No call left unanswered" },
+            { label: "🌍 Bilingual (FR / EN)" },
+            { label: "☎️ Unlimited calls" },
+            { label: "🎯 Result", detail: "Fewer missed calls. More appointments — without changing your habits." },
+            { label: "🎁 Launch offer", detail: "First month 50% off" }
           ]
         },
         {
@@ -1125,21 +1118,20 @@ export const translations = {
           weeklyNote: "approx. $165 / week",
           setupFee: "497",
           setupFeeNote: "Minimum 6-month commitment",
-          description: "Your complete growth system. The AI answers, restarts, reserves, and follows each lead — while you work.",
+          description: "We handle everything. Every call becomes an opportunity.",
           features: [
-            "Includes EVERYTHING from 'Night Shift' & 'Co-Pilot'",
-            "Proactive review management: unhappy clients are handled privately — you get an alert to act before they walk away.",
-            "Transfer: Unlimited destinations (front desk, manager...)",
-            "Customer Memory: Mila recognizes regular customers",
-            "Logic: Custom CRM integration based on your system",
-            "Follow-up: Auto-SMS within 15 min for every lead",
-            "Full management: modifications, cancellations and bookings in one call",
-            "Support: Priority VIP Support (response < 2h)",
-            "BONUS: Free one-page website included",
-            "Calls: Unlimited",
-            "Monthly personalized reports + AI optimization",
-            "Appointment increase: +30–40%",
-            "Launch Offer: first month at 50% off"
+            { label: "📞 Intelligent 24/7 response", detail: "AI answers, qualifies, and manages every call — even after hours" },
+            { label: "📅 Full appointment management", detail: "Booking, modification, and cancellation over the phone" },
+            { label: "🔁 Automatic missed call follow-up", detail: "No client lost — every call is followed up" },
+            { label: "💬 Automatic SMS follow-up (15 min)", detail: "Confirmation + follow-up effortlessly" },
+            { label: "🧠 Returning client recognition", detail: "Personalized experience on every call" },
+            { label: "🔗 Custom CRM integration", detail: "Connected to your current system (or CRM provided if you don't have one)" },
+            { label: "⭐ Reputation protection", detail: "Unhappy clients redirected privately before leaving a review" },
+            { label: "📊 Continuous optimization + monthly reports", detail: "System adjusted to maximize your bookings" },
+            { label: "🎯 Priority VIP support (< 2h)" },
+            { label: "☎️ Unlimited calls" },
+            { label: "🏆 Result", detail: "More appointments. Fewer losses. Zero reception management." },
+            { label: "🎁 Launch offer", detail: "First month 50% off" }
           ]
         }
       ]
@@ -1845,18 +1837,16 @@ export const translations = {
           weeklyNote: "aprox. $49 / semana",
           setupFee: "0",
           setupFeeNote: "Contrato mínimo de 3 meses",
-          description: "Su equipo descansa. Sus leads no. Capturamos cada llamada perdida mientras está cerrado, y su calendario se llena solo. Incluye TODO del plan 'Night Shift'.",
+          description: "Mientras estás cerrado, tu teléfono sigue generando citas.",
           features: [
-            "Disponibilidad: Lun-Vie (18:00 - 8:00) + Fines de semana 24h",
-            "Llamadas: Ilimitadas (sin cargos por minuto)",
-            "IA: Respuesta a FAQ + captura de leads calificados",
-            "Reserva: Citas automáticas (Google Calendar)",
-            "Notificación: SMS instantáneo al capturar un lead",
-            "Transcripción completa + resumen IA de llamadas",
-            "Informe: 'Night Shift Report' diario a las 8:00",
-            "Idioma: Francés (Optimizado para mercados locales)",
-            "Reducción de no-shows: hasta 30–50% con recordatorios",
-            "Oferta lanzamiento: primer mes al 50% del precio normal"
+            { label: "🌙 Respuesta automática fuera de horario", detail: "Lun–Vie 18h–8h + fin de semana 24h" },
+            { label: "📞 IA responde y califica llamadas", detail: "Preguntas frecuentes + captura de información del cliente" },
+            { label: "📅 Reserva automática de citas", detail: "Directamente en su calendario (Google Calendar)" },
+            { label: "📩 Notificación SMS instantánea", detail: "Cuando se captura un lead o una cita" },
+            { label: "🌍 Optimizado para el mercado local (ES)" },
+            { label: "☎️ Llamadas ilimitadas" },
+            { label: "🎯 Resultado", detail: "Ninguna llamada perdida las noches o fines de semana. Su calendario se llena incluso cuando está cerrado." },
+            { label: "🎁 Oferta de lanzamiento", detail: "Primer mes al 50%" }
           ]
         },
         {
@@ -1866,19 +1856,18 @@ export const translations = {
           isPopular: true,
           setupFee: "197",
           setupFeeNote: "Contrato mínimo de 3 meses",
-          description: "Cobertura completa 24/7. Su teléfono deja de sonar en el vacío: genera ingresos, incluso durante las horas de trabajo.",
+          description: "Tu teléfono trabaja para ti — incluso cuando estás ocupado o cerrado.",
           features: [
-            "Incluye TODO del plan 'Night Shift'",
-            "Seguimiento: Llamadas no resueltas con transcripción",
-            "Disponibilidad: 24/7 (Desbordamiento día + Noche completa)",
-            "Enrutamiento: Humano primero (3 tonos), la IA toma el relevo",
-            "Transferencia: Redirección en vivo a su recepción (1 número)",
-            "Reserva: Citas + recordatorios SMS (24h/2h)",
-            "Gestión: Modificaciones y cancelaciones por IA",
-            "Reseñas Google: SMS automático al cliente la mañana después de su cita",
-            "Interacciones: Bilingüe (Inglés / Español)",
-            "Llamadas: Ilimitadas",
-            "Oferta lanzamiento: primer mes al 50% del precio normal"
+            { label: "📞 Respuesta inteligente 24/7", detail: "La IA atiende cuando no está disponible o está ocupado" },
+            { label: "📅 Reserva automatizada de citas", detail: "La IA reserva directamente en su calendario" },
+            { label: "🔁 Captura inteligente de llamadas perdidas", detail: "Cada llamada se captura con la información del cliente, aunque no permanezca en línea." },
+            { label: "💬 Recordatorios SMS automáticos (24h / 2h)", detail: "Reduce las ausencias" },
+            { label: "📲 Transferencia a humano (si es necesario)", detail: "La llamada puede redirigirse a usted en vivo" },
+            { label: "🌙 Cobertura completa día + noche", detail: "Ninguna llamada sin respuesta" },
+            { label: "🌍 Bilingüe (FR / EN)" },
+            { label: "☎️ Llamadas ilimitadas" },
+            { label: "🎯 Resultado", detail: "Menos llamadas perdidas. Más citas — sin cambiar sus hábitos." },
+            { label: "🎁 Oferta de lanzamiento", detail: "Primer mes al 50%" }
           ]
         },
         {
@@ -1887,21 +1876,20 @@ export const translations = {
           weeklyNote: "aprox. $165 / semana",
           setupFee: "497",
           setupFeeNote: "Contrato mínimo de 6 meses",
-          description: "Su sistema completo de crecimiento. La IA responde, relanza, reserva y sigue a cada lead, mientras usted trabaja.",
+          description: "Nos encargamos de todo. Cada llamada se convierte en una oportunidad.",
           features: [
-            "Incluye TODO de 'Night Shift' y 'Co-Pilot'",
-            "Gestión proactiva de reseñas: los clientes insatisfechos son atendidos en privado — usted recibe una alerta para actuar antes de que se vayan.",
-            "Transferencia: Destinos ilimitados (recepción, gerente, servicio...)",
-            "Memoria de clientes: Mila reconoce a sus clientes habituales y personaliza cada llamada",
-            "Lógica: Integración CRM personalizada según su sistema actual",
-            "Seguimiento: SMS automático en 15 min para cada lead",
-            "Gestión completa: modificaciones, cancelaciones y reservas en una sola llamada",
-            "Soporte: Soporte VIP Prioritario (respuesta < 2h)",
-            "BONUS: Sitio web de una página gratis incluido",
-            "Llamadas: Ilimitadas",
-            "Informes mensuales personalizados + optimización IA",
-            "Aumento de citas: +30–40%",
-            "Oferta lanzamiento: primer mes al 50% del precio normal"
+            { label: "📞 Respuesta inteligente 24/7", detail: "La IA responde, califica y gestiona cada llamada — incluso fuera de horario" },
+            { label: "📅 Gestión completa de citas", detail: "Reserva, modificación y cancelación por teléfono" },
+            { label: "🔁 Seguimiento automático de llamadas perdidas", detail: "Ningún cliente perdido — cada llamada recibe seguimiento" },
+            { label: "💬 Seguimiento automático por SMS (15 min)", detail: "Confirmación + seguimiento sin esfuerzo" },
+            { label: "🧠 Reconocimiento de clientes habituales", detail: "Experiencia personalizada en cada llamada" },
+            { label: "🔗 Integración CRM personalizada", detail: "Conectado a su sistema actual (o CRM proporcionado si no tiene uno)" },
+            { label: "⭐ Protección de su reputación", detail: "Clientes insatisfechos redirigidos en privado antes de dejar una reseña" },
+            { label: "📊 Optimización continua + informes mensuales", detail: "Sistema ajustado para maximizar sus reservas" },
+            { label: "🎯 Soporte VIP prioritario (< 2h)" },
+            { label: "☎️ Llamadas ilimitadas" },
+            { label: "🏆 Resultado", detail: "Más citas. Menos pérdidas. Cero gestión de recepción." },
+            { label: "🎁 Oferta de lanzamiento", detail: "Primer mes al 50%" }
           ]
         }
       ]
@@ -2610,18 +2598,16 @@ export const translations = {
           weeklyNote: "circa 49$ a settimana",
           setupFee: "0",
           setupFeeNote: "Contratto minimo 3 mesi",
-          description: "Il tuo team riposa. I tuoi lead no. Catturiamo ogni chiamata persa mentre sei chiuso — e il tuo calendario si riempie da solo.",
+          description: "Mentre sei chiuso, il tuo telefono continua a generare appuntamenti.",
           features: [
-            "Disponibilità: Lun–Ven (18:00 – 8:00) + Weekend 24h",
-            "Chiamate: Illimitate (senza costi al minuto)",
-            "IA: Risposte FAQ + cattura lead qualificati",
-            "Prenotazione: Appuntamenti automatici (Google Calendar)",
-            "Notifica: SMS istantaneo alla cattura di un lead",
-            "Trascrizione completa + riepilogo IA chiamate",
-            "Rapporto: 'Night Shift Report' quotidiano alle 8:00",
-            "Lingua: Francese (Ottimizzato per i mercati locali)",
-            "Riduzione no-shows: fino al 30–50% con promemoria",
-            "Offerta lancio: primo mese al 50% del prezzo normale"
+            { label: "🌙 Risposta automatica fuori orario", detail: "Lun–Ven 18h–8h + weekend 24h" },
+            { label: "📞 IA risponde e qualifica le chiamate", detail: "FAQ + acquisizione informazioni cliente" },
+            { label: "📅 Prenotazione automatica appuntamenti", detail: "Direttamente nel tuo calendario (Google Calendar)" },
+            { label: "📩 Notifica SMS istantanea", detail: "Quando viene acquisito un lead o un appuntamento" },
+            { label: "🌍 Ottimizzato per il mercato locale (IT)" },
+            { label: "☎️ Chiamate illimitate" },
+            { label: "🎯 Risultato", detail: "Nessuna chiamata persa la sera o nel weekend. Il tuo calendario si riempie anche quando sei chiuso." },
+            { label: "🎁 Offerta di lancio", detail: "Primo mese al 50%" }
           ]
         },
         {
@@ -2631,19 +2617,18 @@ export const translations = {
           isPopular: true,
           setupFee: "197",
           setupFeeNote: "Contratto minimo 3 mesi",
-          description: "Copertura completa 24/7. Il tuo telefono smette di squillare a vuoto — genera entrate, anche durante il lavoro.",
+          description: "Il tuo telefono lavora per te — anche quando sei occupato o chiuso.",
           features: [
-            "Include TUTTO del pacchetto 'Night Shift'",
-            "Seguimento: Chiamate non risolte con trascrizione",
-            "Disponibilità: 24/7 (Overflow giorno + Notte intera)",
-            "Routing: Umano prima (3 squilli), l'IA prende il sopravvento",
-            "Trasferimento: Reindirizzamento live alla tua reception (1 numero)",
-            "Prenotazione: Appuntamenti + promemoria SMS (24h/2h)",
-            "Gestione: Modifiche e cancellazioni gestite dall'IA",
-            "Recensioni Google: SMS automatico al cliente la mattina dopo l'appuntamento",
-            "Interazioni: Bilingue (Inglese / Italiano)",
-            "Chiamate: Illimitate",
-            "Offerta lancio: primo mese al 50% del prezzo normale"
+            { label: "📞 Risposta intelligente 24/7", detail: "L'IA risponde quando non sei disponibile o sei occupato" },
+            { label: "📅 Prenotazione automatizzata", detail: "L'IA prenota direttamente nel tuo calendario" },
+            { label: "🔁 Acquisizione intelligente chiamate perse", detail: "Ogni chiamata viene acquisita con le info del cliente, anche se non rimane in linea." },
+            { label: "💬 Promemoria SMS automatici (24h / 2h)", detail: "Riduzione delle assenze" },
+            { label: "📲 Trasferimento a umano (se necessario)", detail: "La chiamata può essere reindirizzata a te in diretta" },
+            { label: "🌙 Copertura completa giorno + notte", detail: "Nessuna chiamata senza risposta" },
+            { label: "🌍 Bilingue (FR / EN)" },
+            { label: "☎️ Chiamate illimitate" },
+            { label: "🎯 Risultato", detail: "Meno chiamate perse. Più appuntamenti — senza cambiare le tue abitudini." },
+            { label: "🎁 Offerta di lancio", detail: "Primo mese al 50%" }
           ]
         },
         {
@@ -2652,21 +2637,20 @@ export const translations = {
           weeklyNote: "circa 165$ a settimana",
           setupFee: "497",
           setupFeeNote: "Contratto minimo 6 mesi",
-          description: "Il tuo sistema di crescita completo. L'IA risponde, rilancia, prenota e segue ogni lead — mentre tu lavori.",
+          description: "Ci occupiamo di tutto. Ogni chiamata diventa un'opportunità.",
           features: [
-            "Include TUTTO di 'Night Shift' e 'Co-Pilot'",
-            "Gestione proattiva delle recensioni: i clienti insoddisfatti vengono gestiti privatamente — ricevi un avviso per agire prima che se ne vadano.",
-            "Trasferimento: Destinazioni illimitate (reception, manager, servizio...)",
-            "Memoria clienti: Mila riconosce i clienti abituali e personalizza ogni chiamata",
-            "Logica: Integrazione CRM personalizzata in base al sistema esistente",
-            "Follow-up: SMS auto entro 15 min per ogni lead",
-            "Gestione completa: modifiche, cancellazioni e prenotazioni in un'unica chiamata",
-            "Supporto: Supporto VIP prioritario (risposta < 2h)",
-            "BONUS: Sito web di una pagina gratuito incluso",
-            "Chiamate: Illimitate",
-            "Rapporti mensili personalizzati + ottimizzazione IA",
-            "Aumento appuntamenti: +30–40%",
-            "Offerta lancio: primo mese al 50% del prezzo normale"
+            { label: "📞 Risposta intelligente 24/7", detail: "L'IA risponde, qualifica e gestisce ogni chiamata — anche fuori orario" },
+            { label: "📅 Gestione completa degli appuntamenti", detail: "Prenotazione, modifica e cancellazione al telefono" },
+            { label: "🔁 Richiamata automatica delle chiamate perse", detail: "Nessun cliente perso — ogni chiamata viene ricontattata" },
+            { label: "💬 Follow-up automatico via SMS (15 min)", detail: "Conferma + follow-up senza sforzo" },
+            { label: "🧠 Riconoscimento dei clienti abituali", detail: "Esperienza personalizzata ad ogni chiamata" },
+            { label: "🔗 Integrazione CRM personalizzata", detail: "Collegato al tuo sistema attuale (o CRM fornito se non ne hai uno)" },
+            { label: "⭐ Protezione della tua reputazione", detail: "Clienti insoddisfatti reindirizzati privatamente prima di lasciare una recensione" },
+            { label: "📊 Ottimizzazione continua + report mensili", detail: "Sistema ottimizzato per massimizzare le prenotazioni" },
+            { label: "🎯 Supporto VIP prioritario (< 2h)" },
+            { label: "☎️ Chiamate illimitate" },
+            { label: "🏆 Risultato", detail: "Più appuntamenti. Meno perdite. Zero gestione della reception." },
+            { label: "🎁 Offerta di lancio", detail: "Primo mese al 50%" }
           ]
         }
       ]

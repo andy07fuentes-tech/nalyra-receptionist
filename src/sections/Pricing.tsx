@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from 'react';
 import type { LucideIcon } from 'lucide-react';
-import { Check, Star, PhoneMissed, TrendingUp, BadgeCheck, Lightbulb } from 'lucide-react';
+import { Star, PhoneMissed, TrendingUp, BadgeCheck, Lightbulb } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -228,12 +228,12 @@ export function Pricing() {
                     <div className="bg-slate-900 p-7 md:p-10 flex-grow flex flex-col h-full">
                         <p className={`text-sm text-slate-400 leading-relaxed mb-6 md:mb-8 min-h-[48px] border-l-2 pl-4 ${isElite ? 'border-gold-500/40' : 'border-blue-500/30'}`}>{tier.description}</p>
                         <div className="flex-grow space-y-3 md:space-y-4 mb-8 md:mb-10">
-                            {tier.features?.map((feature: string, j: number) => (
-                                <div key={j} className="flex items-start">
-                                    <div className={`w-5 h-5 rounded-full flex items-center justify-center mr-3 shrink-0 border ${isElite ? 'bg-slate-800 border-slate-700' : isPopular ? 'bg-blue-600/50 border-blue-500' : 'bg-slate-800 border-slate-700'}`}>
-                                        <Check className="w-3.5 h-3.5 text-white" strokeWidth={4} />
-                                    </div>
-                                    <span className="text-sm text-slate-300 font-medium">{feature}</span>
+                            {tier.features?.map((feature: any, j: number) => (
+                                <div key={j}>
+                                    <span className="text-sm text-slate-200 font-medium block">{typeof feature === 'string' ? feature : feature.label}</span>
+                                    {typeof feature === 'object' && feature.detail && (
+                                        <span className="text-xs text-slate-500 leading-snug block mt-0.5">{feature.detail}</span>
+                                    )}
                                 </div>
                             ))}
                         </div>
@@ -433,12 +433,12 @@ export function Pricing() {
                                 <div className="bg-slate-900 p-5 flex-grow flex flex-col">
                                     <p className={`text-xs text-slate-400 leading-relaxed mb-4 border-l-2 pl-3 ${isElite ? 'border-gold-500/40' : 'border-blue-500/30'}`}>{tier.description}</p>
                                     <div className="space-y-2.5 mb-5">
-                                        {tier.features?.map((feature: string, j: number) => (
-                                            <div key={j} className="flex items-start">
-                                                <div className={`w-4 h-4 rounded-full flex items-center justify-center mr-2.5 shrink-0 border ${isPopular ? 'bg-blue-600/50 border-blue-500' : 'bg-slate-800 border-slate-700'}`}>
-                                                    <Check className="w-2.5 h-2.5 text-white" strokeWidth={4} />
-                                                </div>
-                                                <span className="text-xs text-slate-300 font-medium leading-snug">{feature}</span>
+                                        {tier.features?.map((feature: any, j: number) => (
+                                            <div key={j}>
+                                                <span className="text-xs text-slate-200 font-medium leading-snug block">{typeof feature === 'string' ? feature : feature.label}</span>
+                                                {typeof feature === 'object' && feature.detail && (
+                                                    <span className="text-[10px] text-slate-500 leading-snug block mt-0.5">{feature.detail}</span>
+                                                )}
                                             </div>
                                         ))}
                                     </div>
