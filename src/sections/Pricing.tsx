@@ -199,7 +199,10 @@ export function Pricing() {
                                 <div className="absolute inset-[-100%] bg-[conic-gradient(from_0deg,transparent,rgba(210,168,85,0.3),transparent)] animate-[spin_10s_linear_infinite]" />
                             </div>
                         )}
-                        <h4 className={`text-xl md:text-2xl font-bold mb-2 ${isElite ? 'text-gradient-gold' : 'text-slate-900'}`}>{tier.name}</h4>
+                        <h4 className={`text-xl md:text-2xl font-bold mb-1 ${isElite ? 'text-gradient-gold' : 'text-slate-900'}`}>{tier.name}</h4>
+                        {tier.tagline && (
+                            <p className={`text-xs font-medium italic mb-2 ${isElite ? 'text-gold-500' : 'text-slate-400'}`}>{tier.tagline}</p>
+                        )}
                         <div className="flex items-baseline mb-1">
                             <span className={`text-4xl md:text-5xl font-serif transition-colors duration-300 ${isElite ? 'text-gradient-gold' : 'text-slate-900'}`}>${isYearly && tier.price ? discountedMonthly : tier.price}</span>
                             <span className="text-slate-900 ml-2 font-bold italic">{t('pricing.cadMonth')}</span>
@@ -247,7 +250,10 @@ export function Pricing() {
                                         : 'bg-white/10 text-white hover:bg-white/20 border border-white/10'
                                 }`}
                         >
-                            {t('pricing.ctaButton') !== 'pricing.ctaButton' ? t('pricing.ctaButton') : 'Start Trial'}
+                            {isElite
+                            ? (t('pricing.ctaButtonElite') !== 'pricing.ctaButtonElite' ? t('pricing.ctaButtonElite') : 'Activate My System')
+                            : (t('pricing.ctaButton') !== 'pricing.ctaButton' ? t('pricing.ctaButton') : 'Start Trial')
+                        }
                         </button>
                     </div>
                 </div>
@@ -412,7 +418,10 @@ export function Pricing() {
 
                                 {/* Header — name + price */}
                                 <div className={`relative p-5 pb-4 ${isElite ? 'bg-white/40 backdrop-blur-xl' : ''}`}>
-                                    <h4 className={`text-xl font-bold mb-1.5 ${isElite ? 'text-gradient-gold' : 'text-slate-900'}`}>{tier.name}</h4>
+                                    <h4 className={`text-xl font-bold mb-0.5 ${isElite ? 'text-gradient-gold' : 'text-slate-900'}`}>{tier.name}</h4>
+                                    {tier.tagline && (
+                                        <p className={`text-[11px] font-medium italic mb-1.5 ${isElite ? 'text-gold-500' : 'text-slate-400'}`}>{tier.tagline}</p>
+                                    )}
                                     <div className="flex items-baseline mb-1">
                                         <span className={`text-4xl font-serif ${isElite ? 'text-gradient-gold' : 'text-slate-900'}`}>${isYearly ? disc : tier.price}</span>
                                         <span className="text-slate-900 ml-2 font-bold italic text-sm">{t('pricing.cadMonth')}</span>
@@ -452,7 +461,10 @@ export function Pricing() {
                                                     : 'bg-white/10 text-white border border-white/10 hover:bg-white/20'
                                             }`}
                                     >
-                                        {t('pricing.ctaButton') !== 'pricing.ctaButton' ? t('pricing.ctaButton') : 'Start Trial'}
+                                        {isElite
+                                            ? (t('pricing.ctaButtonElite') !== 'pricing.ctaButtonElite' ? t('pricing.ctaButtonElite') : 'Activate My System')
+                                            : (t('pricing.ctaButton') !== 'pricing.ctaButton' ? t('pricing.ctaButton') : 'Start Trial')
+                                        }
                                     </button>
                                 </div>
                             </div>
