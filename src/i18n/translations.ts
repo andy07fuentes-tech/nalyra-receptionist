@@ -298,6 +298,7 @@ export const translations = {
       essentiel: "ESSENTIEL",
       bestValue: "MEILLEURE VALEUR",
       completeSolution: "SOLUTION COMPLÈTE",
+      recommended: "⭐ RECOMMANDÉ",
       cadMonth: "CAD / mois",
       annualBillingNotice: "(facturé {{price}}$ annuellement)",
       setupFeeLabel: "Frais de mise en service",
@@ -330,7 +331,7 @@ export const translations = {
             { label: "📩 Notification SMS instantanée", detail: "Dès qu'un lead ou un rendez-vous est capturé" },
             { label: "🌍 Optimisé pour le marché local (FR)" },
             { label: "☎️ Appels illimités" },
-            { label: "🎯 Résultat", detail: "Aucun appel perdu le soir et le week-end. Votre calendrier se remplit même quand vous êtes fermé." },
+            { label: "🎯 Résultat", detail: "Aucun appel perdu après les heures. Votre calendrier se remplit même quand vous êtes fermé." },
             { label: "🎁 Offre de lancement", detail: "Premier mois à 50%" }
           ]
         },
@@ -348,10 +349,10 @@ export const translations = {
             { label: "🔁 Capture intelligente des appels manqués", detail: "Chaque appel est capturé avec les informations du client, même s'il ne reste pas en ligne." },
             { label: "💬 Rappels SMS automatisés (24h / 2h)", detail: "Réduction des absences" },
             { label: "📲 Transfert vers humain (si nécessaire)", detail: "L'appel peut être redirigé vers vous en direct" },
-            { label: "🌙 Couverture complète jour + nuit", detail: "Aucun appel laissé sans réponse" },
+            { label: "🌙 Couverture 24/7 des appels", detail: "Aucun appel laissé sans réponse" },
             { label: "🌍 Bilingue (FR / EN)" },
             { label: "☎️ Appels illimités" },
-            { label: "🎯 Résultat", detail: "Moins d'appels manqués. Plus de rendez-vous — sans changer vos habitudes." },
+            { label: "🎯 Résultat", detail: "Moins d'appels manqués. Plus de rendez-vous. Sans changer votre façon de travailler." },
             { label: "🎁 Offre de lancement", detail: "Premier mois à 50%" }
           ]
         },
@@ -365,7 +366,7 @@ export const translations = {
           features: [
             { label: "📞 Réponse 24/7 intelligente", detail: "L'IA répond, qualifie et gère chaque appel — même après les heures" },
             { label: "📅 Prise de rendez-vous complète", detail: "Réservation, modification et annulation directement au téléphone" },
-            { label: "🔁 Rappel automatique des appels manqués", detail: "Aucun client perdu — chaque appel est relancé" },
+            { label: "📊 Aucune opportunité perdue", detail: "Chaque appel est pris en charge ou enregistré pour suivi" },
             { label: "💬 Suivi automatique par SMS (15 min)", detail: "Confirmation + relance sans effort" },
             { label: "🧠 Reconnaissance des clients réguliers", detail: "Expérience personnalisée à chaque appel" },
             { label: "🔗 Intégration CRM sur mesure", detail: "Connexion à votre système actuel (ou CRM fourni si vous n'en avez pas)" },
@@ -1055,6 +1056,7 @@ export const translations = {
       essentiel: "ESSENTIAL",
       bestValue: "BEST VALUE",
       completeSolution: "COMPLETE SOLUTION",
+      recommended: "⭐ RECOMMENDED",
       cadMonth: "CAD / month",
       annualBillingNotice: "(billed ${{price}} annually)",
       setupFeeLabel: "Setup Fee",
@@ -1087,7 +1089,7 @@ export const translations = {
             { label: "📩 Instant SMS notification", detail: "When a lead or appointment is captured" },
             { label: "🌍 Optimized for local market (EN)" },
             { label: "☎️ Unlimited calls" },
-            { label: "🎯 Result", detail: "No calls missed evenings or weekends. Your calendar fills up even when you're closed." },
+            { label: "🎯 Result", detail: "No calls missed after hours. Your calendar fills up even when you're closed." },
             { label: "🎁 Launch offer", detail: "First month 50% off" }
           ]
         },
@@ -1105,10 +1107,10 @@ export const translations = {
             { label: "🔁 Smart missed call capture", detail: "Every call captured with client info, even if they don't stay on the line." },
             { label: "💬 Automated SMS reminders (24h / 2h)", detail: "Reduces no-shows" },
             { label: "📲 Transfer to human (if needed)", detail: "Call can be redirected to you live" },
-            { label: "🌙 Full day + night coverage", detail: "No call left unanswered" },
+            { label: "🌙 24/7 call coverage", detail: "No call left unanswered" },
             { label: "🌍 Bilingual (FR / EN)" },
             { label: "☎️ Unlimited calls" },
-            { label: "🎯 Result", detail: "Fewer missed calls. More appointments — without changing your habits." },
+            { label: "🎯 Result", detail: "Fewer missed calls. More appointments. Without changing how you work." },
             { label: "🎁 Launch offer", detail: "First month 50% off" }
           ]
         },
@@ -1122,7 +1124,7 @@ export const translations = {
           features: [
             { label: "📞 Intelligent 24/7 response", detail: "AI answers, qualifies, and manages every call — even after hours" },
             { label: "📅 Full appointment management", detail: "Booking, modification, and cancellation over the phone" },
-            { label: "🔁 Automatic missed call follow-up", detail: "No client lost — every call is followed up" },
+            { label: "📊 No opportunity missed", detail: "Every call is handled or logged for follow-up" },
             { label: "💬 Automatic SMS follow-up (15 min)", detail: "Confirmation + follow-up effortlessly" },
             { label: "🧠 Returning client recognition", detail: "Personalized experience on every call" },
             { label: "🔗 Custom CRM integration", detail: "Connected to your current system (or CRM provided if you don't have one)" },
@@ -1813,6 +1815,7 @@ export const translations = {
       essentiel: "ESENCIAL",
       bestValue: "MEJOR VALOR",
       completeSolution: "SOLUCIÓN COMPLETA",
+      recommended: "⭐ RECOMENDADO",
       cadMonth: "CAD / mes",
       annualBillingNotice: "(facturado ${{price}} anualmente)",
       setupFeeLabel: "Gasto de puesta en servicio",
@@ -1845,7 +1848,7 @@ export const translations = {
             { label: "📩 Notificación SMS instantánea", detail: "Cuando se captura un lead o una cita" },
             { label: "🌍 Optimizado para el mercado local (ES)" },
             { label: "☎️ Llamadas ilimitadas" },
-            { label: "🎯 Resultado", detail: "Ninguna llamada perdida las noches o fines de semana. Su calendario se llena incluso cuando está cerrado." },
+            { label: "🎯 Resultado", detail: "Ninguna llamada perdida fuera de horario. Su calendario se llena incluso cuando está cerrado." },
             { label: "🎁 Oferta de lanzamiento", detail: "Primer mes al 50%" }
           ]
         },
@@ -1863,10 +1866,10 @@ export const translations = {
             { label: "🔁 Captura inteligente de llamadas perdidas", detail: "Cada llamada se captura con la información del cliente, aunque no permanezca en línea." },
             { label: "💬 Recordatorios SMS automáticos (24h / 2h)", detail: "Reduce las ausencias" },
             { label: "📲 Transferencia a humano (si es necesario)", detail: "La llamada puede redirigirse a usted en vivo" },
-            { label: "🌙 Cobertura completa día + noche", detail: "Ninguna llamada sin respuesta" },
+            { label: "🌙 Cobertura de llamadas 24/7", detail: "Ninguna llamada sin respuesta" },
             { label: "🌍 Bilingüe (FR / EN)" },
             { label: "☎️ Llamadas ilimitadas" },
-            { label: "🎯 Resultado", detail: "Menos llamadas perdidas. Más citas — sin cambiar sus hábitos." },
+            { label: "🎯 Resultado", detail: "Menos llamadas perdidas. Más citas. Sin cambiar su forma de trabajar." },
             { label: "🎁 Oferta de lanzamiento", detail: "Primer mes al 50%" }
           ]
         },
@@ -1880,7 +1883,7 @@ export const translations = {
           features: [
             { label: "📞 Respuesta inteligente 24/7", detail: "La IA responde, califica y gestiona cada llamada — incluso fuera de horario" },
             { label: "📅 Gestión completa de citas", detail: "Reserva, modificación y cancelación por teléfono" },
-            { label: "🔁 Seguimiento automático de llamadas perdidas", detail: "Ningún cliente perdido — cada llamada recibe seguimiento" },
+            { label: "📊 Ninguna oportunidad perdida", detail: "Cada llamada es atendida o registrada para seguimiento" },
             { label: "💬 Seguimiento automático por SMS (15 min)", detail: "Confirmación + seguimiento sin esfuerzo" },
             { label: "🧠 Reconocimiento de clientes habituales", detail: "Experiencia personalizada en cada llamada" },
             { label: "🔗 Integración CRM personalizada", detail: "Conectado a su sistema actual (o CRM proporcionado si no tiene uno)" },
@@ -2574,6 +2577,7 @@ export const translations = {
       essentiel: "ESSENZIALE",
       bestValue: "MIGLIOR VALORE",
       completeSolution: "SOLUZIONE COMPLETA",
+      recommended: "⭐ CONSIGLIATO",
       cadMonth: "CAD / mese",
       annualBillingNotice: "(fatturato ${{price}} annualmente)",
       setupFeeLabel: "Spese di attivazione",
@@ -2606,7 +2610,7 @@ export const translations = {
             { label: "📩 Notifica SMS istantanea", detail: "Quando viene acquisito un lead o un appuntamento" },
             { label: "🌍 Ottimizzato per il mercato locale (IT)" },
             { label: "☎️ Chiamate illimitate" },
-            { label: "🎯 Risultato", detail: "Nessuna chiamata persa la sera o nel weekend. Il tuo calendario si riempie anche quando sei chiuso." },
+            { label: "🎯 Risultato", detail: "Nessuna chiamata persa fuori orario. Il tuo calendario si riempie anche quando sei chiuso." },
             { label: "🎁 Offerta di lancio", detail: "Primo mese al 50%" }
           ]
         },
@@ -2624,10 +2628,10 @@ export const translations = {
             { label: "🔁 Acquisizione intelligente chiamate perse", detail: "Ogni chiamata viene acquisita con le info del cliente, anche se non rimane in linea." },
             { label: "💬 Promemoria SMS automatici (24h / 2h)", detail: "Riduzione delle assenze" },
             { label: "📲 Trasferimento a umano (se necessario)", detail: "La chiamata può essere reindirizzata a te in diretta" },
-            { label: "🌙 Copertura completa giorno + notte", detail: "Nessuna chiamata senza risposta" },
+            { label: "🌙 Copertura chiamate 24/7", detail: "Nessuna chiamata senza risposta" },
             { label: "🌍 Bilingue (FR / EN)" },
             { label: "☎️ Chiamate illimitate" },
-            { label: "🎯 Risultato", detail: "Meno chiamate perse. Più appuntamenti — senza cambiare le tue abitudini." },
+            { label: "🎯 Risultato", detail: "Meno chiamate perse. Più appuntamenti. Senza cambiare il tuo modo di lavorare." },
             { label: "🎁 Offerta di lancio", detail: "Primo mese al 50%" }
           ]
         },
@@ -2641,7 +2645,7 @@ export const translations = {
           features: [
             { label: "📞 Risposta intelligente 24/7", detail: "L'IA risponde, qualifica e gestisce ogni chiamata — anche fuori orario" },
             { label: "📅 Gestione completa degli appuntamenti", detail: "Prenotazione, modifica e cancellazione al telefono" },
-            { label: "🔁 Richiamata automatica delle chiamate perse", detail: "Nessun cliente perso — ogni chiamata viene ricontattata" },
+            { label: "📊 Nessuna opportunità persa", detail: "Ogni chiamata viene gestita o registrata per il follow-up" },
             { label: "💬 Follow-up automatico via SMS (15 min)", detail: "Conferma + follow-up senza sforzo" },
             { label: "🧠 Riconoscimento dei clienti abituali", detail: "Esperienza personalizzata ad ogni chiamata" },
             { label: "🔗 Integrazione CRM personalizzata", detail: "Collegato al tuo sistema attuale (o CRM fornito se non ne hai uno)" },

@@ -143,7 +143,7 @@ export function Pricing() {
         const isElite = i === 2;
         const isPopular = i === 1;
         return isElite
-            ? { border: 'var(--gold-500)', glow: 'var(--gold-300)', shadow: 'rgba(210, 168, 85, 0.4)' }
+            ? { border: 'var(--gold-500)', glow: 'var(--gold-300)', shadow: 'rgba(210, 168, 85, 0.65)' }
             : isPopular
                 ? { border: '#00d2ff', glow: '#33dbff', shadow: 'rgba(0, 210, 255, 0.4)' }
                 : { border: '#007e99', glow: '#00a8cc', shadow: 'rgba(0, 126, 153, 0.2)' };
@@ -182,8 +182,8 @@ export function Pricing() {
                 )}
                 {isElite && (
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30">
-                        <div className="bg-slate-900 text-gold-200 text-[10px] font-bold uppercase tracking-widest py-2.5 px-10 rounded-full shadow-[0_4px_25px_rgba(210,168,85,0.4)] whitespace-nowrap border border-gold-500/40">
-                            {t('pricing.completeSolution')}
+                        <div className="bg-gradient-to-r from-gold-600 to-gold-500 text-white text-[10px] font-bold uppercase tracking-widest py-2.5 px-10 rounded-full shadow-[0_4px_30px_rgba(210,168,85,0.75)] whitespace-nowrap border border-gold-400/50">
+                            {t('pricing.recommended')}
                         </div>
                     </div>
                 )}
@@ -394,8 +394,8 @@ export function Pricing() {
                                     </div>
                                 )}
                                 {isElite && (
-                                    <div className="bg-slate-900 text-gold-200 text-[10px] font-bold uppercase tracking-widest py-2 px-7 rounded-full shadow-[0_4px_25px_rgba(210,168,85,0.4)] whitespace-nowrap border border-gold-500/40">
-                                        {t('pricing.completeSolution')}
+                                    <div className="bg-gradient-to-r from-gold-600 to-gold-500 text-white text-[10px] font-bold uppercase tracking-widest py-2 px-7 rounded-full shadow-[0_4px_30px_rgba(210,168,85,0.75)] whitespace-nowrap border border-gold-400/50">
+                                        {t('pricing.recommended')}
                                     </div>
                                 )}
                             </div>
@@ -472,10 +472,10 @@ export function Pricing() {
                             <motion.div
                                 key={i}
                                 initial={{ opacity: 0, y: 70 }}
-                                whileInView={{ opacity: 1, y: isPopular ? -16 : 0 }}
+                                whileInView={{ opacity: 1, y: isElite ? -24 : isPopular ? -16 : 0 }}
                                 viewport={{ once: true, amount: 0.1 }}
                                 transition={{ duration: 0.8, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
-                                whileHover={{ y: isPopular ? -24 : -8, transition: { duration: 0.3, ease: 'easeOut' } }}
+                                whileHover={{ y: isElite ? -32 : isPopular ? -24 : -8, transition: { duration: 0.3, ease: 'easeOut' } }}
                                 className={`relative rounded-3xl flex flex-col group h-full border-transparent shadow-2xl z-10 solar-aura-glow ${isElite ? 'scale-105' : ''}`}
                                 style={{
                                     // @ts-ignore
