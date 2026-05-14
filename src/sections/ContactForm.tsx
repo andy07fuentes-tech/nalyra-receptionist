@@ -38,7 +38,6 @@ export function ContactForm() {
         body: JSON.stringify({
           businessName: formData.businessName || formData.name,
           phone: formData.phone,
-          plan: 'Contact Form',
           name: formData.name,
         }),
       });
