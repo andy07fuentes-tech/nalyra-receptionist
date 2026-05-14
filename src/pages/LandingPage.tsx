@@ -97,6 +97,7 @@ export default function LandingPage() {
                     <CinematicShowcase />
                     <PainPoints />
                     {!isLoading && <DemoShowcase />}
+                    <Founder />
                     <FeatureShowcase />
                     <HorizontalGallery />
                     <AnvelaAdvantage />
@@ -104,7 +105,6 @@ export default function LandingPage() {
                     <SolutionShowcase />
                     <Pricing />
                     <FAQ />
-                    <Founder />
                     <ContactForm />
                 </main>
 

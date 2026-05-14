@@ -290,12 +290,12 @@ export default function OnboardingPage() {
                                             <div className={`bg-slate-900 p-4 sm:p-5 md:p-8 flex-grow flex-col h-full ${isSelected ? 'flex' : 'hidden md:flex'}`}>
                                                 <p className={`text-xs text-slate-400 mb-6 sm:mb-8 leading-relaxed border-l-2 pl-4 ${isElite ? 'border-gold-500/40' : 'border-blue-500/30'}`}>{tier.description}</p>
                                                 <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 flex-grow">
-                                                    {tier.features?.map((f: string, j: number) => (
+                                                    {tier.features?.map((f: any, j: number) => (
                                                         <div key={j} className="flex items-start gap-3">
                                                             <div className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full flex items-center justify-center mt-0.5 shrink-0 border ${isElite ? 'bg-slate-800 border-slate-700' : isPopular ? 'bg-blue-600/50 border-blue-500' : 'bg-slate-800 border-slate-700'}`}>
                                                                 <Check className="w-2 h-2 sm:w-3 sm:h-3 text-white" strokeWidth={4} />
                                                             </div>
-                                                            <span className="text-[9px] sm:text-[10px] text-slate-300 font-medium leading-tight break-words flex-1">{f}</span>
+                                                            <span className="text-[9px] sm:text-[10px] text-slate-300 font-medium leading-tight break-words flex-1">{typeof f === 'string' ? f : f.label}</span>
                                                         </div>
                                                     ))}
                                                 </div>

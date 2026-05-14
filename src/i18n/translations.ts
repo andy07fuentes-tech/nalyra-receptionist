@@ -130,7 +130,7 @@ export const translations = {
         description: "Crée automatiquement une fiche client, envoie un suivi, et alimente votre CRM/Google Sheets. Tout est traçable.",
         cta: "Explorer L'Automatisation",
       },
-      mainTitle: "Comment Anvela propulse votre croissance",
+      mainTitle: "Comment Anvela remplit votre agenda",
       processSubtitle: "NOTRE PROCESSUS"
     },
 
@@ -239,9 +239,9 @@ export const translations = {
       backgroundTitle: "ANVELA",
       features: [
         { title: "VOIX IA", subtitle: "APPELS INTELLIGENTS" },
-        { title: "CHATBOT", subtitle: "MESSAGERIE INTELLIGENTE" },
+        { title: "SMS AUTO", subtitle: "RAPPELS & SUIVIS" },
         { title: "AGENDA", subtitle: "PLANIFICATION AUTO" },
-        { title: "GLOBAL", subtitle: "MULTILINGUE" },
+        { title: "BILINGUE", subtitle: "FR / EN" },
       ]
     },
 
@@ -623,7 +623,7 @@ export const translations = {
         address: { label: "Adresse", value: "Montréal, Québec, Canada" },
         phone: { label: "Téléphone", value: "(438) 814-7578", subtext: "Ligne directe Anvela 24/7" },
         sms: { label: "SMS", value: "(514) 679-2107", subtext: "Texte uniquement, réponse rapide" },
-        email: { label: "Email", value: "pablo@anvela.ca · support@anvela.ca", subtext: "Réponse sous 24h" },
+        email: { label: "Email", value: "support@anvela.ca", subtext: "Réponse sous 24h" },
         hours: { label: "Heures", value: "Toujours Disponible", subtext: "24/7/365 Support" },
       },
       form: {
@@ -895,7 +895,7 @@ export const translations = {
     // Feature Showcase
     featureShowcase: {
       processSubtitle: "OUR PROCESS",
-      mainTitle: "How Anvela Powers Your Growth",
+      mainTitle: "How Anvela Fills Your Calendar",
       step1: {
         subtitle: "DEMONSTRATION",
         title: "See AI in action",
@@ -1027,9 +1027,9 @@ export const translations = {
       backgroundTitle: "ANVELA",
       features: [
         { title: "VOICE AI", subtitle: "INTELLIGENT CALLS" },
-        { title: "CHATBOT", subtitle: "SMART MESSAGING" },
+        { title: "AUTO SMS", subtitle: "REMINDERS & FOLLOW-UPS" },
         { title: "SCHEDULING", subtitle: "AUTO CALENDAR" },
-        { title: "GLOBAL", subtitle: "MULTILINGUAL" },
+        { title: "BILINGUAL", subtitle: "FR / EN" },
       ]
     },
 
@@ -1409,7 +1409,7 @@ export const translations = {
         address: { label: "Address", value: "Montreal, Quebec, Canada" },
         phone: { label: "Phone", value: "(438) 814-7578", subtext: "Anvela direct line 24/7" },
         sms: { label: "SMS", value: "(514) 679-2107", subtext: "Text only, fast response" },
-        email: { label: "Email", value: "pablo@anvela.ca · support@anvela.ca", subtext: "Reply within 24h" },
+        email: { label: "Email", value: "support@anvela.ca", subtext: "Reply within 24h" },
         hours: { label: "Hours", value: "Always Available", subtext: "24/7/365 Support" },
       },
       form: {
@@ -1788,9 +1788,9 @@ export const translations = {
       backgroundTitle: "ANVELA",
       features: [
         { title: "VOZ IA", subtitle: "LLAMADAS INTELIGENTES" },
-        { title: "CHATBOT", subtitle: "MENSAJERÍA INTELIGENTE" },
+        { title: "SMS AUTO", subtitle: "RECORDATORIOS & SEGUIMIENTO" },
         { title: "AGENDA", subtitle: "PLANIFICACIÓN AUTO" },
-        { title: "GLOBAL", subtitle: "MULTILINGÜE" },
+        { title: "BILINGÜE", subtitle: "FR / EN" },
       ]
     },
 
@@ -2170,7 +2170,7 @@ export const translations = {
         address: { label: "Dirección", value: "Montreal, Quebec, Canadá" },
         phone: { label: "Teléfono", value: "(438) 814-7578", subtext: "Línea directa Anvela 24/7" },
         sms: { label: "SMS", value: "(514) 679-2107", subtext: "Solo texto, respuesta rápida" },
-        email: { label: "Email", value: "pablo@anvela.ca · support@anvela.ca", subtext: "Respuesta en 24h" },
+        email: { label: "Email", value: "support@anvela.ca", subtext: "Respuesta en 24h" },
         hours: { label: "Horas", value: "Siempre Disponible", subtext: "Soporte 24/7/365" },
       },
       form: {
@@ -2420,7 +2420,7 @@ export const translations = {
     // Feature Showcase
     featureShowcase: {
       processSubtitle: "IL NOSTRO PROCESSO",
-      mainTitle: "Come Anvela spinge la tua crescita",
+      mainTitle: "Come Anvela riempie il tuo calendario",
       step1: {
         subtitle: "DIMOSTRAZIONE",
         title: "Scopri l'IA in azione",
@@ -2552,9 +2552,9 @@ export const translations = {
       backgroundTitle: "ANVELA",
       features: [
         { title: "VOCE IA", subtitle: "CHIAMATE INTELLIGENTI" },
-        { title: "CHATBOT", subtitle: "MESSAGGISTICA SMART" },
+        { title: "SMS AUTO", subtitle: "PROMEMORIA & FOLLOW-UP" },
         { title: "AGENDA", subtitle: "PIANIFICAZIONE AUTO" },
-        { title: "GLOBALE", subtitle: "MULTILINGUA" },
+        { title: "BILINGUE", subtitle: "FR / EN" },
       ]
     },
 
@@ -2932,7 +2932,7 @@ export const translations = {
         address: { label: "Indirizzo", value: "Montreal, Quebec, Canada" },
         phone: { label: "Telefono", value: "(438) 814-7578", subtext: "Linea diretta Anvela 24/7" },
         sms: { label: "SMS", value: "(514) 679-2107", subtext: "Solo testo, risposta rapida" },
-        email: { label: "Email", value: "pablo@anvela.ca · support@anvela.ca", subtext: "Risposta entro 24h" },
+        email: { label: "Email", value: "support@anvela.ca", subtext: "Risposta entro 24h" },
         hours: { label: "Orari", value: "Sempre Disponibile", subtext: "Supporto 24/7/365" },
       },
       form: {
