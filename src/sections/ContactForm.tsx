@@ -32,10 +32,15 @@ export function ContactForm() {
     setIsSubmitting(true);
 
     try {
-      const res = await fetch('https://n8n.srv1401769.hstgr.cloud/webhook/anvela/contact-form', {
+      const res = await fetch('https://n8n.srv1401769.hstgr.cloud/webhook/anvela/new-lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          businessName: formData.businessName || formData.name,
+          phone: formData.phone,
+          plan: 'Contact Form',
+          name: formData.name,
+        }),
       });
       if (!res.ok) throw new Error('Failed');
       setStatus('success');
