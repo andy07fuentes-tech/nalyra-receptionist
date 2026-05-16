@@ -297,7 +297,7 @@ export const translations = {
       yearly: "Annuel",
       yearlyBonus: "2 mois offerts & -10%",
       essentiel: "ESSENTIEL",
-      bestValue: "POPULAIRE",
+      bestValue: "⭐ LE PLUS POPULAIRE",
       tierIncludes: "inclus",
       completeSolution: "SOLUTION COMPLÈTE",
       recommended: "⭐ RECOMMANDÉ",
@@ -374,6 +374,7 @@ export const translations = {
             { label: "🧠 Reconnaissance des clients réguliers", detail: "Mila reconnaît vos clients fidèles et personnalise chaque appel." },
             { label: "📅 Gestion COMPLÈTE des rendez-vous", detail: "Réservation, modification ET annulation directement par téléphone." },
             { label: "🔗 Intégration CRM", detail: "Compatible avec les principales plateformes (évaluation incluse)." },
+            { label: "✓ Tout ce qui est inclus dans Night Shift + Co-Pilot", detail: "Réponse 24/7 · Capture des appels manqués · Transfert vers humain · Bilingue FR/EN · Appels illimités" },
             { label: "🏆 Résultat", detail: "Plus de rendez-vous. Moins de pertes. Une réputation blindée. Zéro gestion." },
             { label: "🎁 Offre de lancement", detail: "Premier mois à 50%" }
           ]
@@ -1057,7 +1058,7 @@ export const translations = {
       yearly: "Yearly",
       yearlyBonus: "2 months free & -10%",
       essentiel: "ESSENTIAL",
-      bestValue: "POPULAR",
+      bestValue: "⭐ MOST POPULAR",
       tierIncludes: "included",
       completeSolution: "COMPLETE SOLUTION",
       recommended: "⭐ RECOMMENDED",
@@ -1134,6 +1135,7 @@ export const translations = {
             { label: "🧠 Returning client recognition", detail: "Mila recognizes your loyal clients and personalizes every call." },
             { label: "📅 COMPLETE appointment management", detail: "Booking, modification AND cancellation directly over the phone." },
             { label: "🔗 CRM integration", detail: "Compatible with major platforms (assessment included)." },
+            { label: "✓ Everything included in Night Shift + Co-Pilot", detail: "24/7 response · Missed call capture · Human transfer · Bilingual FR/EN · Unlimited calls" },
             { label: "🏆 Result", detail: "More appointments. Fewer losses. A bulletproof reputation. Zero management." },
             { label: "🎁 Launch offer", detail: "First month 50% off" }
           ]
@@ -1818,7 +1820,7 @@ export const translations = {
       yearly: "Anual",
       yearlyBonus: "2 meses gratis & -10%",
       essentiel: "ESENCIAL",
-      bestValue: "POPULAR",
+      bestValue: "⭐ MÁS POPULAR",
       tierIncludes: "incluido",
       completeSolution: "SOLUCIÓN COMPLETA",
       recommended: "⭐ RECOMENDADO",
@@ -1895,6 +1897,7 @@ export const translations = {
             { label: "🧠 Reconocimiento de clientes habituales", detail: "Mila reconoce a sus clientes fieles y personaliza cada llamada." },
             { label: "📅 Gestión COMPLETA de citas", detail: "Reserva, modificación Y cancelación directamente por teléfono." },
             { label: "🔗 Integración CRM", detail: "Compatible con las principales plataformas (evaluación incluida)." },
+            { label: "✓ Todo lo incluido en Night Shift + Co-Pilot", detail: "Respuesta 24/7 · Captura de llamadas perdidas · Transferencia a humano · Bilingüe FR/EN · Llamadas ilimitadas" },
             { label: "🏆 Resultado", detail: "Más citas. Menos pérdidas. Una reputación blindada. Cero gestión." },
             { label: "🎁 Oferta de lanzamiento", detail: "Primer mes al 50%" }
           ]
@@ -2582,7 +2585,7 @@ export const translations = {
       yearly: "Annuale",
       yearlyBonus: "2 mesi gratuiti & -10%",
       essentiel: "ESSENZIALE",
-      bestValue: "POPOLARE",
+      bestValue: "⭐ PIÙ POPOLARE",
       tierIncludes: "incluso",
       completeSolution: "SOLUZIONE COMPLETA",
       recommended: "⭐ CONSIGLIATO",
@@ -2659,6 +2662,7 @@ export const translations = {
             { label: "🧠 Riconoscimento dei clienti abituali", detail: "Mila riconosce i tuoi clienti fedeli e personalizza ogni chiamata." },
             { label: "📅 Gestione COMPLETA degli appuntamenti", detail: "Prenotazione, modifica E cancellazione direttamente al telefono." },
             { label: "🔗 Integrazione CRM", detail: "Compatibile con le principali piattaforme (valutazione inclusa)." },
+            { label: "✓ Tutto incluso in Night Shift + Co-Pilot", detail: "Risposta 24/7 · Cattura chiamate perse · Trasferimento umano · Bilingue FR/EN · Chiamate illimitate" },
             { label: "🏆 Risultato", detail: "Più appuntamenti. Meno perdite. Una reputazione blindata. Zero gestione." },
             { label: "🎁 Offerta di lancio", detail: "Primo mese al 50%" }
           ]
