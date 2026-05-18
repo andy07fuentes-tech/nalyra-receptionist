@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Globe2, PhoneOff, Loader2, PlayCircle, X as XIcon } from 'lucide-react';
+import { PhoneOff, Loader2, PlayCircle, X as XIcon } from 'lucide-react';
 import { RetellWebClient } from 'retell-client-js-sdk';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useAudio } from '../contexts/AudioContext';
@@ -23,6 +23,8 @@ export function DemoShowcase() {
 
     const [callStatus, setCallStatus] = useState<'idle' | 'connecting' | 'active'>('idle');
     const [showContinuation, setShowContinuation] = useState(false);
+    const [showMultilingual, setShowMultilingual] = useState(false);
+    const [showTutorial, setShowTutorial] = useState(false);
 
     // Retell call handlers
     const startCall = async () => {
@@ -126,7 +128,7 @@ export function DemoShowcase() {
 
     const pills = [
         { icon: '🌙', key: 'availability' },
-        { icon: <Globe2 className="ds-fpill-svg" aria-hidden="true" />, key: 'bilingual' },
+        { icon: '🌎', key: 'bilingual' },
         { icon: '⚡', key: 'speed' },
         { icon: '📅', key: 'booking' },
         { icon: '📊', key: 'analytics' },
@@ -202,7 +204,7 @@ export function DemoShowcase() {
                             <div className="ds-video-wrap">
                                 <video
                                     ref={videoRef}
-                                    src="/videos/mila-demo2-blurred.mp4"
+                                    src="/videos/rendez-vous-blurred.mp4"
                                     poster="/images/mila-thumb.jpg"
                                     controls
                                     playsInline
@@ -250,8 +252,8 @@ export function DemoShowcase() {
                             <div className="ds-frame-footer-tag ds-pill-green">{t('demoShowcase.frame2.tag') as string}</div>
                         </div>
 
-                        {/* Continuation link */}
-                        <div className="flex justify-center mt-4">
+                        {/* Continuation links */}
+                        <div className="flex flex-col items-center gap-3 mt-4">
                             <button
                                 onClick={() => setShowContinuation(true)}
                                 className="flex items-center gap-2 text-white font-bold hover:text-emerald-300 transition-colors duration-300 text-sm group"
@@ -259,6 +261,24 @@ export function DemoShowcase() {
                                 <PlayCircle className="h-4 w-4 shrink-0 text-emerald-400 group-hover:scale-110 transition-transform duration-200" />
                                 <span className="underline underline-offset-4 decoration-white/40 group-hover:decoration-emerald-300 transition-all duration-300">
                                     {t('demoShowcase.continuationLabel') as string || 'Voir la suite →'}
+                                </span>
+                            </button>
+                            <button
+                                onClick={() => setShowMultilingual(true)}
+                                className="flex items-center gap-2 text-white font-bold hover:text-purple-300 transition-colors duration-300 text-sm group"
+                            >
+                                <PlayCircle className="h-4 w-4 shrink-0 text-purple-400 group-hover:scale-110 transition-transform duration-200" />
+                                <span className="underline underline-offset-4 decoration-white/40 group-hover:decoration-purple-300 transition-all duration-300">
+                                    {t('demoShowcase.multilingualLabel') as string || 'Multilingue naturel →'}
+                                </span>
+                            </button>
+                            <button
+                                onClick={() => setShowTutorial(true)}
+                                className="flex items-center gap-2 text-white font-bold hover:text-teal-300 transition-colors duration-300 text-sm group"
+                            >
+                                <PlayCircle className="h-4 w-4 shrink-0 text-teal-400 group-hover:scale-110 transition-transform duration-200" />
+                                <span className="underline underline-offset-4 decoration-white/40 group-hover:decoration-teal-300 transition-all duration-300">
+                                    {t('demoShowcase.tutorialLabel') as string || 'Personnalisée pour vous →'}
                                 </span>
                             </button>
                         </div>
@@ -315,18 +335,78 @@ export function DemoShowcase() {
 
             </div>
 
-            {/* Continuation video modal */}
-            {showContinuation && (
+            {/* Multilingual video modal */}
+            {showMultilingual && (
                 <div
                     className="fixed inset-0 z-[100] bg-black/85 backdrop-blur-sm flex items-center justify-center p-4"
-                    onClick={() => setShowContinuation(false)}
+                    onClick={() => { setShowMultilingual(false); setIsDimmed(false); }}
                 >
                     <div
                         className="relative w-full max-w-3xl rounded-2xl overflow-hidden bg-black shadow-2xl"
                         onClick={e => e.stopPropagation()}
                     >
                         <button
-                            onClick={() => setShowContinuation(false)}
+                            onClick={() => { setShowMultilingual(false); setIsDimmed(false); }}
+                            className="absolute top-3 right-3 z-10 p-2 bg-black/60 hover:bg-black/80 backdrop-blur-md rounded-full border border-white/20 text-white transition-all duration-200"
+                        >
+                            <XIcon className="h-5 w-5" />
+                        </button>
+                        <video
+                            src="/videos/multilingual-blurred.mp4"
+                            controls
+                            autoPlay
+                            playsInline
+                            className="w-full aspect-video object-contain"
+                            onPlay={() => setIsDimmed(true)}
+                            onPause={() => setIsDimmed(false)}
+                            onEnded={() => setIsDimmed(false)}
+                        />
+                    </div>
+                </div>
+            )}
+
+            {/* Tutorial video modal */}
+            {showTutorial && (
+                <div
+                    className="fixed inset-0 z-[100] bg-black/85 backdrop-blur-sm flex items-center justify-center p-4"
+                    onClick={() => { setShowTutorial(false); setIsDimmed(false); }}
+                >
+                    <div
+                        className="relative w-full max-w-3xl rounded-2xl overflow-hidden bg-black shadow-2xl"
+                        onClick={e => e.stopPropagation()}
+                    >
+                        <button
+                            onClick={() => { setShowTutorial(false); setIsDimmed(false); }}
+                            className="absolute top-3 right-3 z-10 p-2 bg-black/60 hover:bg-black/80 backdrop-blur-md rounded-full border border-white/20 text-white transition-all duration-200"
+                        >
+                            <XIcon className="h-5 w-5" />
+                        </button>
+                        <video
+                            src="/videos/tutorial-blurred.mp4"
+                            controls
+                            autoPlay
+                            playsInline
+                            className="w-full aspect-video object-contain"
+                            onPlay={() => setIsDimmed(true)}
+                            onPause={() => setIsDimmed(false)}
+                            onEnded={() => setIsDimmed(false)}
+                        />
+                    </div>
+                </div>
+            )}
+
+            {/* Continuation video modal */}
+            {showContinuation && (
+                <div
+                    className="fixed inset-0 z-[100] bg-black/85 backdrop-blur-sm flex items-center justify-center p-4"
+                    onClick={() => { setShowContinuation(false); setIsDimmed(false); }}
+                >
+                    <div
+                        className="relative w-full max-w-3xl rounded-2xl overflow-hidden bg-black shadow-2xl"
+                        onClick={e => e.stopPropagation()}
+                    >
+                        <button
+                            onClick={() => { setShowContinuation(false); setIsDimmed(false); }}
                             className="absolute top-3 right-3 z-10 p-2 bg-black/60 hover:bg-black/80 backdrop-blur-md rounded-full border border-white/20 text-white transition-all duration-200"
                         >
                             <XIcon className="h-5 w-5" />
@@ -337,6 +417,9 @@ export function DemoShowcase() {
                             autoPlay
                             playsInline
                             className="w-full aspect-video object-contain"
+                            onPlay={() => setIsDimmed(true)}
+                            onPause={() => setIsDimmed(false)}
+                            onEnded={() => setIsDimmed(false)}
                         />
                     </div>
                 </div>
