@@ -32,7 +32,7 @@ export function ContactForm() {
     setIsSubmitting(true);
 
     try {
-      const res = await fetch('https://n8n.srv1401769.hstgr.cloud/webhook/anvela/new-lead', {
+      const res = await fetch('https://n8n.srv1401769.hstgr.cloud/webhook/anvela/new-lead-v2', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
