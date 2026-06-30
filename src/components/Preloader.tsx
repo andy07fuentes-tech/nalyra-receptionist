@@ -151,6 +151,11 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
           ease: 'power3.out'
         });
 
+        // Wordmark turns light as the splash background goes dark (fixes low-contrast ANVELA)
+        if (brandNameRef.current) {
+          gsap.to(brandNameRef.current, { color: '#ffffff', duration: 1.5, ease: 'power3.out' });
+        }
+
         gsap.fromTo(brandRef.current, 
           { filter: 'brightness(0.8)' },
           { 

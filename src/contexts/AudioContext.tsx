@@ -20,7 +20,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const NORMAL_VOLUME = 0.4;
-  const DIMMED_VOLUME = 0.1;
+  const DIMMED_VOLUME = 0.02;
 
   useEffect(() => {
     // Create audio element

@@ -1,9 +1,12 @@
 import { useRef, useEffect, useState } from 'react';
 import type { LucideIcon } from 'lucide-react';
-import { Star, PhoneMissed, TrendingUp, BadgeCheck, Lightbulb } from 'lucide-react';
+import { Star, PhoneMissed, TrendingUp, BadgeCheck, Lightbulb, Layers, Check } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+
+// Strip the leading emoji/symbol from a feature label so we can render a uniform icon instead.
+const stripLeadingEmoji = (s: string) => s.replace(/^[^\p{L}\d$]+/u, '').trim();
 
 // ── ROI stat helpers ──────────────────────────────────────────────────────────
 
@@ -230,15 +233,36 @@ export function Pricing() {
 
                     <div className="bg-slate-900 p-7 md:p-10 flex-grow flex flex-col h-full">
                         <p className={`text-sm text-slate-400 leading-relaxed mb-6 md:mb-8 min-h-[48px] border-l-2 pl-4 ${isElite ? 'border-gold-500/40' : 'border-blue-500/30'}`}>{tier.description}</p>
+                        {(isPopular || isElite) && (
+                            <div className={`flex items-center gap-2 px-3 py-2.5 rounded-xl mb-5 text-xs font-semibold ${
+                                isElite
+                                    ? 'bg-gold-500/10 border border-gold-500/20 text-gold-400'
+                                    : 'bg-blue-500/10 border border-blue-500/20 text-blue-300'
+                            }`}>
+                                <Layers className="w-3.5 h-3.5 flex-shrink-0 opacity-80" />
+                                {isElite
+                                    ? `${pricingTiers[0]?.name} + ${pricingTiers[1]?.name} ${t('pricing.tierIncludes')}`
+                                    : `${pricingTiers[0]?.name} ${t('pricing.tierIncludes')}`}
+                            </div>
+                        )}
                         <div className="flex-grow space-y-3 md:space-y-4 mb-8 md:mb-10">
-                            {tier.features?.map((feature: any, j: number) => (
-                                <div key={j}>
-                                    <span className="text-sm text-slate-200 font-medium block">{typeof feature === 'string' ? feature : feature.label}</span>
-                                    {typeof feature === 'object' && feature.detail && (
-                                        <span className="text-xs text-slate-500 leading-snug block mt-0.5">{feature.detail}</span>
-                                    )}
-                                </div>
-                            ))}
+                            {tier.features?.map((feature: any, j: number) => {
+                                const label = typeof feature === 'string' ? feature : feature.label;
+                                const detail = typeof feature === 'object' ? feature.detail : undefined;
+                                return (
+                                    <div key={j} className="flex gap-3">
+                                        <span className={`mt-[3px] flex-shrink-0 flex items-center justify-center w-[18px] h-[18px] rounded-full ${isElite ? 'bg-gold-500/15 text-gold-400' : 'bg-blue-500/15 text-blue-400'}`}>
+                                            <Check className="w-2.5 h-2.5" strokeWidth={3.5} />
+                                        </span>
+                                        <div className="min-w-0">
+                                            <span className="text-sm text-slate-200 font-medium block">{stripLeadingEmoji(label)}</span>
+                                            {detail && (
+                                                <span className="text-xs text-slate-500 leading-snug block mt-0.5">{detail}</span>
+                                            )}
+                                        </div>
+                                    </div>
+                                );
+                            })}
                         </div>
                         <button
                             onClick={() => handleSubscribe(tier.name)}
@@ -441,15 +465,36 @@ export function Pricing() {
                                 {/* Features + CTA */}
                                 <div className="bg-slate-900 p-5 flex-grow flex flex-col">
                                     <p className={`text-xs text-slate-400 leading-relaxed mb-4 border-l-2 pl-3 ${isElite ? 'border-gold-500/40' : 'border-blue-500/30'}`}>{tier.description}</p>
+                                    {(isPopular || isElite) && (
+                                        <div className={`flex items-center gap-2 px-3 py-2.5 rounded-xl mb-4 text-xs font-semibold ${
+                                            isElite
+                                                ? 'bg-gold-500/10 border border-gold-500/20 text-gold-400'
+                                                : 'bg-blue-500/10 border border-blue-500/20 text-blue-300'
+                                        }`}>
+                                            <Layers className="w-3.5 h-3.5 flex-shrink-0 opacity-80" />
+                                            {isElite
+                                                ? `${pricingTiers[0]?.name} + ${pricingTiers[1]?.name} ${t('pricing.tierIncludes')}`
+                                                : `${pricingTiers[0]?.name} ${t('pricing.tierIncludes')}`}
+                                        </div>
+                                    )}
                                     <div className="space-y-2.5 mb-5">
-                                        {tier.features?.map((feature: any, j: number) => (
-                                            <div key={j}>
-                                                <span className="text-xs text-slate-200 font-medium leading-snug block">{typeof feature === 'string' ? feature : feature.label}</span>
-                                                {typeof feature === 'object' && feature.detail && (
-                                                    <span className="text-[10px] text-slate-500 leading-snug block mt-0.5">{feature.detail}</span>
-                                                )}
-                                            </div>
-                                        ))}
+                                        {tier.features?.map((feature: any, j: number) => {
+                                            const label = typeof feature === 'string' ? feature : feature.label;
+                                            const detail = typeof feature === 'object' ? feature.detail : undefined;
+                                            return (
+                                                <div key={j} className="flex gap-2.5">
+                                                    <span className={`mt-[2px] flex-shrink-0 flex items-center justify-center w-4 h-4 rounded-full ${isElite ? 'bg-gold-500/15 text-gold-400' : 'bg-blue-500/15 text-blue-400'}`}>
+                                                        <Check className="w-2 h-2" strokeWidth={3.5} />
+                                                    </span>
+                                                    <div className="min-w-0">
+                                                        <span className="text-xs text-slate-200 font-medium leading-snug block">{stripLeadingEmoji(label)}</span>
+                                                        {detail && (
+                                                            <span className="text-[10px] text-slate-500 leading-snug block mt-0.5">{detail}</span>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            );
+                                        })}
                                     </div>
                                     <button
                                         onClick={() => handleSubscribe(tier.name)}

@@ -197,8 +197,8 @@ export const OnboardingChecklist = ({
                   </div>
                 </div>
               </DialogTrigger>
-              <DialogContent className="max-w-5xl p-0 border-0 bg-transparent shadow-none overflow-hidden rounded-2xl sm:rounded-3xl">
-                <div className="relative aspect-[9/16] md:aspect-video w-full bg-black/90 backdrop-blur-xl">
+              <DialogContent className="w-[92vw] max-w-5xl p-0 border-0 bg-transparent shadow-none overflow-hidden rounded-2xl sm:rounded-3xl">
+                <div className="relative aspect-video w-full max-h-[80vh] bg-black/90 backdrop-blur-xl">
                   {/* Custom High-Visibility Close Button for Mobile */}
                   <div className="absolute top-4 right-4 z-[60]">
                     <DialogClose className="p-2 bg-black/50 hover:bg-black/70 backdrop-blur-md rounded-full border border-white/20 text-white transition-all duration-300">
@@ -244,8 +244,8 @@ export const OnboardingChecklist = ({
                   <span className="opacity-50 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all duration-300">→</span>
                 </button>
               </DialogTrigger>
-              <DialogContent className="max-w-5xl p-0 border-0 bg-transparent shadow-none overflow-hidden rounded-2xl sm:rounded-3xl">
-                <div className="relative aspect-[9/16] md:aspect-video w-full bg-black/90 backdrop-blur-xl">
+              <DialogContent className="w-[92vw] max-w-5xl p-0 border-0 bg-transparent shadow-none overflow-hidden rounded-2xl sm:rounded-3xl">
+                <div className="relative aspect-video w-full max-h-[80vh] bg-black/90 backdrop-blur-xl">
                   <div className="absolute top-4 right-4 z-[60]">
                     <DialogClose className="p-2 bg-black/50 hover:bg-black/70 backdrop-blur-md rounded-full border border-white/20 text-white transition-all duration-300">
                       <XIcon className="h-6 w-6" />

@@ -62,9 +62,8 @@ export function Navigation() {
             </span>
           </button>
 
-          <span 
-                className="font-script text-xl text-blue-600"
-                style={{ backgroundImage: 'none', textDecoration: 'none' }}
+          <span
+                className={`mt-0.5 font-sans text-[10px] md:text-[11px] uppercase tracking-[0.25em] font-medium transition-colors duration-300 ${isScrolled ? 'text-slate-400' : 'text-white/60'}`}
               >
                 {t('nav.tagline')}
               </span>

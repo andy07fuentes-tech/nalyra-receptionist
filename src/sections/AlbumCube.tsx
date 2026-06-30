@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 interface CubeProps {
-    rotationProgress: number;
+    rotationProgressRef: { current: number };
 }
 
 const CUBE_TEXTURES = [
@@ -25,7 +25,7 @@ const CUBE_TEXTURES = [
 // Preload textures immediately so there's no delay when scrolling into view
 useTexture.preload(CUBE_TEXTURES);
 
-const Cube = ({ rotationProgress }: CubeProps) => {
+const Cube = ({ rotationProgressRef }: CubeProps) => {
     const meshRef = useRef<THREE.Mesh>(null);
     const { viewport } = useThree();
 
@@ -35,8 +35,9 @@ const Cube = ({ rotationProgress }: CubeProps) => {
 
     useFrame(() => {
         if (meshRef.current) {
-            const targetRotationY = rotationProgress * Math.PI * 2;
-            const targetRotationX = Math.sin(rotationProgress * Math.PI) * 0.3;
+            const progress = rotationProgressRef.current;
+            const targetRotationY = progress * Math.PI * 2;
+            const targetRotationX = Math.sin(progress * Math.PI) * 0.3;
 
             meshRef.current.rotation.y = THREE.MathUtils.lerp(
                 meshRef.current.rotation.y,
@@ -75,7 +76,7 @@ export function AlbumCube() {
     const { t } = useLanguage();
 
     const sectionRef = useRef<HTMLDivElement>(null);
-    const [rotationProgress, setRotationProgress] = useState(0);
+    const rotationProgressRef = useRef(0);
     const [currentAlbumIndex, setCurrentAlbumIndex] = useState(0);
 
     const getTrans = (path: string, fallback: string) => {
@@ -101,7 +102,7 @@ export function AlbumCube() {
             pin: true,
             onUpdate: (self) => {
                 const progress = self.progress;
-                setRotationProgress(progress);
+                rotationProgressRef.current = progress;
 
                 const albumIndex = Math.min(
                     Math.floor(progress * 4),
@@ -124,8 +125,8 @@ export function AlbumCube() {
         >
             {/* Dynamic Mesh Gradient Background */}
             <div className="absolute inset-0 z-0 overflow-hidden opacity-30">
-                <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-blue-400/20 rounded-full blur-[120px]" />
-                <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-indigo-400/20 rounded-full blur-[150px]" />
+                <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-blue-400/20 rounded-full blur-[40px]" />
+                <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-indigo-400/20 rounded-full blur-[40px]" />
             </div>
 
             {/* Elegant Header Branding */}
@@ -148,7 +149,7 @@ export function AlbumCube() {
                         <spotLight position={[10, 10, 10]} intensity={2.5} angle={0.2} penumbra={1} color="#ffffff" />
                         <spotLight position={[-10, 5, 5]} intensity={2.5} angle={0.2} penumbra={1} color="#3b82f6" />
 
-                        <Cube rotationProgress={rotationProgress} />
+                        <Cube rotationProgressRef={rotationProgressRef} />
                         <ContactShadows
                             position={[0, -1.8, 0]}
                             opacity={0.38}

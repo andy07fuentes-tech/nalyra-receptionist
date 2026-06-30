@@ -33,3 +33,9 @@ dist-ssr
 # local-only folders (personal docs + design experiments)
 business-docs/
 experiments/
+
+# local agent/session config — never deploy
+.claude/
+
+# raw uncompressed video originals (compressed versions are tracked)
+public/videos/_originals/

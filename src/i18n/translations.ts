@@ -61,6 +61,7 @@ export const translations = {
     hero: {
       scriptText: "Pendant que vous travaillez...",
       mainTitle: "Chaque appel manqué\nest un travail perdu.",
+      subhead: "Votre réceptionniste IA répond à chaque appel, prend vos rendez-vous et capture chaque client. Disponible 24/7.",
       ctaButton: "Offre de Lancement",
       videoDemo: "Démo Vidéo",
       prices: "Tarifs",
@@ -76,7 +77,7 @@ export const translations = {
     },
     missedCalls: {
       subtitle: "IMPACT FINANCIER",
-      title: "Chaque appel manqué est une opportunité perdue.",
+      title: "85 % des appelants ne rappellent jamais.",
       vision: "Et si chaque garage pouvait se permettre de ne jamais manquer un appel ?",
       cta: "Ne perdez plus d'argent",
     },
@@ -852,6 +853,7 @@ export const translations = {
     hero: {
       scriptText: "While you're under the hood...",
       mainTitle: "Every missed call\nis a job lost.",
+      subhead: "Your AI receptionist answers every call, books your appointments and captures every client. Available 24/7.",
       ctaButton: "Launch Offer",
       videoDemo: "Video Demo",
       prices: "Prices",
@@ -867,7 +869,7 @@ export const translations = {
     },
     missedCalls: {
       subtitle: "FINANCIAL IMPACT",
-      title: "Every missed call is a lost opportunity.",
+      title: "85% of callers never call back.",
       vision: "What if every auto shop could afford to never miss a call again?",
       cta: "Stop losing money",
     },
@@ -1618,6 +1620,7 @@ export const translations = {
     hero: {
       scriptText: "Mientras estás trabajando...",
       mainTitle: "Cada llamada perdida\nes un trabajo perdido.",
+      subhead: "Tu recepcionista IA contesta cada llamada, agenda tus citas y capta a cada cliente. Disponible 24/7.",
       ctaButton: "Oferta de Lanzamiento",
       videoDemo: "Demo en Video",
       prices: "Precios",
@@ -1633,7 +1636,7 @@ export const translations = {
     },
     missedCalls: {
       subtitle: "IMPACTO FINANCIERO",
-      title: "Cada llamada perdida es una oportunidad perdida.",
+      title: "El 85% de quienes llaman nunca vuelve a llamar.",
       vision: "¿Y si cada taller automotriz pudiera permitirse no volver a perder una llamada?",
       cta: "Deja de perder dinero",
     },
@@ -2383,6 +2386,7 @@ export const translations = {
     hero: {
       scriptText: "Mentre sei sotto il cofano...",
       mainTitle: "Ogni chiamata persa\nè un lavoro perso.",
+      subhead: "La tua receptionist IA risponde a ogni chiamata, fissa gli appuntamenti e cattura ogni cliente. Disponibile 24/7.",
       ctaButton: "Offerta di Lancio",
       videoDemo: "Video Demo",
       prices: "Prezzi",
@@ -2398,7 +2402,7 @@ export const translations = {
     },
     missedCalls: {
       subtitle: "IMPATTO FINANZIARIO",
-      title: "Ogni chiamata persa è un'opportunità persa.",
+      title: "L'85% di chi chiama non richiama mai.",
       vision: "E se ogni officina potesse permettersi di non perdere mai più una chiamata?",
       cta: "Smetti di perdere soldi",
     },

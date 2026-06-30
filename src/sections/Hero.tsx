@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight, Play, Flame } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
@@ -43,7 +43,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
 
   const stats = [
     { value: 100, suffix: "%", label: t('hero.stats.calls.label') },
-    { value: 24, suffix: "/7", label: t('hero.stats.availability.label') },
+    { value: 24, suffix: "/7", label: t('hero.stats.availability.label'), noCount: true },
     { value: 50, suffix: "%", label: t('hero.stats.savings.label') },
   ];
 
@@ -244,15 +244,8 @@ export function Hero({ isReady }: { isReady: boolean }) {
       />
 
       {/* Content */}
-      <div ref={contentRef} className="relative z-20 flex flex-col items-center justify-center h-full pt-16 md:pt-10 pb-32 md:pb-20 px-4 w-full text-center">
+      <div ref={contentRef} className="relative z-20 flex flex-col items-center justify-center h-full pt-28 md:pt-28 pb-32 md:pb-20 px-4 w-full text-center">
         <div className="w-full max-w-lg">
-          {/* Script accent */}
-          <div className={`transition-all duration-1000 ease-out ${phase >= 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'} mb-2 mt-4`}>
-            <span className="font-script text-2xl md:text-3xl lg:text-5xl text-blue-400">
-              {t('hero.scriptText')}
-            </span>
-          </div>
-
           {/* Divider line */}
           <div className={`my-4 md:my-8 h-px bg-blue-500/50 transition-all duration-1000 ease-out ${phase >= 2 ? 'w-24 opacity-100' : 'w-0 opacity-0'}`} style={{ transitionDelay: '0.2s', margin: '0 auto' }} />
 
@@ -263,15 +256,24 @@ export function Hero({ isReady }: { isReady: boolean }) {
             ))}
           </h1>
 
+          {/* Subhead — what Anvela is */}
+          <p className={`mt-5 md:mt-6 text-sm md:text-base lg:text-lg text-white/80 leading-relaxed max-w-md mx-auto font-sans transition-all duration-1000 ease-out ${phase >= 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: '0.35s' }}>
+            {t('hero.subhead')}
+          </p>
+
           {/* Main CTA */}
-          <div className={`mt-6 md:mt-8 transition-all duration-1000 ease-out ${phase >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: '0.4s' }}>
+          <div className={`mt-6 md:mt-8 flex flex-col items-center transition-all duration-1000 ease-out ${phase >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: '0.4s' }}>
+            {/* Promo pill — first month at 50% off */}
+            <span className="inline-flex items-center gap-1.5 mb-3 rounded-full bg-gradient-to-r from-gold-600 to-gold-500 px-4 py-1.5 text-[10px] md:text-[11px] font-bold uppercase tracking-[0.15em] text-white shadow-[0_4px_20px_rgba(210,168,85,0.45)]">
+              <Flame className="w-3 h-3 fill-current" />
+              {t('hero.ctaSubtitle')}
+            </span>
             <GradientButton variant="variant" asChild className="group h-auto rounded-xl shadow-[0_0_20px_rgba(201,98,135,0.2)] active:scale-95 border-0">
               <Link
                 to="/onboarding"
                 className="inline-flex items-center gap-3 px-8 py-4 w-full h-full"
               >
                 <div className="flex flex-col items-center leading-none relative z-10 w-full text-center">
-                  <span className="text-[9px] tracking-[0.2em] text-white mb-1 uppercase font-[Poppins]">{t('hero.ctaSubtitle')}</span>
                   <span className="font-serif text-lg md:text-xl text-white font-normal">{t('hero.ctaMain')}</span>
                 </div>
                 <div className="p-1.5 bg-white/10 rounded-lg transition-colors z-10 relative">
@@ -324,7 +326,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
               {stats.map((stat, index) => (
                 <div key={index} className="text-center group">
                   <div className="font-serif text-4xl md:text-5xl text-blue-500 mb-2 tabular-nums">
-                    {counts[index]}{stat.suffix}
+                    {('noCount' in stat && stat.noCount) ? stat.value : counts[index]}{stat.suffix}
                   </div>
                   <div className="text-[10px] md:text-xs text-white/50 uppercase tracking-[0.2em] font-medium">{stat.label}</div>
                 </div>

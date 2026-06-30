@@ -5,10 +5,7 @@ import { MissedCalls } from '../sections/MissedCalls';
 import { PainPoints } from '../sections/PainPoints';
 import { DemoShowcase } from '../sections/DemoShowcase';
 import { FeatureShowcase } from '../sections/FeatureShowcase';
-import { HorizontalGallery } from '../sections/HorizontalGallery';
-import { AnvelaAdvantage } from '../sections/AnvelaAdvantage';
 import { AlbumCube } from '../sections/AlbumCube';
-import { SolutionShowcase } from '../sections/SolutionShowcase';
 import { CinematicShowcase } from '../sections/CinematicShowcase';
 import { Pricing } from '../sections/Pricing';
 import { FAQ } from '../sections/FAQ';
@@ -99,10 +96,7 @@ export default function LandingPage() {
                     {!isLoading && <DemoShowcase />}
                     <Founder />
                     <FeatureShowcase />
-                    <HorizontalGallery />
-                    <AnvelaAdvantage />
                     <AlbumCube />
-                    <SolutionShowcase />
                     <Pricing />
                     <FAQ />
                     <ContactForm />
