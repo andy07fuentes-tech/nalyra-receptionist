@@ -326,7 +326,7 @@ export const translations = {
           weeklyNote: "soit environ 7$ par jour",
           setupFee: "0",
           setupFeeNote: "Contrat minimum de 3 mois",
-          description: "Pendant que vous êtes fermé, votre téléphone continue de générer des rendez-vous.",
+          description: "Une voix naturelle qui répond après vos heures et remplit votre agenda pendant que vous êtes fermé.",
           features: [
             { label: "🌙 Réponse automatique après les heures", detail: "Lun–Ven 18h–8h + week-end 24h" },
             { label: "📞 IA qui répond et qualifie les appels", detail: "Questions fréquentes + prise d'informations client" },
@@ -345,7 +345,7 @@ export const translations = {
           isPopular: true,
           setupFee: "197",
           setupFeeNote: "Contrat minimum de 3 mois",
-          description: "Votre téléphone travaille pour vous — même quand vous êtes occupé ou fermé.",
+          description: "Une réceptionniste qui sonne humaine, au téléphone pour vous 24/7 — même quand vous êtes débordé ou fermé.",
           features: [
             { label: "📞 Réponse intelligente 24/7", detail: "L'IA prend les appels lorsque vous êtes indisponible ou débordé" },
             { label: "📅 Prise de rendez-vous automatisée", detail: "L'IA réserve directement dans votre calendrier" },
@@ -366,7 +366,7 @@ export const translations = {
           weeklyNote: "soit environ 23$ par jour",
           setupFee: "497",
           setupFeeNote: "Contrat minimum de 6 mois",
-          description: "Pour les garages qui veulent une réceptionniste qui sonne humaine — et qui s'adapte à leur réalité.",
+          description: "Tout le système Anvela géré pour vous : réputation protégée, suivi VIP et adaptation à la réalité de votre garage.",
           features: [
             { label: "🎙️ Voix naturelle, qualité adaptée à votre garage", detail: "On adapte la qualité de l'IA selon le volume et la complexité de vos appels — pour la meilleure expérience sans surcoût inutile." },
             { label: "⭐ Protection de votre réputation en ligne", detail: "Les clients insatisfaits sont redirigés en privé AVANT de laisser un avis négatif sur Google. Votre note reste protégée." },
@@ -1090,7 +1090,7 @@ export const translations = {
           weeklyNote: "approx. $7 / day",
           setupFee: "0",
           setupFeeNote: "Minimum 3-month commitment",
-          description: "While you're closed, your phone keeps booking appointments.",
+          description: "A natural-sounding voice that answers after hours and keeps your calendar filling while you're closed.",
           features: [
             { label: "🌙 Automatic after-hours response", detail: "Mon–Fri 6pm–8am + Weekends 24/7" },
             { label: "📞 AI answers and qualifies calls", detail: "FAQ responses + client info capture" },
@@ -1109,7 +1109,7 @@ export const translations = {
           isPopular: true,
           setupFee: "197",
           setupFeeNote: "Minimum 3-month commitment",
-          description: "Your phone works for you — even when you're busy or closed.",
+          description: "A receptionist that sounds human, on the phone for you 24/7 — even when you're slammed or closed.",
           features: [
             { label: "📞 Intelligent 24/7 response", detail: "AI picks up when you're unavailable or overwhelmed" },
             { label: "📅 Automated appointment booking", detail: "AI books directly in your calendar" },
@@ -1130,7 +1130,7 @@ export const translations = {
           weeklyNote: "approx. $23 / day",
           setupFee: "497",
           setupFeeNote: "Minimum 6-month commitment",
-          description: "For shops that want an AI receptionist that sounds human — and adapts to their reality.",
+          description: "The full Anvela system, managed for you: protected reputation, VIP follow-up, and tuned to your shop's reality.",
           features: [
             { label: "🎙️ Natural voice, quality adapted to your shop", detail: "We adapt the AI quality based on your call volume and complexity to give you the best experience without overpaying." },
             { label: "⭐ Online reputation protection", detail: "Unhappy clients are redirected privately BEFORE leaving a negative Google review. Your rating stays protected." },
@@ -1855,7 +1855,7 @@ export const translations = {
           weeklyNote: "aprox. $7 / día",
           setupFee: "0",
           setupFeeNote: "Contrato mínimo de 3 meses",
-          description: "Mientras estás cerrado, tu teléfono sigue generando citas.",
+          description: "Una voz natural que responde fuera de horario y mantiene tu agenda llenándose mientras estás cerrado.",
           features: [
             { label: "🌙 Respuesta automática fuera de horario", detail: "Lun–Vie 18h–8h + fin de semana 24h" },
             { label: "📞 IA responde y califica llamadas", detail: "Preguntas frecuentes + captura de información del cliente" },
@@ -1874,7 +1874,7 @@ export const translations = {
           isPopular: true,
           setupFee: "197",
           setupFeeNote: "Contrato mínimo de 3 meses",
-          description: "Tu teléfono trabaja para ti — incluso cuando estás ocupado o cerrado.",
+          description: "Una recepcionista que suena humana, al teléfono por ti 24/7 — incluso cuando estás saturado o cerrado.",
           features: [
             { label: "📞 Respuesta inteligente 24/7", detail: "La IA atiende cuando no está disponible o está ocupado" },
             { label: "📅 Reserva automatizada de citas", detail: "La IA reserva directamente en su calendario" },
@@ -1895,7 +1895,7 @@ export const translations = {
           weeklyNote: "aprox. $23 / día",
           setupFee: "497",
           setupFeeNote: "Contrato mínimo de 6 meses",
-          description: "Para talleres que quieren una recepcionista que suene humana — y se adapte a su realidad.",
+          description: "Todo el sistema Anvela gestionado para ti: reputación protegida, seguimiento VIP y adaptado a la realidad de tu taller.",
           features: [
             { label: "🎙️ Voz natural, calidad adaptada a su taller", detail: "Adaptamos la calidad de la IA según el volumen y la complejidad de sus llamadas — para la mejor experiencia sin pagar de más." },
             { label: "⭐ Protección de su reputación en línea", detail: "Los clientes insatisfechos son redirigidos en privado ANTES de dejar una reseña negativa en Google. Su nota queda protegida." },
@@ -2623,7 +2623,7 @@ export const translations = {
           weeklyNote: "circa 7$ al giorno",
           setupFee: "0",
           setupFeeNote: "Contratto minimo 3 mesi",
-          description: "Mentre sei chiuso, il tuo telefono continua a generare appuntamenti.",
+          description: "Una voce naturale che risponde fuori orario e continua a riempire la tua agenda mentre sei chiuso.",
           features: [
             { label: "🌙 Risposta automatica fuori orario", detail: "Lun–Ven 18h–8h + weekend 24h" },
             { label: "📞 IA risponde e qualifica le chiamate", detail: "FAQ + acquisizione informazioni cliente" },
@@ -2642,7 +2642,7 @@ export const translations = {
           isPopular: true,
           setupFee: "197",
           setupFeeNote: "Contratto minimo 3 mesi",
-          description: "Il tuo telefono lavora per te — anche quando sei occupato o chiuso.",
+          description: "Una receptionist che suona umana, al telefono per te 24/7 — anche quando sei sommerso o chiuso.",
           features: [
             { label: "📞 Risposta intelligente 24/7", detail: "L'IA risponde quando non sei disponibile o sei occupato" },
             { label: "📅 Prenotazione automatizzata", detail: "L'IA prenota direttamente nel tuo calendario" },
@@ -2663,7 +2663,7 @@ export const translations = {
           weeklyNote: "circa 23$ al giorno",
           setupFee: "497",
           setupFeeNote: "Contratto minimo 6 mesi",
-          description: "Per i garage che vogliono una receptionist che suoni umana — e si adatti alla loro realtà.",
+          description: "Tutto il sistema Anvela gestito per te: reputazione protetta, follow-up VIP e adattato alla realtà del tuo garage.",
           features: [
             { label: "🎙️ Voce naturale, qualità adattata al tuo garage", detail: "Adattiamo la qualità dell'IA al volume e alla complessità delle tue chiamate — per la migliore esperienza senza costi eccessivi." },
             { label: "⭐ Protezione della reputazione online", detail: "I clienti insoddisfatti vengono reindirizzati in privato PRIMA di lasciare una recensione negativa su Google. Il tuo punteggio resta protetto." },
