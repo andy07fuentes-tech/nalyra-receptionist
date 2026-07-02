@@ -14,6 +14,7 @@ export default function OnboardingPage() {
     const [selectedPlan, setSelectedPlan] = useState<string | null>(location.state?.plan || null);
     const [phoneNumber, setPhoneNumber] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitError, setSubmitError] = useState<'phone' | 'submit' | null>(null);
 
     // GOOGLE PLACES LOGIC
     const {
@@ -54,9 +55,15 @@ export default function OnboardingPage() {
 
     const handleSubmit = async () => {
         if (!phoneNumber || isSubmitting) return;
+        const phoneDigits = phoneNumber.replace(/\D/g, '');
+        if (phoneDigits.length < 10) {
+            setSubmitError('phone');
+            return;
+        }
+        setSubmitError(null);
         setIsSubmitting(true);
         try {
-            await fetch('https://n8n.srv1401769.hstgr.cloud/webhook/anvela/new-lead', {
+            const res = await fetch('https://n8n.srv1401769.hstgr.cloud/webhook/anvela/new-lead', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -66,10 +73,11 @@ export default function OnboardingPage() {
                     phone: phoneNumber,
                 }),
             });
-        } catch (e) {
-            // fire and forget — still advance to confirmation
+            if (!res.ok) throw new Error('Failed');
+            setStep(4);
+        } catch {
+            setSubmitError('submit');
         }
-        setStep(4);
         setIsSubmitting(false);
     };
 
@@ -350,9 +358,14 @@ export default function OnboardingPage() {
                                     type="tel"
                                     placeholder={t('onboarding.step3.phonePlaceholder') as string}
                                     value={phoneNumber}
-                                    onChange={(e) => setPhoneNumber(e.target.value)}
-                                    className="w-full h-14 px-4 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-blue-600 transition-all text-slate-900 text-base sm:text-lg tracking-widest shadow-inner placeholder:text-slate-300"
+                                    onChange={(e) => { setPhoneNumber(e.target.value); setSubmitError(null); }}
+                                    className={`w-full h-14 px-4 bg-white border rounded-xl focus:outline-none transition-all text-slate-900 text-base sm:text-lg tracking-widest shadow-inner placeholder:text-slate-300 ${submitError === 'phone' ? 'border-red-400 focus:border-red-500' : 'border-slate-200 focus:border-blue-600'}`}
                                 />
+                                {submitError && (
+                                    <p className="text-sm text-red-500 font-medium" role="alert">
+                                        {t(submitError === 'phone' ? 'onboarding.step3.phoneInvalid' : 'onboarding.step3.submitError') as string}
+                                    </p>
+                                )}
                             </div>
                             <button
                                 onClick={handleSubmit}

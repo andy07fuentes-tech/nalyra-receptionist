@@ -64,6 +64,7 @@ export const translations = {
       subhead: "Votre réceptionniste IA répond à chaque appel, prend vos rendez-vous et capture chaque client. Disponible 24/7.",
       ctaButton: "Offre de Lancement",
       videoDemo: "Démo Vidéo",
+      demoLabel: "Voir comment ça marche",
       prices: "Tarifs",
       decorativeText: "FIABLE • DISPONIBLE • ABORDABLE",
       ctaSubtitle: "1er mois à -50%",
@@ -645,6 +646,7 @@ export const translations = {
         submittingText: "Envoi...",
         successMessage: "Merci ! Anvela vous rappellera sous peu.",
         errorMessage: "Une erreur s'est produite. Veuillez réessayer.",
+        phoneInvalid: "Veuillez entrer un numéro de téléphone valide (au moins 10 chiffres).",
         calendarTitle: "Réservez votre appel découverte",
         calendarSubtitle: "Vous préférez parler directement avec Pablo ? Choisissez un créneau et discutons de vos besoins.",
         calendarButton: "Prendre rendez-vous",
@@ -684,6 +686,8 @@ export const translations = {
         phonePlaceholder: "+1 (514) 000-0000",
         backButton: "Retour",
         submittingButton: "Appel en cours...",
+        phoneInvalid: "Veuillez entrer un numéro de téléphone valide (au moins 10 chiffres).",
+        submitError: "L'envoi a échoué. Vérifiez votre connexion et réessayez.",
         submitButton: "Demander un appel d'intégration",
       },
       step4: {
@@ -856,6 +860,7 @@ export const translations = {
       subhead: "Your AI receptionist answers every call, books your appointments and captures every client. Available 24/7.",
       ctaButton: "Launch Offer",
       videoDemo: "Video Demo",
+      demoLabel: "See how it works",
       prices: "Prices",
       decorativeText: "RELIABLE • AVAILABLE • AFFORDABLE",
       ctaSubtitle: "1st month -50%",
@@ -1046,7 +1051,13 @@ export const translations = {
       titleAccent: "To Unstoppable",
       description: "Watch how Anvela transforms a chaotic front desk into a hub of calm efficiency. Never miss a call, never lose a lead, and let your team focus on what truly matters.",
       feat1: { title: "AI Precision", desc: "Handles complex inquiries instantly" },
-      feat2: { title: "Instant Setup", desc: "Zero friction integration" }
+      feat2: { title: "Instant Setup", desc: "Zero friction integration" },
+      steps: [
+        { title: "Your AI Setup", description: "We train your receptionist on your services, pricing and availability." },
+        { title: "Reception Testing", description: "Internal testing phase to guarantee absolute fluidity and precision." },
+        { title: "Direct Go-Live", description: "Call forwarding activated. Your AI starts working instantly." },
+        { title: "Continuous Optimization", description: "Performance monitoring and adjustments based on real interactions." }
+      ]
     },
 
     // Pricing
@@ -1176,10 +1187,6 @@ export const translations = {
     faq: {
       subtitle: "SUPPORT",
       mainTitle: "Frequently Asked Questions",
-      description: "Have questions about Anvela? We have the answers. If you can't find what you're looking for, don't hesitate to contact us.",
-      moreInfoTitle: "Want to know more?",
-      moreInfoText: "Our team is available for a personalized 15-minute demonstration.",
-      moreInfoButton: "Speak with an expert",
       items: [
         {
           question: "How does integration with my current system work?",
@@ -1435,6 +1442,7 @@ export const translations = {
         submittingText: "Sending...",
         successMessage: "Thank you! Anvela will call you shortly.",
         errorMessage: "Something went wrong. Please try again.",
+        phoneInvalid: "Please enter a valid phone number (at least 10 digits).",
         calendarTitle: "Book your discovery call",
         calendarSubtitle: "Prefer to speak directly with Pablo? Pick a time and let's talk about your needs.",
         calendarButton: "Book a call",
@@ -1474,6 +1482,8 @@ export const translations = {
         phonePlaceholder: "+1 (514) 000-0000",
         backButton: "Back",
         submittingButton: "Calling...",
+        phoneInvalid: "Please enter a valid phone number (at least 10 digits).",
+        submitError: "Something went wrong. Please check your connection and try again.",
         submitButton: "Request Integration Call",
       },
       step4: {
@@ -1616,6 +1626,29 @@ export const translations = {
       tagline: "Su taller nunca duerme más",
     },
 
+    cinematic: {
+      step1: {
+        subtitle: "Experiencia del Cliente",
+        title: "Disponibilidad Radiante",
+        description: "Su recepcionista digital nunca tiene un mal día. Cada cliente es recibido con una calidez constante y un profesionalismo atento, las 24 horas del día."
+      },
+      step2: {
+        subtitle: "Fiabilidad Total",
+        title: "Cero Ausencias, Cero Interrupciones",
+        description: "La fiabilidad redefinida. Sin bajas por enfermedad, sin ausencias imprevistas y sin huecos de cobertura. Anvela siempre está en su puesto para que su empresa no pierda ninguna llamada."
+      },
+      step3: {
+        subtitle: "Ética e Imagen",
+        title: "Cortesía Inquebrantable",
+        description: "Un protocolo perfecto, cada vez. Nuestra IA mantiene un tono educado, tranquilo y respetuoso, incluso ante situaciones complejas, protegiendo así la imagen de su marca."
+      },
+      step4: {
+        subtitle: "Productividad Máxima",
+        title: "Rendimiento sin Pausa",
+        description: "Una productividad continua sin tiempos muertos. Sin pausas para el café, sin horas de almuerzo ni solicitudes de vacaciones. Un servicio ininterrumpido que optimiza su eficiencia."
+      }
+    },
+
     // Hero
     hero: {
       scriptText: "Mientras estás trabajando...",
@@ -1623,6 +1656,7 @@ export const translations = {
       subhead: "Tu recepcionista IA contesta cada llamada, agenda tus citas y capta a cada cliente. Disponible 24/7.",
       ctaButton: "Oferta de Lanzamiento",
       videoDemo: "Demo en Video",
+      demoLabel: "Vea cómo funciona",
       prices: "Precios",
       decorativeText: "CONFIABLE • DISPONIBLE • ACCESIBLE",
       ctaSubtitle: "1er mes al -50%",
@@ -1689,7 +1723,9 @@ export const translations = {
         title: "Del contacto a la conversión",
         description: "Crea automáticamente un archivo de cliente, envía seguimientos y alimenta tu CRM/Google Sheets. Todo es rastreable.",
         cta: "Explorar la Automatización",
-      }
+      },
+      mainTitle: "Cómo Anvela llena su agenda",
+      processSubtitle: "NUESTRO PROCESO"
     },
 
     // Pain Points
@@ -1811,7 +1847,13 @@ export const translations = {
       titleAccent: "a la Excelencia",
       description: "Descubra cómo Anvela transforma una recepción desbordada en un centro de eficiencia serena. No pierda más llamadas, no pierda más leads y deje que su equipo se concentre en lo esencial.",
       feat1: { title: "Precisión IA", desc: "Gestione instantáneamente las solicitudes" },
-      feat2: { title: "Instalación Relámpago", desc: "Integración sin fricciones" }
+      feat2: { title: "Instalación Relámpago", desc: "Integración sin fricciones" },
+      steps: [
+        { title: "Configuración de su IA", description: "Entrenamos a su recepcionista con sus servicios, tarifas y disponibilidad." },
+        { title: "Prueba de Recepción", description: "Fase de prueba interna para garantizar una fluidez y precisión absolutas." },
+        { title: "Puesta en Marcha Directa", description: "Activación del desvío de llamadas. Su IA comienza a trabajar al instante." },
+        { title: "Optimización Continua", description: "Seguimiento del rendimiento y ajustes basados en interacciones reales." }
+      ]
     },
 
     // Pricing
@@ -1941,10 +1983,6 @@ export const translations = {
     faq: {
       subtitle: "ASISTENCIA",
       mainTitle: "Preguntas Frecuentes",
-      description: "¿Tiene preguntas sobre Anvela? Tenemos las respuestas. Si no encuentra lo que busca, no dude en contactarnos.",
-      moreInfoTitle: "¿Quiere saber más?",
-      moreInfoText: "Nuestro equipo está disponible para una demostración personalizada de 15 minutos.",
-      moreInfoButton: "Hablar con un experto",
       items: [
         {
           question: "¿Cómo funciona la integración con mi sistema actual?",
@@ -2200,6 +2238,7 @@ export const translations = {
         submittingText: "Enviando...",
         successMessage: "¡Gracias! Anvela le llamará en breve.",
         errorMessage: "Algo salió mal. Por favor intente de nuevo.",
+        phoneInvalid: "Por favor ingrese un número de teléfono válido (al menos 10 dígitos).",
         calendarTitle: "Reserve su llamada de descubrimiento",
         calendarSubtitle: "¿Prefiere hablar directamente con Pablo? Elija un horario y hablemos de sus necesidades.",
         calendarButton: "Reservar una llamada",
@@ -2239,6 +2278,8 @@ export const translations = {
         phonePlaceholder: "+1 (514) 000-0000",
         backButton: "Atrás",
         submittingButton: "Llamando...",
+        phoneInvalid: "Por favor ingrese un número de teléfono válido (al menos 10 dígitos).",
+        submitError: "Algo salió mal. Verifique su conexión e intente de nuevo.",
         submitButton: "Solicitar llamada de integración",
       },
       step4: {
@@ -2268,7 +2309,6 @@ export const translations = {
     // Footer
     footer: {
       brandName: "Anvela",
-      brandSubname: "Comunicación Inteligente",
       tagline: "Tu Recepción Digital 24/7",
       description: "Transforme su negocio con servicios de recepcionista impulsados por IA. Disponible 24/7, siempre profesional, increíblemente eficiente.",
       newsletterLabel: "Suscríbase a nuestro boletín",
@@ -2382,6 +2422,29 @@ export const translations = {
       tagline: "La tua officina non dorme più",
     },
 
+    cinematic: {
+      step1: {
+        subtitle: "Esperienza Cliente",
+        title: "Disponibilità Radiosa",
+        description: "La tua receptionist digitale non ha mai una brutta giornata. Ogni cliente è accolto con un calore costante e una professionalità premurosa, 24 ore su 24."
+      },
+      step2: {
+        subtitle: "Affidabilità Totale",
+        title: "Zero Assenze, Zero Interruzioni",
+        description: "L'affidabilità ridefinita. Niente congedi per malattia, niente assenze impreviste e nessun vuoto di copertura. Anvela è sempre al suo posto perché la tua azienda non perda nessuna chiamata."
+      },
+      step3: {
+        subtitle: "Etica e Immagine",
+        title: "Cortesia Incrollabile",
+        description: "Un protocollo perfetto, ogni volta. La nostra IA mantiene un tono educato, calmo e rispettoso, anche di fronte a situazioni complesse, proteggendo così l'immagine del tuo marchio."
+      },
+      step4: {
+        subtitle: "Produttività Massima",
+        title: "Prestazioni senza Pausa",
+        description: "Una produttività continua senza tempi morti. Niente pause caffè, niente ore di pranzo né richieste di ferie. Un servizio ininterrotto che ottimizza la tua efficienza."
+      }
+    },
+
     // Hero
     hero: {
       scriptText: "Mentre sei sotto il cofano...",
@@ -2389,6 +2452,7 @@ export const translations = {
       subhead: "La tua receptionist IA risponde a ogni chiamata, fissa gli appuntamenti e cattura ogni cliente. Disponibile 24/7.",
       ctaButton: "Offerta di Lancio",
       videoDemo: "Video Demo",
+      demoLabel: "Guarda come funziona",
       prices: "Prezzi",
       decorativeText: "AFFIDABILE • DISPONIBILE • CONVENIENTE",
       ctaSubtitle: "1° mese al -50%",
@@ -2579,7 +2643,13 @@ export const translations = {
       titleAccent: "all'Eccellenza",
       description: "Scopri come Anvela trasforma una reception sovraccarica in un centro di efficienza sereno. Non perdere più chiamate, non perdere più lead e lascia che il tuo team si concentri sull'essenziale.",
       feat1: { title: "Precisione IA", desc: "Gestisce istantaneamente le richieste" },
-      feat2: { title: "Installazione Lampo", desc: "Integrazione senza attriti" }
+      feat2: { title: "Installazione Lampo", desc: "Integrazione senza attriti" },
+      steps: [
+        { title: "Configurazione della tua IA", description: "Formiamo la tua receptionist sui tuoi servizi, tariffe e disponibilità." },
+        { title: "Test di Ricezione", description: "Fase di test interna per garantire fluidità e precisione assolute." },
+        { title: "Messa in Linea Diretta", description: "Attivazione del trasferimento di chiamata. La tua IA inizia a lavorare all'istante." },
+        { title: "Ottimizzazione Continua", description: "Monitoraggio delle prestazioni e regolazioni basate su interazioni reali." }
+      ]
     },
 
     // Pricing
@@ -2707,10 +2777,6 @@ export const translations = {
     faq: {
       subtitle: "ASSISTENZA",
       mainTitle: "Domande Frequenti",
-      description: "Hai domande su Anvela? Abbiamo le risposte. Se non trovi quello che cerchi, non esitare a contattarci.",
-      moreInfoTitle: "Vuoi saperne di più?",
-      moreInfoText: "Il nostro team è disponibile per una dimostrazione personalizzata di 15 minuti.",
-      moreInfoButton: "Parla con un esperto",
       items: [
         {
           question: "Come funziona l'integrazione con il mio sistema attuale?",
@@ -2966,6 +3032,7 @@ export const translations = {
         submittingText: "Invio...",
         successMessage: "Grazie! Anvela ti richiamerà a breve.",
         errorMessage: "Qualcosa è andato storto. Per favore riprova.",
+        phoneInvalid: "Inserisci un numero di telefono valido (almeno 10 cifre).",
         calendarTitle: "Prenota la tua chiamata di scoperta",
         calendarSubtitle: "Preferisci parlare direttamente con Pablo? Scegli un orario e discutiamo delle tue esigenze.",
         calendarButton: "Prenota una chiamata",
@@ -3005,6 +3072,8 @@ export const translations = {
         phonePlaceholder: "+1 (514) 000-0000",
         backButton: "Indietro",
         submittingButton: "Chiamando...",
+        phoneInvalid: "Inserisci un numero di telefono valido (almeno 10 cifre).",
+        submitError: "Qualcosa è andato storto. Controlla la connessione e riprova.",
         submitButton: "Richiedi chiamata di integrazione",
       },
       step4: {
@@ -3034,7 +3103,6 @@ export const translations = {
     // Footer
     footer: {
       brandName: "Anvela",
-      brandSubname: "Comunicazione Intelligente",
       tagline: "La Tua Reception Digitale 24/7",
       description: "Trasforma la tua azienda con servizi di receptionist alimentati dall'IA. Disponibile 24/7, sempre professionale, incredibilmente efficiente.",
       newsletterLabel: "Iscriviti alla nostra newsletter",

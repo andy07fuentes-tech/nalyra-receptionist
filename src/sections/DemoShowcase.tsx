@@ -1,17 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
 import { PhoneOff, Loader2, PlayCircle, X as XIcon } from 'lucide-react';
-import { RetellWebClient } from 'retell-client-js-sdk';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useAudio } from '../contexts/AudioContext';
+import { useCall } from '../contexts/CallContext';
 import './DemoShowcase.css';
 
 const WAVEFORM_HEIGHTS = [6,14,22,30,20,36,26,38,18,32,28,38,24,34,20,30,36,28,40,32,36,24,38,20,30,16,28,22,38,18,30,14,22,10,16,8];
 
-const retellClient = new RetellWebClient();
-
 export function DemoShowcase() {
     const { t } = useLanguage();
-    const { setIsMuted, setIsDimmed } = useAudio();
+    const { setIsDimmed } = useAudio();
+    const { callStatus, startCall, endCall } = useCall();
 
     const video1Ref  = useRef<HTMLVideoElement>(null);
     const videoRef   = useRef<HTMLVideoElement>(null);
@@ -21,37 +20,9 @@ export function DemoShowcase() {
     const bookingFired = useRef(false);
     const smsFired     = useRef(false);
 
-    const [callStatus, setCallStatus] = useState<'idle' | 'connecting' | 'active'>('idle');
     const [showContinuation, setShowContinuation] = useState(false);
     const [showMultilingual, setShowMultilingual] = useState(false);
     const [showTutorial, setShowTutorial] = useState(false);
-
-    // Retell call handlers
-    const startCall = async () => {
-        setCallStatus('connecting');
-        setIsMuted(true);
-        try {
-            const res = await fetch('https://n8n.srv1401769.hstgr.cloud/webhook/anvela/create-web-call', { method: 'POST' });
-            const { access_token, sample_rate } = await res.json();
-            await retellClient.startCall({ accessToken: access_token, sampleRate: sample_rate ?? 16000 });
-            setCallStatus('active');
-        } catch {
-            setIsMuted(false);
-            setCallStatus('idle');
-        }
-    };
-
-    const endCall = () => {
-        retellClient.stopCall();
-        setIsMuted(false);
-        setCallStatus('idle');
-    };
-
-    useEffect(() => {
-        const onEnded = () => { setIsMuted(false); setCallStatus('idle'); };
-        retellClient.on('call_ended', onEnded);
-        return () => { retellClient.off('call_ended', onEnded); };
-    }, [setIsMuted]);
 
     // Waveform + video events
     useEffect(() => {
@@ -330,7 +301,12 @@ export function DemoShowcase() {
                             📞 &nbsp;{t('demoShowcase.cta.primary') as string}
                         </button>
                     )}
-                    <button className="ds-btn-ghost">{t('demoShowcase.cta.secondary') as string}</button>
+                    <button
+                        className="ds-btn-ghost"
+                        onClick={() => document.querySelector('#pricing')?.scrollIntoView({ behavior: 'smooth' })}
+                    >
+                        {t('demoShowcase.cta.secondary') as string}
+                    </button>
                 </div>
 
             </div>

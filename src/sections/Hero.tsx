@@ -289,7 +289,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
             {/* Demo — pulsing ring + play icon + label */}
             <div className="flex flex-col items-center gap-2">
               <span className="text-[9px] text-white/90 tracking-[0.18em] uppercase font-sans font-medium">
-                Voir comment ça marche
+                {t('hero.demoLabel')}
               </span>
               <div className="relative">
                 <span className="absolute inset-0 rounded-full bg-blue-500/20 animate-ping" style={{ animationDuration: '2.2s' }} />

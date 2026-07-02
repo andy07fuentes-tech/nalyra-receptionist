@@ -55,6 +55,10 @@ export default function LandingPage() {
                             y: 0,
                             duration: 1,
                             ease: 'power3.out',
+                            // Remove leftover transform after entrance — a lingering transform
+                            // makes position:fixed children (video modals) position relative to
+                            // the section instead of the viewport
+                            clearProps: 'transform',
                             scrollTrigger: {
                                 trigger: section,
                                 start: 'top 88%',

@@ -26,9 +26,16 @@ export function ContactForm() {
   });
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [phoneError, setPhoneError] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const phoneDigits = formData.phone.replace(/\D/g, '');
+    if (phoneDigits.length < 10) {
+      setPhoneError(true);
+      return;
+    }
+    setPhoneError(false);
     setIsSubmitting(true);
 
     try {
@@ -53,6 +60,7 @@ export function ContactForm() {
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    if (e.target.name === 'phone') setPhoneError(false);
     setFormData(prev => ({
       ...prev,
       [e.target.name]: e.target.value
@@ -218,7 +226,7 @@ export function ContactForm() {
                   </div>
 
                   {/* Secondary — Quick form */}
-                  <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+                  <form onSubmit={handleSubmit} className="space-y-4">
                     <div className="grid md:grid-cols-2 gap-4">
                       {/* Name */}
                       <div>
@@ -252,8 +260,13 @@ export function ContactForm() {
                           required
                           placeholder={t('contact.form.phonePlaceholder')}
                           autoComplete="tel"
-                          className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-dark-theme placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
+                          className={`w-full px-4 py-3 bg-slate-50 border rounded-lg text-dark-theme placeholder-slate-400 focus:outline-none focus:ring-1 transition-all ${phoneError ? 'border-red-400 focus:border-red-500 focus:ring-red-500' : 'border-slate-200 focus:border-blue-500 focus:ring-blue-500'}`}
                         />
+                        {phoneError && (
+                          <p className="mt-2 text-xs text-red-500 font-medium" role="alert">
+                            {t('contact.form.phoneInvalid')}
+                          </p>
+                        )}
                       </div>
                     </div>
 
