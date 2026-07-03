@@ -60,8 +60,8 @@ export const translations = {
     // Hero
     hero: {
       scriptText: "Pendant que vous travaillez...",
-      mainTitle: "Chaque appel manqué\nest un travail perdu.",
-      subhead: "Votre réceptionniste IA répond à chaque appel, prend vos rendez-vous et capture chaque client. Disponible 24/7.",
+      mainTitle: "Votre réceptionniste IA.\nAucun appel manqué.",
+      subhead: "Chaque appel manqué est un travail perdu. Anvela répond, prend vos rendez-vous et capture chaque client. Disponible 24/7.",
       ctaButton: "Offre de Lancement",
       videoDemo: "Démo Vidéo",
       demoLabel: "Voir comment ça marche",
@@ -856,8 +856,8 @@ export const translations = {
     // Hero
     hero: {
       scriptText: "While you're under the hood...",
-      mainTitle: "Every missed call\nis a job lost.",
-      subhead: "Your AI receptionist answers every call, books your appointments and captures every client. Available 24/7.",
+      mainTitle: "Your AI receptionist.\nNever miss a call.",
+      subhead: "Every missed call is a job lost. Anvela answers, books your appointments and captures every client. Available 24/7.",
       ctaButton: "Launch Offer",
       videoDemo: "Video Demo",
       demoLabel: "See how it works",
@@ -1652,8 +1652,8 @@ export const translations = {
     // Hero
     hero: {
       scriptText: "Mientras estás trabajando...",
-      mainTitle: "Cada llamada perdida\nes un trabajo perdido.",
-      subhead: "Tu recepcionista IA contesta cada llamada, agenda tus citas y capta a cada cliente. Disponible 24/7.",
+      mainTitle: "Tu recepcionista IA.\nNinguna llamada perdida.",
+      subhead: "Cada llamada perdida es un trabajo perdido. Anvela contesta, agenda tus citas y capta a cada cliente. Disponible 24/7.",
       ctaButton: "Oferta de Lanzamiento",
       videoDemo: "Demo en Video",
       demoLabel: "Vea cómo funciona",
@@ -2448,8 +2448,8 @@ export const translations = {
     // Hero
     hero: {
       scriptText: "Mentre sei sotto il cofano...",
-      mainTitle: "Ogni chiamata persa\nè un lavoro perso.",
-      subhead: "La tua receptionist IA risponde a ogni chiamata, fissa gli appuntamenti e cattura ogni cliente. Disponibile 24/7.",
+      mainTitle: "La tua receptionist IA.\nNessuna chiamata persa.",
+      subhead: "Ogni chiamata persa è un lavoro perso. Anvela risponde, fissa gli appuntamenti e cattura ogni cliente. Disponibile 24/7.",
       ctaButton: "Offerta di Lancio",
       videoDemo: "Video Demo",
       demoLabel: "Guarda come funziona",
