@@ -11,6 +11,8 @@ export default function OnboardingPage() {
     const location = useLocation();
     const [step, setStep] = useState(1);
     const [selectedBusiness, setSelectedBusiness] = useState<any>(null);
+    const [manualMode, setManualMode] = useState(false);
+    const [manualBusinessName, setManualBusinessName] = useState('');
     const [selectedPlan, setSelectedPlan] = useState<string | null>(location.state?.plan || null);
     const [phoneNumber, setPhoneNumber] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -32,11 +34,6 @@ export default function OnboardingPage() {
         initOnMount: true,
     });
 
-    const filteredData = data.filter(item => {
-        const desc = item.description.toLowerCase();
-        return desc.includes('canada') || desc.includes(', ca') || desc.includes('montreal') || desc.includes('québec') || desc.includes('quebec') || desc.includes(', qc');
-    });
-
     useEffect(() => {
         window.scrollTo(0, 0);
         gsap.fromTo('.step-content',
@@ -51,6 +48,23 @@ export default function OnboardingPage() {
 
     const handleBack = () => {
         if (step > 1) setStep(step - 1);
+    };
+
+    const handleManualConfirm = () => {
+        if (!manualBusinessName.trim()) return;
+        setSelectedBusiness({
+            description: manualBusinessName.trim(),
+            structured_formatting: { main_text: manualBusinessName.trim() },
+            place_id: `manual-${Date.now()}`,
+        });
+        setManualMode(false);
+        setManualBusinessName('');
+    };
+
+    const handleChangeBusiness = () => {
+        setSelectedBusiness(null);
+        setManualMode(false);
+        setValue('');
     };
 
     const handleSubmit = async () => {
@@ -142,30 +156,74 @@ export default function OnboardingPage() {
                         <div className="lg:col-span-7">
                             <div className="relative p-5 sm:p-8 md:p-12 rounded-3xl bg-white border border-slate-200 shadow-xl">
                                 <div className="space-y-6">
-                                    <div className="relative">
-                                        <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
-                                        <input
-                                            type="text"
-                                            placeholder={t('onboarding.step1.searchPlaceholder') as string}
-                                            value={value}
-                                            onChange={(e) => setValue(e.target.value)}
-                                            className="w-full h-14 pl-12 pr-4 bg-white border border-slate-300 rounded-xl focus:outline-none focus:border-slate-900 transition-all text-slate-900 placeholder:text-slate-500 font-medium"
-                                        />
-                                        {value.length > 0 && !selectedBusiness && (
-                                            <div className="absolute left-0 right-0 top-full mt-2 bg-white border border-slate-200 rounded-xl z-20 overflow-hidden shadow-2xl">
-                                                {filteredData.map((s) => (
-                                                    <button
-                                                        key={s.place_id}
-                                                        onClick={() => { setSelectedBusiness(s); setValue(s.description, false); clearSuggestions(); }}
-                                                        className="w-full p-4 flex items-start gap-3 hover:bg-slate-50 text-left border-b border-slate-100"
-                                                    >
-                                                        <MapPin className="w-4 h-4 text-blue-600 mt-1 shrink-0" />
-                                                        <span className="text-sm text-slate-700 break-words flex-1 overflow-hidden">{s.description}</span>
-                                                    </button>
-                                                ))}
+                                    {!selectedBusiness && !manualMode && (
+                                        <div className="relative">
+                                            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
+                                            <input
+                                                type="text"
+                                                placeholder={t('onboarding.step1.searchPlaceholder') as string}
+                                                value={value}
+                                                onChange={(e) => setValue(e.target.value)}
+                                                className="w-full h-14 pl-12 pr-4 bg-white border border-slate-300 rounded-xl focus:outline-none focus:border-slate-900 transition-all text-slate-900 placeholder:text-slate-500 font-medium"
+                                            />
+                                            {value.length > 0 && (
+                                                <div className="absolute left-0 right-0 top-full mt-2 bg-white border border-slate-200 rounded-xl z-20 overflow-hidden shadow-2xl">
+                                                    {data.map((s) => (
+                                                        <button
+                                                            key={s.place_id}
+                                                            onClick={() => { setSelectedBusiness(s); setValue(s.description, false); clearSuggestions(); }}
+                                                            className="w-full p-4 flex items-start gap-3 hover:bg-slate-50 text-left border-b border-slate-100"
+                                                        >
+                                                            <MapPin className="w-4 h-4 text-blue-600 mt-1 shrink-0" />
+                                                            <span className="text-sm text-slate-700 break-words flex-1 overflow-hidden">{s.description}</span>
+                                                        </button>
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </div>
+                                    )}
+                                    {!selectedBusiness && !manualMode && (
+                                        <div className="text-center">
+                                            <span className="text-sm text-slate-400">{t('onboarding.step1.manualEntryPrompt') as string} </span>
+                                            <button
+                                                onClick={() => { setManualMode(true); clearSuggestions(); }}
+                                                className="text-sm text-blue-600 font-bold underline underline-offset-4"
+                                            >
+                                                {t('onboarding.step1.manualEntryLink') as string}
+                                            </button>
+                                        </div>
+                                    )}
+                                    {!selectedBusiness && manualMode && (
+                                        <div className="space-y-3">
+                                            <div className="relative">
+                                                <Building2 className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
+                                                <input
+                                                    type="text"
+                                                    autoFocus
+                                                    placeholder={t('onboarding.step1.manualNamePlaceholder') as string}
+                                                    value={manualBusinessName}
+                                                    onChange={(e) => setManualBusinessName(e.target.value)}
+                                                    onKeyDown={(e) => { if (e.key === 'Enter') handleManualConfirm(); }}
+                                                    className="w-full h-14 pl-12 pr-4 bg-white border border-slate-300 rounded-xl focus:outline-none focus:border-slate-900 transition-all text-slate-900 placeholder:text-slate-500 font-medium"
+                                                />
                                             </div>
-                                        )}
-                                    </div>
+                                            <div className="flex items-center justify-between gap-4">
+                                                <button
+                                                    onClick={() => { setManualMode(false); setManualBusinessName(''); }}
+                                                    className="text-xs text-slate-400 hover:text-slate-900 font-bold uppercase tracking-widest"
+                                                >
+                                                    {t('onboarding.step1.manualBackToSearch') as string}
+                                                </button>
+                                                <button
+                                                    disabled={!manualBusinessName.trim()}
+                                                    onClick={handleManualConfirm}
+                                                    className={`px-6 h-11 rounded-xl font-bold uppercase tracking-widest text-xs transition-all ${manualBusinessName.trim() ? 'bg-slate-900 hover:bg-wine-900 text-white' : 'bg-slate-200 text-slate-500 cursor-not-allowed'}`}
+                                                >
+                                                    {t('onboarding.step1.manualConfirmButton') as string}
+                                                </button>
+                                            </div>
+                                        </div>
+                                    )}
                                     {selectedBusiness && (
                                         <div className="p-4 sm:p-6 rounded-2xl bg-blue-50 border border-blue-100 flex flex-col sm:flex-row items-start sm:items-center justify-between shadow-sm gap-4">
                                             <div className="flex items-center gap-3 sm:gap-4 overflow-hidden w-full sm:w-auto">
@@ -174,7 +232,7 @@ export default function OnboardingPage() {
                                                 </div>
                                                 <span className="font-medium text-slate-900 break-words line-clamp-2">{selectedBusiness.structured_formatting?.main_text || selectedBusiness.description}</span>
                                             </div>
-                                            <button onClick={() => setSelectedBusiness(null)} className="text-xs text-blue-600 font-bold uppercase tracking-widest shrink-0 self-end sm:self-auto">
+                                            <button onClick={handleChangeBusiness} className="text-xs text-blue-600 font-bold uppercase tracking-widest shrink-0 self-end sm:self-auto">
                                                 {t('onboarding.step1.changeButton') as string}
                                             </button>
                                         </div>
