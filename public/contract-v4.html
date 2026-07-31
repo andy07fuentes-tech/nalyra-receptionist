@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; color: #1a1a2e; background: white; }
+  .page { width: 210mm; min-height: 297mm; padding: 18mm 20mm 18mm 20mm; margin: 0 auto; }
+
+  /* Title block */
+  .title-block { text-align: center; margin-bottom: 6px; }
+  .title-block h1 { font-size: 20px; font-weight: 900; letter-spacing: 0.5px; color: #1a1a2e; line-height: 1.2; }
+  .title-block p { font-size: 10px; color: #666; font-style: italic; margin-top: 5px; }
+  .divider { border: none; border-top: 1.5px solid #1a3a5c; margin: 14px 0 18px 0; }
+
+  /* Sections */
+  .section { margin-bottom: 18px; }
+  .section-title {
+    font-size: 11.5px; font-weight: 900; letter-spacing: 0.3px;
+    color: #1a1a2e; margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  /* Client info */
+  .client-field { display: flex; align-items: flex-end; margin-bottom: 8px; }
+  .client-label { font-weight: 700; font-size: 11px; min-width: 170px; }
+  .client-line { flex: 1; border-bottom: 1px solid #aaa; height: 16px; }
+
+  /* Tables */
+  table { width: 100%; border-collapse: collapse; margin-bottom: 10px; font-size: 10.5px; }
+  thead tr { background-color: #1a1a2e; color: white; }
+  thead th { padding: 7px 10px; text-align: center; font-weight: 700; font-size: 10.5px; }
+  tbody tr { border-bottom: 1px solid #ddd; }
+  tbody tr:nth-child(even) { background-color: #f7f8fa; }
+  tbody td { padding: 7px 10px; text-align: center; vertical-align: middle; }
+  .price-cell { color: #1a6fb5; font-weight: 800; font-size: 11px; }
+  .checkbox { width: 13px; height: 13px; border: 2px solid #1a1a2e; display: inline-block; }
+
+  /* Bullets */
+  .bullets { list-style: none; padding: 0; margin-bottom: 8px; }
+  .bullets li { padding: 2px 0 2px 14px; position: relative; font-size: 10.5px; line-height: 1.55; }
+  .bullets li::before { content: "•"; position: absolute; left: 0; color: #1a3a5c; font-weight: bold; }
+  .bullets li strong { color: #1a1a2e; }
+
+  p { font-size: 10.5px; line-height: 1.6; margin-bottom: 6px; text-align: justify; }
+  p strong { color: #1a1a2e; }
+
+  /* Signatures */
+  .sig-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 20px; }
+  .sig-col h4 { font-size: 11px; font-weight: 800; margin-bottom: 16px; }
+  .sig-row { margin-bottom: 14px; }
+  .sig-label-text { font-size: 10.5px; margin-bottom: 2px; }
+  .sig-line { border-bottom: 1px solid #555; height: 22px; }
+  .sig-value { font-size: 10.5px; }
+
+  .footer { margin-top: 24px; border-top: 1px solid #ccc; padding-top: 8px; text-align: center; font-size: 9px; color: #888; font-style: italic; }
+
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page { padding: 15mm 18mm; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Title -->
+  <div class="title-block">
+    <h1>CONTRAT DE SERVICE &amp; ÉTAT DE TRAVAIL<br>(SOW)</h1>
+    <p>Dernière mise à jour : Mai 2026 &nbsp;·&nbsp; Anvela Inc.</p>
+  </div>
+  <hr class="divider">
+
+  <!-- Client Info -->
+  <div class="section">
+    <div class="section-title">Informations du Client</div>
+    <div class="client-field"><span class="client-label">Nom de l'entreprise :</span><span class="client-line"></span></div>
+    <div class="client-field"><span class="client-label">Représentant autorisé :</span><span class="client-line"></span></div>
+    <div class="client-field"><span class="client-label">Adresse :</span><span class="client-line"></span></div>
+    <div class="client-field"><span class="client-label">Courriel :</span><span class="client-line"></span></div>
+    <div class="client-field"><span class="client-label">Téléphone :</span><span class="client-line"></span></div>
+  </div>
+
+  <!-- 1. Plan -->
+  <div class="section">
+    <div class="section-title">1. Forfait Sélectionné et Engagement</div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:30px;"></th>
+          <th>Forfait</th>
+          <th>Frais de mise en service</th>
+          <th>Frais mensuel</th>
+          <th>Durée minimale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="checkbox"></span></td>
+          <td>Night Shift (Essentiel)</td>
+          <td>Gratuit</td>
+          <td class="price-cell">199 $ CAD / mois</td>
+          <td>3 mois</td>
+        </tr>
+        <tr>
+          <td><span class="checkbox"></span></td>
+          <td>Co-Pilot</td>
+          <td>197 $ CAD</td>
+          <td class="price-cell">449 $ CAD / mois</td>
+          <td>3 mois</td>
+        </tr>
+        <tr>
+          <td><span class="checkbox"></span></td>
+          <td>Anvela Signature</td>
+          <td>497 $ CAD</td>
+          <td class="price-cell">697 $ CAD / mois</td>
+          <td>6 mois</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><strong>Période initiale :</strong> Le Client s'engage pour la durée minimale indiquée ci-dessus afin de permettre l'optimisation de l'IA, la stabilité de l'intégration et l'évaluation objective des résultats du service.</p>
+    <p><strong>Tarification de lancement :</strong> Les tarifs mentionnés ci-dessus constituent une tarification de lancement. Ils sont applicables pour la durée de la période initiale et sont sujets à révision lors du renouvellement, conformément à la section 4 du présent contrat.</p>
+  </div>
+
+  <!-- 2. Date de début -->
+  <div class="section">
+    <div class="section-title">2. Date de Début de Service et Facturation</div>
+    <p><strong>Signature du contrat :</strong> Le présent contrat prend effet à la date de signature par les deux parties.</p>
+    <p><strong>Date de déploiement :</strong> Anvela s'engage à déployer le service (« Date de Mise en Service ») dans un délai maximum de quatorze (14) jours civils suivant la signature du contrat et la réception du paiement des frais de mise en service.</p>
+    <p><strong>Début de la facturation mensuelle :</strong> La facturation des frais mensuels débute à la Date de Mise en Service. La période initiale (3 ou 6 mois selon le forfait) est calculée à partir de cette date.</p>
+    <p><strong>Paiement des frais de mise en service :</strong> Les frais de mise en service (le cas échéant) sont facturés et payables intégralement à la signature du contrat. Ils ne sont pas remboursables une fois le déploiement amorcé.</p>
+  </div>
+
+  <!-- 3. Modalités de paiement -->
+  <div class="section">
+    <div class="section-title">3. Modalités de Paiement</div>
+    <p><strong>Plateforme de facturation :</strong> Tous les paiements sont traités via Stripe. Le Client autorise Anvela à prélever automatiquement les frais convenus sur le moyen de paiement fourni (carte de crédit ou débit préautorisé) selon la fréquence établie.</p>
+    <p><strong>Fréquence :</strong> Les frais mensuels sont prélevés à la même date civile chaque mois, correspondant à la Date de Mise en Service.</p>
+    <p><strong>Taxes :</strong> Tous les montants sont en dollars canadiens (CAD) et excluent les taxes applicables (TPS et TVQ), qui seront ajoutées à la facturation conformément à la réglementation québécoise.</p>
+    <p><strong>Échec de paiement :</strong> En cas d'échec de prélèvement, le Client dispose d'un délai de grâce de sept (7) jours civils pour régulariser sa situation. Au-delà de ce délai, Anvela se réserve le droit de suspendre le service jusqu'à régularisation, sans préavis supplémentaire et sans remboursement pour la période d'interruption.</p>
+    <p><strong>Frais de retard :</strong> Tout paiement en retard de plus de quinze (15) jours civils peut entraîner des frais administratifs de 25 $ CAD ainsi qu'un intérêt mensuel de 1,5 % (soit 18 % annuel) sur le solde impayé.</p>
+  </div>
+
+  <!-- 4. Modification des tarifs -->
+  <div class="section">
+    <div class="section-title">4. Modification des Tarifs au Renouvellement</div>
+    <p>Anvela se réserve le droit de modifier les tarifs mensuels et les frais de mise en service à l'issue de la période initiale ou de toute période de renouvellement, moyennant un préavis écrit de soixante (60) jours civils transmis au Client par courriel.</p>
+    <p>Si le Client n'accepte pas les nouveaux tarifs, il peut résilier le contrat sans pénalité en envoyant un avis écrit avant la date d'entrée en vigueur des nouveaux tarifs. À défaut de résiliation, la poursuite du service après cette date constitue une acceptation tacite des nouveaux tarifs.</p>
+  </div>
+
+  <!-- 5. Renouvellement et résiliation -->
+  <div class="section">
+    <div class="section-title">5. Renouvellement et Résiliation</div>
+    <p><strong>Renouvellement automatique :</strong> À l'issue de la période initiale, le contrat se renouvelle automatiquement de mois en mois, sauf résiliation conformément aux modalités ci-dessous.</p>
+    <p><strong>Résiliation par le Client :</strong> Après la période initiale, le Client peut résilier le contrat en tout temps moyennant un préavis écrit de trente (30) jours civils. La résiliation prend effet à la fin de la période de facturation en cours suivant l'expiration du préavis. Aucun remboursement n'est applicable pour les mois déjà entamés.</p>
+    <p><strong>Résiliation pour motif valable par Anvela :</strong> Anvela se réserve le droit de résilier le contrat avec effet immédiat dans les cas suivants :</p>
+    <ul class="bullets">
+      <li>non-paiement persistant au-delà du délai de grâce et après une mise en demeure ;</li>
+      <li>utilisation frauduleuse, illégale ou abusive du service ;</li>
+      <li>violation par le Client de ses obligations de divulgation aux appelants (Loi 25) ;</li>
+      <li>comportement irrespectueux, harcelant ou menaçant envers le personnel d'Anvela.</li>
+    </ul>
+    <p><strong>Résiliation anticipée par le Client (pendant la période initiale) :</strong> Toute résiliation par le Client avant la fin de la période initiale entraîne le paiement intégral des frais mensuels restants jusqu'à la fin de cette période, à titre de pénalité pour engagement non honoré.</p>
+  </div>
+
+  <!-- 6. Description des services -->
+  <div class="section">
+    <div class="section-title">6. Description des Services d'Anvela</div>
+    <p>Anvela déploiera et gérera <strong>« Mila »</strong>, une solution de réception vocale intelligente, incluant les éléments suivants selon le forfait choisi :</p>
+    <ul class="bullets">
+      <li><strong>Architecture vocale propriétaire :</strong> utilisation de modèles de langage avancés pour des conversations naturelles et fluides.</li>
+      <li><strong>Logique d'automatisation Anvela :</strong> programmation de flux de travail personnalisés pour la gestion des rendez-vous et la qualification des prospects.</li>
+      <li><strong>Base de données infonuagique :</strong> synchronisation et archivage sécurisé des données d'appels en temps réel.</li>
+      <li><strong>Système de notification SMS :</strong> envoi automatisé de confirmations et de rappels de rendez-vous.</li>
+      <li><strong>Intégration calendrier :</strong> connexion directe à Google Calendar (ou équivalent supporté) pour la prise de rendez-vous automatisée.</li>
+    </ul>
+    <p>Les fonctionnalités spécifiques incluses dans chaque forfait sont détaillées sur la page <em>anvela.ca</em> et constituent une partie intégrante du présent contrat.</p>
+  </div>
+
+  <!-- 7. Utilisation équitable -->
+  <div class="section">
+    <div class="section-title">7. Utilisation Équitable</div>
+    <p>Tous les forfaits Anvela offrent des appels illimités dans le cadre d'une utilisation professionnelle normale et raisonnable. Afin d'assurer la qualité de service à l'ensemble de la clientèle et la viabilité du service, les seuils d'utilisation équitable suivants s'appliquent :</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Forfait</th>
+          <th>Seuil mensuel inclus</th>
+          <th>Tarif au-delà du seuil</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Night Shift</td>
+          <td>500 minutes / mois</td>
+          <td>0,50 $ CAD / minute</td>
+        </tr>
+        <tr>
+          <td>Co-Pilot</td>
+          <td>1 500 minutes / mois</td>
+          <td>0,50 $ CAD / minute</td>
+        </tr>
+        <tr>
+          <td>Anvela Signature</td>
+          <td>3 000 minutes / mois</td>
+          <td>0,50 $ CAD / minute</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Les minutes excédentaires sont facturées mensuellement, en sus du forfait mensuel, et prélevées sur le moyen de paiement enregistré. Anvela informera le Client par courriel dès qu'il atteint 80 % de son seuil mensuel, afin de permettre un ajustement éventuel vers un forfait supérieur.</p>
+  </div>
+
+  <!-- 8. Politique de remboursement -->
+  <div class="section">
+    <div class="section-title">8. Politique de Remboursement</div>
+    <p><strong>Frais de mise en service :</strong> non remboursables une fois le déploiement amorcé.</p>
+    <p><strong>Frais mensuels :</strong> non remboursables pour la période en cours, même en cas de résiliation anticipée ou de non-utilisation du service par le Client.</p>
+    <p><strong>Garantie de satisfaction (forfait Night Shift uniquement) :</strong> le Client peut demander le remboursement intégral des frais mensuels du premier mois s'il en fait la demande écrite dans les trente (30) jours civils suivant la Date de Mise en Service. Cette garantie ne s'applique pas aux frais de mise en service et est offerte une seule fois par Client.</p>
+  </div>
+
+  <!-- 9. SLA -->
+  <div class="section">
+    <div class="section-title">9. Niveau de Service (SLA)</div>
+    <p>Anvela vise une disponibilité opérationnelle de 99 % sur une base mensuelle, calculée hors fenêtres de maintenance planifiée et hors incidents causés par des fournisseurs tiers (Retell, Twilio, OpenAI, ElevenLabs, Google Calendar, etc.).</p>
+    <p><strong>Maintenance planifiée :</strong> Anvela s'efforcera de réaliser toute maintenance planifiée en dehors des heures d'affaires du Client, avec un préavis raisonnable lorsque possible.</p>
+    <p><strong>Limites du SLA :</strong> ce niveau de service constitue un objectif et non une garantie contractuelle de performance. En cas de non-atteinte, le recours du Client est limité aux dispositions de la section 13 (Limitation de responsabilité).</p>
+  </div>
+
+  <!-- 10. Protection des données -->
+  <div class="section">
+    <div class="section-title">10. Protection des Données (Loi 25 — Québec)</div>
+    <p><strong>Consentement des appelants :</strong> Le Client est seul responsable d'informer ses appelants que leurs conversations avec Mila sont enregistrées et traitées par un système automatisé d'intelligence artificielle, conformément à ses obligations en vertu de la <em>Loi modernisant des dispositions législatives en matière de protection des renseignements personnels</em> (Loi 25 du Québec) et de toute autre législation applicable.</p>
+    <p><strong>Autorisation d'enregistrement :</strong> Le Client autorise expressément Anvela à enregistrer, transcrire et conserver les appels entrants reçus sur les numéros configurés dans le cadre du service, aux fins de prestation, d'amélioration et d'audit du service.</p>
+    <p><strong>Processeurs tiers :</strong> Les données peuvent transiter par des infrastructures technologiques tierces sécurisées (notamment Retell, Twilio, OpenAI, ElevenLabs et Google), tel que détaillé dans la <strong>Politique de confidentialité d'Anvela</strong> (<em>anvela.ca/privacy</em>).</p>
+    <p><strong>Durée de conservation :</strong> Les enregistrements et transcriptions sont conservés pour une durée maximale de douze (12) mois suivant la fin du contrat, après quoi ils sont supprimés de manière sécurisée, sauf obligation légale contraire.</p>
+    <p><strong>Droits du Client et de ses appelants :</strong> Conformément à la Loi 25, le Client et ses appelants disposent d'un droit d'accès, de rectification et de suppression des renseignements personnels les concernant. Toute demande doit être adressée par courriel à <em>privacy@anvela.ca</em>.</p>
+  </div>
+
+  <!-- 11. Propriété intellectuelle -->
+  <div class="section">
+    <div class="section-title">11. Propriété Intellectuelle</div>
+    <p><strong>Propriété d'Anvela :</strong> Anvela conserve la propriété exclusive de la plateforme, des modèles d'invite (« prompts »), des configurations vocales, des logiques d'automatisation, des intégrations techniques et de tout savoir-faire développé dans le cadre du service. Le Client bénéficie d'un droit d'usage non exclusif et non transférable, limité à la durée du contrat.</p>
+    <p><strong>Données du Client :</strong> Le Client demeure propriétaire de ses propres données commerciales (liste de clients, historique de rendez-vous, contenus marketing fournis à Anvela pour configurer le service). Anvela n'utilise ces données qu'aux fins de la prestation du service.</p>
+    <p><strong>Enregistrements d'appels :</strong> Les enregistrements vocaux et leurs transcriptions demeurent la propriété du Client. Anvela en conserve l'accès uniquement aux fins techniques décrites à la section 10.</p>
+  </div>
+
+  <!-- 12. Marketing -->
+  <div class="section">
+    <div class="section-title">12. Utilisation Marketing et Référence Commerciale</div>
+    <p>Le Client autorise Anvela à mentionner son nom commercial et à utiliser son logo dans ses supports de communication (site web, brochures, démonstrations, études de cas) à titre de référence commerciale, sans rémunération additionnelle.</p>
+    <p>Toute étude de cas chiffrée (volume d'appels, rendez-vous générés, etc.) sera soumise à l'approbation écrite préalable du Client. Le Client peut, à tout moment, retirer son consentement à l'utilisation de son logo en notifiant Anvela par courriel.</p>
+  </div>
+
+  <!-- 13. Limitation de responsabilité -->
+  <div class="section">
+    <div class="section-title">13. Limitation de Responsabilité</div>
+    <p>Anvela fournit un service basé sur l'intelligence artificielle générative. Le Client reconnaît expressément que cette technologie peut occasionnellement produire des erreurs d'interprétation, des informations inexactes (« hallucinations ») ou des décisions sous-optimales.</p>
+    <p>Anvela ne peut être tenue responsable :</p>
+    <ul class="bullets">
+      <li>des erreurs ou réponses inexactes générées par les modèles d'IA ;</li>
+      <li>des interruptions de service causées par des fournisseurs tiers (Retell, Twilio, OpenAI, ElevenLabs, Google) ;</li>
+      <li>des dommages indirects, incluant les pertes de revenus, de clientèle ou de réputation ;</li>
+      <li>du non-respect par le Client de ses propres obligations de divulgation aux appelants.</li>
+    </ul>
+    <p><strong>Plafond de responsabilité :</strong> La responsabilité totale d'Anvela, toutes causes confondues, est expressément limitée au montant mensuel payé par le Client pour le mois au cours duquel le préjudice est survenu.</p>
+  </div>
+
+  <!-- 14. Cession -->
+  <div class="section">
+    <div class="section-title">14. Cession du Contrat</div>
+    <p>Le Client ne peut céder le présent contrat à un tiers sans l'accord écrit préalable d'Anvela. Anvela se réserve le droit de céder le présent contrat à un acquéreur, à une société affiliée ou à un successeur dans le cadre d'une vente, d'une fusion ou d'une réorganisation d'entreprise, moyennant un préavis écrit au Client.</p>
+  </div>
+
+  <!-- 15. Loi applicable -->
+  <div class="section">
+    <div class="section-title">15. Loi Applicable et Juridiction</div>
+    <p>Le présent contrat est régi par les lois en vigueur dans la province de Québec et les lois fédérales du Canada applicables. Tout litige découlant de l'interprétation ou de l'exécution du présent contrat sera soumis à la juridiction exclusive des tribunaux du district judiciaire de Montréal, Québec, sauf disposition impérative contraire.</p>
+  </div>
+
+  <!-- 16. Intégralité -->
+  <div class="section">
+    <div class="section-title">16. Intégralité de l'Accord</div>
+    <p>Le présent contrat, ainsi que la Politique de confidentialité d'Anvela (<em>anvela.ca/privacy</em>), constitue l'intégralité de l'entente entre les parties et remplace tout accord, communication ou entente antérieure, verbale ou écrite, relative à son objet.</p>
+    <p>Toute modification au présent contrat doit faire l'objet d'un avenant écrit signé par les deux parties. L'invalidité d'une clause n'entraîne pas la nullité du contrat dans son ensemble.</p>
+  </div>
+
+  <!-- 17. Signatures -->
+  <div class="section" style="border-top: 2px solid #1a1a2e; padding-top: 14px; margin-top: 10px;">
+    <div class="section-title">17. Acceptation et Signatures</div>
+    <p>En signant ci-dessous, les parties reconnaissent avoir lu, compris et accepté l'intégralité des termes et conditions du présent contrat.</p>
+
+    <div class="sig-grid" style="margin-top: 18px;">
+      <div class="sig-col">
+        <h4>Pour le Client</h4>
+        <div class="sig-row">
+          <div class="sig-label-text">Nom :</div>
+          <div class="sig-line"></div>
+        </div>
+        <div class="sig-row">
+          <div class="sig-label-text">Titre :</div>
+          <div class="sig-line"></div>
+        </div>
+        <div class="sig-row">
+          <div class="sig-label-text">Signature :</div>
+          <div class="sig-line"></div>
+        </div>
+        <div class="sig-row">
+          <div class="sig-label-text">Date :</div>
+          <div class="sig-line"></div>
+        </div>
+      </div>
+      <div class="sig-col">
+        <h4>Pour Anvela Inc.</h4>
+        <div class="sig-row">
+          <div class="sig-label-text">Nom :</div>
+          <div class="sig-value" style="padding-top:4px;">Pablo Fuentes</div>
+        </div>
+        <div class="sig-row">
+          <div class="sig-label-text">Titre :</div>
+          <div class="sig-value" style="padding-top:4px;">Fondateur, Anvela Inc.</div>
+        </div>
+        <div class="sig-row">
+          <div class="sig-label-text">Signature :</div>
+          <div class="sig-line"></div>
+        </div>
+        <div class="sig-row">
+          <div class="sig-label-text">Date :</div>
+          <div class="sig-line"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    Ce document constitue un accord légalement contraignant entre les parties signataires. &nbsp;©&nbsp;Anvela Inc. — anvela.ca
+  </div>
+
+</div>
+</body>
+</html>

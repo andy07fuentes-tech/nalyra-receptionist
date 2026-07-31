@@ -1,18 +1,6 @@
-# CLAUDE.md
+# AGENTS.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
-
-## Business context
-
-Anvela sells an AI receptionist + workflow automation to Québec small businesses. Primary niche: after-hours call handling for garages (future: barbershops, dentists, clinics). Goal: lean, reliable recurring revenue. Default question for new work: does this help sell, fulfill, or stabilize the garage offer?
-
-**Actual stack** (don't propose alternatives unless asked): Retell AI (voice agents), n8n (router + workflows), Airtable (per-client config), Google Sheets (call/appointment logs), Twilio (SMS), Google Calendar (bookings), Vercel (this site).
-
-**Voice agents must**: capture leads reliably, speak natural Québec French (fr-CA) with English available, fall back gracefully when uncertain, hand off to a human when needed, and produce call summaries + structured data. For garages, capture: caller name, phone, vehicle make/model/year, service needed, urgency, preferred date/time, whether the car is drivable, and consent for follow-up.
-
-**Reliability standards**: no silent failures. Workflows must handle missing data, duplicate leads, and failed API calls; log important events; notify the business when automation fails. Always build new workflows beside live ones — never edit a live workflow directly. Test with realistic scenarios and never deploy to a live client workflow without explicit approval.
-
-**Site voice**: premium, clear, trustworthy, local-business friendly. Sell outcomes (stop losing after-hours calls, capture more repair jobs, reduce front-desk pressure) — not AI buzzwords or fake enterprise language.
+This file provides guidance to Codex (Codex.ai/code) when working with code in this repository.
 
 ## Commands
 

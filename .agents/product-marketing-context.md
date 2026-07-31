@@ -1,6 +1,6 @@
 # Product Marketing Context
 
-*Last updated: 2026-05-10*
+*Last updated: 2026-05-21*
 
 ## Product Overview
 **One-liner:** Anvela est une réceptionniste IA 24/7 conçue spécifiquement pour les garages et ateliers automobiles au Canada.
@@ -13,10 +13,18 @@
 
 **Business model:** Abonnement mensuel à 3 paliers + frais de mise en service uniques. Engagement minimum 3–6 mois. Offre de lancement : premier mois à -50%.
 
+**Pricing tiers (current):**
+
+| Plan | Monthly | Setup Fee | Min. commitment | Key perks |
+|---|---|---|---|---|
+| Night Shift | $199/mo (~$49/wk) | $0 | 3 months | After-hours only (Mon–Fri 6pm–8am + weekends 24/7), auto booking into Google Calendar, instant SMS notification, unlimited calls, FR market |
+| Co-Pilot ⭐ Popular | $449/mo (~$104/wk) | $197 | 3 months | 24/7 intelligent response, automated booking, missed call capture, SMS reminders (24h/2h), live human transfer, bilingual FR/EN, unlimited calls |
+| Anvela Signature | $697/mo (~$165/wk) | $497 | 6 months | Full 24/7 management, booking/modify/cancel by phone, SMS follow-up in 15 min, regular client recognition, custom CRM integration, reputation protection (unhappy clients redirected privately), monthly reports + continuous optimization, VIP priority support (<2h), unlimited calls |
+
 ---
 
 ## Target Audience
-**Target companies:** Garages automobiles indépendants, ateliers de carrosserie, centres de service auto — surtout avec 1 à 10 employés, marché québécois/canadien.
+**Target companies:** Garages automobiles indépendants, ateliers de carrosserie, centres de service auto — surtout avec 1 à 10 employés. **Marché cible actuel : Montréal exclusivement.** Expansion future possible dans le reste du Québec/Canada.
 
 **Decision-makers:** Le propriétaire-gérant du garage (souvent mécanicien lui-même, travaille en atelier, loin du téléphone).
 
@@ -150,7 +158,31 @@
 - Augmentation de rendez-vous +30–40% (forfait Signature)
 - Opérationnel en moins de 48h
 
+**Demo videos (2):**
+- "Présentation" — overview of Anvela in action (how the AI handles calls, books appointments, qualifies leads)
+- "Appel Réel" — real call demo showing natural conversation flow, live booking, instant language switching, real-time transcription, smooth human interaction
+
 **Customers:** Aucun client encore — phase pré-lancement. Prospection terrain prévue semaine du 2026-05-17.
+
+**Full automated sales system (already built and live):**
+
+INBOUND DEMO FLOW (website button):
+1. Visitor clicks button → website POSTs to n8n (/webhook/anvela/create-web-call)
+2. n8n calls Retell API → creates web call session → returns access_token → browser opens live voice call (no phone needed)
+3. Mila (demo agent, GPT-4.1, max 3.5 min) answers immediately in French, auto-detects language and switches
+4. She pitches Anvela plans (Night Shift $199, Co-Pilot $449, Elite $697), answers FAQs, asks "couverture après les heures ou 24/7?" before presenting plans
+5. When interest is shown → offers callback: "Est-ce que vous aimeriez qu'un membre de l'équipe vous appelle?"
+6. If yes → `capture_lead` tool fires: collects name + phone, confirms both, POSTs to n8n (/webhook/anvela/demo-lead)
+7. n8n logs lead to Airtable/Sheets/Slack
+8. Call ends → Retell fires post-call webhook (/webhook/pablo-garage/retell-post-call) → logs transcript + duration to call log sheet
+
+OUTBOUND FOLLOW-UP FLOW (form submission):
+- Separate outbound agent (Mila, GPT-4.1 mini) auto-calls anyone who submits the contact form
+- Confirms their selected plan ({{selected_plan}}) and name ({{prospect_name}})
+- Tells them Pablo will call back personally within 24h
+- Always French, under 2 minutes
+
+CURRENT GAP: Zero inbound traffic = system sits idle. The only job of outreach is to send garage owners to the website. Once they land and click, everything is automated.
 
 **Value themes:**
 | Theme | Proof |
@@ -163,7 +195,11 @@
 ---
 
 ## Goals
-**Business goal:** Acquérir les 10–20 premiers clients garages au Québec et valider le modèle avant expansion.
+**Business goal:** Acquérir les 10–20 premiers clients garages à Montréal et valider le modèle avant expansion.
+
+**Territory:** Montréal uniquement pour l'instant. Toute prospection, outreach et contenu doit cibler les garages montréalais.
+
+**Primary language:** Français. L'anglais est une option secondaire (bilingue FR/EN) mais toute communication de vente se fait en français en priorité.
 
 **Conversion action:** Remplir le formulaire de contact ou cliquer "Parler à Anvela" sur le site pour déclencher une démo live.
 
