@@ -325,7 +325,7 @@ export const translations = {
           name: "Night Shift",
           price: "199",
           weeklyNote: "soit environ 7$ par jour",
-          setupFee: "0",
+          setupFee: "97",
           setupFeeNote: "Contrat minimum de 3 mois",
           description: "Une voix naturelle qui répond après vos heures et remplit votre agenda pendant que vous êtes fermé.",
           features: [
@@ -1104,7 +1104,7 @@ export const translations = {
           name: "Night Shift",
           price: "199",
           weeklyNote: "approx. $7 / day",
-          setupFee: "0",
+          setupFee: "97",
           setupFeeNote: "Minimum 3-month commitment",
           description: "A natural-sounding voice that answers after hours and keeps your calendar filling while you're closed.",
           features: [
@@ -1905,7 +1905,7 @@ export const translations = {
           name: "Night Shift",
           price: "199",
           weeklyNote: "aprox. $7 / día",
-          setupFee: "0",
+          setupFee: "97",
           setupFeeNote: "Contrato mínimo de 3 meses",
           description: "Una voz natural que responde fuera de horario y mantiene tu agenda llenándose mientras estás cerrado.",
           features: [
@@ -2706,7 +2706,7 @@ export const translations = {
           name: "Night Shift",
           price: "199",
           weeklyNote: "circa 7$ al giorno",
-          setupFee: "0",
+          setupFee: "97",
           setupFeeNote: "Contratto minimo 3 mesi",
           description: "Una voce naturale che risponde fuori orario e continua a riempire la tua agenda mentre sei chiuso.",
           features: [
