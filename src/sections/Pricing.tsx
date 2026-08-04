@@ -158,8 +158,9 @@ export function Pricing() {
         const isElite = i === 2;
         const isStandard = i === 0;
         const baseMonthlyPrice = parseInt(tier.price) || 0;
-        const discountedMonthly = Math.round(baseMonthlyPrice * 0.9);
-        const annualTotal = discountedMonthly * 10;
+        // Annual = 2 months free: bill 10 months, show the effective monthly across 12.
+        const annualTotal = baseMonthlyPrice * 10;
+        const discountedMonthly = Math.round(annualTotal / 12);
 
         return (
             <>
@@ -397,7 +398,9 @@ export function Pricing() {
                     const isStandard = i === 0;
                     const gc = getGlowColors(i);
                     const basePrice = parseInt(tier.price) || 0;
-                    const disc = Math.round(basePrice * 0.9);
+                    // Annual = 2 months free: bill 10 months, show the effective monthly across 12.
+                    const annualTotal = basePrice * 10;
+                    const disc = Math.round(annualTotal / 12);
                     return (
                         <motion.div
                             key={i}
@@ -452,7 +455,7 @@ export function Pricing() {
                                     </div>
                                     {isYearly && basePrice ? (
                                         <div className={`text-[11px] font-bold italic ${isElite ? 'text-gold-600' : 'text-slate-500'}`}>
-                                            {t('pricing.annualBillingNotice', { price: disc * 10 })}
+                                            {t('pricing.annualBillingNotice', { price: annualTotal })}
                                         </div>
                                     ) : tier.weeklyNote ? (
                                         <div className={`text-[11px] font-bold italic ${isElite ? 'text-gold-600' : 'text-slate-500'}`}>({tier.weeklyNote})</div>
