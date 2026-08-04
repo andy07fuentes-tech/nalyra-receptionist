@@ -341,8 +341,8 @@ export const translations = {
         },
         {
           name: "Co-Pilot",
-          price: "449",
-          weeklyNote: "soit environ 15$ par jour",
+          price: "499",
+          weeklyNote: "soit environ 17$ par jour",
           isPopular: true,
           setupFee: "197",
           setupFeeNote: "Contrat minimum de 3 mois",
@@ -1120,8 +1120,8 @@ export const translations = {
         },
         {
           name: "Co-Pilot",
-          price: "449",
-          weeklyNote: "approx. $15 / day",
+          price: "499",
+          weeklyNote: "approx. $17 / day",
           isPopular: true,
           setupFee: "197",
           setupFeeNote: "Minimum 3-month commitment",
@@ -1921,8 +1921,8 @@ export const translations = {
         },
         {
           name: "Co-Pilot",
-          price: "449",
-          weeklyNote: "aprox. $15 / día",
+          price: "499",
+          weeklyNote: "aprox. $17 / día",
           isPopular: true,
           setupFee: "197",
           setupFeeNote: "Contrato mínimo de 3 meses",
@@ -2722,8 +2722,8 @@ export const translations = {
         },
         {
           name: "Co-Pilot",
-          price: "449",
-          weeklyNote: "circa 15$ al giorno",
+          price: "499",
+          weeklyNote: "circa 17$ al giorno",
           isPopular: true,
           setupFee: "197",
           setupFeeNote: "Contratto minimo 3 mesi",
