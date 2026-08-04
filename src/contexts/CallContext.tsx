@@ -17,47 +17,63 @@ const retellClient = new RetellWebClient();
 const CallContext = createContext<CallContextType | undefined>(undefined);
 
 export const CallProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const { isMuted, setIsMuted } = useAudio();
+  const { isMuted, setIsMuted, play, pause, isPlaying } = useAudio();
   const [callStatus, setCallStatus] = useState<CallStatus>('idle');
 
-  // Remember whether ambient audio was muted before the call so we can
-  // restore the user's choice instead of force-unmuting when the call ends.
+  // Remember how ambient audio was set before the call so we can restore the
+  // user's choice instead of force-unmuting (or force-playing) when it ends.
   const wasMutedBeforeCall = useRef(false);
+  const wasPlayingBeforeCall = useRef(false);
   const isMutedRef = useRef(isMuted);
   isMutedRef.current = isMuted;
+  const isPlayingRef = useRef(isPlaying);
+  isPlayingRef.current = isPlaying;
+
+  // Muting alone leaves the <audio> element playing silently, which keeps it
+  // holding the audio session and competing with the mic on iOS. Stop it for real.
+  const silenceAmbient = () => {
+    wasMutedBeforeCall.current = isMutedRef.current;
+    wasPlayingBeforeCall.current = isPlayingRef.current;
+    setIsMuted(true);
+    pause();
+  };
+
+  const restoreAmbient = () => {
+    setIsMuted(wasMutedBeforeCall.current);
+    if (wasPlayingBeforeCall.current) play();
+  };
 
   const startCall = async () => {
     if (callStatus !== 'idle') return;
     setCallStatus('connecting');
-    wasMutedBeforeCall.current = isMutedRef.current;
-    setIsMuted(true);
+    silenceAmbient();
     try {
       const res = await fetch('https://n8n.srv1401769.hstgr.cloud/webhook/anvela/create-web-call', { method: 'POST' });
       const { access_token, sample_rate } = await res.json();
       await retellClient.startCall({ accessToken: access_token, sampleRate: sample_rate ?? 16000 });
       setCallStatus('active');
     } catch {
-      setIsMuted(wasMutedBeforeCall.current);
+      restoreAmbient();
       setCallStatus('idle');
     }
   };
 
   const endCall = () => {
     retellClient.stopCall();
-    setIsMuted(wasMutedBeforeCall.current);
+    restoreAmbient();
     setCallStatus('idle');
   };
 
   useEffect(() => {
     const onEnded = () => {
-      setIsMuted(wasMutedBeforeCall.current);
+      restoreAmbient();
       setCallStatus('idle');
     };
     retellClient.on('call_ended', onEnded);
     return () => {
       retellClient.off('call_ended', onEnded);
     };
-  }, [setIsMuted]);
+  });
 
   return (
     <CallContext.Provider value={{ callStatus, startCall, endCall }}>
