@@ -13,6 +13,7 @@ import { Founder } from '../sections/Founder';
 import { ContactForm } from '../sections/ContactForm';
 import { Footer } from '../sections/Footer';
 import { Preloader } from '../components/Preloader';
+import { usePageMeta } from '../hooks/usePageMeta';
 import { ScrollToTop } from '../components/ScrollToTop';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -21,6 +22,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function LandingPage() {
+    usePageMeta({
+        title: 'Réceptionniste IA pour garages à Montréal | Anvela',
+        description: 'Anvela offre une réceptionniste IA 24/7 pour garages à Montréal : réponses aux appels, prise de rendez-vous et suivi des clients.',
+        path: '/',
+    });
     const [isLoading, setIsLoading] = useState(true);
     const handlePreloaderComplete = useCallback(() => {
         setIsLoading(false);

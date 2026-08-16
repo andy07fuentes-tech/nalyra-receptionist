@@ -5,8 +5,15 @@ import gsap from 'gsap';
 import usePlacesAutocomplete from "use-places-autocomplete";
 import { useLanguage } from '../contexts/LanguageContext';
 import { LanguageToggle } from '../components/LanguageToggle';
+import { usePageMeta } from '../hooks/usePageMeta';
 
 export default function OnboardingPage() {
+    usePageMeta({
+        title: 'Configuration de votre réceptionniste IA | Anvela',
+        description: 'Configurez votre réceptionniste IA Anvela en quelques minutes.',
+        path: '/onboarding',
+        noindex: true,
+    });
     const { t } = useLanguage();
     const location = useLocation();
     const [step, setStep] = useState(1);

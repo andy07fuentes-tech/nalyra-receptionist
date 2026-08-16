@@ -1,7 +1,14 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { usePageMeta } from '../hooks/usePageMeta';
 
 export default function PrivacyPage() {
+  usePageMeta({
+    title: 'Politique de confidentialité & conditions | Anvela',
+    description: 'Politique de confidentialité, conditions d\'utilisation et politique de cookies d\'Anvela, réceptionniste IA pour garages au Québec.',
+    path: '/privacy',
+  });
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
