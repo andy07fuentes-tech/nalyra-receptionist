@@ -31,6 +31,7 @@ export default function OnboardingPage() {
         suggestions: { data },
         setValue,
         clearSuggestions,
+        init: initPlacesAutocomplete,
     } = usePlacesAutocomplete({
         requestOptions: {
             componentRestrictions: { country: "ca" },
@@ -38,8 +39,26 @@ export default function OnboardingPage() {
             types: ['establishment'],
         },
         debounce: 300,
-        initOnMount: true,
+        initOnMount: false,
     });
+
+    // The Google Maps script loads async and may not be ready the instant this
+    // page mounts. Poll until it is, then initialize — initOnMount checks only
+    // once at mount and never retries, which left the search box permanently
+    // dead on slower connections.
+    useEffect(() => {
+        if ((window as any).google?.maps?.places) {
+            initPlacesAutocomplete();
+            return;
+        }
+        const interval = setInterval(() => {
+            if ((window as any).google?.maps?.places) {
+                initPlacesAutocomplete();
+                clearInterval(interval);
+            }
+        }, 200);
+        return () => clearInterval(interval);
+    }, [initPlacesAutocomplete]);
 
     useEffect(() => {
         window.scrollTo(0, 0);
