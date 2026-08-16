@@ -798,6 +798,13 @@ export const translations = {
       es: "Español",
       it: "Italiano",
     },
+
+    // 404 Not Found
+    notFound: {
+      title: "Page introuvable",
+      description: "Cette page n'existe pas ou a été déplacée.",
+      cta: "Retour à l'accueil",
+    },
   },
 
   en: {
@@ -1596,6 +1603,13 @@ export const translations = {
       en: "English",
       es: "Español",
       it: "Italiano",
+    },
+
+    // 404 Not Found
+    notFound: {
+      title: "Page not found",
+      description: "This page doesn't exist or has been moved.",
+      cta: "Back to home",
     },
   },
 
@@ -2396,6 +2410,13 @@ export const translations = {
       es: "Español",
       it: "Italiano",
     },
+
+    // 404 Not Found
+    notFound: {
+      title: "Página no encontrada",
+      description: "Esta página no existe o ha sido movida.",
+      cta: "Volver al inicio",
+    },
   },
 
   it: {
@@ -3192,6 +3213,13 @@ export const translations = {
       en: "English",
       es: "Español",
       it: "Italiano",
+    },
+
+    // 404 Not Found
+    notFound: {
+      title: "Pagina non trovata",
+      description: "Questa pagina non esiste o è stata spostata.",
+      cta: "Torna alla home",
     },
   },
 };
