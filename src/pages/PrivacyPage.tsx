@@ -22,7 +22,7 @@ export default function PrivacyPage() {
             ← Retour à l'accueil
           </Link>
           <h1 className="text-3xl md:text-4xl font-serif text-white mb-2">Politique de Confidentialité & Conditions</h1>
-          <p className="text-slate-400 text-sm">Dernière mise à jour : mars 2026 · Anvela Inc.</p>
+          <p className="text-slate-400 text-sm">Dernière mise à jour : août 2026 · Solutions Anvela</p>
         </div>
       </div>
 
@@ -52,7 +52,7 @@ export default function PrivacyPage() {
           <div className="space-y-8">
             <div>
               <h3 className="font-semibold text-slate-900 mb-2">1. Responsable de la protection des renseignements personnels</h3>
-              <p>Anvela Inc. est responsable de la protection des renseignements personnels collectés via ce site. Pour toute question relative à la vie privée, vous pouvez nous contacter à :</p>
+              <p>Solutions Anvela est responsable de la protection des renseignements personnels collectés via ce site. Pour toute question relative à la vie privée, vous pouvez nous contacter à :</p>
               <div className="mt-3 p-4 bg-slate-50 rounded-lg text-sm">
                 <p><strong>Responsable :</strong> Pablo Fuentes</p>
                 <p><strong>Email :</strong> pablo@anvela.ca</p>

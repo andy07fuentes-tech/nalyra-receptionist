@@ -52,21 +52,11 @@ export function Navigation() {
 
         {/* Center: Main Titles (Hidden on mobile) */}
         <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 flex-col items-center justify-center text-center">
-          <button
-            onClick={() => scrollToSection('#hero')}
-            className="group"
-            aria-label={t('nav.brandName') as string}
-          >
-            <span className={`font-serif text-lg md:text-xl lg:text-2xl transition-colors duration-300 ${isScrolled ? 'text-dark-theme' : 'text-white'} tracking-wide`}>
-              {t('nav.brandName')}
-            </span>
-          </button>
-
           <span
-                className={`mt-0.5 font-sans text-[10px] md:text-[11px] uppercase tracking-[0.25em] font-medium transition-colors duration-300 ${isScrolled ? 'text-slate-400' : 'text-white/60'}`}
-              >
-                {t('nav.tagline')}
-              </span>
+            className={`mt-0.5 font-sans text-[10px] md:text-[11px] uppercase tracking-[0.25em] font-medium transition-colors duration-300 ${isScrolled ? 'text-slate-400' : 'text-white/60'}`}
+          >
+            {t('nav.tagline')}
+          </span>
         </div>
 
         {/* Right: Actions & Toggle */}

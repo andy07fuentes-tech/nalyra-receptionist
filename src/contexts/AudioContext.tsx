@@ -25,12 +25,19 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   useEffect(() => {
     // Create audio element
     const audio = new Audio('/audio/ambient.mp3');
-    audio.loop = true;
+    audio.loop = false;
     audio.volume = NORMAL_VOLUME; // Subtle background volume
+
+    const handleEnded = () => {
+      setIsPlaying(false);
+    };
+    audio.addEventListener('ended', handleEnded);
+
     audioRef.current = audio;
 
     return () => {
       audio.pause();
+      audio.removeEventListener('ended', handleEnded);
       audio.src = '';
     };
   }, []);

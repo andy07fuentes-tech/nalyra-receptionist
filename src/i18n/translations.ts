@@ -10,7 +10,7 @@ export const translations = {
 
     // Navigation
     nav: {
-      brandName: "Anvela",
+      brandName: "Solutions Anvela",
       brandSubname: "Communication Intelligente",
       tagline: "Votre Réception Numérique 24/7",
       home: "Accueil",
@@ -325,7 +325,7 @@ export const translations = {
           name: "Night Shift",
           price: "199",
           weeklyNote: "soit environ 7$ par jour",
-          setupFee: "97",
+          setupFee: "0",
           setupFeeNote: "Contrat minimum de 3 mois",
           description: "Une voix naturelle qui répond après vos heures et remplit votre agenda pendant que vous êtes fermé.",
           features: [
@@ -341,8 +341,8 @@ export const translations = {
         },
         {
           name: "Co-Pilot",
-          price: "499",
-          weeklyNote: "soit environ 17$ par jour",
+          price: "449",
+          weeklyNote: "soit environ 15$ par jour",
           isPopular: true,
           setupFee: "197",
           setupFeeNote: "Contrat minimum de 3 mois",
@@ -719,7 +719,7 @@ export const translations = {
 
     // Footer
     footer: {
-      brandName: "Anvela",
+      brandName: "Solutions Anvela",
       tagline: "Communication Intelligente",
       description: "Transformez votre garage avec une réceptionniste IA disponible 24/7. Toujours professionnelle, incroyablement efficace.",
       newsletterLabel: "Abonnez-vous à notre newsletter",
@@ -816,7 +816,7 @@ export const translations = {
 
     // Navigation
     nav: {
-      brandName: "Anvela",
+      brandName: "Solutions Anvela",
       brandSubname: "Intelligent Communication",
       tagline: "Your 24/7 Digital Front Desk",
       home: "Home",
@@ -1109,7 +1109,7 @@ export const translations = {
           name: "Night Shift",
           price: "199",
           weeklyNote: "approx. $7 / day",
-          setupFee: "97",
+          setupFee: "0",
           setupFeeNote: "Minimum 3-month commitment",
           description: "A natural-sounding voice that answers after hours and keeps your calendar filling while you're closed.",
           features: [
@@ -1125,8 +1125,8 @@ export const translations = {
         },
         {
           name: "Co-Pilot",
-          price: "499",
-          weeklyNote: "approx. $17 / day",
+          price: "449",
+          weeklyNote: "approx. $15 / day",
           isPopular: true,
           setupFee: "197",
           setupFeeNote: "Minimum 3-month commitment",
@@ -1525,7 +1525,7 @@ export const translations = {
 
     // Footer
     footer: {
-      brandName: "Anvela",
+      brandName: "Solutions Anvela",
       tagline: "Intelligent Communication",
       description: "Transform your auto shop with an AI receptionist available 24/7. Always professional, incredibly efficient.",
       newsletterLabel: "Subscribe to our newsletter",
@@ -1622,7 +1622,7 @@ export const translations = {
 
     // Navigation
     nav: {
-      brandName: "Anvela",
+      brandName: "Solutions Anvela",
       brandSubname: "Comunicación Inteligente",
       tagline: "Tu Recepción Digital 24/7",
       home: "Inicio",
@@ -1915,7 +1915,7 @@ export const translations = {
           name: "Night Shift",
           price: "199",
           weeklyNote: "aprox. $7 / día",
-          setupFee: "97",
+          setupFee: "0",
           setupFeeNote: "Contrato mínimo de 3 meses",
           description: "Una voz natural que responde fuera de horario y mantiene tu agenda llenándose mientras estás cerrado.",
           features: [
@@ -1931,8 +1931,8 @@ export const translations = {
         },
         {
           name: "Co-Pilot",
-          price: "499",
-          weeklyNote: "aprox. $17 / día",
+          price: "449",
+          weeklyNote: "aprox. $15 / día",
           isPopular: true,
           setupFee: "197",
           setupFeeNote: "Contrato mínimo de 3 meses",
@@ -2331,7 +2331,7 @@ export const translations = {
 
     // Footer
     footer: {
-      brandName: "Anvela",
+      brandName: "Solutions Anvela",
       tagline: "Tu Recepción Digital 24/7",
       description: "Transforme su negocio con servicios de recepcionista impulsados por IA. Disponible 24/7, siempre profesional, increíblemente eficiente.",
       newsletterLabel: "Suscríbase a nuestro boletín",
@@ -2428,7 +2428,7 @@ export const translations = {
 
     // Navigation
     nav: {
-      brandName: "Anvela",
+      brandName: "Solutions Anvela",
       brandSubname: "Comunicazione Intelligente",
       tagline: "La Tua Reception Digitale 24/7",
       home: "Home",
@@ -2721,7 +2721,7 @@ export const translations = {
           name: "Night Shift",
           price: "199",
           weeklyNote: "circa 7$ al giorno",
-          setupFee: "97",
+          setupFee: "0",
           setupFeeNote: "Contratto minimo 3 mesi",
           description: "Una voce naturale che risponde fuori orario e continua a riempire la tua agenda mentre sei chiuso.",
           features: [
@@ -2737,8 +2737,8 @@ export const translations = {
         },
         {
           name: "Co-Pilot",
-          price: "499",
-          weeklyNote: "circa 17$ al giorno",
+          price: "449",
+          weeklyNote: "circa 15$ al giorno",
           isPopular: true,
           setupFee: "197",
           setupFeeNote: "Contratto minimo 3 mesi",
@@ -3135,7 +3135,7 @@ export const translations = {
 
     // Footer
     footer: {
-      brandName: "Anvela",
+      brandName: "Solutions Anvela",
       tagline: "La Tua Reception Digitale 24/7",
       description: "Trasforma la tua azienda con servizi di receptionist alimentati dall'IA. Disponibile 24/7, sempre professionale, incredibilmente efficiente.",
       newsletterLabel: "Iscriviti alla nostra newsletter",
