@@ -263,7 +263,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
 
           {/* Main CTA */}
           <div className={`mt-6 md:mt-8 flex flex-col items-center transition-all duration-1000 ease-out ${phase >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: '0.4s' }}>
-            {/* Promo pill — first month at 50% off */}
+            {/* Service details */}
             <span className="inline-flex items-center gap-1.5 mb-3 rounded-full bg-gradient-to-r from-gold-600 to-gold-500 px-4 py-1.5 text-[10px] md:text-[11px] font-bold uppercase tracking-[0.15em] text-white shadow-[0_4px_20px_rgba(210,168,85,0.45)]">
               <Flame className="w-3 h-3 fill-current" />
               {t('hero.ctaSubtitle')}

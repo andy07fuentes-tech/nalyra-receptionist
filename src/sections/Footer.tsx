@@ -75,7 +75,7 @@ export function Footer() {
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-10">
             <div className="space-y-3 max-w-xl">
               <p className="text-blue-400 text-xs uppercase tracking-[0.25em] font-bold">
-                Offre de lancement · Premier mois à −50%
+                Réception intelligente pour garages
               </p>
               <h2 className="text-4xl md:text-5xl font-serif text-white leading-tight">
                 Prêt à ne plus jamais manquer un appel ?

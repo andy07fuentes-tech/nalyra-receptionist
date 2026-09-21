@@ -114,13 +114,12 @@ export function Pricing() {
     const navigate = useNavigate();
 
     const sectionRef = useRef<HTMLDivElement>(null);
-    const [isYearly, setIsYearly] = useState(false);
 
     const handleSubscribe = (planName: string) => {
         navigate('/onboarding', {
             state: {
                 plan: planName,
-                billing: isYearly ? 'yearly' : 'monthly'
+                billing: 'monthly'
             }
         });
     };
@@ -157,10 +156,7 @@ export function Pricing() {
         const isPopular = tier.isPopular === true || tier.isPopular === 'true' || i === 1;
         const isElite = i === 2;
         const isStandard = i === 0;
-        const baseMonthlyPrice = parseInt(tier.price) || 0;
-        // Annual = 2 months free: bill 10 months, show the effective monthly across 12.
-        const annualTotal = baseMonthlyPrice * 10;
-        const discountedMonthly = Math.round(annualTotal / 12);
+        const setupFee = tier.setupFeeDisplay ?? `$${tier.setupFee}`;
 
         return (
             <>
@@ -197,7 +193,7 @@ export function Pricing() {
                     {isElite && <div className="absolute inset-0 bg-gradient-to-b from-gold-500/10 to-transparent pointer-events-none z-0" />}
                     {isStandard && <div className="absolute inset-0 bg-gradient-to-b from-slate-500/5 to-transparent pointer-events-none z-0" />}
 
-                    <div className={`p-7 md:p-10 pb-10 md:pb-12 relative overflow-hidden ${isElite ? 'bg-white/40 backdrop-blur-xl' : ''}`}>
+                    <div className={`p-7 md:p-10 pb-10 md:pb-12 relative overflow-hidden shrink-0 ${isElite ? 'bg-white/40 backdrop-blur-xl' : ''}`}>
                         {isElite && (
                             <div className="absolute inset-0 opacity-20 pointer-events-none">
                                 <div className="absolute inset-[-100%] bg-[conic-gradient(from_0deg,transparent,rgba(210,168,85,0.3),transparent)] animate-[spin_10s_linear_infinite]" />
@@ -207,15 +203,14 @@ export function Pricing() {
                         {tier.tagline && (
                             <p className={`text-xs font-medium italic mb-2 ${isElite ? 'text-gold-500' : 'text-slate-400'}`}>{tier.tagline}</p>
                         )}
+                        {tier.pricePrefix && (
+                            <div className={`text-[11px] font-bold uppercase tracking-widest mb-0.5 ${isElite ? 'text-gold-600' : 'text-slate-500'}`}>{tier.pricePrefix.trim()}</div>
+                        )}
                         <div className="flex items-baseline mb-1">
-                            <span className={`text-4xl md:text-5xl font-serif transition-colors duration-300 ${isElite ? 'text-gradient-gold' : 'text-slate-900'}`}>${isYearly && tier.price ? discountedMonthly : tier.price}</span>
+                            <span className={`text-4xl md:text-5xl font-serif transition-colors duration-300 ${isElite ? 'text-gradient-gold' : 'text-slate-900'}`}>${tier.price}</span>
                             <span className="text-slate-900 ml-2 font-bold italic">{t('pricing.cadMonth')}</span>
                         </div>
-                        {isYearly && tier.price ? (
-                            <div className={`text-[12px] font-bold mb-4 italic pl-1 lowercase ${isElite ? 'text-gold-600' : 'text-slate-600'}`}>
-                                {t('pricing.annualBillingNotice', { price: annualTotal })}
-                            </div>
-                        ) : tier.weeklyNote ? (
+                        {tier.weeklyNote ? (
                             <div className={`text-[12px] font-bold mb-4 italic pl-1 lowercase ${isElite ? 'text-gold-600' : 'text-slate-600'}`}>
                                 ({tier.weeklyNote})
                             </div>
@@ -223,10 +218,10 @@ export function Pricing() {
                             <div className="mb-4 h-[18px]" />
                         )}
                         <div className={`text-[10px] lg:text-[11px] font-bold uppercase tracking-widest mb-3 inline-block px-4 py-1.5 rounded-full ${isElite ? 'bg-gold-50/50 text-gold-700 border border-gold-500/30' : 'bg-blue-50 text-blue-600 border border-blue-500/10'}`}>
-                            {t('pricing.setupFeeLabel')}: ${tier.setupFee}
+                            {t('pricing.setupFeeLabel')}: {setupFee}
                         </div>
-                        {tier.setupFeeNote && !isYearly && (
-                            <div className={`text-[11px] font-medium italic pl-2 leading-none block ${isElite ? 'text-gold-700' : 'text-slate-500'}`}>
+                        {tier.setupFeeNote && (
+                            <div className={`text-[11px] font-medium italic pl-2 leading-snug block ${isElite ? 'text-gold-700' : 'text-slate-500'}`}>
                                 *{tier.setupFeeNote}
                             </div>
                         )}
@@ -307,33 +302,7 @@ export function Pricing() {
                     <div className="inline-flex items-center justify-center p-[1px] rounded-full bg-blue-500/20 mb-8">
                         <div className="px-6 py-2 rounded-full bg-white text-blue-600 text-sm md:text-base font-medium shadow-sm">
                             <Star className="inline-block w-4 h-4 mr-2 mb-1" />
-                            {isYearly
-                                ? (t('pricing.promoTextYearly') !== 'pricing.promoTextYearly' ? t('pricing.promoTextYearly') : "Annual plan: 2 months free.")
-                                : (t('pricing.promoText') !== 'pricing.promoText' ? t('pricing.promoText') : "Launch offer: first month at 50% off.")
-                            }
-                        </div>
-                    </div>
-
-                    <div className="flex justify-center mt-4 fade-up">
-                        <div className="relative flex items-center p-1 bg-white/40 backdrop-blur-md rounded-2xl border border-slate-200/50 shadow-sm w-full max-w-[420px]">
-                            <div
-                                className={`absolute h-[calc(100%-8px)] transition-all duration-500 ease-out bg-slate-900 rounded-xl shadow-lg z-0 ${isYearly ? 'left-1/2 w-[calc(50%-4px)]' : 'left-1 w-[calc(50%-4px)]'}`}
-                            />
-                            <button
-                                onClick={() => setIsYearly(false)}
-                                className={`relative z-10 flex-1 px-4 sm:px-8 py-2.5 text-xs sm:text-sm uppercase tracking-[0.2em] font-sans font-semibold transition-all duration-300 ${!isYearly ? 'text-white' : 'text-slate-500 hover:text-slate-800'}`}
-                            >
-                                {t('pricing.monthly')}
-                            </button>
-                            <button
-                                onClick={() => setIsYearly(true)}
-                                className={`relative z-10 flex-1 px-4 sm:px-8 py-2.5 text-xs sm:text-sm uppercase tracking-[0.2em] font-sans font-semibold transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3 ${isYearly ? 'text-white' : 'text-slate-500 hover:text-slate-800'}`}
-                            >
-                                {t('pricing.yearly')}
-                                <span className={`flex items-center px-1.5 py-0.5 rounded-md text-[8px] sm:text-[9px] border transition-all duration-500 ${isYearly ? 'bg-blue-600 text-white border-transparent' : 'bg-slate-800 text-white border-white/10'}`}>
-                                    {t('pricing.yearlyBonus')}
-                                </span>
-                            </button>
+                            {t('pricing.promoText') !== 'pricing.promoText' ? t('pricing.promoText') : "Clear terms. No surprise fees."}
                         </div>
                     </div>
                 </div>
@@ -397,10 +366,7 @@ export function Pricing() {
                     const isElite = i === 2;
                     const isStandard = i === 0;
                     const gc = getGlowColors(i);
-                    const basePrice = parseInt(tier.price) || 0;
-                    // Annual = 2 months free: bill 10 months, show the effective monthly across 12.
-                    const annualTotal = basePrice * 10;
-                    const disc = Math.round(annualTotal / 12);
+                    const setupFee = tier.setupFeeDisplay ?? `$${tier.setupFee}`;
                     return (
                         <motion.div
                             key={i}
@@ -449,19 +415,18 @@ export function Pricing() {
                                     {tier.tagline && (
                                         <p className={`text-[11px] font-medium italic mb-1.5 ${isElite ? 'text-gold-500' : 'text-slate-400'}`}>{tier.tagline}</p>
                                     )}
+                                    {tier.pricePrefix && (
+                                        <div className={`text-[10px] font-bold uppercase tracking-widest ${isElite ? 'text-gold-600' : 'text-slate-500'}`}>{tier.pricePrefix.trim()}</div>
+                                    )}
                                     <div className="flex items-baseline mb-1">
-                                        <span className={`text-4xl font-serif ${isElite ? 'text-gradient-gold' : 'text-slate-900'}`}>${isYearly ? disc : tier.price}</span>
+                                        <span className={`text-4xl font-serif ${isElite ? 'text-gradient-gold' : 'text-slate-900'}`}>${tier.price}</span>
                                         <span className="text-slate-900 ml-2 font-bold italic text-sm">{t('pricing.cadMonth')}</span>
                                     </div>
-                                    {isYearly && basePrice ? (
-                                        <div className={`text-[11px] font-bold italic ${isElite ? 'text-gold-600' : 'text-slate-500'}`}>
-                                            {t('pricing.annualBillingNotice', { price: annualTotal })}
-                                        </div>
-                                    ) : tier.weeklyNote ? (
+                                    {tier.weeklyNote ? (
                                         <div className={`text-[11px] font-bold italic ${isElite ? 'text-gold-600' : 'text-slate-500'}`}>({tier.weeklyNote})</div>
                                     ) : null}
                                     <div className={`mt-3 text-[10px] font-bold uppercase tracking-widest inline-block px-3 py-1 rounded-full ${isElite ? 'bg-gold-50/50 text-gold-700 border border-gold-500/30' : 'bg-blue-50 text-blue-600 border border-blue-500/10'}`}>
-                                        {t('pricing.setupFeeLabel')}: ${tier.setupFee}
+                                        {t('pricing.setupFeeLabel')}: {setupFee}
                                     </div>
                                 </div>
 

@@ -62,12 +62,12 @@ export const translations = {
       scriptText: "Pendant que vous travaillez...",
       mainTitle: "Votre réceptionniste IA.\nAucun appel manqué.",
       subhead: "Chaque appel manqué est un travail perdu. Anvela répond, prend vos rendez-vous et capture chaque client. Disponible 24/7.",
-      ctaButton: "Offre de Lancement",
+      ctaButton: "Voir les forfaits",
       videoDemo: "Démo Vidéo",
       demoLabel: "Voir comment ça marche",
       prices: "Tarifs",
       decorativeText: "FIABLE • DISPONIBLE • ABORDABLE",
-      ctaSubtitle: "1er mois à -50%",
+      ctaSubtitle: "Mise en service selon votre réalité",
       ctaMain: "Obtenir Anvela pour votre garage",
       noCreditCard: "Offre limitée • Opérationnel en 48h",
       stats: {
@@ -291,9 +291,9 @@ export const translations = {
       scriptText: "Un Investissement Rentable",
       subtitle: "NOS TARIFS",
       mainTitle: "Des forfaits adaptés à vos besoins",
-      promoText: "Offre de lancement : premier mois à 50% du tarif normal. Opérationnel en moins de 48h.",
+      promoText: "Conditions claires. Aucun frais caché. Mise en service selon votre réalité.",
       promoTextYearly: "Forfait annuel : 2 mois offerts. Opérationnel en moins de 48h.",
-      ctaButton: "Profiter de l'offre",
+      ctaButton: "Choisir mon forfait",
       ctaButtonElite: "ACTIVER MON SYSTÈME",
       monthly: "Mensuel",
       yearly: "Annuel",
@@ -327,16 +327,15 @@ export const translations = {
           weeklyNote: "soit environ 7$ par jour",
           setupFee: "0",
           setupFeeNote: "Contrat minimum de 3 mois",
-          description: "Une voix naturelle qui répond après vos heures et remplit votre agenda pendant que vous êtes fermé.",
+          description: "Votre filet de sécurité après les heures : Anvela répond, qualifie chaque demande et vous envoie les informations utiles pour que vos soirées restent à vous.",
           features: [
             { label: "🌙 Réponse automatique après les heures", detail: "Lun–Ven 18h–8h + week-end 24h" },
             { label: "📞 IA qui répond et qualifie les appels", detail: "Questions fréquentes + prise d'informations client" },
-            { label: "📅 Prise de rendez-vous automatique", detail: "Directement dans votre calendrier (Google Calendar)" },
+            { label: "📅 Demandes de rendez-vous structurées", detail: "Synchronisation au calendrier après validation de votre méthode" },
             { label: "📩 Notification SMS instantanée", detail: "Dès qu'un lead ou un rendez-vous est capturé" },
             { label: "🌍 Optimisé pour le marché local (FR)" },
-            { label: "☎️ Appels illimités" },
-            { label: "🎯 Résultat", detail: "Aucun appel perdu après les heures. Votre calendrier se remplit même quand vous êtes fermé." },
-            { label: "🎁 Offre de lancement", detail: "Premier mois à 50%" }
+            { label: "☎️ 500 minutes incluses / mois", detail: "0,50 $ / minute additionnelle" },
+            { label: "🎯 Résultat", detail: "Vous cessez de répondre aux appels du garage après le travail sans laisser vos clients sans réponse." }
           ]
         },
         {
@@ -346,10 +345,10 @@ export const translations = {
           isPopular: true,
           setupFee: "197",
           setupFeeNote: "Contrat minimum de 3 mois",
-          description: "Une réceptionniste qui sonne humaine, au téléphone pour vous 24/7 — même quand vous êtes débordé ou fermé.",
+          description: "Votre réception de renfort 24/7 : Anvela prend les appels quand vous êtes occupé ou fermé, puis garde chaque demande claire, suivie et actionnable.",
           features: [
             { label: "📞 Réponse intelligente 24/7", detail: "L'IA prend les appels lorsque vous êtes indisponible ou débordé" },
-            { label: "📅 Prise de rendez-vous automatisée", detail: "L'IA réserve directement dans votre calendrier" },
+            { label: "📅 Réservation selon votre processus", detail: "Connexion au calendrier ou collecte structurée après validation" },
             { label: "🔁 Capture intelligente des appels manqués", detail: "Chaque appel est capturé avec les informations du client, même s'il ne reste pas en ligne." },
             { label: "🧠 Reconnaissance des clients réguliers", detail: "Mila reconnaît vos clients fidèles et va directement à l'essentiel." },
             { label: "🔄 Modification et annulation par téléphone", detail: "Vos clients peuvent changer ou annuler leur rendez-vous directement avec Mila." },
@@ -357,28 +356,29 @@ export const translations = {
             { label: "📲 Transfert vers humain (si nécessaire)", detail: "L'appel peut être redirigé vers vous en direct" },
             { label: "🌙 Couverture 24/7 des appels", detail: "Aucun appel laissé sans réponse" },
             { label: "🌍 Bilingue (FR / EN)" },
-            { label: "☎️ Appels illimités" },
-            { label: "🎯 Résultat", detail: "Moins d'appels manqués. Plus de rendez-vous. Sans changer votre façon de travailler." },
-            { label: "🎁 Offre de lancement", detail: "Premier mois à 50%" }
+            { label: "☎️ 750 minutes incluses / mois", detail: "0,65 $ / minute additionnelle" },
+            { label: "🎯 Résultat", detail: "Moins d'appels manqués, plus de rendez-vous et moins d'interruptions pour votre équipe." }
           ]
         },
         {
           name: "Anvela Signature",
-          tagline: "Votre marque, protégée 24/7",
+          tagline: "Un système sur mesure pour votre garage",
+          pricePrefix: "À partir de ",
           price: "697",
-          weeklyNote: "soit environ 23$ par jour",
-          setupFee: "497",
-          setupFeeNote: "Contrat minimum de 6 mois",
-          description: "Tout le système Anvela géré pour vous : réputation protégée, suivi VIP et adaptation à la réalité de votre garage.",
+          weeklyNote: "tarif établi selon vos intégrations et vos flux de travail",
+          setupFee: "",
+          setupFeeDisplay: "Sur devis",
+          setupFeeNote: "Configuration, engagement et volume évalués avant le lancement",
+          description: "Un système Anvela conçu autour de vos outils : intégrations, suivis et automatisations adaptés à la réalité de votre garage.",
           features: [
             { label: "⭐ Protection de votre réputation en ligne", detail: "Les clients insatisfaits sont redirigés en privé AVANT de laisser un avis négatif sur Google. Votre note reste protégée." },
             { label: "📊 Optimisation continue + rapports mensuels", detail: "On ajuste votre système chaque mois pour maximiser vos rendez-vous et vos revenus." },
             { label: "🎯 Support prioritaire VIP — réponse < 2 h", detail: "Accès direct à l'équipe Anvela. Vous passez avant tout le monde." },
             { label: "💬 Suivi client par SMS en moins de 15 minutes", detail: "Confirmation et relance immédiates — pas après 24h comme ailleurs." },
-            { label: "🔗 Intégration CRM", detail: "Compatible avec les principales plateformes (évaluation incluse)." },
-            { label: "✓ Tout ce qui est inclus dans Night Shift + Co-Pilot", detail: "Réponse 24/7 · Reconnaissance des clients · Gestion complète des rendez-vous · Capture des appels manqués · Transfert vers humain · Bilingue FR/EN · Appels illimités" },
-            { label: "🏆 Résultat", detail: "Plus de rendez-vous. Moins de pertes. Une réputation blindée. Zéro gestion." },
-            { label: "🎁 Offre de lancement", detail: "Premier mois à 50%" }
+            { label: "🔗 Intégration CRM et automatisations", detail: "Évaluation de compatibilité et portée définie avant le lancement." },
+            { label: "✓ Tout ce qui est inclus dans Night Shift + Co-Pilot", detail: "Réponse 24/7 · gestion des rendez-vous · capture des appels · transfert humain · bilingue FR/EN" },
+            { label: "☎️ Volume et dépassement établis sur mesure", detail: "Basés sur votre volume réel et les intégrations demandées." },
+            { label: "🏆 Résultat", detail: "Un système de réception adapté à votre garage, sans promesses floues ni surprises de facturation." }
           ]
         }
       ]
@@ -618,7 +618,7 @@ export const translations = {
       scriptText: "Contactez-nous",
       subtitle: "CONTACT",
       mainTitle: "Parlons-en",
-      introText: "Prêt à transformer votre communication ? Soumettez votre demande — notre équipe vous rappelle dans les minutes qui suivent. Premier mois à 50%.",
+      introText: "Prêt à transformer votre communication ? Soumettez votre demande — notre équipe vous rappelle dans les minutes qui suivent.",
       contactInfoTitle: "Informations de Contact",
       contactItems: {
         address: { label: "Adresse", value: "Montréal, Québec, Canada" },
@@ -868,12 +868,12 @@ export const translations = {
       scriptText: "While you're under the hood...",
       mainTitle: "Your AI receptionist.\nNever miss a call.",
       subhead: "Every missed call is a job lost. Anvela answers, books your appointments and captures every client. Available 24/7.",
-      ctaButton: "Launch Offer",
+      ctaButton: "View plans",
       videoDemo: "Video Demo",
       demoLabel: "See how it works",
       prices: "Prices",
       decorativeText: "RELIABLE • AVAILABLE • AFFORDABLE",
-      ctaSubtitle: "1st month -50%",
+      ctaSubtitle: "Setup tailored to your operation",
       ctaMain: "Get Anvela for your shop",
       noCreditCard: "Limited offer • Live in 48h",
       stats: {
@@ -1075,9 +1075,9 @@ export const translations = {
       scriptText: "A Profitable Investment",
       subtitle: "OUR PRICING",
       mainTitle: "Plans tailored to your needs",
-      promoText: "Launch offer: first month at 50% off normal price. Up and running in under 48 hours.",
+      promoText: "Clear terms. No hidden fees. Setup tailored to your operation.",
       promoTextYearly: "Annual plan: 2 months free. Up and running in under 48 hours.",
-      ctaButton: "Claim offer",
+      ctaButton: "Choose my plan",
       ctaButtonElite: "ACTIVATE MY SYSTEM",
       monthly: "Monthly",
       yearly: "Yearly",
@@ -1111,16 +1111,15 @@ export const translations = {
           weeklyNote: "approx. $7 / day",
           setupFee: "0",
           setupFeeNote: "Minimum 3-month commitment",
-          description: "A natural-sounding voice that answers after hours and keeps your calendar filling while you're closed.",
+          description: "Your after-hours safety net: Anvela answers, qualifies each request and sends you the useful details—so your evenings stay yours.",
           features: [
             { label: "🌙 Automatic after-hours response", detail: "Mon–Fri 6pm–8am + Weekends 24/7" },
             { label: "📞 AI answers and qualifies calls", detail: "FAQ responses + client info capture" },
-            { label: "📅 Automatic appointment booking", detail: "Directly in your calendar (Google Calendar)" },
+            { label: "📅 Structured appointment requests", detail: "Calendar connection after your scheduling process is confirmed" },
             { label: "📩 Instant SMS notification", detail: "When a lead or appointment is captured" },
             { label: "🌍 Optimized for local market (EN)" },
-            { label: "☎️ Unlimited calls" },
-            { label: "🎯 Result", detail: "No calls missed after hours. Your calendar fills up even when you're closed." },
-            { label: "🎁 Launch offer", detail: "First month 50% off" }
+            { label: "☎️ 500 minutes included / month", detail: "$0.50 / additional minute" },
+            { label: "🎯 Result", detail: "Stop answering garage calls after work without leaving customers unanswered." }
           ]
         },
         {
@@ -1130,10 +1129,10 @@ export const translations = {
           isPopular: true,
           setupFee: "197",
           setupFeeNote: "Minimum 3-month commitment",
-          description: "A receptionist that sounds human, on the phone for you 24/7 — even when you're slammed or closed.",
+          description: "Your 24/7 reception backup: Anvela takes calls while you are busy or closed, then keeps every request clear, captured and actionable.",
           features: [
             { label: "📞 Intelligent 24/7 response", detail: "AI picks up when you're unavailable or overwhelmed" },
-            { label: "📅 Automated appointment booking", detail: "AI books directly in your calendar" },
+            { label: "📅 Booking around your process", detail: "Calendar connection or structured capture after validation" },
             { label: "🔁 Smart missed call capture", detail: "Every call captured with client info, even if they don't stay on the line." },
             { label: "🧠 Returning client recognition", detail: "Mila recognizes your loyal clients and skips the repeat questions." },
             { label: "🔄 Reschedule and cancel by phone", detail: "Clients can change or cancel their appointment directly with Mila." },
@@ -1141,28 +1140,29 @@ export const translations = {
             { label: "📲 Transfer to human (if needed)", detail: "Call can be redirected to you live" },
             { label: "🌙 24/7 call coverage", detail: "No call left unanswered" },
             { label: "🌍 Bilingual (FR / EN)" },
-            { label: "☎️ Unlimited calls" },
-            { label: "🎯 Result", detail: "Fewer missed calls. More appointments. Without changing how you work." },
-            { label: "🎁 Launch offer", detail: "First month 50% off" }
+            { label: "☎️ 750 minutes included / month", detail: "$0.65 / additional minute" },
+            { label: "🎯 Result", detail: "Fewer missed calls, more appointments, and fewer interruptions for your team." }
           ]
         },
         {
           name: "Anvela Signature",
-          tagline: "Your brand, protected 24/7",
+          tagline: "A custom system for your garage",
+          pricePrefix: "From ",
           price: "697",
-          weeklyNote: "approx. $23 / day",
-          setupFee: "497",
-          setupFeeNote: "Minimum 6-month commitment",
-          description: "The full Anvela system, managed for you: protected reputation, VIP follow-up, and tuned to your shop's reality.",
+          weeklyNote: "pricing based on your integrations and workflows",
+          setupFee: "",
+          setupFeeDisplay: "Quoted after assessment",
+          setupFeeNote: "Configuration, commitment, and call volume are assessed before launch",
+          description: "An Anvela system designed around your tools: integrations, follow-ups, and automation tailored to your garage.",
           features: [
             { label: "⭐ Online reputation protection", detail: "Unhappy clients are redirected privately BEFORE leaving a negative Google review. Your rating stays protected." },
             { label: "📊 Continuous optimization + monthly reports", detail: "We adjust your system every month to maximize your appointments and revenue." },
             { label: "🎯 Priority VIP support — response < 2h", detail: "Direct access to the Anvela team. You come first." },
             { label: "💬 SMS follow-up in under 15 minutes", detail: "Immediate confirmation and follow-up — not 24h later like elsewhere." },
-            { label: "🔗 CRM integration", detail: "Compatible with major platforms (assessment included)." },
-            { label: "✓ Everything included in Night Shift + Co-Pilot", detail: "24/7 response · Returning client recognition · Complete appointment management · Missed call capture · Human transfer · Bilingual FR/EN · Unlimited calls" },
-            { label: "🏆 Result", detail: "More appointments. Fewer losses. A bulletproof reputation. Zero management." },
-            { label: "🎁 Launch offer", detail: "First month 50% off" }
+            { label: "🔗 CRM integration and automation", detail: "Compatibility and scope are defined before launch." },
+            { label: "✓ Everything in Night Shift + Co-Pilot", detail: "24/7 coverage · appointment handling · call capture · human transfer · bilingual FR/EN" },
+            { label: "☎️ Custom usage and overage terms", detail: "Based on your real volume and requested integrations." },
+            { label: "🏆 Result", detail: "A reception system built for your garage, without vague promises or billing surprises." }
           ]
         }
       ]
@@ -1424,7 +1424,7 @@ export const translations = {
       scriptText: "Get in Touch",
       subtitle: "CONTACT US",
       mainTitle: "Let's Talk",
-      introText: "Ready to transform how your business handles calls? Submit your info — our team reaches out within minutes. First month 50% off.",
+      introText: "Ready to transform how your business handles calls? Submit your info — our team reaches out within minutes.",
       contactInfoTitle: "Contact Information",
       contactItems: {
         address: { label: "Address", value: "Montreal, Quebec, Canada" },
@@ -1674,12 +1674,12 @@ export const translations = {
       scriptText: "Mientras estás trabajando...",
       mainTitle: "Tu recepcionista IA.\nNinguna llamada perdida.",
       subhead: "Cada llamada perdida es un trabajo perdido. Anvela contesta, agenda tus citas y capta a cada cliente. Disponible 24/7.",
-      ctaButton: "Oferta de Lanzamiento",
+      ctaButton: "Ver planes",
       videoDemo: "Demo en Video",
       demoLabel: "Vea cómo funciona",
       prices: "Precios",
       decorativeText: "CONFIABLE • DISPONIBLE • ACCESIBLE",
-      ctaSubtitle: "1er mes al -50%",
+      ctaSubtitle: "Configuración adaptada a su operación",
       ctaMain: "Obtén Anvela para tu taller",
       noCreditCard: "Oferta limitada • Operativo en 48h",
       stats: {
@@ -1881,9 +1881,9 @@ export const translations = {
       scriptText: "Una Inversión Rentable",
       subtitle: "NUESTROS PRECIOS",
       mainTitle: "Planes adaptados a tus necesidades",
-      promoText: "Oferta de lanzamiento: primer mes al 50% del precio normal. Operativo en menos de 48 horas.",
+      promoText: "Condiciones claras. Sin cargos ocultos. Configuración adaptada a su operación.",
       promoTextYearly: "Plan anual: 2 meses gratis. Operativo en menos de 48 horas.",
-      ctaButton: "Aprovechar la oferta",
+      ctaButton: "Elegir mi plan",
       ctaButtonElite: "ACTIVAR MI SISTEMA",
       monthly: "Mensual",
       yearly: "Anual",
@@ -1917,16 +1917,15 @@ export const translations = {
           weeklyNote: "aprox. $7 / día",
           setupFee: "0",
           setupFeeNote: "Contrato mínimo de 3 meses",
-          description: "Una voz natural que responde fuera de horario y mantiene tu agenda llenándose mientras estás cerrado.",
+          description: "Su red de seguridad fuera de horario: Anvela responde, califica cada solicitud y le envía los datos útiles para que sus noches sean suyas.",
           features: [
             { label: "🌙 Respuesta automática fuera de horario", detail: "Lun–Vie 18h–8h + fin de semana 24h" },
             { label: "📞 IA responde y califica llamadas", detail: "Preguntas frecuentes + captura de información del cliente" },
-            { label: "📅 Reserva automática de citas", detail: "Directamente en su calendario (Google Calendar)" },
+            { label: "📅 Solicitudes de cita estructuradas", detail: "Conexión al calendario tras confirmar su proceso" },
             { label: "📩 Notificación SMS instantánea", detail: "Cuando se captura un lead o una cita" },
             { label: "🌍 Optimizado para el mercado local (ES)" },
-            { label: "☎️ Llamadas ilimitadas" },
-            { label: "🎯 Resultado", detail: "Ninguna llamada perdida fuera de horario. Su calendario se llena incluso cuando está cerrado." },
-            { label: "🎁 Oferta de lanzamiento", detail: "Primer mes al 50%" }
+            { label: "☎️ 500 minutos incluidos / mes", detail: "$0.50 / minuto adicional" },
+            { label: "🎯 Resultado", detail: "Deje de responder llamadas del taller después del trabajo sin dejar a sus clientes sin respuesta." }
           ]
         },
         {
@@ -1936,10 +1935,10 @@ export const translations = {
           isPopular: true,
           setupFee: "197",
           setupFeeNote: "Contrato mínimo de 3 meses",
-          description: "Una recepcionista que suena humana, al teléfono por ti 24/7 — incluso cuando estás saturado o cerrado.",
+          description: "Su apoyo de recepción 24/7: Anvela atiende mientras está ocupado o cerrado y mantiene cada solicitud clara, capturada y lista para actuar.",
           features: [
             { label: "📞 Respuesta inteligente 24/7", detail: "La IA atiende cuando no está disponible o está ocupado" },
-            { label: "📅 Reserva automatizada de citas", detail: "La IA reserva directamente en su calendario" },
+            { label: "📅 Reservas según su proceso", detail: "Conexión al calendario o captura estructurada tras validación" },
             { label: "🔁 Captura inteligente de llamadas perdidas", detail: "Cada llamada se captura con la información del cliente, aunque no permanezca en línea." },
             { label: "🧠 Reconocimiento de clientes habituales", detail: "Mila reconoce a sus clientes fieles y va directo al grano." },
             { label: "🔄 Modificación y cancelación por teléfono", detail: "Sus clientes pueden cambiar o cancelar su cita directamente con Mila." },
@@ -1947,28 +1946,29 @@ export const translations = {
             { label: "📲 Transferencia a humano (si es necesario)", detail: "La llamada puede redirigirse a usted en vivo" },
             { label: "🌙 Cobertura de llamadas 24/7", detail: "Ninguna llamada sin respuesta" },
             { label: "🌍 Bilingüe (FR / EN)" },
-            { label: "☎️ Llamadas ilimitadas" },
-            { label: "🎯 Resultado", detail: "Menos llamadas perdidas. Más citas. Sin cambiar su forma de trabajar." },
-            { label: "🎁 Oferta de lanzamiento", detail: "Primer mes al 50%" }
+            { label: "☎️ 750 minutos incluidos / mes", detail: "$0.65 / minuto adicional" },
+            { label: "🎯 Resultado", detail: "Menos llamadas perdidas, más citas y menos interrupciones para su equipo." }
           ]
         },
         {
           name: "Anvela Signature",
-          tagline: "Su marca, protegida 24/7",
+          tagline: "Un sistema a medida para su taller",
+          pricePrefix: "Desde ",
           price: "697",
-          weeklyNote: "aprox. $23 / día",
-          setupFee: "497",
-          setupFeeNote: "Contrato mínimo de 6 meses",
-          description: "Todo el sistema Anvela gestionado para ti: reputación protegida, seguimiento VIP y adaptado a la realidad de tu taller.",
+          weeklyNote: "precio según sus integraciones y flujos de trabajo",
+          setupFee: "",
+          setupFeeDisplay: "Presupuesto después de la evaluación",
+          setupFeeNote: "La configuración, el compromiso y el volumen se evalúan antes del lanzamiento",
+          description: "Un sistema Anvela diseñado para sus herramientas: integraciones, seguimientos y automatizaciones adaptadas a su taller.",
           features: [
             { label: "⭐ Protección de su reputación en línea", detail: "Los clientes insatisfechos son redirigidos en privado ANTES de dejar una reseña negativa en Google. Su nota queda protegida." },
             { label: "📊 Optimización continua + informes mensuales", detail: "Ajustamos su sistema cada mes para maximizar sus citas e ingresos." },
             { label: "🎯 Soporte VIP prioritario — respuesta < 2h", detail: "Acceso directo al equipo Anvela. Usted va primero." },
             { label: "💬 Seguimiento por SMS en menos de 15 minutos", detail: "Confirmación y seguimiento inmediatos — no 24h después como en otros." },
-            { label: "🔗 Integración CRM", detail: "Compatible con las principales plataformas (evaluación incluida)." },
-            { label: "✓ Todo lo incluido en Night Shift + Co-Pilot", detail: "Respuesta 24/7 · Reconocimiento de clientes · Gestión completa de citas · Captura de llamadas perdidas · Transferencia a humano · Bilingüe FR/EN · Llamadas ilimitadas" },
-            { label: "🏆 Resultado", detail: "Más citas. Menos pérdidas. Una reputación blindada. Cero gestión." },
-            { label: "🎁 Oferta de lanzamiento", detail: "Primer mes al 50%" }
+            { label: "🔗 Integración CRM y automatizaciones", detail: "La compatibilidad y el alcance se definen antes del lanzamiento." },
+            { label: "✓ Todo lo incluido en Night Shift + Co-Pilot", detail: "Cobertura 24/7 · gestión de citas · captura de llamadas · transferencia humana · bilingüe FR/EN" },
+            { label: "☎️ Uso y excedentes a medida", detail: "Según su volumen real y las integraciones solicitadas." },
+            { label: "🏆 Resultado", detail: "Un sistema de recepción hecho para su taller, sin promesas vagas ni sorpresas de facturación." }
           ]
         }
       ]
@@ -2230,7 +2230,7 @@ export const translations = {
       scriptText: "Póngase en Contacto",
       subtitle: "CONTÁCTENOS",
       mainTitle: "Hablemos",
-      introText: "¿Listo para transformar cómo su negocio maneja las llamadas? Envíe su información — nuestro equipo le contacta en minutos. Primer mes al 50%.",
+      introText: "¿Listo para transformar cómo su negocio maneja las llamadas? Envíe su información — nuestro equipo le contacta en minutos.",
       contactInfoTitle: "Información de Contacto",
       contactItems: {
         address: { label: "Dirección", value: "Montreal, Quebec, Canadá" },
@@ -2480,12 +2480,12 @@ export const translations = {
       scriptText: "Mentre sei sotto il cofano...",
       mainTitle: "La tua receptionist IA.\nNessuna chiamata persa.",
       subhead: "Ogni chiamata persa è un lavoro perso. Anvela risponde, fissa gli appuntamenti e cattura ogni cliente. Disponibile 24/7.",
-      ctaButton: "Offerta di Lancio",
+      ctaButton: "Vedi i piani",
       videoDemo: "Video Demo",
       demoLabel: "Guarda come funziona",
       prices: "Prezzi",
       decorativeText: "AFFIDABILE • DISPONIBILE • CONVENIENTE",
-      ctaSubtitle: "1° mese al -50%",
+      ctaSubtitle: "Configurazione su misura per la tua attività",
       ctaMain: "Ottieni Anvela per la tua officina",
       noCreditCard: "Offerta limitata • Operativo in 48h",
       stats: {
@@ -2687,9 +2687,9 @@ export const translations = {
       scriptText: "Un Investimento Redditizio",
       subtitle: "I NOSTRI PREZZI",
       mainTitle: "Piani su misura per le tue esigenze",
-      promoText: "Offerta di lancio: primo mese al 50% del prezzo normale. Operativo in meno di 48 ore.",
+      promoText: "Condizioni chiare. Nessun costo nascosto. Configurazione su misura per la tua attività.",
       promoTextYearly: "Piano annuale: 2 mesi gratuiti. Operativo in meno di 48 ore.",
-      ctaButton: "Approfitta dell'offerta",
+      ctaButton: "Scegli il mio piano",
       ctaButtonElite: "ATTIVA IL MIO SISTEMA",
       monthly: "Mensile",
       yearly: "Annuale",
@@ -2723,16 +2723,15 @@ export const translations = {
           weeklyNote: "circa 7$ al giorno",
           setupFee: "0",
           setupFeeNote: "Contratto minimo 3 mesi",
-          description: "Una voce naturale che risponde fuori orario e continua a riempire la tua agenda mentre sei chiuso.",
+          description: "La tua rete di sicurezza fuori orario: Anvela risponde, qualifica ogni richiesta e ti invia le informazioni utili, così le tue serate restano tue.",
           features: [
             { label: "🌙 Risposta automatica fuori orario", detail: "Lun–Ven 18h–8h + weekend 24h" },
             { label: "📞 IA risponde e qualifica le chiamate", detail: "FAQ + acquisizione informazioni cliente" },
-            { label: "📅 Prenotazione automatica appuntamenti", detail: "Direttamente nel tuo calendario (Google Calendar)" },
+            { label: "📅 Richieste di appuntamento strutturate", detail: "Connessione al calendario dopo aver confermato il tuo processo" },
             { label: "📩 Notifica SMS istantanea", detail: "Quando viene acquisito un lead o un appuntamento" },
             { label: "🌍 Ottimizzato per il mercato locale (IT)" },
-            { label: "☎️ Chiamate illimitate" },
-            { label: "🎯 Risultato", detail: "Nessuna chiamata persa fuori orario. Il tuo calendario si riempie anche quando sei chiuso." },
-            { label: "🎁 Offerta di lancio", detail: "Primo mese al 50%" }
+            { label: "☎️ 500 minuti inclusi / mese", detail: "0,50 $ / minuto aggiuntivo" },
+            { label: "🎯 Risultato", detail: "Smetti di rispondere alle chiamate del garage dopo il lavoro senza lasciare i clienti senza risposta." }
           ]
         },
         {
@@ -2742,10 +2741,10 @@ export const translations = {
           isPopular: true,
           setupFee: "197",
           setupFeeNote: "Contratto minimo 3 mesi",
-          description: "Una receptionist che suona umana, al telefono per te 24/7 — anche quando sei sommerso o chiuso.",
+          description: "Il tuo supporto alla reception 24/7: Anvela risponde mentre sei occupato o chiuso e mantiene ogni richiesta chiara, acquisita e pronta all'azione.",
           features: [
             { label: "📞 Risposta intelligente 24/7", detail: "L'IA risponde quando non sei disponibile o sei occupato" },
-            { label: "📅 Prenotazione automatizzata", detail: "L'IA prenota direttamente nel tuo calendario" },
+            { label: "📅 Prenotazioni secondo il tuo processo", detail: "Connessione al calendario o acquisizione strutturata dopo la convalida" },
             { label: "🔁 Acquisizione intelligente chiamate perse", detail: "Ogni chiamata viene acquisita con le info del cliente, anche se non rimane in linea." },
             { label: "🧠 Riconoscimento dei clienti abituali", detail: "Mila riconosce i tuoi clienti fedeli e va dritta al punto." },
             { label: "🔄 Modifica e cancellazione per telefono", detail: "I tuoi clienti possono cambiare o cancellare l'appuntamento direttamente con Mila." },
@@ -2753,28 +2752,29 @@ export const translations = {
             { label: "📲 Trasferimento a umano (se necessario)", detail: "La chiamata può essere reindirizzata a te in diretta" },
             { label: "🌙 Copertura chiamate 24/7", detail: "Nessuna chiamata senza risposta" },
             { label: "🌍 Bilingue (FR / EN)" },
-            { label: "☎️ Chiamate illimitate" },
-            { label: "🎯 Risultato", detail: "Meno chiamate perse. Più appuntamenti. Senza cambiare il tuo modo di lavorare." },
-            { label: "🎁 Offerta di lancio", detail: "Primo mese al 50%" }
+            { label: "☎️ 750 minuti inclusi / mese", detail: "0,65 $ / minuto aggiuntivo" },
+            { label: "🎯 Risultato", detail: "Meno chiamate perse, più appuntamenti e meno interruzioni per il tuo team." }
           ]
         },
         {
           name: "Anvela Signature",
-          tagline: "Il tuo marchio, protetto 24/7",
+          tagline: "Un sistema su misura per il tuo garage",
+          pricePrefix: "A partire da ",
           price: "697",
-          weeklyNote: "circa 23$ al giorno",
-          setupFee: "497",
-          setupFeeNote: "Contratto minimo 6 mesi",
-          description: "Tutto il sistema Anvela gestito per te: reputazione protetta, follow-up VIP e adattato alla realtà del tuo garage.",
+          weeklyNote: "prezzo basato sulle tue integrazioni e sui tuoi flussi di lavoro",
+          setupFee: "",
+          setupFeeDisplay: "Preventivo dopo la valutazione",
+          setupFeeNote: "Configurazione, impegno e volume vengono valutati prima del lancio",
+          description: "Un sistema Anvela progettato attorno ai tuoi strumenti: integrazioni, follow-up e automazioni su misura per il tuo garage.",
           features: [
             { label: "⭐ Protezione della reputazione online", detail: "I clienti insoddisfatti vengono reindirizzati in privato PRIMA di lasciare una recensione negativa su Google. Il tuo punteggio resta protetto." },
             { label: "📊 Ottimizzazione continua + report mensili", detail: "Aggiustiamo il tuo sistema ogni mese per massimizzare appuntamenti e ricavi." },
             { label: "🎯 Supporto VIP prioritario — risposta < 2h", detail: "Accesso diretto al team Anvela. Sei sempre il primo." },
             { label: "💬 Follow-up SMS in meno di 15 minuti", detail: "Conferma e ricontatto immediati — non dopo 24h come altrove." },
-            { label: "🔗 Integrazione CRM", detail: "Compatibile con le principali piattaforme (valutazione inclusa)." },
-            { label: "✓ Tutto incluso in Night Shift + Co-Pilot", detail: "Risposta 24/7 · Riconoscimento dei clienti · Gestione completa degli appuntamenti · Cattura chiamate perse · Trasferimento umano · Bilingue FR/EN · Chiamate illimitate" },
-            { label: "🏆 Risultato", detail: "Più appuntamenti. Meno perdite. Una reputazione blindata. Zero gestione." },
-            { label: "🎁 Offerta di lancio", detail: "Primo mese al 50%" }
+            { label: "🔗 Integrazione CRM e automazioni", detail: "Compatibilità e portata vengono definite prima del lancio." },
+            { label: "✓ Tutto incluso in Night Shift + Co-Pilot", detail: "Copertura 24/7 · gestione appuntamenti · acquisizione chiamate · trasferimento umano · bilingue FR/EN" },
+            { label: "☎️ Utilizzo e superamenti su misura", detail: "Basati sul tuo volume reale e sulle integrazioni richieste." },
+            { label: "🏆 Risultato", detail: "Un sistema di reception costruito per il tuo garage, senza promesse vaghe o sorprese di fatturazione." }
           ]
         }
       ]
@@ -3034,7 +3034,7 @@ export const translations = {
       scriptText: "Mettiti in Contatto",
       subtitle: "CONTATTACI",
       mainTitle: "Parliamo",
-      introText: "Pronto a trasformare come la tua azienda gestisce le chiamate? Invia le tue informazioni — il nostro team ti contatta entro pochi minuti. Primo mese al 50%.",
+      introText: "Pronto a trasformare come la tua azienda gestisce le chiamate? Invia le tue informazioni — il nostro team ti contatta entro pochi minuti.",
       contactInfoTitle: "Informazioni di Contatto",
       contactItems: {
         address: { label: "Indirizzo", value: "Montreal, Quebec, Canada" },
