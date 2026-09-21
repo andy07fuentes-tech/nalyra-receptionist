@@ -15,6 +15,12 @@ dist-ssr
 # secrets — never commit
 .env
 .env.*
+*recovery-codes*
+*recovery_codes*
+*backup-codes*
+
+# loose documents dropped in the repo root (site PDFs live in public/)
+/*.pdf
 
 # Editor directories and files
 .vscode/*
@@ -43,3 +49,7 @@ experiments/
 
 # raw uncompressed video originals (compressed versions are tracked)
 public/videos/_originals/
+
+# favicon source artwork (the resized icons are tracked)
+public/favicon-full.png
+public/favicon-source.jpg
