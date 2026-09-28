@@ -37,7 +37,6 @@ export function Hero({ isReady }: { isReady: boolean }) {
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const preloadRef = useRef<HTMLVideoElement>(null);
   const videoOverlayRef = useRef<HTMLDivElement>(null);
   const [phase, setPhase] = useState(0);
 
@@ -93,28 +92,10 @@ export function Hero({ isReady }: { isReady: boolean }) {
     return () => ctx.revert();
   }, []);
 
-  const DESKTOP_VIDEOS = [
-    '/videos/hero-garage-night.mp4',
-    '/videos/hero-customer-calling.mp4',
-    '/videos/hero-receptionist-answering.mp4',
-    '/videos/hero-happy-owner.mp4',
-  ];
-  const MOBILE_VIDEOS = [
-    '/videos/anvela-answers.mp4',
-    '/videos/garage-workshop.mp4',
-    '/videos/garage-night.mp4',
-    '/videos/garage-luxury.mp4',
-  ];
-  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
-  useEffect(() => {
-    const handler = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener('resize', handler);
-    return () => window.removeEventListener('resize', handler);
-  }, []);
-  const GARAGE_VIDEOS = isMobile ? MOBILE_VIDEOS : DESKTOP_VIDEOS;
-  const [videoIndex, setVideoIndex] = useState(0);
+  // One background clip on every screen: the ringing phone the intro film opens on
+  const HERO_VIDEO = '/videos/hero-garage-night.mp4';
 
-  // Fade-out + advance index when current video ends
+  // Loop through black: fade out just before the end, restart, fade back in
   useEffect(() => {
     const video = videoRef.current;
     const overlay = videoOverlayRef.current;
@@ -134,7 +115,11 @@ export function Hero({ isReady }: { isReady: boolean }) {
     };
 
     const handleEnded = () => {
-      setVideoIndex(prev => (prev + 1) % GARAGE_VIDEOS.length);
+      fadingOut = false;
+      video.currentTime = 0;
+      video.play().catch(() => {});
+      overlay.style.transition = `opacity ${FADE}s ease-in`;
+      overlay.style.opacity = '0';
     };
 
     video.addEventListener('timeupdate', handleTimeUpdate);
@@ -143,13 +128,13 @@ export function Hero({ isReady }: { isReady: boolean }) {
       video.removeEventListener('timeupdate', handleTimeUpdate);
       video.removeEventListener('ended', handleEnded);
     };
-  }, [videoIndex]);
+  }, []);
 
-  // Load + play current video; fade overlay only once canplay fires (frame is ready)
+  // Load + play once the page is revealed; fade overlay only once canplay fires (frame is ready)
   useEffect(() => {
     const video = videoRef.current;
     const overlay = videoOverlayRef.current;
-    if (!video || !overlay) return;
+    if (!video || !overlay || !isReady) return;
 
     video.load();
 
@@ -162,16 +147,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
 
     video.addEventListener('canplay', handleCanPlay, { once: true });
     return () => video.removeEventListener('canplay', handleCanPlay);
-  }, [videoIndex, isReady]);
-
-  // Preload the next video in the background while current plays
-  useEffect(() => {
-    const preload = preloadRef.current;
-    if (!preload) return;
-    const nextIndex = (videoIndex + 1) % GARAGE_VIDEOS.length;
-    preload.src = GARAGE_VIDEOS[nextIndex];
-    preload.load();
-  }, [videoIndex]);
+  }, [isReady]);
 
   useEffect(() => {
     if (!isReady) return;
@@ -204,16 +180,9 @@ export function Hero({ isReady }: { isReady: boolean }) {
             playsInline
             preload="none"
             ref={videoRef}
-            className="absolute inset-0 w-full h-full object-cover object-center"
-            src={isReady ? GARAGE_VIDEOS[videoIndex] : undefined}
-          />
-          <video
-            ref={preloadRef}
-            muted
-            playsInline
-            preload="none"
-            aria-hidden="true"
-            className="absolute opacity-0 pointer-events-none w-0 h-0"
+            className="absolute inset-0 w-full h-full object-cover object-[62%_50%] md:object-center"
+            style={{ transform: 'scale(1.25)', transformOrigin: '60% 100%' }} /* keeps the clip's neon sign above the frame */
+            src={isReady ? HERO_VIDEO : undefined}
           />
           <div
             ref={videoOverlayRef}

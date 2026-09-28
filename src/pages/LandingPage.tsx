@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import { Navigation } from '../sections/Navigation';
 import { Hero } from '../sections/Hero';
 import { MissedCalls } from '../sections/MissedCalls';
@@ -13,6 +13,9 @@ import { Founder } from '../sections/Founder';
 import { ContactForm } from '../sections/ContactForm';
 import { Footer } from '../sections/Footer';
 import { Preloader } from '../components/Preloader';
+import { IntroFilm, type IntroFilmHandle } from '../components/IntroFilm';
+import { shouldPlayIntro } from '../lib/intro';
+import { useAudio } from '../contexts/AudioContext';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { ScrollToTop } from '../components/ScrollToTop';
 import gsap from 'gsap';
@@ -31,6 +34,22 @@ export default function LandingPage() {
     const handlePreloaderComplete = useCallback(() => {
         setIsLoading(false);
     }, []);
+
+    // Intro film: plays after the preloader click (first visit), then hands over to the hero
+    const { playFrom } = useAudio();
+    const [hasIntro] = useState(shouldPlayIntro);
+    const [introDone, setIntroDone] = useState(false);
+    const introRef = useRef<IntroFilmHandle>(null);
+    const handleIntroStart = useCallback(() => {
+        const started = introRef.current?.start() ?? false;
+        if (!started) setIntroDone(true);
+        return started;
+    }, []);
+    const handleIntroFinish = useCallback((musicAt: number) => {
+        playFrom(musicAt);
+        setIntroDone(true);
+    }, [playFrom]);
+    const introPlaying = hasIntro && !introDone;
 
     // Initialize smooth scroll transitions
     useEffect(() => {
@@ -91,13 +110,14 @@ export default function LandingPage() {
 
     return (
         <>
-            {isLoading && <Preloader onComplete={handlePreloaderComplete} />}
+            {isLoading && <Preloader onComplete={handlePreloaderComplete} onStart={hasIntro ? handleIntroStart : undefined} />}
+            {hasIntro && <IntroFilm ref={introRef} onFinish={handleIntroFinish} />}
 
-            <div className={`page-bg-root min-h-screen bg-slate-50 ${isLoading ? 'overflow-hidden max-h-screen' : ''}`}>
+            <div className={`page-bg-root min-h-screen bg-slate-50 ${isLoading || introPlaying ? 'overflow-hidden max-h-screen' : ''}`}>
                 <Navigation />
 
                 <main>
-                    <Hero isReady={!isLoading} />
+                    <Hero isReady={!isLoading && !introPlaying} />
                     
 
                     <MissedCalls />

@@ -33,6 +33,11 @@ export const translations = {
       tagline: "Votre garage ne dort plus",
     },
 
+    intro: {
+      skip: "Passer",
+      ariaLabel: "Démo : un vrai appel test avec Mila, notre réceptionniste IA, qui prend un rendez-vous",
+    },
+
     // Cinematic Showcase
     cinematic: {
       step1: {
@@ -837,6 +842,11 @@ export const translations = {
       yearText: "Next Gen",
       enterButton: "Discover Anvela",
       tagline: "Your shop never sleeps again",
+    },
+
+    intro: {
+      skip: "Skip",
+      ariaLabel: "Demo: a real test call with Mila, our AI receptionist, booking an appointment (in French)",
     },
 
     // Cinematic Showcase
@@ -1646,6 +1656,11 @@ export const translations = {
       tagline: "Su taller nunca duerme más",
     },
 
+    intro: {
+      skip: "Omitir",
+      ariaLabel: "Demo: una llamada de prueba real con Mila, nuestra recepcionista IA, reservando una cita (en francés)",
+    },
+
     cinematic: {
       step1: {
         subtitle: "Experiencia del Cliente",
@@ -2450,6 +2465,11 @@ export const translations = {
       yearText: "Nuova Generazione",
       enterButton: "Scopri Anvela",
       tagline: "La tua officina non dorme più",
+    },
+
+    intro: {
+      skip: "Salta",
+      ariaLabel: "Demo: una vera chiamata di prova con Mila, la nostra receptionist IA, che prenota un appuntamento (in francese)",
     },
 
     cinematic: {

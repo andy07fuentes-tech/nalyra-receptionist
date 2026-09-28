@@ -5,6 +5,8 @@ interface AudioContextType {
   isMuted: boolean;
   setIsMuted: (muted: boolean) => void;
   play: () => void;
+  prime: () => void;
+  playFrom: (seconds: number, fadeIn?: number) => void;
   pause: () => void;
   isPlaying: boolean;
   isDimmed: boolean;
@@ -68,17 +70,48 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     audioRef.current?.play().catch(err => console.log("Playback failed:", err));
   };
 
+  // iOS only lets an audio element start later if it was started once inside a tap.
+  // Starting and stopping in the same tick unlocks it without making a sound.
+  const prime = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    const attempt = audio.play();
+    audio.pause();
+    attempt?.catch(() => {});
+  };
+
+  // Continue the track from a given point (the intro film ends on this same music).
+  const playFrom = (seconds: number, fadeIn = 1.5) => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    try {
+      audio.currentTime = seconds;
+    } catch {
+      // not seekable yet: start from the top instead
+    }
+    audio.volume = 0;
+    setIsPlaying(true);
+    audio.play().catch(err => console.log("Playback failed:", err));
+    gsap.to(audio, {
+      volume: isDimmed ? DIMMED_VOLUME : NORMAL_VOLUME,
+      duration: fadeIn,
+      ease: "power1.out"
+    });
+  };
+
   const pause = () => {
     setIsPlaying(false);
     audioRef.current?.pause();
   };
 
   return (
-    <AudioContext.Provider value={{ 
-      isMuted, 
-      setIsMuted, 
-      play, 
-      pause, 
+    <AudioContext.Provider value={{
+      isMuted,
+      setIsMuted,
+      play,
+      prime,
+      playFrom,
+      pause,
       isPlaying,
       isDimmed,
       setIsDimmed

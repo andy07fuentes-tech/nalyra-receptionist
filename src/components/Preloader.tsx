@@ -46,9 +46,9 @@ function FogLayer({ phase }: { phase: 'loading' | 'ready' | 'fading' }) {
   );
 }
 
-export function Preloader({ onComplete }: { onComplete: () => void }) {
+export function Preloader({ onComplete, onStart }: { onComplete: () => void; onStart?: () => boolean }) {
   const { t } = useLanguage();
-  const { play, setIsMuted } = useAudio();
+  const { play, prime, setIsMuted } = useAudio();
 
   const [phase, setPhase] = useState<'loading' | 'ready' | 'fading'>('loading');
   const containerRef = useRef<HTMLDivElement>(null);
@@ -205,7 +205,9 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
 
   const handleStart = () => {
     setIsMuted(false);
-    play();
+    // The intro film carries its own music; the site track takes over when it ends
+    if (onStart?.()) prime();
+    else play();
     setPhase('fading');
     setTimeout(() => onComplete(), 600);
   };
