@@ -92,8 +92,9 @@ export function Hero({ isReady }: { isReady: boolean }) {
     return () => ctx.revert();
   }, []);
 
-  // One background clip on every screen: the ringing phone the intro film opens on
-  const HERO_VIDEO = '/videos/hero-garage-night.mp4';
+  // One background clip on every screen: the owner opening up in the morning, reading his phone —
+  // the payoff after the intro film's night-time call
+  const HERO_VIDEO = '/videos/hero-happy-owner.mp4';
 
   // Loop through black: fade out just before the end, restart, fade back in
   useEffect(() => {
@@ -180,8 +181,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
             playsInline
             preload="none"
             ref={videoRef}
-            className="absolute inset-0 w-full h-full object-cover object-[62%_50%] md:object-center"
-            style={{ transform: 'scale(1.25)', transformOrigin: '60% 100%' }} /* keeps the clip's neon sign above the frame */
+            className="absolute inset-0 w-full h-full object-cover object-[55%_50%] md:object-center"
             src={isReady ? HERO_VIDEO : undefined}
           />
           <div
