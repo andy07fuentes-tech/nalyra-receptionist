@@ -94,7 +94,15 @@ export function Hero({ isReady }: { isReady: boolean }) {
 
   // One background clip on every screen: the owner opening up in the morning, reading his phone —
   // the payoff after the intro film's night-time call
-  const HERO_VIDEO = '/videos/hero-happy-owner.mp4';
+  // Tall screens (phones) get a version framed for them, so the whole scene fits instead of a close crop
+  const [isPortrait, setIsPortrait] = useState(() => window.matchMedia('(orientation: portrait)').matches);
+  useEffect(() => {
+    const mq = window.matchMedia('(orientation: portrait)');
+    const handler = (e: MediaQueryListEvent) => setIsPortrait(e.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+  const HERO_VIDEO = isPortrait ? '/videos/hero-happy-owner-9x16.mp4' : '/videos/hero-happy-owner.mp4';
 
   // Loop through black: fade out just before the end, restart, fade back in
   useEffect(() => {
@@ -148,7 +156,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
 
     video.addEventListener('canplay', handleCanPlay, { once: true });
     return () => video.removeEventListener('canplay', handleCanPlay);
-  }, [isReady]);
+  }, [isReady, HERO_VIDEO]);
 
   useEffect(() => {
     if (!isReady) return;
@@ -181,7 +189,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
             playsInline
             preload="none"
             ref={videoRef}
-            className="absolute inset-0 w-full h-full object-cover object-[55%_50%] md:object-center"
+            className="absolute inset-0 w-full h-full object-cover object-center"
             src={isReady ? HERO_VIDEO : undefined}
           />
           <div
