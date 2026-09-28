@@ -1,6 +1,6 @@
 import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { INTRO_LENGTH, INTRO_MUSIC_OFFSET, INTRO_SEEN_KEY } from '../lib/intro';
+import { INTRO_LENGTH, INTRO_MUSIC_OFFSET } from '../lib/intro';
 
 const FADE_MS = 900;
 const START_TIMEOUT_MS = 8000;
@@ -62,11 +62,6 @@ export const IntroFilm = forwardRef<IntroFilmHandle, IntroFilmProps>(function In
     start: () => {
       const video = videoRef.current;
       if (!video || failedRef.current) return false;
-      try {
-        window.localStorage.setItem(INTRO_SEEN_KEY, '1');
-      } catch {
-        // private mode: the film may show again next visit, which is fine
-      }
       video.muted = false;
       setState('playing');
       video.play().catch(() => finish());
