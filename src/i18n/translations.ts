@@ -331,7 +331,7 @@ export const translations = {
           price: "199",
           weeklyNote: "soit environ 7$ par jour",
           setupFee: "0",
-          setupFeeNote: "Contrat minimum de 3 mois",
+          setupFeeNote: "Sans engagement · mois par mois",
           description: "Votre filet de sécurité après les heures : Anvela répond, qualifie chaque demande et vous envoie les informations utiles pour que vos soirées restent à vous.",
           features: [
             { label: "🌙 Réponse automatique après les heures", detail: "Lun–Ven 18h–8h + week-end 24h" },
@@ -349,7 +349,7 @@ export const translations = {
           weeklyNote: "soit environ 15$ par jour",
           isPopular: true,
           setupFee: "197",
-          setupFeeNote: "Contrat minimum de 3 mois",
+          setupFeeNote: "Sans engagement · mois par mois",
           description: "Votre réception de renfort 24/7 : Anvela prend les appels quand vous êtes occupé ou fermé, puis garde chaque demande claire, suivie et actionnable.",
           features: [
             { label: "📞 Réponse intelligente 24/7", detail: "L'IA prend les appels lorsque vous êtes indisponible ou débordé" },
@@ -361,7 +361,7 @@ export const translations = {
             { label: "📲 Transfert vers humain (si nécessaire)", detail: "L'appel peut être redirigé vers vous en direct" },
             { label: "🌙 Couverture 24/7 des appels", detail: "Aucun appel laissé sans réponse" },
             { label: "🌍 Bilingue (FR / EN)" },
-            { label: "☎️ 750 minutes incluses / mois", detail: "0,65 $ / minute additionnelle" },
+            { label: "☎️ 750 minutes incluses / mois", detail: "0,45 $ / minute additionnelle" },
             { label: "🎯 Résultat", detail: "Moins d'appels manqués, plus de rendez-vous et moins d'interruptions pour votre équipe." }
           ]
         },
@@ -412,7 +412,7 @@ export const translations = {
         },
         {
           question: "Y a-t-il un engagement à long terme ?",
-          answer: "Les forfaits 'Night Shift' et 'Co-Pilot' ont un engagement minimal de 3 mois. Le forfait 'Anvela Signature' requiert 6 mois en raison de la complexité de l'intégration CRM personnalisée."
+          answer: "Non. Les forfaits 'Night Shift' et 'Co-Pilot' sont sans engagement : vous payez de mois en mois et pouvez annuler en tout temps avec un préavis de 30 jours. Le forfait 'Anvela Signature' requiert 6 mois en raison de la complexité de l'intégration CRM personnalisée."
         },
         {
           question: "Pour quels types d'entreprises Anvela est-elle faite ?",
@@ -1120,7 +1120,7 @@ export const translations = {
           price: "199",
           weeklyNote: "approx. $7 / day",
           setupFee: "0",
-          setupFeeNote: "Minimum 3-month commitment",
+          setupFeeNote: "No commitment · month to month",
           description: "Your after-hours safety net: Anvela answers, qualifies each request and sends you the useful details—so your evenings stay yours.",
           features: [
             { label: "🌙 Automatic after-hours response", detail: "Mon–Fri 6pm–8am + Weekends 24/7" },
@@ -1138,7 +1138,7 @@ export const translations = {
           weeklyNote: "approx. $15 / day",
           isPopular: true,
           setupFee: "197",
-          setupFeeNote: "Minimum 3-month commitment",
+          setupFeeNote: "No commitment · month to month",
           description: "Your 24/7 reception backup: Anvela takes calls while you are busy or closed, then keeps every request clear, captured and actionable.",
           features: [
             { label: "📞 Intelligent 24/7 response", detail: "AI picks up when you're unavailable or overwhelmed" },
@@ -1150,7 +1150,7 @@ export const translations = {
             { label: "📲 Transfer to human (if needed)", detail: "Call can be redirected to you live" },
             { label: "🌙 24/7 call coverage", detail: "No call left unanswered" },
             { label: "🌍 Bilingual (FR / EN)" },
-            { label: "☎️ 750 minutes included / month", detail: "$0.65 / additional minute" },
+            { label: "☎️ 750 minutes included / month", detail: "$0.45 / additional minute" },
             { label: "🎯 Result", detail: "Fewer missed calls, more appointments, and fewer interruptions for your team." }
           ]
         },
@@ -1224,7 +1224,7 @@ export const translations = {
         },
         {
           question: "Is there a long-term commitment?",
-          answer: "The 'Night Shift' and 'Co-Pilot' plans have a 3-month minimum commitment. The 'Anvela Signature' plan requires 6 months due to the complexity of the custom CRM integration."
+          answer: "No. The 'Night Shift' and 'Co-Pilot' plans have no commitment: you pay month to month and can cancel anytime with 30 days' notice. The 'Anvela Signature' plan requires 6 months due to the complexity of the custom CRM integration."
         },
         {
           question: "What types of businesses is Anvela for?",
@@ -1931,7 +1931,7 @@ export const translations = {
           price: "199",
           weeklyNote: "aprox. $7 / día",
           setupFee: "0",
-          setupFeeNote: "Contrato mínimo de 3 meses",
+          setupFeeNote: "Sin compromiso · mes a mes",
           description: "Su red de seguridad fuera de horario: Anvela responde, califica cada solicitud y le envía los datos útiles para que sus noches sean suyas.",
           features: [
             { label: "🌙 Respuesta automática fuera de horario", detail: "Lun–Vie 18h–8h + fin de semana 24h" },
@@ -1949,7 +1949,7 @@ export const translations = {
           weeklyNote: "aprox. $15 / día",
           isPopular: true,
           setupFee: "197",
-          setupFeeNote: "Contrato mínimo de 3 meses",
+          setupFeeNote: "Sin compromiso · mes a mes",
           description: "Su apoyo de recepción 24/7: Anvela atiende mientras está ocupado o cerrado y mantiene cada solicitud clara, capturada y lista para actuar.",
           features: [
             { label: "📞 Respuesta inteligente 24/7", detail: "La IA atiende cuando no está disponible o está ocupado" },
@@ -1961,7 +1961,7 @@ export const translations = {
             { label: "📲 Transferencia a humano (si es necesario)", detail: "La llamada puede redirigirse a usted en vivo" },
             { label: "🌙 Cobertura de llamadas 24/7", detail: "Ninguna llamada sin respuesta" },
             { label: "🌍 Bilingüe (FR / EN)" },
-            { label: "☎️ 750 minutos incluidos / mes", detail: "$0.65 / minuto adicional" },
+            { label: "☎️ 750 minutos incluidos / mes", detail: "$0.45 / minuto adicional" },
             { label: "🎯 Resultado", detail: "Menos llamadas perdidas, más citas y menos interrupciones para su equipo." }
           ]
         },
@@ -2035,7 +2035,7 @@ export const translations = {
         },
         {
           question: "¿Existe un compromiso a largo plazo?",
-          answer: "Los planes 'Night Shift' y 'Co-Pilot' tienen un compromiso mínimo de 3 meses. El plan 'Anvela Signature' requiere 6 meses debido a la complejidad de la integración personalizada con CRM."
+          answer: "No. Los planes 'Night Shift' y 'Co-Pilot' no tienen compromiso: paga mes a mes y puede cancelar en cualquier momento con 30 días de aviso. El plan 'Anvela Signature' requiere 6 meses debido a la complejidad de la integración personalizada con CRM."
         },
         {
           question: "¿Para qué tipos de empresas es Anvela?",
@@ -2742,7 +2742,7 @@ export const translations = {
           price: "199",
           weeklyNote: "circa 7$ al giorno",
           setupFee: "0",
-          setupFeeNote: "Contratto minimo 3 mesi",
+          setupFeeNote: "Nessun vincolo · mese per mese",
           description: "La tua rete di sicurezza fuori orario: Anvela risponde, qualifica ogni richiesta e ti invia le informazioni utili, così le tue serate restano tue.",
           features: [
             { label: "🌙 Risposta automatica fuori orario", detail: "Lun–Ven 18h–8h + weekend 24h" },
@@ -2760,7 +2760,7 @@ export const translations = {
           weeklyNote: "circa 15$ al giorno",
           isPopular: true,
           setupFee: "197",
-          setupFeeNote: "Contratto minimo 3 mesi",
+          setupFeeNote: "Nessun vincolo · mese per mese",
           description: "Il tuo supporto alla reception 24/7: Anvela risponde mentre sei occupato o chiuso e mantiene ogni richiesta chiara, acquisita e pronta all'azione.",
           features: [
             { label: "📞 Risposta intelligente 24/7", detail: "L'IA risponde quando non sei disponibile o sei occupato" },
@@ -2772,7 +2772,7 @@ export const translations = {
             { label: "📲 Trasferimento a umano (se necessario)", detail: "La chiamata può essere reindirizzata a te in diretta" },
             { label: "🌙 Copertura chiamate 24/7", detail: "Nessuna chiamata senza risposta" },
             { label: "🌍 Bilingue (FR / EN)" },
-            { label: "☎️ 750 minuti inclusi / mese", detail: "0,65 $ / minuto aggiuntivo" },
+            { label: "☎️ 750 minuti inclusi / mese", detail: "0,45 $ / minuto aggiuntivo" },
             { label: "🎯 Risultato", detail: "Meno chiamate perse, più appuntamenti e meno interruzioni per il tuo team." }
           ]
         },
@@ -2844,7 +2844,7 @@ export const translations = {
         },
         {
           question: "C'è un impegno a lungo termine?",
-          answer: "I piani 'Night Shift' e 'Co-Pilot' hanno un impegno minimo di 3 mesi. Il piano 'Anvela Signature' richiede 6 mesi a causa della complessità dell'integrazione CRM personalizzata."
+          answer: "No. I piani 'Night Shift' e 'Co-Pilot' sono senza vincolo: paghi mese per mese e puoi disdire in qualsiasi momento con 30 giorni di preavviso. Il piano 'Anvela Signature' richiede 6 mesi a causa della complessità dell'integrazione CRM personalizzata."
         },
         {
           question: "Per che tipo di aziende è pensata Anvela?",

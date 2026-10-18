@@ -22,7 +22,7 @@ export default function PrivacyPage() {
             ← Retour à l'accueil
           </Link>
           <h1 className="text-3xl md:text-4xl font-serif text-white mb-2">Politique de Confidentialité & Conditions</h1>
-          <p className="text-slate-400 text-sm">Dernière mise à jour : août 2026 · Solutions Anvela</p>
+          <p className="text-slate-400 text-sm">Dernière mise à jour : octobre 2026 · Solutions Anvela</p>
         </div>
       </div>
 
@@ -154,7 +154,7 @@ export default function PrivacyPage() {
 
             <div>
               <h3 className="font-semibold text-slate-900 mb-2">3. Engagements contractuels</h3>
-              <p>Les forfaits <strong>Night Shift</strong> et <strong>Co-Pilot</strong> requièrent un engagement minimum de 3 mois. Le forfait <strong>Anvela Signature</strong> requiert un engagement minimum de 6 mois. Aucun remboursement n'est accordé pour les mois entamés.</p>
+              <p>Les forfaits <strong>Night Shift</strong> et <strong>Co-Pilot</strong> sont sans engagement : ils se renouvellent de mois en mois et peuvent être résiliés en tout temps moyennant un préavis écrit de 30 jours. Le forfait <strong>Anvela Signature</strong> requiert un engagement minimum de 6 mois. Aucun remboursement n'est accordé pour les mois entamés.</p>
             </div>
 
             <div>

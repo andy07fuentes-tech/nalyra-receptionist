@@ -11,14 +11,14 @@
 
 **Product type:** SaaS — service géré (l'IA est configurée et maintenue par Anvela, pas self-serve)
 
-**Business model:** Abonnement mensuel à 3 paliers + frais de mise en service uniques. Engagement minimum 3–6 mois. Offre de lancement : premier mois à -50%.
+**Business model:** Abonnement mensuel à 3 paliers + frais de mise en service uniques. Night Shift et Co-Pilot : mois par mois, sans engagement (préavis de 30 jours). Anvela Signature : 6 mois minimum. Offre de lancement : premier mois à -50%.
 
 **Pricing tiers (current):**
 
 | Plan | Monthly | Setup Fee | Min. commitment | Key perks |
 |---|---|---|---|---|
-| Night Shift | $199/mo (~$49/wk) | $0 | 3 months | After-hours only (Mon–Fri 6pm–8am + weekends 24/7), auto booking into Google Calendar, instant SMS notification, unlimited calls, FR market |
-| Co-Pilot ⭐ Popular | $449/mo (~$104/wk) | $197 | 3 months | 24/7 intelligent response, automated booking, missed call capture, SMS reminders (24h/2h), live human transfer, bilingual FR/EN, unlimited calls |
+| Night Shift | $199/mo (~$49/wk) | $0 | None (month to month) | After-hours only (Mon–Fri 6pm–8am + weekends 24/7), auto booking into Google Calendar, instant SMS notification, unlimited calls, FR market |
+| Co-Pilot ⭐ Popular | $449/mo (~$104/wk) | $197 | None (month to month) | 24/7 intelligent response, automated booking, missed call capture, SMS reminders (24h/2h), live human transfer, bilingual FR/EN, unlimited calls |
 | Anvela Signature | $697/mo (~$165/wk) | $497 | 6 months | Full 24/7 management, booking/modify/cancel by phone, SMS follow-up in 15 min, regular client recognition, custom CRM integration, reputation protection (unhappy clients redirected privately), monthly reports + continuous optimization, VIP priority support (<2h), unlimited calls |
 
 ---
@@ -67,7 +67,7 @@
 ---
 
 ## Competitive Landscape
-**Direct:** Aucun concurrent francophone canadien spécialisé auto identifié — le marché est peu saturé.
+**Direct (vérifié 2026-10-18) :** Noémie (noemieai.ca) a une page garages, 79–249 $/mois, essai gratuit de 7 jours. Aussi au Québec : Clémentine d'Allesi (dès 99 $), Agent IA Vocal / TECHMA (199–399 USD + 999 USD d'installation, contenu ciblé garages), RoehAI, Nova Secrétariat, AI Humans, CréArt. Tableau complet : ~/Documents/anvela-competitors/competitor-matrix-2026-10-18.md
 
 **Secondary:** Services génériques d'answering service / secrétariat téléphonique — plus chers, moins automatisés, pas spécialisés auto.
 
