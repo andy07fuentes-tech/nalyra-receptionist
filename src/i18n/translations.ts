@@ -376,7 +376,7 @@ export const translations = {
           setupFeeNote: "Configuration, engagement et volume évalués avant le lancement",
           description: "Un système Anvela conçu autour de vos outils : intégrations, suivis et automatisations adaptés à la réalité de votre garage.",
           features: [
-            { label: "⭐ Protection de votre réputation en ligne", detail: "Les clients insatisfaits sont redirigés en privé AVANT de laisser un avis négatif sur Google. Votre note reste protégée." },
+            { label: "⭐ Plus d'avis Google pour votre garage", detail: "Après chaque visite, tous vos clients reçoivent une invitation à laisser un avis Google. Chacun peut aussi vous joindre directement en cas de problème, pour que vous puissiez arranger les choses rapidement." },
             { label: "📊 Optimisation continue + rapports mensuels", detail: "On ajuste votre système chaque mois pour maximiser vos rendez-vous et vos revenus." },
             { label: "🎯 Support prioritaire VIP — réponse < 2 h", detail: "Accès direct à l'équipe Anvela. Vous passez avant tout le monde." },
             { label: "💬 Suivi client par SMS en moins de 15 minutes", detail: "Confirmation et relance immédiates — pas après 24h comme ailleurs." },
@@ -1165,7 +1165,7 @@ export const translations = {
           setupFeeNote: "Configuration, commitment, and call volume are assessed before launch",
           description: "An Anvela system designed around your tools: integrations, follow-ups, and automation tailored to your garage.",
           features: [
-            { label: "⭐ Online reputation protection", detail: "Unhappy clients are redirected privately BEFORE leaving a negative Google review. Your rating stays protected." },
+            { label: "⭐ More Google reviews for your shop", detail: "After every visit, every customer gets an invitation to leave a Google review. Any customer can also reach you directly if something went wrong, so you can make it right quickly." },
             { label: "📊 Continuous optimization + monthly reports", detail: "We adjust your system every month to maximize your appointments and revenue." },
             { label: "🎯 Priority VIP support — response < 2h", detail: "Direct access to the Anvela team. You come first." },
             { label: "💬 SMS follow-up in under 15 minutes", detail: "Immediate confirmation and follow-up — not 24h later like elsewhere." },
@@ -1976,7 +1976,7 @@ export const translations = {
           setupFeeNote: "La configuración, el compromiso y el volumen se evalúan antes del lanzamiento",
           description: "Un sistema Anvela diseñado para sus herramientas: integraciones, seguimientos y automatizaciones adaptadas a su taller.",
           features: [
-            { label: "⭐ Protección de su reputación en línea", detail: "Los clientes insatisfechos son redirigidos en privado ANTES de dejar una reseña negativa en Google. Su nota queda protegida." },
+            { label: "⭐ Más reseñas de Google para su taller", detail: "Después de cada visita, todos sus clientes reciben una invitación para dejar una reseña en Google. Cualquier cliente también puede contactarle directamente si algo salió mal, para que usted lo resuelva rápido." },
             { label: "📊 Optimización continua + informes mensuales", detail: "Ajustamos su sistema cada mes para maximizar sus citas e ingresos." },
             { label: "🎯 Soporte VIP prioritario — respuesta < 2h", detail: "Acceso directo al equipo Anvela. Usted va primero." },
             { label: "💬 Seguimiento por SMS en menos de 15 minutos", detail: "Confirmación y seguimiento inmediatos — no 24h después como en otros." },
@@ -2787,7 +2787,7 @@ export const translations = {
           setupFeeNote: "Configurazione, impegno e volume vengono valutati prima del lancio",
           description: "Un sistema Anvela progettato attorno ai tuoi strumenti: integrazioni, follow-up e automazioni su misura per il tuo garage.",
           features: [
-            { label: "⭐ Protezione della reputazione online", detail: "I clienti insoddisfatti vengono reindirizzati in privato PRIMA di lasciare una recensione negativa su Google. Il tuo punteggio resta protetto." },
+            { label: "⭐ Più recensioni Google per la tua officina", detail: "Dopo ogni visita, tutti i tuoi clienti ricevono un invito a lasciare una recensione su Google. Ogni cliente può anche contattarti direttamente se qualcosa è andato storto, così puoi rimediare subito." },
             { label: "📊 Ottimizzazione continua + report mensili", detail: "Aggiustiamo il tuo sistema ogni mese per massimizzare appuntamenti e ricavi." },
             { label: "🎯 Supporto VIP prioritario — risposta < 2h", detail: "Accesso diretto al team Anvela. Sei sempre il primo." },
             { label: "💬 Follow-up SMS in meno di 15 minuti", detail: "Conferma e ricontatto immediati — non dopo 24h come altrove." },
