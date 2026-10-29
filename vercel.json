@@ -5,6 +5,22 @@
       "destination": "/comparatif.html"
     },
     {
+      "source": "/receptionniste-ia-garage-montreal",
+      "destination": "/receptionniste-ia-garage-montreal.html"
+    },
+    {
+      "source": "/prise-de-rendez-vous-garage",
+      "destination": "/prise-de-rendez-vous-garage.html"
+    },
+    {
+      "source": "/appels-manques-garage",
+      "destination": "/appels-manques-garage.html"
+    },
+    {
+      "source": "/prix-receptionniste-ia-garage",
+      "destination": "/prix-receptionniste-ia-garage.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

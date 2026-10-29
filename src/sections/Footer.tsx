@@ -30,7 +30,7 @@ const QuebecFlag = () => (
 );
 
 export function Footer() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const getLinkGroups = () => {
     const footerTranslations = t('footer') as any;
@@ -202,6 +202,17 @@ export function Footer() {
       {/* 4. Bottom Bar */}
       <div className="border-t border-slate-100 bg-white py-8">
         <div className="container-custom">
+          {language === 'fr' && (
+            <nav
+              aria-label="Guides pour garages"
+              className="flex flex-wrap items-center justify-center md:justify-start gap-x-6 gap-y-2 mb-6"
+            >
+              <a href="/receptionniste-ia-garage-montreal" className="text-[11px] text-blue-900/60 hover:text-blue-900 transition-colors">Réceptionniste IA pour garage</a>
+              <a href="/prise-de-rendez-vous-garage" className="text-[11px] text-blue-900/60 hover:text-blue-900 transition-colors">Prise de rendez-vous</a>
+              <a href="/appels-manques-garage" className="text-[11px] text-blue-900/60 hover:text-blue-900 transition-colors">Appels manqués</a>
+              <a href="/prix-receptionniste-ia-garage" className="text-[11px] text-blue-900/60 hover:text-blue-900 transition-colors">Prix</a>
+            </nav>
+          )}
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 md:gap-8 order-2 md:order-1">
               <span className="text-[10px] text-blue-900/40 uppercase tracking-widest">
