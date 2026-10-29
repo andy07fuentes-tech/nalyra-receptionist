@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO Meta Tags -->
   <title>Réceptionniste IA pour garages à Montréal | Solutions Anvela</title>
@@ -30,24 +30,38 @@
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Solutions Anvela",
-      "alternateName": "Anvela",
-      "url": "https://www.anvela.ca/",
-      "logo": "https://www.anvela.ca/anvela-logo.jpg",
-      "description": "Réceptionniste IA 24/7 pour garages : gestion des appels, prise de rendez-vous et suivi client.",
-      "email": "support@anvela.ca",
-      "telephone": "+1-438-814-7578",
-      "areaServed": {
-        "@type": "City",
-        "name": "Montréal"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+1-438-814-7578",
-        "contactType": "sales",
-        "availableLanguage": ["French", "English"]
-      }
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.anvela.ca/#organization",
+          "name": "Solutions Anvela",
+          "alternateName": "Anvela",
+          "url": "https://www.anvela.ca/",
+          "logo": "https://www.anvela.ca/anvela-logo.jpg",
+          "description": "Réceptionniste IA 24/7 pour garages : gestion des appels, prise de rendez-vous et suivi client.",
+          "email": "support@anvela.ca",
+          "telephone": "+1-438-814-7578",
+          "areaServed": { "@type": "City", "name": "Montréal" },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-438-814-7578",
+            "contactType": "sales",
+            "availableLanguage": ["French", "English"]
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.anvela.ca/#service",
+          "name": "Réceptionniste IA pour garages",
+          "serviceType": "Réception téléphonique et prise de rendez-vous par IA",
+          "description": "Une réceptionniste IA qui répond aux appels du garage 24/7, prend les rendez-vous et assure le suivi des clients.",
+          "provider": { "@id": "https://www.anvela.ca/#organization" },
+          "areaServed": { "@type": "City", "name": "Montréal" },
+          "audience": { "@type": "BusinessAudience", "audienceType": "Garages et ateliers de mécanique" },
+          "availableLanguage": ["French", "English"],
+          "url": "https://www.anvela.ca/"
+        }
+      ]
     }
   </script>
 
@@ -55,10 +69,6 @@
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <!-- Google Maps API for Business Search (ONBOARDING) -->
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIcpeCK0dkBSv4FyM_rLvhi75fdSlnnvU&libraries=places&v=weekly"
-    async defer></script>
 </head>
 
 <body>

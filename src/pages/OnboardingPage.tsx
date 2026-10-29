@@ -42,6 +42,17 @@ export default function OnboardingPage() {
         initOnMount: false,
     });
 
+    // Maps is only needed on this page, so load it here instead of in
+    // index.html (keeps it off the homepage, which is what Google scores).
+    useEffect(() => {
+        if (document.getElementById('google-maps-script')) return;
+        const script = document.createElement('script');
+        script.id = 'google-maps-script';
+        script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAIcpeCK0dkBSv4FyM_rLvhi75fdSlnnvU&libraries=places&v=weekly';
+        script.async = true;
+        document.head.appendChild(script);
+    }, []);
+
     // The Google Maps script loads async and may not be ready the instant this
     // page mounts. Poll until it is, then initialize — initOnMount checks only
     // once at mount and never retries, which left the search box permanently
