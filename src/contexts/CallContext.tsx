@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useEffect, useRef, useState } from 'react';
-import { RetellWebClient } from 'retell-client-js-sdk';
+import { RetellClient } from 'retell-client-js-sdk';
+import type { WebCallSession } from 'retell-client-js-sdk';
 import { useAudio } from './AudioContext';
 
 type CallStatus = 'idle' | 'connecting' | 'active';
@@ -10,15 +11,35 @@ interface CallContextType {
   endCall: () => void;
 }
 
+// Retell retired POST /v2/create-web-call and the 2.x RetellWebClient flow on
+// 2026-10-18. The 3.x SDK creates the call itself (POST /v3/create-web-call),
+// so we route that one request to our n8n webhook, which holds the Retell key
+// and pins the DEMO agent. Nothing secret ships to the browser.
+const CREATE_WEB_CALL_URL = 'https://n8n.srv1401769.hstgr.cloud/webhook/anvela/create-web-call-v3';
+
+const proxyFetch: typeof fetch = (input) => {
+  const path = new URL(typeof input === 'string' ? input : input instanceof URL ? input.href : input.url).pathname;
+  if (path === '/v3/create-web-call') {
+    // The webhook ignores the body: the agent is fixed server-side.
+    return fetch(CREATE_WEB_CALL_URL, { method: 'POST' });
+  }
+  // The SDK only makes other requests (e.g. stop-call when a visitor cancels
+  // mid-connect) as best effort. Never forward them to the create webhook,
+  // or a cancel would start a second call. Retell's not-joined timeout cleans up.
+  return Promise.resolve(new Response(null, { status: 204 }));
+};
+
 // Single client shared by every "talk to Anvela" button so two demo calls
 // can never run at the same time and all buttons reflect the same state.
-const retellClient = new RetellWebClient();
+// The key is a placeholder: the real one lives in n8n.
+const retellClient = new RetellClient({ key: 'proxied-by-n8n', fetch: proxyFetch });
 
 const CallContext = createContext<CallContextType | undefined>(undefined);
 
 export const CallProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { isMuted, setIsMuted, play, pause, isPlaying } = useAudio();
   const [callStatus, setCallStatus] = useState<CallStatus>('idle');
+  const sessionRef = useRef<WebCallSession | null>(null);
 
   // Remember how ambient audio was set before the call so we can restore the
   // user's choice instead of force-unmuting (or force-playing) when it ends.
@@ -42,38 +63,42 @@ export const CallProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setIsMuted(wasMutedBeforeCall.current);
     if (wasPlayingBeforeCall.current) play();
   };
+  // Session hooks are bound once per call; read the latest version through a ref.
+  const restoreAmbientRef = useRef(restoreAmbient);
+  useEffect(() => {
+    restoreAmbientRef.current = restoreAmbient;
+  });
 
   const startCall = async () => {
-    if (callStatus !== 'idle') return;
+    if (callStatus !== 'idle' || sessionRef.current) return;
     setCallStatus('connecting');
     silenceAmbient();
-    try {
-      const res = await fetch('https://n8n.srv1401769.hstgr.cloud/webhook/anvela/create-web-call', { method: 'POST' });
-      const { access_token, sample_rate } = await res.json();
-      await retellClient.startCall({ accessToken: access_token, sampleRate: sample_rate ?? 16000 });
-      setCallStatus('active');
-    } catch {
-      restoreAmbient();
-      setCallStatus('idle');
-    }
+
+    // Must run inside the click handler: the microphone prompt happens here.
+    const session = retellClient.createWebCall({
+      agent_id: 'agent_8e79799ac3193dc848e0a1bebd', // DEMO; n8n enforces this anyway
+      hooks: {
+        onStatus: (status) => {
+          if (status === 'live') setCallStatus('active');
+        },
+        // Every ending lands here (hang-up, agent ends, mic denied, network
+        // lost, webhook failure), so this is the one place the UI resets.
+        onEnd: () => {
+          if (sessionRef.current !== session) return;
+          sessionRef.current = null;
+          restoreAmbientRef.current();
+          setCallStatus('idle');
+        },
+        onError: (err) => console.error('[Anvela demo call]', err),
+      },
+    });
+    sessionRef.current = session;
   };
 
   const endCall = () => {
-    retellClient.stopCall();
-    restoreAmbient();
-    setCallStatus('idle');
+    // Triggers onEnd, which resets the UI and the ambient audio.
+    void sessionRef.current?.end();
   };
-
-  useEffect(() => {
-    const onEnded = () => {
-      restoreAmbient();
-      setCallStatus('idle');
-    };
-    retellClient.on('call_ended', onEnded);
-    return () => {
-      retellClient.off('call_ended', onEnded);
-    };
-  });
 
   return (
     <CallContext.Provider value={{ callStatus, startCall, endCall }}>
