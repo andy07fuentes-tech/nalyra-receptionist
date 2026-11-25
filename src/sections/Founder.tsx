@@ -5,7 +5,7 @@ export function Founder() {
   const { t } = useLanguage();
 
   return (
-    <section className="section-padding bg-white border-y border-neutral-100">
+    <section id="founder" className="section-padding bg-white border-y border-neutral-100">
       <div className="container-custom">
         <motion.div
           className="text-center mb-14"

@@ -924,3 +924,63 @@ html, body {
     animation: live-dot-glow 1.8s ease-in-out infinite;
   }
 }
+/* ───────────────────────────────────────────────────────────────
+   Lenis: the CSS smooth scroll above fights Lenis and causes jumps.
+   ─────────────────────────────────────────────────────────────── */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* ───────────────────────────────────────────────────────────────
+   Section transition curtain — see src/lib/smoothNavigate.ts
+   (ported from studio.anvela.ca, 2026-11-25)
+   ─────────────────────────────────────────────────────────────── */
+.page-curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: inset(100% 0 0 0);
+  background:
+    radial-gradient(120% 70% at 100% 0%, rgba(0, 210, 255, 0.12), transparent 60%),
+    radial-gradient(90% 60% at 0% 100%, rgba(210, 168, 85, 0.08), transparent 60%),
+    #070707;
+  pointer-events: all;
+  touch-action: none;
+}
+.page-curtain-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  opacity: 0;
+  padding: 0 16px;
+  text-align: center;
+}
+.page-curtain-kicker {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(210, 168, 85, 0.9);
+}
+.page-curtain-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(2.75rem, 7vw, 5.5rem);
+  font-weight: 400;
+  line-height: 1;
+  color: rgba(246, 240, 228, 0.96);
+}
+.page-curtain-line {
+  width: 3.5rem;
+  height: 1px;
+  background: #00d2ff;
+  transform-origin: center;
+  transform: scaleX(0);
+}
+section[tabindex="-1"]:focus,
+[id][tabindex="-1"]:focus { outline: none; }

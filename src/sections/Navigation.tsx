@@ -5,6 +5,7 @@ import { LanguageToggle } from '../components/LanguageToggle';
 import { Volume2, VolumeX, Phone, PhoneOff, Loader2 } from 'lucide-react';
 import { useAudio } from '../contexts/AudioContext';
 import { useCall } from '../contexts/CallContext';
+import { navigateTo } from '../lib/smoothNavigate';
 
 export function Navigation() {
   const { t } = useLanguage();
@@ -20,10 +21,7 @@ export function Navigation() {
   }, []);
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    navigateTo(href);
   };
 
   return (

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ArrowUp } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { navigateTo } from '../lib/smoothNavigate';
 
 export function ScrollToTop() {
   const { t } = useLanguage();
@@ -15,7 +16,7 @@ export function ScrollToTop() {
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    navigateTo(0);
   };
 
   return (

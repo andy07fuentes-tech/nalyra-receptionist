@@ -6,6 +6,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { GradientButton } from '../components/ui/gradient-button';
 import { useAudio } from '../contexts/AudioContext';
+import { navigateTo } from '../lib/smoothNavigate';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -169,8 +170,7 @@ export function Hero({ isReady }: { isReady: boolean }) {
   }, [isReady]);
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) element.scrollIntoView({ behavior: 'smooth' });
+    navigateTo(href);
   };
 
   const mainTitle = t('hero.mainTitle') as string;

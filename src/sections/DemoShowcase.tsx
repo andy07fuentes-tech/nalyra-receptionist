@@ -4,6 +4,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { useAudio } from '../contexts/AudioContext';
 import { useCall } from '../contexts/CallContext';
 import './DemoShowcase.css';
+import { navigateTo } from '../lib/smoothNavigate';
 
 const WAVEFORM_HEIGHTS = [6,14,22,30,20,36,26,38,18,32,28,38,24,34,20,30,36,28,40,32,36,24,38,20,30,16,28,22,38,18,30,14,22,10,16,8];
 
@@ -303,7 +304,7 @@ export function DemoShowcase() {
                     )}
                     <button
                         className="ds-btn-ghost"
-                        onClick={() => document.querySelector('#pricing')?.scrollIntoView({ behavior: 'smooth' })}
+                        onClick={() => navigateTo('#pricing')}
                     >
                         {t('demoShowcase.cta.secondary') as string}
                     </button>

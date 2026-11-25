@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Instagram, Linkedin, Twitter, ArrowUp, Youtube, MapPin, Phone, Mail, Calendar } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { navigateTo } from '../lib/smoothNavigate';
 
 const QuebecFlag = () => (
   <svg 
@@ -41,7 +42,7 @@ export function Footer() {
         title: linkGroupsData.product.title,
         links: linkGroupsData.product.links.map((name: string, i: number) => ({
           name,
-          href: ['#feature-showcase', '#pricing', '#faq'][i]
+          href: ['#capabilities', '#pricing', '#faq'][i]
         })),
       },
       {
@@ -58,12 +59,11 @@ export function Footer() {
 
   const getLegalLinks = () => t('footer.legalLinks') as string[];
 
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  const scrollToTop = () => navigateTo(0);
 
   const scrollToSection = (href: string) => {
     if (href.startsWith('#')) {
-      const element = document.querySelector(href);
-      if (element) element.scrollIntoView({ behavior: 'smooth' });
+      navigateTo(href);
     }
   };
 
